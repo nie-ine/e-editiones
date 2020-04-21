@@ -20,7 +20,7 @@ In a first version, it will be available through GitHub Pages on: https://nie-in
    
 5. To run locally: ``bundle exec jekyll serve``
 
-   The site will be available on http://localhost:4000/
+   The site will be available on http://localhost:4000/e-editiones/ 
 
 ## Publish on GitHub Pages
 
