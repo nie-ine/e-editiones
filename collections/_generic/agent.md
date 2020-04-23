@@ -1,6 +1,6 @@
 ---
 title: Agent Ontology
-ttl: agent-ontology.ttl
+prefix: agent-ontology
 ---
 
 Hello World!
