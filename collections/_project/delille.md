@@ -1,5 +1,5 @@
 ---
-title: Jacques Delille Ppoetry Ontology
+title: Jacques Delille Poetry Ontology
 prefix: Jacques-Delille-poetry-ontology
 ---
 
