@@ -8,4 +8,9 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/SaxonJS/{{ js_file }}.js"></script>
+    {% endfor %}
+  {% endif %}
 </head>

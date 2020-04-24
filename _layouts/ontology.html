@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+
+	<script>
+	   window.onload = function() {
+	      SaxonJS.transform({
+	         stylesheetLocation: "/e-editiones/assets/rdf2html_cy.sef",
+	         sourceLocation: "/e-editiones/ontology/{{ page.prefix }}.xml"
+	      });
+	   }     
+	</script>
+    
+  </div>
+</article>

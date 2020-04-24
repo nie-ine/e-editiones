@@ -9,7 +9,7 @@ In a first version, it will be available through GitHub Pages on: https://nie-in
 - [Bundler](https://bundler.io/)
 - [Jekyll](https://jekyllrb.com/)
 
-## Develop and run locally
+## Develop and Run Locally
 
 1. Clone repository
 2. cd into repository
@@ -27,3 +27,12 @@ In a first version, it will be available through GitHub Pages on: https://nie-in
 Push to the repository as usual.
 
 There's no need to push the \_site folder to the repository. GitHub Pages is selfaware of Jekyll and will build the site from the given source files in the master branch.
+
+## Adding Ontologies
+
+
+## RDF/XML to HTML
+
+xsl 'from Hans'
+saxon js: http://www.saxonica.com/download/javascript.xml
+Oxygen: compile for saxon: SEFs can be generated using the Saxon transformer engine in the Oxygen XML Editor: select "Compile XSL for Saxon" in the "Tools" menu, and choose Saxon-JS as the "Target" SAXON JS ???? Open Source NOT!
