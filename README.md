@@ -30,9 +30,9 @@ There's no need to push the \_site folder to the repository. GitHub Pages is sel
 
 ## Adding Ontologies
 
+ToDo...
 
 ## RDF/XML to HTML
 
+ToDo: xslt source, saxon-js, compiling xsl for saxon, license?
 xsl 'from Hans'
-saxon js: http://www.saxonica.com/download/javascript.xml
-Oxygen: compile for saxon: SEFs can be generated using the Saxon transformer engine in the Oxygen XML Editor: select "Compile XSL for Saxon" in the "Tools" menu, and choose Saxon-JS as the "Target" SAXON JS ???? Open Source NOT!
