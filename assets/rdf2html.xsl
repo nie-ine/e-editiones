@@ -21,7 +21,7 @@
 	<xsl:param name="language">en</xsl:param>
 	<xsl:param name="mode">html</xsl:param>
 	<xsl:param name="namespaces">false</xsl:param>
-	<xsl:param name="logo">true</xsl:param>
+	<xsl:param name="logo">false</xsl:param>
 	
 	<xsl:variable name="isA">
 		<xsl:choose>
@@ -32,26 +32,11 @@
 	</xsl:variable>
 	
 	<xsl:template match="/">
+		<xsl:result-document href="#wtf">
 		<xsl:if test="$mode='html'">
-			<html version="XHTML+RDFa 1.0" xmlns="http://www.w3.org/1999/xhtml">
-				<head>
-					<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8"/>
-					<title>Rhizomik - ReDeFer - RDF2HTML</title>
-					<link href="/redefer-services/style/rhizomer.css" type="text/css" rel="stylesheet" />
-				</head>
-				<body>
-					<xsl:apply-templates select="rdf:RDF"/>
-					<xsl:if test="$logo='true'">
-						<div id="footlogo">
-							<div id="logo">
-								<a href="http://rhizomik.net"  xmlns="http://www.w3.org/1999/xhtml">
-									<img src="/redefer-services/images/rhizomer.small.png" alt="Rhizomik"/> Powered by Rhizomik
-								</a>
-							</div>
-						</div>
-					</xsl:if>
-				</body>
-			</html>
+
+			<xsl:apply-templates select="rdf:RDF"/>
+
 		</xsl:if>
 		<xsl:if test="$mode='snippet' or $mode='rhizomer'">
 			<xsl:if test="$mode='rhizomer'">
@@ -74,26 +59,12 @@
 		</xsl:if>
 		<!-- Show error message if we have a parsererror -->
 		<xsl:value-of select="//*[local-name()='sourcetext']"/>
+		</xsl:result-document>
 	</xsl:template>
 	
 	<xsl:template match="rdf:RDF">
 		<div class="rdf2html" xmlns="http://www.w3.org/1999/xhtml">
 			<!-- Generate the xmlns for RDFa from those in the RDF/XML and attach to div#rdf2html -->
-			<xsl:variable name="namespaces">
-				<xsl:for-each select="/rdf:RDF/namespace::*[name()!='xml' and name()!='xsd']">
-					<xsl:choose>
-						<!-- The base NS in the output is XHTML so keep base NS in input RDF file with alias "base" -->
-						<xsl:when test="name()=''">
-							<xsl:element name="base:dummy-for-xmlns" namespace="{.}"/>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:element name="{concat(name(),':dummy-for-xmlns')}" namespace="{.}"/>
-						</xsl:otherwise>
-					</xsl:choose>
-				</xsl:for-each>
-				<xsl:element name="xsd:dummy-for-xmlns" namespace="http://www.w3.org/2001/XMLSchema#"/>
-			</xsl:variable>
-			<xsl:copy-of select="$namespaces/*/namespace::*"/>
 
 			<!-- If no RDF descriptions... -->
 			<xsl:if test="count(child::*)=0">
@@ -101,7 +72,7 @@
 			</xsl:if>
 			<!-- If rdf:RDF has child elements, they are descriptions... -->
 			<xsl:for-each select="child::*">
-				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:sort select="@rdf:about"/>
 				<xsl:call-template name="rdfDescription"/>
 			</xsl:for-each>
 		</div>
@@ -290,7 +261,7 @@
 	<xsl:template name="attributes">
 		<xsl:for-each select="@*[not(namespace-uri()='http://www.w3.org/1999/02/22-rdf-syntax-ns#')]">
 								<!-- and not(local-name='about' or local-name='ID' or local-name='type')]" -->
-			<xsl:sort select="local-name()" order="ascending"/>
+			<xsl:sort select="local-name()"/>
 			<tr xmlns="http://www.w3.org/1999/xhtml"> 
 				<td xmlns="http://www.w3.org/1999/xhtml">
 					<xsl:call-template name="resourceDetailLink">
@@ -453,7 +424,7 @@
 	
 	<xsl:template name="properties">
 		<xsl:for-each select="*[not(namespace-uri()='http://www.w3.org/1999/02/22-rdf-syntax-ns#' and local-name()='type')]"> <!-- and not(namespace-uri()='http://www.w3.org/2000/01/rdf-schema#' and local-name()='label') -->
-			<xsl:sort select="local-name()" order="ascending"/>
+			<xsl:sort select="local-name()"/>
 			<xsl:variable name="property-name">
 				<xsl:value-of select="local-name()"></xsl:value-of>
 			</xsl:variable>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://ns.saxonica.com/xslt/export" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vv="http://saxon.sf.net/generated-variable" xmlns:java-type="http://saxon.sf.net/java-type" version="20" packageVersion="1" saxonVersion="9.8.0.12" target="JS" targetVersion="1" relocatable="false">
+<package xmlns="http://ns.saxonica.com/xslt/export" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vv="http://saxon.sf.net/generated-variable" xmlns:java-type="http://saxon.sf.net/java-type" version="20" packageVersion="1" saxonVersion="9.8.0.12" target="JS" targetVersion="1" relocatable="true">
  <co id="0" binds="1 2 3 4 5 2 3 6 6 5">
-  <template name="Q{}collectionItems" flags="os" line="647" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="3">
-   <forEach role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="648">
+  <template name="Q{}collectionItems" flags="os" line="618" module="rdf2html.xsl" slots="3">
+   <forEach role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="619">
     <slash simple="1">
      <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
       <dot flags="a"/>
      </treat>
      <axis name="child" nodeTest="element()" jsTest="return item.nodeType===1;"/>
     </slash>
-    <choose line="653">
+    <choose line="624">
      <and op="and">
       <and op="and">
        <fn name="exists">
@@ -23,11 +23,11 @@
        <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}parseType)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='parseType';"/>
       </fn>
      </and>
-     <let line="654" var="isPreferredLanguage" as="document-node()" slot="0" eval="7">
-      <doc line="655" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+     <let line="625" var="isPreferredLanguage" as="document-node()" slot="0" eval="7">
+      <doc line="626" validation="preserve">
        <callT name="isPreferredLanguage" bSlot="0"/>
       </doc>
-      <choose line="659">
+      <choose line="630">
        <vc op="eq" onEmpty="0" comp="CCC">
         <cast as="xs:string" emptiable="0">
          <data>
@@ -36,7 +36,7 @@
         </cast>
         <str val="true"/>
        </vc>
-       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="660" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="631" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
         <sequence>
          <att name="property" flags="l">
           <str val="rdf:li"/>
@@ -48,11 +48,11 @@
            </data>
           </convert>
          </att>
-         <choose line="661">
+         <choose line="632">
           <fn name="exists">
            <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/XML/1998/namespace}lang)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/XML/1998/namespace'&amp;&amp;q.local==='lang';"/>
           </fn>
-          <att line="663" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
+          <att line="634" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
            <convert from="xs:untypedAtomic" to="xs:string">
             <cast as="xs:untypedAtomic" emptiable="0">
              <fn name="string">
@@ -64,11 +64,11 @@
            </convert>
           </att>
          </choose>
-         <choose line="666">
+         <choose line="637">
           <fn name="exists">
            <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
           </fn>
-          <sequence line="668">
+          <sequence line="639">
            <att name="datatype" flags="l">
             <fn name="string-join">
              <convert from="xs:anyAtomicType" to="xs:string">
@@ -76,7 +76,7 @@
                <mergeAdj>
                 <callT name="curie" bSlot="1">
                  <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                  <axis line="669" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+                  <axis line="640" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                  </withParam>
                 </callT>
                </mergeAdj>
@@ -85,15 +85,15 @@
              <str val=""/>
             </fn>
            </att>
-           <let line="672" var="datatype-xmlns" as="document-node()" slot="1" eval="7">
-            <doc line="673" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+           <let line="643" var="datatype-xmlns" as="document-node()" slot="1" eval="7">
+            <doc line="644" validation="preserve">
              <callT name="xmlns" bSlot="2">
               <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-               <axis line="674" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+               <axis line="645" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
               </withParam>
              </callT>
             </doc>
-            <copyOf line="677" flags="vc">
+            <copyOf line="648" flags="vc">
              <slash>
               <slash simple="1">
                <varRef name="datatype-xmlns" slot="1"/>
@@ -105,25 +105,25 @@
            </let>
           </sequence>
          </choose>
-         <callT line="680" name="textDetailLink" bSlot="3">
+         <callT line="651" name="textDetailLink" bSlot="3">
           <withParam name="Q{}property" flags="c" as="xs:string">
-           <fn line="681" name="local-name">
+           <fn line="652" name="local-name">
             <dot type="element()"/>
            </fn>
           </withParam>
           <withParam name="Q{}value" flags="c" as="item()">
-           <dot line="682" type="element()"/>
+           <dot line="653" type="element()"/>
           </withParam>
          </callT>
-         <callT line="684" name="connector" bSlot="4">
+         <callT line="655" name="connector" bSlot="4">
           <withParam name="Q{}criteria" flags="c" as="element()*">
-           <axis line="685" name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
+           <axis line="656" name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
           </withParam>
          </callT>
         </sequence>
        </elem>
        <true/>
-       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="691" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="662" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
         <sequence>
          <att name="property" flags="l">
           <str val="rdf:li"/>
@@ -135,11 +135,11 @@
            </data>
           </convert>
          </att>
-         <choose line="692">
+         <choose line="663">
           <fn name="exists">
            <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/XML/1998/namespace}lang)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/XML/1998/namespace'&amp;&amp;q.local==='lang';"/>
           </fn>
-          <att line="694" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
+          <att line="665" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
            <convert from="xs:untypedAtomic" to="xs:string">
             <cast as="xs:untypedAtomic" emptiable="0">
              <fn name="string">
@@ -151,11 +151,11 @@
            </convert>
           </att>
          </choose>
-         <choose line="697">
+         <choose line="668">
           <fn name="exists">
            <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
           </fn>
-          <sequence line="699">
+          <sequence line="670">
            <att name="datatype" flags="l">
             <fn name="string-join">
              <convert from="xs:anyAtomicType" to="xs:string">
@@ -163,7 +163,7 @@
                <mergeAdj>
                 <callT name="curie" bSlot="5">
                  <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                  <axis line="700" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+                  <axis line="671" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                  </withParam>
                 </callT>
                </mergeAdj>
@@ -172,15 +172,15 @@
              <str val=""/>
             </fn>
            </att>
-           <let line="703" var="datatype-xmlns" as="document-node()" slot="2" eval="7">
-            <doc line="704" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+           <let line="674" var="datatype-xmlns" as="document-node()" slot="2" eval="7">
+            <doc line="675" validation="preserve">
              <callT name="xmlns" bSlot="6">
               <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-               <axis line="705" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+               <axis line="676" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
               </withParam>
              </callT>
             </doc>
-            <copyOf line="708" flags="vc">
+            <copyOf line="679" flags="vc">
              <slash>
               <slash simple="1">
                <varRef name="datatype-xmlns" slot="2"/>
@@ -197,13 +197,13 @@
       </choose>
      </let>
      <true/>
-     <sequence line="716">
+     <sequence line="687">
       <choose>
        <gc op="=" card="1:1" comp="CCC">
         <attVal name="Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}parseType" chk="0"/>
         <str val="Literal"/>
        </gc>
-       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="717" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="688" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
         <sequence>
          <att name="class" flags="l">
           <str val="property-object"/>
@@ -211,11 +211,11 @@
          <att name="property" flags="l">
           <str val="rdf:li"/>
          </att>
-         <callT line="718" name="property-objects" bSlot="7"/>
+         <callT line="689" name="property-objects" bSlot="7"/>
         </sequence>
        </elem>
        <true/>
-       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="722" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="693" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
         <sequence>
          <att name="class" flags="l">
           <str val="property-object"/>
@@ -223,13 +223,13 @@
          <att name="rel" flags="l">
           <str val="rdf:li"/>
          </att>
-         <callT line="723" name="property-objects" bSlot="8"/>
+         <callT line="694" name="property-objects" bSlot="8"/>
         </sequence>
        </elem>
       </choose>
-      <callT line="727" name="connector" bSlot="9">
+      <callT line="698" name="connector" bSlot="9">
        <withParam name="Q{}criteria" flags="c" as="element()*">
-        <axis line="728" name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
+        <axis line="699" name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
        </withParam>
       </callT>
      </sequence>
@@ -238,8 +238,8 @@
   </template>
  </co>
  <co id="7" binds="8">
-  <template name="Q{}rdf_resource-attribute" flags="os" line="444" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="0">
-   <choose role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="445">
+  <template name="Q{}rdf_resource-attribute" flags="os" line="415" module="rdf2html.xsl" slots="0">
+   <choose role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="416">
     <fn name="exists">
      <slash simple="1">
       <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -248,9 +248,9 @@
       <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='resource';"/>
      </slash>
     </fn>
-    <callT line="446" name="resourceDetailLink" bSlot="0" flags="t">
+    <callT line="417" name="resourceDetailLink" bSlot="0" flags="t">
      <withParam name="Q{}property" flags="c" as="xs:string">
-      <fn line="447" name="local-name">
+      <fn line="418" name="local-name">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:local-name">
         <dot flags="a"/>
        </treat>
@@ -260,7 +260,7 @@
       <str val=""/>
      </withParam>
      <withParam name="Q{}localname" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource)?">
-      <slash line="449" simple="1">
+      <slash line="420" simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
         <dot flags="a"/>
        </treat>
@@ -272,8 +272,8 @@
   </template>
  </co>
  <co id="9" binds="10 11 12 10 13 13 13 13 13">
-  <template name="Q{}getLabel" flags="os" line="770" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="9">
-   <let role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="801" var="vv:v0" as="xs:string?" slot="2" eval="13">
+  <template name="Q{}getLabel" flags="os" line="741" module="rdf2html.xsl" slots="9">
+   <let role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="772" var="vv:v0" as="xs:string?" slot="2" eval="13">
     <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|1||fn:contains">
      <check card="?" diag="0|1||fn:contains">
       <cvUntyped to="xs:string">
@@ -283,21 +283,21 @@
       </cvUntyped>
      </check>
     </treat>
-    <sequence line="771">
+    <sequence line="742">
      <param name="Q{}uri" slot="0">
       <str role="select" val=""/>
       <supplied role="conversion" slot="0"/>
      </param>
-     <param line="772" name="Q{}property" slot="1">
+     <param line="743" name="Q{}property" slot="1">
       <str role="select" val=""/>
       <supplied role="conversion" slot="1"/>
      </param>
-     <let line="777" var="uri-noslash" as="document-node()" slot="3" eval="7">
-      <doc line="779" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" flags="t" validation="preserve">
+     <let line="748" var="uri-noslash" as="document-node()" slot="3" eval="7">
+      <doc line="750" flags="t" validation="preserve">
        <choose>
         <fn name="contains">
          <cvUntyped to="xs:string">
-          <cast line="775" as="xs:untypedAtomic" emptiable="0">
+          <cast line="746" as="xs:untypedAtomic" emptiable="0">
            <fn name="substring">
             <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring">
              <check card="?" diag="0|0||fn:substring">
@@ -327,7 +327,7 @@
          </cvUntyped>
          <str val="/"/>
         </fn>
-        <valueOf line="780" flags="l">
+        <valueOf line="751" flags="l">
          <fn name="substring">
           <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring">
            <check card="?" diag="0|0||fn:substring">
@@ -356,7 +356,7 @@
          </fn>
         </valueOf>
         <true/>
-        <valueOf line="783" flags="l">
+        <valueOf line="754" flags="l">
          <fn name="string-join">
           <convert from="xs:anyAtomicType" to="xs:string">
            <data>
@@ -370,29 +370,29 @@
         </valueOf>
        </choose>
       </doc>
-      <let line="789" var="namespace" as="document-node()" slot="4" eval="7">
-       <doc line="790" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+      <let line="760" var="namespace" as="document-node()" slot="4" eval="7">
+       <doc line="761" validation="preserve">
         <callT name="get-ns" bSlot="1">
          <withParam name="Q{}uri" flags="c" as="document-node()">
-          <varRef line="791" name="uri-noslash" slot="3"/>
+          <varRef line="762" name="uri-noslash" slot="3"/>
          </withParam>
         </callT>
        </doc>
-       <let line="810" var="vv:v2" as="xs:string" slot="5" eval="13">
+       <let line="781" var="vv:v2" as="xs:string" slot="5" eval="13">
         <cast as="xs:string" emptiable="0">
          <data>
           <varRef name="namespace" slot="4"/>
          </data>
         </cast>
-        <let line="794" var="localname" as="document-node()" slot="6" eval="7">
-         <doc line="795" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+        <let line="765" var="localname" as="document-node()" slot="6" eval="7">
+         <doc line="766" validation="preserve">
           <callT name="get-name" bSlot="2">
            <withParam name="Q{}uri" flags="c" as="document-node()">
-            <varRef line="796" name="uri-noslash" slot="3"/>
+            <varRef line="767" name="uri-noslash" slot="3"/>
            </withParam>
           </callT>
          </doc>
-         <choose line="801">
+         <choose line="772">
           <fn name="exists">
            <filter flags="b">
             <slash>
@@ -413,7 +413,7 @@
             </fn>
            </filter>
           </fn>
-          <let line="802" var="vv:v1" as="xs:string?" slot="7" eval="13">
+          <let line="773" var="vv:v1" as="xs:string?" slot="7" eval="13">
            <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|1||fn:contains">
             <check card="?" diag="0|1||fn:contains">
              <cvUntyped to="xs:string">
@@ -453,7 +453,7 @@
             </fn>
            </valueOf>
           </let>
-          <fn line="804" name="exists">
+          <fn line="775" name="exists">
            <filter flags="b">
             <slash>
              <fn name="key">
@@ -473,7 +473,7 @@
             </fn>
            </filter>
           </fn>
-          <valueOf line="805">
+          <valueOf line="776">
            <fn name="string-join">
             <convert from="xs:untypedAtomic" to="xs:string">
              <data>
@@ -502,7 +502,7 @@
             <str val=" "/>
            </fn>
           </valueOf>
-          <fn line="807" name="exists">
+          <fn line="778" name="exists">
            <slash>
             <fn name="key">
              <str val="Q{http://saxon.sf.net/}kk102"/>
@@ -514,7 +514,7 @@
             <axis name="child" nodeTest="element(Q{http://www.w3.org/2000/01/rdf-schema#}label)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/2000/01/rdf-schema#'&amp;&amp;q.local==='label';"/>
            </slash>
           </fn>
-          <valueOf line="808">
+          <valueOf line="779">
            <fn name="string-join">
             <convert from="xs:untypedAtomic" to="xs:string">
              <data>
@@ -535,7 +535,7 @@
             <str val=" "/>
            </fn>
           </valueOf>
-          <and line="810" op="and">
+          <and line="781" op="and">
            <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
             <data>
              <gVarRef name="Q{}namespaces" bSlot="4"/>
@@ -564,14 +564,14 @@
             </filter>
            </fn>
           </and>
-          <let line="812" var="vv:v3" as="xs:string" slot="8" eval="13">
+          <let line="783" var="vv:v3" as="xs:string" slot="8" eval="13">
            <cast as="xs:string" emptiable="0">
             <data>
              <varRef name="namespace" slot="4"/>
             </data>
            </cast>
-           <valueOf line="814">
-            <fn line="812" name="concat">
+           <valueOf line="785">
+            <fn line="783" name="concat">
              <fn name="concat">
               <cast as="xs:untypedAtomic" emptiable="0">
                <fn name="name">
@@ -600,13 +600,13 @@
               </cast>
               <str val=":"/>
              </fn>
-             <data line="814">
+             <data line="785">
               <varRef name="localname" slot="6"/>
              </data>
             </fn>
            </valueOf>
           </let>
-          <and line="818" op="and">
+          <and line="789" op="and">
            <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
             <data>
              <gVarRef name="Q{}namespaces" bSlot="5"/>
@@ -634,7 +634,7 @@
             </data>
            </gc>
           </and>
-          <valueOf line="819">
+          <valueOf line="790">
            <fn name="concat">
             <str val=":"/>
             <data>
@@ -642,7 +642,7 @@
             </data>
            </fn>
           </valueOf>
-          <and line="821" op="and">
+          <and line="792" op="and">
            <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
             <data>
              <gVarRef name="Q{}namespaces" bSlot="6"/>
@@ -670,14 +670,14 @@
             </data>
            </gc>
           </and>
-          <valueOf line="822">
+          <valueOf line="793">
            <convert from="xs:untypedAtomic" to="xs:string">
             <data>
              <varRef name="localname" slot="6"/>
             </data>
            </convert>
           </valueOf>
-          <and line="824" op="and">
+          <and line="795" op="and">
            <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
             <data>
              <gVarRef name="Q{}namespaces" bSlot="7"/>
@@ -691,20 +691,20 @@
             <str val="type"/>
            </gc>
           </and>
-          <valueOf line="825">
+          <valueOf line="796">
            <convert from="xs:untypedAtomic" to="xs:string">
             <data>
              <varRef name="localname" slot="6"/>
             </data>
            </convert>
           </valueOf>
-          <gc line="827" op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
+          <gc line="798" op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
            <data>
             <gVarRef name="Q{}namespaces" bSlot="8"/>
            </data>
            <str val="false"/>
           </gc>
-          <valueOf line="828">
+          <valueOf line="799">
            <convert from="xs:untypedAtomic" to="xs:string">
             <data>
              <varRef name="localname" slot="6"/>
@@ -712,7 +712,7 @@
            </convert>
           </valueOf>
           <true/>
-          <valueOf line="831">
+          <valueOf line="802">
            <fn name="string-join">
             <convert from="xs:anyAtomicType" to="xs:string">
              <data>
@@ -734,8 +734,8 @@
   </template>
  </co>
  <co id="14" binds="15 5 14">
-  <template name="Q{}buildList" flags="os" line="350" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="1">
-   <elem role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="351" name="div" nsuri="" namespaces="rdf rdfs">
+  <template name="Q{}buildList" flags="os" line="321" module="rdf2html.xsl" slots="1">
+   <elem role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="322" name="div" nsuri="" namespaces="rdf rdfs">
     <sequence>
      <att name="class" flags="l">
       <str val="property-object"/>
@@ -743,7 +743,7 @@
      <att name="typeof" flags="l">
       <str val="rdf:List"/>
      </att>
-     <elem line="352" name="div" nsuri="" flags="l" namespaces="rdf rdfs">
+     <elem line="323" name="div" nsuri="" flags="l" namespaces="rdf rdfs">
       <sequence>
        <att name="class" flags="l">
         <str val="property-object"/>
@@ -751,10 +751,10 @@
        <att name="rel" flags="l">
         <str val="rdf:first"/>
        </att>
-       <callT line="353" name="embeddedRdfDescription" bSlot="0"/>
+       <callT line="324" name="embeddedRdfDescription" bSlot="0"/>
       </sequence>
      </elem>
-     <elem line="355" name="div" nsuri="" flags="l" namespaces="rdf rdfs">
+     <elem line="326" name="div" nsuri="" flags="l" namespaces="rdf rdfs">
       <sequence>
        <att name="class" flags="l">
         <str val="property-object"/>
@@ -762,7 +762,7 @@
        <att name="rel" flags="l">
         <str val="rdf:rest"/>
        </att>
-       <choose line="357">
+       <choose line="328">
         <fn name="exists">
          <slash simple="1">
           <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|7|XPTY0020|">
@@ -771,29 +771,29 @@
           <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
          </slash>
         </fn>
-        <let line="359" var="vv:cc-1547847999" as="element()*" slot="0" eval="4">
+        <let line="330" var="vv:cc-1547847999" as="element()*" slot="0" eval="4">
          <slash simple="1">
           <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|7|XPTY0020|">
            <dot flags="a"/>
           </treat>
           <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
          </slash>
-         <sequence line="358">
+         <sequence line="329">
           <callT name="connector" bSlot="1">
            <withParam name="Q{}criteria" flags="c" as="element()*">
             <varRef name="vv:cc-1547847999" slot="0"/>
            </withParam>
           </callT>
-          <forEach line="361">
+          <forEach line="332">
            <first>
             <varRef name="vv:cc-1547847999" slot="0"/>
            </first>
-           <callT line="362" name="buildList" bSlot="2"/>
+           <callT line="333" name="buildList" bSlot="2"/>
           </forEach>
          </sequence>
         </let>
         <true/>
-        <att line="366" name="resource" flags="l">
+        <att line="337" name="resource" flags="l">
          <str val="[rdf:nil]"/>
         </att>
        </choose>
@@ -804,8 +804,8 @@
   </template>
  </co>
  <co id="6" binds="7 16 15 14 2 17 15">
-  <template name="Q{}property-objects" flags="os" line="309" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="0">
-   <choose role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="311">
+  <template name="Q{}property-objects" flags="os" line="280" module="rdf2html.xsl" slots="0">
+   <choose role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="282">
     <fn name="exists">
      <slash simple="1">
       <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -814,8 +814,8 @@
       <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='resource';"/>
      </slash>
     </fn>
-    <callT line="312" name="rdf_resource-attribute" bSlot="0" flags="t"/>
-    <fn line="314" name="exists">
+    <callT line="283" name="rdf_resource-attribute" bSlot="0" flags="t"/>
+    <fn line="285" name="exists">
      <slash simple="1">
       <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
        <dot flags="a"/>
@@ -823,16 +823,16 @@
       <axis name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}first)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='first';"/>
      </slash>
     </fn>
-    <forEach line="315">
+    <forEach line="286">
      <slash simple="1">
       <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
        <dot flags="a"/>
       </treat>
       <axis name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}first)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='first';"/>
      </slash>
-     <callT line="316" name="ListItems" bSlot="1"/>
+     <callT line="287" name="ListItems" bSlot="1"/>
     </forEach>
-    <gc line="319" op="=" card="1:1" comp="CCC">
+    <gc line="290" op="=" card="1:1" comp="CCC">
      <data>
       <slash simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -843,8 +843,8 @@
      </data>
      <str val="Resource"/>
     </gc>
-    <callT line="320" name="embeddedRdfDescription" bSlot="2" flags="t"/>
-    <gc line="322" op="=" card="1:1" comp="CCC">
+    <callT line="291" name="embeddedRdfDescription" bSlot="2" flags="t"/>
+    <gc line="293" op="=" card="1:1" comp="CCC">
      <data>
       <slash simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -855,7 +855,7 @@
      </data>
      <str val="Collection"/>
     </gc>
-    <forEach line="323">
+    <forEach line="294">
      <first>
       <slash simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
@@ -864,9 +864,9 @@
        <axis name="child" nodeTest="element()" jsTest="return item.nodeType===1;"/>
       </slash>
      </first>
-     <callT line="324" name="buildList" bSlot="3" flags="t"/>
+     <callT line="295" name="buildList" bSlot="3" flags="t"/>
     </forEach>
-    <gc line="327" op="=" card="1:1" comp="CCC">
+    <gc line="298" op="=" card="1:1" comp="CCC">
      <data>
       <slash simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -877,7 +877,7 @@
      </data>
      <str val="Literal"/>
     </gc>
-    <sequence line="329">
+    <sequence line="300">
      <att name="datatype">
       <fn name="string-join">
        <convert from="xs:anyAtomicType" to="xs:string">
@@ -894,7 +894,7 @@
        <str val=""/>
       </fn>
      </att>
-     <choose line="333">
+     <choose line="304">
       <fn name="exists">
        <slash simple="1">
         <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -903,7 +903,7 @@
         <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/XML/1998/namespace}lang)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/XML/1998/namespace'&amp;&amp;q.local==='lang';"/>
        </slash>
       </fn>
-      <att line="335" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace">
+      <att line="306" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace">
        <convert from="xs:untypedAtomic" to="xs:string">
         <cast as="xs:untypedAtomic" emptiable="0">
          <fn name="string">
@@ -922,7 +922,7 @@
        </convert>
       </att>
      </choose>
-     <applyT line="338" mode="Q{}copy-subtree" flags="ti" bSlot="5">
+     <applyT line="309" mode="Q{}copy-subtree" flags="ti" bSlot="5">
       <slash role="select" simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="13|0|XTTE0510|">
         <dot flags="a"/>
@@ -931,7 +931,7 @@
       </slash>
      </applyT>
     </sequence>
-    <fn line="340" name="exists">
+    <fn line="311" name="exists">
      <slash simple="1">
       <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
        <dot flags="a"/>
@@ -939,21 +939,21 @@
       <axis name="child" nodeTest="element()" jsTest="return item.nodeType===1;"/>
      </slash>
     </fn>
-    <forEach line="341">
+    <forEach line="312">
      <slash simple="1">
       <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
        <dot flags="a"/>
       </treat>
       <axis name="child" nodeTest="element()" jsTest="return item.nodeType===1;"/>
      </slash>
-     <callT line="342" name="embeddedRdfDescription" bSlot="6"/>
+     <callT line="313" name="embeddedRdfDescription" bSlot="6"/>
     </forEach>
    </choose>
   </template>
  </co>
  <co id="15" binds="2 0 18 19 20 8">
-  <template name="Q{}embeddedRdfDescription" flags="os" line="184" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="0">
-   <choose role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="187">
+  <template name="Q{}embeddedRdfDescription" flags="os" line="155" module="rdf2html.xsl" slots="0">
+   <choose role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="158">
     <and op="and">
      <vc op="eq" onEmpty="0" comp="CCC">
       <fn name="namespace-uri">
@@ -976,7 +976,7 @@
       </fn>
      </gc>
     </and>
-    <elem line="190" name="div" nsuri="" namespaces="rdf rdfs">
+    <elem line="161" name="div" nsuri="" namespaces="rdf rdfs">
      <sequence>
       <att name="typeof" flags="l">
        <fn name="string-join">
@@ -985,7 +985,7 @@
           <mergeAdj>
            <callT name="curie" bSlot="0">
             <withParam name="Q{}uri" flags="c" as="xs:string">
-             <fn line="191" name="concat">
+             <fn line="162" name="concat">
               <fn name="namespace-uri">
                <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:namespace-uri">
                 <dot flags="a"/>
@@ -1005,10 +1005,10 @@
         <str val=""/>
        </fn>
       </att>
-      <callT line="194" name="collectionItems" bSlot="1"/>
+      <callT line="165" name="collectionItems" bSlot="1"/>
      </sequence>
     </elem>
-    <fn line="199" name="exists">
+    <fn line="170" name="exists">
      <sequence>
       <filter flags="b">
        <slash simple="1">
@@ -1064,7 +1064,7 @@
       </filter>
      </sequence>
     </fn>
-    <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="201" name="table" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+    <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="172" name="table" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
      <sequence>
       <choose>
        <fn name="not">
@@ -1080,9 +1080,9 @@
          <str val="Resource"/>
         </gc>
        </fn>
-       <callT line="202" name="header" bSlot="2"/>
+       <callT line="173" name="header" bSlot="2"/>
       </choose>
-      <choose line="204">
+      <choose line="175">
        <gc op="=" card="1:1" comp="CCC">
         <data>
          <slash simple="1">
@@ -1094,15 +1094,15 @@
         </data>
         <str val="Resource"/>
        </gc>
-       <att line="206" name="typeof" flags="l">
+       <att line="177" name="typeof" flags="l">
         <str val="rdfs:Resource"/>
        </att>
       </choose>
-      <callT line="209" name="attributes" bSlot="3"/>
-      <callT line="210" name="properties" bSlot="4"/>
+      <callT line="180" name="attributes" bSlot="3"/>
+      <callT line="181" name="properties" bSlot="4"/>
      </sequence>
     </elem>
-    <fn line="214" name="exists">
+    <fn line="185" name="exists">
      <filter flags="b">
       <slash simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|9|XPTY0020|">
@@ -1118,9 +1118,9 @@
       </vc>
      </filter>
     </fn>
-    <callT line="215" name="resourceDetailLink" bSlot="5" flags="t">
+    <callT line="186" name="resourceDetailLink" bSlot="5" flags="t">
      <withParam name="Q{}property" flags="c" as="xs:string">
-      <fn line="216" name="local-name">
+      <fn line="187" name="local-name">
        <check card="?" diag="0|0||fn:local-name">
         <slash simple="1">
          <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|9|XPTY0020|">
@@ -1135,7 +1135,7 @@
       <str val=""/>
      </withParam>
      <withParam name="Q{}localname" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about)?">
-      <slash line="218" simple="1">
+      <slash line="189" simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
         <dot flags="a"/>
        </treat>
@@ -1147,8 +1147,8 @@
   </template>
  </co>
  <co id="21" binds="10 10">
-  <globalVariable name="Q{}isA" type="document-node()" line="26" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" visibility="PRIVATE" jsAcceptor="function test(item) {return SaxonJS.U.isNode(item) &amp;&amp; (item.nodeType===9||item.nodeType===11);};if (test(val)) {return val;} else {throw SaxonJS.XError('Conversion failed', 'XTTE0590');}" jsCardCheck="function c(n) {return n==1;};">
-   <doc baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="28" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" flags="t" validation="preserve">
+  <globalVariable name="Q{}isA" type="document-node()" line="26" module="rdf2html.xsl" visibility="PRIVATE" jsAcceptor="function test(item) {return SaxonJS.U.isNode(item) &amp;&amp; (item.nodeType===9||item.nodeType===11);};if (test(val)) {return val;} else {throw SaxonJS.XError('Conversion failed', 'XTTE0590');}" jsCardCheck="function c(n) {return n==1;};">
+   <doc ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="28" flags="t" validation="preserve">
     <choose>
      <fn name="contains">
       <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:contains">
@@ -1189,8 +1189,8 @@
   </globalVariable>
  </co>
  <co id="1" binds="10 10 10">
-  <template name="Q{}isPreferredLanguage" flags="os" line="747" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="7">
-   <let role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="762" var="vv:v3" as="xs:string?" slot="0" eval="13">
+  <template name="Q{}isPreferredLanguage" flags="os" line="718" module="rdf2html.xsl" slots="7">
+   <let role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="733" var="vv:v3" as="xs:string?" slot="0" eval="13">
     <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|1||fn:contains">
      <check card="?" diag="0|1||fn:contains">
       <cvUntyped to="xs:string">
@@ -1200,7 +1200,7 @@
       </cvUntyped>
      </check>
     </treat>
-    <let line="757" var="vv:v1" as="xs:string?" slot="1" eval="13">
+    <let line="728" var="vv:v1" as="xs:string?" slot="1" eval="13">
      <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|1||fn:contains">
       <check card="?" diag="0|1||fn:contains">
        <cvUntyped to="xs:string">
@@ -1210,15 +1210,15 @@
        </cvUntyped>
       </check>
      </treat>
-     <let line="748" var="element" as="xs:untypedAtomic" slot="2" eval="7">
-      <cast line="749" as="xs:untypedAtomic" emptiable="0">
+     <let line="719" var="element" as="xs:untypedAtomic" slot="2" eval="7">
+      <cast line="720" as="xs:untypedAtomic" emptiable="0">
        <fn name="name">
         <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:name">
          <dot flags="a"/>
         </treat>
        </fn>
       </cast>
-      <let line="762" var="vv:v4" as="xs:string" slot="3" eval="13">
+      <let line="733" var="vv:v4" as="xs:string" slot="3" eval="13">
        <cast as="xs:string" emptiable="0">
         <varRef name="element" slot="2"/>
        </cast>
@@ -1226,11 +1226,11 @@
         <cast as="xs:string" emptiable="0">
          <varRef name="element" slot="2"/>
         </cast>
-        <let line="757" var="vv:v0" as="xs:string" slot="5" eval="13">
+        <let line="728" var="vv:v0" as="xs:string" slot="5" eval="13">
          <cast as="xs:string" emptiable="0">
           <varRef name="element" slot="2"/>
          </cast>
-         <choose line="753">
+         <choose line="724">
           <fn name="contains">
            <cvUntyped to="xs:string">
             <data>
@@ -1252,10 +1252,10 @@
             </check>
            </treat>
           </fn>
-          <valueOf line="754">
+          <valueOf line="725">
            <str val="true"/>
           </valueOf>
-          <and line="757" op="and">
+          <and line="728" op="and">
            <fn name="contains">
             <cvUntyped to="xs:string">
              <data>
@@ -1297,10 +1297,10 @@
             </filter>
            </fn>
           </and>
-          <valueOf line="758">
+          <valueOf line="729">
            <str val="true"/>
           </valueOf>
-          <let line="762" var="vv:cc-1549945151" as="element()*" slot="6" eval="4">
+          <let line="733" var="vv:cc-1549945151" as="element()*" slot="6" eval="4">
            <slash simple="1">
             <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|9|XPTY0020|">
              <dot flags="a"/>
@@ -1364,11 +1364,11 @@
             </fn>
            </and>
           </let>
-          <valueOf line="763">
+          <valueOf line="734">
            <str val="true"/>
           </valueOf>
           <true/>
-          <valueOf line="766">
+          <valueOf line="737">
            <str val="false"/>
           </valueOf>
          </choose>
@@ -1381,19 +1381,19 @@
   </template>
  </co>
  <co id="5" binds="">
-  <template name="Q{}connector" flags="os" line="735" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="1">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="736">
+  <template name="Q{}connector" flags="os" line="706" module="rdf2html.xsl" slots="1">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="707">
     <param name="Q{}criteria" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <choose line="738">
+    <choose line="709">
      <fn name="exists">
       <tail start="2">
        <varRef name="criteria" slot="0"/>
       </tail>
      </fn>
-     <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="739" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+     <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="710" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
       <sequence>
        <att name="class" flags="l">
         <str val="connector"/>
@@ -1403,7 +1403,7 @@
        </valueOf>
       </sequence>
      </elem>
-     <compareToInt line="741" op="eq" val="1">
+     <compareToInt line="712" op="eq" val="1">
       <fn name="count">
        <fn name="subsequence">
         <varRef name="criteria" slot="0"/>
@@ -1412,7 +1412,7 @@
        </fn>
       </fn>
      </compareToInt>
-     <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="742" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+     <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="713" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
       <sequence>
        <att name="class" flags="l">
         <str val="connector"/>
@@ -1427,8 +1427,8 @@
   </template>
  </co>
  <co id="13" vis="PUBLIC" binds="">
-  <globalParam name="Q{}namespaces" type="item()*" line="23" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" visibility="PUBLIC" jsAcceptor="return val;" jsCardCheck="function c() {return true;};">
-   <doc baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="23" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" flags="t" text="false" validation="preserve">
+  <globalParam name="Q{}namespaces" type="item()*" line="23" module="rdf2html.xsl" visibility="PUBLIC" jsAcceptor="return val;" jsCardCheck="function c() {return true;};">
+   <doc ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="23" flags="t" text="false" validation="preserve">
     <valueOf flags="Sl">
      <str val="false"/>
     </valueOf>
@@ -1436,8 +1436,8 @@
   </globalParam>
  </co>
  <co id="22" vis="PUBLIC" binds="">
-  <globalParam name="Q{}mode" type="item()*" line="22" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" visibility="PUBLIC" jsAcceptor="return val;" jsCardCheck="function c() {return true;};">
-   <doc baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="22" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" flags="t" text="html" validation="preserve">
+  <globalParam name="Q{}mode" type="item()*" line="22" module="rdf2html.xsl" visibility="PUBLIC" jsAcceptor="return val;" jsCardCheck="function c() {return true;};">
+   <doc ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="22" flags="t" text="html" validation="preserve">
     <valueOf flags="Sl">
      <str val="html"/>
     </valueOf>
@@ -1445,21 +1445,21 @@
   </globalParam>
  </co>
  <co id="3" binds="11">
-  <template name="Q{}xmlns" flags="os" line="1054" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="3">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1055">
+  <template name="Q{}xmlns" flags="os" line="1025" module="rdf2html.xsl" slots="3">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1026">
     <param name="Q{}uri" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <let line="1056" var="namespace" as="document-node()" slot="1" eval="7">
-     <doc line="1057" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+    <let line="1027" var="namespace" as="document-node()" slot="1" eval="7">
+     <doc line="1028" validation="preserve">
       <callT name="get-ns" bSlot="0">
        <withParam name="Q{}uri" flags="c">
-        <varRef line="1058" name="uri" slot="0"/>
+        <varRef line="1029" name="uri" slot="0"/>
        </withParam>
       </callT>
      </doc>
-     <let line="1062" var="vv:v0" as="xs:string" slot="2" eval="13">
+     <let line="1033" var="vv:v0" as="xs:string" slot="2" eval="13">
       <cast as="xs:string" emptiable="0">
        <data>
         <varRef name="namespace" slot="1"/>
@@ -1484,7 +1484,7 @@
        </fn>
        <empty/>
        <true/>
-       <compElem line="1065">
+       <compElem line="1036">
         <fn role="name" name="concat">
          <fn name="generate-id">
           <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:generate-id">
@@ -1507,9 +1507,9 @@
   </template>
  </co>
  <co id="23" binds="">
-  <template name="Q{}rdfDescriptionActions" flags="os" line="139" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="3">
-   <let role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="140" var="resource" as="xs:untypedAtomic" slot="0" eval="7">
-    <cast line="141" as="xs:untypedAtomic" emptiable="0">
+  <template name="Q{}rdfDescriptionActions" flags="os" line="110" module="rdf2html.xsl" slots="3">
+   <let role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="111" var="resource" as="xs:untypedAtomic" slot="0" eval="7">
+    <cast line="112" as="xs:untypedAtomic" emptiable="0">
      <fn name="string-join">
       <convert from="xs:untypedAtomic" to="xs:string">
        <data>
@@ -1524,7 +1524,7 @@
       <str val=" "/>
      </fn>
     </cast>
-    <sequence ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="145">
+    <sequence ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="116">
      <elem name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
       <sequence>
        <att name="class" flags="l">
@@ -1561,7 +1561,7 @@
        </valueOf>
       </sequence>
      </elem>
-     <choose ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="151">
+     <choose ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="122">
       <let var="vv:cc-1543653695" as="element()*" slot="1" eval="4">
        <slash simple="1">
         <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
@@ -1635,7 +1635,7 @@
        <valueOf>
         <str val="&#xA;&#x9;&#x9;&#x9; -&#xA;&#x9;&#x9;&#x9;"/>
        </valueOf>
-       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="155" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="126" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
         <sequence>
          <att name="class" flags="l">
           <str val="specific"/>
@@ -1667,7 +1667,7 @@
        </elem>
       </sequence>
      </choose>
-     <choose ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="160">
+     <choose ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="131">
       <let var="vv:cc-1543653695" as="element()*" slot="2" eval="4">
        <slash simple="1">
         <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
@@ -1741,7 +1741,7 @@
        <valueOf>
         <str val="&#xA;&#x9;&#x9;&#x9; -&#xA;&#x9;&#x9;&#x9;"/>
        </valueOf>
-       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="164" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+       <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="135" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
         <sequence>
          <att name="class" flags="l">
           <str val="specific"/>
@@ -1773,7 +1773,7 @@
        </elem>
       </sequence>
      </choose>
-     <choose ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="167">
+     <choose ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="138">
       <fn name="exists">
        <filter flags="b">
         <slash simple="1">
@@ -1790,7 +1790,7 @@
         </vc>
        </filter>
       </fn>
-      <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="170" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+      <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="141" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
        <sequence>
         <att name="class" flags="l">
          <str val="specific"/>
@@ -1826,22 +1826,22 @@
   </template>
  </co>
  <co id="24" vis="PUBLIC" binds="">
-  <globalParam name="Q{}logo" type="item()*" line="24" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" visibility="PUBLIC" jsAcceptor="return val;" jsCardCheck="function c() {return true;};">
-   <doc baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="24" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" flags="t" text="true" validation="preserve">
+  <globalParam name="Q{}logo" type="item()*" line="24" module="rdf2html.xsl" visibility="PUBLIC" jsAcceptor="return val;" jsCardCheck="function c() {return true;};">
+   <doc ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="24" flags="t" text="false" validation="preserve">
     <valueOf flags="Sl">
-     <str val="true"/>
+     <str val="false"/>
     </valueOf>
    </doc>
   </globalParam>
  </co>
  <co id="11" binds="25">
-  <template name="Q{}get-ns" flags="os" line="1021" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="2">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1022">
+  <template name="Q{}get-ns" flags="os" line="992" module="rdf2html.xsl" slots="2">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="993">
     <param name="Q{}uri" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <choose line="1024">
+    <choose line="995">
      <fn name="contains">
       <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:contains">
        <check card="?" diag="0|0||fn:contains">
@@ -1854,7 +1854,7 @@
       </treat>
       <str val="#"/>
      </fn>
-     <valueOf line="1025">
+     <valueOf line="996">
       <fn name="concat">
        <fn name="substring-before">
         <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring-before">
@@ -1872,18 +1872,18 @@
       </fn>
      </valueOf>
      <true/>
-     <let line="1028" var="ns-without-slash" as="document-node()" slot="1" eval="7">
-      <doc line="1029" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+     <let line="999" var="ns-without-slash" as="document-node()" slot="1" eval="7">
+      <doc line="1000" validation="preserve">
        <callT name="substring-before-last" bSlot="0">
         <withParam name="Q{}text" flags="c">
-         <varRef line="1030" name="uri" slot="0"/>
+         <varRef line="1001" name="uri" slot="0"/>
         </withParam>
         <withParam name="Q{}chars" flags="c" as="xs:string">
          <str val="/"/>
         </withParam>
        </callT>
       </doc>
-      <valueOf line="1034">
+      <valueOf line="1005">
        <fn name="concat">
         <data>
          <varRef name="ns-without-slash" slot="1"/>
@@ -1897,8 +1897,8 @@
   </template>
  </co>
  <co id="19" binds="8">
-  <template name="Q{}attributes" flags="os" line="290" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="0">
-   <forEach role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="291">
+  <template name="Q{}attributes" flags="os" line="261" module="rdf2html.xsl" slots="0">
+   <forEach role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="262">
     <sort>
      <filter role="select" flags="b">
       <slash simple="1">
@@ -1914,7 +1914,7 @@
        <str val="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
       </vc>
      </filter>
-     <sortKey line="293" comp="CCC">
+     <sortKey line="264" comp="CCC">
       <fn role="select" name="local-name">
        <dot type="attribute()"/>
       </fn>
@@ -1925,7 +1925,7 @@
       <str role="collation" val="http://www.w3.org/2005/xpath-functions/collation/codepoint"/>
      </sortKey>
     </sort>
-    <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="296" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+    <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="267" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
      <sequence>
       <elem name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
        <callT name="resourceDetailLink" bSlot="0">
@@ -1933,25 +1933,25 @@
          <str val=""/>
         </withParam>
         <withParam name="Q{}namespace" flags="c" as="xs:anyURI">
-         <fn line="298" name="namespace-uri">
+         <fn line="269" name="namespace-uri">
           <dot type="attribute()"/>
          </fn>
         </withParam>
         <withParam name="Q{}localname" flags="c" as="xs:string">
-         <fn line="299" name="local-name">
+         <fn line="270" name="local-name">
           <dot type="attribute()"/>
          </fn>
         </withParam>
        </callT>
       </elem>
-      <elem line="302" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="#">
+      <elem line="273" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="#">
        <sequence>
         <att name="property" flags="l">
          <fn name="name">
           <dot type="attribute()"/>
          </fn>
         </att>
-        <valueOf line="303" flags="l">
+        <valueOf line="274" flags="l">
          <convert from="xs:untypedAtomic" to="xs:string">
           <data>
            <dot type="attribute()"/>
@@ -1966,17 +1966,17 @@
   </template>
  </co>
  <co id="25" binds="25">
-  <template name="Q{}substring-before-last" flags="os" line="973" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="5">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="974">
+  <template name="Q{}substring-before-last" flags="os" line="944" module="rdf2html.xsl" slots="5">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="945">
     <param name="Q{}text" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <param line="975" name="Q{}chars" slot="1">
+    <param line="946" name="Q{}chars" slot="1">
      <str role="select" val=""/>
      <supplied role="conversion" slot="1"/>
     </param>
-    <choose line="977">
+    <choose line="948">
      <fn name="contains">
       <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:contains">
        <check card="?" diag="0|0||fn:contains">
@@ -1997,7 +1997,7 @@
        </check>
       </treat>
      </fn>
-     <let line="978" var="before" as="xs:string" slot="2" eval="8">
+     <let line="949" var="before" as="xs:string" slot="2" eval="8">
       <fn name="substring-before">
        <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring-before">
         <check card="?" diag="0|0||fn:substring-before">
@@ -2018,7 +2018,7 @@
         </check>
        </treat>
       </fn>
-      <let line="979" var="after" as="xs:string" slot="3" eval="8">
+      <let line="950" var="after" as="xs:string" slot="3" eval="8">
        <fn name="substring-after">
         <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring-after">
          <check card="?" diag="0|0||fn:substring-after">
@@ -2039,7 +2039,7 @@
          </check>
         </treat>
        </fn>
-       <choose line="981">
+       <choose line="952">
         <fn name="contains">
          <varRef name="after" slot="3"/>
          <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|1||fn:contains">
@@ -2052,18 +2052,18 @@
           </check>
          </treat>
         </fn>
-        <let line="982" var="before-last" as="document-node()" slot="4" eval="7">
-         <doc line="983" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+        <let line="953" var="before-last" as="document-node()" slot="4" eval="7">
+         <doc line="954" validation="preserve">
           <callT name="substring-before-last" bSlot="0">
            <withParam name="Q{}text" flags="c" as="xs:string">
-            <varRef line="984" name="after" slot="3"/>
+            <varRef line="955" name="after" slot="3"/>
            </withParam>
            <withParam name="Q{}chars" flags="c">
-            <varRef line="985" name="chars" slot="1"/>
+            <varRef line="956" name="chars" slot="1"/>
            </withParam>
           </callT>
          </doc>
-         <valueOf line="988">
+         <valueOf line="959">
           <fn name="concat">
            <varRef name="before" slot="2"/>
            <fn name="concat">
@@ -2078,14 +2078,14 @@
          </valueOf>
         </let>
         <true/>
-        <valueOf line="991">
+        <valueOf line="962">
          <varRef name="before" slot="2"/>
         </valueOf>
        </choose>
       </let>
      </let>
      <true/>
-     <valueOf line="996">
+     <valueOf line="967">
       <fn name="string-join">
        <convert from="xs:anyAtomicType" to="xs:string">
         <data>
@@ -2102,8 +2102,8 @@
   </template>
  </co>
  <co id="18" binds="2 8 26">
-  <template name="Q{}header" flags="os" line="226" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="0">
-   <choose role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="229">
+  <template name="Q{}header" flags="os" line="197" module="rdf2html.xsl" slots="0">
+   <choose role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="200">
     <or op="or">
      <or op="or">
       <fn name="exists">
@@ -2148,7 +2148,7 @@
       </filter>
      </fn>
     </or>
-    <sequence line="230">
+    <sequence line="201">
      <choose>
       <fn name="exists">
        <slash simple="1">
@@ -2158,7 +2158,7 @@
         <axis name="attribute" nodeTest="(attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}ID) | attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about))" jsTest="function a() {var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='ID';};function b() {var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='about';};return a()||b();"/>
        </slash>
       </fn>
-      <att line="232" name="about">
+      <att line="203" name="about">
        <convert from="xs:untypedAtomic" to="xs:string">
         <cast as="xs:untypedAtomic" emptiable="0">
          <fn name="string-join">
@@ -2178,7 +2178,7 @@
        </convert>
       </att>
      </choose>
-     <choose line="235">
+     <choose line="206">
       <vc op="ne" onEmpty="1" comp="CCC">
        <fn name="local-name">
         <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:local-name">
@@ -2187,14 +2187,14 @@
        </fn>
        <str val="Description"/>
       </vc>
-      <att line="237" name="typeof">
+      <att line="208" name="typeof">
        <fn name="string-join">
         <convert from="xs:anyAtomicType" to="xs:string">
          <data>
           <mergeAdj>
            <callT name="curie" bSlot="0">
             <withParam name="Q{}uri" flags="c" as="xs:string">
-             <fn line="238" name="concat">
+             <fn line="209" name="concat">
               <fn name="namespace-uri">
                <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:namespace-uri">
                 <dot flags="a"/>
@@ -2215,13 +2215,13 @@
        </fn>
       </att>
      </choose>
-     <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="243" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+     <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="214" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
       <elem name="th" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
        <sequence>
         <att name="colspan" flags="l">
          <str val="2"/>
         </att>
-        <choose line="244">
+        <choose line="215">
          <fn name="exists">
           <slash simple="1">
            <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -2230,7 +2230,7 @@
            <axis name="attribute" nodeTest="(attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}ID) | attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about))" jsTest="function a() {var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='ID';};function b() {var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='about';};return a()||b();"/>
           </slash>
          </fn>
-         <callT line="245" name="resourceDetailLink" bSlot="1">
+         <callT line="216" name="resourceDetailLink" bSlot="1">
           <withParam name="Q{}property" flags="c" as="xs:string">
            <str val="about"/>
           </withParam>
@@ -2238,7 +2238,7 @@
            <str val=""/>
           </withParam>
           <withParam name="Q{}localname" flags="c" as="attribute()*">
-           <slash line="248" simple="1">
+           <slash line="219" simple="1">
             <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
              <dot flags="a"/>
             </treat>
@@ -2247,21 +2247,21 @@
           </withParam>
          </callT>
         </choose>
-        <callT line="251" name="types" bSlot="2"/>
+        <callT line="222" name="types" bSlot="2"/>
        </sequence>
       </elem>
      </elem>
     </sequence>
     <true/>
-    <att line="257" name="typeof">
+    <att line="228" name="typeof">
      <str val="rdfs:Resource"/>
     </att>
    </choose>
   </template>
  </co>
  <co id="10" vis="PUBLIC" binds="">
-  <globalParam name="Q{}language" type="item()*" line="21" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" visibility="PUBLIC" jsAcceptor="return val;" jsCardCheck="function c() {return true;};">
-   <doc baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="21" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" flags="t" text="en" validation="preserve">
+  <globalParam name="Q{}language" type="item()*" line="21" module="rdf2html.xsl" visibility="PUBLIC" jsAcceptor="return val;" jsCardCheck="function c() {return true;};">
+   <doc ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="21" flags="t" text="en" validation="preserve">
     <valueOf flags="Sl">
      <str val="en"/>
     </valueOf>
@@ -2269,13 +2269,13 @@
   </globalParam>
  </co>
  <co id="12" binds="27">
-  <template name="Q{}get-name" flags="os" line="1039" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="1">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1040">
+  <template name="Q{}get-name" flags="os" line="1010" module="rdf2html.xsl" slots="1">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1011">
     <param name="Q{}uri" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <choose line="1042">
+    <choose line="1013">
      <fn name="contains">
       <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:contains">
        <check card="?" diag="0|0||fn:contains">
@@ -2288,7 +2288,7 @@
       </treat>
       <str val="#"/>
      </fn>
-     <valueOf line="1043">
+     <valueOf line="1014">
       <fn name="substring-after">
        <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring-after">
         <check card="?" diag="0|0||fn:substring-after">
@@ -2303,9 +2303,9 @@
       </fn>
      </valueOf>
      <true/>
-     <callT line="1046" name="substring-after-last" bSlot="0" flags="t">
+     <callT line="1017" name="substring-after-last" bSlot="0" flags="t">
       <withParam name="Q{}text" flags="c">
-       <varRef line="1047" name="uri" slot="0"/>
+       <varRef line="1018" name="uri" slot="0"/>
       </withParam>
       <withParam name="Q{}chars" flags="c" as="xs:string">
        <str val="/"/>
@@ -2316,35 +2316,35 @@
   </template>
  </co>
  <co id="2" binds="11 12">
-  <template name="Q{}curie" flags="os" line="1070" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="5">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1071">
+  <template name="Q{}curie" flags="os" line="1041" module="rdf2html.xsl" slots="5">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1042">
     <param name="Q{}uri" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <let line="1072" var="namespace" as="document-node()" slot="1" eval="7">
-     <doc line="1073" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+    <let line="1043" var="namespace" as="document-node()" slot="1" eval="7">
+     <doc line="1044" validation="preserve">
       <callT name="get-ns" bSlot="0">
        <withParam name="Q{}uri" flags="c">
-        <varRef line="1074" name="uri" slot="0"/>
+        <varRef line="1045" name="uri" slot="0"/>
        </withParam>
       </callT>
      </doc>
-     <let line="1083" var="vv:v0" as="xs:string" slot="2" eval="13">
+     <let line="1054" var="vv:v0" as="xs:string" slot="2" eval="13">
       <cast as="xs:string" emptiable="0">
        <data>
         <varRef name="namespace" slot="1"/>
        </data>
       </cast>
-      <let line="1077" var="localname" as="document-node()" slot="3" eval="7">
-       <doc line="1078" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+      <let line="1048" var="localname" as="document-node()" slot="3" eval="7">
+       <doc line="1049" validation="preserve">
         <callT name="get-name" bSlot="1">
          <withParam name="Q{}uri" flags="c">
-          <varRef line="1079" name="uri" slot="0"/>
+          <varRef line="1050" name="uri" slot="0"/>
          </withParam>
         </callT>
        </doc>
-       <choose line="1083">
+       <choose line="1054">
         <fn name="exists">
          <filter flags="b">
           <slash simple="1">
@@ -2366,14 +2366,14 @@
           </and>
          </filter>
         </fn>
-        <let line="1085" var="vv:v1" as="xs:string" slot="4" eval="13">
+        <let line="1056" var="vv:v1" as="xs:string" slot="4" eval="13">
          <cast as="xs:string" emptiable="0">
           <data>
            <varRef name="namespace" slot="1"/>
           </data>
          </cast>
-         <valueOf line="1087">
-          <fn line="1085" name="concat">
+         <valueOf line="1058">
+          <fn line="1056" name="concat">
            <fn name="concat">
             <cast as="xs:untypedAtomic" emptiable="0">
              <fn name="name">
@@ -2402,13 +2402,13 @@
             </cast>
             <str val=":"/>
            </fn>
-           <data line="1087">
+           <data line="1058">
             <varRef name="localname" slot="3"/>
            </data>
           </fn>
          </valueOf>
         </let>
-        <vc line="1089" op="eq" onEmpty="0" comp="CCC">
+        <vc line="1060" op="eq" onEmpty="0" comp="CCC">
          <cast as="xs:string" emptiable="0">
           <data>
            <varRef name="namespace" slot="1"/>
@@ -2416,7 +2416,7 @@
          </cast>
          <str val="http://www.w3.org/2001/XMLSchema#"/>
         </vc>
-        <valueOf line="1090">
+        <valueOf line="1061">
          <fn name="concat">
           <str val="xsd:"/>
           <data>
@@ -2424,7 +2424,7 @@
           </data>
          </fn>
         </valueOf>
-        <fn line="1092" name="exists">
+        <fn line="1063" name="exists">
          <filter flags="b">
           <slash simple="1">
            <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|8|XPTY0020|">
@@ -2439,7 +2439,7 @@
           </fn>
          </filter>
         </fn>
-        <valueOf line="1093">
+        <valueOf line="1064">
          <fn name="concat">
           <str val="base:"/>
           <data>
@@ -2448,7 +2448,7 @@
          </fn>
         </valueOf>
         <true/>
-        <valueOf line="1096">
+        <valueOf line="1067">
          <fn name="concat">
           <fn name="concat">
            <fn name="generate-id">
@@ -2471,17 +2471,17 @@
   </template>
  </co>
  <co id="27" binds="27">
-  <template name="Q{}substring-after-last" flags="os" line="956" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="2">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="957">
+  <template name="Q{}substring-after-last" flags="os" line="927" module="rdf2html.xsl" slots="2">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="928">
     <param name="Q{}text" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <param line="958" name="Q{}chars" slot="1">
+    <param line="929" name="Q{}chars" slot="1">
      <str role="select" val=""/>
      <supplied role="conversion" slot="1"/>
     </param>
-    <choose line="960">
+    <choose line="931">
      <fn name="contains">
       <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:contains">
        <check card="?" diag="0|0||fn:contains">
@@ -2502,9 +2502,9 @@
        </check>
       </treat>
      </fn>
-     <callT line="962" name="substring-after-last" bSlot="0" flags="t">
+     <callT line="933" name="substring-after-last" bSlot="0" flags="t">
       <withParam name="Q{}text" flags="c" as="xs:string">
-       <fn line="961" name="substring-after">
+       <fn line="932" name="substring-after">
         <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring-after">
          <check card="?" diag="0|0||fn:substring-after">
           <cvUntyped to="xs:string">
@@ -2526,11 +2526,11 @@
        </fn>
       </withParam>
       <withParam name="Q{}chars" flags="c">
-       <varRef line="964" name="chars" slot="1"/>
+       <varRef line="935" name="chars" slot="1"/>
       </withParam>
      </callT>
      <true/>
-     <valueOf line="968">
+     <valueOf line="939">
       <fn name="string-join">
        <convert from="xs:anyAtomicType" to="xs:string">
         <data>
@@ -2547,8 +2547,8 @@
   </template>
  </co>
  <co id="26" binds="21 8 6">
-  <template name="Q{}types" flags="os" line="263" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="0">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="265">
+  <template name="Q{}types" flags="os" line="234" module="rdf2html.xsl" slots="0">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="236">
     <choose>
      <and op="and">
       <fn name="exists">
@@ -2594,7 +2594,7 @@
        </fn>
       </or>
      </and>
-     <elem line="266" name="div" nsuri="" namespaces="rdf rdfs">
+     <elem line="237" name="div" nsuri="" namespaces="rdf rdfs">
       <sequence>
        <att name="class" flags="l">
         <str val="connector"/>
@@ -2609,7 +2609,7 @@
       </sequence>
      </elem>
     </choose>
-    <choose line="269">
+    <choose line="240">
      <vc op="ne" onEmpty="1" comp="CCC">
       <fn name="local-name">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:local-name">
@@ -2618,27 +2618,27 @@
       </fn>
       <str val="Description"/>
      </vc>
-     <sequence line="270">
+     <sequence line="241">
       <callT name="resourceDetailLink" bSlot="1">
        <withParam name="Q{}property" flags="c" as="xs:string">
         <str val="type"/>
        </withParam>
        <withParam name="Q{}namespace" flags="c" as="xs:anyURI">
-        <fn line="272" name="namespace-uri">
+        <fn line="243" name="namespace-uri">
          <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:namespace-uri">
           <dot flags="a"/>
          </treat>
         </fn>
        </withParam>
        <withParam name="Q{}localname" flags="c" as="xs:string">
-        <fn line="273" name="local-name">
+        <fn line="244" name="local-name">
          <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="0|0||fn:local-name">
           <dot flags="a"/>
          </treat>
         </fn>
        </withParam>
       </callT>
-      <choose line="275">
+      <choose line="246">
        <fn name="exists">
         <filter flags="b">
          <slash simple="1">
@@ -2669,7 +2669,7 @@
       </choose>
      </sequence>
     </choose>
-    <forEach line="280">
+    <forEach line="251">
      <filter flags="b">
       <slash simple="1">
        <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|3|XPTY0020|">
@@ -2692,7 +2692,7 @@
        </vc>
       </and>
      </filter>
-     <sequence ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="281">
+     <sequence ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="252">
       <elem name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
        <sequence>
         <att name="rel" flags="l">
@@ -2701,10 +2701,10 @@
         <att name="class" flags="l">
          <str val="connector"/>
         </att>
-        <callT line="282" name="property-objects" bSlot="2"/>
+        <callT line="253" name="property-objects" bSlot="2"/>
        </sequence>
       </elem>
-      <choose ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="284">
+      <choose ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="255">
        <fn name="exists">
         <filter flags="b">
          <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
@@ -2724,7 +2724,7 @@
          </and>
         </filter>
        </fn>
-       <elem line="285" name="div" nsuri="" namespaces="rdf rdfs">
+       <elem line="256" name="div" nsuri="" namespaces="rdf rdfs">
         <sequence>
          <att name="class" flags="l">
           <str val="connector"/>
@@ -2741,17 +2741,17 @@
   </template>
  </co>
  <co id="4" binds="28 28 28">
-  <template name="Q{}textDetailLink" flags="os" line="920" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="5">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="921">
+  <template name="Q{}textDetailLink" flags="os" line="891" module="rdf2html.xsl" slots="5">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="892">
     <param name="Q{}property" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <param line="922" name="Q{}value" slot="1">
+    <param line="893" name="Q{}value" slot="1">
      <str role="select" val=""/>
      <supplied role="conversion" slot="1"/>
     </param>
-    <choose line="924">
+    <choose line="895">
      <or op="or">
       <fn name="starts-with">
        <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:starts-with">
@@ -2778,11 +2778,11 @@
        <str val="https://"/>
       </fn>
      </or>
-     <let line="925" var="linkTextPrePre" as="document-node()" slot="2" eval="7">
-      <doc line="926" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+     <let line="896" var="linkTextPrePre" as="document-node()" slot="2" eval="7">
+      <doc line="897" validation="preserve">
        <callT name="replace-string" bSlot="0">
         <withParam name="Q{}text" flags="c">
-         <varRef line="927" name="value" slot="1"/>
+         <varRef line="898" name="value" slot="1"/>
         </withParam>
         <withParam name="Q{}replace" flags="c" as="xs:string">
          <str val="_"/>
@@ -2792,11 +2792,11 @@
         </withParam>
        </callT>
       </doc>
-      <let line="932" var="linkTextPre" as="document-node()" slot="3" eval="7">
-       <doc line="933" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+      <let line="903" var="linkTextPre" as="document-node()" slot="3" eval="7">
+       <doc line="904" validation="preserve">
         <callT name="replace-string" bSlot="1">
          <withParam name="Q{}text" flags="c" as="document-node()">
-          <varRef line="934" name="linkTextPrePre" slot="2"/>
+          <varRef line="905" name="linkTextPrePre" slot="2"/>
          </withParam>
          <withParam name="Q{}replace" flags="c" as="xs:string">
           <str val="/"/>
@@ -2806,11 +2806,11 @@
          </withParam>
         </callT>
        </doc>
-       <let line="939" var="linkText" as="document-node()" slot="4" eval="7">
-        <doc line="940" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+       <let line="910" var="linkText" as="document-node()" slot="4" eval="7">
+        <doc line="911" validation="preserve">
          <callT name="replace-string" bSlot="2">
           <withParam name="Q{}text" flags="c" as="document-node()">
-           <varRef line="941" name="linkTextPre" slot="3"/>
+           <varRef line="912" name="linkTextPre" slot="3"/>
           </withParam>
           <withParam name="Q{}replace" flags="c" as="xs:string">
            <str val="/ / "/>
@@ -2820,7 +2820,7 @@
           </withParam>
          </callT>
         </doc>
-        <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="946" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+        <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="917" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
          <sequence>
           <att name="class" flags="l">
            <str val="browse"/>
@@ -2852,7 +2852,7 @@
             </fn>
            </fn>
           </att>
-          <valueOf line="947" flags="l">
+          <valueOf line="918" flags="l">
            <convert from="xs:untypedAtomic" to="xs:string">
             <data>
              <varRef name="linkText" slot="4"/>
@@ -2865,7 +2865,7 @@
       </let>
      </let>
      <true/>
-     <valueOf line="951">
+     <valueOf line="922">
       <fn name="string-join">
        <convert from="xs:anyAtomicType" to="xs:string">
         <data>
@@ -2880,22 +2880,22 @@
   </template>
  </co>
  <co id="8" binds="9 28 28 28 28 22">
-  <template name="Q{}resourceDetailLink" flags="os" line="840" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="9">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="841">
+  <template name="Q{}resourceDetailLink" flags="os" line="811" module="rdf2html.xsl" slots="9">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="812">
     <param name="Q{}property" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <param line="842" name="Q{}namespace" slot="1">
+    <param line="813" name="Q{}namespace" slot="1">
      <str role="select" val=""/>
      <supplied role="conversion" slot="1"/>
     </param>
-    <param line="843" name="Q{}localname" slot="2">
+    <param line="814" name="Q{}localname" slot="2">
      <str role="select" val=""/>
      <supplied role="conversion" slot="2"/>
     </param>
-    <let line="844" var="uri" as="document-node()" slot="3" eval="7">
-     <doc line="845" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" flags="t" validation="preserve">
+    <let line="815" var="uri" as="document-node()" slot="3" eval="7">
+     <doc line="816" flags="t" validation="preserve">
       <valueOf flags="l">
        <fn name="concat">
         <atomSing card="?" diag="0|0||fn:concat">
@@ -2907,22 +2907,22 @@
        </fn>
       </valueOf>
      </doc>
-     <let line="847" var="linkName" as="document-node()" slot="4" eval="7">
-      <doc line="848" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+     <let line="818" var="linkName" as="document-node()" slot="4" eval="7">
+      <doc line="819" validation="preserve">
        <callT name="getLabel" bSlot="0">
         <withParam name="Q{}uri" flags="c" as="document-node()">
-         <varRef line="849" name="uri" slot="3"/>
+         <varRef line="820" name="uri" slot="3"/>
         </withParam>
         <withParam name="Q{}property" flags="c">
-         <varRef line="850" name="property" slot="0"/>
+         <varRef line="821" name="property" slot="0"/>
         </withParam>
        </callT>
       </doc>
-      <let line="853" var="escaped-uri" as="document-node()" slot="5" eval="7">
-       <doc line="854" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+      <let line="824" var="escaped-uri" as="document-node()" slot="5" eval="7">
+       <doc line="825" validation="preserve">
         <callT name="replace-string" bSlot="1">
          <withParam name="Q{}text" flags="c" as="document-node()">
-          <varRef line="855" name="uri" slot="3"/>
+          <varRef line="826" name="uri" slot="3"/>
          </withParam>
          <withParam name="Q{}replace" flags="c" as="xs:string">
           <str val="#"/>
@@ -2932,11 +2932,11 @@
          </withParam>
         </callT>
        </doc>
-       <let line="860" var="linkTextPrePre" as="document-node()" slot="6" eval="7">
-        <doc line="861" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+       <let line="831" var="linkTextPrePre" as="document-node()" slot="6" eval="7">
+        <doc line="832" validation="preserve">
          <callT name="replace-string" bSlot="2">
           <withParam name="Q{}text" flags="c" as="document-node()">
-           <varRef line="862" name="linkName" slot="4"/>
+           <varRef line="833" name="linkName" slot="4"/>
           </withParam>
           <withParam name="Q{}replace" flags="c" as="xs:string">
            <str val="_"/>
@@ -2946,8 +2946,8 @@
           </withParam>
          </callT>
         </doc>
-        <let line="867" var="linkTextPre" as="document-node()" slot="7" eval="7">
-         <doc line="869" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+        <let line="838" var="linkTextPre" as="document-node()" slot="7" eval="7">
+         <doc line="840" validation="preserve">
           <choose>
            <fn name="contains">
             <cvUntyped to="xs:string">
@@ -2957,9 +2957,9 @@
             </cvUntyped>
             <str val="://"/>
            </fn>
-           <callT line="870" name="replace-string" bSlot="3">
+           <callT line="841" name="replace-string" bSlot="3">
             <withParam name="Q{}text" flags="c" as="document-node()">
-             <varRef line="871" name="linkTextPrePre" slot="6"/>
+             <varRef line="842" name="linkTextPrePre" slot="6"/>
             </withParam>
             <withParam name="Q{}replace" flags="c" as="xs:string">
              <str val="/"/>
@@ -2969,7 +2969,7 @@
             </withParam>
            </callT>
            <true/>
-           <valueOf line="877" flags="l">
+           <valueOf line="848" flags="l">
             <convert from="xs:untypedAtomic" to="xs:string">
              <data>
               <varRef name="linkTextPrePre" slot="6"/>
@@ -2978,11 +2978,11 @@
            </valueOf>
           </choose>
          </doc>
-         <let line="881" var="linkText" as="document-node()" slot="8" eval="7">
-          <doc line="882" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+         <let line="852" var="linkText" as="document-node()" slot="8" eval="7">
+          <doc line="853" validation="preserve">
            <callT name="replace-string" bSlot="4">
             <withParam name="Q{}text" flags="c" as="document-node()">
-             <varRef line="883" name="linkTextPre" slot="7"/>
+             <varRef line="854" name="linkTextPre" slot="7"/>
             </withParam>
             <withParam name="Q{}replace" flags="c" as="xs:string">
              <str val="/ / "/>
@@ -2992,7 +2992,7 @@
             </withParam>
            </callT>
           </doc>
-          <choose line="896">
+          <choose line="867">
            <and op="and">
             <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
              <data>
@@ -3007,7 +3007,7 @@
              <str val="about"/>
             </gc>
            </and>
-           <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="899" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+           <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="870" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
             <sequence>
              <att name="class" flags="l">
               <str val="describe"/>
@@ -3044,14 +3044,14 @@
                </convert>
               </fn>
              </att>
-             <choose line="900">
+             <choose line="871">
               <gc op="!=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
                <data>
                 <varRef name="property" slot="0"/>
                </data>
                <str val=""/>
               </gc>
-              <att line="902" name="resource" flags="l">
+              <att line="873" name="resource" flags="l">
                <convert from="xs:untypedAtomic" to="xs:string">
                 <data>
                  <varRef name="uri" slot="3"/>
@@ -3059,7 +3059,7 @@
                </convert>
               </att>
              </choose>
-             <valueOf line="905" flags="l">
+             <valueOf line="876" flags="l">
               <convert from="xs:untypedAtomic" to="xs:string">
                <data>
                 <varRef name="linkText" slot="8"/>
@@ -3069,7 +3069,7 @@
             </sequence>
            </elem>
            <true/>
-           <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="909" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+           <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="880" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
             <sequence>
              <att name="class" flags="l">
               <str val="browse"/>
@@ -3091,7 +3091,7 @@
                </convert>
               </fn>
              </att>
-             <valueOf line="910" flags="l">
+             <valueOf line="881" flags="l">
               <convert from="xs:untypedAtomic" to="xs:string">
                <data>
                 <varRef name="linkText" slot="8"/>
@@ -3111,21 +3111,21 @@
   </template>
  </co>
  <co id="28" binds="28">
-  <template name="Q{}replace-string" flags="os" line="1001" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="3">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1002">
+  <template name="Q{}replace-string" flags="os" line="972" module="rdf2html.xsl" slots="3">
+   <sequence role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="973">
     <param name="Q{}text" slot="0">
      <str role="select" val=""/>
      <supplied role="conversion" slot="0"/>
     </param>
-    <param line="1003" name="Q{}replace" slot="1">
+    <param line="974" name="Q{}replace" slot="1">
      <str role="select" val=""/>
      <supplied role="conversion" slot="1"/>
     </param>
-    <param line="1004" name="Q{}with" slot="2">
+    <param line="975" name="Q{}with" slot="2">
      <str role="select" val=""/>
      <supplied role="conversion" slot="2"/>
     </param>
-    <choose line="1006">
+    <choose line="977">
      <fn name="contains">
       <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:contains">
        <check card="?" diag="0|0||fn:contains">
@@ -3146,7 +3146,7 @@
        </check>
       </treat>
      </fn>
-     <sequence line="1007">
+     <sequence line="978">
       <valueOf>
        <fn name="substring-before">
         <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring-before">
@@ -3169,7 +3169,7 @@
         </treat>
        </fn>
       </valueOf>
-      <valueOf line="1008">
+      <valueOf line="979">
        <fn name="string-join">
         <convert from="xs:anyAtomicType" to="xs:string">
          <data>
@@ -3181,9 +3181,9 @@
         <str val=" "/>
        </fn>
       </valueOf>
-      <callT line="1009" name="replace-string" bSlot="0" flags="t">
+      <callT line="980" name="replace-string" bSlot="0" flags="t">
        <withParam name="Q{}text" flags="c" as="xs:string">
-        <fn line="1010" name="substring-after">
+        <fn line="981" name="substring-after">
          <treat as="xs:string" jsTest="return SaxonJS.U.Atomic.string.matches(item);" diag="0|0||fn:substring-after">
           <check card="?" diag="0|0||fn:substring-after">
            <cvUntyped to="xs:string">
@@ -3205,15 +3205,15 @@
         </fn>
        </withParam>
        <withParam name="Q{}replace" flags="c">
-        <varRef line="1011" name="replace" slot="1"/>
+        <varRef line="982" name="replace" slot="1"/>
        </withParam>
        <withParam name="Q{}with" flags="c">
-        <varRef line="1012" name="with" slot="2"/>
+        <varRef line="983" name="with" slot="2"/>
        </withParam>
       </callT>
      </sequence>
      <true/>
-     <valueOf line="1016">
+     <valueOf line="987">
       <fn name="string-join">
        <convert from="xs:anyAtomicType" to="xs:string">
         <data>
@@ -3231,9 +3231,9 @@
  </co>
  <co id="17" binds="17">
   <mode name="Q{}copy-subtree" onNo="TC" flags="W" patternSlots="0">
-   <templateRule prec="0" prio="-0.5" seq="0" rank="0" minImp="0" slots="0" flags="s" line="1101" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl">
+   <templateRule prec="0" prio="-0.5" seq="0" rank="0" minImp="0" slots="0" flags="s" line="1072" module="rdf2html.xsl">
     <p.nodeTest role="match" test="element()" jsTest="return SaxonJS.U.isNode(item) &amp;&amp; item.nodeType===1;"/>
-    <copy role="action" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1103" flags="cin">
+    <copy role="action" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1074" flags="cin">
      <applyT role="content" mode="Q{}copy-subtree" bSlot="0">
       <union role="select" op="|">
        <sequence>
@@ -3245,9 +3245,9 @@
      </applyT>
     </copy>
    </templateRule>
-   <templateRule prec="0" prio="-0.5" seq="0" rank="0" minImp="0" slots="0" flags="s" line="1101" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl">
+   <templateRule prec="0" prio="-0.5" seq="0" rank="0" minImp="0" slots="0" flags="s" line="1072" module="rdf2html.xsl">
     <p.nodeTest role="match" test="attribute()" jsTest="return SaxonJS.U.isAttr(item)"/>
-    <copy role="action" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1103" flags="cin">
+    <copy role="action" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1074" flags="cin">
      <applyT role="content" mode="Q{}copy-subtree" bSlot="0">
       <union role="select" op="|">
        <sequence>
@@ -3259,9 +3259,9 @@
      </applyT>
     </copy>
    </templateRule>
-   <templateRule prec="0" prio="-0.5" seq="0" rank="0" minImp="0" slots="0" flags="s" line="1101" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl">
+   <templateRule prec="0" prio="-0.5" seq="0" rank="0" minImp="0" slots="0" flags="s" line="1072" module="rdf2html.xsl">
     <p.nodeTest role="match" test="text()" jsTest="return SaxonJS.U.isNode(item) &amp;&amp; item.nodeType===3;"/>
-    <copy role="action" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1103" flags="cin">
+    <copy role="action" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="1074" flags="cin">
      <applyT role="content" mode="Q{}copy-subtree" bSlot="0">
       <union role="select" op="|">
        <sequence>
@@ -3276,18 +3276,18 @@
   </mode>
  </co>
  <co id="16" binds="2 3 4 6 6 5 16">
-  <template name="Q{}ListItems" flags="os" line="373" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="3">
-   <elem role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="374" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+  <template name="Q{}ListItems" flags="os" line="344" module="rdf2html.xsl" slots="3">
+   <elem role="body" ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="345" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
     <sequence>
      <att name="typeof" flags="l">
       <str val="rdf:List"/>
      </att>
-     <elem line="375" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+     <elem line="346" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
       <sequence>
        <att name="class" flags="l">
         <str val="list-object"/>
        </att>
-       <choose line="377">
+       <choose line="348">
         <and op="and">
          <and op="and">
           <fn name="exists">
@@ -3316,11 +3316,11 @@
           </slash>
          </fn>
         </and>
-        <sequence line="379">
+        <sequence line="350">
          <att name="property" flags="l">
           <str val="rdf:first"/>
          </att>
-         <att line="382" name="content" flags="l">
+         <att line="353" name="content" flags="l">
           <convert from="xs:untypedAtomic" to="xs:string">
            <cast as="xs:untypedAtomic" emptiable="0">
             <fn name="string-join">
@@ -3334,7 +3334,7 @@
            </cast>
           </convert>
          </att>
-         <choose line="384">
+         <choose line="355">
           <fn name="exists">
            <slash simple="1">
             <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -3343,7 +3343,7 @@
             <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/XML/1998/namespace}lang)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/XML/1998/namespace'&amp;&amp;q.local==='lang';"/>
            </slash>
           </fn>
-          <att line="386" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
+          <att line="357" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
            <convert from="xs:untypedAtomic" to="xs:string">
             <cast as="xs:untypedAtomic" emptiable="0">
              <fn name="string">
@@ -3362,7 +3362,7 @@
            </convert>
           </att>
          </choose>
-         <choose line="389">
+         <choose line="360">
           <fn name="exists">
            <slash simple="1">
             <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -3371,7 +3371,7 @@
             <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
            </slash>
           </fn>
-          <sequence line="391">
+          <sequence line="362">
            <att name="datatype" flags="l">
             <fn name="string-join">
              <convert from="xs:anyAtomicType" to="xs:string">
@@ -3379,7 +3379,7 @@
                <mergeAdj>
                 <callT name="curie" bSlot="0">
                  <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                  <slash line="392" simple="1">
+                  <slash line="363" simple="1">
                    <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
                     <dot flags="a"/>
                    </treat>
@@ -3393,11 +3393,11 @@
              <str val=""/>
             </fn>
            </att>
-           <let line="395" var="datatype-xmlns" as="document-node()" slot="0" eval="7">
-            <doc line="396" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+           <let line="366" var="datatype-xmlns" as="document-node()" slot="0" eval="7">
+            <doc line="367" validation="preserve">
              <callT name="xmlns" bSlot="1">
               <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-               <slash line="397" simple="1">
+               <slash line="368" simple="1">
                 <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
                  <dot flags="a"/>
                 </treat>
@@ -3406,7 +3406,7 @@
               </withParam>
              </callT>
             </doc>
-            <copyOf line="400" flags="vc">
+            <copyOf line="371" flags="vc">
              <slash>
               <slash simple="1">
                <varRef name="datatype-xmlns" slot="0"/>
@@ -3418,16 +3418,16 @@
            </let>
           </sequence>
          </choose>
-         <callT line="402" name="textDetailLink" bSlot="2">
+         <callT line="373" name="textDetailLink" bSlot="2">
           <withParam name="Q{}property" flags="c" as="xs:string">
            <str val="first"/>
           </withParam>
           <withParam name="Q{}value" flags="c" as="item()">
-           <dot line="404" flags="a"/>
+           <dot line="375" flags="a"/>
           </withParam>
          </callT>
         </sequence>
-        <let line="410" var="vv:cc-1157019236" as="xs:untypedAtomic?" slot="1" eval="13">
+        <let line="381" var="vv:cc-1157019231" as="xs:untypedAtomic?" slot="1" eval="13">
          <data>
           <slash simple="1">
            <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|2|XPTY0020|">
@@ -3438,7 +3438,7 @@
          </data>
          <or op="or">
           <gc op="=" card="1:1" comp="CCC">
-           <varRef name="vv:cc-1157019236" slot="1"/>
+           <varRef name="vv:cc-1157019231" slot="1"/>
            <str val="Literal"/>
           </gc>
           <and op="and">
@@ -3475,7 +3475,7 @@
             </and>
             <fn name="not">
              <gc op="=" card="1:1" comp="CCC">
-              <varRef name="vv:cc-1157019236" slot="1"/>
+              <varRef name="vv:cc-1157019231" slot="1"/>
               <str val="Resource"/>
              </gc>
             </fn>
@@ -3483,23 +3483,23 @@
           </and>
          </or>
         </let>
-        <sequence line="412">
+        <sequence line="383">
          <att name="property" flags="l">
           <str val="rdf:first"/>
          </att>
-         <callT line="414" name="property-objects" bSlot="3"/>
+         <callT line="385" name="property-objects" bSlot="3"/>
         </sequence>
         <true/>
-        <sequence line="418">
+        <sequence line="389">
          <att name="rel" flags="l">
           <str val="rdf:first"/>
          </att>
-         <callT line="420" name="property-objects" bSlot="4"/>
+         <callT line="391" name="property-objects" bSlot="4"/>
         </sequence>
        </choose>
       </sequence>
      </elem>
-     <elem line="426" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+     <elem line="397" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
       <sequence>
        <att name="class" flags="l">
         <str val="list-object"/>
@@ -3507,7 +3507,7 @@
        <att name="rel" flags="l">
         <str val="rdf:rest"/>
        </att>
-       <choose line="428">
+       <choose line="399">
         <fn name="exists">
          <slash>
           <slash>
@@ -3522,7 +3522,7 @@
           <axis name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}first)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='first';"/>
          </slash>
         </fn>
-        <let line="430" var="vv:cc1213008577" as="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}rest)*" slot="2" eval="4">
+        <let line="401" var="vv:cc1213008567" as="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}rest)*" slot="2" eval="4">
          <slash>
           <slash simple="1">
            <treat as="node()" jsTest="return SaxonJS.U.isNode(item);" diag="14|9|XPTY0020|">
@@ -3532,28 +3532,28 @@
           </slash>
           <axis name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}rest)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='rest';"/>
          </slash>
-         <sequence line="429">
+         <sequence line="400">
           <callT name="connector" bSlot="5">
            <withParam name="Q{}criteria" flags="c" as="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}first)*">
-            <slash line="430">
-             <varRef name="vv:cc1213008577" slot="2"/>
+            <slash line="401">
+             <varRef name="vv:cc1213008567" slot="2"/>
              <axis name="descendant" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}first)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='first';"/>
             </slash>
            </withParam>
           </callT>
-          <forEach line="432">
+          <forEach line="403">
            <slash>
-            <varRef name="vv:cc1213008577" slot="2"/>
+            <varRef name="vv:cc1213008567" slot="2"/>
             <first>
              <axis name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}first)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='first';"/>
             </first>
            </slash>
-           <callT line="433" name="ListItems" bSlot="6"/>
+           <callT line="404" name="ListItems" bSlot="6"/>
           </forEach>
          </sequence>
         </let>
         <true/>
-        <att line="437" name="resource" flags="l">
+        <att line="408" name="resource" flags="l">
          <str val="[rdf:nil]"/>
         </att>
        </choose>
@@ -3564,8 +3564,8 @@
   </template>
  </co>
  <co id="29" binds="22 30 18 19 20 22 23">
-  <template name="Q{}rdfDescription" flags="os" line="110" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="0">
-   <choose role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="115">
+  <template name="Q{}rdfDescription" flags="os" line="81" module="rdf2html.xsl" slots="0">
+   <choose role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="86">
     <or op="or">
      <or op="or">
       <and op="and">
@@ -3652,7 +3652,7 @@
       </sequence>
      </fn>
     </or>
-    <sequence line="116">
+    <sequence line="87">
      <choose>
       <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
        <data>
@@ -3660,7 +3660,7 @@
        </data>
        <str val="rhizomer"/>
       </gc>
-      <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="117" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+      <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="88" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
        <sequence>
         <att name="class" flags="l">
          <str val="edition"/>
@@ -3672,12 +3672,12 @@
        </sequence>
       </elem>
      </choose>
-     <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="119" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+     <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="90" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
       <sequence>
        <att name="class" flags="l">
         <str val="description"/>
        </att>
-       <elem line="121" name="table" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+       <elem line="92" name="table" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
         <sequence>
          <choose>
           <fn name="exists">
@@ -3688,7 +3688,7 @@
             <axis name="attribute" nodeTest="(attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}ID) | attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about))" jsTest="function a() {var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='ID';};function b() {var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='about';};return a()||b();"/>
            </slash>
           </fn>
-          <att line="123" name="about" flags="l">
+          <att line="94" name="about" flags="l">
            <convert from="xs:untypedAtomic" to="xs:string">
             <cast as="xs:untypedAtomic" emptiable="0">
              <fn name="string-join">
@@ -3708,17 +3708,17 @@
            </convert>
           </att>
          </choose>
-         <callT line="126" name="header" bSlot="2"/>
-         <callT line="127" name="attributes" bSlot="3"/>
-         <callT line="128" name="properties" bSlot="4"/>
-         <choose line="129">
+         <callT line="97" name="header" bSlot="2"/>
+         <callT line="98" name="attributes" bSlot="3"/>
+         <callT line="99" name="properties" bSlot="4"/>
+         <choose line="100">
           <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
            <data>
             <gVarRef name="Q{}mode" bSlot="5"/>
            </data>
            <str val="rhizomer"/>
           </gc>
-          <elem line="130" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+          <elem line="101" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
            <elem name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
             <sequence>
              <att name="class" flags="l">
@@ -3741,8 +3741,8 @@
   </template>
  </co>
  <co id="20" binds="2 1 8 2 3 4 5 2 3 4 5 2 3 8 6 6 6 5 6 5">
-  <template name="Q{}properties" flags="os" line="454" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="25">
-   <forEach role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="455">
+  <template name="Q{}properties" flags="os" line="425" module="rdf2html.xsl" slots="25">
+   <forEach role="body" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="426">
     <sort>
      <filter role="select" flags="b">
       <slash simple="1">
@@ -3766,7 +3766,7 @@
        </vc>
       </or>
      </filter>
-     <sortKey line="456" comp="CCC">
+     <sortKey line="427" comp="CCC">
       <fn role="select" name="local-name">
        <dot type="element()"/>
       </fn>
@@ -3777,31 +3777,31 @@
       <str role="collation" val="http://www.w3.org/2005/xpath-functions/collation/codepoint"/>
      </sortKey>
     </sort>
-    <let line="457" var="property-name" as="xs:untypedAtomic" slot="0" eval="7">
-     <cast line="458" as="xs:untypedAtomic" emptiable="0">
+    <let line="428" var="property-name" as="xs:untypedAtomic" slot="0" eval="7">
+     <cast line="429" as="xs:untypedAtomic" emptiable="0">
       <fn name="local-name">
        <dot type="element()"/>
       </fn>
      </cast>
-     <let line="589" var="vv:v9" as="xs:string" slot="1" eval="13">
+     <let line="560" var="vv:v9" as="xs:string" slot="1" eval="13">
       <cast as="xs:string" emptiable="0">
        <varRef name="property-name" slot="0"/>
       </cast>
-      <let line="460" var="property-namespace" as="xs:untypedAtomic" slot="2" eval="8">
-       <convert line="461" from="xs:anyURI" to="xs:untypedAtomic">
+      <let line="431" var="property-namespace" as="xs:untypedAtomic" slot="2" eval="8">
+       <convert line="432" from="xs:anyURI" to="xs:untypedAtomic">
         <fn name="namespace-uri">
          <dot type="element()"/>
         </fn>
        </convert>
-       <let line="589" var="vv:v10" as="xs:anyURI" slot="3" eval="13">
+       <let line="560" var="vv:v10" as="xs:anyURI" slot="3" eval="13">
         <cast as="xs:anyURI" emptiable="0">
          <varRef name="property-namespace" slot="2"/>
         </cast>
-        <let line="463" var="propertyCurie" as="document-node()" slot="4" eval="7">
-         <doc line="464" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+        <let line="434" var="propertyCurie" as="document-node()" slot="4" eval="7">
+         <doc line="435" validation="preserve">
           <callT name="curie" bSlot="0">
            <withParam name="Q{}uri" flags="c" as="xs:string">
-            <fn line="465" name="concat">
+            <fn line="436" name="concat">
              <fn name="namespace-uri">
               <dot type="element()"/>
              </fn>
@@ -3812,7 +3812,7 @@
            </withParam>
           </callT>
          </doc>
-         <choose line="470">
+         <choose line="441">
           <and op="and">
            <and op="and">
             <fn name="exists">
@@ -3826,11 +3826,11 @@
             <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}parseType)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='parseType';"/>
            </fn>
           </and>
-          <let line="471" var="isPreferredLanguage" as="document-node()" slot="5" eval="7">
-           <doc line="472" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+          <let line="442" var="isPreferredLanguage" as="document-node()" slot="5" eval="7">
+           <doc line="443" validation="preserve">
             <callT name="isPreferredLanguage" bSlot="1"/>
            </doc>
-           <choose line="476">
+           <choose line="447">
             <vc op="eq" onEmpty="0" comp="CCC">
              <cast as="xs:string" emptiable="0">
               <data>
@@ -3839,7 +3839,7 @@
              </cast>
              <str val="true"/>
             </vc>
-            <let line="479" var="vv:v1" as="xs:anyURI" slot="6" eval="13">
+            <let line="450" var="vv:v1" as="xs:anyURI" slot="6" eval="13">
              <cast as="xs:anyURI" emptiable="0">
               <varRef name="property-namespace" slot="2"/>
              </cast>
@@ -3872,7 +3872,7 @@
                </fn>
                <empty/>
                <true/>
-               <let ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="553" var="vv:v8" as="xs:anyURI" slot="8" eval="13">
+               <let ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="524" var="vv:v8" as="xs:anyURI" slot="8" eval="13">
                 <cast as="xs:anyURI" emptiable="0">
                  <varRef name="property-namespace" slot="2"/>
                 </cast>
@@ -3880,13 +3880,13 @@
                  <cast as="xs:string" emptiable="0">
                   <varRef name="property-name" slot="0"/>
                  </cast>
-                 <let line="524" var="vv:v6" as="xs:string" slot="10" eval="13">
+                 <let line="495" var="vv:v6" as="xs:string" slot="10" eval="13">
                   <convert from="xs:untypedAtomic" to="xs:string">
                    <data>
                     <varRef name="propertyCurie" slot="4"/>
                    </data>
                   </convert>
-                  <let line="522" var="vv:v5" as="xs:anyURI" slot="11" eval="13">
+                  <let line="493" var="vv:v5" as="xs:anyURI" slot="11" eval="13">
                    <cast as="xs:anyURI" emptiable="0">
                     <varRef name="property-namespace" slot="2"/>
                    </cast>
@@ -3894,7 +3894,7 @@
                     <cast as="xs:string" emptiable="0">
                      <varRef name="property-name" slot="0"/>
                     </cast>
-                    <let line="519" var="vv:v3" as="xs:anyURI" slot="13" eval="13">
+                    <let line="490" var="vv:v3" as="xs:anyURI" slot="13" eval="13">
                      <cast as="xs:anyURI" emptiable="0">
                       <varRef name="property-namespace" slot="2"/>
                      </cast>
@@ -3902,7 +3902,7 @@
                       <cast as="xs:string" emptiable="0">
                        <varRef name="property-name" slot="0"/>
                       </cast>
-                      <elem line="483" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+                      <elem line="454" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
                        <sequence>
                         <att name="class" flags="l">
                          <fn name="concat">
@@ -3914,24 +3914,24 @@
                           </convert>
                          </fn>
                         </att>
-                        <elem line="485" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                        <elem line="456" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                          <callT name="resourceDetailLink" bSlot="2">
                           <withParam name="Q{}property" flags="c" as="xs:string">
                            <str val=""/>
                           </withParam>
                           <withParam name="Q{}namespace" flags="c" as="xs:anyURI">
-                           <fn line="487" name="namespace-uri">
+                           <fn line="458" name="namespace-uri">
                             <dot type="element()"/>
                            </fn>
                           </withParam>
                           <withParam name="Q{}localname" flags="c" as="xs:string">
-                           <fn line="488" name="local-name">
+                           <fn line="459" name="local-name">
                             <dot type="element()"/>
                            </fn>
                           </withParam>
                          </callT>
                         </elem>
-                        <elem line="491" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                        <elem line="462" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                          <sequence>
                           <att name="property" flags="l">
                            <convert from="xs:untypedAtomic" to="xs:string">
@@ -3947,11 +3947,11 @@
                             </data>
                            </convert>
                           </att>
-                          <choose line="492">
+                          <choose line="463">
                            <fn name="exists">
                             <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/XML/1998/namespace}lang)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/XML/1998/namespace'&amp;&amp;q.local==='lang';"/>
                            </fn>
-                           <att line="494" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
+                           <att line="465" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
                             <convert from="xs:untypedAtomic" to="xs:string">
                              <cast as="xs:untypedAtomic" emptiable="0">
                               <fn name="string">
@@ -3963,11 +3963,11 @@
                             </convert>
                            </att>
                           </choose>
-                          <choose line="497">
+                          <choose line="468">
                            <fn name="exists">
                             <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                            </fn>
-                           <sequence line="499">
+                           <sequence line="470">
                             <att name="datatype" flags="l">
                              <fn name="string-join">
                               <convert from="xs:anyAtomicType" to="xs:string">
@@ -3975,7 +3975,7 @@
                                 <mergeAdj>
                                  <callT name="curie" bSlot="3">
                                   <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                                   <axis line="500" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+                                   <axis line="471" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                                   </withParam>
                                  </callT>
                                 </mergeAdj>
@@ -3984,15 +3984,15 @@
                               <str val=""/>
                              </fn>
                             </att>
-                            <let line="503" var="datatype-xmlns" as="document-node()" slot="15" eval="7">
-                             <doc line="504" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+                            <let line="474" var="datatype-xmlns" as="document-node()" slot="15" eval="7">
+                             <doc line="475" validation="preserve">
                               <callT name="xmlns" bSlot="4">
                                <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                                <axis line="505" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+                                <axis line="476" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                                </withParam>
                               </callT>
                              </doc>
-                             <copyOf line="508" flags="vc">
+                             <copyOf line="479" flags="vc">
                               <slash>
                                <slash simple="1">
                                 <varRef name="datatype-xmlns" slot="15"/>
@@ -4004,26 +4004,26 @@
                             </let>
                            </sequence>
                           </choose>
-                          <elem line="511" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                          <elem line="482" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                            <sequence>
                             <att name="class" flags="l">
                              <str val="property-object"/>
                             </att>
-                            <callT line="512" name="textDetailLink" bSlot="5">
+                            <callT line="483" name="textDetailLink" bSlot="5">
                              <withParam name="Q{}property" flags="c" as="xs:string">
-                              <fn line="513" name="local-name">
+                              <fn line="484" name="local-name">
                                <dot type="element()"/>
                               </fn>
                              </withParam>
                              <withParam name="Q{}value" flags="c" as="item()">
-                              <dot line="514" type="element()"/>
+                              <dot line="485" type="element()"/>
                              </withParam>
                             </callT>
                            </sequence>
                           </elem>
-                          <callT line="517" name="connector" bSlot="6">
+                          <callT line="488" name="connector" bSlot="6">
                            <withParam name="Q{}criteria" flags="c" as="element()*">
-                            <filter line="519" flags="b">
+                            <filter line="490" flags="b">
                              <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
                              <and op="and">
                               <vc op="eq" onEmpty="0" comp="CCC">
@@ -4042,7 +4042,7 @@
                             </filter>
                            </withParam>
                           </callT>
-                          <forEach line="522">
+                          <forEach line="493">
                            <filter flags="b">
                             <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
                             <and op="and">
@@ -4060,7 +4060,7 @@
                              </vc>
                             </and>
                            </filter>
-                           <sequence line="524">
+                           <sequence line="495">
                             <elem name="span" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                              <sequence>
                               <att name="property" flags="l">
@@ -4073,11 +4073,11 @@
                                 </data>
                                </convert>
                               </att>
-                              <choose line="525">
+                              <choose line="496">
                                <fn name="exists">
                                 <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/XML/1998/namespace}lang)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/XML/1998/namespace'&amp;&amp;q.local==='lang';"/>
                                </fn>
-                               <att line="527" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
+                               <att line="498" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
                                 <convert from="xs:untypedAtomic" to="xs:string">
                                  <cast as="xs:untypedAtomic" emptiable="0">
                                   <fn name="string">
@@ -4089,11 +4089,11 @@
                                 </convert>
                                </att>
                               </choose>
-                              <choose line="530">
+                              <choose line="501">
                                <fn name="exists">
                                 <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                                </fn>
-                               <sequence line="532">
+                               <sequence line="503">
                                 <att name="datatype" flags="l">
                                  <fn name="string-join">
                                   <convert from="xs:anyAtomicType" to="xs:string">
@@ -4101,7 +4101,7 @@
                                     <mergeAdj>
                                      <callT name="curie" bSlot="7">
                                       <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                                       <axis line="533" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+                                       <axis line="504" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                                       </withParam>
                                      </callT>
                                     </mergeAdj>
@@ -4110,15 +4110,15 @@
                                   <str val=""/>
                                  </fn>
                                 </att>
-                                <let line="536" var="datatype-xmlns" as="document-node()" slot="16" eval="7">
-                                 <doc line="537" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+                                <let line="507" var="datatype-xmlns" as="document-node()" slot="16" eval="7">
+                                 <doc line="508" validation="preserve">
                                   <callT name="xmlns" bSlot="8">
                                    <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                                    <axis line="538" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+                                    <axis line="509" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                                    </withParam>
                                   </callT>
                                  </doc>
-                                 <copyOf line="541" flags="vc">
+                                 <copyOf line="512" flags="vc">
                                   <slash>
                                    <slash simple="1">
                                     <varRef name="datatype-xmlns" slot="16"/>
@@ -4132,26 +4132,26 @@
                               </choose>
                              </sequence>
                             </elem>
-                            <elem line="545" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                            <elem line="516" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                              <sequence>
                               <att name="class" flags="l">
                                <str val="property-object"/>
                               </att>
-                              <callT line="546" name="textDetailLink" bSlot="9">
+                              <callT line="517" name="textDetailLink" bSlot="9">
                                <withParam name="Q{}property" flags="c" as="xs:string">
-                                <fn line="547" name="local-name">
+                                <fn line="518" name="local-name">
                                  <dot type="element()"/>
                                 </fn>
                                </withParam>
                                <withParam name="Q{}value" flags="c" as="item()">
-                                <dot line="548" type="element()"/>
+                                <dot line="519" type="element()"/>
                                </withParam>
                               </callT>
                              </sequence>
                             </elem>
-                            <callT line="551" name="connector" bSlot="10">
+                            <callT line="522" name="connector" bSlot="10">
                              <withParam name="Q{}criteria" flags="c" as="element()*">
-                              <filter line="553" flags="b">
+                              <filter line="524" flags="b">
                                <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
                                <and op="and">
                                 <vc op="eq" onEmpty="0" comp="CCC">
@@ -4187,7 +4187,7 @@
              </let>
             </let>
             <true/>
-            <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="563" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+            <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="534" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
              <sequence>
               <att name="property" flags="l">
                <convert from="xs:untypedAtomic" to="xs:string">
@@ -4203,11 +4203,11 @@
                 </data>
                </convert>
               </att>
-              <choose line="564">
+              <choose line="535">
                <fn name="exists">
                 <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/XML/1998/namespace}lang)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/XML/1998/namespace'&amp;&amp;q.local==='lang';"/>
                </fn>
-               <att line="566" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
+               <att line="537" name="xml:lang" nsuri="http://www.w3.org/XML/1998/namespace" flags="l">
                 <convert from="xs:untypedAtomic" to="xs:string">
                  <cast as="xs:untypedAtomic" emptiable="0">
                   <fn name="string">
@@ -4219,11 +4219,11 @@
                 </convert>
                </att>
               </choose>
-              <choose line="569">
+              <choose line="540">
                <fn name="exists">
                 <axis name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                </fn>
-               <sequence line="571">
+               <sequence line="542">
                 <att name="datatype" flags="l">
                  <fn name="string-join">
                   <convert from="xs:anyAtomicType" to="xs:string">
@@ -4231,7 +4231,7 @@
                     <mergeAdj>
                      <callT name="curie" bSlot="11">
                       <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                       <axis line="572" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+                       <axis line="543" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                       </withParam>
                      </callT>
                     </mergeAdj>
@@ -4240,15 +4240,15 @@
                   <str val=""/>
                  </fn>
                 </att>
-                <let line="575" var="datatype-xmlns" as="document-node()" slot="17" eval="7">
-                 <doc line="576" base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
+                <let line="546" var="datatype-xmlns" as="document-node()" slot="17" eval="7">
+                 <doc line="547" validation="preserve">
                   <callT name="xmlns" bSlot="12">
                    <withParam name="Q{}uri" flags="c" as="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)?">
-                    <axis line="577" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
+                    <axis line="548" name="attribute" nodeTest="attribute(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}datatype)" jsTest="var q=SaxonJS.U.nameOfNode(item); return q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='datatype';"/>
                    </withParam>
                   </callT>
                  </doc>
-                 <copyOf line="580" flags="vc">
+                 <copyOf line="551" flags="vc">
                   <slash>
                    <slash simple="1">
                     <varRef name="datatype-xmlns" slot="17"/>
@@ -4264,7 +4264,7 @@
             </elem>
            </choose>
           </let>
-          <fn line="589" name="exists">
+          <fn line="560" name="exists">
            <filter flags="b">
             <slash simple="1">
              <dot type="element()"/>
@@ -4288,7 +4288,7 @@
           </fn>
           <empty/>
           <true/>
-          <let ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="635" var="vv:v17" as="xs:anyURI" slot="18" eval="13">
+          <let ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="606" var="vv:v17" as="xs:anyURI" slot="18" eval="13">
            <cast as="xs:anyURI" emptiable="0">
             <varRef name="property-namespace" slot="2"/>
            </cast>
@@ -4296,13 +4296,13 @@
             <cast as="xs:string" emptiable="0">
              <varRef name="property-name" slot="0"/>
             </cast>
-            <let line="630" var="vv:v15" as="xs:string" slot="20" eval="13">
+            <let line="601" var="vv:v15" as="xs:string" slot="20" eval="13">
              <convert from="xs:untypedAtomic" to="xs:string">
               <data>
                <varRef name="propertyCurie" slot="4"/>
               </data>
              </convert>
-             <let line="629" var="vv:v14" as="xs:anyURI" slot="21" eval="13">
+             <let line="600" var="vv:v14" as="xs:anyURI" slot="21" eval="13">
               <cast as="xs:anyURI" emptiable="0">
                <varRef name="property-namespace" slot="2"/>
               </cast>
@@ -4310,7 +4310,7 @@
                <cast as="xs:string" emptiable="0">
                 <varRef name="property-name" slot="0"/>
                </cast>
-               <let line="626" var="vv:v12" as="xs:anyURI" slot="23" eval="13">
+               <let line="597" var="vv:v12" as="xs:anyURI" slot="23" eval="13">
                 <cast as="xs:anyURI" emptiable="0">
                  <varRef name="property-namespace" slot="2"/>
                 </cast>
@@ -4318,7 +4318,7 @@
                  <cast as="xs:string" emptiable="0">
                   <varRef name="property-name" slot="0"/>
                  </cast>
-                 <elem line="593" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+                 <elem line="564" name="tr" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
                   <sequence>
                    <att name="class" flags="l">
                     <fn name="concat">
@@ -4330,24 +4330,24 @@
                      </convert>
                     </fn>
                    </att>
-                   <elem line="595" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                   <elem line="566" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                     <callT name="resourceDetailLink" bSlot="13">
                      <withParam name="Q{}property" flags="c" as="xs:string">
                       <str val=""/>
                      </withParam>
                      <withParam name="Q{}namespace" flags="c" as="xs:anyURI">
-                      <fn line="597" name="namespace-uri">
+                      <fn line="568" name="namespace-uri">
                        <dot type="element()"/>
                       </fn>
                      </withParam>
                      <withParam name="Q{}localname" flags="c" as="xs:string">
-                      <fn line="598" name="local-name">
+                      <fn line="569" name="local-name">
                        <dot type="element()"/>
                       </fn>
                      </withParam>
                     </callT>
                    </elem>
-                   <elem line="604" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                   <elem line="575" name="td" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                     <sequence>
                      <choose>
                       <or op="or">
@@ -4377,7 +4377,7 @@
                         </and>
                        </and>
                       </or>
-                      <elem line="605" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                      <elem line="576" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                        <sequence>
                         <att name="class" flags="l">
                          <str val="property-object"/>
@@ -4389,13 +4389,13 @@
                           </data>
                          </convert>
                         </att>
-                        <callT line="606" name="property-objects" bSlot="14"/>
+                        <callT line="577" name="property-objects" bSlot="14"/>
                        </sequence>
                       </elem>
-                      <fn line="611" name="exists">
+                      <fn line="582" name="exists">
                        <axis name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}first)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='first';"/>
                       </fn>
-                      <elem line="612" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                      <elem line="583" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                        <sequence>
                         <att name="class" flags="l">
                          <str val="list-object"/>
@@ -4407,11 +4407,11 @@
                           </data>
                          </convert>
                         </att>
-                        <callT line="613" name="property-objects" bSlot="15"/>
+                        <callT line="584" name="property-objects" bSlot="15"/>
                        </sequence>
                       </elem>
                       <true/>
-                      <elem line="617" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+                      <elem line="588" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                        <sequence>
                         <att name="class" flags="l">
                          <str val="property-object"/>
@@ -4423,13 +4423,13 @@
                           </data>
                          </convert>
                         </att>
-                        <callT line="618" name="property-objects" bSlot="16"/>
+                        <callT line="589" name="property-objects" bSlot="16"/>
                        </sequence>
                       </elem>
                      </choose>
-                     <callT line="624" name="connector" bSlot="17">
+                     <callT line="595" name="connector" bSlot="17">
                       <withParam name="Q{}criteria" flags="c" as="element()*">
-                       <filter line="626" flags="b">
+                       <filter line="597" flags="b">
                         <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
                         <and op="and">
                          <vc op="eq" onEmpty="0" comp="CCC">
@@ -4448,7 +4448,7 @@
                        </filter>
                       </withParam>
                      </callT>
-                     <forEach line="629">
+                     <forEach line="600">
                       <filter flags="b">
                        <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
                        <and op="and">
@@ -4466,7 +4466,7 @@
                         </vc>
                        </and>
                       </filter>
-                      <sequence line="630">
+                      <sequence line="601">
                        <elem name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
                         <sequence>
                          <att name="class" flags="l">
@@ -4475,12 +4475,12 @@
                          <att name="rel" flags="l">
                           <varRef name="vv:v15" slot="20"/>
                          </att>
-                         <callT line="631" name="property-objects" bSlot="18"/>
+                         <callT line="602" name="property-objects" bSlot="18"/>
                         </sequence>
                        </elem>
-                       <callT line="633" name="connector" bSlot="19">
+                       <callT line="604" name="connector" bSlot="19">
                         <withParam name="Q{}criteria" flags="c" as="element()*">
-                         <filter line="635" flags="b">
+                         <filter line="606" flags="b">
                           <axis name="following-sibling" nodeTest="element()" jsTest="return item.nodeType===1;"/>
                           <and op="and">
                            <vc op="eq" onEmpty="0" comp="CCC">
@@ -4522,8 +4522,8 @@
   </template>
  </co>
  <co id="30" binds="">
-  <template name="Q{}rdfDescriptionEdition" flags="os" line="175" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" slots="0">
-   <sequence role="body" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="177">
+  <template name="Q{}rdfDescriptionEdition" flags="os" line="146" module="rdf2html.xsl" slots="0">
+   <sequence role="body" ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="148">
     <elem name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
      <sequence>
       <att name="class" flags="l">
@@ -4556,10 +4556,10 @@
       </valueOf>
      </sequence>
     </elem>
-    <valueOf line="175">
+    <valueOf line="146">
      <str val=" - &#xA;&#x9;&#x9;"/>
     </valueOf>
-    <elem line="179" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+    <elem line="150" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
      <sequence>
       <att name="class" flags="l">
        <str val="action"/>
@@ -4591,10 +4591,10 @@
       </valueOf>
      </sequence>
     </elem>
-    <valueOf line="175">
+    <valueOf line="146">
      <str val=" -&#xA;&#x9;&#x9;"/>
     </valueOf>
-    <elem line="181" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+    <elem line="152" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
      <sequence>
       <att name="class" flags="l">
        <str val="action"/>
@@ -4630,8 +4630,8 @@
   </template>
  </co>
  <co id="31" binds="22 22">
-  <globalVariable name="Q{http://saxon.sf.net/generated-variable}gg195384308" type="xs:boolean" line="56" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" visibility="PRIVATE" jsAcceptor="return SaxonJS.U.Atomic.boolean.cast(val);" jsCardCheck="function c(n) {return n==1;};">
-   <or baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="56" op="or">
+  <globalVariable name="Q{http://saxon.sf.net/generated-variable}gg925288871" type="xs:boolean" line="41" module="rdf2html.xsl" visibility="PRIVATE" jsAcceptor="return SaxonJS.U.Atomic.boolean.cast(val);" jsCardCheck="function c(n) {return n==1;};">
+   <or ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="41" op="or">
     <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
      <data>
       <gVarRef name="Q{}mode" bSlot="0"/>
@@ -4647,299 +4647,150 @@
    </or>
   </globalVariable>
  </co>
- <co id="32" binds="22 32 24 31 22 32 24 29">
+ <co id="32" binds="22 32 31 22 32 24 29">
   <mode onNo="TC" flags="dW" patternSlots="0">
-   <templateRule prec="0" prio="-0.5" seq="0" rank="0" minImp="0" slots="0" flags="s" line="34" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl">
+   <templateRule prec="0" prio="-0.5" seq="0" rank="0" minImp="0" slots="0" flags="s" line="34" module="rdf2html.xsl">
     <p.nodeTest role="match" test="document-node()" jsTest="return SaxonJS.U.isNode(item) &amp;&amp; (item.nodeType===9||item.nodeType===11);"/>
-    <sequence role="action" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="35">
-     <choose>
-      <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
-       <data>
-        <gVarRef name="Q{}mode" bSlot="0"/>
-       </data>
-       <str val="html"/>
-      </gc>
-      <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="36" name="html" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
-       <sequence>
-        <att name="version" flags="l">
-         <str val="XHTML+RDFa 1.0"/>
-        </att>
-        <elem line="38" name="head" nsuri="http://www.w3.org/1999/xhtml" flags="dl">
-         <sequence>
-          <elem name="meta" nsuri="http://www.w3.org/1999/xhtml" flags="dl">
-           <sequence>
-            <att name="http-equiv" flags="l">
-             <str val="Content-Type"/>
-            </att>
-            <att name="content" flags="l">
-             <str val="text/xhtml; charset=UTF-8"/>
-            </att>
-           </sequence>
-          </elem>
-          <elem line="39" name="title" nsuri="http://www.w3.org/1999/xhtml" flags="dl">
+    <resultDoc role="action" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="35" global="#&#xA;#Fri Apr 24 18:43:40 CEST 2020&#xA;indent=yes&#xA;encoding=UTF-8&#xA;media-type=text/xhtml&#xA;omit-xml-declaration=no&#xA;method=html&#xA;" local="#&#xA;#Fri Apr 24 18:43:40 CEST 2020&#xA;">
+     <str role="href" val="#wtf"/>
+     <sequence role="content" line="36">
+      <choose>
+       <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
+        <data>
+         <gVarRef name="Q{}mode" bSlot="0"/>
+        </data>
+        <str val="html"/>
+       </gc>
+       <applyT line="38" bSlot="1">
+        <axis role="select" name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='RDF';"/>
+       </applyT>
+      </choose>
+      <choose line="41">
+       <gVarRef name="Q{http://saxon.sf.net/generated-variable}gg925288871" bSlot="2"/>
+       <sequence line="42">
+        <choose>
+         <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
+          <data>
+           <gVarRef name="Q{}mode" bSlot="3"/>
+          </data>
+          <str val="rhizomer"/>
+         </gc>
+         <elem line="43" name="div" nsuri="" namespaces="rdf rdfs">
+          <sequence>
+           <att name="class" flags="l">
+            <str val="browser"/>
+           </att>
+           <elem line="44" name="a" nsuri="" flags="l">
+            <sequence>
+             <att name="href" flags="l">
+              <str val="javascript:history.back()"/>
+             </att>
+             <valueOf flags="Sl">
+              <str val="back"/>
+             </valueOf>
+            </sequence>
+           </elem>
            <valueOf flags="l">
-            <str val="Rhizomik - ReDeFer - RDF2HTML"/>
+            <str val=" -&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;go to... -&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;"/>
            </valueOf>
-          </elem>
-          <elem line="40" name="link" nsuri="http://www.w3.org/1999/xhtml" flags="dl">
-           <sequence>
-            <att name="href" flags="l">
-             <str val="/redefer-services/style/rhizomer.css"/>
-            </att>
-            <att name="type" flags="l">
-             <str val="text/css"/>
-            </att>
-            <att name="rel" flags="l">
-             <str val="stylesheet"/>
-            </att>
-           </sequence>
-          </elem>
-         </sequence>
-        </elem>
-        <elem line="43" name="body" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
-         <sequence>
-          <applyT bSlot="1">
-           <axis role="select" name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='RDF';"/>
-          </applyT>
-          <choose line="44">
-           <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
-            <data>
-             <gVarRef name="Q{}logo" bSlot="2"/>
-            </data>
-            <str val="true"/>
-           </gc>
-           <elem line="45" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+           <elem line="46" name="a" nsuri="" flags="l">
+            <sequence>
+             <att name="href" flags="l">
+              <str val="javascript:history.forward()"/>
+             </att>
+             <valueOf flags="Sl">
+              <str val="forward"/>
+             </valueOf>
+            </sequence>
+           </elem>
+          </sequence>
+         </elem>
+        </choose>
+        <applyT line="49" bSlot="4">
+         <axis role="select" name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='RDF';"/>
+        </applyT>
+        <choose line="50">
+         <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
+          <data>
+           <gVarRef name="Q{}logo" bSlot="5"/>
+          </data>
+          <str val="true"/>
+         </gc>
+         <elem line="51" name="div" nsuri="" namespaces="rdf rdfs">
+          <sequence>
+           <att name="id" flags="l">
+            <str val="footlogo"/>
+           </att>
+           <elem line="52" name="div" nsuri="" flags="l">
             <sequence>
              <att name="id" flags="l">
-              <str val="footlogo"/>
+              <str val="logo"/>
              </att>
-             <elem line="46" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="dl">
+             <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="53" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
               <sequence>
-               <att name="id" flags="l">
-                <str val="logo"/>
+               <att name="href" flags="l">
+                <str val="http://rhizomik.net"/>
                </att>
-               <elem line="47" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="#">
+               <elem line="54" name="img" nsuri="http://www.w3.org/1999/xhtml" flags="dl">
                 <sequence>
-                 <att name="href" flags="l">
-                  <str val="http://rhizomik.net"/>
+                 <att name="src" flags="l">
+                  <str val="http://rhizomik.net/images/rhizomer.small.png"/>
                  </att>
-                 <elem line="48" name="img" nsuri="http://www.w3.org/1999/xhtml" flags="dl">
-                  <sequence>
-                   <att name="src" flags="l">
-                    <str val="/redefer-services/images/rhizomer.small.png"/>
-                   </att>
-                   <att name="alt" flags="l">
-                    <str val="Rhizomik"/>
-                   </att>
-                  </sequence>
-                 </elem>
-                 <valueOf flags="l">
-                  <str val=" Powered by Rhizomik&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"/>
-                 </valueOf>
+                 <att name="alt" flags="l">
+                  <str val="Rhizomik"/>
+                 </att>
                 </sequence>
                </elem>
+               <valueOf flags="l">
+                <str val=" Powered by Rhizomik&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"/>
+               </valueOf>
               </sequence>
              </elem>
             </sequence>
            </elem>
-          </choose>
-         </sequence>
-        </elem>
+          </sequence>
+         </elem>
+        </choose>
        </sequence>
-      </elem>
-     </choose>
-     <choose line="56">
-      <gVarRef name="Q{http://saxon.sf.net/generated-variable}gg195384308" bSlot="3"/>
-      <sequence line="57">
-       <choose>
-        <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
+      </choose>
+      <valueOf line="61">
+       <fn name="string-join">
+        <convert from="xs:anyAtomicType" to="xs:string">
          <data>
-          <gVarRef name="Q{}mode" bSlot="4"/>
+          <fn name="key">
+           <str val="Q{http://saxon.sf.net/}kk101"/>
+           <str val="sourcetext"/>
+           <dot type="document-node()"/>
+          </fn>
          </data>
-         <str val="rhizomer"/>
-        </gc>
-        <elem line="58" name="div" nsuri="" namespaces="rdf rdfs">
-         <sequence>
-          <att name="class" flags="l">
-           <str val="browser"/>
-          </att>
-          <elem line="59" name="a" nsuri="" flags="l">
-           <sequence>
-            <att name="href" flags="l">
-             <str val="javascript:history.back()"/>
-            </att>
-            <valueOf flags="Sl">
-             <str val="back"/>
-            </valueOf>
-           </sequence>
-          </elem>
-          <valueOf flags="l">
-           <str val=" -&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;go to... -&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;"/>
-          </valueOf>
-          <elem line="61" name="a" nsuri="" flags="l">
-           <sequence>
-            <att name="href" flags="l">
-             <str val="javascript:history.forward()"/>
-            </att>
-            <valueOf flags="Sl">
-             <str val="forward"/>
-            </valueOf>
-           </sequence>
-          </elem>
-         </sequence>
-        </elem>
-       </choose>
-       <applyT line="64" bSlot="5">
-        <axis role="select" name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='RDF';"/>
-       </applyT>
-       <choose line="65">
-        <gc op="=" card="N:1" comp="GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint">
-         <data>
-          <gVarRef name="Q{}logo" bSlot="6"/>
-         </data>
-         <str val="true"/>
-        </gc>
-        <elem line="66" name="div" nsuri="" namespaces="rdf rdfs">
-         <sequence>
-          <att name="id" flags="l">
-           <str val="footlogo"/>
-          </att>
-          <elem line="67" name="div" nsuri="" flags="l">
-           <sequence>
-            <att name="id" flags="l">
-             <str val="logo"/>
-            </att>
-            <elem ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="68" name="a" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
-             <sequence>
-              <att name="href" flags="l">
-               <str val="http://rhizomik.net"/>
-              </att>
-              <elem line="69" name="img" nsuri="http://www.w3.org/1999/xhtml" flags="dl">
-               <sequence>
-                <att name="src" flags="l">
-                 <str val="http://rhizomik.net/images/rhizomer.small.png"/>
-                </att>
-                <att name="alt" flags="l">
-                 <str val="Rhizomik"/>
-                </att>
-               </sequence>
-              </elem>
-              <valueOf flags="l">
-               <str val=" Powered by Rhizomik&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"/>
-              </valueOf>
-             </sequence>
-            </elem>
-           </sequence>
-          </elem>
-         </sequence>
-        </elem>
-       </choose>
-      </sequence>
-     </choose>
-     <valueOf line="76">
-      <fn name="string-join">
-       <convert from="xs:anyAtomicType" to="xs:string">
-        <data>
-         <fn name="key">
-          <str val="Q{http://saxon.sf.net/}kk101"/>
-          <str val="sourcetext"/>
-          <dot type="document-node()"/>
-         </fn>
-        </data>
-       </convert>
-       <str val=" "/>
-      </fn>
-     </valueOf>
-    </sequence>
+        </convert>
+        <str val=" "/>
+       </fn>
+      </valueOf>
+     </sequence>
+    </resultDoc>
    </templateRule>
-   <templateRule prec="0" prio="0.0" seq="1" rank="1" minImp="0" slots="0" flags="s" line="79" module="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl">
+   <templateRule prec="0" prio="0.0" seq="1" rank="1" minImp="0" slots="0" flags="s" line="65" module="rdf2html.xsl">
     <p.nodeTest role="match" test="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)" jsTest="var q=SaxonJS.U.nameOfNode(item); return SaxonJS.U.isNode(item) &amp;&amp; item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='RDF';"/>
-    <elem role="action" baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="80" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
+    <elem role="action" ns="=http://www.w3.org/1999/xhtml xsl=~ rdfs=http://www.w3.org/2000/01/rdf-schema# rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#" line="66" name="div" nsuri="http://www.w3.org/1999/xhtml" flags="d" namespaces="# rdf rdfs">
      <sequence>
       <att name="class" flags="l">
        <str val="rdf2html"/>
       </att>
-      <copyOf line="96" flags="vc">
-       <slash>
-        <slash line="83" simple="1">
-         <doc base="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" validation="preserve">
-          <sequence>
-           <forEach>
-            <filter flags="b">
-             <slash>
-              <slash simple="1">
-               <root/>
-               <axis name="child" nodeTest="element(Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF)" jsTest="var q=SaxonJS.U.nameOfNode(item); return item.nodeType===1 &amp;&amp; q.uri==='http://www.w3.org/1999/02/22-rdf-syntax-ns#'&amp;&amp;q.local==='RDF';"/>
-              </slash>
-              <axis name="namespace" nodeTest="namespace-node()" jsTest="return SaxonJS.U.isNamespaceNode(item)"/>
-             </slash>
-             <and op="and">
-              <vc op="ne" onEmpty="0" comp="CCC">
-               <fn name="name">
-                <dot type="namespace-node()"/>
-               </fn>
-               <str val="xml"/>
-              </vc>
-              <vc op="ne" onEmpty="0" comp="CCC">
-               <fn name="name">
-                <dot type="namespace-node()"/>
-               </fn>
-               <str val="xsd"/>
-              </vc>
-             </and>
-            </filter>
-            <choose line="86">
-             <fn name="not">
-              <fn name="name">
-               <dot type="namespace-node()"/>
-              </fn>
-             </fn>
-             <compElem line="87" flags="l">
-              <str role="name" val="base:dummy-for-xmlns"/>
-              <data role="namespace">
-               <dot type="namespace-node()"/>
-              </data>
-              <empty role="content"/>
-             </compElem>
-             <true/>
-             <compElem line="90" flags="l">
-              <fn role="name" name="concat">
-               <fn name="name">
-                <dot type="namespace-node()"/>
-               </fn>
-               <str val=":dummy-for-xmlns"/>
-              </fn>
-              <data role="namespace">
-               <dot type="namespace-node()"/>
-              </data>
-              <empty role="content"/>
-             </compElem>
-            </choose>
-           </forEach>
-           <elem xmlns:xsd="http://www.w3.org/2001/XMLSchema#" name="xsd:dummy-for-xmlns" nsuri="http://www.w3.org/2001/XMLSchema#" flags="l">
-            <empty/>
-           </elem>
-          </sequence>
-         </doc>
-         <axis line="96" name="child" nodeTest="element()" jsTest="return item.nodeType===1;"/>
-        </slash>
-        <axis name="namespace" nodeTest="namespace-node()" jsTest="return SaxonJS.U.isNamespaceNode(item)"/>
-       </slash>
-      </copyOf>
-      <choose line="99">
+      <choose line="70">
        <fn name="empty">
         <axis name="child" nodeTest="element()" jsTest="return item.nodeType===1;"/>
        </fn>
-       <elem line="100" name="p" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
+       <elem line="71" name="p" nsuri="http://www.w3.org/1999/xhtml" flags="dl" namespaces="# rdf rdfs">
         <valueOf flags="l">
          <str val="No data retrieved."/>
         </valueOf>
        </elem>
       </choose>
-      <forEach line="103">
+      <forEach line="74">
        <sort>
         <axis role="select" name="child" nodeTest="element()" jsTest="return item.nodeType===1;"/>
-        <sortKey line="104" comp="CCC">
+        <sortKey line="75" comp="CCC">
          <attVal role="select" name="Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about" chk="0"/>
          <str role="order" val="ascending"/>
          <str role="lang" val=""/>
@@ -4948,7 +4799,7 @@
          <str role="collation" val="http://www.w3.org/2005/xpath-functions/collation/codepoint"/>
         </sortKey>
        </sort>
-       <callT line="105" name="rdfDescription" bSlot="7"/>
+       <callT line="76" name="rdfDescription" bSlot="6"/>
       </forEach>
      </sequence>
     </elem>
@@ -4958,17 +4809,17 @@
  <overridden/>
  <key name="Q{http://saxon.sf.net/}kk101" line="0" binds="" flags="u">
   <p.nodeSet type="element()">
-   <axis baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="76" name="descendant" nodeTest="element()" jsTest="return item.nodeType===1;"/>
+   <axis ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="61" name="descendant" nodeTest="element()" jsTest="return item.nodeType===1;"/>
   </p.nodeSet>
-  <fn baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="76" name="local-name">
+  <fn ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="61" name="local-name">
    <dot type="element()"/>
   </fn>
  </key>
  <key name="Q{http://saxon.sf.net/}kk102" line="0" binds="" flags="u">
   <p.nodeSet type="element()">
-   <axis baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="801" name="descendant" nodeTest="element()" jsTest="return item.nodeType===1;"/>
+   <axis ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="772" name="descendant" nodeTest="element()" jsTest="return item.nodeType===1;"/>
   </p.nodeSet>
-  <attVal baseUri="file:/home/cyrillmartin/Documents/e-editiones/assets/rdf2html.xsl" ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="-1" name="Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about" chk="0"/>
+  <attVal ns="xsl=~ rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs=http://www.w3.org/2000/01/rdf-schema#" line="-1" name="Q{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about" chk="0"/>
  </key>
  <output>
   <property name="indent" value="yes"/>
@@ -4984,4 +4835,4 @@
  <stripJS test="return true;"/>
  <decimalFormat/>
 </package>
-<?Σ da294e02?>
+<?Σ bba1650a?>

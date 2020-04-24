@@ -10,7 +10,15 @@
   {%- endif -%}
   {% if page.custom_js %}
     {% for js_file in page.custom_js %}
-    <script type="text/javascript" src="{{ site.baseurl }}/assets/SaxonJS/{{ js_file }}.js"></script>
+	    <script type="text/javascript" src="{{ site.baseurl }}/assets/SaxonJS/{{ js_file }}.js"></script>
+	    <script>
+		   window.onload = function() {
+		      SaxonJS.transform({
+		         stylesheetLocation: "{{ site.baseurl }}/assets/rdf2html.sef.xml",
+		         sourceLocation: "{{ site.baseurl }}/ontology/{{ page.prefix }}.xml"
+		      });
+		   }     
+		</script>
     {% endfor %}
   {% endif %}
 </head>
