@@ -1,6 +1,5 @@
 ---
-title: Philosophies Ontology
-prefix: philosophies-ontology
+title: Philosophies
+file: philosophies-ontology
 ---
 
-Hello World!

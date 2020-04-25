@@ -1,6 +1,5 @@
 ---
-title: Concept Ontology
-prefix: concept-ontology
+title: Concept
+file: concept-ontology
 ---
 
-Hello World!

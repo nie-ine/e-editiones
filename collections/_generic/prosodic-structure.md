@@ -1,6 +1,5 @@
 ---
-title: Prosodic Structure Ontology
-prefix: prosodic-structure-ontology
+title: Prosodic Structure
+file: prosodic-structure-ontology
 ---
 
-Hello World!

@@ -1,6 +1,5 @@
 ---
-title: Physical Entity Ontology
-prefix: physical-entity-ontology
+title: Physical Entity
+file: physical-entity-ontology
 ---
 
-Hello World!

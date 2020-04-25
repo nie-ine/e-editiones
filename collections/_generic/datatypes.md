@@ -1,6 +1,5 @@
 ---
-title: Datatypes Ontology
-prefix: datatypes-ontology
+title: Datatypes
+file: datatypes-ontology
 ---
 
-Hello World!

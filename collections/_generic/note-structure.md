@@ -1,6 +1,5 @@
 ---
-title: Note Structure Ontology
-prefix: note-structure-ontology
+title: Note Structure
+file: note-structure-ontology
 ---
 
-Hello World!

@@ -1,6 +1,5 @@
 ---
-title: Document Ontology
-prefix: document-ontology
+title: Document
+file: document-ontology
 ---
 
-Hello World!

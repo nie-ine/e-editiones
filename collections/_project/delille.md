@@ -1,6 +1,5 @@
 ---
-title: Jacques Delille Poetry Ontology
-prefix: Jacques-Delille-poetry-ontology
+title: Jacques Delille Poetry
+file: Jacques-Delille-poetry-ontology
 ---
 
-Hello World!

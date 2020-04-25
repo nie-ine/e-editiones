@@ -1,6 +1,5 @@
 ---
-title: Physical Geography Ontology
-prefix: physical-geography-ontology
+title: Physical Geography
+file: physical-geography-ontology
 ---
 
-Hello World!

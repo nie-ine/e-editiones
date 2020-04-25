@@ -1,6 +1,5 @@
 ---
-title: Linguistic Morphology Ontology
-prefix: linguistic-morphology-ontology
+title: Linguistic Morphology
+file: linguistic-morphology-ontology
 ---
 
-Hello World!

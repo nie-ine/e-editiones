@@ -1,6 +1,5 @@
 ---
-title: Human Ontology
-prefix: human-ontology
+title: Human
+file: human-ontology
 ---
 
-Hello World!

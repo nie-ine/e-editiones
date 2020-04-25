@@ -1,6 +1,5 @@
 ---
-title: Catholic Organization Ontology
-prefix: catholic-organization-ontology
+title: Catholic Organization
+file: catholic-organization-ontology
 ---
 
-Hello World!

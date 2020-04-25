@@ -1,6 +1,5 @@
 ---
-title: Time Ontology
-prefix: time-ontology
+title: Time
+file: time-ontology
 ---
 
-Hello World!

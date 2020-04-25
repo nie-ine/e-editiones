@@ -1,6 +1,5 @@
 ---
-title: Text Expression Ontology
-prefix: text-expression-ontology
+title: Text Expression
+file: text-expression-ontology
 ---
 
-Hello World!

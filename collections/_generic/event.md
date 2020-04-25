@@ -1,6 +1,5 @@
 ---
-title: Event Ontology
-prefix: event-ontology
+title: Event
+file: event-ontology
 ---
 
-Hello World!

@@ -1,6 +1,5 @@
 ---
-title: Publishing Ontology
-prefix: publishing-ontology
+title: Publishing
+file: publishing-ontology
 ---
 
-Hello World!

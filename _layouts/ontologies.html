@@ -17,20 +17,19 @@ layout: default
   	<h2 id="generic-ontologies">Generic Ontologies</h2>
   	<ul>
 		{% for ontology in site.generic %}
-  			<li>
-  				{{ ontology.title }} &#8211;
- <a href="/e-editiones{{ ontology.url }}">html</a> &#183; <a href="/e-editiones/ontology/{{ ontology.prefix }}.ttl">ttl</a>
-  			</li>
+      <li>
+        <h4><a href="/e-editiones{{ ontology.url }}">{{ ontology.title }}</a></h4>
+      </li>
 		{% endfor %}
   	</ul>
+    
   	<h2 id="project-ontologies">Project Ontologies</h2>
   	<ul>
-		{% for ontology in site.project %}
-  			<li>
-  				{{ ontology.title }} &#8211;
- <a href="/e-editiones{{ ontology.url }}">html</a> &#183; <a href="/e-editiones/ontology/{{ ontology.prefix }}.ttl">ttl</a>
-  			</li>
-		{% endfor %}
+    {% for ontology in site.project %}
+      <li>
+        <h4><a href="/e-editiones{{ ontology.url }}">{{ ontology.title }}</a></h4>
+      </li>
+    {% endfor %}
   	</ul>
 
     {{ content }}

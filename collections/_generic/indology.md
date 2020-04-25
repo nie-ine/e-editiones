@@ -1,6 +1,5 @@
 ---
-title: Indology Ontology
-prefix: indology-ontology
+title: Indology
+file: indology-ontology
 ---
 
-Hello World!

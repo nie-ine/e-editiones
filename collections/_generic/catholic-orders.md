@@ -1,6 +1,4 @@
 ---
-title: Catholic Orders Ontology
-prefix: catholic-orders-ontology
+title: Catholic Orders
+file: catholic-orders-ontology
 ---
-
-Hello World!

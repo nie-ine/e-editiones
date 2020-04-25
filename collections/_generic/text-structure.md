@@ -1,6 +1,5 @@
 ---
-title: Text Structure Ontology
-prefix: text-structure-ontology
+title: Text Structure
+file: text-structure-ontology
 ---
 
-Hello World!

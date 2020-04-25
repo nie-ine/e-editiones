@@ -1,6 +1,5 @@
 ---
-title: Device Ontology
-prefix: device-ontology
+title: Device
+file: device-ontology
 ---
 
-Hello World!

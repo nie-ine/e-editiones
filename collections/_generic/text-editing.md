@@ -1,6 +1,5 @@
 ---
-title: Text Editing Ontology
-prefix: text-editing-ontology
+title: Text Editing
+file: text-editing-ontology
 ---
 
-Hello World!

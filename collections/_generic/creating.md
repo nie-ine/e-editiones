@@ -1,7 +1,6 @@
 ---
-title: Creating Ontology
+title: Creating
 permalink: /ontology/creating
-prefix: creating-ontology
+file: creating-ontology
 ---
 
-Hello World!

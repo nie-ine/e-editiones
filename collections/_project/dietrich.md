@@ -1,6 +1,5 @@
 ---
-title: Joseph Dietrich Monastery Diary Ontology
-prefix: Joseph-Dietrich-monastery-diary-ontology
+title: Joseph Dietrich Monastery Diary
+file: Joseph-Dietrich-monastery-diary-ontology
 ---
 
-Hello World!

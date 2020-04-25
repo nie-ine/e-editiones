@@ -1,6 +1,5 @@
 ---
-title: Friedrich Nietzsche Late Work Ontology
-prefix: Friedrich-Nietzsche-late-work-ontology
+title: Friedrich Nietzsche Late Work
+file: Friedrich-Nietzsche-late-work-ontology
 ---
 
-Hello World!

@@ -1,6 +1,5 @@
 ---
-title: Image Ontology
-prefix: image-ontology
+title: Image
+file: image-ontology
 ---
 
-Hello World!

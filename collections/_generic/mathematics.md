@@ -1,6 +1,5 @@
 ---
-title: Mathematics Ontology
-prefix: mathematics-ontology
+title: Mathematics
+file: mathematics-ontology
 ---
 
-Hello World!

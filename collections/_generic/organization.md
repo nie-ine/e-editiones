@@ -1,6 +1,5 @@
 ---
-title: Organization Ontology
-prefix: organization-ontology
+title: Organization
+file: organization-ontology
 ---
 
-Hello World!

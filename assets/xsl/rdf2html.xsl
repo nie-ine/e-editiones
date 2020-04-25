@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <!-- 
     Style sheet to transform RDF descriptions to HTML
-    Author: http://rhizomik.net/~roberto
+    Original author: http://rhizomik.net/~roberto
+
+    Adapted by: Cyrill Martin, Tool Coordinator and Developer
+    NIE-INE - National Infrastructure for Editions
+    University of Basel, Switzerland
 
 	This work is licensed under the Creative Commons Attribution-ShareAlike License.
 	To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/
@@ -19,52 +23,34 @@
 	<xsl:strip-space elements="*"/>
 
 	<xsl:param name="language">en</xsl:param>
-	<xsl:param name="mode">html</xsl:param>
 	<xsl:param name="namespaces">false</xsl:param>
-	<xsl:param name="logo">false</xsl:param>
-	
-	<xsl:variable name="isA">
-		<xsl:choose>
-			<xsl:when test="contains($language,'en')"><xsl:text> a </xsl:text></xsl:when>
-			<xsl:when test="contains($language,'es')"><xsl:text> es </xsl:text></xsl:when>
-			<xsl:otherwise><xsl:text> a </xsl:text></xsl:otherwise>
-		</xsl:choose>
-	</xsl:variable>
 	
 	<xsl:template match="/">
-		<xsl:result-document href="#wtf">
-		<xsl:if test="$mode='html'">
-
+		<xsl:result-document href="#rdf2html">
 			<xsl:apply-templates select="rdf:RDF"/>
-
-		</xsl:if>
-		<xsl:if test="$mode='snippet' or $mode='rhizomer'">
-			<xsl:if test="$mode='rhizomer'">
-				<div class="browser">
-					<a href="javascript:history.back()">back</a> -
-					<!-- a href="javascript:showGoTo()" -->go to...<!--/a--> -
-					<a href="javascript:history.forward()">forward</a>
-				</div>
-			</xsl:if>
-			<xsl:apply-templates select="rdf:RDF"/>
-			<xsl:if test="$logo='true'">
-				<div id="footlogo">
-					<div id="logo">
-						<a href="http://rhizomik.net"  xmlns="http://www.w3.org/1999/xhtml">
-							<img src="http://rhizomik.net/images/rhizomer.small.png" alt="Rhizomik"/> Powered by Rhizomik
-						</a>
-					</div>
-				</div>
-			</xsl:if>
-		</xsl:if>
+		</xsl:result-document>
 		<!-- Show error message if we have a parsererror -->
 		<xsl:value-of select="//*[local-name()='sourcetext']"/>
-		</xsl:result-document>
 	</xsl:template>
 	
 	<xsl:template match="rdf:RDF">
 		<div class="rdf2html" xmlns="http://www.w3.org/1999/xhtml">
 			<!-- Generate the xmlns for RDFa from those in the RDF/XML and attach to div#rdf2html -->
+<!--			<xsl:variable name="namespaces">
+				<xsl:for-each select="/rdf:RDF/namespace::*[name()!='xml' and name()!='xsd']">
+					<xsl:choose>
+						<!-\- The base NS in the output is XHTML so keep base NS in input RDF file with alias "base" -\->
+						<xsl:when test="name()=''">
+							<xsl:element name="base:dummy-for-xmlns" namespace="{.}"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:element name="{concat(name(),':dummy-for-xmlns')}" namespace="{.}"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:for-each>
+				<xsl:element name="xsd:dummy-for-xmlns" namespace="http://www.w3.org/2001/XMLSchema#"/>
+			</xsl:variable>-->
+			<xsl:copy-of select="$namespaces/*/namespace::*"/>
 
 			<!-- If no RDF descriptions... -->
 			<xsl:if test="count(child::*)=0">
@@ -72,7 +58,7 @@
 			</xsl:if>
 			<!-- If rdf:RDF has child elements, they are descriptions... -->
 			<xsl:for-each select="child::*">
-				<xsl:sort select="@rdf:about"/>
+				<xsl:sort select="@rdf:about" order="ascending"/>
 				<xsl:call-template name="rdfDescription"/>
 			</xsl:for-each>
 		</div>
@@ -84,9 +70,6 @@
 			<xsl:when test="(count(following-sibling::*)=0 and count(preceding-sibling::*)=0) or not(local-name()='Description') or
 							*[not(name()='http://www.w3.org/2000/01/rdf-schema#') and not(local-name()='label')] | 
 							@*[not(namespace-uri()='http://www.w3.org/2000/01/rdf-schema#') and not(local-name()='label' or local-name()='about')]">
-				<xsl:if test="$mode='rhizomer'">
-					<div class="edition" xmlns="http://www.w3.org/1999/xhtml"><span xmlns="http://www.w3.org/1999/xhtml"></span><xsl:call-template name="rdfDescriptionEdition"/></div>
-				</xsl:if>
 				<div class="description" xmlns="http://www.w3.org/1999/xhtml">
 				<table xmlns="http://www.w3.org/1999/xhtml">
 					<xsl:if test="@rdf:ID|@rdf:about">
@@ -97,9 +80,6 @@
 					<xsl:call-template name="header"/>
 					<xsl:call-template name="attributes"/>
 					<xsl:call-template name="properties"/>
-					<xsl:if test="$mode='rhizomer'">
-						<tr><td class="actions" colspan="2"><xsl:call-template name="rdfDescriptionActions"/></td></tr>
-					</xsl:if>
 				</table>
 				</div>
 			</xsl:when>
@@ -234,7 +214,7 @@
 	<xsl:template name="types">
 		<!-- textual decoration if there are types-->
 		<xsl:if test="@rdf:ID|@rdf:about and (not(local-name()='Description') or count(*[namespace-uri()='http://www.w3.org/1999/02/22-rdf-syntax-ns#' and local-name()='type'])>0)">
-			<div class="connector"><xsl:value-of select="$isA"/></div>
+			<div class="connector"> a </div>
 		</xsl:if>
 		<!-- embedded rdf:type -->
 		<xsl:if test="not(local-name()='Description')">
@@ -261,7 +241,7 @@
 	<xsl:template name="attributes">
 		<xsl:for-each select="@*[not(namespace-uri()='http://www.w3.org/1999/02/22-rdf-syntax-ns#')]">
 								<!-- and not(local-name='about' or local-name='ID' or local-name='type')]" -->
-			<xsl:sort select="local-name()"/>
+			<xsl:sort select="local-name()" order="ascending"/>
 			<tr xmlns="http://www.w3.org/1999/xhtml"> 
 				<td xmlns="http://www.w3.org/1999/xhtml">
 					<xsl:call-template name="resourceDetailLink">
@@ -424,7 +404,7 @@
 	
 	<xsl:template name="properties">
 		<xsl:for-each select="*[not(namespace-uri()='http://www.w3.org/1999/02/22-rdf-syntax-ns#' and local-name()='type')]"> <!-- and not(namespace-uri()='http://www.w3.org/2000/01/rdf-schema#' and local-name()='label') -->
-			<xsl:sort select="local-name()"/>
+			<xsl:sort select="local-name()" order="ascending"/>
 			<xsl:variable name="property-name">
 				<xsl:value-of select="local-name()"></xsl:value-of>
 			</xsl:variable>
@@ -710,7 +690,7 @@
 				<div class="connector" xmlns="http://www.w3.org/1999/xhtml"><xsl:text>,</xsl:text></div>
 			</xsl:when>
 			<xsl:when test="count($criteria)=1">
-				<div class="connector" xmlns="http://www.w3.org/1999/xhtml"><xsl:text disable-output-escaping="yes">&amp;nbsp; and</xsl:text></div>
+				<div class="connector" xmlns="http://www.w3.org/1999/xhtml"><xsl:text disable-output-escaping="yes">and</xsl:text></div>
 			</xsl:when>
 		</xsl:choose>	
 	</xsl:template>
@@ -856,34 +836,11 @@
 					<xsl:with-param name="with" select="'//'"/>
 				</xsl:call-template>
 			</xsl:variable>
-			<!-- xsl:choose>
-				<xsl:when test="contains($linkText, '://')">
-					<a class="browse" href="{$uri}"	title="{$uri}" xmlns="http://www.w3.org/1999/xhtml">
-						<xsl:value-of select="$linkText"/>
-					</a>
-				</xsl:when>
-				<xsl:otherwise -->
-					<xsl:choose>
-						<xsl:when test="$mode='rhizomer' and $property!='about'">
-							<a class="describe" href="?query=DESCRIBE%20&lt;{$escaped-uri}&gt;"
-								onclick="javascript:rhz.describeResource('{$uri}'); return false;"
-								title="Describe {$uri}" xmlns="http://www.w3.org/1999/xhtml">
-								<xsl:if test="$property != ''">
-									<xsl:attribute name="resource">
-										<xsl:value-of select="$uri"/>
-									</xsl:attribute>
-								</xsl:if>
-								<xsl:value-of select="$linkText"/>
-							</a>
-						</xsl:when>
-						<xsl:otherwise>
-							<a class="browse" href="{$uri}" title="Browse {$uri}" xmlns="http://www.w3.org/1999/xhtml">
-								<xsl:value-of select="$linkText"/>
-							</a>
-						</xsl:otherwise>
-					</xsl:choose>
-				<!-- /xsl:otherwise>
-			</xsl:choose -->
+
+			<a class="browse" href="{$uri}" title="Browse {$uri}" xmlns="http://www.w3.org/1999/xhtml">
+				<xsl:value-of select="$linkText"/>
+			</a>
+
 	</xsl:template>
 	
 	<!-- Create a browsable link if property value is a URL. 

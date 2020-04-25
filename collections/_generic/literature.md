@@ -1,6 +1,5 @@
 ---
-title: Literature Ontology
-prefix: literature-ontology
+title: Literature
+file: literature-ontology
 ---
 
-Hello World!

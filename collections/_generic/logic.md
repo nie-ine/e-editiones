@@ -1,7 +1,6 @@
 ---
-title: Logic Ontology
+title: Logic
 permalink: /ontology/logic
-prefix: logic-ontology
+file: logic-ontology
 ---
 
-Hello World!

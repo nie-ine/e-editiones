@@ -1,6 +1,5 @@
 ---
-title: Conrad Ferdinand Meyer Correspondence Ontology
-prefix: Conrad-Ferdinand-Meyer-correspondence-ontology
+title: Conrad Ferdinand Meyer Correspondence
+file: Conrad-Ferdinand-Meyer-correspondence-ontology
 ---
 
-Hello World!

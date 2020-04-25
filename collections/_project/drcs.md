@@ -1,6 +1,5 @@
 ---
-title: Petrus Lombardus Sentences Ontology
-prefix: Petrus-Lombardus-sentences-ontology
+title: Petrus Lombardus Sentences
+file: Petrus-Lombardus-sentences-ontology
 ---
 
-Hello World!

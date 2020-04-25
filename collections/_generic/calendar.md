@@ -1,4 +1,4 @@
 ---
-title: Calendar Ontology
-prefix: calendar-ontology
+title: Calendar
+file: calendar-ontology
 ---

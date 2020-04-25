@@ -1,6 +1,5 @@
 ---
-title: Heinrich Woelfflin Collected Works Ontology
-prefix: Heinrich-Woelfflin-collected-works-ontology
+title: Heinrich Woelfflin Collected Works
+file: Heinrich-Woelfflin-collected-works-ontology
 ---
 
-Hello World!

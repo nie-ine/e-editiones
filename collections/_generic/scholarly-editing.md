@@ -1,6 +1,5 @@
 ---
-title: Scholarly Editing Ontology
-prefix: scholarly-editing-ontology
+title: Scholarly Editing
+file: scholarly-editing-ontology
 ---
 
-Hello World!

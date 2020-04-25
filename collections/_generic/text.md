@@ -1,6 +1,5 @@
 ---
-title: Text Ontology
-prefix: text-ontology
+title: Text
+file: text-ontology
 ---
 
-Hello World!

@@ -1,6 +1,5 @@
 ---
-title: Human Geography Ontology
-prefix: human-geography-ontology
+title: Human Geography
+file: human-geography-ontology
 ---
 
-Hello World!

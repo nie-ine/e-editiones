@@ -1,6 +1,5 @@
 ---
-title: Information Carrier Ontology
-prefix: information-carrier-ontology
+title: Information Carrier
+file: information-carrier-ontology
 ---
 
-Hello World!

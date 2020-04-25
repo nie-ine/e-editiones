@@ -1,6 +1,5 @@
 ---
-title: Letter Corresponding Ontology
-prefix: letter-corresponding-ontology
+title: Letter Corresponding
+file: letter-corresponding-ontology
 ---
 
-Hello World!

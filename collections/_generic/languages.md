@@ -1,6 +1,5 @@
 ---
-title: Languages Ontology
-prefix: languages-ontology
+title: Languages
+file: languages-ontology
 ---
 
-Hello World!

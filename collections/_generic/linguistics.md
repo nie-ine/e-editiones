@@ -1,6 +1,5 @@
 ---
-title: Linguistics Ontology
-prefix: linguistics-ontology
+title: Linguistics
+file: linguistics-ontology
 ---
 
-Hello World!

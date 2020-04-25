@@ -1,6 +1,5 @@
 ---
-title: Atharvaveda Ontology
-prefix: Atharvaveda-ontology
+title: Atharvaveda
+file: Atharvaveda-ontology
 ---
 
-Hello World!

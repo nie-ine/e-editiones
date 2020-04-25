@@ -1,6 +1,5 @@
 ---
-title: Teaching Ontology
-prefix: teaching-ontology
+title: Teaching
+file: teaching-ontology
 ---
 
-Hello World!

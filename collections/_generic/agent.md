@@ -1,6 +1,4 @@
 ---
-title: Agent Ontology
-prefix: agent-ontology
+title: Agent
+file: agent-ontology
 ---
-
-Hello World!

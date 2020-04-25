@@ -1,6 +1,5 @@
 ---
-title: Scholasticism Ontology
-prefix: scholasticism-ontology
+title: Scholasticism
+file: scholasticism-ontology
 ---
 
-Hello World!
