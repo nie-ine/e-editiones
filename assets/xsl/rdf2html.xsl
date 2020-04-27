@@ -23,7 +23,7 @@
 	<xsl:strip-space elements="*"/>
 
 	<xsl:param name="language">en</xsl:param>
-	<xsl:param name="namespaces">false</xsl:param>
+	<xsl:param name="namespaces">true</xsl:param>
 	
 	<xsl:template match="/">
 		<xsl:result-document href="#rdf2html">
