@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/teaching">
+    <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dc:title xml:lang="en">An ontology about teaching:</dc:title>
+    <dc:description xml:lang="en">Formal description of teaching:, general subclasses such as action, related classes and properties.</dc:description>
+    <dc:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dc:creator>
+    <dc:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dc:publisher>
+  </owl:Ontology>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/teaching#Teaching">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/teaching#"/>
+    <rdfs:label xml:lang="en">teaching</rdfs:label>
+    <rdfs:label xml:lang="de">Unterricht</rdfs:label>
+    <rdfs:comment xml:lang="en">Person's action of communicating information in order to help another person to acquire knowledge, competence or value.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Procedure"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/teaching#Teacher">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/teaching#"/>
+    <rdfs:label xml:lang="en">teacher</rdfs:label>
+    <rdfs:label xml:lang="de">LehrerIn</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person who teaches.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#PersonRole"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/teaching#Lecture">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/teaching#"/>
+    <rdfs:label xml:lang="en">lecture</rdfs:label>
+    <rdfs:label xml:lang="de">Vorlesung</rdfs:label>
+    <rdfs:comment xml:lang="en">Teaching by oral presentation about a particular subject.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/teaching#Teaching"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/teaching#Lecturer">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/teaching#"/>
+    <rdfs:label xml:lang="en">lecturer</rdfs:label>
+    <rdfs:label xml:lang="de">VorleserIn</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person who lectures.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/teaching#Teacher"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/teaching#PedagogicExpression">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/teaching#"/>
+    <rdfs:label xml:lang="en">pedagogic text expression</rdfs:label>
+    <rdfs:label xml:lang="de">pedagogische Textexpression</rdfs:label>
+    <rdfs:label xml:lang="fr">expression textuelle pédagogique</rdfs:label>
+    <rdfs:label xml:lang="it">espressione testuale pedagogico</rdfs:label>
+    <rdfs:comment xml:lang="en">Text expression for teaching purposes.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/teaching#Manual">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/teaching#"/>
+    <rdfs:label xml:lang="en">teaching manual</rdfs:label>
+    <rdfs:label xml:lang="de">Lehrbuch</rdfs:label>
+    <rdfs:label xml:lang="fr">manuel scolaire</rdfs:label>
+    <rdfs:label xml:lang="it">manuale di testo</rdfs:label>
+    <rdfs:comment xml:lang="en">Manual for teaching purposes.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Manual"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/teaching#PedagogicExpression"/>
+  </rdfs:Class>
+
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/teaching#teachingBy">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/teaching#"/>
+    <rdfs:label xml:lang="en">teaching by</rdfs:label>
+    <rdfs:label xml:lang="de">Unterricht von</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a teaching to a person having the teacher role.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/teaching#Teaching"/>
+    <rdfs:range>
+      <rdf:Description>
+        <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Person"/>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/human#personHasRole"/>
+            <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/teaching#Teacher"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+
+      </rdf:Description>
+    </rdfs:range>
+
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/agent#hasAgent"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/teaching#lectureBy">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/teaching#"/>
+    <rdfs:label xml:lang="en">lecture by</rdfs:label>
+    <rdfs:label xml:lang="de">Vorlesung von</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a lecture to a person having the lecturer role.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/teaching#Lecture"/>
+    <rdfs:range>
+      <rdf:Description>
+        <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Person"/>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/human#personHasRole"/>
+            <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/teaching#Lecturer"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+
+      </rdf:Description>
+    </rdfs:range>
+
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/teaching#teachingBy"/>
+  </owl:ObjectProperty>
+
+</rdf:RDF>

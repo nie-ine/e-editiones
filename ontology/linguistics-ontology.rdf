@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/linguistics">
+    <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dc:title xml:lang="en">An ontology about language</dc:title>
+    <dc:description xml:lang="en">Formal description of linguistics, general subclasses, related classes and properties.</dc:description>
+    <dc:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dc:creator>
+    <dc:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland</dc:contributor>
+    <dc:contributor xml:lang="en">Magdalena Plamada, PhD, Zürich University, Switzerland</dc:contributor>
+    <dc:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dc:publisher>
+  </owl:Ontology>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Concept">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">linguistic concept</rdfs:label>
+    <rdfs:label xml:lang="de">linguistisches Konzept</rdfs:label>
+    <rdfs:comment xml:lang="en">Concept in the knowledge domain of linguistics.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#ConceptualEntity"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Lexeme">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">lexeme</rdfs:label>
+    <rdfs:label xml:lang="de">Lexem</rdfs:label>
+    <rdfs:comment xml:lang="en">Linguistic concept as individual semantic entity in human natural language.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Lemma">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">lemma</rdfs:label>
+    <rdfs:label xml:lang="de">Lemma</rdfs:label>
+    <rdfs:comment xml:lang="en">Dictionary entry of a lexeme.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://www.alphabit.net/ATL3Leunitadianalisi.pdf"/>
+    <rdfs:seeAlso rdf:resource="http://www.dcuci.univr.it/documenti/OccorrenzaIns/matdid/matdid121824.pdf"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#SymbolicEntity"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Symbol">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">language symbol</rdfs:label>
+    <rdfs:label xml:lang="de">Sprache-Symbol</rdfs:label>
+    <rdfs:comment xml:lang="en">.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text#WrittenText"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Literal">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">literal</rdfs:label>
+    <rdfs:label xml:lang="de">Literal</rdfs:label>
+    <rdfs:comment xml:lang="en">One or more language symbols of any kind.</rdfs:comment>
+    <skos:note xml:lang="en">Not only letters; as also used in Information Technology, e.g. Resource Description Framework.</skos:note>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text#WrittenText"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Statement">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">statement</rdfs:label>
+    <rdfs:label xml:lang="de">Aussage</rdfs:label>
+    <rdfs:comment xml:lang="en">Sentence... .</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Sentence"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Command">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">command</rdfs:label>
+    <rdfs:label xml:lang="de">Befehl</rdfs:label>
+    <rdfs:comment xml:lang="en">Sentence... .</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Sentence"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Question">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">question</rdfs:label>
+    <rdfs:label xml:lang="de">Frage</rdfs:label>
+    <rdfs:comment xml:lang="en">Sentence eliciting information.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Sentence"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Answer">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">answer</rdfs:label>
+    <rdfs:label xml:lang="de">Antwort</rdfs:label>
+    <rdfs:comment xml:lang="en">Sentence providing information on elicitation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Sentence"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Promise">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">promise</rdfs:label>
+    <rdfs:label xml:lang="de">Versprechen</rdfs:label>
+    <rdfs:comment xml:lang="en">Sentence... .</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Sentence"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/linguistics#Evaluation">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">evaluation</rdfs:label>
+    <rdfs:label xml:lang="de">Evaluation</rdfs:label>
+    <rdfs:comment xml:lang="en">Examination with judgement of any kind, as output of evaluating.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Sentence"/>
+  </rdfs:Class>
+
+  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/linguistics#hasSynonymLiteral">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">has synonym literal</rdfs:label>
+    <rdfs:label xml:lang="de">hat Synonymliterale</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a resource to the literal of a synonym of the name of the resource.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text#hasNameLiteral"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/linguistics#hasCommentLiteral">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">has linguistic comment literal</rdfs:label>
+    <rdfs:label xml:lang="de">hat linguistischer Kommentarliterale</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a human natural language expression to the literal of a linguistic comment as a textual statement about the expression.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text#hasCommentLiteral"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/linguistics#hasLanguage">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">has language</rdfs:label>
+    <rdfs:label xml:lang="de">hat Sprache</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a linguistic concept to its human natural language.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/linguistics#hasLemma">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/linguistics#"/>
+    <rdfs:label xml:lang="en">has lemma</rdfs:label>
+    <rdfs:label xml:lang="de">hat Lemma</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a lexeme to a lemma.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Lexeme"/>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Lemma"/>
+  </owl:ObjectProperty>
+
+</rdf:RDF>
