@@ -36,10 +36,10 @@
 	<xsl:template match="rdf:RDF">
 		<div class="rdf2html" xmlns="http://www.w3.org/1999/xhtml">
 			<!-- Generate the xmlns for RDFa from those in the RDF/XML and attach to div#rdf2html -->
-<!--			<xsl:variable name="namespaces">
+			<xsl:variable name="namespaces">
 				<xsl:for-each select="/rdf:RDF/namespace::*[name()!='xml' and name()!='xsd']">
 					<xsl:choose>
-						<!-\- The base NS in the output is XHTML so keep base NS in input RDF file with alias "base" -\->
+						<!-- The base NS in the output is XHTML so keep base NS in input RDF file with alias "base" -->
 						<xsl:when test="name()=''">
 							<xsl:element name="base:dummy-for-xmlns" namespace="{.}"/>
 						</xsl:when>
@@ -49,8 +49,8 @@
 					</xsl:choose>
 				</xsl:for-each>
 				<xsl:element name="xsd:dummy-for-xmlns" namespace="http://www.w3.org/2001/XMLSchema#"/>
-			</xsl:variable>-->
-			<xsl:copy-of select="$namespaces/*/namespace::*"/>
+			</xsl:variable>
+<!-- 			<xsl:copy-of select="$namespaces/*/namespace::*"/> -->
 
 			<!-- If no RDF descriptions... -->
 			<xsl:if test="count(child::*)=0">

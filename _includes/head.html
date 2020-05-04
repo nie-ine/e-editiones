@@ -8,17 +8,21 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
-  {% if page.custom_js %}
-    {% for js_file in page.custom_js %}
-	    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/SaxonJS/{{ js_file }}.js"></script>
-	    <script>
-		   window.onload = function() {
-		      SaxonJS.transform({
-		         stylesheetLocation: "{{ site.baseurl }}/assets/xsl/rdf2html.sef.xml",
-		         sourceLocation: "{{ site.baseurl }}/ontology/{{ page.file }}.rdf"
-		      });
-		   }     
-		</script>
-    {% endfor %}
-  {% endif %}
+
+  {% comment %}
+    {% if page.custom_js %}
+      {% for js_file in page.custom_js %}
+  	    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/SaxonJS/{{ js_file }}.js"></script>
+  	    <script>
+  		   window.onload = function() {
+  		      SaxonJS.transform({
+  		         stylesheetLocation: "{{ site.baseurl }}/assets/xsl/rdf2html.sef.xml",
+  		         sourceLocation: "{{ site.baseurl }}/ontology/{{ page.file }}.rdf"
+  		      });
+  		   }     
+  		</script>
+      {% endfor %}
+    {% endif %}
+  {% endcomment %}
+  
 </head>
