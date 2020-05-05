@@ -1,186 +1,121 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:dc="http://purl.org/dc/terms/"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
-
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dct="http://purl.org/dc/terms/"
+>
   <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/mathematics">
-    <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dc:title xml:lang="en">An ontology about mathematics</dc:title>
-    <dc:description xml:lang="en">Formal description of general concepts in mathematics.</dc:description>
-    <dc:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dc:creator>
-    <dc:publisher xml:lang="en">University of Basel, Switzerland</dc:publisher>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
     <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#"/>
+    <dct:description xml:lang="en">Formal description of general concepts in mathematics.</dct:description>
+    <dct:publisher xml:lang="en">University of Basel, Switzerland</dct:publisher>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:title xml:lang="en">An ontology about mathematics</dct:title>
   </owl:Ontology>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#MathematicalObject">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">mathematical object</rdfs:label>
-    <rdfs:label xml:lang="de">mathematisches Objekt</rdfs:label>
-    <rdfs:comment xml:lang="en">Conceptual entity in mathematics.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#ConceptualEntity"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#Number">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">number</rdfs:label>
-    <rdfs:label xml:lang="de">Zahl</rdfs:label>
-    <rdfs:comment xml:lang="en">Mathematical object used for counting, measuring, ordering, labeling, and coding.</rdfs:comment>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#Set">
     <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#MathematicalObject"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#SymbolicEntity"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#NaturalNumber">
+    <rdfs:label xml:lang="de">mathematische Sammlung</rdfs:label>
+    <rdfs:label xml:lang="en">mathematical set</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#Set"/>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">natural number</rdfs:label>
-    <rdfs:label xml:lang="de">natürliche Zahl</rdfs:label>
-    <rdfs:comment xml:lang="en">Non-negative whole number used for counting and ordering.</rdfs:comment>
-    <skos:note xml:lang="en">Conform ISO 80000-2:2009.</skos:note>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#Number"/>
+    <rdfs:comment xml:lang="en">Set of mathematical objects.</rdfs:comment>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalNumeral">
+    <rdfs:label xml:lang="de">hat Ordinalnumerale</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalNumber"/>
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasNumeral"/>
+    </owl:propertyChainAxiom>
+    <rdfs:comment xml:lang="en">Relating something to the numeral denoting its position in a sequence.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalLiteral">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalSymbol"/>
+          <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/concept#hasLiteral"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Relating something to the literal denoting its position in a sequence.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="de">hat Ordinalliterale</rdfs:label>
+        <rdfs:label xml:lang="en">has ordinal literal</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </owl:DatatypeProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">has ordinal numeral</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#OrdinalSymbol">
+    <rdfs:comment xml:lang="en">Symbol used to order, i.e. denoting the position of something in a sequence, e.g. the letters of an alphabet with literals a to z or A to Z.</rdfs:comment>
+    <rdfs:label xml:lang="de">Ordinalsymbol</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#Identifier"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
+    <rdfs:label xml:lang="en">ordinal symbol</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#NaturalNumber">
     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/mathematics#numberHasNumeral"/>
+      <owl:Restriction rdf:nodeID="ub46bL47C31">
+        <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasNumeral"/>
         <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#OrdinalSymbol">
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#Number"/>
+    <rdfs:label xml:lang="en">natural number</rdfs:label>
+    <skos:note xml:lang="en">Conform ISO 80000-2:2009.</skos:note>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">ordinal symbol</rdfs:label>
-    <rdfs:label xml:lang="de">Ordinalsymbol</rdfs:label>
-    <rdfs:comment xml:lang="en">Symbol used to order, i.e. denoting the position of something in a sequence, e.g. the letters of an alphabet with literals a to z or A to Z.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#Identifier"/>
+    <rdfs:comment xml:lang="en">Non-negative whole number used for counting and ordering.</rdfs:comment>
+    <rdfs:label xml:lang="de">natürliche Zahl</rdfs:label>
   </rdfs:Class>
-
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#MathematicalObject">
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#ConceptualEntity"/>
+    <rdfs:label xml:lang="de">mathematisches Objekt</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
+    <rdfs:comment xml:lang="en">Conceptual entity in mathematics.</rdfs:comment>
+    <rdfs:label xml:lang="en">mathematical object</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalNumber">
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
+    <rdfs:label xml:lang="de">hat Ordinalzahl</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
+    <rdfs:comment xml:lang="en">Relating something to the number denoting its position in a sequence.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalSymbol">
+        <rdfs:label xml:lang="en">has ordinal symbol</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
+        <rdfs:comment xml:lang="en">Relating something to the symbolic entity denoting its position in a sequence.</rdfs:comment>
+        <rdfs:label xml:lang="de">hat Ordinalsymbol</rdfs:label>
+        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalSymbol"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">has ordinal number</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#Number">
+    <rdfs:label xml:lang="en">number</rdfs:label>
+    <rdfs:comment xml:lang="en">Mathematical object used for counting, measuring, ordering, labeling, and coding.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#SymbolicEntity"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#MathematicalObject"/>
+    <rdfs:label xml:lang="de">Zahl</rdfs:label>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#OrdinalNumber">
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#Identifier"/>
+    <rdfs:comment xml:lang="en">Natural number used to order, i.e. denoting the position of something in a sequence.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
     <rdfs:label xml:lang="en">ordinal number</rdfs:label>
-    <rdfs:label xml:lang="de">Ordinalzahl</rdfs:label>
-    <rdfs:comment xml:lang="en">Natural number used to order, i.e. denoting the position of something in a sequence.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#NaturalNumber"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalSymbol"/>
+    <rdfs:label xml:lang="de">Ordinalzahl</rdfs:label>
   </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/mathematics#Set">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">mathematical set</rdfs:label>
-    <rdfs:label xml:lang="de">mathematische Sammlung</rdfs:label>
-    <rdfs:comment xml:lang="en">Set of mathematical objects.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#Set"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#MathematicalObject"/>
-  </rdfs:Class>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasNumber">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">has number</rdfs:label>
-    <rdfs:label xml:lang="de">hat Zahl</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating something to a number.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/mathematics#Number"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#hasSymbolicEntity"/>
-  </owl:ObjectProperty>
-
-  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#numberHasNumeral">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">number has numeral</rdfs:label>
-    <rdfs:label xml:lang="de">Nummer hat Numerale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a number to its representing numeral.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/mathematics#Number"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"/>
-  </owl:DatatypeProperty>
-
   <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasNumeral">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:comment xml:lang="en">Relating a number to its representing numeral.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/mathematics#Number"/>
     <rdfs:label xml:lang="en">has numeral</rdfs:label>
     <rdfs:label xml:lang="de">hat Numerale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating something to a numeral.</rdfs:comment>
-    <skos:note xml:lang="en">A reification of a numeral, i.e. a number, can always be interposed, see property chain axiom.</skos:note>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#hasLiteral"/>
-    <owl:propertyChainAxiom>
-      <rdf:Description>
-        <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasNumber"/>
-        <rdf:rest>
-          <rdf:Description>
-            <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/mathematics#numberHasNumeral"/>
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-          </rdf:Description>
-        </rdf:rest>
-
-      </rdf:Description>
-    </owl:propertyChainAxiom>
-
   </owl:DatatypeProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalSymbol">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">has ordinal symbol</rdfs:label>
-    <rdfs:label xml:lang="de">hat Ordinalsymbol</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating something to the symbolic entity denoting its position in a sequence.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalSymbol"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#hasIdentifier"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalNumber">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">has ordinal number</rdfs:label>
-    <rdfs:label xml:lang="de">hat Ordinalzahl</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating something to the number denoting its position in a sequence.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalSymbol"/>
-  </owl:ObjectProperty>
-
-  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">has ordinal literal</rdfs:label>
-    <rdfs:label xml:lang="de">hat Ordinalliterale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating something to the literal denoting its position in a sequence.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#hasLiteral"/>
-    <owl:propertyChainAxiom>
-      <rdf:Description>
-        <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalSymbol"/>
-        <rdf:rest>
-          <rdf:Description>
-            <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"/>
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-          </rdf:Description>
-        </rdf:rest>
-
-      </rdf:Description>
-    </owl:propertyChainAxiom>
-
-  </owl:DatatypeProperty>
-
-  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalNumeral">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/mathematics#"/>
-    <rdfs:label xml:lang="en">has ordinal numeral</rdfs:label>
-    <rdfs:label xml:lang="de">hat Ordinalnumerale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating something to the numeral denoting its position in a sequence.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalLiteral"/>
-    <owl:propertyChainAxiom>
-      <rdf:Description>
-        <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalNumber"/>
-        <rdf:rest>
-          <rdf:Description>
-            <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/mathematics#numberHasNumeral"/>
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-          </rdf:Description>
-        </rdf:rest>
-
-      </rdf:Description>
-    </owl:propertyChainAxiom>
-
-  </owl:DatatypeProperty>
-
 </rdf:RDF>

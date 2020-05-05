@@ -1,241 +1,210 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:dc="http://purl.org/dc/terms/"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-
-  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/event">
-    <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dc:title xml:lang="en">An ontology about 'event'</dc:title>
-    <dc:description xml:lang="en">Formal description of event, general subclasses such as action, related classes and properties.</dc:description>
-    <skos:note xml:lang="en">Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way.</skos:note>
-    <dc:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dc:creator>
-    <dc:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dc:publisher>
-  </owl:Ontology>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Event">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">event</rdfs:label>
-    <rdfs:label xml:lang="de">Ereignis</rdfs:label>
-    <rdfs:comment xml:lang="en">Space-time occurrence.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/physical-entity#Space"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/physical-entity#Time"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Existence">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">existence</rdfs:label>
-    <rdfs:label xml:lang="de">Existenz</rdfs:label>
-    <rdfs:comment xml:lang="en">Event of being.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Process">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">process</rdfs:label>
-    <rdfs:label xml:lang="de">Verfahren</rdfs:label>
-    <rdfs:comment xml:lang="en">Event implying change, with an input and an output, in one or more steps.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Input">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">input</rdfs:label>
-    <rdfs:label xml:lang="de">Input</rdfs:label>
-    <rdfs:comment xml:lang="en">Precondition to change in a process.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Output">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">output</rdfs:label>
-    <rdfs:label xml:lang="de">Output</rdfs:label>
-    <rdfs:comment xml:lang="en">Postcondition to change in a process.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Action">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">action</rdfs:label>
-    <rdfs:label xml:lang="de">Aktion</rdfs:label>
-    <rdfs:comment xml:lang="en">Process involving one or more agents causing change.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Process"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Procedure">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">procedure</rdfs:label>
-    <rdfs:label xml:lang="de">Verfahren</rdfs:label>
-    <rdfs:comment xml:lang="en">Action executed in one or more sub-actions, in a certain manner, obtaining a certain output under certain circumstances.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Action"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#State">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">state</rdfs:label>
-    <rdfs:label xml:lang="de">Zustand</rdfs:label>
-    <rdfs:comment xml:lang="en">Mode of being.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Stage">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">stage</rdfs:label>
-    <rdfs:label xml:lang="de">Stufe</rdfs:label>
-    <rdfs:comment xml:lang="en">Extent of a process.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Staging">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">staging</rdfs:label>
-    <rdfs:label xml:lang="de">Staging</rdfs:label>
-    <rdfs:comment xml:lang="en">Determining the extent of a process.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Action"/>
-  </rdfs:Class>
-
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dct="http://purl.org/dc/terms/"
+>
   <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Intent">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">intent</rdfs:label>
-    <rdfs:label xml:lang="de">Absicht</rdfs:label>
-    <rdfs:comment xml:lang="en">Purpose of an action.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="de">Absicht</rdfs:label>
+    <rdfs:label xml:lang="en">intent</rdfs:label>
+    <rdfs:comment xml:lang="en">Purpose of an action.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
   </rdfs:Class>
-
   <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Creating">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">creating</rdfs:label>
-    <rdfs:label xml:lang="de">Kreierung</rdfs:label>
-    <rdfs:comment xml:lang="en">Changing matter and or energy.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Action"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:comment xml:lang="en">Changing matter and or energy.</rdfs:comment>
+    <rdfs:label xml:lang="de">Kreierung</rdfs:label>
+    <rdfs:label xml:lang="en">creating</rdfs:label>
   </rdfs:Class>
-
-  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasNameLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">has name</rdfs:label>
-    <rdfs:label xml:lang="de">hat Name</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an event to its name.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text#hasNameLiteral"/>
-  </owl:DatatypeProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#isSubEventOf">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">is sub-event of</rdfs:label>
-    <rdfs:label xml:lang="de">ist Subereignis von</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an event to another one it is part of.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:subPropertyOf rdf:resource="http://schema.org/subEvent"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasEvent">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">has event</rdfs:label>
-    <rdfs:label xml:lang="de">hat Ereignis</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating someone or something - eg. an organization, event, procedure - to an event.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasExistence">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">has existence</rdfs:label>
-    <rdfs:label xml:lang="de">hat Existenz</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating someone or something to her/his/its existence.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Existence"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/event#hasEvent"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasState">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">has state</rdfs:label>
-    <rdfs:label xml:lang="de">hat Zustand</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a resource to a state.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#State"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#isInputOf">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">is input of</rdfs:label>
-    <rdfs:label xml:lang="de">ist Input von</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an input to a process.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Input"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Process"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#isOutputOf">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">is output of</rdfs:label>
-    <rdfs:label xml:lang="de">ist Output von</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an output to a process.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Output"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Process"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#involvesRole">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">involves role</rdfs:label>
-    <rdfs:label xml:lang="de">involviert Rolle</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an action to a role it involves.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Action"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/agent#Role"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#outputInvolvesRole">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">output involves role</rdfs:label>
-    <rdfs:label xml:lang="de">Output involviert Rolle</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an output of an action to a role it involves.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Output"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/agent#Role"/>
-    <owl:propertyChainAxiom>
-      <rdf:Description>
-        <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/event#isOutputOf"/>
-        <rdf:rest>
-          <rdf:Description>
-            <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/event#involvesRole"/>
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-          </rdf:Description>
-        </rdf:rest>
-
-      </rdf:Description>
-    </owl:propertyChainAxiom>
-
-  </owl:ObjectProperty>
-
   <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasStage">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
     <rdfs:label xml:lang="en">has stage</rdfs:label>
     <rdfs:label xml:lang="de">hat Stufe</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a process to a stage thereof.</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Process"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
     <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Stage"/>
   </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#isSubProcedureOf">
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Staging">
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Action"/>
+    <rdfs:label xml:lang="en">staging</rdfs:label>
+    <rdfs:comment xml:lang="en">Determining the extent of a process.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:label xml:lang="de">Staging</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasExistence">
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Existence"/>
+    <rdfs:label xml:lang="en">has existence</rdfs:label>
+    <rdfs:label xml:lang="de">hat Existenz</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasEvent">
+        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+        <rdfs:label xml:lang="en">has event</rdfs:label>
+        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment xml:lang="en">Relating someone or something - eg. an organization, event, procedure - to an event.</rdfs:comment>
+        <rdfs:label xml:lang="de">hat Ereignis</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Relating someone or something to her/his/its existence.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/event">
+    <dct:title xml:lang="en">An ontology about 'event'</dct:title>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:description xml:lang="en">Formal description of event, general subclasses such as action, related classes and properties.</dct:description>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <skos:note xml:lang="en">Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way.</skos:note>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#outputInvolvesRole">
+    <rdfs:comment xml:lang="en">Relating an output of an action to a role it involves.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Output"/>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/agent#Role"/>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/event#isOutputOf"/>
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/event#involvesRole"/>
+    </owl:propertyChainAxiom>
+    <rdfs:label xml:lang="de">Output involviert Rolle</rdfs:label>
+    <rdfs:label xml:lang="en">output involves role</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasState">
+    <rdfs:comment xml:lang="en">Relating a resource to a state.</rdfs:comment>
+    <rdfs:label xml:lang="en">has state</rdfs:label>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#State"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:label xml:lang="de">hat Zustand</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#isInputOf">
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Process"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:label xml:lang="de">ist Input von</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Input"/>
+    <rdfs:comment xml:lang="en">Relating an input to a process.</rdfs:comment>
+    <rdfs:label xml:lang="en">is input of</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasGenesisDescription">
+    <rdfs:label xml:lang="en">has genesis description</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text#hasDescription"/>
+    <rdfs:comment xml:lang="en">Relating something to a description of the genesis thereof.</rdfs:comment>
+    <rdfs:label xml:lang="de">hat Genesis-Beschreibung</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasName">
+    <rdfs:label xml:lang="en">has name</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an event to its name.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text#hasName"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
+    <rdfs:label xml:lang="de">hat Name</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#isSubProcedureOf">
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Procedure"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:comment xml:lang="en">Relating a procedure to another one it is part of.</rdfs:comment>
     <rdfs:label xml:lang="en">is sub-procedure of</rdfs:label>
     <rdfs:label xml:lang="de">ist Subverfahren von</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a procedure to another one it is part of.</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Procedure"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Procedure"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/event#isSubEventOf"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#isSubEventOf">
+        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+        <rdfs:label xml:lang="en">is sub-event of</rdfs:label>
+        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/physical-entity#isPartOf"/>
+        <rdfs:label xml:lang="de">ist Subereignis von</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating an event to another one it is part of.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/subEvent"/>
+        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
   </owl:ObjectProperty>
-
-  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/event#hasGenesisDescriptionLiteral">
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#isOutputOf">
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Output"/>
+    <rdfs:comment xml:lang="en">Relating an output to a process.</rdfs:comment>
+    <rdfs:label xml:lang="de">ist Output von</rdfs:label>
+    <rdfs:label xml:lang="en">is output of</rdfs:label>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/event#Process"/>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
-    <rdfs:label xml:lang="en">has genesis description literal</rdfs:label>
-    <rdfs:label xml:lang="de">hat Genesis-Beschreibungliterale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating something to a description literal of the genesis thereof.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-  </owl:DatatypeProperty>
-
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Event">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/physical-entity#Time"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/physical-entity#Space"/>
+    <rdfs:comment xml:lang="en">Space-time occurrence.</rdfs:comment>
+    <rdfs:label xml:lang="de">Ereignis</rdfs:label>
+    <rdfs:label xml:lang="en">event</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Process">
+    <rdfs:label xml:lang="de">Verfahren</rdfs:label>
+    <rdfs:label xml:lang="en">process</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
+    <rdfs:comment xml:lang="en">Event implying change, with an input and an output, in one or more steps.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Stage">
+    <rdfs:label xml:lang="de">Stufe</rdfs:label>
+    <rdfs:label xml:lang="en">stage</rdfs:label>
+    <rdfs:comment xml:lang="en">Extent of a process.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Procedure">
+    <rdfs:label xml:lang="en">procedure</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Action"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:label xml:lang="de">Verfahren</rdfs:label>
+    <rdfs:comment xml:lang="en">Action executed in one or more sub-actions, in a certain manner, obtaining a certain output under certain circumstances.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Action">
+    <rdfs:label xml:lang="de">Aktion</rdfs:label>
+    <rdfs:label xml:lang="en">action</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:comment xml:lang="en">Process involving one or more agents causing change.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Process"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/event#involvesRole">
+    <rdfs:label xml:lang="de">involviert Rolle</rdfs:label>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/agent#Role"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/event#Action"/>
+    <rdfs:comment xml:lang="en">Relating an action to a role it involves.</rdfs:comment>
+    <rdfs:label xml:lang="en">involves role</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#State">
+    <rdfs:comment xml:lang="en">Mode of being.</rdfs:comment>
+    <rdfs:label xml:lang="de">Zustand</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">state</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Input">
+    <rdfs:label xml:lang="en">input</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="de">Input</rdfs:label>
+    <rdfs:comment xml:lang="en">Precondition to change in a process.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Output">
+    <rdfs:comment xml:lang="en">Postcondition to change in a process.</rdfs:comment>
+    <rdfs:label xml:lang="de">Output</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">output</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/event#Existence">
+    <rdfs:label xml:lang="en">existence</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/event#"/>
+    <rdfs:label xml:lang="de">Existenz</rdfs:label>
+    <rdfs:comment xml:lang="en">Event of being.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/event#Event"/>
+  </rdfs:Class>
 </rdf:RDF>

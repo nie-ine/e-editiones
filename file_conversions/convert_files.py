@@ -1,5 +1,6 @@
 import os
 import glob
+import rdflib
 import subprocess
 
 # Get file paths
@@ -9,45 +10,73 @@ def file_path(relative_path):
     new_path = os.path.join(folder, *path_parts)
     return new_path
 
+# Turtle file conversion
+def ttl2rdf(ttl):
+	graph = rdflib.Graph()
+	graph.parse(ttl, format="turtle")
+	new_graph = graph.serialize(destination=ttl.replace(".ttl",".rdf"), format="pretty-xml")
+
 # Xsl transformation
-def xsl_transform(jar_file, xml_file, xsl_file, output_file):
+def xsl_transform(jar_file, rdf_file, xsl_file, output_file):
 	jar = file_path(jar_file)
-	inpt = file_path(xml_file)
-	outpt = file_path(output_file)
+	inpt = file_path(rdf_file)
 	xslt = file_path(xsl_file)
+	outpt = file_path(output_file)
 
 	# Add "-t" to display version and timing information to the standard error output
 	subprocess.call(['java', '-cp', '%s' % jar, 'net.sf.saxon.Transform', '-s:%s' % inpt, '-xsl:%s' % xslt, '-o:%s' % outpt])
 
-# Turtle file conversion
-def rdf2rdf(jar_file, ttl_file):
-	jar = file_path(jar_file)
-	inpt = file_path(ttl_file)
+#######
+# Paths
+#######
 
-	subprocess.call(['java', '-jar', jar, inpt, ".rdf"])
+wd = os.getcwd()
 
+files_path = "../ontology"
 
-ttl_path = "../ontology/ttl/"
-rdf_path = "../ontology/rdf/"
-html_path = "../ontology/html/"
+############
+# ttl to rdf
+############
 
-xsl = "rdf2html.xsl"
-saxon_jar = "saxon9he.jar"
-rdf2rdf_jar = "rdf2rdf.jar"
+os.chdir(files_path)
 
-##############
-# .ttl to .rdf
-##############
-# ttl_files = glob.glob("%s/*.ttl" % ttl_path)
+ttl_files = glob.glob("*.ttl")
 
-# for ttl in ttl_files:
-# 	new_name = ttl.replace(".ttl", ".rdf")
-# 	rdf2rdf(rdf2rdf_jar, ttl)
+success = []
+error = {}
 
+for ttl in ttl_files:
+	try: 
+		ttl2rdf(ttl)
+		success.append(ttl)
+	except Exception as e:
+		error[ttl] = str(e)
 
+print("")
+print("Successfully converted %d turtle files to rdf:" % len(success))
+print("")
+print(*success, sep="\n")
+print("")
+print("%d error(s) found:" % len(error))
+print("")
+if error:
+	for k,v in error.items():
+		print(k)
+		print("##############################")
+		print(v)
+		print("")
+
+#############
 # rdf to html
-rdf_files = glob.glob("%s/*.rdf" % rdf_path)
+#############
+
+xsl = "../file_conversions/resources/rdf2html.xsl"
+saxon_jar = "../file_conversions/resources/saxon9he.jar"
+html_path = "../_includes/ontologies/"
+rdf_files = glob.glob("*.rdf")
 
 for rdf in rdf_files:
-	xsl_transform(saxon_jar, rdf, xsl, rdf.replace(".rdf", ".html"))
+	print("Converting " + rdf + " to html")
+	path = html_path + rdf.replace(".rdf", ".html")
+	xsl_transform(saxon_jar, rdf, xsl, path)
 
