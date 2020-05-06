@@ -5,57 +5,57 @@
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/logic#isConclusionOfArgument">
+    <rdfs:comment xml:lang="en">Relating a conclusion to an argument it is part of.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#isSentenceOfParagraph"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/logic#Conclusion"/>
+    <rdfs:label xml:lang="en">is conclusion of argument</rdfs:label>
+    <rdfs:label xml:lang="de">ist Konklusion eines Argumentes</rdfs:label>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/logic#Argument"/>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/logic">
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:description xml:lang="en">Formal description of logic, general subclasses, related classes and properties.</dct:description>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:title xml:lang="en">An ontology about logic</dct:title>
+  </owl:Ontology>
   <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/logic#Syllogism">
     <rdfs:label xml:lang="de">Syllogismus</rdfs:label>
-    <rdfs:label xml:lang="en">syllogism</rdfs:label>
     <rdfs:comment xml:lang="en">.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
     <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/logic#Argument"/>
+    <rdfs:label xml:lang="en">syllogism</rdfs:label>
   </rdfs:Class>
-  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/logic">
-    <dct:description xml:lang="en">Formal description of logic, general subclasses, related classes and properties.</dct:description>
-    <dct:title xml:lang="en">An ontology about logic</dct:title>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-  </owl:Ontology>
   <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/logic#isPremiseOfArgument">
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/logic#Argument"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#isSentenceOfParagraph"/>
-    <rdfs:label xml:lang="de">ist Prämisse eines Argumentes</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
-    <rdfs:label xml:lang="en">is premise of argument</rdfs:label>
     <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/logic#Premise"/>
-    <rdfs:comment xml:lang="en">Relating a premise to an argument it is part of.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/logic#isConclusionOfArgument">
-    <rdfs:comment xml:lang="en">Relating a conclusion to an argument it is part of.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/logic#Conclusion"/>
-    <rdfs:label xml:lang="de">ist Konklusion eines Argumentes</rdfs:label>
-    <rdfs:label xml:lang="en">is conclusion of argument</rdfs:label>
     <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/logic#Argument"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
+    <rdfs:label xml:lang="de">ist Prämisse eines Argumentes</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#isSentenceOfParagraph"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/logic#Argument">
-    <rdfs:label xml:lang="en">argument</rdfs:label>
-    <rdfs:label xml:lang="de">Argument</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Paragraph"/>
+    <rdfs:label xml:lang="en">is premise of argument</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a premise to an argument it is part of.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/logic#Conclusion">
+    <rdfs:label xml:lang="de">Konklusion</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
+    <rdfs:comment xml:lang="en">Statement ... .</rdfs:comment>
+    <rdfs:label xml:lang="en">conclusion</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Statement"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/logic#Argument">
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Paragraph"/>
     <rdfs:comment xml:lang="en">Premise(s) presenting a reason for accepting a conclusion.</rdfs:comment>
+    <rdfs:label xml:lang="en">argument</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
+    <rdfs:label xml:lang="de">Argument</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/logic#Premise">
-    <rdfs:comment xml:lang="en">Statement ... .</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Statement"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
     <rdfs:label xml:lang="de">Prämisse</rdfs:label>
     <rdfs:label xml:lang="en">premise</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/logic#Conclusion">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Statement"/>
-    <rdfs:label xml:lang="en">conclusion</rdfs:label>
-    <rdfs:label xml:lang="de">Konklusion</rdfs:label>
-    <rdfs:comment xml:lang="en">Statement ... .</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/logic#"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/linguistics#Statement"/>
+    <rdfs:comment xml:lang="en">Statement ... .</rdfs:comment>
   </rdfs:Class>
 </rdf:RDF>
