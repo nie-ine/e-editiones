@@ -1,7 +1,6 @@
 # e-editiones
 
 This will be the website for making the NIE-INE ontologies available outside of GitHub. 
-In a first version, it will be available through GitHub Pages on: https://nie-ine.github.io/e-editiones/ 
 
 ## Dependencies
 
@@ -13,20 +12,22 @@ In a first version, it will be available through GitHub Pages on: https://nie-in
 
 1. Clone repository
 2. cd into repository
-3. Check [Jekyll](https://jekyllrb.com/) to see how the pieces fit together
-4. To build the static site locally: ``bundle exec jekyll build`` 
+3. Run ``bundle install`` to fetch the needed Ruby gems
+4. Check [Jekyll](https://jekyllrb.com/) to see how the pieces fit together
+5. To build the static site locally run ``jekyll build`` 
 
    The files will be available in the \_site folder
    
-5. To run locally: ``bundle exec jekyll serve``
+6. To serve the site locally run ``jekyll serve``
 
-   The site will be available on http://localhost:4000/e-editiones/ 
+   The site will be served on http://localhost:4000
 
-## Publish on GitHub Pages
+## Publish
 
-Push to the repository as usual.
+ToDo...
+1. ttl-to-rdf
+2. Docker
 
-There's no need to push the \_site folder to the repository. GitHub Pages is selfaware of Jekyll and will build the site from the given source files in the master branch.
 
 ## Adding Ontologies
 
@@ -34,5 +35,3 @@ ToDo...
 
 ## RDF/XML to HTML
 
-ToDo: xslt source, saxon-js, compiling xsl for saxon, license?
-xsl 'from Hans'
