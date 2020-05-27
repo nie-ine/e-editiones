@@ -1,5 +1,5 @@
 ---
 title: Teaching
-file: teaching-ontology
+file: teaching
 ---
 

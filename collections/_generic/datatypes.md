@@ -1,5 +1,5 @@
 ---
 title: Datatypes
-file: datatypes-ontology
+file: datatypes
 ---
 

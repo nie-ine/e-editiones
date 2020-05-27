@@ -1,5 +1,5 @@
 ---
 title: Kuno Raeber Lyric
-file: Kuno-Raeber-lyric-ontology
+file: kuno-raeber
 ---
 

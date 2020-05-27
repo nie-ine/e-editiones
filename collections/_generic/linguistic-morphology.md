@@ -1,5 +1,5 @@
 ---
 title: Linguistic Morphology
-file: linguistic-morphology-ontology
+file: linguistic-morphology
 ---
 

@@ -1,5 +1,5 @@
 ---
 title: Text Expression
-file: text-expression-ontology
+file: text-expression
 ---
 

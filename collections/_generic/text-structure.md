@@ -1,5 +1,5 @@
 ---
 title: Text Structure
-file: text-structure-ontology
+file: text-structure
 ---
 

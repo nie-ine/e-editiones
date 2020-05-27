@@ -1,5 +1,5 @@
 ---
 title: Creating
-file: creating-ontology
+file: creating
 ---
 

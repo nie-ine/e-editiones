@@ -1,5 +1,5 @@
 ---
 title: Text
-file: text-ontology
+file: text
 ---
 

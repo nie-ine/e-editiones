@@ -1,5 +1,5 @@
 ---
 title: Information Carrier
-file: information-carrier-ontology
+file: information-carrier
 ---
 

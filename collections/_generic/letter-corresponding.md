@@ -1,5 +1,5 @@
 ---
 title: Letter Corresponding
-file: letter-corresponding-ontology
+file: letter-corresponding
 ---
 

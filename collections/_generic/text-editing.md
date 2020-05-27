@@ -1,5 +1,5 @@
 ---
 title: Text Editing
-file: text-editing-ontology
+file: text-editing
 ---
 

@@ -1,5 +1,5 @@
 ---
 title: Image
-file: image-ontology
+file: image
 ---
 

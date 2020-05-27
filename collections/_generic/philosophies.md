@@ -1,5 +1,5 @@
 ---
 title: Philosophies
-file: philosophies-ontology
+file: philosophies
 ---
 

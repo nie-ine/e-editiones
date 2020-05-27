@@ -1,5 +1,5 @@
 ---
 title: Languages
-file: languages-ontology
+file: languages
 ---
 

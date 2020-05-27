@@ -1,5 +1,5 @@
 ---
 title: Document
-file: document-ontology
+file: document
 ---
 

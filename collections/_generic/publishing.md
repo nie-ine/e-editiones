@@ -1,5 +1,5 @@
 ---
 title: Publishing
-file: publishing-ontology
+file: publishing
 ---
 

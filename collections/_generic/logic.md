@@ -1,5 +1,5 @@
 ---
 title: Logic
-file: logic-ontology
+file: logic
 ---
 

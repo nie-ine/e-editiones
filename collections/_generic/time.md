@@ -1,5 +1,5 @@
 ---
 title: Time
-file: time-ontology
+file: time
 ---
 

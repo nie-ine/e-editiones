@@ -1,5 +1,5 @@
 ---
 title: Concept
-file: concept-ontology
+file: concept
 ---
 

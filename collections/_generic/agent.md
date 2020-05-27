@@ -1,4 +1,4 @@
 ---
 title: Agent
-file: agent-ontology
+file: agent
 ---

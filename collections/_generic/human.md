@@ -1,5 +1,5 @@
 ---
 title: Human
-file: human-ontology
+file: human
 ---
 

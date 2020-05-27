@@ -1,5 +1,5 @@
 ---
 title: Literature
-file: literature-ontology
+file: literature
 ---
 

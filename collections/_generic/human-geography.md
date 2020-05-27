@@ -1,5 +1,5 @@
 ---
 title: Human Geography
-file: human-geography-ontology
+file: human-geography
 ---
 

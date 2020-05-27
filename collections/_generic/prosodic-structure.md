@@ -1,5 +1,5 @@
 ---
 title: Prosodic Structure
-file: prosodic-structure-ontology
+file: prosodic-structure
 ---
 

@@ -1,5 +1,5 @@
 ---
 title: Mathematics
-file: mathematics-ontology
+file: mathematics
 ---
 

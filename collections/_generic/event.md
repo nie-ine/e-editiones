@@ -1,5 +1,5 @@
 ---
 title: Event
-file: event-ontology
+file: event
 ---
 

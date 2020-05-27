@@ -1,5 +1,5 @@
 ---
 title: Scholasticism
-file: scholasticism-ontology
+file: scholasticism
 ---
 

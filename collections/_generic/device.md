@@ -1,5 +1,5 @@
 ---
 title: Device
-file: device-ontology
+file: device
 ---
 

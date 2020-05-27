@@ -1,5 +1,5 @@
 ---
 title: Atharvaveda
-file: Atharvaveda-ontology
+file: atharvaveda
 ---
 

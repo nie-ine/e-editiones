@@ -1,5 +1,5 @@
 ---
 title: Physical Entity
-file: physical-entity-ontology
+file: physical-entity
 ---
 

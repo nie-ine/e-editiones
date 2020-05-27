@@ -1,5 +1,5 @@
 ---
 title: Linguistics
-file: linguistics-ontology
+file: linguistics
 ---
 

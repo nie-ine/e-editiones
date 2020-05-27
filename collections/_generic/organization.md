@@ -1,5 +1,5 @@
 ---
 title: Organization
-file: organization-ontology
+file: organization
 ---
 

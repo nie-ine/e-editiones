@@ -1,5 +1,5 @@
 ---
 title: Indology
-file: indology-ontology
+file: indology
 ---
 

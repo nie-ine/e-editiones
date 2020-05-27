@@ -1,4 +1,4 @@
 ---
 title: Catholic Orders
-file: catholic-orders-ontology
+file: catholic-orders
 ---

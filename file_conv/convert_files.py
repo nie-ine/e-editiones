@@ -2,6 +2,7 @@ import os
 import glob
 import rdflib
 import subprocess
+from pathlib import Path
 
 # Get file paths
 def file_path(relative_path):
@@ -10,73 +11,67 @@ def file_path(relative_path):
     new_path = os.path.join(folder, *path_parts)
     return new_path
 
-# Turtle file conversion
+# Turtle to rdf conversion
 def ttl2rdf(ttl):
 	graph = rdflib.Graph()
 	graph.parse(ttl, format="turtle")
 	new_graph = graph.serialize(destination=ttl.replace(".ttl",".rdf"), format="pretty-xml")
 
-# Xsl transformation
-def xsl_transform(jar_file, rdf_file, xsl_file, output_file):
-	jar = file_path(jar_file)
-	inpt = file_path(rdf_file)
-	xslt = file_path(xsl_file)
-	outpt = file_path(output_file)
+# Turtle to ... conversion
+def ttl2n3(ttl):
+	graph = rdflib.Graph()
+	graph.parse(ttl, format="turtle")
+	new_graph = graph.serialize(destination=ttl.replace(".ttl",".rdf"), format="pretty-xml")
 
-	# Add "-t" to display version and timing information to the standard error output
+# Xsl transformation
+def xsl_transform(jar, inpt, xslt, outpt):
 	subprocess.call(['java', '-cp', '%s' % jar, 'net.sf.saxon.Transform', '-s:%s' % inpt, '-xsl:%s' % xslt, '-o:%s' % outpt])
 
-#######
-# Paths
-#######
+def main():
+	ontology_path = file_path("../ontology")
 
-wd = os.getcwd()
+	# ttl to rdf
+	ttl_files = glob.glob(os.path.join(ontology_path, "*.ttl"))
 
-files_path = "../ontology"
+	success = []
+	error = {}
 
-############
-# ttl to rdf
-############
+	for ttl in ttl_files:
+		# The transformation also validates the ttl file
+		try: 
+			ttl2rdf(ttl)
+			success.append(ttl)
 
-os.chdir(files_path)
 
-ttl_files = glob.glob("*.ttl")
 
-success = []
-error = {}
+		except Exception as e:
+			error[ttl] = str(e)
 
-for ttl in ttl_files:
-	try: 
-		ttl2rdf(ttl)
-		success.append(ttl)
-	except Exception as e:
-		error[ttl] = str(e)
+	print("")
+	print("Successfully converted %d turtle files to rdf:" % len(success))
+	print("")
+	print(*success, sep="\n")
+	print("")
+	print("%d error(s) found:" % len(error))
+	print("")
+	if error:
+		for k,v in error.items():
+			print(k)
+			print("##############################")
+			print(v)
+			print("")
 
-print("")
-print("Successfully converted %d turtle files to rdf:" % len(success))
-print("")
-print(*success, sep="\n")
-print("")
-print("%d error(s) found:" % len(error))
-print("")
-if error:
-	for k,v in error.items():
-		print(k)
-		print("##############################")
-		print(v)
-		print("")
+	# rdf to html
+	xsl_path = file_path("resources/rdf2html.xsl")
+	saxon_jar_path = file_path("resources/saxon9he.jar")
+	html_path = file_path("../_includes/ontologies")
+	rdf_files = glob.glob(os.path.join(ontology_path, "*.rdf"))
 
-#############
-# rdf to html
-#############
+	for rdf in rdf_files:
+		print("Converting " + rdf + " to html")
 
-xsl = "../file_conversions/resources/rdf2html.xsl"
-saxon_jar = "../file_conversions/resources/saxon9he.jar"
-html_path = "../_includes/ontologies/"
-rdf_files = glob.glob("*.rdf")
+		destination = os.path.join(html_path, (os.path.basename(rdf)).replace(".rdf", ".html")) # rdf.replace(".rdf", ".html"))
+		xsl_transform(saxon_jar_path, rdf, xsl_path, destination)
 
-for rdf in rdf_files:
-	print("Converting " + rdf + " to html")
-	path = html_path + rdf.replace(".rdf", ".html")
-	xsl_transform(saxon_jar, rdf, xsl, path)
-
+if __name__ == "__main__":
+	main()

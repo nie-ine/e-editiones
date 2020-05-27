@@ -1,5 +1,5 @@
 ---
 title: Catholic Organization
-file: catholic-organization-ontology
+file: catholic-organization
 ---
 

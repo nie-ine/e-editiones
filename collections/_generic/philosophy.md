@@ -1,5 +1,5 @@
 ---
 title: Philosophy
-file: philosophy-ontology
+file: philosophy
 ---
 
