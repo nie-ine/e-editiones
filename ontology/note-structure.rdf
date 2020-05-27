@@ -1,317 +1,262 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:dc="http://purl.org/dc/terms/"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-
-  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/note-structure">
-    <dc:title xml:lang="en">An ontology about note structure</dc:title>
-    <dc:description xml:lang="en">Formal description of note structure, subclasses, related classes, and properties.</dc:description>
-    <skos:note xml:lang="en">Extension of the text structure ontology.</skos:note>
-    <dc:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dc:creator>
-    <dc:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, Basel University, Switzerland</dc:contributor>
-    <dc:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland</dc:contributor>
-    <dc:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dc:publisher>
-  </owl:Ontology>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#Note">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">note structure</rdfs:label>
-    <rdfs:label xml:lang="de">Notiz-Struktur</rdfs:label>
-    <rdfs:label xml:lang="fr">structure de note</rdfs:label>
-    <rdfs:label xml:lang="it">struttura de nota</rdfs:label>
-    <rdfs:comment xml:lang="en">Text with note structure, not necessarily having sentences or being syntactically correct; e.g. a first registration of thought, or a remark added to another text.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#MarginalNote">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">marginal note</rdfs:label>
-    <rdfs:label xml:lang="de">Marginale Notiz</rdfs:label>
-    <rdfs:label xml:lang="fr">note marginale</rdfs:label>
-    <rdfs:label xml:lang="it">nota marginale</rdfs:label>
-    <rdfs:comment xml:lang="en">Note written besides a text in the margin of a carrier.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text#WrittenText"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/document#Marginal"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#InterlinearNote">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">interlinear note</rdfs:label>
-    <rdfs:label xml:lang="de">interlineare Notiz</rdfs:label>
-    <rdfs:label xml:lang="fr">note interlinéaire</rdfs:label>
-    <rdfs:label xml:lang="it">nota interlineare</rdfs:label>
-    <rdfs:comment xml:lang="en">Note written between text lines.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text#WrittenText"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#Gloss">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">gloss</rdfs:label>
-    <rdfs:label xml:lang="de">Glosse</rdfs:label>
-    <rdfs:label xml:lang="fr">glose</rdfs:label>
-    <rdfs:label xml:lang="it">glossare</rdfs:label>
-    <rdfs:comment xml:lang="en">Explanatory note, e.g. interlinear or marginal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
-  </rdfs:Class>
-
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
   <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#MarginalGloss">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">marginal gloss</rdfs:label>
-    <rdfs:label xml:lang="de">marginale Glosse</rdfs:label>
-    <rdfs:label xml:lang="fr">glose marginale</rdfs:label>
-    <rdfs:label xml:lang="it">glossare marginale</rdfs:label>
     <rdfs:comment xml:lang="en">Gloss as a marginal note.</rdfs:comment>
+    <rdfs:label xml:lang="de">marginale Glosse</rdfs:label>
+    <rdfs:label xml:lang="en">marginal gloss</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
     <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Gloss"/>
     <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#MarginalNote"/>
+    <rdfs:label xml:lang="fr">glose marginale</rdfs:label>
+    <rdfs:label xml:lang="it">glossare marginale</rdfs:label>
   </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#InterlinearGloss">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">interlinear gloss</rdfs:label>
-    <rdfs:label xml:lang="de">interlineare Glosse</rdfs:label>
-    <rdfs:label xml:lang="fr">glose interlinéaire</rdfs:label>
-    <rdfs:label xml:lang="it">glossare interlineare</rdfs:label>
-    <rdfs:comment xml:lang="en">Gloss as an interlinear note.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Gloss"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#InterlinearNote"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#Footnote">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">footnote structure</rdfs:label>
-    <rdfs:label xml:lang="de">Fussnotestruktur</rdfs:label>
-    <rdfs:label xml:lang="fr">structure de note de bas de page</rdfs:label>
-    <rdfs:label xml:lang="it">struttura di nota a piè di pagina</rdfs:label>
-    <rdfs:comment xml:lang="en">Ordinal number of a footnote.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Note on information on a page at the end of that page, seperate from the main content.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#FootnoteIdentifier">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">footnote identifier</rdfs:label>
-    <rdfs:label xml:lang="de">Fussnoteidentifikator</rdfs:label>
-    <rdfs:label xml:lang="fr">identifiant de note de bas de page</rdfs:label>
-    <rdfs:label xml:lang="it">identificatore di nota a piè di pagina</rdfs:label>
-    <rdfs:comment xml:lang="en">Identifier of a footnote.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Identifier"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">footnote ordinal number</rdfs:label>
-    <rdfs:label xml:lang="de">Fussnoteordinalzahl</rdfs:label>
-    <rdfs:label xml:lang="fr">numéro ordinal de note de bas de page</rdfs:label>
-    <rdfs:label xml:lang="it">numero ordinale di nota a piè di pagina</rdfs:label>
-    <rdfs:comment xml:lang="en">Ordinal number of a footnote.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#FootnoteIdentifier"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#Endnote">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">endnote structure</rdfs:label>
-    <rdfs:label xml:lang="de">Endnotestruktur</rdfs:label>
-    <rdfs:label xml:lang="fr">structure de note de fin</rdfs:label>
-    <rdfs:label xml:lang="it">struttura di nota finale</rdfs:label>
-    <rdfs:comment xml:lang="en">Note on information on a page at the end of the document, seperate from the main content.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#EndnoteIdentifier">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">endnote identifier</rdfs:label>
-    <rdfs:label xml:lang="de">Endnoteidentifikator</rdfs:label>
-    <rdfs:label xml:lang="fr">identifiant de note de fin</rdfs:label>
-    <rdfs:label xml:lang="it">identificatore di nota finale</rdfs:label>
-    <rdfs:comment xml:lang="en">Identifier of an endnote.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Identifier"/>
-  </rdfs:Class>
-
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">endnote ordinal number</rdfs:label>
-    <rdfs:label xml:lang="de">Endnoteordinalzahl</rdfs:label>
-    <rdfs:label xml:lang="fr">numéro ordinal de note de fin</rdfs:label>
-    <rdfs:label xml:lang="it">numero ordinale di nota finale</rdfs:label>
-    <rdfs:comment xml:lang="en">Ordinal number of an endnote.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteIdentifier"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
-  </rdfs:Class>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#isNoteOfExpression">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">is note structure of expression</rdfs:label>
-    <rdfs:label xml:lang="de">ist Notiz-Struktur einer Expression</rdfs:label>
-    <rdfs:label xml:lang="fr">est une structure de note d'une expression</rdfs:label>
-    <rdfs:label xml:lang="it">è una struttura di note di un'espressione</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a note structure to a text expression it is part of.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
-  </owl:ObjectProperty>
-
   <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#isGlossOfExpression">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">is gloss of expression</rdfs:label>
-    <rdfs:label xml:lang="de">ist Glosse einer Expression</rdfs:label>
-    <rdfs:label xml:lang="fr">est glose d'une expression</rdfs:label>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
     <rdfs:label xml:lang="it">è un glossare di un'espressione</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a gloss to a text expression it is part of.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#isNoteOfExpression">
+        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+        <rdfs:label xml:lang="fr">est une structure de note d'une expression</rdfs:label>
+        <rdfs:label xml:lang="it">è una struttura di note di un'espressione</rdfs:label>
+        <rdfs:label xml:lang="de">ist Notiz-Struktur einer Expression</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
+        <rdfs:comment xml:lang="en">Relating a note structure to a text expression it is part of.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
+        <rdfs:label xml:lang="en">is note structure of expression</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">is gloss of expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:label xml:lang="de">ist Glosse einer Expression</rdfs:label>
     <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Gloss"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#isNoteOfExpression"/>
+    <rdfs:label xml:lang="fr">est glose d'une expression</rdfs:label>
   </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#footnoteHasIdentifier">
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#isIdentifierOfEndnote">
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
+    <rdfs:label xml:lang="fr">est un identifiant de note de fin</rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasIdentifier">
+        <rdfs:label xml:lang="en">endnote has identifier</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating an endnote to an identifier (as resource) it has.</rdfs:comment>
+        <rdfs:label xml:lang="it">nota finale ha identificatore</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#hasIdentifier"/>
+        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteIdentifier"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+        <rdfs:label xml:lang="fr">note de fin a un identifiant </rdfs:label>
+        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
+        <rdfs:label xml:lang="de">Endnote hat Identifikator</rdfs:label>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="de">ist Identifikator einer Endnote</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an identifier to its endnote.</rdfs:comment>
+    <rdfs:label xml:lang="it">è un identificatore dell'endnote</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteIdentifier"/>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">footnote has identifier</rdfs:label>
-    <rdfs:label xml:lang="de">Fussnote hat Identifikator</rdfs:label>
-    <rdfs:label xml:lang="fr">note de bas de page a un identifiant</rdfs:label>
-    <rdfs:label xml:lang="it">nota a piè di pagina ha identificatore</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a footnote to an identifier (as resource) it has.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Footnote"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#FootnoteIdentifier"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#hasIdentifier"/>
+    <rdfs:label xml:lang="en">is identifier of endnote</rdfs:label>
   </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumber">
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#InterlinearGloss">
+    <rdfs:label xml:lang="en">interlinear gloss</rdfs:label>
+    <rdfs:label xml:lang="it">glossare interlineare</rdfs:label>
+    <rdfs:comment xml:lang="en">Gloss as an interlinear note.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">footnote has ordinal number</rdfs:label>
-    <rdfs:label xml:lang="de">Fussnote hat Ordinalzahl</rdfs:label>
-    <rdfs:label xml:lang="fr">note de bas de page a un numéro ordinal</rdfs:label>
-    <rdfs:label xml:lang="it">nota a piè di pagina ha numero ordinale </rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a footnote to its ordinal number.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Footnote"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#footnoteHasIdentifier"/>
+    <rdfs:label xml:lang="de">interlineare Glosse</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#InterlinearNote"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Gloss"/>
+    <rdfs:label xml:lang="fr">glose interlinéaire</rdfs:label>
+  </rdfs:Class>
+  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/note-structure">
+    <dct:title xml:lang="en">An ontology about note structure</dct:title>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, Basel University, Switzerland</dct:contributor>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
+    <skos:note xml:lang="en">Extension of the text structure ontology.</skos:note>
+    <dct:description xml:lang="en">Formal description of note structure, subclasses, related classes, and properties.</dct:description>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#isNumberOfEndnote">
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteNumber"/>
+    <rdfs:comment xml:lang="en">Relating a number to its endnote.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#endnoteHasNumber"/>
+    <rdfs:label xml:lang="it">è un numero di endnote</rdfs:label>
+    <rdfs:label xml:lang="de">ist Nummer einer Endnote</rdfs:label>
+    <rdfs:label xml:lang="en">is number of endnote</rdfs:label>
+    <rdfs:label xml:lang="fr">est un nombre de note de fin</rdfs:label>
   </owl:ObjectProperty>
-
   <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumeral">
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">footnote has ordinal numeral</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Footnote"/>
     <rdfs:label xml:lang="de">Fussnote hat Ordinalnumerale</rdfs:label>
     <rdfs:label xml:lang="fr">note de bas de page a un numéro ordinal</rdfs:label>
     <rdfs:label xml:lang="it">nota a piè di pagina ha numero ordinale</rdfs:label>
+    <rdfs:label xml:lang="en">footnote has ordinal numeral</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a footnote to its ordinal numeral.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Footnote"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
-    <owl:propertyChainAxiom>
-      <rdf:Description>
-        <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumber"/>
-        <rdf:rest>
-          <rdf:Description>
-            <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasNumeral"/>
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-          </rdf:Description>
-        </rdf:rest>
-
-      </rdf:Description>
-    </owl:propertyChainAxiom>
-
   </owl:DatatypeProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasIdentifier">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">endnote has identifier</rdfs:label>
-    <rdfs:label xml:lang="de">Endnote hat Identifikator</rdfs:label>
-    <rdfs:label xml:lang="fr">note de fin a un identifiant </rdfs:label>
-    <rdfs:label xml:lang="it">nota finale ha identificatore</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an endnote to an identifier (as resource) it has.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteIdentifier"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#hasIdentifier"/>
-  </owl:ObjectProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#isIdentifierOfEndnote">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">is identifier of endnote</rdfs:label>
-    <rdfs:label xml:lang="de">ist Identifikator einer Endnote</rdfs:label>
-    <rdfs:label xml:lang="fr">est un identifiant de note de fin</rdfs:label>
-    <rdfs:label xml:lang="it">è un identificatore dell'endnote</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an identifier to its endnote.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteIdentifier"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
-    <owl:inverseOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#endnoteHasIdentifier"/>
-  </owl:ObjectProperty>
-
   <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasOrdinalLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">endnote has ordinal literal</rdfs:label>
-    <rdfs:label xml:lang="de">Endnote hat Ordinalliterale</rdfs:label>
     <rdfs:label xml:lang="fr">la note de fin a un littéral ordinal</rdfs:label>
-    <rdfs:label xml:lang="it">endnote ha letterale ordinale</rdfs:label>
+    <rdfs:label xml:lang="de">Endnote hat Ordinalliterale</rdfs:label>
     <rdfs:comment xml:lang="en">Relating an endnote to its ordinal literal.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">endnote has ordinal literal</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalLiteral"/>
-    <owl:propertyChainAxiom>
-      <rdf:Description>
-        <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/note-structure#endnoteHasIdentifier"/>
-        <rdf:rest>
-          <rdf:Description>
-            <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/concept#hasLiteral"/>
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-          </rdf:Description>
-        </rdf:rest>
-
-      </rdf:Description>
-    </owl:propertyChainAxiom>
-
-  </owl:DatatypeProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">endnote has ordinal number</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
+    <rdfs:label xml:lang="it">endnote ha letterale ordinale</rdfs:label>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasIdentifier"/>
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/concept#hasLiteral"/>
+    </owl:propertyChainAxiom>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumber">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#footnoteHasIdentifier">
+        <rdfs:label xml:lang="en">footnote has identifier</rdfs:label>
+        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#FootnoteIdentifier"/>
+        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Footnote"/>
+        <rdfs:label xml:lang="de">Fussnote hat Identifikator</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+        <rdfs:comment xml:lang="en">Relating a footnote to an identifier (as resource) it has.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#hasIdentifier"/>
+        <rdfs:label xml:lang="fr">note de bas de page a un identifiant</rdfs:label>
+        <rdfs:label xml:lang="it">nota a piè di pagina ha identificatore</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="de">Fussnote hat Ordinalzahl</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Footnote"/>
+    <rdfs:label xml:lang="fr">note de bas de page a un numéro ordinal</rdfs:label>
+    <rdfs:label xml:lang="en">footnote has ordinal number</rdfs:label>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber"/>
+    <rdfs:comment xml:lang="en">Relating a footnote to its ordinal number.</rdfs:comment>
+    <rdfs:label xml:lang="it">nota a piè di pagina ha numero ordinale </rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumeral">
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
+    <rdfs:label xml:lang="en">endnote has ordinal numeral</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an endnote to its ordinal numeral.</rdfs:comment>
+    <rdfs:label xml:lang="de">Endnote hat Ordinalnumerale</rdfs:label>
+    <rdfs:label xml:lang="it">endnote ha un numerale ordinale</rdfs:label>
+    <rdfs:label xml:lang="fr">note de fin a un numéral ordinal</rdfs:label>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber"/>
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/mathematics#hasNumeral"/>
+    </owl:propertyChainAxiom>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#FootnoteIdentifier">
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Identifier"/>
+    <rdfs:label xml:lang="fr">identifiant de note de bas de page</rdfs:label>
+    <rdfs:comment xml:lang="en">Identifier of a footnote.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:label xml:lang="de">Fussnoteidentifikator</rdfs:label>
+    <rdfs:label xml:lang="en">footnote identifier</rdfs:label>
+    <rdfs:label xml:lang="it">identificatore di nota a piè di pagina</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber">
+    <rdfs:label xml:lang="de">Fussnoteordinalzahl</rdfs:label>
+    <rdfs:label xml:lang="en">footnote ordinal number</rdfs:label>
+    <rdfs:comment xml:lang="en">Ordinal number of a footnote.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#FootnoteIdentifier"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:label xml:lang="fr">numéro ordinal de note de bas de page</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
+    <rdfs:label xml:lang="it">numero ordinale di nota a piè di pagina</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#Endnote">
+    <rdfs:label xml:lang="en">endnote structure</rdfs:label>
+    <rdfs:label xml:lang="de">Endnotestruktur</rdfs:label>
+    <rdfs:label xml:lang="fr">structure de note de fin</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
+    <rdfs:comment xml:lang="en">Note on information on a page at the end of the document, seperate from the main content.</rdfs:comment>
+    <rdfs:label xml:lang="it">struttura di nota finale</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#InterlinearNote">
+    <rdfs:label xml:lang="de">interlineare Notiz</rdfs:label>
+    <rdfs:comment xml:lang="en">Note written between text lines.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
+    <rdfs:label xml:lang="en">interlinear note</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text#WrittenText"/>
+    <rdfs:label xml:lang="fr">note interlinéaire</rdfs:label>
+    <rdfs:label xml:lang="it">nota interlineare</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#Gloss">
+    <rdfs:label xml:lang="en">gloss</rdfs:label>
+    <rdfs:label xml:lang="fr">glose</rdfs:label>
+    <rdfs:label xml:lang="it">glossare</rdfs:label>
+    <rdfs:comment xml:lang="en">Explanatory note, e.g. interlinear or marginal.</rdfs:comment>
+    <rdfs:label xml:lang="de">Glosse</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber">
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteIdentifier"/>
+    <rdfs:label xml:lang="it">numero ordinale di nota finale</rdfs:label>
+    <rdfs:label xml:lang="de">Endnoteordinalzahl</rdfs:label>
+    <rdfs:label xml:lang="fr">numéro ordinal de note de fin</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:comment xml:lang="en">Ordinal number of an endnote.</rdfs:comment>
+    <rdfs:label xml:lang="en">endnote ordinal number</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#EndnoteIdentifier">
+    <rdfs:label xml:lang="en">endnote identifier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:comment xml:lang="en">Identifier of an endnote.</rdfs:comment>
+    <rdfs:label xml:lang="fr">identifiant de note de fin</rdfs:label>
+    <rdfs:label xml:lang="de">Endnoteidentifikator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Identifier"/>
+    <rdfs:label xml:lang="it">identificatore di nota finale</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#MarginalNote">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/document#Marginal"/>
+    <rdfs:label xml:lang="it">nota marginale</rdfs:label>
+    <rdfs:comment xml:lang="en">Note written besides a text in the margin of a carrier.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
+    <rdfs:label xml:lang="fr">note marginale</rdfs:label>
+    <rdfs:label xml:lang="en">marginal note</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text#WrittenText"/>
+    <rdfs:label xml:lang="de">Marginale Notiz</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber">
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber"/>
     <rdfs:label xml:lang="de">Endnote hat Ordinalzahl</rdfs:label>
     <rdfs:label xml:lang="fr">note de fin a un numéro ordinal</rdfs:label>
-    <rdfs:label xml:lang="it">endnote ha un numero ordinale</rdfs:label>
     <rdfs:comment xml:lang="en">Relating an endnote to its ordinal number.</rdfs:comment>
+    <rdfs:label xml:lang="it">endnote ha un numero ordinale</rdfs:label>
+    <rdfs:label xml:lang="en">endnote has ordinal number</rdfs:label>
     <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber"/>
     <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#endnoteHasIdentifier"/>
-  </owl:ObjectProperty>
-
-  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumeral">
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">endnote has ordinal numeral</rdfs:label>
-    <rdfs:label xml:lang="de">Endnote hat Ordinalnumerale</rdfs:label>
-    <rdfs:label xml:lang="fr">note de fin a un numéral ordinal</rdfs:label>
-    <rdfs:label xml:lang="it">endnote ha un numerale ordinale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an endnote to its ordinal numeral.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
-    <owl:propertyChainAxiom>
-      <rdf:Description>
-        <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber"/>
-        <rdf:rest>
-          <rdf:Description>
-            <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/mathematics#hasNumeral"/>
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-          </rdf:Description>
-        </rdf:rest>
-
-      </rdf:Description>
-    </owl:propertyChainAxiom>
-
-  </owl:DatatypeProperty>
-
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/note-structure#isNumberOfEndnote">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
-    <rdfs:label xml:lang="en">is number of endnote</rdfs:label>
-    <rdfs:label xml:lang="de">ist Nummer einer Endnote</rdfs:label>
-    <rdfs:label xml:lang="fr">est un nombre de note de fin</rdfs:label>
-    <rdfs:label xml:lang="it">è un numero di endnote</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a number to its endnote.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/note-structure#EndnoteNumber"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Endnote"/>
-    <owl:inverseOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#endnoteHasNumber"/>
   </owl:ObjectProperty>
-
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#Note">
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
+    <rdfs:label xml:lang="fr">structure de note</rdfs:label>
+    <rdfs:label xml:lang="de">Notiz-Struktur</rdfs:label>
+    <rdfs:label xml:lang="it">struttura de nota</rdfs:label>
+    <rdfs:label xml:lang="en">note structure</rdfs:label>
+    <rdfs:comment xml:lang="en">Text with note structure, not necessarily having sentences or being syntactically correct; e.g. a first registration of thought, or a remark added to another text.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/note-structure#Footnote">
+    <rdfs:label xml:lang="en">footnote structure</rdfs:label>
+    <rdfs:label xml:lang="it">struttura di nota a piè di pagina</rdfs:label>
+    <rdfs:comment xml:lang="en">Note on information on a page at the end of that page, seperate from the main content.</rdfs:comment>
+    <rdfs:label xml:lang="fr">structure de note de bas de page</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/note-structure#Note"/>
+    <rdfs:comment xml:lang="en">Ordinal number of a footnote.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/note-structure#"/>
+    <rdfs:label xml:lang="de">Fussnotestruktur</rdfs:label>
+  </rdfs:Class>
 </rdf:RDF>
