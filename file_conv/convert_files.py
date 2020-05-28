@@ -11,10 +11,6 @@ def serializeTtl(ttl, target, suffix):
 	graph.parse(ttl, format="turtle")
 	new_graph = graph.serialize(destination=ttl.replace(".ttl",".{}".format(suffix)), format=target)
 
-def visualizeTtl(ttl):
-	os.system("python3 resources/visualization/ontology_viz.py -o test.dot {}".format(ttl))
-
-
 # Xsl transformation
 def xsl_transform(jar, inpt, xslt, outpt):
 	subprocess.call(['java', '-cp', '%s' % jar, 'net.sf.saxon.Transform', '-s:%s' % inpt, '-xsl:%s' % xslt, '-o:%s' % outpt])
@@ -40,7 +36,6 @@ def main():
 
 		serializeTtl(str(ttl.resolve()), "nt", "nt")
 		serializeTtl(str(ttl.resolve()), "json-ld", "jsonld")
-		visualizeTtl(str(ttl.resolve()))
 
 	if error:
 		for k,v in error.items():
