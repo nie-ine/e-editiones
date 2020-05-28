@@ -1,61 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:indo="http://www.e-editiones.ch/ontology/indology#"
+  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:indo="http://www.e-editiones.ch/ontology/indology#"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/indology#vedaHasGenre">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/literature#hasGenre"/>
-    <rdfs:label xml:lang="de">Veda hat literarische Gattung</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a Veda to a genre it has.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/indology#VedaLiterature"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/indology#Veda"/>
-    <rdfs:label xml:lang="en">Veda has literary genre</rdfs:label>
-  </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/indology#hasIndologicComment">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text#hasComment"/>
     <rdfs:label xml:lang="de">hat indologischer Kommentar</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:comment xml:lang="en">Relating something to an Indological comment as a textual statement about that something.</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:label xml:lang="en">has Indological comment</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating something to an Indological comment as a textual statement about that something.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text#hasComment"/>
   </owl:DatatypeProperty>
   <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/indology">
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:contributor xml:lang="en">Magdalena Plamada, PhD, Zürich University, Switzerland</dct:contributor>
     <dct:title xml:lang="en">An ontology about Indology</dct:title>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0"/>
+    <dct:contributor xml:lang="en">Magdalena Plamada, PhD, Zürich University, Switzerland</dct:contributor>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
     <dct:description xml:lang="en">Formal description of Indology, general subclasses, related classes, and properties.</dct:description>
   </owl:Ontology>
+  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/indology#vedaHasGenre">
+    <rdfs:label xml:lang="de">Veda hat literarische Gattung</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/literature#hasGenre"/>
+    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/indology#Veda"/>
+    <rdfs:label xml:lang="en">Veda has literary genre</rdfs:label>
+    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/indology#VedaLiterature"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:comment xml:lang="en">Relating a Veda to a genre it has.</rdfs:comment>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/indology#vedaHasRecitingStyle">
     <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/indology#Patha"/>
     <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/indology#Veda"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
-    <rdfs:label xml:lang="en">Veda has reciting style</rdfs:label>
     <rdfs:label xml:lang="de">Veda hat Rezitationsstil</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
     <rdfs:comment xml:lang="en">Relating a Veda to a reciting style it has.</rdfs:comment>
+    <rdfs:label xml:lang="en">Veda has reciting style</rdfs:label>
   </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Literature">
+    <rdfs:label xml:lang="en">Indian literature</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/literature#Literature"/>
+    <rdfs:comment xml:lang="en">Literature in Indian culture.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:label xml:lang="de">indische Literatur</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Padapatha">
+    <rdf:type rdf:resource="http://www.e-editiones.ch/ontology/indology#Patha"/>
+    <rdfs:label xml:lang="de">Padapatha</rdfs:label>
+    <rdfs:label xml:lang="en">Padapatha</rdfs:label>
+    <rdfs:comment xml:lang="en">One of the eleven Pathas, with a word by word recitation, marked by a conscious pause after every word, and after any special grammatical code embedded in the text; suppresses euphonic combination and restores each word in its original intended form.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:label xml:lang="sa">Pada-pāṭha</rdfs:label>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Veda">
-    <rdfs:label xml:lang="de">Veda</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/indology#Expression"/>
     <rdfs:label xml:lang="en">Veda</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:label xml:lang="de">Veda</rdfs:label>
     <rdfs:comment xml:lang="en">Hindu text written in Vedic Sanskrit, in a period dated roughly from 1700 to 400 BC.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Patha">
-    <rdfs:label xml:lang="en">patha</rdfs:label>
-    <rdfs:label xml:lang="de">Patha</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:comment xml:lang="en">Style to recite or chant a Vedic mantra in the oral tradition of the Vedas, enabling its memorization.</rdfs:comment>
-    <skos:note xml:lang="en">There are eleven Pathas, with increasing difficulty, divided in 3 simpler or natural, and 8 complex ones.</skos:note>
-    <rdfs:label xml:lang="sa">pāṭha</rdfs:label>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#VedaLiterature">
+    <owl:oneOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Samhita"/>
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Aranyaka"/>
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Brahmana"/>
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Upanishad"/>
+    </owl:oneOf>
+    <rdfs:label xml:lang="en">Veda literature</rdfs:label>
+    <rdfs:comment xml:lang="en">Indian literature in a Veda.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:label xml:lang="de">vedische indische Literatur</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/indology#Literature"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Samhita">
+    <rdfs:comment xml:lang="en">One of the four text styles, and the oldest part, in a Veda, wherein text or verses are methodically put together.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:label xml:lang="en">Samhita</rdfs:label>
+    <rdfs:label xml:lang="sa">Samhita</rdfs:label>
+    <rdf:type rdf:resource="http://www.e-editiones.ch/ontology/indology#VedaLiterature"/>
+    <rdfs:label xml:lang="de">Samhita</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Expression">
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:comment xml:lang="en">Literary expression created in Indian culture.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Literarische Expression in indischer Kultur kreiert.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/literature#Expression"/>
+    <rdfs:label xml:lang="en">Indian literary expression</rdfs:label>
+    <rdfs:label xml:lang="de">indische literarische Expression</rdfs:label>
+  </rdfs:Class>
+  <indo:Patha rdf:about="http://www.e-editiones.ch/ontology/indology#Samhitapatha">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label xml:lang="sa">Samhita-pāṭha</rdfs:label>
+    <rdfs:label xml:lang="en">Samhitapatha</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
+    <rdfs:label xml:lang="de">Samhitapatha</rdfs:label>
+    <rdfs:comment xml:lang="en">One of the eleven Pathas, with continuous recitation of Sanskrit words bound by the phonetic rules of euphonic combination.</rdfs:comment>
+  </indo:Patha>
+  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Patha">
     <owl:oneOf rdf:parseType="Collection">
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Samhitapatha"/>
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Padapatha"/>
@@ -69,61 +114,18 @@
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Rathaapatha"/>
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Ghanapatha"/>
     </owl:oneOf>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Literature">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/literature#Literature"/>
-    <rdfs:comment xml:lang="en">Literature in Indian culture.</rdfs:comment>
-    <rdfs:label xml:lang="de">indische Literatur</rdfs:label>
-    <rdfs:label xml:lang="en">Indian literature</rdfs:label>
+    <rdfs:label xml:lang="de">Patha</rdfs:label>
+    <rdfs:label xml:lang="sa">pāṭha</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">patha</rdfs:label>
+    <skos:note xml:lang="en">There are eleven Pathas, with increasing difficulty, divided in 3 simpler or natural, and 8 complex ones.</skos:note>
+    <rdfs:comment xml:lang="en">Style to recite or chant a Vedic mantra in the oral tradition of the Vedas, enabling its memorization.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Samhita">
-    <rdfs:comment xml:lang="en">One of the four text styles, and the oldest part, in a Veda, wherein text or verses are methodically put together.</rdfs:comment>
-    <rdfs:label xml:lang="de">Samhita</rdfs:label>
-    <rdfs:label xml:lang="sa">Samhita</rdfs:label>
-    <rdf:type rdf:resource="http://www.e-editiones.ch/ontology/indology#VedaLiterature"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
-    <rdfs:label xml:lang="en">Samhita</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Expression">
-    <rdfs:comment xml:lang="de">Literarische Expression in indischer Kultur kreiert.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/literature#Expression"/>
-    <rdfs:label xml:lang="en">Indian literary expression</rdfs:label>
-    <rdfs:comment xml:lang="en">Literary expression created in Indian culture.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
-    <rdfs:label xml:lang="de">indische literarische Expression</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Padapatha">
-    <rdf:type rdf:resource="http://www.e-editiones.ch/ontology/indology#Patha"/>
-    <rdfs:comment xml:lang="en">One of the eleven Pathas, with a word by word recitation, marked by a conscious pause after every word, and after any special grammatical code embedded in the text; suppresses euphonic combination and restores each word in its original intended form.</rdfs:comment>
-    <rdfs:label xml:lang="sa">Pada-pāṭha</rdfs:label>
-    <rdfs:label xml:lang="de">Padapatha</rdfs:label>
-    <rdfs:label xml:lang="en">Padapatha</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#Samhitapatha">
-    <rdfs:label xml:lang="en">Samhitapatha</rdfs:label>
-    <rdf:type rdf:resource="http://www.e-editiones.ch/ontology/indology#Patha"/>
-    <rdfs:label xml:lang="de">Samhitapatha</rdfs:label>
-    <rdfs:label xml:lang="sa">Samhita-pāṭha</rdfs:label>
-    <rdfs:comment xml:lang="en">One of the eleven Pathas, with continuous recitation of Sanskrit words bound by the phonetic rules of euphonic combination.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/indology#VedaLiterature">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/indology#"/>
-    <rdfs:comment xml:lang="en">Indian literature in a Veda.</rdfs:comment>
-    <rdfs:label xml:lang="en">Veda literature</rdfs:label>
-    <rdfs:label xml:lang="de">vedische indische Literatur</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/indology#Literature"/>
-    <owl:oneOf rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Samhita"/>
-      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Aranyaka"/>
-      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Brahmana"/>
-      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Upanishad"/>
-    </owl:oneOf>
-  </rdfs:Class>
-  <rdf:Description rdf:nodeID="fde3075da6a764a1dba882624dd50fc24b7">
+  <rdf:Description rdf:nodeID="f5273f38e270a45619ce1e952d4cb1f68b6">
+    <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/indology#Padapatha"/>
     <rdf:rest rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Kramapatha"/>
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Jatapatha"/>
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Maalaapatha"/>
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Sikhapatha"/>
@@ -133,6 +135,5 @@
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Rathaapatha"/>
       <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/indology#Ghanapatha"/>
     </rdf:rest>
-    <rdf:first rdf:resource="http://www.e-editiones.ch/ontology/indology#Kramapatha"/>
   </rdf:Description>
 </rdf:RDF>

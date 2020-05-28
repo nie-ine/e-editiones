@@ -7,6 +7,9 @@ This will be the website for making the NIE-INE ontologies available outside of 
 - [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 - [Bundler](https://bundler.io/)
 - [Jekyll](https://jekyllrb.com/)
+- Python3
+- Graphviz
+(- Docker)
 
 ## Develop and Run Locally
 
