@@ -3,4 +3,4 @@ layout: page
 title: Ontologies for Humanities
 ---
 
-Hello World!
+![Image](/assets/images/NIE-ontologies-network.png)

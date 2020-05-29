@@ -1,33 +1,47 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-<article class="post">
+  {%- include head.html -%}
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-    <div style="text-align: right; font-size: 1.5em">
-      <a href="{{ page.url }}.ttl">Turtle</a> | 
-      <a href="{{ page.url }}.rdf">RDF/XML</a> |
-      <a href="{{ page.url }}.nt">N-Triples</a> |
-      <a href="{{ page.url }}.jsonld">JSON-LD</a>
-    </div>
-  </header>
+  <body>
 
-  <div class="post-content">
-    {{ content }}
-    {% if page.file %}
-      {% include ontologies/{{ page.file }}.html %}
-    {% endif %}
-  </div>
+    {%- include header.html -%}
 
-  <div style="text-align: right; font-size: 1.5em">
-      <a href="{{ page.url }}.ttl">Turtle</a> | 
-      <a href="{{ page.url }}.rdf">RDF/XML</a> |
-      <a href="{{ page.url }}.nt">N-Triples</a> |
-      <a href="{{ page.url }}.jsonld">JSON-LD</a>
-  </div>
-</article>
+    <main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
 
+        <article class="post">
 
+          <header class="post-header">
+            <h1 class="post-title">{{ page.title | escape }}</h1>
+            <div style="text-align: right; font-size: 1.5em">
+              <a href="{{ page.url }}.ttl">Turtle</a> | 
+              <a href="{{ page.url }}.rdf">RDF/XML</a> |
+              <a href="{{ page.url }}.nt">N-Triples</a> |
+              <a href="{{ page.url }}.jsonld">JSON-LD</a>
+            </div>
+          </header>
 
+          <div class="post-content">
+            {{ content }}
+            {% if page.file %}
+              {% include ontologies/{{ page.file }}.html %}
+            {% endif %}
+          </div>
+
+          <div style="text-align: right; font-size: 1.5em">
+              <a href="{{ page.url }}.ttl">Turtle</a> | 
+              <a href="{{ page.url }}.rdf">RDF/XML</a> |
+              <a href="{{ page.url }}.nt">N-Triples</a> |
+              <a href="{{ page.url }}.jsonld">JSON-LD</a>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
