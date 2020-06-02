@@ -34,18 +34,18 @@ You should now be all set to develop, build and maintain the website locally.
 
 #### Develop Website
 
-The folder and file structure you see is based on [Jekyll's][jekyll] needs but there are some additional non-Jekyll folders and files. Below's a quick overview ot the top-level files. You might want to visit the [Jekyll Docs](https://jekyllrb.com/docs/) to see how Jekyll itself works. 
+The folder and file structure you see is based on [Jekyll][jekyll]'s needs but there are some additional non-Jekyll folders and files. Below is a quick overview of the top-level files. You might want to visit the [Jekyll Docs](https://jekyllrb.com/docs/) to see how Jekyll itself works. 
 
 Folder/File        | Description                                
  ----------------- | -------------------------------------------
- \_includes        | Jekyll folder containing html builiding blocks. The subfolder "ontologies" contains the human-readable html version of each ontology.
- \_layouts         | Jekyll folder containing html templates. The templates are referencing building blocks from \_includes.
+ \_includes        | Jekyll folder containing HTML building blocks. The subfolder "ontologies" contains the human-readable HTML version of each ontology.
+ \_layouts         | Jekyll folder containing HTML templates.
  \_posts           | Jekyll folder for blogging content. Currently not in use for this website.
  \_sass            | Jekyll folder containing scss stylesheets. These files are compiled to a single css file for the final static website.
- \_site            | Jekyll folder containing the static files version of the website. The folder and its contents are created when running ``jekyll build``. This is the content that gets dockerized and published. 
+ \_site            | Jekyll folder containing the static files version of the website. The folder and its content are created when running ``jekyll build``. This is the content that gets dockerized and published. 
  assets            | Jekyll folder containing asset files for the static website. 
  collections       | Jekyll folder to group content into collections. This folder is needed to group the created ontologies into "generic" and "project".
- nginx_conf        | Custom folder containing files for the [NGINX][nginx] configuration used during the dockerization of the website. 
+ nginx_conf        | Custom folder containing files for the [NGINX][nginx] configuration used during dockerizing the website. 
  ontology          | Custom Jekyll folder containing all the ontology files. 
  ttl_conv          | Custom folder containing a Python script and additional resources to convert turtle files into needed formats and files. 
  .gitignore        | Gitingore file.
@@ -118,8 +118,8 @@ To add a new ontology to the website, the following steps are necessary:
 1. Have the ontology ready as a turtle file. 
 1. Name the ontology file in accordance with the ending of the IRI.
    - I.e. if the base IRI is http://www.e-editiones.ch/ontology/agent, the ontology file should be agent.ttl.
-1. Save the ontolgoy file in the "ontology" folder
-1. Create a new markdown file in the "collections" folder (either within "\_generic" or "\_project")
+1. Save the ontology file in the "ontology" folder.
+1. Create a new markdown file in the "collections" folder (either within "\_generic" or "\_project").
    - The name of the file must be the same as the name of the ontolgoy file.
    - You can create a new collection by creating a new subfolder and updating the "\_confix.yml" file accordingly.
 1. Add front-matter meta data to the newly created markdown file (title, description, file). E.g.:
