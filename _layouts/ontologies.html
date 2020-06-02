@@ -12,23 +12,33 @@ layout: default
     {{ content }}
 
   	<h2 id="generic-ontologies">Generic Ontologies</h2>
-  	<ul>
-		{% for ontology in site.generic %}
-      <li>
-        <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
-      </li>
-		{% endfor %}
-  	</ul>
-    
-  	<h2 id="project-ontologies">Project Ontologies</h2>
-  	<ul>
-    {% for ontology in site.project %}
-      <li>
-        <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
-      </li>
-    {% endfor %}
-  	</ul>
 
+    <div class="ontology-row">
+    {% for ontology in site.generic %}
+
+    <div class="ontology-column">
+        <div class="ontology-content">
+          <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
+          <p>{{ ontology.description }}</p>
+        </div>
+    </div>
+    
+    {% endfor %}
+    </div>
+
+    <h2 id="project-ontologies">Project Ontologies</h2>
+
+    <div class="ontology-row">
+    {% for ontology in site.project %}
+    <div class="ontology-column">
+        <div class="ontology-content">
+          <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
+          <p>{{ ontology.description }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    
   </div>
 
 </article>

@@ -4,7 +4,7 @@ title: Ontologies
 permalink: /ontology
 ---
 
-There are two series of ontologies: more general and project ontologies.
+There are two series of ontologies: more generic and project ontologies.
 
 The [generic ontologies](#generic-ontologies) comprise the core concepts for scholarly editions, as well as the bulk of entities modeled in agreement with the edition projects.
 
