@@ -3,9 +3,9 @@
 These are the files necessary to develop, build and maintain [e-editiones.ch](https://e-editiones.ch) - the website of the ontologies published in the [NIE-INE project](https://www.nie-ine.ch/). 
 
 ## Basic Workflow
-1. Ontologies are developed as turtle files
-1. A script validates the turtle files and converts them to RDF/XML, N-Triples, and JSON-LD as well as to a human-readable HTML version
-1. The ontologies are made available through a [dockerized][docker] static website built with [Jekyll][jekyll] and hosted on the same server as [inseri][inseri]
+1. Ontologies are developed as turtle files.
+1. A script validates the turtle files and converts them to RDF/XML, N-Triples, and JSON-LD as well as to a human-readable HTML version.
+1. The ontologies are made available through a [dockerized][docker] static website built with [Jekyll][jekyll] and hosted on the same server as [inseri][inseri].
 
 ## Develop, Build and Maintain Locally
 
@@ -21,15 +21,15 @@ These are the files necessary to develop, build and maintain [e-editiones.ch](ht
 
 ### Get Started
 
-1. Make sure you have the above listed dependencies installed
-1. Clone repository
-1. cd into repository with ``cd e-editiones``
-1. Run ``bundle install`` to fetch the needed Ruby gems
-1. cd into "ttl_conv" with ``cd ttl_conv``
-1. Set up a Python virtual environment
-1. Activate your virtual environment
-1. Run ``pip3 install -r requirements.txt`` to fetch the needed Python packages
-1. cd back to "e-editiones" with ``cd ..``
+1. Make sure you have the above listed dependencies installed.
+1. Clone repository.
+1. cd into repository with ``cd e-editiones``.
+1. Run ``bundle install`` to fetch the needed Ruby gems.
+1. cd into "ttl_conv" with ``cd ttl_conv``.
+1. Set up a Python virtual environment.
+1. Activate your virtual environment.
+1. Run ``pip3 install -r requirements.txt`` to fetch the needed Python packages.
+1. cd back to "e-editiones" with ``cd ..``.
 
 You should now be all set to develop, build and maintain the website locally. 
 
@@ -74,9 +74,10 @@ To convert turtle files to the needed formats:
 
 1. Any turtle files need to be in the "ontology" folder.
    - Be aware of the correct file naming (see [Add New Ontologies](#add-new-ontologies) below)
-1. cd into "ttl_conv" with ``cd ttl_conv``
-1. Run ``python3 -W ignore convert_files.py``
-   - ``-W ignore`` is optional but it ignores some default RDFlib messages
+1. cd into "ttl_conv" with ``cd ttl_conv``.
+1. Activate your virtual environment if not activated. 
+1. Run ``python3 -W ignore convert_files.py``.
+   - ``-W ignore`` is optional but it ignores some default RDFlib messages.
    - The script validates available turtle files and stops with error messages if there are invalid files.
    - If there are no errors, the script converts the turtle files to RDF/XML, N-Triples and JSON-LD.
    - The script then continues to convert the RDF/XML files to HTML.
@@ -94,7 +95,6 @@ To run the container locally, run ``docker run -p 80:80 e-editiones`` and visit 
 #### NGINX Configuration
 
 During the build of the Docker container, the following default NGINX configuration files are replaced with custom versions available in the "nginx_conf" folder:  
-
 - /etc/nginx/nginx.conf
 - /etc/nginx/mime.types
 - /etc/nginx/conf.d/default.conf
@@ -110,7 +110,7 @@ By default, the server returns HTML.
 
 ### Deploy Website
 
-ToDo...docker-compose...
+ToDo...
 
 ### Add New Ontologies
 
