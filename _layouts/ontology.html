@@ -11,31 +11,29 @@
       <div class="ontology-wrapper">
 
         <article class="post">
-
+          {% assign path_item = "Generic-ontologies" %}
+          {% if page.collection == "project" %}
+            {% assign path_item = "Project-ontologies" %}
+          {% endif %}
           <header class="post-header">
             <h1 class="post-title">{{ page.title | escape }}</h1>
             {{ page.description }}
-            <div style="text-align: right; font-size: 1.5em">
-              <a href="{{ page.url }}.ttl">Turtle</a> | 
-              <a href="{{ page.url }}.rdf">RDF/XML</a> |
-              <a href="{{ page.url }}.nt">N-Triples</a> |
-              <a href="{{ page.url }}.jsonld">JSON-LD</a>
-            </div>
           </header>
 
           <div class="post-content">
+
             {{ content }}
+
+            {% include ontology-formats.html %}
+
             {% if page.file %}
               {% include ontologies/{{ page.file }}.html %}
             {% endif %}
+
+            {% include ontology-formats.html %}
+
           </div>
 
-          <div style="text-align: right; font-size: 1.5em">
-              <a href="{{ page.url }}.ttl">Turtle</a> | 
-              <a href="{{ page.url }}.rdf">RDF/XML</a> |
-              <a href="{{ page.url }}.nt">N-Triples</a> |
-              <a href="{{ page.url }}.jsonld">JSON-LD</a>
-          </div>
         </article>
 
       </div>

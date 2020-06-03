@@ -90,7 +90,7 @@ To dockerize the website, run ``docker build -t e-editiones .``
 
 To run the container locally, run ``docker run -p 80:80 e-editiones`` and visit http://localhost.
 
-#### The NGINX Configuration
+#### NGINX Configuration
 
 During the build of the Docker container, the following default NGINX configuration files are replaced with custom versions available in the "nginx_conf" folder:  
 
