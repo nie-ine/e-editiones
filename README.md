@@ -33,7 +33,7 @@ These are the files necessary to develop, build and maintain [e-editiones.ch](ht
 
 You should now be all set to develop, build and maintain the website locally. 
 
-#### Develop Website
+### Develop
 
 The folder and file structure you see is based on [Jekyll][jekyll]'s needs but there are some additional non-Jekyll folders and files. Below is a quick overview of the top-level files. You might want to visit the [Jekyll Docs](https://jekyllrb.com/docs/) to see how Jekyll itself works. 
 
@@ -84,7 +84,7 @@ To convert turtle files to the needed formats:
 1. RDF/XML, N-Triples and JSON-LD files are saved in the "ontology" folder.
 1. HTML files are saved in  "\_includes/ontologies".
 
-### Dockerize Website
+### Dockerize
 
 The static website will be made available as a Docker container running an [NGINX][nginx] web server with the website on it. 
 
@@ -108,7 +108,7 @@ The customized files take care of file permissions as well as content negotiatio
 
 By default, the server returns HTML. 
 
-### Deploy Website
+### Deploy
 
 ToDo...
 
@@ -116,7 +116,7 @@ ToDo...
 
 To add a new ontology to the website, the following steps are necessary: 
 
-1. Have the ontology ready as a turtle file. 
+1. Have the ontology ready as a turtle file.
 1. Name the ontology file in accordance with the ending of the IRI.
    - I.e. if the base IRI is http://www.e-editiones.ch/ontology/agent, the ontology file should be agent.ttl.
 1. Save the ontology file in the "ontology" folder.
