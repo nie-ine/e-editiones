@@ -1,13 +1,184 @@
 [
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#Translation",
+    "@id": "http://www.e-editiones.ch/ontology/text#Compiler",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Translation from text to text."
+        "@value": "Role of a person assembling texts to a new whole."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "compilateur"
+      },
+      {
+        "@language": "it",
+        "@value": "compilatore"
+      },
+      {
+        "@language": "la",
+        "@value": "compilator"
+      },
+      {
+        "@language": "de",
+        "@value": "Kompilator"
+      },
+      {
+        "@language": "en",
+        "@value": "compiler"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/creating#PersonCreator"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#citationIsPartOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a citation to a text expression it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "la citation fait partie de l'expression de texte"
+      },
+      {
+        "@language": "de",
+        "@value": "Zitat ist Teil einer Textexpression"
+      },
+      {
+        "@language": "en",
+        "@value": "citation is part of text expression"
+      },
+      {
+        "@language": "it",
+        "@value": "la citazione fa parte dell'espressione del testo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasAbbreviator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a person who abbreviated it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a un abréviateur"
+      },
+      {
+        "@language": "en",
+        "@value": "has abbreviator"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Abkurzer"
+      },
+      {
+        "@language": "it",
+        "@value": "ha abbreviatore"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub114bL595C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL595C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub114bL595C44"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL595C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-editing#Abbreviator"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasGlossator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a person who glossed it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -18,27 +189,605 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "text translation"
-      },
-      {
-        "@language": "de",
-        "@value": "Textübersetzung"
+        "@value": "has glossator"
       },
       {
         "@language": "it",
-        "@value": "traduzione di testi"
+        "@value": "ha un glossatore"
       },
       {
         "@language": "fr",
-        "@value": "traduction de texte"
+        "@value": "a un glossateur"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Glossator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub114bL587C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL587C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      },
+      {
+        "@id": "_:ub114bL587C44"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL587C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-editing#Glossator"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasCompiler",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a person who compiled it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Text hat KompilatorIn"
+      },
+      {
+        "@language": "it",
+        "@value": "il testo ha un compilatore"
+      },
+      {
+        "@language": "fr",
+        "@value": "le texte a un compilateur"
+      },
+      {
+        "@language": "en",
+        "@value": "text has compiler"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub114bL611C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL611C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      },
+      {
+        "@id": "_:ub114bL611C44"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL611C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Compiler"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#isIdentifierOfCitation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an identifier to its citation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "est l'identifiant de la citation"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Identifikator eines Zitats"
+      },
+      {
+        "@language": "it",
+        "@value": "è identificatore di citazione"
+      },
+      {
+        "@language": "en",
+        "@value": "is identifier of citation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#citationHasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#Scribe",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person copying a text by handwriting, creating a transcribed text in a manual transcript."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "scribe"
+      },
+      {
+        "@language": "it",
+        "@value": "scriba"
+      },
+      {
+        "@language": "fr",
+        "@value": "scribe"
+      },
+      {
+        "@language": "la",
+        "@value": "scribes"
+      },
+      {
+        "@language": "de",
+        "@value": "TextKopist"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Transcriber"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#CompiledText",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text assembled from previously separate texts."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "zusammengestellte Text"
+      },
+      {
+        "@language": "en",
+        "@value": "compiled text"
+      },
+      {
+        "@language": "fr",
+        "@value": "texte compilé"
+      },
+      {
+        "@language": "it",
+        "@value": "testo compilato"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasVersionIndicator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a textual element that indicates its version."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Version-Indikator"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/language#Translation"
+        "@language": "en",
+        "@value": "has version indicator"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un indicateur de version"
+      },
+      {
+        "@language": "it",
+        "@value": "ha un indicatore di versione"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#CitationSourceReference",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Reference of a citation to the source text via the text identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "référence de la source de citation"
+      },
+      {
+        "@language": "de",
+        "@value": "Zitatquellereferenz"
+      },
+      {
+        "@language": "it",
+        "@value": "riferimento alla fonte di citazione"
+      },
+      {
+        "@language": "en",
+        "@value": "citation source reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/document#TextStructureReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasHandwriter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a handwritten text to the person who wrote it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#HandwrittenText"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has handwriter"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un écrivain à la main"
+      },
+      {
+        "@language": "it",
+        "@value": "ha uno scrittore a mano"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Handschreiber"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub114bL518C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL518C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      },
+      {
+        "@id": "_:ub114bL518C44"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL518C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Handwriter"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasNameLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to a name literal as a textual appelation of the resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Nameliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "has name literal"
+      },
+      {
+        "@language": "it",
+        "@value": "ha letterale del nome"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral du nom"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasTextLiteral"
+      },
+      {
+        "@id": "http://xmlns.com/foaf/0.1/name"
+      },
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasDefinitionLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to the literal of a definition as a textual statement about the essential features of the resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Definition"
+      },
+      {
+        "@language": "en",
+        "@value": "has definition literal"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral d'une définition"
+      },
+      {
+        "@language": "it",
+        "@value": "ha letterale della definizione"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#PrintedText",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text printed by any method, abstracted from its carrier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "texte imprimé"
+      },
+      {
+        "@language": "it",
+        "@value": "testo stampato"
+      },
+      {
+        "@language": "de",
+        "@value": "gedruckter Text"
+      },
+      {
+        "@language": "en",
+        "@value": "printed text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#Developing",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Action wherein a person(s) creates text resulting in different manifestation, e.g. from notebook to manuscript to typescript to published print."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "text developing"
+      },
+      {
+        "@language": "fr",
+        "@value": "Développement de texte"
+      },
+      {
+        "@language": "de",
+        "@value": "Textentwicklung"
+      },
+      {
+        "@language": "it",
+        "@value": "Sviluppo del testo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/creating#Creating"
       }
     ]
   },
@@ -60,25 +809,114 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Organisation-Zitiererin"
-      },
-      {
-        "@language": "en",
-        "@value": "organization citer"
+        "@language": "fr",
+        "@value": ""
       },
       {
         "@language": "it",
         "@value": ""
       },
       {
-        "@language": "fr",
-        "@value": ""
+        "@language": "en",
+        "@value": "organization citer"
+      },
+      {
+        "@language": "de",
+        "@value": "Organisation-Zitiererin"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
+        "@id": "http://www.e-editiones.ch/ontology/text#AgentCiter"
+      },
+      {
         "@id": "http://www.e-editiones.ch/ontology/organization#Role"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#SurfaceText",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text applied to any surface in any way, abstracted from its carrier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "surface text"
+      },
+      {
+        "@language": "de",
+        "@value": "Flächetext"
+      },
+      {
+        "@language": "it",
+        "@value": "testo superficiale"
+      },
+      {
+        "@language": "fr",
+        "@value": "texte surfacique"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Groups written and printed text."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#PersonCiter",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Citer as role of a person."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "personne citeuse"
+      },
+      {
+        "@language": "de",
+        "@value": "Person-ZitiererIn"
+      },
+      {
+        "@language": "it",
+        "@value": "persona citante"
+      },
+      {
+        "@language": "en",
+        "@value": "person citer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#PersonRole"
       },
       {
         "@id": "http://www.e-editiones.ch/ontology/text#AgentCiter"
@@ -86,19 +924,59 @@
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#citationHasIdentifier",
+    "@id": "http://www.e-editiones.ch/ontology/text#hasCitationReference",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a citation to its identifier."
+        "@value": "Relating a text to a citation reference thereof."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
+        "@id": "http://www.e-editiones.ch/ontology/text-structure#Structure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Zitatreferenz"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une référence de citation"
+      },
+      {
+        "@language": "en",
+        "@value": "has citation reference"
+      },
+      {
+        "@language": "it",
+        "@value": "ha riferimento alla citazione"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#CitationReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#Citation",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Copy of a text expression, mostly a part of it, in another text expression, with reference to the first expression."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -109,158 +987,136 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "la citation a un identifiant"
-      },
-      {
-        "@language": "it",
-        "@value": "la citazione ha un identificatore"
+        "@value": "citation"
       },
       {
         "@language": "de",
-        "@value": "Zitat hat Identifikator"
-      },
-      {
-        "@language": "en",
-        "@value": "citation has identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#hasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasContentNature",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a content nature it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une nature de contenu"
-      },
-      {
-        "@language": "de",
-        "@value": "hat textinhaltliche Art"
-      },
-      {
-        "@language": "en",
-        "@value": "has content nature"
+        "@value": "Zitat"
       },
       {
         "@language": "it",
-        "@value": "ha natura contenuta"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#ContentNature"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasRevisor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a person who revised it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "le texte a un réviseur"
-      },
-      {
-        "@language": "it",
-        "@value": "il testo ha un revisore"
-      },
-      {
-        "@language": "de",
-        "@value": "Text hat Revisor"
+        "@value": "citazione"
       },
       {
         "@language": "en",
-        "@value": "text has revisor"
+        "@value": "citation"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub96bL545C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL545C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:ub96bL545C44"
+        "@id": "http://www.e-editiones.ch/ontology/text-structure#ContentStructure"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+        "@id": "http://www.e-editiones.ch/ontology/text#CopiedText"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A citation can also be referred to from the source text, having an identifier linked to both the citation reference of the source and the citation."
       }
     ]
   },
   {
-    "@id": "_:ub96bL545C44",
+    "@id": "http://www.e-editiones.ch/ontology/text#CitationNumber",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+        "@language": "en",
+        "@value": "Number of a citation."
       }
     ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-editing#Revisor"
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "numero di citazione"
+      },
+      {
+        "@language": "de",
+        "@value": "Zitatnummer"
+      },
+      {
+        "@language": "en",
+        "@value": "citation number"
+      },
+      {
+        "@language": "fr",
+        "@value": "numéro de citation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/mathematics#Number"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasSpecialDescription",
+    "@id": "http://www.e-editiones.ch/ontology/text#Normalization",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Derivative of a text of which it is a normalization along a certain procedure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "normalizzazione del testo"
+      },
+      {
+        "@language": "de",
+        "@value": "Textnormalisation"
+      },
+      {
+        "@language": "en",
+        "@value": "text normalization"
+      },
+      {
+        "@language": "fr",
+        "@value": "normalisation du texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/creating#CreationDerivative"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasSpecialDescriptionLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a resource to a description of (a) certain feature(s)."
+        "@value": "Relating a resource to the literal of a description of (a) certain feature(s)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -270,25 +1126,30 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "hat Besonderes-Beschreibung"
+        "@language": "it",
+        "@value": "ha letterale della descrizione speciale"
       },
       {
         "@language": "fr",
-        "@value": "a une description spéciale"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una descrizione speciale"
+        "@value": "a littéral d'une description spéciale"
       },
       {
         "@language": "en",
-        "@value": "has special description"
+        "@value": "has special description literal"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Besonderes-Beschreibungliterale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescription"
+        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
       }
     ]
   },
@@ -335,14 +1196,14 @@
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasTranscriber",
+    "@id": "http://www.e-editiones.ch/ontology/text#hasAnnotator",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text to a person who transcribed it; text abstracted from its carrier."
+        "@value": "Relating a text to a person who annotated it."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -357,41 +1218,41 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "ha trascrittore"
+        "@language": "en",
+        "@value": "text has annotator"
       },
       {
-        "@language": "en",
-        "@value": "has transcriber"
+        "@language": "it",
+        "@value": "il testo ha un annotatore"
       },
       {
         "@language": "de",
-        "@value": "hat TranskribiererIn"
+        "@value": "Text hat AnnotatorIn"
       },
       {
         "@language": "fr",
-        "@value": "a transcripteur"
+        "@value": "le texte a un annotateur"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub96bL393C13"
+        "@id": "_:ub114bL579C13"
       }
     ]
   },
   {
-    "@id": "_:ub96bL393C13",
+    "@id": "_:ub114bL579C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+        "@id": "_:ub114bL579C44"
       },
       {
-        "@id": "_:ub96bL393C44"
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
       }
     ]
   },
   {
-    "@id": "_:ub96bL393C44",
+    "@id": "_:ub114bL579C44",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -402,19 +1263,19 @@
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#Transcriber"
+        "@id": "http://www.e-editiones.ch/ontology/text-editing#Annotator"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#PhotocopiedText",
+    "@id": "http://www.e-editiones.ch/ontology/text#Handwriter",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text photocopied, abstracted from its carrier."
+        "@value": "Role of a person writing text symbols by hand."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -424,37 +1285,37 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "it",
+        "@value": "manoscrittore"
+      },
+      {
         "@language": "de",
-        "@value": "fotokopierter Text"
+        "@value": "Handschreiber"
       },
       {
         "@language": "fr",
-        "@value": "texte copié"
-      },
-      {
-        "@language": "it",
-        "@value": "testo copiato"
+        "@value": "écrivain"
       },
       {
         "@language": "en",
-        "@value": "photocopied text"
+        "@value": "handwriter"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#CopiedText"
+        "@id": "http://www.e-editiones.ch/ontology/creating#PersonCreator"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasText",
+    "@id": "http://www.e-editiones.ch/ontology/text#hasSubtitleLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a resource to a text as a writable coherent set of signs representing semantics in a language."
+        "@value": "Relating a resource to the literal of a subtitle as additional, usually explanatory to the title."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -470,129 +1331,41 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has text"
+        "@value": "has subtitle literal"
       },
       {
         "@language": "it",
-        "@value": "ha un testo"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Text"
+        "@value": "ha letterale del sottotitolo"
       },
       {
         "@language": "fr",
-        "@value": "a le text"
+        "@value": "a littéral du sous-titre"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Untertitelliterale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#PersonCiter",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Citer as role of a person."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "person citer"
-      },
-      {
-        "@language": "it",
-        "@value": "persona citante"
-      },
-      {
-        "@language": "fr",
-        "@value": "personne citeuse"
-      },
-      {
-        "@language": "de",
-        "@value": "Person-ZitiererIn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#PersonRole"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#AgentCiter"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#isTextOfDocument",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to the document it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est le texte du document"
-      },
-      {
-        "@language": "en",
-        "@value": "is text of document"
-      },
-      {
-        "@language": "it",
-        "@value": "è il testo del documento"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Text eines Dokumentes"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Document"
-      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/concept#isPartOf"
+        "@id": "http://www.e-editiones.ch/ontology/text#hasTextLiteral"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasCitationReference",
+    "@id": "http://www.e-editiones.ch/ontology/text#isReferredToIn",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text to a citation reference thereof."
+        "@value": "Relating a text to an expression wherein it is referred to."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -607,37 +1380,84 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "hat Zitatreferenz"
-      },
-      {
         "@language": "en",
-        "@value": "has citation reference"
+        "@value": "is referred to in"
       },
       {
-        "@language": "it",
-        "@value": "ha riferimento alla citazione"
-      },
-      {
-        "@language": "fr",
-        "@value": "a une référence de citation"
+        "@language": "de",
+        "@value": "ist referenziert in"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#CitationReference"
+        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasDescription",
+    "@id": "http://www.e-editiones.ch/ontology/text#citationHasIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a citation to its identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "la citation a un identifiant"
+      },
+      {
+        "@language": "en",
+        "@value": "citation has identifier"
+      },
+      {
+        "@language": "it",
+        "@value": "la citazione ha un identificatore"
+      },
+      {
+        "@language": "de",
+        "@value": "Zitat hat Identifikator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-structure#hasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasAliasLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a resource to a description as a textual statement about features of the resource."
+        "@value": "Relating a resource to the literal of an alias as an alternative name of the resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -648,36 +1468,103 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "a une description"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una descrizione"
+        "@value": "a littéral du nom d'emprunt"
       },
       {
         "@language": "en",
-        "@value": "has description"
+        "@value": "has alias literal"
       },
       {
         "@language": "de",
-        "@value": "hat Beschreibung"
+        "@value": "hat Aliasliterale"
+      },
+      {
+        "@language": "it",
+        "@value": "ha letterale del falso nome"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
+        "@id": "http://www.e-editiones.ch/ontology/text#hasNameLiteral"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasEditor",
+    "@id": "http://www.e-editiones.ch/ontology/text#isCitedIn",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text to a person who edited it."
+        "@value": "Relating a text to an expression wherein it is cited."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-structure#Structure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "est cité dans"
+      },
+      {
+        "@language": "it",
+        "@value": "è citato in"
+      },
+      {
+        "@language": "de",
+        "@value": "ist zitiert in"
+      },
+      {
+        "@language": "en",
+        "@value": "is cited in"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#isReferredToIn"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.e-editiones.ch/ontology/text#hasCitation"
+          },
+          {
+            "@id": "http://www.e-editiones.ch/ontology/text#citationIsPartOf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasPageNumberDescriptionLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a description of the number(s) of and possibly a location on (a) pages it is on; examples of the string of its value: \"001-002\", \"01 recto\", \"O2 (bottom)\"."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -692,136 +1579,213 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "il testo ha un editor"
-      },
-      {
-        "@language": "de",
-        "@value": "Text hat EditorIn"
+        "@language": "fr",
+        "@value": "le texte a une description de numéro de page"
       },
       {
         "@language": "en",
-        "@value": "text has editor"
+        "@value": "text has page number description"
       },
       {
-        "@language": "fr",
-        "@value": "le texte a un éditeur"
+        "@language": "de",
+        "@value": "Text hat Seitennummerbeschreibung"
+      },
+      {
+        "@language": "it",
+        "@value": "il testo ha una descrizione del numero di pagina"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub96bL484C13"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ]
   },
   {
-    "@id": "_:ub96bL484C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub96bL484C44"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL484C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-editing#Editor"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasAbbreviator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a person who abbreviated it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has abbreviator"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Abkurzer"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un abréviateur"
-      },
-      {
-        "@language": "it",
-        "@value": "ha abbreviatore"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub96bL569C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL569C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub96bL569C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL569C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-editing#Abbreviator"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#AgentCiter",
+    "@id": "http://www.e-editiones.ch/ontology/text#CitationReference",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Role of a human agent, person or group, citing a text."
+        "@value": "Reference of a text to a citation thereof via the citation identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Zitatreferenz"
+      },
+      {
+        "@language": "fr",
+        "@value": ""
+      },
+      {
+        "@language": "it",
+        "@value": ""
+      },
+      {
+        "@language": "en",
+        "@value": "citation reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/document#TextStructureReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#TranscribedText",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text copied by character by any writing method; text abstracted from its carrier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "transkribierter Text"
+      },
+      {
+        "@language": "en",
+        "@value": "transcribed text"
+      },
+      {
+        "@language": "fr",
+        "@value": "texte transcrit"
+      },
+      {
+        "@language": "it",
+        "@value": "testo trascritto"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#CopiedText"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#HandwrittenText",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text with symbols formed by hand, abstracted from its manuscript."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "testo scritto a mano"
+      },
+      {
+        "@language": "fr",
+        "@value": "texte manuscrit"
+      },
+      {
+        "@language": "de",
+        "@value": "handgeschriebener Text"
+      },
+      {
+        "@language": "en",
+        "@value": "handwritten text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#WrittenText"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Roberta Padlina, project coordinator, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Formal description of text in broadest sense, general subclasses, related classes, and properties."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/3.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@language": "en",
+        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "An ontology about text"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Representation of text as object instead of literal data element, enabling relating it to other things"
+      },
+      {
+        "@language": "en",
+        "@value": "Text structure, text editing, and text roles are described in respective ontologies"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasDetailDescriptionLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to the literal of a description of its detail. E.g. in the case of a text a detail can be a passage variant or an emendation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -832,36 +1796,121 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "agent citeur"
-      },
-      {
-        "@language": "en",
-        "@value": "agent citer"
-      },
-      {
-        "@language": "de",
-        "@value": "Agent-Zitierer"
+        "@value": "a littéral d'une description détaillée"
       },
       {
         "@language": "it",
-        "@value": "agente citante"
+        "@value": "ha letterale della descrizione dettagliata"
+      },
+      {
+        "@language": "en",
+        "@value": "has detail description literal"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Detail-Beschreibungliterale"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/human#AgentRole"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasCompiler",
+    "@id": "http://www.e-editiones.ch/ontology/text#WrittenText",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text written by symbol, by any method, e.g. manually, with a typewriter, or on a computer, abstracted from its carrier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "geschriebener Text"
+      },
+      {
+        "@language": "it",
+        "@value": "testo scritto"
+      },
+      {
+        "@language": "en",
+        "@value": "written text"
+      },
+      {
+        "@language": "fr",
+        "@value": "texte écrit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#SurfaceText"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#Text",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Human natural language expression serialized in writable form with a set of signs representing semantics."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "texte"
+      },
+      {
+        "@language": "en",
+        "@value": "text"
+      },
+      {
+        "@language": "de",
+        "@value": "Text"
+      },
+      {
+        "@language": "it",
+        "@value": "testo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasCiter",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text to a person who compiled it."
+        "@value": "Relating a text to a human agent - person or group - citing it."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -876,52 +1925,95 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "it",
+        "@value": "ha un citatore"
+      },
+      {
         "@language": "fr",
-        "@value": "le texte a un compilateur"
+        "@value": "a un citeur"
       },
       {
         "@language": "de",
-        "@value": "Text hat KompilatorIn"
+        "@value": "hat ZitiererIn"
       },
       {
         "@language": "en",
-        "@value": "text has compiler"
-      },
-      {
-        "@language": "it",
-        "@value": "il testo ha un compilatore"
+        "@value": "has citer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub96bL585C13"
+        "@id": "_:ub114bL436C13"
       }
     ]
   },
   {
-    "@id": "_:ub96bL585C13",
+    "@id": "_:ub114bL436C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+        "@id": "_:ub114bL436C43"
       },
       {
-        "@id": "_:ub96bL585C44"
+        "@id": "http://www.e-editiones.ch/ontology/human#Agent"
       }
     ]
   },
   {
-    "@id": "_:ub96bL585C44",
+    "@id": "_:ub114bL436C43",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+        "@id": "http://www.e-editiones.ch/ontology/human#agentHasRole"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#Compiler"
+        "@id": "http://www.e-editiones.ch/ontology/text#AgentCiter"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#Nonfiction",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text having content based on fact."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "texte non fictionnel"
+      },
+      {
+        "@language": "it",
+        "@value": "testo di saggistica"
+      },
+      {
+        "@language": "en",
+        "@value": "nonfiction text"
+      },
+      {
+        "@language": "de",
+        "@value": "Sachtext"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Nonfiction"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#ContentNature"
       }
     ]
   },
@@ -948,20 +2040,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "fr",
-        "@value": "la citation a un numéro"
-      },
-      {
-        "@language": "de",
-        "@value": "Zitat hat Nummer"
-      },
-      {
         "@language": "en",
         "@value": "citation has number"
       },
       {
         "@language": "it",
         "@value": "la citazione ha un numero"
+      },
+      {
+        "@language": "fr",
+        "@value": "la citation a un numéro"
+      },
+      {
+        "@language": "de",
+        "@value": "Zitat hat Nummer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -976,102 +2068,19 @@
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#Nonfiction",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text having content based on fact."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Sachtext"
-      },
-      {
-        "@language": "fr",
-        "@value": "texte non fictionnel"
-      },
-      {
-        "@language": "en",
-        "@value": "nonfiction text"
-      },
-      {
-        "@language": "it",
-        "@value": "testo di saggistica"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#ContentNature"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Nonfiction"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasIdentifier",
+    "@id": "http://www.e-editiones.ch/ontology/text#hasTextLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a resource to an identifier as a unique and permanent textual reference to the resource within a given context, and conforming to a formal identification system."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Kennzeichen"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un identificatore"
-      },
-      {
-        "@language": "fr",
-        "@value": "a l'identifiant"
-      },
-      {
-        "@language": "en",
-        "@value": "has identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasCitation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a citation thereof."
+        "@value": "Relating a resource to a text literal."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#Structure"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1082,119 +2091,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has citation"
+        "@value": "has text literal"
       },
       {
         "@language": "de",
-        "@value": "hat Zitat"
+        "@value": "hat Textliterale"
       },
       {
         "@language": "it",
-        "@value": "ha una citazione"
+        "@value": "ha letterale del testo"
       },
       {
         "@language": "fr",
-        "@value": "a une citation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.e-editiones.ch/ontology/text#hasCitationReference"
-          },
-          {
-            "@id": "http://www.e-editiones.ch/ontology/text#hasCitationIdentifier"
-          },
-          {
-            "@id": "http://www.e-editiones.ch/ontology/text#isIdentifierOfCitation"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#CitationReference",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Reference of a text to a citation thereof via the citation identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "citation reference"
-      },
-      {
-        "@language": "de",
-        "@value": "Zitatreferenz"
-      },
-      {
-        "@language": "it",
-        "@value": ""
-      },
-      {
-        "@language": "fr",
-        "@value": ""
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#TextStructureReference"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasLineNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to the number of a line of the text expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a un numéro de ligne"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un numero di riga"
-      },
-      {
-        "@language": "en",
-        "@value": "has line number"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Liniennummer"
+        "@value": "a littéral du text"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1204,47 +2113,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#HandwrittenText",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text with symbols formed by hand, abstracted from its manuscript."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "texte manuscrit"
-      },
-      {
-        "@language": "it",
-        "@value": "testo scritto a mano"
-      },
-      {
-        "@language": "de",
-        "@value": "handgeschriebener Text"
-      },
-      {
-        "@language": "en",
-        "@value": "handwritten text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#WrittenText"
+        "@id": "http://www.e-editiones.ch/ontology/concept#hasLiteral"
       }
     ]
   },
@@ -1275,16 +2144,16 @@
         "@value": "ist Normalisation eines Textes"
       },
       {
+        "@language": "fr",
+        "@value": "est la normalisation du texte"
+      },
+      {
         "@language": "it",
         "@value": "è la normalizzazione del testo"
       },
       {
         "@language": "en",
         "@value": "is Normalization of text"
-      },
-      {
-        "@language": "fr",
-        "@value": "est la normalisation du texte"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1294,131 +2163,19 @@
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasGlossator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a person who glossed it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has glossator"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un glossatore"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un glossateur"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Glossator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub96bL561C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL561C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub96bL561C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL561C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-editing#Glossator"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasDetailDescription",
+    "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a resource to a description of its detail. E.g. in the case of a text a detail can be a passage variant or an emendation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has detail description"
-      },
-      {
-        "@language": "fr",
-        "@value": "a une description détaillée"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Detail-Beschreibung"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una descrizione dettagliata"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescription"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#citationIsPartOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a citation to a text expression it is part of."
+        "@value": "Relating a resource to the literal of a description as a textual statement about features of the resource."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1428,252 +2185,135 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "la citazione fa parte dell'espressione del testo"
-      },
-      {
-        "@language": "de",
-        "@value": "Zitat ist Teil einer Textexpression"
-      },
-      {
-        "@language": "en",
-        "@value": "citation is part of text expression"
-      },
-      {
         "@language": "fr",
-        "@value": "la citation fait partie de l'expression de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#Developing",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+        "@value": "a littéral d'une description"
+      },
       {
         "@language": "en",
-        "@value": "Action wherein a person(s) creates text resulting in different manifestation, e.g. from notebook to manuscript to typescript to published print."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textentwicklung"
+        "@value": "has description literal"
       },
       {
         "@language": "it",
-        "@value": "Sviluppo del testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "Développement de texte"
-      },
-      {
-        "@language": "en",
-        "@value": "text developing"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#Creating"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#ContentNature",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Nature of the content of a text."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "Natura del contenuto del testo"
+        "@value": "ha letterale della descrizione"
       },
       {
         "@language": "de",
-        "@value": "textinhaltliche Art"
-      },
-      {
-        "@language": "en",
-        "@value": "text content nature"
-      },
-      {
-        "@language": "fr",
-        "@value": "Nature du contenu du texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#CitationSourceReference",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Reference of a citation to the source text via the text identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "citation source reference"
-      },
-      {
-        "@language": "fr",
-        "@value": "référence de la source de citation"
-      },
-      {
-        "@language": "it",
-        "@value": "riferimento alla fonte di citazione"
-      },
-      {
-        "@language": "de",
-        "@value": "Zitatquellereferenz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#TextStructureReference"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasReferenceText",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to another one as its reference."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has reference text"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un texte de référence"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un testo di riferimento"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Bezugstext"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasPageNumberDescription",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a description of the number(s) of and possibly a location on (a) pages it is on; examples of the string of its value: \"001-002\", \"01 recto\", \"O2 (bottom)\"."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "il testo ha una descrizione del numero di pagina"
-      },
-      {
-        "@language": "en",
-        "@value": "text has page number description"
-      },
-      {
-        "@language": "de",
-        "@value": "Text hat Seitennummerbeschreibung"
-      },
-      {
-        "@language": "fr",
-        "@value": "le texte a une description de numéro de page"
+        "@value": "hat Beschreibungliterale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasTextLiteral"
+      }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#TranscribedText",
+    "@id": "http://www.e-editiones.ch/ontology/text#Fiction",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text copied by character by any writing method; text abstracted from its carrier."
+        "@value": "Text having content derived from imagination."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "fiction text"
+      },
+      {
+        "@language": "it",
+        "@value": "testo di finzione"
+      },
+      {
+        "@language": "de",
+        "@value": "Fiktiontext"
+      },
+      {
+        "@language": "fr",
+        "@value": "texte fictionnel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#ContentNature"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Fiction"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#citationHasSourceReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a citation to its source reference."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "la citation a une référence de source"
+      },
+      {
+        "@language": "de",
+        "@value": "Zitat hat Quellereferenz"
+      },
+      {
+        "@language": "en",
+        "@value": "citation has source reference"
+      },
+      {
+        "@language": "it",
+        "@value": "citazione ha riferimento alla fonte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#CitationSourceReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/document#hasTextReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#PhotocopiedText",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text photocopied, abstracted from its carrier."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1684,516 +2324,24 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "it",
-        "@value": "testo trascritto"
+        "@value": "testo copiato"
       },
       {
         "@language": "en",
-        "@value": "transcribed text"
-      },
-      {
-        "@language": "de",
-        "@value": "transkribierter Text"
+        "@value": "photocopied text"
       },
       {
         "@language": "fr",
-        "@value": "texte transcrit"
+        "@value": "texte copié"
+      },
+      {
+        "@language": "de",
+        "@value": "fotokopierter Text"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://www.e-editiones.ch/ontology/text#CopiedText"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#PrintedText",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text printed by any method, abstracted from its carrier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "testo stampato"
-      },
-      {
-        "@language": "fr",
-        "@value": "texte imprimé"
-      },
-      {
-        "@language": "en",
-        "@value": "printed text"
-      },
-      {
-        "@language": "de",
-        "@value": "gedruckter Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasName",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to a name as a textual identifier of the resource."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Name"
-      },
-      {
-        "@language": "en",
-        "@value": "has name"
-      },
-      {
-        "@language": "fr",
-        "@value": "a le nom"
-      },
-      {
-        "@language": "it",
-        "@value": "ha il nome"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#Transcriber",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person copying a text by writing, creating a transcribed text in a transcript."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "TexttranskribiererIn"
-      },
-      {
-        "@language": "fr",
-        "@value": "scribe de texte"
-      },
-      {
-        "@language": "en",
-        "@value": "text transcriber"
-      },
-      {
-        "@language": "it",
-        "@value": "scriba di testo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#PersonCreator"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#CompiledText",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text assembled from previously separate texts."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "testo compilato"
-      },
-      {
-        "@language": "en",
-        "@value": "compiled text"
-      },
-      {
-        "@language": "fr",
-        "@value": "texte compilé"
-      },
-      {
-        "@language": "de",
-        "@value": "zusammengestellte Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasPreferredName",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to a preferred name."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has preferred name"
-      },
-      {
-        "@language": "de",
-        "@value": "hat bevorzugter Name"
-      },
-      {
-        "@language": "it",
-        "@value": "ha il nome preferito"
-      },
-      {
-        "@language": "fr",
-        "@value": "a le nom préféré"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasName"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasCitationIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a citation reference to its citation identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#CitationReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has citation identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Zitatidentifikator"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un identifiant de citation"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un identificatore di citazione"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#hasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#isIdentifierOfCitation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an identifier to its citation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est l'identifiant de la citation"
-      },
-      {
-        "@language": "it",
-        "@value": "è identificatore di citazione"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Identifikator eines Zitats"
-      },
-      {
-        "@language": "en",
-        "@value": "is identifier of citation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#citationHasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasSubtitle",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to a subtitle as additional, usually explanatory to the title."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Untertitel"
-      },
-      {
-        "@language": "en",
-        "@value": "has subtitle"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un sous-titre"
-      },
-      {
-        "@language": "it",
-        "@value": "ha i sottotitoli"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasCiter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a human agent - person or group - citing it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a un citeur"
-      },
-      {
-        "@language": "en",
-        "@value": "has citer"
-      },
-      {
-        "@language": "de",
-        "@value": "hat ZitiererIn"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un citatore"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub96bL410C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL410C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Agent"
-      },
-      {
-        "@id": "_:ub96bL410C43"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL410C43",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#agentHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#AgentCiter"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasTitle",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to a title as a textual identifier of the resource."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "ha titolo"
-      },
-      {
-        "@language": "fr",
-        "@value": "intitulé"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Titel"
-      },
-      {
-        "@language": "en",
-        "@value": "has title"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#WrittenText",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text written by symbol, by any method, e.g. manually, with a typewriter, or on a computer, abstracted from its carrier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "geschriebener Text"
-      },
-      {
-        "@language": "fr",
-        "@value": "texte écrit"
-      },
-      {
-        "@language": "en",
-        "@value": "written text"
-      },
-      {
-        "@language": "it",
-        "@value": "testo scritto"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#SurfaceText"
       }
     ]
   },
@@ -2240,1040 +2388,6 @@
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text#Fiction",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text having content derived from imagination."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "fiction text"
-      },
-      {
-        "@language": "de",
-        "@value": "Fiktiontext"
-      },
-      {
-        "@language": "it",
-        "@value": "testo di finzione"
-      },
-      {
-        "@language": "fr",
-        "@value": "texte fictionnel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#ContentNature"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Fiction"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#Normalization",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Derivative of a text of which it is a normalization along a certain procedure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "normalisation du texte"
-      },
-      {
-        "@language": "it",
-        "@value": "normalizzazione del testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text normalization"
-      },
-      {
-        "@language": "de",
-        "@value": "Textnormalisation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#CreationDerivative"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Roberta Padlina, project coordinator, software developer, Basel University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Formal description of text in broadest sense, general subclasses, related classes, and properties."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "http://creativecommons.org/licenses/by/3.0"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@language": "en",
-        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "An ontology about text"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Text structure, text editing, and text roles are described in respective ontologies"
-      },
-      {
-        "@language": "en",
-        "@value": "Representation of text as object instead of literal data element, enabling relating it to other things"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasComment",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to a comment as a textual statement about the resource."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Kommentar"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un commento"
-      },
-      {
-        "@language": "fr",
-        "@value": "a le commentaire"
-      },
-      {
-        "@language": "en",
-        "@value": "has comment"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#citationHasSourceReference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a citation to its source reference."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Zitat hat Quellereferenz"
-      },
-      {
-        "@language": "en",
-        "@value": "citation has source reference"
-      },
-      {
-        "@language": "fr",
-        "@value": "la citation a une référence de source"
-      },
-      {
-        "@language": "it",
-        "@value": "citazione ha riferimento alla fonte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#CitationSourceReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#hasTextReference"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#SurfaceText",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text applied to any surface in any way, abstracted from its carrier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "testo superficiale"
-      },
-      {
-        "@language": "fr",
-        "@value": "texte surfacique"
-      },
-      {
-        "@language": "en",
-        "@value": "surface text"
-      },
-      {
-        "@language": "de",
-        "@value": "Flächetext"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Groups written and printed text."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasAlias",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to an alias as an alternative name of the resource."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has alias"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Alias"
-      },
-      {
-        "@language": "it",
-        "@value": "ha il falso nome"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un nom d'emprunt"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasName"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasVersionIndicator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a textual element that indicates its version."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has version indicator"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un indicatore di versione"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Version-Indikator"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un indicateur de version"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#Scribe",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person copying a text by handwriting, creating a transcribed text in a manual transcript."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "scribe"
-      },
-      {
-        "@language": "la",
-        "@value": "scribes"
-      },
-      {
-        "@language": "it",
-        "@value": "scriba"
-      },
-      {
-        "@language": "en",
-        "@value": "scribe"
-      },
-      {
-        "@language": "de",
-        "@value": "TextKopist"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Transcriber"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#CitationNumber",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Number of a citation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "citation number"
-      },
-      {
-        "@language": "fr",
-        "@value": "numéro de citation"
-      },
-      {
-        "@language": "it",
-        "@value": "numero di citazione"
-      },
-      {
-        "@language": "de",
-        "@value": "Zitatnummer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/mathematics#Number"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#Citation",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Copy of a text expression, mostly a part of it, in another text expression, with reference to the first expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "citation"
-      },
-      {
-        "@language": "de",
-        "@value": "Zitat"
-      },
-      {
-        "@language": "it",
-        "@value": "citazione"
-      },
-      {
-        "@language": "fr",
-        "@value": "citation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#CopiedText"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A citation can also be referred to from the source text, having an identifier linked to both the citation reference of the source and the citation."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasDefinition",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to a definition as a textual statement about the essential features of the resource."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une définition"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una definizione"
-      },
-      {
-        "@language": "en",
-        "@value": "has definition"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Definition"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescription"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasHandwriter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a handwritten text to the person who wrote it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#HandwrittenText"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "ha uno scrittore a mano"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Handschreiber"
-      },
-      {
-        "@language": "en",
-        "@value": "has handwriter"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un écrivain à la main"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub96bL492C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL492C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub96bL492C44"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL492C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Handwriter"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#Compiler",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person assembling texts to a new whole."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "compiler"
-      },
-      {
-        "@language": "de",
-        "@value": "Kompilator"
-      },
-      {
-        "@language": "fr",
-        "@value": "compilateur"
-      },
-      {
-        "@language": "it",
-        "@value": "compilatore"
-      },
-      {
-        "@language": "la",
-        "@value": "compilator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#PersonCreator"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#Text",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Human natural language expression serialized in writable form."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "texte"
-      },
-      {
-        "@language": "it",
-        "@value": "testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text"
-      },
-      {
-        "@language": "de",
-        "@value": "Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#isReferredToIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to an expression wherein it is referred to."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#Structure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is referred to in"
-      },
-      {
-        "@language": "de",
-        "@value": "ist referenziert in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identifier of a citation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "identifiant de citation"
-      },
-      {
-        "@language": "it",
-        "@value": "identificatore di citazione"
-      },
-      {
-        "@language": "de",
-        "@value": "Zitatidentifikator"
-      },
-      {
-        "@language": "en",
-        "@value": "citation identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Structure"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Identifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasNumberOfPages",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to the number of pages it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has number of pages"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un numero di pagine"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Seitenanzahl"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un nombre de pages"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#Handwriter",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person writing text symbols by hand."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "écrivain"
-      },
-      {
-        "@language": "de",
-        "@value": "Handschreiber"
-      },
-      {
-        "@language": "en",
-        "@value": "handwriter"
-      },
-      {
-        "@language": "it",
-        "@value": "manoscrittore"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#PersonCreator"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#isCitedIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to an expression wherein it is cited."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#Structure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est cité dans"
-      },
-      {
-        "@language": "en",
-        "@value": "is cited in"
-      },
-      {
-        "@language": "it",
-        "@value": "è citato in"
-      },
-      {
-        "@language": "de",
-        "@value": "ist zitiert in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#isReferredToIn"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.e-editiones.ch/ontology/text#hasCitation"
-          },
-          {
-            "@id": "http://www.e-editiones.ch/ontology/text#citationIsPartOf"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#CopiedText",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text copied by any method; text abstracted from its carrier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "testo copiato"
-      },
-      {
-        "@language": "fr",
-        "@value": "texte copié"
-      },
-      {
-        "@language": "en",
-        "@value": "copied text"
-      },
-      {
-        "@language": "de",
-        "@value": "kopierter Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text#hasAnnotator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a person who annotated it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "le texte a un annotateur"
-      },
-      {
-        "@language": "en",
-        "@value": "text has annotator"
-      },
-      {
-        "@language": "it",
-        "@value": "il testo ha un annotatore"
-      },
-      {
-        "@language": "de",
-        "@value": "Text hat AnnotatorIn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub96bL553C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL553C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub96bL553C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub96bL553C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-editing#Annotator"
-      }
-    ]
-  },
-  {
     "@id": "http://www.e-editiones.ch/ontology/text#isAlludedToIn",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -3316,6 +2430,562 @@
     ]
   },
   {
+    "@id": "http://www.e-editiones.ch/ontology/text#isTextOfDocument",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to the document it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "est le texte du document"
+      },
+      {
+        "@language": "en",
+        "@value": "is text of document"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Text eines Dokumentes"
+      },
+      {
+        "@language": "it",
+        "@value": "è il testo del documento"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/document#Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasLineNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to the number of a line of the text expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Liniennummer"
+      },
+      {
+        "@language": "it",
+        "@value": "ha un numero di riga"
+      },
+      {
+        "@language": "en",
+        "@value": "has line number"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un numéro de ligne"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasText"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasCommentLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to the literal of a comment as a textual statement about the resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a littéral du commentaire"
+      },
+      {
+        "@language": "it",
+        "@value": "ha letterale del commento"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Kommentarliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "has comment literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasTextLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#Translation",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Translation from text to text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textübersetzung"
+      },
+      {
+        "@language": "en",
+        "@value": "text translation"
+      },
+      {
+        "@language": "fr",
+        "@value": "traduction de texte"
+      },
+      {
+        "@language": "it",
+        "@value": "traduzione di testi"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/language#Translation"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasCitationIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a citation reference to its citation identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#CitationReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a un identifiant de citation"
+      },
+      {
+        "@language": "en",
+        "@value": "has citation identifier"
+      },
+      {
+        "@language": "it",
+        "@value": "ha un identificatore di citazione"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Zitatidentifikator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-structure#hasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#ContentNature",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Nature of the content of a text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "Nature du contenu du texte"
+      },
+      {
+        "@language": "en",
+        "@value": "text content nature"
+      },
+      {
+        "@language": "it",
+        "@value": "Natura del contenuto del testo"
+      },
+      {
+        "@language": "de",
+        "@value": "textinhaltliche Art"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasReferenceText",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to another one as its reference."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has reference text"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Bezugstext"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un texte de référence"
+      },
+      {
+        "@language": "it",
+        "@value": "ha un testo di riferimento"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasTitleLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to the literal of a title as a textual appelation of the resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Titelliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "has title literal"
+      },
+      {
+        "@language": "it",
+        "@value": "ha letterale del titolo"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral du titre"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasTextLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasPreferredNameLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to a preferred name literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha letterale del nome preferito"
+      },
+      {
+        "@language": "en",
+        "@value": "has preferred name literal"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral du nom préféré"
+      },
+      {
+        "@language": "de",
+        "@value": "hat bevorzugter Nameliterale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasNameLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#Transcriber",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person copying a text by writing, creating a transcribed text in a transcript."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "text transcriber"
+      },
+      {
+        "@language": "fr",
+        "@value": "scribe de texte"
+      },
+      {
+        "@language": "de",
+        "@value": "TexttranskribiererIn"
+      },
+      {
+        "@language": "it",
+        "@value": "scriba di testo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/creating#PersonCreator"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#CitationIdentifier",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Identifier of a citation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Zitatidentifikator"
+      },
+      {
+        "@language": "it",
+        "@value": "identificatore di citazione"
+      },
+      {
+        "@language": "en",
+        "@value": "citation identifier"
+      },
+      {
+        "@language": "fr",
+        "@value": "identifiant de citation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/document#Structure"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Identifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasContentNature",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a content nature it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has content nature"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une nature de contenu"
+      },
+      {
+        "@language": "it",
+        "@value": "ha natura contenuta"
+      },
+      {
+        "@language": "de",
+        "@value": "hat textinhaltliche Art"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#ContentNature"
+      }
+    ]
+  },
+  {
     "@id": "http://www.e-editiones.ch/ontology/text#TypewrittenText",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
@@ -3333,25 +3003,460 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "typewritten text"
-      },
-      {
         "@language": "fr",
         "@value": "texte dactylographié"
       },
       {
-        "@language": "it",
-        "@value": "testo dattiloscritto"
+        "@language": "en",
+        "@value": "typewritten text"
       },
       {
         "@language": "de",
         "@value": "maschinengeschriebener Text"
+      },
+      {
+        "@language": "it",
+        "@value": "testo dattiloscritto"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://www.e-editiones.ch/ontology/text#WrittenText"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#characterSize",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Datatype to type a character literal's size."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "character size datatype"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#positiveInteger"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "E.g. “10”^^sa:characterSize. Used in combination with other other character features."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasNumberOfPages",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to the number of pages it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Seitenanzahl"
+      },
+      {
+        "@language": "it",
+        "@value": "ha un numero di pagine"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un nombre de pages"
+      },
+      {
+        "@language": "en",
+        "@value": "has number of pages"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasTranscriber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a person who transcribed it; text abstracted from its carrier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha trascrittore"
+      },
+      {
+        "@language": "fr",
+        "@value": "a transcripteur"
+      },
+      {
+        "@language": "en",
+        "@value": "has transcriber"
+      },
+      {
+        "@language": "de",
+        "@value": "hat TranskribiererIn"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub114bL419C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL419C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      },
+      {
+        "@id": "_:ub114bL419C44"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL419C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Transcriber"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasCitation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a citation thereof."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-structure#Structure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha una citazione"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Zitat"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une citation"
+      },
+      {
+        "@language": "en",
+        "@value": "has citation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Citation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.e-editiones.ch/ontology/text#hasCitationReference"
+          },
+          {
+            "@id": "http://www.e-editiones.ch/ontology/text#hasCitationIdentifier"
+          },
+          {
+            "@id": "http://www.e-editiones.ch/ontology/text#isIdentifierOfCitation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasEditor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a person who edited it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Text hat EditorIn"
+      },
+      {
+        "@language": "it",
+        "@value": "il testo ha un editor"
+      },
+      {
+        "@language": "fr",
+        "@value": "le texte a un éditeur"
+      },
+      {
+        "@language": "en",
+        "@value": "text has editor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub114bL510C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL510C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      },
+      {
+        "@id": "_:ub114bL510C44"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL510C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-editing#Editor"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#AgentCiter",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a human agent, person or group, citing a text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "agent citeur"
+      },
+      {
+        "@language": "en",
+        "@value": "agent citer"
+      },
+      {
+        "@language": "it",
+        "@value": "agente citante"
+      },
+      {
+        "@language": "de",
+        "@value": "Agent-Zitierer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#AgentRole"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#CopiedText",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text copied by any method; text abstracted from its carrier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "texte copié"
+      },
+      {
+        "@language": "en",
+        "@value": "copied text"
+      },
+      {
+        "@language": "it",
+        "@value": "testo copiato"
+      },
+      {
+        "@language": "de",
+        "@value": "kopierter Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/text#hasRevisor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a person who revised it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Text hat Revisor"
+      },
+      {
+        "@language": "fr",
+        "@value": "le texte a un réviseur"
+      },
+      {
+        "@language": "it",
+        "@value": "il testo ha un revisore"
+      },
+      {
+        "@language": "en",
+        "@value": "text has revisor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub114bL571C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL571C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub114bL571C44"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub114bL571C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text-editing#Revisor"
       }
     ]
   }

@@ -1,6 +1,6 @@
 ---
 title: Atharvaveda
-description: An ontology about Atharvaveda
+description: Formal description of specific concepts in the scientific study of Atharvaveda.
 file: atharvaveda
 ---
 

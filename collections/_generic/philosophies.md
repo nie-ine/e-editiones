@@ -1,6 +1,6 @@
 ---
 title: Philosophies
-description: 
+description: Formal description of philosophies, general subclasses, related classes, properties, and instances.
 file: philosophies
 ---
 

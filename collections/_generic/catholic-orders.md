@@ -1,5 +1,5 @@
 ---
 title: Catholic Orders
-description: An ontology about catholic orders
+description: Formal description of catholic orders, general subclasses, related classes, properties, and instances.
 file: catholic-orders
 ---

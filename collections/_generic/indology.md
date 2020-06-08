@@ -1,6 +1,6 @@
 ---
 title: Indology
-description: 
+description: Formal description of Indology, general subclasses, related classes, and properties.
 file: indology
 ---
 

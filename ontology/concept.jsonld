@@ -1,42 +1,142 @@
 [
   {
-    "@id": "http://www.e-editiones.ch/ontology/concept",
+    "@id": "http://www.e-editiones.ch/ontology/concept#hasLiteral",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
-    "http://purl.org/dc/terms/contributor": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland"
+        "@value": "Relating something to the literal of a symbolic entity that the literal expresses."
       }
     ],
-    "http://purl.org/dc/terms/creator": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+        "@value": "has literal"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Literale"
       }
     ],
-    "http://purl.org/dc/terms/description": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.e-editiones.ch/ontology/concept#hasSymbolicEntity"
+          },
+          {
+            "@id": "http://www.e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Formal description of concept, its general subclasses, related classes and properties."
+        "@value": "A reification of a literal, i.e. a symbolic entity, can always be interposed, see property chain axiom."
       }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#hasIdentifierLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "http://creativecommons.org/licenses/by/3.0"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@language": "en",
-        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An ontology about concept"
+        "@value": "Relating a resource to its identifier literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Identifikatorliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "has identifier literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#hasLiteral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.e-editiones.ch/ontology/concept#hasIdentifier"
+          },
+          {
+            "@id": "http://www.e-editiones.ch/ontology/concept#identifierHasLiteral"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#ThoughtMethod",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Way of analysing facts to form a judgment."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Methode des Denkens"
+      },
+      {
+        "@language": "en",
+        "@value": "thought method"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
       }
     ]
   },
@@ -68,19 +168,27 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      },
+      {
         "@id": "http://www.e-editiones.ch/ontology/concept#Identifier"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/document#Code"
+      }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/concept#Motto",
+    "@id": "http://www.e-editiones.ch/ontology/concept#Identifier",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Conceptual entity chosen as encapsulating an ideal, principle, belief or goal of an individual or group."
+        "@value": "Unique and permanent reference to a resource within a given context, and conforming to a formal identification system."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -91,51 +199,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "motto"
-      },
-      {
-        "@language": "fr",
-        "@value": "devise"
-      },
-      {
-        "@language": "it",
-        "@value": "motto"
+        "@value": "identifier"
       },
       {
         "@language": "de",
-        "@value": "Motto"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#Information",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Symbolic propositional entity resolving uncertainty."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Information"
-      },
-      {
-        "@language": "en",
-        "@value": "information"
+        "@value": "Identifikator"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -143,10 +211,90 @@
         "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/concept#PropositionalEntity"
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#ThoughtBody",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Propositional entity comprising conceptually related propositions, without the necessity of being logically coherent."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Gedankengut"
       },
       {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+        "@language": "en",
+        "@value": "body of thought"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#PropositionalEntity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Related to belief system, related to school of thought, related to theory."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#hasCode",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to its code."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has code"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Kode"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Code"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#exactMatch"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#hasIdentifier"
       }
     ]
   },
@@ -183,22 +331,199 @@
       {
         "@id": "http://www.e-editiones.ch/ontology/creating#Creation"
       }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/physical-entity#Entity"
-      }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/concept#hasLiteral",
+    "@id": "http://www.e-editiones.ch/ontology/concept#Work",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating something to the literal of a symbolic entity that the literal expresses."
+        "@value": "propositional entity as recognizable intellectual product, conform FRBROO."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "conceptual work"
+      },
+      {
+        "@language": "de",
+        "@value": "konzeptuelles Werk"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#PropositionalEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#Information",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Symbolic propositional entity resolving uncertainty."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "information"
+      },
+      {
+        "@language": "de",
+        "@value": "Information"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#PropositionalEntity"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#hasDedicatedTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a person to another person to whom the former has dedicated something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has dedicated to"
+      },
+      {
+        "@language": "de",
+        "@value": "hat gewidmet"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#codeHasSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a code to the coding system it belongs to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Code"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Kode hat System"
+      },
+      {
+        "@language": "en",
+        "@value": "code has system"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#CodingSystem"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#IndividualWork",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Work as a complete whole realised in one self-contained expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "individuelles Werk"
+      },
+      {
+        "@language": "en",
+        "@value": "individual work"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F14_Individual_Work"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Work"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#hasIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to its identifier."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -213,12 +538,168 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "en",
+        "@value": "has identifier"
+      },
+      {
         "@language": "de",
-        "@value": "hat Literale"
+        "@value": "hat Identifikator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#hasSymbolicEntity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A sub-property can be inverse functional, e.g. more than one ISO-code identifying the same natural language, or functional, e.g. a person identified by the social security number."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#PropositionalEntity",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conceptual entity represented by one or more propositions as bearers of a truth value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "propositional entity"
+      },
+      {
+        "@language": "de",
+        "@value": "propositionale Entität"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
+      },
+      {
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Different from a linguistic proposition."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#Set",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Set of conceptual entities."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Reihe konzeptueller Entitäten"
       },
       {
         "@language": "en",
-        "@value": "has literal"
+        "@value": "conceptual entity set"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/creating#CreationSet"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#Nonfiction",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conceptual entity based on fact."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "sachliches Konzept"
+      },
+      {
+        "@language": "en",
+        "@value": "nonfiction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#codeHasValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a code to its literal value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Code"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Kode hat Wert"
+      },
+      {
+        "@language": "en",
+        "@value": "code has value"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -226,16 +707,189 @@
         "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@list": [
-          {
-            "@id": "http://www.e-editiones.ch/ontology/concept#hasSymbolicEntity"
-          },
-          {
-            "@id": "http://www.e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"
-          }
-        ]
+        "@id": "http://www.e-editiones.ch/ontology/concept#identifierHasLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conceptual entity represented by one or more symbols."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "symbolische Entität"
+      },
+      {
+        "@language": "en",
+        "@value": "symbolic entity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
+      },
+      {
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#Motto",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conceptual entity chosen as encapsulating an ideal, principle, belief or goal of an individual or group."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Motto"
+      },
+      {
+        "@language": "en",
+        "@value": "motto"
+      },
+      {
+        "@language": "it",
+        "@value": "motto"
+      },
+      {
+        "@language": "fr",
+        "@value": "devise"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#codingSystemHasDataType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a code to the coding system it belongs to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#CodingSystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "coding system has data type"
+      },
+      {
+        "@language": "de",
+        "@value": "Kodierungssystem hat Datentyp"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Datatype"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#Commonplace",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conceptual entity generally known, not needing any further explanation, e.g. \"Romeo and Julia\"."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "commonplace"
+      },
+      {
+        "@language": "de",
+        "@value": "Gemeinplatz"
+      },
+      {
+        "@language": "fr",
+        "@value": "lieu commun"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#Fiction",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conceptual entity derived from imagination."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "fiction"
+      },
+      {
+        "@language": "de",
+        "@value": "Fiktion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
       }
     ]
   },
@@ -267,10 +921,237 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure"
       },
       {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure"
+        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#hasCodeValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a resource to its code value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Kodewert"
+      },
+      {
+        "@language": "en",
+        "@value": "has code value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#hasIdentifierLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#informationHasSubjectDescriptionLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating information to a description literal of its subject."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Information hat Themabeschreibungliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "information has subject description literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#hasSymbolicEntity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something to a symbolic entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has symbolic entity"
+      },
+      {
+        "@language": "de",
+        "@value": "hat symbolische Entität"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#hasEncoder",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating information to a person who encoded it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "information has encoder"
+      },
+      {
+        "@language": "de",
+        "@value": "Information hat Encoder"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub58bL304C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub58bL304C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub58bL304C44"
+      },
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub58bL304C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Encoder"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#identifierHasLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an identifier to its literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Identifikator hat Literale"
+      },
+      {
+        "@language": "en",
+        "@value": "identifier has literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#hasLiteral"
       }
     ]
   },
@@ -317,10 +1198,157 @@
     ]
   },
   {
+    "@id": "http://www.e-editiones.ch/ontology/concept#symbolicEntityHasLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a symbolic entity to a literal that expresses it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "symbolic entity has literal"
+      },
+      {
+        "@language": "de",
+        "@value": "symbolische Entität hat Literale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Formal description of concept, its general subclasses, related classes and properties."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/3.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@language": "en",
+        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "An ontology about concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#informationHasSubject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating information to a subject it is about."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "information has subject"
+      },
+      {
+        "@language": "de",
+        "@value": "Information hat Thema"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.e-editiones.ch/ontology/concept#CodingSystem",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "System providing a code for something along certain criteria, e.g. the ISO 639 for natural languages."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.e-editiones.ch/ontology/concept#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "code system"
+      },
+      {
+        "@language": "de",
+        "@value": "Kodierungssystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+      }
+    ]
+  },
+  {
     "@id": "http://www.e-editiones.ch/ontology/concept#isPartOf",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+      "http://www.w3.org/2002/07/owl#TransitiveProperty",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -356,720 +1384,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#Commonplace",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Conceptual entity generally known, not needing any further explanation, e.g. \"Romeo and Julia\"."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "commonplace"
-      },
-      {
-        "@language": "de",
-        "@value": "Gemeinplatz"
-      },
-      {
-        "@language": "fr",
-        "@value": "lieu commun"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#ThoughtBody",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Propositional entity comprising conceptually related propositions, without the necessity of being logically coherent."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "body of thought"
-      },
-      {
-        "@language": "de",
-        "@value": "Gedankengut"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#PropositionalEntity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Related to belief system, related to school of thought, related to theory."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#hasDedicatedTo",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a person to another person to whom the former has dedicated something."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat gewidmet"
-      },
-      {
-        "@language": "en",
-        "@value": "has dedicated to"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#Set",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Set of conceptual entities."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Reihe konzeptueller Entitäten"
-      },
-      {
-        "@language": "en",
-        "@value": "conceptual entity set"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#CreationSet"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#Identifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Unique and permanent reference to a resource within a given context, and conforming to a formal identification system."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Identifikator"
-      },
-      {
-        "@language": "en",
-        "@value": "identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#informationHasSubjectDescription",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating information to a description of its subject."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "information has subject description"
-      },
-      {
-        "@language": "de",
-        "@value": "Information hat Themabeschreibung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescription"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#hasEncoder",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating information to a person who encoded it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "information has encoder"
-      },
-      {
-        "@language": "de",
-        "@value": "Information hat Encoder"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub15bL237C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub15bL237C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub15bL237C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub15bL237C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Encoder"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#Fiction",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Conceptual entity derived from imagination."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Fiktion"
-      },
-      {
-        "@language": "en",
-        "@value": "fiction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#Nonfiction",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Conceptual entity based on fact."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "sachliches Konzept"
-      },
-      {
-        "@language": "en",
-        "@value": "nonfiction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Conceptual entity represented by one or more symbols."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "symbolic entity"
-      },
-      {
-        "@language": "de",
-        "@value": "symbolische Entität"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
-      },
-      {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#hasIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to its identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Identifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Identifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#informationHasSubject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating information to a subject it is about."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Information hat Thema"
-      },
-      {
-        "@language": "en",
-        "@value": "information has subject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#hasSymbolicEntity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something to a symbolic entity."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat symbolische Entität"
-      },
-      {
-        "@language": "en",
-        "@value": "has symbolic entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#ThoughtMethod",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Way of analysing facts to form a judgment."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "thought method"
-      },
-      {
-        "@language": "de",
-        "@value": "Methode des Denkens"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Information"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#Work",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "propositional entity as recognizable intellectual product, conform FRBROO."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "konzeptuelles Werk"
-      },
-      {
-        "@language": "en",
-        "@value": "conceptual work"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#PropositionalEntity"
-      },
-      {
-        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#hasCode",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to its code."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has code"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Kode"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Code"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#symbolicEntityHasLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a symbolic entity to a literal that expresses it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#SymbolicEntity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "symbolische Entität hat Literale"
-      },
-      {
-        "@language": "en",
-        "@value": "symbolic entity has literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#IndividualWork",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Work as a complete whole realised in one self-contained expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "individuelles Werk"
-      },
-      {
-        "@language": "en",
-        "@value": "individual work"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#Work"
-      },
-      {
-        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F14_Individual_Work"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/concept#PropositionalEntity",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Conceptual entity represented by one or more propositions as bearers of a truth value."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "propositional entity"
-      },
-      {
-        "@language": "de",
-        "@value": "propositionale Entität"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#ConceptualEntity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Different from a linguistic proposition."
       }
     ]
   }

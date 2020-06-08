@@ -19,12 +19,12 @@
 @prefix ling: <http://www.e-editiones.ch/ontology/linguistics#>.
 @prefix lingmor: <http://www.e-editiones.ch/ontology/linguistic-morphology#>.
 
-# @base <http://www.e-editiones.ch/ontology/text-structure>.
+@base <http://www.e-editiones.ch/ontology/text-structure>.
 @prefix text-structure: <http://www.e-editiones.ch/ontology/text-structure#>.
 
 <http://www.e-editiones.ch/ontology/text-structure>
 	a owl:Ontology;
-	dct:license <http://creativecommons.org/licenses/by/3.0>;
+	dct:license <http://creativecommons.org/licenses/by/3.0/>;
 	dct:title "An ontology about text structure"@en;
 	dct:description """Formal description of text structure, subclasses, related classes, and properties."""@en;
 	skos:note """Text and text editing are described in other ontologies"""@en;
@@ -147,12 +147,18 @@ text-structure:Section
 	rdfs:comment """Composition of paragraphs, mostly about a certain topic."""@en;
 	rdfs:subClassOf text-structure:SentenceStructure, text-structure:CompositionalContentStructure.
 
+text-structure:SectionIdentifier
+	rdfs:isDefinedBy <http://www.e-editiones.ch/ontology/text-structure#>;
+	a rdfs:Class;
+	rdfs:label "text section identifier"@en, "Textabschnittidentifikator"@de;
+	rdfs:comment """Identifier of a text section."""@en;
+	rdfs:subClassOf text-structure:Identifier.
 
 text-structure:SectionOrdinalNumber
 	rdfs:isDefinedBy <http://www.e-editiones.ch/ontology/text-structure#>;
 	a rdfs:Class;
 	rdfs:label "text section ordinal number"@en, "Textabschnittordinalzahl"@de;
-	rdfs:comment """Ordinal number of a section."""@en;
+	rdfs:comment """Ordinal number of a text section."""@en;
 	rdfs:subClassOf text-structure:SectionIdentifier, math:OrdinalNumber.
 
 text-structure:OrthographicWord
@@ -221,7 +227,7 @@ text-structure:PageLine
 	skos:note """In case of a horizontal line, its maximum length equals the page width minus margins."""@en;
 	rdfs:subClassOf text-structure:Line.
 
-text-structure:Table #° tableHasTitle, tableHasField, tableHasRow, tableHasColumn
+text-structure:Table #° tableHasTitleLiteral, tableHasField, tableHasRow, tableHasColumn
 	rdfs:isDefinedBy <http://www.e-editiones.ch/ontology/text-structure#>;
 	a rdfs:Class;
 	rdfs:label "text table"@en, "Texttabelle"@de, "table de texte"@fr, "tabella di testo"@it;
@@ -339,14 +345,14 @@ text-structure:isParagraphOfSection
 	rdfs:range text-structure:Section;
 	rdfs:subPropertyOf concept:isPartOf.
 
-text-structure:paragraphHasTitle
+text-structure:paragraphHasTitleLiteral
 	rdfs:isDefinedBy <http://www.e-editiones.ch/ontology/text-structure#>;
 	a owl:DatatypeProperty;
-	rdfs:label "paragraph has title"@en, "Paragraf hat Titel"@de, "le paragraphe a un titre"@fr, "il paragrafo ha titolo"@it;
-	rdfs:comment """Relating a paragraph to its title."""@en;
+	rdfs:label "paragraph has title literal"@en, "Paragraf hat Titelliterale"@de, "le paragraphe a littéral du titre"@fr, "il paragrafo ha letterale del titolo"@it;
+	rdfs:comment """Relating a paragraph to its title literal."""@en;
 	rdfs:domain text-structure:Paragraph;
 	rdfs:range rdfs:Literal;
-	rdfs:subPropertyOf text:hasTitle.
+	rdfs:subPropertyOf text:hasTitleLiteral.
 
 text-structure:paragraphHasNumber
 	rdfs:isDefinedBy <http://www.e-editiones.ch/ontology/text-structure#>;
@@ -365,14 +371,14 @@ text-structure:isSectionOfExpression
 	rdfs:range text-expression:SentenceExpression;
 	rdfs:subPropertyOf text-structure:isPartOfTextExpression.
 
-text-structure:sectionHasTitle
+text-structure:sectionHasTitleLiteral
 	rdfs:isDefinedBy <http://www.e-editiones.ch/ontology/text-structure#>;
 	a owl:DatatypeProperty;
-	rdfs:label "text section has title"@en, "Textabschnitt hat Titel"@de, "section de texte a un titre"@fr, "sezione di testo ha titolo"@it;
-	rdfs:comment """Relating a text section to its title."""@en;
+	rdfs:label "text section has title literal"@en, "Textabschnitt hat Titelliterale"@de, "section de texte a littéral du titre"@fr, "sezione di testo ha letterale del titolo"@it;
+	rdfs:comment """Relating a text section to its title literal."""@en;
 	rdfs:domain text-structure:Section;
 	rdfs:range rdfs:Literal;
-	rdfs:subPropertyOf text:hasTitle.
+	rdfs:subPropertyOf text:hasTitleLiteral.
 
 text-structure:sectionHasOrdinalNumber
 	rdfs:isDefinedBy <http://www.e-editiones.ch/ontology/text-structure#>;

@@ -34,9 +34,6 @@ def main():
 		except Exception as e:
 			error[ttl.name] = str(e)
 
-		serializeTtl(str(ttl.resolve()), "nt", "nt")
-		serializeTtl(str(ttl.resolve()), "json-ld", "jsonld")
-
 	if error:
 		for k,v in error.items():
 			print("")
@@ -47,6 +44,14 @@ def main():
 		sys.exit("Damn! Exited with error(s): {} invalid turtle file(s) found...see above".format(len(error)))
 
 	else: 
+		for ttl in ttl_files:
+			ttl = Path(ttl)
+
+			serializeTtl(str(ttl.resolve()), "nt", "nt")
+			serializeTtl(str(ttl.resolve()), "json-ld", "jsonld")
+
+		print("Converted turtle files to RDF/XML, N-Triples, JSON-LD")
+		print("")
 		# rdf to html
 		xsl_path = Path("resources/rdf2html.xsl").resolve()
 		saxon_jar_path = Path("resources/saxon9he.jar").resolve()

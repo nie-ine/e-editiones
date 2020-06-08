@@ -1,6 +1,6 @@
 ---
 title: Time
-description: 
+description: Formal description of time relations.
 file: time
 ---
 

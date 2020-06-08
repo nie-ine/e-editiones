@@ -1,6 +1,6 @@
 ---
 title: Text Structure
-description: 
+description: Formal description of text structure, subclasses, related classes, and properties.
 file: text-structure
 ---
 

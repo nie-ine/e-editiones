@@ -1,6 +1,6 @@
 ---
 title: Scholasticism
-description: 
+description: Formal description of elements in Scholasticism.
 file: scholasticism
 ---
 

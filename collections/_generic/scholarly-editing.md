@@ -1,6 +1,6 @@
 ---
 title: Scholarly Editing
-description: 
+description: Formal description of scientific editing, general subclasses, related classes, and properties.
 file: scholarly-editing
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Letter Corresponding
-description: 
+description: Formal description of letter corresponding, related classes, and properties.
 file: letter-corresponding
 ---
 

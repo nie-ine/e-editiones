@@ -1,5 +1,5 @@
 ---
 title: Calendar
-description: System of reckoning time in which the beginning, length, and divisions of a year are defined, sometimes along with multiyear cycles.
+description: Formal description of calendar, subclasses, related classes, and properties.
 file: calendar
 ---
