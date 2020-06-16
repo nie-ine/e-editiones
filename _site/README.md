@@ -26,8 +26,8 @@ These are the files necessary to develop, build and maintain [e-editiones.ch](ht
 1. cd into repository with ``cd e-editiones``.
 1. Run ``bundle install`` to fetch the needed Ruby gems.
 1. cd into "ttl_conv" with ``cd ttl_conv``.
-1. Set up a Python virtual environment.
-1. Activate your virtual environment.
+1. Set up a Python virtual environment. # virtualenv ttl_conv
+1. Activate your virtual environment. # source ttl_conv/bin/activate # deactivate
 1. Run ``pip3 install -r requirements.txt`` to fetch the needed Python packages.
 1. cd back to "e-editiones" with ``cd ..``.
 
@@ -72,7 +72,7 @@ To build the static website, run ``jekyll build`` and all necessary files will b
 
 To convert turtle files to the needed formats: 
 
-1. Any turtle files need to be in the "ontology" folder.
+1. Any turtle file need to be in the "ontology" folder.
    - Be aware of the correct file naming (see [Add New Ontologies](#add-new-ontologies) below)
 1. cd into "ttl_conv" with ``cd ttl_conv``.
 1. Activate your virtual environment if not activated. 
