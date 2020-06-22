@@ -26,8 +26,8 @@ These are the files necessary to develop, build and maintain [e-editiones.ch](ht
 1. cd into repository with ``cd e-editiones``.
 1. Run ``bundle install`` to fetch the needed Ruby gems.
 1. cd into "ttl_conv" with ``cd ttl_conv``.
-1. Set up a Python virtual environment. # virtualenv ttl_conv
-1. Activate your virtual environment. # source ttl_conv/bin/activate # deactivate
+1. Set up a Python virtual environment. E.g. ``virtualenv ttl_conv``
+1. Activate your virtual environment. E.g. ``source ttl_conv/bin/activate`` (type ``deactivate`` to deactivate).
 1. Run ``pip3 install -r requirements.txt`` to fetch the needed Python packages.
 1. cd back to "e-editiones" with ``cd ..``.
 
@@ -62,11 +62,11 @@ Folder/File        | Description
  
 #### Serve Locally
 
-To serve the website locally, run ``jekyll serve`` and visit http://localhost:4000.
+To serve the website locally, run ``bundle exec jekyll serve`` and visit http://localhost:4000.
 
 #### Build Locally
 
-To build the static website, run ``jekyll build`` and all necessary files will be available in the "\_site" folder.
+To build the static website, run ``bundle exec jekyll build`` and all necessary files will be available in the "\_site" folder.
 
 ### Turtle File Conversion
 
