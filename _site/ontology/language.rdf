@@ -2,301 +2,302 @@
 <rdf:RDF
   xmlns:dct="http://purl.org/dc/terms/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">
-    <rdfs:label xml:lang="en">general human natural language</rdfs:label>
-    <rdfs:comment xml:lang="en">Language naturally evolved in humans and used as official language in one or more countries.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:label xml:lang="de">algemeine menschliche naturliche Sprache</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#hasPersonTranslator">
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#hasTranslator">
-        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-        <rdfs:label xml:lang="de">hat Übersetzer</rdfs:label>
-        <rdfs:label xml:lang="en">has translator</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-        <rdfs:comment xml:lang="en">Relating a natural language expression to an agent that translated it.</rdfs:comment>
-        <rdfs:range>
-          <rdf:Description rdf:nodeID="ub21bL183C13">
-            <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/agent#Agent"/>
-            <rdfs:subClassOf>
-              <owl:Restriction rdf:nodeID="ub21bL183C43">
-                <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/language#AgentTranslator"/>
-                <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/agent#hasRole"/>
-              </owl:Restriction>
-            </rdfs:subClassOf>
-          </rdf:Description>
-        </rdfs:range>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:range>
-      <rdf:Description rdf:nodeID="ub21bL191C13">
-        <rdfs:subClassOf>
-          <owl:Restriction rdf:nodeID="ub21bL191C44">
-            <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/human#personHasRole"/>
-            <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/language#PersonTranslator"/>
-          </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Person"/>
-      </rdf:Description>
-    </rdfs:range>
-    <rdfs:label xml:lang="en">has person-translator</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-    <rdfs:comment xml:lang="en">Relating a natural language expression to a person who translated it.</rdfs:comment>
-    <rdfs:label xml:lang="de">hat Person-Übersetzer</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#hasMachineTranslator">
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-    <rdfs:comment xml:lang="en">Relating a natural language expression to a machine that translated it.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:label xml:lang="de">hat Machine-Übersetzer</rdfs:label>
-    <rdfs:label xml:lang="en">has machine-translator</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/language#hasTranslator"/>
-    <rdfs:range>
-      <rdf:Description rdf:nodeID="ub21bL200C13">
-        <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/device#DigitalElectronicComputer"/>
-        <rdfs:subClassOf>
-          <owl:Restriction rdf:nodeID="ub21bL200C64">
-            <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/language#MachineTranslator"/>
-            <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/agent#hasRole"/>
-          </owl:Restriction>
-        </rdfs:subClassOf>
-      </rdf:Description>
-    </rdfs:range>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/language#hasContentLiteral">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="de">hat Inhaltliterale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-    <rdfs:label xml:lang="en">has content literal</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a human natural language expression to its content.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#isTranslatedInto">
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:comment xml:lang="en">Relating a human natural language expression to the language it is translated into.</rdfs:comment>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#expressedInNaturalLanguage">
-        <rdfs:label xml:lang="de">geäußert in naturlichen Sprache</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P72_has_language"/>
-        <rdfs:label xml:lang="en">expressed in natural language</rdfs:label>
-        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
-        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-        <rdfs:comment xml:lang="en">Relating a human expression to a natural language wherein it is expressed.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="en">is translated into</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
-    <rdfs:label xml:lang="de">ist übersetzt in</rdfs:label>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/language#hasTranslation"/>
-      <rdf:Description rdf:about="http://www.e-editiones.ch/ontology/language#expressedInNaturalLanguage"/>
-    </owl:propertyChainAxiom>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#isDialectOf">
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#Dialect"/>
-    <rdfs:comment xml:lang="en">Relating a dialect to its human natural language.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Dialekt von</rdfs:label>
-    <rdfs:label xml:lang="en">is dialect of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#translationHasPersonTranslator">
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#translationHasTranslator">
-        <rdfs:label xml:lang="de">Übersetzung hat Übersetzer</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#Translation"/>
-        <rdfs:label xml:lang="en">translation has translator</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-        <rdfs:comment xml:lang="en">Relating a translation to an agent that created it.</rdfs:comment>
-        <rdfs:range>
-          <rdf:Description rdf:nodeID="ub21bL209C13">
-            <rdfs:subClassOf>
-              <owl:Restriction rdf:nodeID="ub21bL209C43">
-                <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/language#AgentTranslator"/>
-                <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/agent#hasRole"/>
-              </owl:Restriction>
-            </rdfs:subClassOf>
-            <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/agent#Agent"/>
-          </rdf:Description>
-        </rdfs:range>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="de">Übersetzung hat Person-Übersetzer</rdfs:label>
-    <rdfs:range>
-      <rdf:Description rdf:nodeID="ub21bL217C13">
-        <rdfs:subClassOf>
-          <owl:Restriction rdf:nodeID="ub21bL217C44">
-            <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/human#personHasRole"/>
-            <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/language#PersonTranslator"/>
-          </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Person"/>
-      </rdf:Description>
-    </rdfs:range>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#translationHasPersonTranslator">
     <rdfs:comment xml:lang="en">Relating a translation to a person who created it.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#PersonTranslation"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#translationHasTranslator">
+        <rdfs:range>
+          <rdf:Description rdf:nodeID="ub24bL211C13">
+            <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
+            <rdfs:subClassOf>
+              <owl:Restriction rdf:nodeID="ub24bL211C43">
+                <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/language#AgentTranslator"/>
+                <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/agent#hasRole"/>
+              </owl:Restriction>
+            </rdfs:subClassOf>
+          </rdf:Description>
+        </rdfs:range>
+        <rdfs:label xml:lang="de">Übersetzung hat Übersetzer</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#Translation"/>
+        <rdfs:label xml:lang="en">translation has translator</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating a translation to an agent that created it.</rdfs:comment>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub24bL219C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub24bL219C44">
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/language#PersonTranslator"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:range>
     <rdfs:label xml:lang="en">translation has person-translator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#PersonTranslation"/>
+    <rdfs:label xml:lang="de">Übersetzung hat Person-Übersetzer</rdfs:label>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#translationHasMachineTranslator">
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#MachineTranslation"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#translationHasMachineTranslator">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/language#translationHasTranslator"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
     <rdfs:label xml:lang="en">translation has machine-translator</rdfs:label>
     <rdfs:label xml:lang="de">Übersetzung hat Machine-Übersetzer</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#MachineTranslation"/>
     <rdfs:comment xml:lang="en">Relating a translation to a machine that created it.</rdfs:comment>
     <rdfs:range>
-      <rdf:Description rdf:nodeID="ub21bL226C13">
+      <rdf:Description rdf:nodeID="ub24bL228C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/device#DigitalElectronicComputer"/>
         <rdfs:subClassOf>
-          <owl:Restriction rdf:nodeID="ub21bL226C64">
-            <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/agent#hasRole"/>
-            <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/language#MachineTranslator"/>
+          <owl:Restriction rdf:nodeID="ub24bL228C64">
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/agent#hasRole"/>
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/language#MachineTranslator"/>
           </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/device#DigitalElectronicComputer"/>
       </rdf:Description>
     </rdfs:range>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/language#translationHasTranslator"/>
   </owl:ObjectProperty>
-  <owl:InverseFunctionalProperty rdf:about="http://www.e-editiones.ch/ontology/language#hasCode">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
+  <owl:InverseFunctionalProperty rdf:about="http://e-editiones.ch/ontology/language#hasCode">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
     <rdfs:label xml:lang="de">Sprache hat Kode</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
-    <rdfs:comment xml:lang="en">Relating a language to a system code representing that language.</rdfs:comment>
     <rdfs:label xml:lang="en">language has code</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#hasCode"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/language#Code"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/language#Code"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
+    <rdfs:comment xml:lang="en">Relating a language to a system code representing that language.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCode"/>
   </owl:InverseFunctionalProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#expressedInDialect">
-    <rdfs:label xml:lang="de">geäußert in Mundart</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-    <rdfs:comment xml:lang="en">Relating a human expression to a dialect it is expressed in.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/language#Dialect"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:label xml:lang="en">expressed in dialect</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/language">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:label xml:lang="de">algemeine menschliche naturliche Sprache</rdfs:label>
+    <rdfs:label xml:lang="en">general human natural language</rdfs:label>
+    <rdfs:comment xml:lang="en">Language naturally evolved in humans and used as official language in one or more countries.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
+  </rdfs:Class>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/language">
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
     <dct:title xml:lang="en">An ontology about language</dct:title>
     <dct:description xml:lang="en">Formal description of language, general subclasses, related classes and properties.</dct:description>
     <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
   </owl:Ontology>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguage">
-    <rdfs:label xml:lang="en">human natural language</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#HumanLanguage"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/language#hasContentLiteral">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+    <rdfs:label xml:lang="en">has content literal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"/>
+    <rdfs:comment xml:lang="en">Relating a human natural language expression to its content.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:label xml:lang="de">hat Inhaltliterale</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#expressedInDialect">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+    <rdfs:comment xml:lang="en">Relating a human expression to a dialect it is expressed in.</rdfs:comment>
+    <rdfs:label xml:lang="de">geäußert in Mundart</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/language#Dialect"/>
+    <rdfs:label xml:lang="en">expressed in dialect</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#isTranslatedInto">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:comment xml:lang="en">Relating a human natural language expression to the language it is translated into.</rdfs:comment>
+    <rdfs:label xml:lang="de">ist übersetzt in</rdfs:label>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/language#hasTranslation"/>
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/language#expressedInNaturalLanguage"/>
+    </owl:propertyChainAxiom>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
+    <rdfs:label xml:lang="en">is translated into</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#expressedInNaturalLanguage">
+        <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P72_has_language"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+        <rdfs:label xml:lang="de">geäußert in naturlichen Sprache</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating a human expression to a natural language wherein it is expressed.</rdfs:comment>
+        <rdfs:label xml:lang="en">expressed in natural language</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#hasMachineTranslator">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+    <rdfs:label xml:lang="en">has machine-translator</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a natural language expression to a machine that translated it.</rdfs:comment>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub24bL202C13">
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub24bL202C64">
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/language#MachineTranslator"/>
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/agent#hasRole"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/device#DigitalElectronicComputer"/>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:label xml:lang="de">hat Machine-Übersetzer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#hasTranslator">
+        <rdfs:range>
+          <rdf:Description rdf:nodeID="ub24bL185C13">
+            <rdfs:subClassOf>
+              <owl:Restriction rdf:nodeID="ub24bL185C43">
+                <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/agent#hasRole"/>
+                <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/language#AgentTranslator"/>
+              </owl:Restriction>
+            </rdfs:subClassOf>
+            <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
+          </rdf:Description>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has translator</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating a natural language expression to an agent that translated it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+        <rdfs:label xml:lang="de">hat Übersetzer</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#isDialectOf">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#Dialect"/>
+    <rdfs:label xml:lang="de">ist Dialekt von</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a dialect to its human natural language.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
+    <rdfs:label xml:lang="en">is dialect of</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#hasPersonTranslator">
+    <rdfs:label xml:lang="de">hat Person-Übersetzer</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a natural language expression to a person who translated it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/language#hasTranslator"/>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub24bL193C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub24bL193C44">
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/language#PersonTranslator"/>
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">has person-translator</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#HumanNaturalLanguage">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
     <rdfs:label xml:lang="de">menschliche naturliche Sprache</rdfs:label>
-    <skos:note xml:lang="en">Excluded is formal language, e.g. computer programming language.</skos:note>
     <rdfs:comment xml:lang="en">Language naturally evolved in humans.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#HumanLanguage"/>
+    <rdfs:label xml:lang="en">human natural language</rdfs:label>
+    <skos:note xml:lang="en">Excluded is formal language, e.g. computer programming language.</skos:note>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#PersonTranslation">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#Translation"/>
-    <rdfs:label xml:lang="de">Übersetzung einer Person</rdfs:label>
-    <rdfs:comment xml:lang="en">Translation done by a person.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/creating#CreationDerivative"/>
-    <rdfs:label xml:lang="en">person's translation</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#MachineTranslation">
-    <rdfs:label xml:lang="it">traduzione automatica</rdfs:label>
-    <rdfs:label xml:lang="fr">traduction automatique</rdfs:label>
-    <rdfs:label xml:lang="en">machine translation</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#Translation"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:comment xml:lang="en">Translation done by a digital electronic computer using translation software.</rdfs:comment>
-    <rdfs:label xml:lang="de">Maschinenübersetzung</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#Translation">
-    <skos:note xml:lang="en">Can follow the original to a degree, hence differ from another translation; e.g. a free translation gives a general meaning.</skos:note>
-    <rdfs:label xml:lang="en">translation</rdfs:label>
-    <rdfs:label xml:lang="it">traduzione</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-    <rdfs:comment xml:lang="en">Human natural language expression transferred from another natural language.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#Translation">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
     <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_t.aspx"/>
+    <rdfs:label xml:lang="en">translation</rdfs:label>
     <rdfs:label xml:lang="de">Übersetzung</rdfs:label>
     <rdfs:label xml:lang="fr">traduction</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:comment xml:lang="en">Human natural language expression transferred from another natural language.</rdfs:comment>
+    <skos:note xml:lang="en">Can follow the original to a degree, hence differ from another translation; e.g. a free translation gives a general meaning.</skos:note>
+    <rdfs:label xml:lang="it">traduzione</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#Language">
-    <rdfs:label xml:lang="en">language</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:comment xml:lang="en">Dynamic set of sensory carriers, e.g. a sign, symbol, word, including sound and gesture, to express meaning, and used along rules or grammar model, e.g. syntax for serialization.</rdfs:comment>
-    <rdfs:label xml:lang="de">Sprache</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression">
+    <skos:note xml:lang="en">Different from the FRBROO based document:Expression.</skos:note>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:comment xml:lang="en">Expression in a human natural language.</rdfs:comment>
+    <rdfs:label xml:lang="en">human natural language expression</rdfs:label>
+    <rdfs:label xml:lang="de">menschliche naturliche sprachliche Äusserung</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#Language">
     <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/LinguisticSystem"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="de">Sprache</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:label xml:lang="en">language</rdfs:label>
+    <rdfs:comment xml:lang="en">Dynamic set of sensory carriers, e.g. a sign, symbol, word, including sound and gesture, to express meaning, and used along rules or grammar model, e.g. syntax for serialization.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#PersonTranslator">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#AgentTranslator"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/creating#PersonCreator"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#Dialect">
+    <rdfs:label xml:lang="de">Mundart</rdfs:label>
+    <rdfs:label xml:lang="en">dialect</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:comment xml:lang="en">Regional variant of a standard human natural language.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#HumanLanguage">
+    <rdfs:comment xml:lang="en">Language of a human.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#Language"/>
+    <rdfs:label xml:lang="en">human language</rdfs:label>
+    <skos:note xml:lang="en">Also formal language, e.g. computer programming language.</skos:note>
+    <rdfs:label xml:lang="de">menschliche Sprache</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#MachineTranslator">
+    <rdfs:label xml:lang="de">Maschine-Übersetzer</rdfs:label>
+    <rdfs:label xml:lang="en">machine-translator</rdfs:label>
+    <rdfs:comment xml:lang="en">Translator as role of a machine.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#AgentTranslator"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#AgentTranslator">
+    <rdfs:label xml:lang="en">agent translator</rdfs:label>
+    <rdfs:label xml:lang="de">Agent-Übersetzer</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of an agent, person or machine, transferring a human natural language expression in another natural language.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Creator"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/language#hasTranslation">
+    <rdfs:label xml:lang="en">has translation</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/language#Translation"/>
+    <rdfs:comment xml:lang="en">Relating a human natural language expression to another one in another natural language into which it is translated.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:label xml:lang="de">hat Übersetzung</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#Code">
+    <rdfs:label xml:lang="de">Sprache-Kode</rdfs:label>
+    <rdfs:label xml:lang="it">codice della lingua</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:seeAlso rdf:resource="http://e-editiones.ch/ontology/languages#"/>
+    <rdfs:label xml:lang="fr">code de langue</rdfs:label>
+    <rdfs:comment xml:lang="en">Code in a coding system, attributed to a human natural language, e.g. ISO 639.</rdfs:comment>
+    <rdfs:label xml:lang="en">language code</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#MachineTranslation">
+    <rdfs:label xml:lang="en">machine translation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#Translation"/>
+    <rdfs:label xml:lang="fr">traduction automatique</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:comment xml:lang="en">Translation done by a digital electronic computer using translation software.</rdfs:comment>
+    <rdfs:label xml:lang="it">traduzione automatica</rdfs:label>
+    <rdfs:label xml:lang="de">Maschinenübersetzung</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#PersonTranslation">
+    <rdfs:label xml:lang="en">person's translation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#CreationDerivative"/>
+    <rdfs:comment xml:lang="en">Translation done by a person.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#Translation"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:label xml:lang="de">Übersetzung einer Person</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/language#PersonTranslator">
     <rdfs:label xml:lang="en">person-translator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/language#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#AgentTranslator"/>
     <rdfs:comment xml:lang="en">Translator as role of a person.</rdfs:comment>
     <rdfs:label xml:lang="de">Person-Übersetzer</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#AgentTranslator">
-    <rdfs:label xml:lang="de">Agent-Übersetzer</rdfs:label>
-    <rdfs:label xml:lang="en">agent translator</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/agent#Creator"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:comment xml:lang="en">Role of an agent, person or machine, transferring a human natural language expression in another natural language.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#Code">
-    <rdfs:label xml:lang="fr">code de langue</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#Code"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:comment xml:lang="en">Code in a coding system, attributed to a human natural language, e.g. ISO 639.</rdfs:comment>
-    <rdfs:label xml:lang="it">codice della lingua</rdfs:label>
-    <rdfs:label xml:lang="en">language code</rdfs:label>
-    <rdfs:label xml:lang="de">Sprache-Kode</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://www.e-editiones.ch/ontology/languages#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/language#hasTranslation">
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/language#Translation"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:label xml:lang="de">hat Übersetzung</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a human natural language expression to another one in another natural language into which it is translated.</rdfs:comment>
-    <rdfs:label xml:lang="en">has translation</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#HumanLanguage">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:label xml:lang="de">menschliche Sprache</rdfs:label>
-    <skos:note xml:lang="en">Also formal language, e.g. computer programming language.</skos:note>
-    <rdfs:comment xml:lang="en">Language of a human.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#Language"/>
-    <rdfs:label xml:lang="en">human language</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#Dialect">
-    <rdfs:label xml:lang="de">Mundart</rdfs:label>
-    <rdfs:comment xml:lang="en">Regional variant of a standard human natural language.</rdfs:comment>
-    <rdfs:label xml:lang="en">dialect</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguage"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#MachineTranslator">
-    <rdfs:comment xml:lang="en">Translator as role of a machine.</rdfs:comment>
-    <rdfs:label xml:lang="de">Maschine-Übersetzer</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/language#AgentTranslator"/>
-    <rdfs:label xml:lang="en">machine-translator</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/language#HumanNaturalLanguageExpression">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#Information"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/language#"/>
-    <rdfs:label xml:lang="en">human natural language expression</rdfs:label>
-    <rdfs:comment xml:lang="en">Expression in a human natural language.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"/>
-    <rdfs:label xml:lang="de">menschliche naturliche sprachliche Äusserung</rdfs:label>
-    <skos:note xml:lang="en">Different from the FRBROO based document:Expression.</skos:note>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PersonCreator"/>
   </rdfs:Class>
 </rdf:RDF>

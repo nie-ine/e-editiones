@@ -72,7 +72,7 @@ To build the static website, run ``jekyll build`` and all necessary files will b
 
 To convert turtle files to the needed formats: 
 
-1. Any turtle file need to be in the "ontology" folder.
+1. Any turtle file needs to be in the "ontology" folder.
    - Be aware of the correct file naming (see [Add New Ontologies](#add-new-ontologies) below)
 1. cd into "ttl_conv" with ``cd ttl_conv``.
 1. Activate your virtual environment if not activated. 

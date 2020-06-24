@@ -1,101 +1,76 @@
 [
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasLastAuthorizedPublication",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to its last publication with the author's authorization."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une publication autorisée"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una pubblicazione autorizzata"
-      },
-      {
-        "@language": "en",
-        "@value": "has last authorized publication"
-      },
-      {
-        "@language": "de",
-        "@value": "hat letzte autorisierte Publikation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub76bL376C13"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublication"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub76bL376C13",
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.e-editiones.ch/ontology/publishing#AuthorizedPublication"
-          },
-          {
-            "@id": "http://www.e-editiones.ch/ontology/publishing#LastPublication"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Newspaper",
+    "@id": "http://e-editiones.ch/ontology/publishing#PolyAuthorPublication",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Serial publication, mostly daily, with most recent event descriptions as core content."
+        "@value": "Publication of different expressions by different authors."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "it",
-        "@value": "giornale"
-      },
-      {
-        "@language": "en",
-        "@value": "newspaper"
-      },
-      {
-        "@language": "de",
-        "@value": "Zeitung"
+        "@value": "pubblicazione poli-autore"
       },
       {
         "@language": "fr",
-        "@value": "journal"
+        "@value": "publication de plusieurs auteurs"
+      },
+      {
+        "@language": "de",
+        "@value": "Mehrautorenpublikation"
+      },
+      {
+        "@language": "en",
+        "@value": "poly-author publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#SerialIssue",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Successive publication with same title, usually numbered and/or dated, at a regular or irregular interval, without predetermined conclusion."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "publication sérielle"
+      },
+      {
+        "@language": "it",
+        "@value": "pubblicazione seriale"
+      },
+      {
+        "@language": "en",
+        "@value": "serial issue"
+      },
+      {
+        "@language": "de",
+        "@value": "Reihe-Ausgabe"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
@@ -105,52 +80,421 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#SerialIssue"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasStartYearPeriod",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasFirstPublication",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a partitioned publishing to the year—as a period—the first volume is published in."
+        "@value": "Relating an expression to its first publication."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publishing"
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha una prima pubblicazione"
+      },
+      {
+        "@language": "en",
+        "@value": "has first publication"
+      },
+      {
+        "@language": "de",
+        "@value": "hat erste Publikation"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une première publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#FirstPublication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#hasPublication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#isPublishedIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication expression to a publication thereof."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "la publication partitionnée a une période de début d'année"
-      },
-      {
-        "@language": "en",
-        "@value": "partitioned publishing has start year period"
+        "@value": "est publiée dans"
       },
       {
         "@language": "de",
-        "@value": "partitioniertes Publizieren hat Startjahrperiode"
+        "@value": "ist publiziert in"
+      },
+      {
+        "@language": "en",
+        "@value": "is published in"
       },
       {
         "@language": "it",
-        "@value": "la pubblicazione partizionata ha un periodo di inizio anno"
+        "@value": "è pubblicata in"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/event#Event"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/information-carrier#isOnCarrier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#TextExpression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text as publication expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "espressione del testo della pubblicazione"
+      },
+      {
+        "@language": "en",
+        "@value": "publication text expression"
+      },
+      {
+        "@language": "fr",
+        "@value": "expression de texte de publication"
+      },
+      {
+        "@language": "de",
+        "@value": "Publikation-Textexpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#Publishing",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Procedure of making an expression public."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "publishing"
+      },
+      {
+        "@language": "de",
+        "@value": "Publizieren"
+      },
+      {
+        "@language": "fr",
+        "@value": "publier"
+      },
+      {
+        "@language": "it",
+        "@value": "Pubblicare"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Procedure"
+      },
+      {
+        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#isSerialIssueOfVolume",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a serial to a volume it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#SerialIssue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is serial of volume"
+      },
+      {
+        "@language": "it",
+        "@value": "è pubblicazione seriale del volume"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Reihe-Ausgabe eines Volumens"
+      },
+      {
+        "@language": "fr",
+        "@value": "est publication sérielle du volume"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#SerialVolume"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/information-carrier#isCarrierOfSet"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasElectronicPublication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an expression to an electronic publication it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha una pubblicazione elettronica"
+      },
+      {
+        "@language": "de",
+        "@value": "hat elektronische Publikation"
+      },
+      {
+        "@language": "en",
+        "@value": "has electronic publication"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une publication électronique"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#ElectronicPublication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/information-carrier#isOnElectronicCarrier"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#hasPublication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#Redactor",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Editor preparing an expression for publication."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "redattore"
+      },
+      {
+        "@language": "fr",
+        "@value": "rédacteur"
+      },
+      {
+        "@language": "en",
+        "@value": "redactor"
+      },
+      {
+        "@language": "de",
+        "@value": "Redaktor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#PersonCreator"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#PartitionedPublishing",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publishing the volumes of a partitioned work, mostly consecutively."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "partitioned publishing"
+      },
+      {
+        "@language": "fr",
+        "@value": "publication en partition"
+      },
+      {
+        "@language": "it",
+        "@value": "pubblicazione in partizione"
+      },
+      {
+        "@language": "de",
+        "@value": "partitioniertes Publizieren"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publishing"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasEndYearPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a partitioned publishing to the year—as a period—the last volume is published in."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publishing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "la publication partitionnée a une période d'un an"
+      },
+      {
+        "@language": "en",
+        "@value": "partitioned publishing has year period"
+      },
+      {
+        "@language": "it",
+        "@value": "la pubblicazione partizionata ha un periodo di un anno"
+      },
+      {
+        "@language": "de",
+        "@value": "partitioniertes Publizieren hat EndeJahrperiode"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
@@ -161,289 +505,52 @@
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasRedactor",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPublication",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a publication expression to a redactor thereof."
+        "@value": "Relating an expression to a publication it has."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Expression"
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "has redactor"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un rédacteur"
-      },
-      {
         "@language": "de",
-        "@value": "hat Redakteur"
+        "@value": "hat Publikation"
       },
       {
         "@language": "it",
-        "@value": "ha redattore"
+        "@value": "ha una pubblicazione"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une publication"
+      },
+      {
+        "@language": "en",
+        "@value": "has publication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub76bL447C13"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
       }
     ]
   },
   {
-    "@id": "_:ub76bL447C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub76bL447C44"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub76bL447C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Redactor"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasUnauthorizedRepublication",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to a republication thereof without the author's authorization."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has unauthorized republication"
-      },
-      {
-        "@language": "de",
-        "@value": "hat nicht-autorisierte Wiederpublikation"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una republicazzine non autorizzata"
-      },
-      {
-        "@language": "fr",
-        "@value": "a une republication non autorisée"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub76bL394C13"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasUnauthorizedPublication"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub76bL394C13",
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.e-editiones.ch/ontology/publishing#UnauthorizedPublication"
-          },
-          {
-            "@id": "http://www.e-editiones.ch/ontology/publishing#Republication"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#PublishingState",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "State of an expression having been published or not."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "stato editoriale"
-      },
-      {
-        "@language": "fr",
-        "@value": "état de publication"
-      },
-      {
-        "@language": "en",
-        "@value": "publishing state"
-      },
-      {
-        "@language": "de",
-        "@value": "Publikationszustand"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/event#State"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#oneOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.e-editiones.ch/ontology/publishing#Unpublished"
-          },
-          {
-            "@id": "http://www.e-editiones.ch/ontology/publishing#Published"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasTitleLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication to its title literal."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "pubblicazione ha letterale del titolo"
-      },
-      {
-        "@language": "en",
-        "@value": "publication has title literal"
-      },
-      {
-        "@language": "de",
-        "@value": "Publikation hat Titelliterale"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication a littéral du titre"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasTitleLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#OrganizationPublisher",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publisher as role of an organization."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "organisation-éditeur"
-      },
-      {
-        "@language": "en",
-        "@value": "organization publisher"
-      },
-      {
-        "@language": "it",
-        "@value": "organizzazione-editore"
-      },
-      {
-        "@language": "de",
-        "@value": "Organisation-Herausgeberin"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/organization#Role"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#AgentPublisher"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#LastPublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#LastPublication",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
@@ -455,7 +562,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -478,284 +585,97 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublicationNumber",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasNachlassPublication",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a publication expression to its number in a publication."
+        "@value": "Relating an expression to a nachlass publication."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Expression"
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "a un numéro de publication"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Publikationsnummer"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un numero di pubblicazione"
+        "@value": "a une publication nachlass"
       },
       {
         "@language": "en",
-        "@value": "has publication number"
+        "@value": "has nachlass publication"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Nachlassausgabe"
+      },
+      {
+        "@language": "it",
+        "@value": "ha una pubblicazione nachlass"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        "@id": "http://e-editiones.ch/ontology/publishing#NachlassPublication"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Publication",
+    "@id": "http://e-editiones.ch/ontology/publishing#ReviewArticle",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An expression published on a carrier."
+        "@value": "Publication article containing a review of something."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "it",
-        "@value": "pubblicazione"
-      },
-      {
-        "@language": "en",
-        "@value": "publication"
-      },
-      {
-        "@language": "de",
-        "@value": "Publikation"
+        "@value": "articolo di revisione"
       },
       {
         "@language": "fr",
-        "@value": "publication"
+        "@value": "article de revue"
+      },
+      {
+        "@language": "en",
+        "@value": "review article"
+      },
+      {
+        "@language": "de",
+        "@value": "Rezensionsartikel"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:ub76bL139C51"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Carrier"
-      },
-      {
-        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item"
+        "@id": "http://e-editiones.ch/ontology/publishing#Article"
       }
     ]
   },
   {
-    "@id": "_:ub76bL139C51",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/event#isOutputOf"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publishing"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Published",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "State of an expression having been published."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "publicada"
-      },
-      {
-        "@language": "en",
-        "@value": "published"
-      },
-      {
-        "@language": "fr",
-        "@value": "publiée"
-      },
-      {
-        "@language": "de",
-        "@value": "publiziert"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#PublishingState"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Periodical",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Serial publication issued at a regular interval of less than a year, e.g. daily, weekly, monthly, quarterly, without prior decision as to when the final issue will appear."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Zeitschrift"
-      },
-      {
-        "@language": "en",
-        "@value": "periodical publication"
-      },
-      {
-        "@language": "fr",
-        "@value": "périodique"
-      },
-      {
-        "@language": "it",
-        "@value": "periodico"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://www.abc-clio.com/ODLIS/odlis_S.aspx"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#SerialIssue"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Republication",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publication of a previously published expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Herausgabe"
-      },
-      {
-        "@language": "it",
-        "@value": "ripubblicazione"
-      },
-      {
-        "@language": "fr",
-        "@value": "republication"
-      },
-      {
-        "@language": "en",
-        "@value": "republication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#AuthorizedPublication",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publication with the author's authorization."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "publication autorisée"
-      },
-      {
-        "@language": "it",
-        "@value": "pubblicazione autorizzata"
-      },
-      {
-        "@language": "en",
-        "@value": "authorized publication"
-      },
-      {
-        "@language": "de",
-        "@value": "autorisierte Ausgabe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#WebpagePublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#WebpagePublication",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
@@ -767,443 +687,38 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "webpage publication"
-      },
-      {
         "@language": "it",
         "@value": "pubblicazione della pagina web"
+      },
+      {
+        "@language": "de",
+        "@value": "Webseite-Publikation"
       },
       {
         "@language": "fr",
         "@value": "publication de page Web"
       },
       {
-        "@language": "de",
-        "@value": "Webseite-Publikation"
+        "@language": "en",
+        "@value": "webpage publication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#ElectronicPublication"
+        "@id": "http://e-editiones.ch/ontology/publishing#ElectronicPublication"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Webpage"
+        "@id": "http://e-editiones.ch/ontology/information-carrier#Webpage"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#ElectronicPublication",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publication on an electronic carrier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "electronic publication"
-      },
-      {
-        "@language": "de",
-        "@value": "elektronische Publikation"
-      },
-      {
-        "@language": "it",
-        "@value": "pubblicazione elettronica"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication électronique"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#ElectronicCarrier"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Publishing",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Procedure of making an expression public."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "publishing"
-      },
-      {
-        "@language": "de",
-        "@value": "Publizieren"
-      },
-      {
-        "@language": "it",
-        "@value": "Pubblicare"
-      },
-      {
-        "@language": "fr",
-        "@value": "publier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Procedure"
-      },
-      {
-        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasYearPeriod",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication to the year period it is published in."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "la publication a une période annuelle"
-      },
-      {
-        "@language": "de",
-        "@value": "Publikation hat Jahrperiode"
-      },
-      {
-        "@language": "it",
-        "@value": "pubblicazione ha un periodo di anno"
-      },
-      {
-        "@language": "en",
-        "@value": "publication has year period"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Through a series of N3-rules a publication year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasLastPublication",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to its last publication."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "ha un'ultima pubblicazione"
-      },
-      {
-        "@language": "de",
-        "@value": "hat letzte Publikation"
-      },
-      {
-        "@language": "fr",
-        "@value": "a une dernière publication"
-      },
-      {
-        "@language": "en",
-        "@value": "has last publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#LastPublication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#PartitionedPublishing",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publishing the volumes of a partitioned work, mostly consecutively."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "partitioned publishing"
-      },
-      {
-        "@language": "it",
-        "@value": "pubblicazione in partizione"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication en partition"
-      },
-      {
-        "@language": "de",
-        "@value": "partitioniertes Publizieren"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publishing"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasNumeral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication to its numeral."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "pubblicazione ha cifra"
-      },
-      {
-        "@language": "de",
-        "@value": "Publikation hat Numerale"
-      },
-      {
-        "@language": "en",
-        "@value": "publication has numeral"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication a numéral"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#positiveInteger"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/mathematics#hasNumeral"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#SerialIssue",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Successive publication with same title, usually numbered and/or dated, at a regular or irregular interval, without predetermined conclusion."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "pubblicazione seriale"
-      },
-      {
-        "@language": "en",
-        "@value": "serial issue"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication sérielle"
-      },
-      {
-        "@language": "de",
-        "@value": "Reihe-Ausgabe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://www.abc-clio.com/ODLIS/odlis_S.aspx"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#NachlassPublication",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publication of a nachlass element."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Nachlassausgabe"
-      },
-      {
-        "@language": "en",
-        "@value": "nachlass publication"
-      },
-      {
-        "@language": "it",
-        "@value": "pubblicazione in nachlass"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication nachlass"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#NachlassElement"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#SerialVolume",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Set of serial issues, e.g. of a coterminous year, or all the issues ever published."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "serial volume"
-      },
-      {
-        "@language": "it",
-        "@value": "volume seriale"
-      },
-      {
-        "@language": "fr",
-        "@value": "volume série"
-      },
-      {
-        "@language": "de",
-        "@value": "Reihe-Ausgabevolumen"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Set"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#PrintedPublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#PrintedPublication",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
@@ -1215,121 +730,629 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "gedruckte Publikation"
+        "@language": "fr",
+        "@value": "publication imprimée"
       },
       {
-        "@language": "en",
-        "@value": "printed publication"
+        "@language": "de",
+        "@value": "gedruckte Publikation"
       },
       {
         "@language": "it",
         "@value": "pubblicazione stampata"
       },
       {
-        "@language": "fr",
-        "@value": "publication imprimée"
+        "@language": "en",
+        "@value": "printed publication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Print"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
+        "@id": "http://e-editiones.ch/ontology/information-carrier#Print"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#PolyAuthorPublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#Periodical",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Publication of different expressions by different authors."
+        "@value": "Serial publication issued at a regular interval of less than a year, e.g. daily, weekly, monthly, quarterly, without prior decision as to when the final issue will appear."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "poly-author publication"
-      },
-      {
         "@language": "it",
-        "@value": "pubblicazione poli-autore"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication de plusieurs auteurs"
+        "@value": "periodico"
       },
       {
         "@language": "de",
-        "@value": "Mehrautorenpublikation"
+        "@value": "Zeitschrift"
+      },
+      {
+        "@language": "en",
+        "@value": "periodical publication"
+      },
+      {
+        "@language": "fr",
+        "@value": "périodique"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://www.abc-clio.com/ODLIS/odlis_S.aspx"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
+        "@id": "http://e-editiones.ch/ontology/publishing#SerialIssue"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Expression",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasWebPublication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an expression to a web publication it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a une publication web"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Web-Publikation"
+      },
+      {
+        "@language": "en",
+        "@value": "has web publication"
+      },
+      {
+        "@language": "it",
+        "@value": "ha una pubblicazione web"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#WebPublication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#hasElectronicPublication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#serialVolumeHasExistence",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a serial volume to its publishing existence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#SerialVolume"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "volume seriale ha esistenza del Pubblicare"
+      },
+      {
+        "@language": "de",
+        "@value": "Reihe-Ausgabevolumen hat Publizierungexistenz"
+      },
+      {
+        "@language": "en",
+        "@value": "serial volume has publishing existence"
+      },
+      {
+        "@language": "fr",
+        "@value": "volume série a existence de publier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#SerialVolumeExistence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#hasExistence"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasNachlassPublicationDescriptionLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an expression to a description literal of its nachlass publication."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Nachlassausgabebeschreibungliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "has nachlass publication description literal"
+      },
+      {
+        "@language": "it",
+        "@value": "ha letterale della descrizione di pubblicazione nachlass"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral d'une description d'une publication nachlass"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasDescriptionLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#Republication",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Document expression as abstracted from a publication carrier, conform FRBROO."
+        "@value": "Publication of a previously published expression."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "republication"
+      },
+      {
+        "@language": "it",
+        "@value": "ripubblicazione"
+      },
+      {
+        "@language": "en",
+        "@value": "republication"
+      },
+      {
+        "@language": "de",
+        "@value": "Herausgabe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasYearMonthPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication to the year-month period it is published in."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "la pubblicazione ha un periodo di anno-mese"
+      },
+      {
+        "@language": "fr",
+        "@value": "la publication a une période année-mois"
+      },
+      {
+        "@language": "en",
+        "@value": "publication has year-month period"
+      },
+      {
+        "@language": "de",
+        "@value": "Publikation hat Jahr-Monatperiode"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Through a series of N3-rules a publication year-month literal is converted to its year-month period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPartitionedPublishing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a partitioned publication to its publishing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#PartitionedPublication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "publication expression"
+        "@value": "publication has partitioned publishing"
       },
       {
         "@language": "fr",
-        "@value": "expression de publication"
-      },
-      {
-        "@language": "de",
-        "@value": "Publikation-Expression"
+        "@value": "publication a 'un publier' partitionné"
       },
       {
         "@language": "it",
-        "@value": "espressione di pubblicazione"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression"
+        "@value": "pubblicazione ha editoriale partizionata"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
+        "@language": "de",
+        "@value": "Publikation hat partitioniertes Publizieren"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#PartitionedPublishing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#SerialVolumeExistence",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasTitleLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication to its title literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Publikation hat Titelliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "publication has title literal"
+      },
+      {
+        "@language": "fr",
+        "@value": "publication a littéral du titre"
+      },
+      {
+        "@language": "it",
+        "@value": "pubblicazione ha letterale del titolo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#Newspaper",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Serial publication, mostly daily, with most recent event descriptions as core content."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "newspaper"
+      },
+      {
+        "@language": "fr",
+        "@value": "journal"
+      },
+      {
+        "@language": "de",
+        "@value": "Zeitung"
+      },
+      {
+        "@language": "it",
+        "@value": "giornale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://www.abc-clio.com/ODLIS/odlis_S.aspx"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#SerialIssue"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#ElectronicPublication",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publication on an electronic carrier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "pubblicazione elettronica"
+      },
+      {
+        "@language": "en",
+        "@value": "electronic publication"
+      },
+      {
+        "@language": "de",
+        "@value": "elektronische Publikation"
+      },
+      {
+        "@language": "fr",
+        "@value": "publication électronique"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPublisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication to its publisher."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha un editore"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un éditeur"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Herausgeber"
+      },
+      {
+        "@language": "en",
+        "@value": "has publisher"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub83bL566C13"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#hasCreator"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub83bL566C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub83bL566C43"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub83bL566C43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#AgentPublisher"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#NewsArticle",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publication article containing most recent information about something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "news article"
+      },
+      {
+        "@language": "fr",
+        "@value": "article d'actualité"
+      },
+      {
+        "@language": "it",
+        "@value": "articolo di giornale"
+      },
+      {
+        "@language": "de",
+        "@value": "Nachrichtenartikel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Article"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#SerialVolumeExistence",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
@@ -1341,7 +1364,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1356,15 +1379,109 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/event#Existence"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publishing"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publishing"
+        "@id": "http://e-editiones.ch/ontology/event#Existence"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing",
+    "@id": "http://e-editiones.ch/ontology/publishing#Expression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Document expression as abstracted from a publication carrier, conform FRBROO."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "expression de publication"
+      },
+      {
+        "@language": "it",
+        "@value": "espressione di pubblicazione"
+      },
+      {
+        "@language": "en",
+        "@value": "publication expression"
+      },
+      {
+        "@language": "de",
+        "@value": "Publikation-Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasYearPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication to the year period it is published in."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "pubblicazione ha un periodo di anno"
+      },
+      {
+        "@language": "fr",
+        "@value": "la publication a une période annuelle"
+      },
+      {
+        "@language": "en",
+        "@value": "publication has year period"
+      },
+      {
+        "@language": "de",
+        "@value": "Publikation hat Jahrperiode"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Through a series of N3-rules a publication year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -1396,153 +1513,109 @@
         "@language": "en",
         "@value": "An ontology about publishing"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-06-11"
+      }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#UnauthorizedPublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasDescriptionLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication to a description literal thereof."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "publication has description literal"
+      },
+      {
+        "@language": "it",
+        "@value": "pubblicazione ha letterale della descrizione"
+      },
+      {
+        "@language": "de",
+        "@value": "Publikation hat beschreibungliterale"
+      },
+      {
+        "@language": "fr",
+        "@value": "publication a littéral d'une description"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasDescriptionLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#OrganizationPublisher",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Publication without the author's authorization."
+        "@value": "Publisher as role of an organization."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "it",
-        "@value": "pubblicazione non autorizzata"
+        "@value": "organizzazione-editore"
       },
       {
         "@language": "fr",
-        "@value": "publication non autorisée"
-      },
-      {
-        "@language": "en",
-        "@value": "unauthorized publication"
+        "@value": "organisation-éditeur"
       },
       {
         "@language": "de",
-        "@value": "nicht-autorisierte Ausgabe"
+        "@value": "Organisation-Herausgeberin"
+      },
+      {
+        "@language": "en",
+        "@value": "organization publisher"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
+        "@id": "http://e-editiones.ch/ontology/publishing#AgentPublisher"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#Role"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#serialVolumeHasExistence",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a serial volume to its publishing existence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#SerialVolume"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "volume seriale ha esistenza del Pubblicare"
-      },
-      {
-        "@language": "en",
-        "@value": "serial volume has publishing existence"
-      },
-      {
-        "@language": "de",
-        "@value": "Reihe-Ausgabevolumen hat Publizierungexistenz"
-      },
-      {
-        "@language": "fr",
-        "@value": "volume série a existence de publier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#SerialVolumeExistence"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/event#hasExistence"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasElectronicPublication",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to an electronic publication it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une publication électronique"
-      },
-      {
-        "@language": "de",
-        "@value": "hat elektronische Publikation"
-      },
-      {
-        "@language": "en",
-        "@value": "has electronic publication"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una pubblicazione elettronica"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#ElectronicPublication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#isOnElectronicCarrier"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPolyAuthorPublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPolyAuthorPublication",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -1554,12 +1627,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1568,353 +1641,289 @@
         "@value": "ha una pubblicazione poli-autore"
       },
       {
+        "@language": "fr",
+        "@value": "a une publication de plusieurs auteurs"
+      },
+      {
         "@language": "en",
         "@value": "has poly-author publication"
       },
       {
         "@language": "de",
         "@value": "hat Publikation mehrerer Autoren"
-      },
-      {
-        "@language": "fr",
-        "@value": "a une publication de plusieurs auteurs"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#PolyAuthorPublication"
+        "@id": "http://e-editiones.ch/ontology/publishing#PolyAuthorPublication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublication"
+        "@id": "http://e-editiones.ch/ontology/publishing#hasPublication"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#isReviewOf",
+    "@id": "http://e-editiones.ch/ontology/publishing#isPublishedOnWeb",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a review article to the reviewed."
+        "@value": "Relating a publication expression to its publication as Web page."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#ReviewArticle"
+        "@id": "http://e-editiones.ch/ontology/publishing#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "is review of"
-      },
-      {
         "@language": "fr",
-        "@value": "est une recension de"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Rezension zu"
+        "@value": "est publiée sur le Web"
       },
       {
         "@language": "it",
-        "@value": "è recensione di"
+        "@value": "è pubblicata sul Web"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Web-publiziert"
+      },
+      {
+        "@language": "en",
+        "@value": "is published on Web"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+        "@id": "http://e-editiones.ch/ontology/publishing#WebPublication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#isArticleAbout"
+        "@id": "http://e-editiones.ch/ontology/publishing#isPublishedIn"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#hasWebPublication"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#NewspaperPublisher",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasNumeral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication to its numeral."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Publikation hat Numerale"
+      },
+      {
+        "@language": "it",
+        "@value": "pubblicazione ha cifra"
+      },
+      {
+        "@language": "fr",
+        "@value": "publication a numéral"
+      },
+      {
+        "@language": "en",
+        "@value": "publication has numeral"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#positiveInteger"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasNumeral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPrinterDescriptionLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication to its printer's description literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha letterale della descrizione della stampante"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral d'une description de l'imprimante"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Druckerbeschreibungliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "has printer description literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasDescriptionLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#NachlassPublication",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Publisher of a newspaper."
+        "@value": "Publication of a nachlass element."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Zeitungsverleger"
+        "@language": "fr",
+        "@value": "publication nachlass"
       },
       {
         "@language": "en",
-        "@value": "newspaper publisher"
+        "@value": "nachlass publication"
       },
       {
         "@language": "it",
-        "@value": "editore di giornali"
+        "@value": "pubblicazione in nachlass"
       },
       {
-        "@language": "fr",
-        "@value": "éditeur de journaux"
+        "@language": "de",
+        "@value": "Nachlassausgabe"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#AgentPublisher"
+        "@id": "http://e-editiones.ch/ontology/information-carrier#NachlassElement"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublishing",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to its publishing."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has publishing"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Herausgeben"
-      },
-      {
-        "@language": "it",
-        "@value": "ha editoria"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publishing"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/event#isInputOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasWebPublication",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to a web publication it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "ha una pubblicazione web"
-      },
-      {
-        "@language": "fr",
-        "@value": "a une publication web"
-      },
-      {
-        "@language": "en",
-        "@value": "has web publication"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Web-Publikation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#WebPublication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasElectronicPublication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublication",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to a publication it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une publication"
-      },
-      {
-        "@language": "en",
-        "@value": "has publication"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una pubblicazione"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Publikation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Unpublished",
+    "@id": "http://e-editiones.ch/ontology/publishing#Publication",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "State of an expression not having been published."
+        "@value": "An expression published on a carrier."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "unpubliziert"
+        "@language": "en",
+        "@value": "publication"
       },
       {
-        "@language": "en",
-        "@value": "unpublished"
+        "@language": "de",
+        "@value": "Publikation"
       },
       {
         "@language": "it",
-        "@value": "inedita"
+        "@value": "pubblicazione"
       },
       {
         "@language": "fr",
-        "@value": "non publiée"
+        "@value": "publication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#PublishingState"
+        "@id": "_:ub83bL140C51"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/information-carrier#Carrier"
+      },
+      {
+        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasEndYearPeriod",
+    "@id": "_:ub83bL140C51",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@language": "en",
-        "@value": "Relating a partitioned publishing to the year—as a period—the last volume is published in."
+        "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publishing"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "la publication partitionnée a une période d'un an"
-      },
-      {
-        "@language": "it",
-        "@value": "la pubblicazione partizionata ha un periodo di un anno"
-      },
-      {
-        "@language": "en",
-        "@value": "partitioned publishing has year period"
-      },
-      {
-        "@language": "de",
-        "@value": "partitioniertes Publizieren hat EndeJahrperiode"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Through a series of N3-rules a year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
+        "@id": "http://e-editiones.ch/ontology/publishing#Publishing"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#PartitionedPublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#PartitionedPublication",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
@@ -1926,7 +1935,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1939,452 +1948,115 @@
         "@value": "pubblicazione partizionata"
       },
       {
-        "@language": "de",
-        "@value": "partitionierte Publikation"
-      },
-      {
         "@language": "en",
         "@value": "partitioned publication"
+      },
+      {
+        "@language": "de",
+        "@value": "partitionierte Publikation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#PartitionedWork"
+        "@id": "http://e-editiones.ch/ontology/information-carrier#PartitionedWork"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication to the date it is published on."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Publikation hat datum"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication a une date"
-      },
-      {
-        "@language": "it",
-        "@value": "pubblicazione ha una data"
-      },
-      {
-        "@language": "en",
-        "@value": "publication has date"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#creationHasDate"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#NewsArticle",
+    "@id": "http://e-editiones.ch/ontology/publishing#SerialVolume",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Publication article containing most recent information about something."
+        "@value": "Set of serial issues, e.g. of a coterminous year, or all the issues ever published."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Nachrichtenartikel"
-      },
-      {
         "@language": "en",
-        "@value": "news article"
+        "@value": "serial volume"
       },
       {
-        "@language": "it",
-        "@value": "articolo di giornale"
+        "@language": "de",
+        "@value": "Reihe-Ausgabevolumen"
       },
       {
         "@language": "fr",
-        "@value": "article d'actualité"
+        "@value": "volume série"
+      },
+      {
+        "@language": "it",
+        "@value": "volume seriale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Article"
+        "@id": "http://e-editiones.ch/ontology/information-carrier#Set"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPartitionedPublishing",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPublishingState",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a partitioned publication to its publishing."
+        "@value": "Relating an expression to a publishing state it has."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#PartitionedPublication"
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "en",
+        "@value": "has publishing state"
+      },
+      {
         "@language": "it",
-        "@value": "pubblicazione ha editoriale partizionata"
+        "@value": "ha uno stato editoriale"
       },
       {
         "@language": "de",
-        "@value": "Publikation hat partitioniertes Publizieren"
-      },
-      {
-        "@language": "en",
-        "@value": "publication has partitioned publishing"
+        "@value": "hat Publikationszustand"
       },
       {
         "@language": "fr",
-        "@value": "publication a 'un publier' partitionné"
+        "@value": "a un état de publication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#PartitionedPublishing"
+        "@id": "http://e-editiones.ch/ontology/publishing#PublishingState"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/event#isOutputOf"
+        "@id": "http://e-editiones.ch/ontology/event#hasState"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasReferenceLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication expression to the literal of a bibliographic reference of the publication expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a un littéral de référence bibliographique"
-      },
-      {
-        "@language": "en",
-        "@value": "has bibliographic reference literal"
-      },
-      {
-        "@language": "it",
-        "@value": "ha riferimenti bibliografici letterali"
-      },
-      {
-        "@language": "de",
-        "@value": "hat bibliographische Referenzliterale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#hasLiteral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.e-editiones.ch/ontology/mathematics#hasReference"
-          },
-          {
-            "@id": "http://www.e-editiones.ch/ontology/mathematics#referenceHasLiteral"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublisherDescriptionLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication to its publisher's description literal."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a littéral d'une description d'éditeur"
-      },
-      {
-        "@language": "it",
-        "@value": "ha letterale della descrizione dell'editore"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Herausgeberbeschreibungliterale"
-      },
-      {
-        "@language": "en",
-        "@value": "has publisher description literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublisher",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication to its publisher."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Herausgeber"
-      },
-      {
-        "@language": "en",
-        "@value": "has publisher"
-      },
-      {
-        "@language": "fr",
-        "@value": "a un éditeur"
-      },
-      {
-        "@language": "it",
-        "@value": "ha un editore"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub76bL565C13"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#hasCreator"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub76bL565C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Agent"
-      },
-      {
-        "@id": "_:ub76bL565C43"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub76bL565C43",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#agentHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#AgentPublisher"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Journal",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Periodical publication with continuous pagination throughout its volume."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "journal"
-      },
-      {
-        "@language": "de",
-        "@value": "Journal"
-      },
-      {
-        "@language": "fr",
-        "@value": "revue"
-      },
-      {
-        "@language": "it",
-        "@value": "giornale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://www.abc-clio.com/ODLIS/odlis_S.aspx"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Book"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Periodical"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#referenceHasLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a bibliographic reference to its literal."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Reference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "référence bibliographique a un littéral"
-      },
-      {
-        "@language": "de",
-        "@value": "bibliographische Referenz hat Literale"
-      },
-      {
-        "@language": "en",
-        "@value": "bibliographic reference has literal"
-      },
-      {
-        "@language": "it",
-        "@value": "riferimento bibliografico ha un letterale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Magazine",
+    "@id": "http://e-editiones.ch/ontology/publishing#Magazine",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
@@ -2396,25 +2068,25 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "magazine"
+        "@language": "it",
+        "@value": "rivista"
       },
       {
         "@language": "fr",
         "@value": "magazine"
       },
       {
-        "@language": "it",
-        "@value": "rivista"
-      },
-      {
         "@language": "de",
         "@value": "Magazin"
+      },
+      {
+        "@language": "en",
+        "@value": "magazine"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
@@ -2424,336 +2096,15 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Periodical"
+        "@id": "http://e-editiones.ch/ontology/publishing#Periodical"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Book"
+        "@id": "http://e-editiones.ch/ontology/information-carrier#Book"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#ReviewArticle",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publication article containing a review of something."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "article de revue"
-      },
-      {
-        "@language": "it",
-        "@value": "articolo di revisione"
-      },
-      {
-        "@language": "en",
-        "@value": "review article"
-      },
-      {
-        "@language": "de",
-        "@value": "Rezensionsartikel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Article"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasNachlassPublication",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to a nachlass publication."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une publication nachlass"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una pubblicazione nachlass"
-      },
-      {
-        "@language": "en",
-        "@value": "has nachlass publication"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Nachlassausgabe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#NachlassPublication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#isPublishedOnWeb",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication expression to its publication as Web page."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Web-publiziert"
-      },
-      {
-        "@language": "en",
-        "@value": "is published on Web"
-      },
-      {
-        "@language": "fr",
-        "@value": "est publiée sur le Web"
-      },
-      {
-        "@language": "it",
-        "@value": "è pubblicata sul Web"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#WebPublication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasWebPublication"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#isPublishedIn"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasDescriptionLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication to a description literal thereof."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "pubblicazione ha letterale della descrizione"
-      },
-      {
-        "@language": "de",
-        "@value": "Publikation hat beschreibungliterale"
-      },
-      {
-        "@language": "fr",
-        "@value": "publication a littéral d'une description"
-      },
-      {
-        "@language": "en",
-        "@value": "publication has description literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasNachlassPublicationDescriptionLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to a description literal of its nachlass publication."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Nachlassausgabebeschreibungliterale"
-      },
-      {
-        "@language": "it",
-        "@value": "ha letterale della descrizione di pubblicazione nachlass"
-      },
-      {
-        "@language": "fr",
-        "@value": "a littéral d'une description d'une publication nachlass"
-      },
-      {
-        "@language": "en",
-        "@value": "has nachlass publication description literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#PersonPublisher",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publisher as role of a person."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "person publisher"
-      },
-      {
-        "@language": "it",
-        "@value": "persona editore"
-      },
-      {
-        "@language": "fr",
-        "@value": "personne-éditeur"
-      },
-      {
-        "@language": "de",
-        "@value": "Person-HerausgeberIn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#AgentPublisher"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#PersonRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#FirstPublication",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Earliest publication of an expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "first publication"
-      },
-      {
-        "@language": "fr",
-        "@value": "première publication"
-      },
-      {
-        "@language": "it",
-        "@value": "prima pubblicazione"
-      },
-      {
-        "@language": "de",
-        "@value": "Erstausgabe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasUnauthorizedPublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasUnauthorizedPublication",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -2765,12 +2116,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2793,480 +2144,207 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#UnauthorizedPublication"
+        "@id": "http://e-editiones.ch/ontology/publishing#UnauthorizedPublication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublication"
+        "@id": "http://e-editiones.ch/ontology/publishing#hasPublication"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#isPublishedIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication expression to a publication thereof."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est publiée dans"
-      },
-      {
-        "@language": "en",
-        "@value": "is published in"
-      },
-      {
-        "@language": "de",
-        "@value": "ist publiziert in"
-      },
-      {
-        "@language": "it",
-        "@value": "è pubblicata in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#isOnCarrier"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#WebsitePublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#Unpublished",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Publication as website."
+        "@value": "State of an expression not having been published."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Website-Publikation"
+        "@language": "en",
+        "@value": "unpublished"
       },
       {
         "@language": "fr",
-        "@value": "publication du site Web"
+        "@value": "non publiée"
       },
       {
-        "@language": "en",
-        "@value": "website publication"
+        "@language": "it",
+        "@value": "inedita"
+      },
+      {
+        "@language": "de",
+        "@value": "unpubliziert"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#Website"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#ElectronicPublication"
+        "@id": "http://e-editiones.ch/ontology/publishing#PublishingState"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#AgentPublisher",
+    "@id": "http://e-editiones.ch/ontology/publishing#referenceHasLiteral",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Role of an agent, person or group, that is publishing."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Agent-Herausgeber"
-      },
-      {
-        "@language": "it",
-        "@value": "agente-editore"
-      },
-      {
-        "@language": "fr",
-        "@value": "agent-éditeur"
-      },
-      {
-        "@language": "en",
-        "@value": "agent publisher"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#AgentCreator"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#isSerialIssueOfVolume",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a serial to a volume it is part of."
+        "@value": "Relating a bibliographic reference to its literal."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#SerialIssue"
+        "@id": "http://e-editiones.ch/ontology/publishing#Reference"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "ist Reihe-Ausgabe eines Volumens"
-      },
-      {
-        "@language": "fr",
-        "@value": "est publication sérielle du volume"
-      },
-      {
         "@language": "en",
-        "@value": "is serial of volume"
+        "@value": "bibliographic reference has literal"
       },
       {
         "@language": "it",
-        "@value": "è pubblicazione seriale del volume"
+        "@value": "riferimento bibliografico ha un letterale"
+      },
+      {
+        "@language": "de",
+        "@value": "bibliographische Referenz hat Literale"
+      },
+      {
+        "@language": "fr",
+        "@value": "référence bibliographique a un littéral"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#SerialVolume"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/information-carrier#isCarrierOfSet"
+        "@id": "http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Redactor",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Editor preparing an expression for publication."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "redattore"
-      },
-      {
-        "@language": "en",
-        "@value": "redactor"
-      },
-      {
-        "@language": "fr",
-        "@value": "rédacteur"
-      },
-      {
-        "@language": "de",
-        "@value": "Redaktor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#PersonCreator"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasYearMonthPeriod",
+    "@id": "http://e-editiones.ch/ontology/publishing#isReviewOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a publication to the year-month period it is published in."
+        "@value": "Relating a review article to the reviewed."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
+        "@id": "http://e-editiones.ch/ontology/publishing#ReviewArticle"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "la publication a une période année-mois"
-      },
-      {
-        "@language": "it",
-        "@value": "la pubblicazione ha un periodo di anno-mese"
+        "@value": "est une recension de"
       },
       {
         "@language": "en",
-        "@value": "publication has year-month period"
+        "@value": "is review of"
+      },
+      {
+        "@language": "it",
+        "@value": "è recensione di"
       },
       {
         "@language": "de",
-        "@value": "Publikation hat Jahr-Monatperiode"
+        "@value": "ist Rezension zu"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Through a series of N3-rules a publication year-month literal is converted to its year-month period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasReference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a publication expression to a bibliographic reference thereof."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une référence bibliographique"
-      },
-      {
-        "@language": "de",
-        "@value": "hat bibliographische Referenz"
-      },
-      {
-        "@language": "en",
-        "@value": "has bibliographic reference"
-      },
-      {
-        "@language": "it",
-        "@value": "ha riferimenti bibliografici"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Reference"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/concept#hasSymbolicEntity"
+        "@id": "http://e-editiones.ch/ontology/text-expression#isArticleAbout"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasFirstPublication",
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPublisherDescriptionLiteral",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating an expression to its first publication."
+        "@value": "Relating a publication to its publisher's description literal."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "hat erste Publikation"
-      },
-      {
-        "@language": "it",
-        "@value": "ha una prima pubblicazione"
+        "@language": "en",
+        "@value": "has publisher description literal"
       },
       {
         "@language": "fr",
-        "@value": "a une première publication"
+        "@value": "a littéral d'une description d'éditeur"
       },
       {
-        "@language": "en",
-        "@value": "has first publication"
+        "@language": "it",
+        "@value": "ha letterale della descrizione dell'editore"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Herausgeberbeschreibungliterale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#FirstPublication"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublication"
+        "@id": "http://e-editiones.ch/ontology/text#hasDescriptionLiteral"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPublishingState",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to a publishing state it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a un état de publication"
-      },
-      {
-        "@language": "en",
-        "@value": "has publishing state"
-      },
-      {
-        "@language": "it",
-        "@value": "ha uno stato editoriale"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Publikationszustand"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#PublishingState"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/event#hasState"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#TextExpression",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text as publication expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "espressione del testo della pubblicazione"
-      },
-      {
-        "@language": "en",
-        "@value": "publication text expression"
-      },
-      {
-        "@language": "fr",
-        "@value": "expression de texte de publication"
-      },
-      {
-        "@language": "de",
-        "@value": "Publikation-Textexpression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Expression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#Article",
+    "@id": "http://e-editiones.ch/ontology/publishing#Article",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
@@ -3278,73 +2356,696 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "articolo pubblicazione"
+        "@language": "fr",
+        "@value": "article de publication"
       },
       {
         "@language": "de",
         "@value": "Publikationsartikel"
       },
       {
-        "@language": "en",
-        "@value": "publication article"
+        "@language": "it",
+        "@value": "articolo pubblicazione"
       },
       {
-        "@language": "fr",
-        "@value": "article de publication"
+        "@language": "en",
+        "@value": "publication article"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Article"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Article"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#TextExpression"
+        "@id": "http://e-editiones.ch/ontology/publishing#TextExpression"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/publishing#hasPrinterDescriptionLiteral",
+    "@id": "http://e-editiones.ch/ontology/publishing#UnauthorizedPublication",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publication without the author's authorization."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "pubblicazione non autorizzata"
+      },
+      {
+        "@language": "fr",
+        "@value": "publication non autorisée"
+      },
+      {
+        "@language": "de",
+        "@value": "nicht-autorisierte Ausgabe"
+      },
+      {
+        "@language": "en",
+        "@value": "unauthorized publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#AgentPublisher",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of an agent, person or group, that is publishing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Agent-Herausgeber"
+      },
+      {
+        "@language": "en",
+        "@value": "agent publisher"
+      },
+      {
+        "@language": "it",
+        "@value": "agente-editore"
+      },
+      {
+        "@language": "fr",
+        "@value": "agent-éditeur"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#AgentCreator"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication expression to a bibliographic reference thereof."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat bibliographische Referenz"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une référence bibliographique"
+      },
+      {
+        "@language": "it",
+        "@value": "ha riferimenti bibliografici"
+      },
+      {
+        "@language": "en",
+        "@value": "has bibliographic reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#hasSymbolicEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPublishing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an expression to its publishing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha editoria"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Herausgeben"
+      },
+      {
+        "@language": "en",
+        "@value": "has publishing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publishing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#isInputOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#WebsitePublication",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publication as website."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "publication du site Web"
+      },
+      {
+        "@language": "en",
+        "@value": "website publication"
+      },
+      {
+        "@language": "de",
+        "@value": "Website-Publikation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#ElectronicPublication"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/information-carrier#Website"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#FirstPublication",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Earliest publication of an expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "first publication"
+      },
+      {
+        "@language": "de",
+        "@value": "Erstausgabe"
+      },
+      {
+        "@language": "it",
+        "@value": "prima pubblicazione"
+      },
+      {
+        "@language": "fr",
+        "@value": "première publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasUnauthorizedRepublication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an expression to a republication thereof without the author's authorization."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a une republication non autorisée"
+      },
+      {
+        "@language": "de",
+        "@value": "hat nicht-autorisierte Wiederpublikation"
+      },
+      {
+        "@language": "it",
+        "@value": "ha una republicazzine non autorizzata"
+      },
+      {
+        "@language": "en",
+        "@value": "has unauthorized republication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub83bL395C13"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#hasUnauthorizedPublication"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub83bL395C13",
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/publishing#UnauthorizedPublication"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/publishing#Republication"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#AuthorizedPublication",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publication with the author's authorization."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "publication autorisée"
+      },
+      {
+        "@language": "en",
+        "@value": "authorized publication"
+      },
+      {
+        "@language": "de",
+        "@value": "autorisierte Ausgabe"
+      },
+      {
+        "@language": "it",
+        "@value": "pubblicazione autorizzata"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasRedactor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication expression to a redactor thereof."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has redactor"
+      },
+      {
+        "@language": "it",
+        "@value": "ha redattore"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un rédacteur"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Redakteur"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub83bL448C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub83bL448C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      },
+      {
+        "@id": "_:ub83bL448C44"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub83bL448C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Redactor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasDate",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a publication to its printer's description literal."
+        "@value": "Relating a publication to the date it is published on."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#Publication"
+        "@id": "http://e-editiones.ch/ontology/publishing#Publication"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/publishing#"
+        "@id": "http://e-editiones.ch/ontology/publishing#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has printer description literal"
+        "@value": "publication has date"
       },
       {
         "@language": "it",
-        "@value": "ha letterale della descrizione della stampante"
-      },
-      {
-        "@language": "fr",
-        "@value": "a littéral d'une description de l'imprimante"
+        "@value": "pubblicazione ha una data"
       },
       {
         "@language": "de",
-        "@value": "hat Druckerbeschreibungliterale"
+        "@value": "Publikation hat datum"
+      },
+      {
+        "@language": "fr",
+        "@value": "publication a une date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#creationHasDate"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasStartYearPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a partitioned publishing to the year—as a period—the first volume is published in."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Publishing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "la publication partitionnée a une période de début d'année"
+      },
+      {
+        "@language": "de",
+        "@value": "partitioniertes Publizieren hat Startjahrperiode"
+      },
+      {
+        "@language": "it",
+        "@value": "la pubblicazione partizionata ha un periodo di inizio anno"
+      },
+      {
+        "@language": "en",
+        "@value": "partitioned publishing has start year period"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Through a series of N3-rules a year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#Published",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "State of an expression having been published."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "publiée"
+      },
+      {
+        "@language": "de",
+        "@value": "publiziert"
+      },
+      {
+        "@language": "it",
+        "@value": "publicada"
+      },
+      {
+        "@language": "en",
+        "@value": "published"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#PublishingState"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasLastPublication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an expression to its last publication."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a une dernière publication"
+      },
+      {
+        "@language": "it",
+        "@value": "ha un'ultima pubblicazione"
+      },
+      {
+        "@language": "de",
+        "@value": "hat letzte Publikation"
+      },
+      {
+        "@language": "en",
+        "@value": "has last publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#LastPublication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#hasPublication"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasReferenceLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication expression to the literal of a bibliographic reference of the publication expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha riferimenti bibliografici letterali"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un littéral de référence bibliographique"
+      },
+      {
+        "@language": "en",
+        "@value": "has bibliographic reference literal"
+      },
+      {
+        "@language": "de",
+        "@value": "hat bibliographische Referenzliterale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -3354,7 +3055,312 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
+        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#hasReference"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#referenceHasLiteral"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasLastAuthorizedPublication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an expression to its last publication with the author's authorization."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a une publication autorisée"
+      },
+      {
+        "@language": "it",
+        "@value": "ha una pubblicazione autorizzata"
+      },
+      {
+        "@language": "de",
+        "@value": "hat letzte autorisierte Publikation"
+      },
+      {
+        "@language": "en",
+        "@value": "has last authorized publication"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub83bL377C13"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#hasPublication"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub83bL377C13",
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/publishing#AuthorizedPublication"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/publishing#LastPublication"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#Journal",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Periodical publication with continuous pagination throughout its volume."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "journal"
+      },
+      {
+        "@language": "it",
+        "@value": "giornale"
+      },
+      {
+        "@language": "de",
+        "@value": "Journal"
+      },
+      {
+        "@language": "fr",
+        "@value": "revue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://www.abc-clio.com/ODLIS/odlis_S.aspx"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/information-carrier#Book"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Periodical"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#NewspaperPublisher",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publisher of a newspaper."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "éditeur de journaux"
+      },
+      {
+        "@language": "de",
+        "@value": "Zeitungsverleger"
+      },
+      {
+        "@language": "it",
+        "@value": "editore di giornali"
+      },
+      {
+        "@language": "en",
+        "@value": "newspaper publisher"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#AgentPublisher"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#PublishingState",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "State of an expression having been published or not."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "état de publication"
+      },
+      {
+        "@language": "en",
+        "@value": "publishing state"
+      },
+      {
+        "@language": "de",
+        "@value": "Publikationszustand"
+      },
+      {
+        "@language": "it",
+        "@value": "stato editoriale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#State"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#oneOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/publishing#Unpublished"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/publishing#Published"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#PersonPublisher",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publisher as role of a person."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Person-HerausgeberIn"
+      },
+      {
+        "@language": "fr",
+        "@value": "personne-éditeur"
+      },
+      {
+        "@language": "it",
+        "@value": "persona editore"
+      },
+      {
+        "@language": "en",
+        "@value": "person publisher"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#AgentPublisher"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/publishing#hasPublicationNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a publication expression to its number in a publication."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/publishing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a un numéro de publication"
+      },
+      {
+        "@language": "en",
+        "@value": "has publication number"
+      },
+      {
+        "@language": "it",
+        "@value": "ha un numero di pubblicazione"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Publikationsnummer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
       }
     ]
   }

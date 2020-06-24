@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ontologies for Humanities
+title: Machine interpretable and interoperable semantics for Humanities
 ---
 
-![Image](/assets/images/NIE-ontologies-network.png)
+![graphic](/assets/images/basic-concepts_page.png)

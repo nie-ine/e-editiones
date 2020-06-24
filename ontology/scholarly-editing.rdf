@@ -1,869 +1,870 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
   xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isCommentOn">
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
-    <rdfs:label xml:lang="en">is comment on</rdfs:label>
-    <rdfs:label xml:lang="it">est un commento di</rdfs:label>
-    <rdfs:label xml:lang="fr">est un commentaire de</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="de">ist Kommentar zu</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-    <rdfs:comment xml:lang="en">Relating an editorial comment to a text expression it is a comment on.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasCriticalEditor">
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isColumnIndicatorOf">
+    <rdfs:label xml:lang="de">ist Spalteindikator von</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Page"/>
+    <rdfs:label xml:lang="it">è l'indicatore di colonna di</rdfs:label>
+    <rdfs:label xml:lang="en">is column indicator of</rdfs:label>
+    <rdfs:label xml:lang="fr">est l'indicateur de colonne de</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a column indicator to its scholarly edition page.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ColumnIndicator"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
     <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasEditor">
-        <rdfs:label xml:lang="fr">édition scientifique a un éditeur scientifique</rdfs:label>
-        <rdfs:label xml:lang="en">scholarly edition has scholarly editor</rdfs:label>
-        <rdfs:comment xml:lang="en">Relating a scholarly edition to a scholarly editor who created it.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-        <rdfs:label xml:lang="de">wissenschaftliche Edition hat wissenschaftliche Editor</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-        <rdfs:label xml:lang="it">edizione accademica ha un editore accademico</rdfs:label>
-        <rdfs:range>
-          <rdf:Description rdf:nodeID="ub47bL346C13">
-            <rdfs:subClassOf>
-              <owl:Restriction rdf:nodeID="ub47bL346C43">
-                <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/human#agentHasRole"/>
-                <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#AgentEditor"/>
-              </owl:Restriction>
-            </rdfs:subClassOf>
-            <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Agent"/>
-          </rdf:Description>
-        </rdfs:range>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isEditorialSymbolOf">
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Page"/>
+        <rdfs:label xml:lang="de">ist editorisches Zeichen von</rdfs:label>
+        <rdfs:label xml:lang="it">è il simbolo editoriale di</rdfs:label>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialSymbol"/>
+        <rdfs:comment xml:lang="en">Relating an editorial symbol to its scholarly edition page.</rdfs:comment>
+        <rdfs:label xml:lang="en">is editorial symbol of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+        <rdfs:label xml:lang="fr">est le symbole éditorial de</rdfs:label>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="en">has critical editor</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
-    <rdfs:label xml:lang="de">hat kritische Editor</rdfs:label>
-    <rdfs:label xml:lang="fr">a un éditeur critique</rdfs:label>
-    <rdfs:label xml:lang="it">ha un editor critico</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a critical edition to a critical editor who created it.</rdfs:comment>
-    <rdfs:range>
-      <rdf:Description rdf:nodeID="ub47bL426C13">
-        <rdfs:subClassOf>
-          <owl:Restriction rdf:nodeID="ub47bL426C44">
-            <owl:onProperty rdf:resource="http://www.e-editiones.ch/ontology/human#personHasRole"/>
-            <owl:someValuesFrom rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalEditor"/>
-          </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Person"/>
-      </rdf:Description>
-    </rdfs:range>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#witnessHasSiglum">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Witness"/>
-    <rdfs:label xml:lang="de">Textzeuge hat Siglum</rdfs:label>
-    <rdfs:label xml:lang="it">il testo del testimone ha siglum</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/document#expressionHasIdentifier"/>
-    <rdfs:label xml:lang="en">witness text has siglum</rdfs:label>
-    <rdfs:label xml:lang="fr">le texte du témoin a un siglum</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Siglum"/>
-    <rdfs:comment xml:lang="en">Relating a witness text expression to its siglum.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasDiplomaticTranscription">
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasEdition">
-        <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-editing#hasDerivedTextExpression"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-        <rdfs:comment xml:lang="en">Relating a text expression to a scholarly edition thereof.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-        <rdfs:label xml:lang="fr">a une édition scientifique</rdfs:label>
-        <rdfs:label xml:lang="it">ha edizione accademica</rdfs:label>
-        <rdfs:label xml:lang="en">has scholarly edition</rdfs:label>
-        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-        <rdfs:label xml:lang="de">hat wissenschaftliche Textedition</rdfs:label>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasDiplomaticTranscription">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#DiplomaticTranscription"/>
     <rdfs:label xml:lang="en">has diplomatic transcription</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#DiplomaticTranscription"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="de">hat diplomatische Umschrift</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a text to a diplomatic transcription thereof.</rdfs:comment>
-    <rdfs:label xml:lang="it">ha trascrizione diplomatica</rdfs:label>
-    <rdfs:label xml:lang="fr">a une transcription diplomatique</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isDoctrinalApparatusOf">
     <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isApparatusOf">
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasEdition">
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+        <rdfs:label xml:lang="fr">a une édition scientifique</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating a text expression to a scholarly edition thereof.</rdfs:comment>
+        <rdfs:label xml:lang="en">has scholarly edition</rdfs:label>
+        <rdfs:label xml:lang="de">hat wissenschaftliche Textedition</rdfs:label>
+        <rdfs:label xml:lang="it">ha edizione accademica</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-editing#hasDerivedTextExpression"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="fr">a une transcription diplomatique</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a text to a diplomatic transcription thereof.</rdfs:comment>
+    <rdfs:label xml:lang="de">hat diplomatische Umschrift</rdfs:label>
+    <rdfs:label xml:lang="it">ha trascrizione diplomatica</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isLemmaOfCriticalEntry">
+    <rdfs:label xml:lang="en">is lemma of critical apparatus entry</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalApparatusEntry"/>
+    <rdfs:label xml:lang="de">ist Lemma eines textkritischen Apparateintrages</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Lemma"/>
+    <rdfs:label xml:lang="it">è il lemma dell'entrata nell'apparato critico</rdfs:label>
+    <rdfs:label xml:lang="fr">est le lemme de l'entrée d'apparat critique</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Relating a lemma to its critical apparatus entry.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasSiglum">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">a un siglum</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#SiglumReference"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/document#expressionReferenceHasIdentifier"/>
+    <rdfs:comment xml:lang="en">Relating a siglum reference to its siglum.</rdfs:comment>
+    <rdfs:label xml:lang="it">ha sigla</rdfs:label>
+    <rdfs:label xml:lang="de">hat Siglum</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Siglum"/>
+    <rdfs:label xml:lang="en">has siglum</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isCommentOfEntry">
+    <rdfs:label xml:lang="de">ist Kommentar eines Eintrages</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="en">is comment of entry</rdfs:label>
+    <rdfs:label xml:lang="it">è un commento di entrata</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
+    <rdfs:comment xml:lang="en">Relating an editorial comment to its apparatus entry.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
+    <rdfs:label xml:lang="fr">est un commentaire de l'éntrée</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isCriticalApparatusOf">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalApparatus"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isApparatusOf">
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+        <rdfs:label xml:lang="de">ist Apparat von</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
         <rdfs:label xml:lang="it">è l'apparato di</rdfs:label>
         <rdfs:label xml:lang="fr">est l'appart de</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
         <rdfs:label xml:lang="en">is apparatus of</rdfs:label>
         <rdfs:comment xml:lang="en">Relating an editing apparatus to its scholarly edition.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
-        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-        <rdfs:label xml:lang="de">ist Apparat von</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="de">ist doktrinaler Apparat von</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a doctrinal apparatus to its scholarly edition.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatus"/>
-    <rdfs:label xml:lang="it">è l'apparato dottrinale di</rdfs:label>
-    <rdfs:label xml:lang="fr">est l'apparat doctrinal de</rdfs:label>
-    <rdfs:label xml:lang="en">is doctrinal apparatus of</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasSiglumReference">
-    <rdfs:label xml:lang="fr">a une référence au siglum</rdfs:label>
-    <rdfs:label xml:lang="de">hat Siglum-Referenz</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an editiorial text structure to its siglum reference.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#SiglumReference"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/document#hasExpressionReference"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
-    <rdfs:label xml:lang="it">ha un riferimento a sigla</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">has siglum reference</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isVariantOfEntry">
-    <rdfs:label xml:lang="de">ist Variant eines Apparateintrages</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="en">is variant of apparatus entry</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:comment xml:lang="en">Relating a variant to its critical apparatus entry.</rdfs:comment>
-    <rdfs:label xml:lang="fr">est une variante de l'entrée d'apparat</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalApparatusEntry"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Variant"/>
-    <rdfs:label xml:lang="it">è la variante di entrata dell'apparato</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isReadingOf">
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Witness"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Reading"/>
-    <rdfs:label xml:lang="de">ist Textinterpretation von</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">is reading of</rdfs:label>
-    <rdfs:label xml:lang="it">è una lettura di</rdfs:label>
-    <rdfs:label xml:lang="fr">est une lecture de</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a reading to its witness.</rdfs:comment>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Emendation">
-    <rdfs:label xml:lang="de">Emendation</rdfs:label>
-    <rdfs:label xml:lang="it">emendazione</rdfs:label>
-    <rdfs:label xml:lang="fr">émendation</rdfs:label>
-    <rdfs:comment xml:lang="en">Conjecture accepted by the editor in the main text of an edition.</rdfs:comment>
-    <rdfs:label xml:lang="en">emendation</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Conjecture"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasCriticalEdition">
-    <rdfs:label xml:lang="de">hat kritische Textedition</rdfs:label>
-    <rdfs:label xml:lang="it">ha un'edizione critica di testo</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
-    <rdfs:label xml:lang="en">has critical text edition</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#hasEdition"/>
-    <rdfs:label xml:lang="fr">a une édition critique de texte </rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a text expression to a critical edition thereof.</rdfs:comment>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#WitnessedLemma">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Lemma"/>
-    <rdfs:comment xml:lang="en">Lemma with a witness.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Reading"/>
-    <rdfs:label xml:lang="it">lemma testimoniato</rdfs:label>
-    <rdfs:label xml:lang="fr">lemma témoinée</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">witnessed lemma</rdfs:label>
-    <rdfs:label xml:lang="de">bezeugtes Lemma</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasApparatusEnteringDate">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="it">ha data di entrata dell'apparato</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
-    <rdfs:label xml:lang="de">hat Apparatuseintragsdatum</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an entry to its date of entering in an apparatus.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <rdfs:label xml:lang="en">has apparatus entering date</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/creating#creationHasDate"/>
-    <rdfs:label xml:lang="fr">a une date d'entrée d'apparat</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isPageNumberIndicatorOf">
-    <rdfs:label xml:lang="it">è l'indicatore del numero di pagina di</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#PageNumberIndicator"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Page"/>
-    <rdfs:label xml:lang="de">ist Seitenummerindikator von</rdfs:label>
-    <rdfs:label xml:lang="fr">est l'indicateur du numéro de page de</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isEditorialSymbolOf">
-        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Page"/>
-        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialSymbol"/>
-        <rdfs:comment xml:lang="en">Relating an editorial symbol to its scholarly edition page.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#isPartOf"/>
-        <rdfs:label xml:lang="de">ist editorisches Zeichen von</rdfs:label>
-        <rdfs:label xml:lang="en">is editorial symbol of</rdfs:label>
-        <rdfs:label xml:lang="fr">est le symbole éditorial de</rdfs:label>
-        <rdfs:label xml:lang="it">è il simbolo editoriale di</rdfs:label>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:comment xml:lang="en">Relating a page indicator to its scholarly edition page.</rdfs:comment>
-    <rdfs:label xml:lang="en">is page number indicator of</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isApparatusFontiumOf">
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">is apparatus fontium of</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an apparatus fontium to its scholarly edition.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Apparatus Fontium von</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusFontium"/>
-    <rdfs:label xml:lang="it">è apparato fontium di</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#isApparatusOf"/>
-    <rdfs:label xml:lang="fr">est l'apparat fontium de</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasSiglum">
-    <rdfs:label xml:lang="de">hat Siglum</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/document#expressionReferenceHasIdentifier"/>
-    <rdfs:label xml:lang="fr">a un siglum</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#SiglumReference"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Siglum"/>
-    <rdfs:label xml:lang="en">has siglum</rdfs:label>
-    <rdfs:label xml:lang="it">ha sigla</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a siglum reference to its siglum.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isEntryOfCriticalApparatus">
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalApparatusEntry"/>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatus">
-        <rdfs:comment xml:lang="en">Relating an entry to its editing apparatus.</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
-        <rdfs:label xml:lang="it">è l'ingresso dell'apparato</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#isPartOf"/>
-        <rdfs:label xml:lang="en">is entry of apparatus</rdfs:label>
-        <rdfs:label xml:lang="fr">est l'entrée de l'apparat</rdfs:label>
-        <rdfs:label xml:lang="de">ist Eintrag eines Apparates</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-        <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="it">è l'ingresso dell'apparato critico</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalApparatus"/>
-    <rdfs:label xml:lang="fr">est l'entrée d'un apparat critique</rdfs:label>
-    <rdfs:label xml:lang="de">ist Eintrag eines textkritischen Apparates</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">is entry of critical apparatus</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an entry to its critical apparatus.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isWitnessOf">
-    <rdfs:comment xml:lang="en">Relating a witness text expression to its original.</rdfs:comment>
-    <rdfs:label xml:lang="it">è testimone di</rdfs:label>
-    <rdfs:label xml:lang="de">ist Textzeuge von</rdfs:label>
-    <rdfs:label xml:lang="fr">est témoin de</rdfs:label>
-    <rdfs:label xml:lang="en">is witness of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Witness"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isEntryOfStructureApparatus">
-    <rdfs:comment xml:lang="en">Relating an entry to its text structure apparatus.</rdfs:comment>
-    <rdfs:label xml:lang="fr">est l'entrée d'un apparat de structure de texte</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#StructureApparatusEntry"/>
-    <rdfs:label xml:lang="en">is entry of text structure apparatus</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#StructureApparatus"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatus"/>
-    <rdfs:label xml:lang="de">ist Eintrag eines Textstruktur-Apparates</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="it">è l'ingresso dell'apparato di struttura del testo</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isPageOfEdition">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#isPageOfExpression"/>
-    <rdfs:comment xml:lang="en">Relating a page to its scholarly edition.</rdfs:comment>
-    <rdfs:label xml:lang="fr">est une page d'une édition scientifique</rdfs:label>
-    <rdfs:label xml:lang="de">ist Seite einer wissenschaftlichen Edition</rdfs:label>
-    <rdfs:label xml:lang="en">is page of scholarly edition</rdfs:label>
-    <rdfs:label xml:lang="it">è la pagina di un'edizione accademica</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Page"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#ConstitutedEdition">
-    <rdfs:label xml:lang="fr">texte constitué d'édition</rdfs:label>
-    <rdfs:label xml:lang="de">konstituierter Text Edition</rdfs:label>
-    <rdfs:label xml:lang="en">constituted text edition</rdfs:label>
-    <rdfs:comment xml:lang="en">Plain text expression as endresult of critical editing of another text expression.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-    <rdfs:label xml:lang="it">testo costituito di un'edizione</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isPageIndicatorOf">
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#PageIndicator"/>
-    <rdfs:comment xml:lang="en">Relating a page indicator to its scholarly edition page.</rdfs:comment>
-    <rdfs:label xml:lang="fr">est l'indicateur de page de</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Page"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#isEditorialSymbolOf"/>
-    <rdfs:label xml:lang="it">è l'indicatore di pagina di</rdfs:label>
-    <rdfs:label xml:lang="de">ist Seiteindikator von</rdfs:label>
-    <rdfs:label xml:lang="en">is page indicator of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#OrganizationEditor">
-    <rdfs:label xml:lang="de">wissenschaftliche Organisation-Editor</rdfs:label>
-    <rdfs:label xml:lang="fr">éditeur-organisation scientifique</rdfs:label>
-    <rdfs:label xml:lang="it">organizzazione accademica editrice</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-editing#OrganizationEditor"/>
-    <rdfs:label xml:lang="en">scholarly organization-editor</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#AgentEditor"/>
-    <rdfs:comment xml:lang="en">Role of an organization editing a text expression scientifically.</rdfs:comment>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isEntryOfDoctrinalApparatus">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:comment xml:lang="en">Relating an entry to its doctrinal apparatus.</rdfs:comment>
-    <rdfs:label xml:lang="en">is entry of doctrinal apparatus</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatusEntry"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatus"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatus"/>
-    <rdfs:label xml:lang="de">ist Eintrag eines doktrinalen Apparates</rdfs:label>
-    <rdfs:label xml:lang="it">è l'ingresso dell'apparato dottrinale</rdfs:label>
-    <rdfs:label xml:lang="fr">est l'entrée de l'appareil doctrinal</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#variantHasComment">
-    <rdfs:label xml:lang="fr">variante a un commentaire</rdfs:label>
-    <rdfs:label xml:lang="it">variante ha un commento</rdfs:label>
-    <rdfs:label xml:lang="de">Variant hat Kommentar</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a variant to an editorial comment.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">variant has comment</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Variant"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#commentHasContent">
-    <rdfs:label xml:lang="en">editorial comment has content</rdfs:label>
-    <rdfs:label xml:lang="de">editorischer Kommentar hat Inhalt</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="it">il commento editoriale ha contenuto</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an editorial comment to its content.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/language#hasContent"/>
-    <rdfs:label xml:lang="fr">le commentaire éditorial a le contenu</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isCriticalApparatusOf">
-    <rdfs:label xml:lang="it">è un apparato critico di</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
-    <rdfs:comment xml:lang="en">Relating a critical apparatus to its edition.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#isApparatusOf"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalApparatus"/>
-    <rdfs:label xml:lang="fr">est un apparat critique de</rdfs:label>
     <rdfs:label xml:lang="de">ist textkritischer Apparat von</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
+    <rdfs:label xml:lang="it">è un apparato critico di</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Relating a critical apparatus to its edition.</rdfs:comment>
     <rdfs:label xml:lang="en">is critical apparatus of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">est un apparat critique de</rdfs:label>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isDiplomaticTranscriptionOfTextOnPage">
-    <rdfs:label xml:lang="de">ist diplomatische Umschrift des Textes auf Seite</rdfs:label>
-    <rdfs:label xml:lang="fr">est la transcription diplomatique du texte sur la page</rdfs:label>
-    <rdfs:label xml:lang="it">è la trascrizione diplomatica del testo sulla pagina</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/information-carrier#Page"/>
-    <rdfs:label xml:lang="en">is diplomatic transcription of text on page</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a diplomatic transcription to a page its source text is on.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#DiplomaticTranscription"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#PersonEditor">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-editing#PersonEditor"/>
-    <rdfs:label xml:lang="en">scholarly person-editor</rdfs:label>
-    <rdfs:comment xml:lang="en">Role of a person editing a text expression scientifically.</rdfs:comment>
-    <skos:note xml:lang="en">Different from an editor of scientific literature, who is not necessarily a scientist.</skos:note>
-    <rdfs:label xml:lang="de">wissenschaftliche Person-Editor</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#AgentEditor"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditionScientist"/>
-    <rdfs:label xml:lang="it">persona accademica editrice</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#PersonEditor">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#AgentEditor"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditionScientist"/>
     <rdfs:label xml:lang="fr">éditeur personnel scientifique</rdfs:label>
+    <rdfs:label xml:lang="en">scholarly person-editor</rdfs:label>
+    <rdfs:label xml:lang="it">persona accademica editrice</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#PersonEditor"/>
+    <rdfs:label xml:lang="de">wissenschaftliche Person-Editor</rdfs:label>
+    <skos:note xml:lang="en">Different from an editor of scientific literature, who is not necessarily a scientist.</skos:note>
+    <rdfs:comment xml:lang="en">Role of a person editing a text expression scientifically.</rdfs:comment>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#lemmaHasReference">
-    <rdfs:label xml:lang="en">lemma has reference</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Lemma"/>
-    <rdfs:label xml:lang="it">lemma ha riferimenti</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a lemma to its reference.</rdfs:comment>
-    <rdfs:label xml:lang="fr">lemme a une référence</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/document#TextStructureReference"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/document#hasTextReference"/>
-    <rdfs:label xml:lang="de">Lemma hat Referenz</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#InverseEdition">
-    <skos:note xml:lang="en">E.g. a scientific edition about a poem studying the citations of verses of the poem in contemporary publications.</skos:note>
-    <rdfs:label xml:lang="de">inverse wissenschaftliche Edition</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-    <rdfs:label xml:lang="en">inverse scholarly edition</rdfs:label>
-    <rdfs:comment xml:lang="en">Scholarly edition studying a reference of a source.</rdfs:comment>
-    <rdfs:label xml:lang="fr">édition scientifique inversée</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="it">edizione accademica inversa</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#lemmaHasComment">
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
-    <rdfs:label xml:lang="fr">lemme a un commentaire</rdfs:label>
-    <rdfs:label xml:lang="de">Lemma hat Kommentar</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Lemma"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="it">lemma ha un commento</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a lemma to a comment it has.</rdfs:comment>
-    <rdfs:label xml:lang="en">lemma has comment</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatusFontium">
-    <rdfs:comment xml:lang="en">Relating an entry to its apparatus fontium.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusFontiumEntry"/>
-    <rdfs:label xml:lang="en">is entry of apparatus fontium</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatus"/>
-    <rdfs:label xml:lang="it">è l'ingresso dell'apparato fontium</rdfs:label>
-    <rdfs:label xml:lang="de">ist Eintrag eines Apparatus Fontium</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusFontium"/>
-    <rdfs:label xml:lang="fr">est l'entrée de l'apparat fontium</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isCommentOfEntry">
-    <rdfs:label xml:lang="it">è un commento di entrata</rdfs:label>
-    <rdfs:label xml:lang="fr">est un commentaire de l'éntrée</rdfs:label>
-    <rdfs:label xml:lang="de">ist Kommentar eines Eintrages</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="en">is comment of entry</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an editorial comment to its apparatus entry.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isCommentOfEdition">
-    <rdfs:label xml:lang="it">è un commento dell'edizione accademica</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
-    <rdfs:label xml:lang="de">ist Kommentar der wissenschaftlichen Edition</rdfs:label>
-    <rdfs:label xml:lang="fr">est un commentaire d'une édition scientifique</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:comment xml:lang="en">Relating an editorial comment to its scholarly edition.</rdfs:comment>
-    <rdfs:label xml:lang="en">is comment of scholarly edition</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isStructureDescriptionOfEntry">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="fr">est la description de structure de l'entrée de l'apparat</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a text structure description to a text structure apparatus entry.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="en">is structure description of apparatus entry</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#StructureDescription"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#StructureApparatusEntry"/>
-    <rdfs:label xml:lang="de">ist Strukturbeschreibung eines Apparateintrages</rdfs:label>
-    <rdfs:label xml:lang="it">è la descrizione della struttura dell'entrata dell'apparato</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isLemmaOfCriticalEntry">
-    <rdfs:label xml:lang="fr">est le lemme de l'entrée d'apparat critique</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="de">ist Lemma eines textkritischen Apparateintrages</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalApparatusEntry"/>
-    <rdfs:comment xml:lang="en">Relating a lemma to its critical apparatus entry.</rdfs:comment>
-    <rdfs:label xml:lang="it">è il lemma dell'entrata nell'apparato critico</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Lemma"/>
-    <rdfs:label xml:lang="en">is lemma of critical apparatus entry</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#commentHasReference">
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/document#hasTextReference"/>
-    <rdfs:comment xml:lang="en">Relating an editorial comment to its text reference.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/document#TextStructureReference"/>
-    <rdfs:label xml:lang="en">comment has text reference</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
-    <rdfs:label xml:lang="it">commento ha un riferimento testuale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="de">Kommentar hat Textreferenz</rdfs:label>
-    <rdfs:label xml:lang="fr">commentaire a une référence de texte</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:Ontology rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing">
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:description xml:lang="en">Formal description of scientific editing, general subclasses, related classes, and properties.</dct:description>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator, Basel University, Switzerland</dct:contributor>
-    <dct:contributor xml:lang="en">Prof. Dr. Hugues Marchal, French Linguistics and Literary Studies, Department of Languages and Literatures, Basel University, Switzerland</dct:contributor>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:title xml:lang="en">An ontology about scientific editing</dct:title>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-  </owl:Ontology>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#variantHasReference">
-    <rdfs:label xml:lang="en">variant has text reference</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/document#hasTextReference"/>
-    <rdfs:label xml:lang="fr">variante a une référence de texte</rdfs:label>
-    <rdfs:label xml:lang="de">Variant hat Textreferenz</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/document#TextStructureReference"/>
-    <rdfs:comment xml:lang="en">Relating a variant to its text reference.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Variant"/>
-    <rdfs:label xml:lang="it">variante ha riferimento al testo</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#hasEditionPage">
-    <rdfs:label xml:lang="fr">a une page d'édition scientifique</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">has scholarly edition page</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a text expression to a scholarly edition page thereof.</rdfs:comment>
-    <rdfs:label xml:lang="de">hat wissenschaftliche Texteditionseite</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Page"/>
-    <rdfs:label xml:lang="it">ha una pagina di edizione accademica</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isLemmaOfDoctrinalEntry">
-    <rdfs:label xml:lang="fr">est le lemme de l'entrée d'apparat doctrinal</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatusEntry"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Lemma"/>
-    <rdfs:label xml:lang="en">is lemma of doctrinal apparatus entry</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:comment xml:lang="en">Relating a lemma to its doctrinal apparatus entry.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Lemma eines doktrinalen Apparateintrages</rdfs:label>
-    <rdfs:label xml:lang="it">è il lemma dell'entrata nell'apparato dottrinale</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isSiglumOfEdition">
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Siglum"/>
-    <rdfs:label xml:lang="fr">est us siglum de l'édition scientifique</rdfs:label>
-    <rdfs:label xml:lang="it">è un siglum dell'edizione accademica</rdfs:label>
-    <rdfs:label xml:lang="en">îs siglum of scholarly edition</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a siglum to its scholarly edition.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/document#isStructureOfDocument"/>
-    <rdfs:label xml:lang="de">ist Siglum einer wissenschaftliche Edition</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#GeneticEdition">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#GeneticEdition">
     <rdfs:label xml:lang="de">genetische Edition</rdfs:label>
+    <rdfs:label xml:lang="en">genetic edition</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
     <rdfs:comment xml:lang="en">Critical edition accounting for the modifications by the author.</rdfs:comment>
     <rdfs:label xml:lang="it">edizione genetica</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
     <rdfs:label xml:lang="fr">édition génétique</rdfs:label>
-    <rdfs:label xml:lang="en">genetic edition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isStructureApparatusOf">
-    <rdfs:label xml:lang="it">è l'apparato strutturale di</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-    <rdfs:label xml:lang="de">ist Strukturapparat von</rdfs:label>
-    <rdfs:label xml:lang="en">is structure apparatus of</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#isApparatusOf"/>
-    <rdfs:label xml:lang="fr">est un apparat de structure de</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a structure apparatus to its scholarly edition.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#StructureApparatus"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasSiglumReference">
+    <rdfs:comment xml:lang="en">Relating an editiorial text structure to its siglum reference.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a une référence au siglum</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
+    <rdfs:label xml:lang="it">ha un riferimento a sigla</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/document#hasExpressionReference"/>
+    <rdfs:label xml:lang="en">has siglum reference</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#SiglumReference"/>
+    <rdfs:label xml:lang="de">hat Siglum-Referenz</rdfs:label>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#lemmaHasVariant">
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Variant"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isDoctrinalApparatusOf">
+    <rdfs:comment xml:lang="en">Relating a doctrinal apparatus to its scholarly edition.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:label xml:lang="it">è l'apparato dottrinale di</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#isApparatusOf"/>
+    <rdfs:label xml:lang="en">is doctrinal apparatus of</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatus"/>
+    <rdfs:label xml:lang="de">ist doktrinaler Apparat von</rdfs:label>
+    <rdfs:label xml:lang="fr">est l'apparat doctrinal de</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isDiplomaticTranscriptionOfTextOnPage">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="en">is diplomatic transcription of text on page</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a diplomatic transcription to a page its source text is on.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
+    <rdfs:label xml:lang="fr">est la transcription diplomatique du texte sur la page</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#DiplomaticTranscription"/>
+    <rdfs:label xml:lang="it">è la trascrizione diplomatica del testo sulla pagina</rdfs:label>
+    <rdfs:label xml:lang="de">ist diplomatische Umschrift des Textes auf Seite</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/scholarly-editing">
+    <dct:title xml:lang="en">An ontology about scientific editing</dct:title>
+    <dct:contributor xml:lang="en">Prof. Dr. Hugues Marchal, French Linguistics and Literary Studies, Department of Languages and Literatures, Basel University, Switzerland</dct:contributor>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator, Basel University, Switzerland</dct:contributor>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:description xml:lang="en">Formal description of scientific editing, general subclasses, related classes, and properties.</dct:description>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isPageNumberIndicatorOf">
+    <rdfs:label xml:lang="it">è l'indicatore del numero di pagina di</rdfs:label>
+    <rdfs:label xml:lang="en">is page number indicator of</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Page"/>
+    <rdfs:comment xml:lang="en">Relating a page indicator to its scholarly edition page.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#isEditorialSymbolOf"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#PageNumberIndicator"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">est l'indicateur du numéro de page de</rdfs:label>
+    <rdfs:label xml:lang="de">ist Seitenummerindikator von</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#ConstitutedEdition">
+    <rdfs:label xml:lang="de">konstituierter Text Edition</rdfs:label>
+    <rdfs:label xml:lang="fr">texte constitué d'édition</rdfs:label>
+    <rdfs:label xml:lang="it">testo costituito di un'edizione</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="en">constituted text edition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:comment xml:lang="en">Plain text expression as endresult of critical editing of another text expression.</rdfs:comment>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isEntryOfDoctrinalApparatus">
+    <rdfs:comment xml:lang="en">Relating an entry to its doctrinal apparatus.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est l'entrée de l'appareil doctrinal</rdfs:label>
+    <rdfs:label xml:lang="it">è l'ingresso dell'apparato dottrinale</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatusEntry"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatus"/>
+    <rdfs:label xml:lang="de">ist Eintrag eines doktrinalen Apparates</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatus">
+        <rdfs:comment xml:lang="en">Relating an entry to its editing apparatus.</rdfs:comment>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+        <rdfs:label xml:lang="it">è l'ingresso dell'apparato</rdfs:label>
+        <rdfs:label xml:lang="fr">est l'entrée de l'apparat</rdfs:label>
+        <rdfs:label xml:lang="de">ist Eintrag eines Apparates</rdfs:label>
+        <rdfs:label xml:lang="en">is entry of apparatus</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="en">is entry of doctrinal apparatus</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasCriticalEditor">
+    <rdfs:label xml:lang="fr">a un éditeur critique</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="de">hat kritische Editor</rdfs:label>
+    <rdfs:label xml:lang="en">has critical editor</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a critical edition to a critical editor who created it.</rdfs:comment>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub41bL427C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub41bL427C44">
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalEditor"/>
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:label xml:lang="it">ha un editor critico</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasEditor">
+        <rdfs:label xml:lang="fr">édition scientifique a un éditeur scientifique</rdfs:label>
+        <rdfs:label xml:lang="de">wissenschaftliche Edition hat wissenschaftliche Editor</rdfs:label>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+        <rdfs:label xml:lang="en">scholarly edition has scholarly editor</rdfs:label>
+        <rdfs:range>
+          <rdf:Description rdf:nodeID="ub41bL347C13">
+            <rdfs:subClassOf>
+              <owl:Restriction rdf:nodeID="ub41bL347C43">
+                <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#AgentEditor"/>
+                <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#agentHasRole"/>
+              </owl:Restriction>
+            </rdfs:subClassOf>
+            <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Agent"/>
+          </rdf:Description>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Relating a scholarly edition to a scholarly editor who created it.</rdfs:comment>
+        <rdfs:label xml:lang="it">edizione accademica ha un editore accademico</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasCriticalEdition">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:comment xml:lang="en">Relating a text expression to a critical edition thereof.</rdfs:comment>
+    <rdfs:label xml:lang="en">has critical text edition</rdfs:label>
+    <rdfs:label xml:lang="it">ha un'edizione critica di testo</rdfs:label>
+    <rdfs:label xml:lang="de">hat kritische Textedition</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#hasEdition"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">a une édition critique de texte </rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isSiglumOfEdition">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/document#isStructureOfDocument"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Siglum"/>
+    <rdfs:label xml:lang="de">ist Siglum einer wissenschaftliche Edition</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a siglum to its scholarly edition.</rdfs:comment>
+    <rdfs:label xml:lang="en">îs siglum of scholarly edition</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:label xml:lang="fr">est us siglum de l'édition scientifique</rdfs:label>
+    <rdfs:label xml:lang="it">è un siglum dell'edizione accademica</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isEntryOfCriticalApparatus">
+    <rdfs:label xml:lang="it">è l'ingresso dell'apparato critico</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalApparatusEntry"/>
+    <rdfs:comment xml:lang="en">Relating an entry to its critical apparatus.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est l'entrée d'un apparat critique</rdfs:label>
+    <rdfs:label xml:lang="en">is entry of critical apparatus</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalApparatus"/>
+    <rdfs:label xml:lang="de">ist Eintrag eines textkritischen Apparates</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatus"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#lemmaHasReference">
+    <rdfs:label xml:lang="fr">lemme a une référence</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="it">lemma ha riferimenti</rdfs:label>
+    <rdfs:label xml:lang="de">Lemma hat Referenz</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a lemma to its reference.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/document#TextStructureReference"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Lemma"/>
+    <rdfs:label xml:lang="en">lemma has reference</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/document#hasTextReference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#lemmaHasVariant">
     <rdfs:label xml:lang="it">lemma ha una variante</rdfs:label>
-    <rdfs:label xml:lang="en">lemma has variant</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Variant"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
     <rdfs:label xml:lang="fr">lemme a une variante</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Lemma"/>
-    <rdfs:label xml:lang="de">Lemma hat Variant</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a lemma to a variant it has.</rdfs:comment>
+    <rdfs:label xml:lang="de">Lemma hat Variant</rdfs:label>
+    <rdfs:label xml:lang="en">lemma has variant</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Lemma"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#isColumnIndicatorOf">
-    <rdfs:comment xml:lang="en">Relating a column indicator to its scholarly edition page.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#isEditorialSymbolOf"/>
-    <rdfs:label xml:lang="it">è l'indicatore di colonna di</rdfs:label>
-    <rdfs:label xml:lang="fr">est l'indicateur de colonne de</rdfs:label>
-    <rdfs:range rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Page"/>
-    <rdfs:label xml:lang="de">ist Spalteindikator von</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ColumnIndicator"/>
-    <rdfs:label xml:lang="en">is column indicator of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasEditionPage">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:comment xml:lang="en">Relating a text expression to a scholarly edition page thereof.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">a une page d'édition scientifique</rdfs:label>
+    <rdfs:label xml:lang="it">ha una pagina di edizione accademica</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Page"/>
+    <rdfs:label xml:lang="en">has scholarly edition page</rdfs:label>
+    <rdfs:label xml:lang="de">hat wissenschaftliche Texteditionseite</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusEntry">
-    <rdfs:label xml:lang="fr">entrée d'apparat éditionel</rdfs:label>
-    <rdfs:comment xml:lang="en">Entry of an editing apparatus.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
-    <rdfs:label xml:lang="en">editing apparatus entry</rdfs:label>
-    <rdfs:label xml:lang="de">Edierungsapparateintrag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
-    <rdfs:label xml:lang="it">iscrizione del apparato</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#witnessHasSiglum">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="it">il testo del testimone ha siglum</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Witness"/>
+    <rdfs:label xml:lang="fr">le texte du témoin a un siglum</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/document#expressionHasIdentifier"/>
+    <rdfs:comment xml:lang="en">Relating a witness text expression to its siglum.</rdfs:comment>
+    <rdfs:label xml:lang="de">Textzeuge hat Siglum</rdfs:label>
+    <rdfs:label xml:lang="en">witness text has siglum</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Siglum"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatusFontium">
+    <rdfs:comment xml:lang="en">Relating an entry to its apparatus fontium.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusFontiumEntry"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatus"/>
+    <rdfs:label xml:lang="en">is entry of apparatus fontium</rdfs:label>
+    <rdfs:label xml:lang="de">ist Eintrag eines Apparatus Fontium</rdfs:label>
+    <rdfs:label xml:lang="fr">est l'entrée de l'apparat fontium</rdfs:label>
+    <rdfs:label xml:lang="it">è l'ingresso dell'apparato fontium</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusFontium"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isApparatusFontiumOf">
+    <rdfs:comment xml:lang="en">Relating an apparatus fontium to its scholarly edition.</rdfs:comment>
+    <rdfs:label xml:lang="de">ist Apparatus Fontium von</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusFontium"/>
+    <rdfs:label xml:lang="en">is apparatus fontium of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#isApparatusOf"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:label xml:lang="it">è apparato fontium di</rdfs:label>
+    <rdfs:label xml:lang="fr">est l'apparat fontium de</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#WitnessedLemma">
+    <rdfs:label xml:lang="de">bezeugtes Lemma</rdfs:label>
+    <rdfs:label xml:lang="fr">lemma témoinée</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Lemma"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Reading"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="en">witnessed lemma</rdfs:label>
+    <rdfs:label xml:lang="it">lemma testimoniato</rdfs:label>
+    <rdfs:comment xml:lang="en">Lemma with a witness.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusFontiumEntry">
-    <rdfs:label xml:lang="it">iscrizione del apparato </rdfs:label>
-    <rdfs:label xml:lang="fr">entrée d'apparat </rdfs:label>
-    <rdfs:comment xml:lang="en">Entry of an apparatus fontium.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
-    <rdfs:label xml:lang="en">apparatus fontium entry</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="de">Apparatus Fontium-Eintrag</rdfs:label>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#commentHasContent">
+    <rdfs:label xml:lang="it">il commento editoriale ha contenuto</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
+    <rdfs:comment xml:lang="en">Relating an editorial comment to its content.</rdfs:comment>
+    <rdfs:label xml:lang="fr">le commentaire éditorial a le contenu</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/language#hasContent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="de">editorischer Kommentar hat Inhalt</rdfs:label>
+    <rdfs:label xml:lang="en">editorial comment has content</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isCommentOfEdition">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="en">is comment of scholarly edition</rdfs:label>
+    <rdfs:label xml:lang="fr">est un commentaire d'une édition scientifique</rdfs:label>
+    <rdfs:label xml:lang="it">è un commento dell'edizione accademica</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an editorial comment to its scholarly edition.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
+    <rdfs:label xml:lang="de">ist Kommentar der wissenschaftlichen Edition</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isWitnessOf">
+    <rdfs:comment xml:lang="en">Relating a witness text expression to its original.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Witness"/>
+    <rdfs:label xml:lang="de">ist Textzeuge von</rdfs:label>
+    <rdfs:label xml:lang="fr">est témoin de</rdfs:label>
+    <rdfs:label xml:lang="it">è testimone di</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:label xml:lang="en">is witness of</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isPageOfEdition">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Page"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="it">è la pagina di un'edizione accademica</rdfs:label>
+    <rdfs:label xml:lang="en">is page of scholarly edition</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a page to its scholarly edition.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est une page d'une édition scientifique</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#isPageOfExpression"/>
+    <rdfs:label xml:lang="de">ist Seite einer wissenschaftlichen Edition</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isVariantOfEntry">
+    <rdfs:label xml:lang="de">ist Variant eines Apparateintrages</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Variant"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalApparatusEntry"/>
+    <rdfs:label xml:lang="fr">est une variante de l'entrée d'apparat</rdfs:label>
+    <rdfs:label xml:lang="en">is variant of apparatus entry</rdfs:label>
+    <rdfs:label xml:lang="it">è la variante di entrata dell'apparato</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Relating a variant to its critical apparatus entry.</rdfs:comment>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Emendation">
+    <rdfs:comment xml:lang="en">Conjecture accepted by the editor in the main text of an edition.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Conjecture"/>
+    <rdfs:label xml:lang="fr">émendation</rdfs:label>
+    <rdfs:label xml:lang="de">Emendation</rdfs:label>
+    <rdfs:label xml:lang="en">emendation</rdfs:label>
+    <rdfs:label xml:lang="it">emendazione</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#PageNumberIndicator">
-    <rdfs:label xml:lang="de">Seitenummerindikator</rdfs:label>
-    <rdfs:label xml:lang="fr">indicateur de numéro de page</rdfs:label>
-    <rdfs:comment xml:lang="en">Page indicator as number.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialSymbol"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="it">indicatore del numero di pagina</rdfs:label>
-    <rdfs:label xml:lang="en">page number indicator</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#OrganizationEditor">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Role of an organization editing a text expression scientifically.</rdfs:comment>
+    <rdfs:label xml:lang="en">scholarly organization-editor</rdfs:label>
+    <rdfs:label xml:lang="fr">éditeur-organisation scientifique</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#AgentEditor"/>
+    <rdfs:label xml:lang="it">organizzazione accademica editrice</rdfs:label>
+    <rdfs:label xml:lang="de">wissenschaftliche Organisation-Editor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#OrganizationEditor"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatusEntry">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
-    <rdfs:label xml:lang="it">iscrizione del apparato doctrino</rdfs:label>
-    <rdfs:comment xml:lang="en">Entry of a doctrinal apparatus.</rdfs:comment>
-    <rdfs:label xml:lang="de">doktrinaler Apparateintrag</rdfs:label>
-    <rdfs:label xml:lang="en">doctrinal apparatus entry</rdfs:label>
-    <rdfs:label xml:lang="fr">entrée d'apparat doctrine</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#InverseEdition">
+    <rdfs:label xml:lang="it">edizione accademica inversa</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholarly edition studying a reference of a source.</rdfs:comment>
+    <rdfs:label xml:lang="fr">édition scientifique inversée</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="en">inverse scholarly edition</rdfs:label>
+    <skos:note xml:lang="en">E.g. a scientific edition about a poem studying the citations of verses of the poem in contemporary publications.</skos:note>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:label xml:lang="de">inverse wissenschaftliche Edition</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Variant">
-    <rdfs:label xml:lang="de">Variant</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Reading"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:comment xml:lang="en">Reading in a critical apparatus entry, judged by an editor to be unsatisfactory for linguistic and/or stylistic reasons, but of interest for establishing the text, and as such varying from what the editor has judged to be the lemma.</rdfs:comment>
-    <skos:note xml:lang="en">Absence in a witness of respective part is commented.</skos:note>
-    <rdfs:label xml:lang="fr">variante</rdfs:label>
-    <rdfs:label xml:lang="it">variante</rdfs:label>
-    <rdfs:label xml:lang="en">variant</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#hasApparatusEnteringDate">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Relating an entry to its date of entering in an apparatus.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:label xml:lang="de">hat Apparatuseintragsdatum</rdfs:label>
+    <rdfs:label xml:lang="fr">a une date d'entrée d'apparat</rdfs:label>
+    <rdfs:label xml:lang="en">has apparatus entering date</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/creating#creationHasDate"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
+    <rdfs:label xml:lang="it">ha data di entrata dell'apparato</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#lemmaHasComment">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
+    <rdfs:label xml:lang="en">lemma has comment</rdfs:label>
+    <rdfs:label xml:lang="fr">lemme a un commentaire</rdfs:label>
+    <rdfs:label xml:lang="de">Lemma hat Kommentar</rdfs:label>
+    <rdfs:label xml:lang="it">lemma ha un commento</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Relating a lemma to a comment it has.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Lemma"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#variantHasReference">
+    <rdfs:label xml:lang="fr">variante a une référence de texte</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/document#hasTextReference"/>
+    <rdfs:label xml:lang="de">Variant hat Textreferenz</rdfs:label>
+    <rdfs:label xml:lang="en">variant has text reference</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Variant"/>
+    <rdfs:comment xml:lang="en">Relating a variant to its text reference.</rdfs:comment>
+    <rdfs:label xml:lang="it">variante ha riferimento al testo</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/document#TextStructureReference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isLemmaOfDoctrinalEntry">
+    <rdfs:label xml:lang="de">ist Lemma eines doktrinalen Apparateintrages</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Relating a lemma to its doctrinal apparatus entry.</rdfs:comment>
+    <rdfs:label xml:lang="en">is lemma of doctrinal apparatus entry</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatusEntry"/>
+    <rdfs:label xml:lang="fr">est le lemme de l'entrée d'apparat doctrinal</rdfs:label>
+    <rdfs:label xml:lang="it">è il lemma dell'entrata nell'apparato dottrinale</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Lemma"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isReadingOf">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Witness"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Reading"/>
+    <rdfs:label xml:lang="fr">est une lecture de</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a reading to its witness.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="de">ist Textinterpretation von</rdfs:label>
+    <rdfs:label xml:lang="it">è una lettura di</rdfs:label>
+    <rdfs:label xml:lang="en">is reading of</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#variantHasComment">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">variante a un commentaire</rdfs:label>
+    <rdfs:label xml:lang="de">Variant hat Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">variant has comment</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
+    <rdfs:comment xml:lang="en">Relating a variant to an editorial comment.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Variant"/>
+    <rdfs:label xml:lang="it">variante ha un commento</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isEntryOfStructureApparatus">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#StructureApparatusEntry"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#isEntryOfApparatus"/>
+    <rdfs:label xml:lang="en">is entry of text structure apparatus</rdfs:label>
+    <rdfs:label xml:lang="de">ist Eintrag eines Textstruktur-Apparates</rdfs:label>
+    <rdfs:label xml:lang="it">è l'ingresso dell'apparato di struttura del testo</rdfs:label>
+    <rdfs:label xml:lang="fr">est l'entrée d'un apparat de structure de texte</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an entry to its text structure apparatus.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#StructureApparatus"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isStructureDescriptionOfEntry">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#StructureDescription"/>
+    <rdfs:comment xml:lang="en">Relating a text structure description to a text structure apparatus entry.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#StructureApparatusEntry"/>
+    <rdfs:label xml:lang="de">ist Strukturbeschreibung eines Apparateintrages</rdfs:label>
+    <rdfs:label xml:lang="fr">est la description de structure de l'entrée de l'apparat</rdfs:label>
+    <rdfs:label xml:lang="it">è la descrizione della struttura dell'entrata dell'apparato</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="en">is structure description of apparatus entry</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isStructureApparatusOf">
+    <rdfs:label xml:lang="it">è l'apparato strutturale di</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#isApparatusOf"/>
+    <rdfs:comment xml:lang="en">Relating a structure apparatus to its scholarly edition.</rdfs:comment>
+    <rdfs:label xml:lang="de">ist Strukturapparat von</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#StructureApparatus"/>
+    <rdfs:label xml:lang="fr">est un apparat de structure de</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="en">is structure apparatus of</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isPageIndicatorOf">
+    <rdfs:comment xml:lang="en">Relating a page indicator to its scholarly edition page.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est l'indicateur de page de</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#PageIndicator"/>
+    <rdfs:label xml:lang="de">ist Seiteindikator von</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#isEditorialSymbolOf"/>
+    <rdfs:label xml:lang="it">è l'indicatore di pagina di</rdfs:label>
+    <rdfs:label xml:lang="en">is page indicator of</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Page"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#commentHasReference">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">commentaire a une référence de texte</rdfs:label>
+    <rdfs:label xml:lang="it">commento ha un riferimento testuale</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an editorial comment to its text reference.</rdfs:comment>
+    <rdfs:label xml:lang="de">Kommentar hat Textreferenz</rdfs:label>
+    <rdfs:label xml:lang="en">comment has text reference</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/document#hasTextReference"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/document#TextStructureReference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholarly-editing#isCommentOn">
+    <rdfs:comment xml:lang="en">Relating an editorial comment to a text expression it is a comment on.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:label xml:lang="de">ist Kommentar zu</rdfs:label>
+    <rdfs:label xml:lang="it">est un commento di</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialComment"/>
+    <rdfs:label xml:lang="fr">est un commentaire de</rdfs:label>
+    <rdfs:label xml:lang="en">is comment on</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#StructureApparatus">
+    <rdfs:label xml:lang="en">text structure apparatus</rdfs:label>
+    <rdfs:label xml:lang="it">apparato di struttura del testo</rdfs:label>
+    <rdfs:label xml:lang="fr">apparat de structure de texte</rdfs:label>
+    <rdfs:comment xml:lang="en">Editing apparatus to a critical text edition providing information of text structure.</rdfs:comment>
+    <rdfs:label xml:lang="de">Textstruktur-Apparat</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#AgentEditor">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">scholarly editor</rdfs:label>
-    <rdfs:label xml:lang="it">editore accademico</rdfs:label>
-    <rdfs:label xml:lang="fr">éditeur scientifique</rdfs:label>
-    <rdfs:label xml:lang="de">wissenschaftliche Editor</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-editing#AgentEditor"/>
-    <rdfs:comment xml:lang="en">Role of a human agent—person or organization—editing a text expression scientifically.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#EditionScientist">
-    <rdfs:label xml:lang="en">edition scientist</rdfs:label>
-    <rdfs:label xml:lang="it">scienziato dell'edizione</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Scientist"/>
-    <rdfs:comment xml:lang="en">Role of a person practicing edition science.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#EditionScientist">
     <rdfs:label xml:lang="de">EditionswissenschaftlerIn</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="it">scienziato dell'edizione</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person practicing edition science.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Scientist"/>
+    <rdfs:label xml:lang="en">edition scientist</rdfs:label>
     <rdfs:label xml:lang="fr">scientifique de l'édition</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialComment">
-    <rdfs:label xml:lang="fr">commentaire éditorial</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="de">editorische Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">editorial comment</rdfs:label>
-    <rdfs:comment xml:lang="en">Comment in a scholarly edition.</rdfs:comment>
-    <rdfs:label xml:lang="it">commento editoriale</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Edition">
-    <rdfs:comment xml:lang="en">Derived text expression edited for scientific purpose.</rdfs:comment>
-    <rdfs:label xml:lang="it">edizione accademica</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-editing#DerivedTextExpression"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Edition">
     <rdfs:label xml:lang="fr">édition scientifique</rdfs:label>
+    <rdfs:comment xml:lang="en">Derived text expression edited for scientific purpose.</rdfs:comment>
     <rdfs:label xml:lang="en">scholarly edition</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#DerivedTextExpression"/>
     <rdfs:label xml:lang="de">wissenschaftliche Edition</rdfs:label>
+    <rdfs:label xml:lang="it">edizione accademica</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#PageIndicator">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="it">indicatore di pagina</rdfs:label>
-    <rdfs:label xml:lang="fr">indicateur de page</rdfs:label>
-    <rdfs:label xml:lang="de">Seiteindikator</rdfs:label>
-    <rdfs:comment xml:lang="en">Editorial symbol indicating where a document page starts.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialSymbol"/>
-    <rdfs:label xml:lang="en">page indicator</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatus">
-    <rdfs:comment xml:lang="en">Editing apparatus commmenting on the content of a scholarly edition in a historical and doctrinal context.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatus">
     <rdfs:label xml:lang="fr">apparat doctrinal</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
     <rdfs:label xml:lang="en">doctrinal apparatus</rdfs:label>
     <rdfs:label xml:lang="de">doktrinal Apparat</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
     <rdfs:label xml:lang="it">apparato dottrinale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Editing apparatus commmenting on the content of a scholarly edition in a historical and doctrinal context.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Apparatus">
-    <rdfs:label xml:lang="en">editing apparatus</rdfs:label>
-    <rdfs:comment xml:lang="en">Editorial compositional structure in a scholarly edition to analyse text along certain criteria.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
-    <rdfs:label xml:lang="fr">apparat éditionel</rdfs:label>
-    <rdfs:label xml:lang="it">apparato edizione</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Lemma">
+    <rdfs:label xml:lang="de">Lemma</rdfs:label>
+    <rdfs:label xml:lang="en">lemma</rdfs:label>
+    <rdfs:comment xml:lang="en">Editorial structure in an apparatus entry with a copy of one or more words or phrases referring to its edition text, and as appearing in the original or a witness, or created by an editor, and judged by the editor to be authentic, accurate, and/or authoritative [, and possibly compaired with variants referring to other witnesses]</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
+    <rdfs:label xml:lang="fr">lemma</rdfs:label>
+    <skos:note xml:lang="en">In an apparatus entry a lemma is mostly seperated from a variant or editorial explanation by a right square bracket ']'.</skos:note>
+    <rdfs:label xml:lang="it">lemma</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#EditorialComment">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
+    <rdfs:label xml:lang="fr">commentaire éditorial</rdfs:label>
+    <rdfs:label xml:lang="de">editorische Kommentar</rdfs:label>
+    <rdfs:label xml:lang="it">commento editoriale</rdfs:label>
+    <rdfs:label xml:lang="en">editorial comment</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Comment in a scholarly edition.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Siglum">
+    <rdfs:label xml:lang="en">siglum</rdfs:label>
+    <rdfs:label xml:lang="it">sigla</rdfs:label>
+    <rdfs:label xml:lang="fr">siglum</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="de">Siglum</rdfs:label>
+    <rdfs:comment xml:lang="en">One or more symbols as identifier of an expression as original or witness in a scholarly edition.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/document#ExpressionIdentifier"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Apparatus">
     <rdfs:label xml:lang="de">Edierungsapparatus</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Editorial compositional structure in a scholarly edition to analyse text along certain criteria.</rdfs:comment>
+    <rdfs:label xml:lang="it">apparato edizione</rdfs:label>
+    <rdfs:label xml:lang="en">editing apparatus</rdfs:label>
     <rdfs:label xml:lang="la">apparatus editionis</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
+    <rdfs:label xml:lang="fr">apparat éditionel</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#StructureDescription">
-    <rdfs:label xml:lang="en">text structure description</rdfs:label>
-    <rdfs:label xml:lang="de">Textstrukturdeskription</rdfs:label>
-    <rdfs:label xml:lang="it">descrizione della struttura del testo</rdfs:label>
-    <rdfs:label xml:lang="fr">description de la structure de texte</rdfs:label>
-    <rdfs:comment xml:lang="en">Description of a text structure in a structure apparatus.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#ColumnIndicator">
-    <rdfs:label xml:lang="it">indicatore di colonna</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="de">Spalteindikator</rdfs:label>
-    <rdfs:label xml:lang="en">column indicator</rdfs:label>
-    <rdfs:label xml:lang="fr">indicateur de colonne</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialSymbol"/>
-    <rdfs:comment xml:lang="en">Editorial symbol indicating a textual property of the original text.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialSymbol">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="it">simbolo editoriale</rdfs:label>
-    <rdfs:label xml:lang="fr">symbole éditorial</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#EditorialSymbol">
     <rdfs:label xml:lang="en">editorial symbol</rdfs:label>
     <rdfs:comment xml:lang="en">Symbol in a scholarly edition indicating a textual property of the original text.</rdfs:comment>
     <rdfs:label xml:lang="de">editorisches Zeichen</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/concept#SymbolicEntity"/>
+    <rdfs:label xml:lang="it">simbolo editoriale</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">symbole éditorial</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Conjecture">
-    <rdfs:comment xml:lang="en">Witness-independent lemma expressly proposed to be of interest but absent in the main text of an edition.</rdfs:comment>
-    <rdfs:label xml:lang="fr">conjecture</rdfs:label>
-    <rdfs:label xml:lang="de">Konjektur</rdfs:label>
-    <rdfs:label xml:lang="en">conjecture</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Lemma"/>
-    <rdfs:label xml:lang="it">congetturare</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalApparatus">
-    <rdfs:label xml:lang="de">textkritischer Apparat</rdfs:label>
-    <rdfs:label xml:lang="la">apparatus criticus</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
-    <rdfs:comment xml:lang="en">Editing apparatus to a critical text edition providing information of textual versions.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">critical apparatus</rdfs:label>
-    <rdfs:label xml:lang="it">apparato critico</rdfs:label>
-    <rdfs:label xml:lang="fr">apparat critique</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialStructure">
-    <rdfs:label xml:lang="fr">structure du texte éditorial</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#ScientificStructure"/>
-    <rdfs:label xml:lang="en">editorial text structure</rdfs:label>
-    <rdfs:label xml:lang="it">struttura del testo editoriale</rdfs:label>
-    <rdfs:comment xml:lang="en">Scientific text structure depending on editorial purpose, e.g. an editing apparatus.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="de">editorische Textstruktur</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Reading">
-    <rdfs:label xml:lang="la">lectio</rdfs:label>
-    <rdfs:label xml:lang="de">Lesung</rdfs:label>
-    <rdfs:label xml:lang="it">lezione</rdfs:label>
-    <rdfs:label xml:lang="fr">lecture</rdfs:label>
-    <rdfs:comment xml:lang="en">Copy of one or more words or phrases of an original or witness.</rdfs:comment>
-    <rdfs:label xml:lang="en">reading</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text#CopiedText"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
-    <rdfs:label xml:lang="it">lettura</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusFontium">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
-    <rdfs:label xml:lang="la">apparatus fontium</rdfs:label>
-    <rdfs:label xml:lang="en">apparatus fontium</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:comment xml:lang="en">Editing apparatus containing references to one or more citations.</rdfs:comment>
-    <rdfs:label xml:lang="de">Apparatus Fontium</rdfs:label>
-    <rdfs:label xml:lang="fr">apparat fontium</rdfs:label>
-    <rdfs:label xml:lang="it">apparato fontium</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalEdition">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:comment xml:lang="en">Edition to which a critical editor added evidence and interpretation of a text creation and historical transmission, using a critical apparatus, allowing readers to assess the editor's choice.</rdfs:comment>
-    <rdfs:label xml:lang="de">kritische Textedition</rdfs:label>
-    <rdfs:label xml:lang="en">critical text edition</rdfs:label>
-    <rdfs:label xml:lang="it">edizione critica del testo</rdfs:label>
-    <rdfs:label xml:lang="fr">édition critique de texte</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Lemma">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
-    <rdfs:label xml:lang="it">lemma</rdfs:label>
-    <rdfs:comment xml:lang="en">Editorial structure in an apparatus entry with a copy of one or more words or phrases referring to its edition text, and as appearing in the original or a witness, or created by an editor, and judged by the editor to be authentic, accurate, and/or authoritative [, and possibly compaired with variants referring to other witnesses]</rdfs:comment>
-    <rdfs:label xml:lang="fr">lemma</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <skos:note xml:lang="en">In an apparatus entry a lemma is mostly seperated from a variant or editorial explanation by a right square bracket ']'.</skos:note>
-    <rdfs:label xml:lang="en">lemma</rdfs:label>
-    <rdfs:label xml:lang="de">Lemma</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#SiglumReference">
-    <rdfs:label xml:lang="it">riferimento di sigla</rdfs:label>
-    <rdfs:label xml:lang="de">Siglum-Referenz</rdfs:label>
-    <rdfs:label xml:lang="fr">référence de siglum</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/document#ExpressionReference"/>
-    <rdfs:label xml:lang="en">siglum reference</rdfs:label>
-    <rdfs:comment xml:lang="en">Reference to a siglum as expression identifier.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Siglum">
-    <rdfs:comment xml:lang="en">One or more symbols as identifier of an expression as original or witness in a scholarly edition.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="fr">siglum</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/document#ExpressionIdentifier"/>
-    <rdfs:label xml:lang="de">Siglum</rdfs:label>
-    <rdfs:label xml:lang="en">siglum</rdfs:label>
-    <rdfs:label xml:lang="it">sigla</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#StructureApparatusEntry">
-    <rdfs:label xml:lang="de">Textstruktur-Apparateintrag</rdfs:label>
-    <rdfs:comment xml:lang="en">Entry of text structure apparatus.</rdfs:comment>
-    <rdfs:label xml:lang="it">iscrizione del apparato di struttura </rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="en">structure apparatus entry</rdfs:label>
-    <rdfs:label xml:lang="fr">entrée d'apparat de structure</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Witness">
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text#CopiedText"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-expression#Expression"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_w.aspx"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Witness">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
     <rdfs:label xml:lang="de">Textzeuge</rdfs:label>
+    <rdfs:label xml:lang="en">witness text</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CopiedText"/>
+    <rdfs:label xml:lang="fr">texte de témoin</rdfs:label>
+    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_w.aspx"/>
     <rdfs:comment xml:lang="en">Copy of a text studied in a critical edition, as comparison or proof of existance of the original by looking for features of originality, possibly enabling the original's reconstruction.</rdfs:comment>
     <rdfs:label xml:lang="it">testo di testimonianza</rdfs:label>
-    <rdfs:label xml:lang="fr">texte de témoin</rdfs:label>
-    <rdfs:label xml:lang="en">witness text</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#DiplomaticTranscription">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="de">diplomatische Umschrift</rdfs:label>
-    <rdfs:label xml:lang="en">diplomatic transcription</rdfs:label>
-    <rdfs:label xml:lang="it">trascrizione diplomatica</rdfs:label>
-    <rdfs:label xml:lang="fr">transcription diplomatique</rdfs:label>
-    <skos:note>Mostly done for autographs or juridical text; without interpretation.</skos:note>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition">
+    <rdfs:label xml:lang="it">edizione critica del testo</rdfs:label>
+    <rdfs:comment xml:lang="en">Edition to which a critical editor added evidence and interpretation of a text creation and historical transmission, using a critical apparatus, allowing readers to assess the editor's choice.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:label xml:lang="en">critical text edition</rdfs:label>
+    <rdfs:label xml:lang="fr">édition critique de texte</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="de">kritische Textedition</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Conjecture">
+    <rdfs:label xml:lang="it">congetturare</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">conjecture</rdfs:label>
+    <rdfs:label xml:lang="de">Konjektur</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Lemma"/>
+    <rdfs:comment xml:lang="en">Witness-independent lemma expressly proposed to be of interest but absent in the main text of an edition.</rdfs:comment>
+    <rdfs:label xml:lang="en">conjecture</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Reading">
+    <rdfs:label xml:lang="it">lezione</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CopiedText"/>
+    <rdfs:label xml:lang="la">lectio</rdfs:label>
+    <rdfs:label xml:lang="de">Lesung</rdfs:label>
+    <rdfs:label xml:lang="fr">lecture</rdfs:label>
+    <rdfs:label xml:lang="it">lettura</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Copy of one or more words or phrases of an original or witness.</rdfs:comment>
+    <rdfs:label xml:lang="en">reading</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#AgentEditor">
+    <rdfs:label xml:lang="it">editore accademico</rdfs:label>
+    <rdfs:label xml:lang="fr">éditeur scientifique</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#AgentEditor"/>
+    <rdfs:label xml:lang="en">scholarly editor</rdfs:label>
+    <rdfs:label xml:lang="de">wissenschaftliche Editor</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Role of a human agent—person or organization—editing a text expression scientifically.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#PageNumberIndicator">
+    <rdfs:label xml:lang="en">page number indicator</rdfs:label>
+    <rdfs:label xml:lang="de">Seitenummerindikator</rdfs:label>
+    <rdfs:label xml:lang="it">indicatore del numero di pagina</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialSymbol"/>
+    <rdfs:label xml:lang="fr">indicateur de numéro de page</rdfs:label>
+    <rdfs:comment xml:lang="en">Page indicator as number.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#ApparatusFontium">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
+    <rdfs:label xml:lang="en">apparatus fontium</rdfs:label>
+    <rdfs:label xml:lang="it">apparato fontium</rdfs:label>
+    <rdfs:label xml:lang="la">apparatus fontium</rdfs:label>
+    <rdfs:comment xml:lang="en">Editing apparatus containing references to one or more citations.</rdfs:comment>
+    <rdfs:label xml:lang="fr">apparat fontium</rdfs:label>
+    <rdfs:label xml:lang="de">Apparatus Fontium</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#DoctrinalApparatusEntry">
+    <rdfs:label xml:lang="it">iscrizione del apparato doctrino</rdfs:label>
+    <rdfs:label xml:lang="en">doctrinal apparatus entry</rdfs:label>
+    <rdfs:label xml:lang="fr">entrée d'apparat doctrine</rdfs:label>
+    <rdfs:comment xml:lang="en">Entry of a doctrinal apparatus.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="de">doktrinaler Apparateintrag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#DiplomaticTranscription">
     <rdfs:comment xml:lang="en">Transcription of a text with editorial symbols indicating visual textual properties to describe the textual state.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <skos:note>Mostly done for autographs or juridical text; without interpretation.</skos:note>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">transcription diplomatique</rdfs:label>
+    <rdfs:label xml:lang="de">diplomatische Umschrift</rdfs:label>
+    <rdfs:label xml:lang="it">trascrizione diplomatica</rdfs:label>
+    <rdfs:label xml:lang="en">diplomatic transcription</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#Page">
-    <rdfs:label xml:lang="de">wissenschaftliche Editiontextseite</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/text-structure#Page"/>
-    <rdfs:comment xml:lang="en">Page of a scholarly edition.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:label xml:lang="fr">page de texte d'une édition scientifique</rdfs:label>
-    <rdfs:label xml:lang="it">pagina di testo in edizione accademica</rdfs:label>
-    <rdfs:label xml:lang="en">scholarly edition text page</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Variant">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="fr">variante</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Reading"/>
+    <rdfs:comment xml:lang="en">Reading in a critical apparatus entry, judged by an editor to be unsatisfactory for linguistic and/or stylistic reasons, but of interest for establishing the text, and as such varying from what the editor has judged to be the lemma.</rdfs:comment>
+    <rdfs:label xml:lang="de">Variant</rdfs:label>
+    <rdfs:label xml:lang="it">variante</rdfs:label>
+    <rdfs:label xml:lang="en">variant</rdfs:label>
+    <skos:note xml:lang="en">Absence in a witness of respective part is commented.</skos:note>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalEditor">
-    <rdfs:label xml:lang="fr">éditeur critique</rdfs:label>
-    <rdfs:label xml:lang="de">kritische Editor</rdfs:label>
-    <rdfs:label xml:lang="it">editore critico</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/creating#PersonCreator"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#CriticalEditor">
     <rdfs:label xml:lang="en">critical editor</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/human#Scientist"/>
+    <rdfs:label xml:lang="de">kritische Editor</rdfs:label>
+    <rdfs:label xml:lang="fr">éditeur critique</rdfs:label>
+    <rdfs:label xml:lang="it">editore critico</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Scientist"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PersonCreator"/>
     <rdfs:comment xml:lang="en">Role of being a scholar editing a text expression in a critical scientific way.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#CriticalApparatusEntry">
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#StructureApparatusEntry">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
+    <rdfs:label xml:lang="en">structure apparatus entry</rdfs:label>
+    <rdfs:label xml:lang="it">iscrizione del apparato di struttura </rdfs:label>
+    <rdfs:label xml:lang="de">Textstruktur-Apparateintrag</rdfs:label>
+    <rdfs:comment xml:lang="en">Entry of text structure apparatus.</rdfs:comment>
+    <rdfs:label xml:lang="fr">entrée d'apparat de structure</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#PageIndicator">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialSymbol"/>
+    <rdfs:label xml:lang="de">Seiteindikator</rdfs:label>
+    <rdfs:label xml:lang="fr">indicateur de page</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Editorial symbol indicating where a document page starts.</rdfs:comment>
+    <rdfs:label xml:lang="it">indicatore di pagina</rdfs:label>
+    <rdfs:label xml:lang="en">page indicator</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#ApparatusEntry">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
+    <rdfs:label xml:lang="de">Edierungsapparateintrag</rdfs:label>
+    <rdfs:comment xml:lang="en">Entry of an editing apparatus.</rdfs:comment>
+    <rdfs:label xml:lang="fr">entrée d'apparat éditionel</rdfs:label>
+    <rdfs:label xml:lang="en">editing apparatus entry</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
+    <rdfs:label xml:lang="it">iscrizione del apparato</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#EditorialStructure">
+    <rdfs:comment xml:lang="en">Scientific text structure depending on editorial purpose, e.g. an editing apparatus.</rdfs:comment>
+    <rdfs:label xml:lang="it">struttura del testo editoriale</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#ScientificStructure"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="de">editorische Textstruktur</rdfs:label>
+    <rdfs:label xml:lang="fr">structure du texte éditorial</rdfs:label>
+    <rdfs:label xml:lang="en">editorial text structure</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#SiglumReference">
+    <rdfs:label xml:lang="fr">référence de siglum</rdfs:label>
+    <rdfs:comment xml:lang="en">Reference to a siglum as expression identifier.</rdfs:comment>
+    <rdfs:label xml:lang="en">siglum reference</rdfs:label>
+    <rdfs:label xml:lang="it">riferimento di sigla</rdfs:label>
+    <rdfs:label xml:lang="de">Siglum-Referenz</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/document#ExpressionReference"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#CriticalApparatus">
+    <rdfs:comment xml:lang="en">Editing apparatus to a critical text edition providing information of textual versions.</rdfs:comment>
+    <rdfs:label xml:lang="fr">apparat critique</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="la">apparatus criticus</rdfs:label>
+    <rdfs:label xml:lang="en">critical apparatus</rdfs:label>
+    <rdfs:label xml:lang="it">apparato critico</rdfs:label>
+    <rdfs:label xml:lang="de">textkritischer Apparat</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#Page">
+    <rdfs:label xml:lang="fr">page de texte d'une édition scientifique</rdfs:label>
+    <rdfs:label xml:lang="en">scholarly edition text page</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Page of a scholarly edition.</rdfs:comment>
+    <rdfs:label xml:lang="it">pagina di testo in edizione accademica</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Page"/>
+    <rdfs:label xml:lang="de">wissenschaftliche Editiontextseite</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#ApparatusFontiumEntry">
+    <rdfs:label xml:lang="fr">entrée d'apparat </rdfs:label>
+    <rdfs:label xml:lang="de">Apparatus Fontium-Eintrag</rdfs:label>
+    <rdfs:label xml:lang="en">apparatus fontium entry</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="it">iscrizione del apparato </rdfs:label>
+    <rdfs:comment xml:lang="en">Entry of an apparatus fontium.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#CriticalApparatusEntry">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="it">iscrizione del apparato critico</rdfs:label>
+    <rdfs:comment xml:lang="en">Entry of critical apparatus.</rdfs:comment>
+    <rdfs:label xml:lang="de">textkritischer Apparateintrag</rdfs:label>
     <rdfs:label xml:lang="en">critical apparatus entry</rdfs:label>
     <rdfs:label xml:lang="fr">entrée d'apparat critique</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#ApparatusEntry"/>
-    <rdfs:comment xml:lang="en">Entry of critical apparatus.</rdfs:comment>
-    <rdfs:label xml:lang="it">iscrizione del apparato critico</rdfs:label>
-    <rdfs:label xml:lang="de">textkritischer Apparateintrag</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://www.e-editiones.ch/ontology/scholarly-editing#StructureApparatus">
-    <rdfs:label xml:lang="it">apparato di struttura del testo</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#"/>
-    <rdfs:subClassOf rdf:resource="http://www.e-editiones.ch/ontology/scholarly-editing#Apparatus"/>
-    <rdfs:label xml:lang="de">Textstruktur-Apparat</rdfs:label>
-    <rdfs:label xml:lang="en">text structure apparatus</rdfs:label>
-    <rdfs:label xml:lang="fr">apparat de structure de texte</rdfs:label>
-    <rdfs:comment xml:lang="en">Editing apparatus to a critical text edition providing information of text structure.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#ColumnIndicator">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:label xml:lang="it">indicatore di colonna</rdfs:label>
+    <rdfs:comment xml:lang="en">Editorial symbol indicating a textual property of the original text.</rdfs:comment>
+    <rdfs:label xml:lang="fr">indicateur de colonne</rdfs:label>
+    <rdfs:label xml:lang="en">column indicator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialSymbol"/>
+    <rdfs:label xml:lang="de">Spalteindikator</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholarly-editing#StructureDescription">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#"/>
+    <rdfs:comment xml:lang="en">Description of a text structure in a structure apparatus.</rdfs:comment>
+    <rdfs:label xml:lang="it">descrizione della struttura del testo</rdfs:label>
+    <rdfs:label xml:lang="fr">description de la structure de texte</rdfs:label>
+    <rdfs:label xml:lang="de">Textstrukturdeskription</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#EditorialStructure"/>
+    <rdfs:label xml:lang="en">text structure description</rdfs:label>
   </rdfs:Class>
 </rdf:RDF>
