@@ -1,428 +1,366 @@
 [
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Identifier",
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasScientificEditor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text expression to a scholar who edited it scientifically."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textexpression hat wissenschaftliche Editor"
+      },
+      {
+        "@language": "fr",
+        "@value": "l'expression de texte a un éditeur savant"
+      },
+      {
+        "@language": "en",
+        "@value": "text expression has scholarly editor"
+      },
+      {
+        "@language": "it",
+        "@value": "l'espressione testuale ha un editore accademico"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub101bL326C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL326C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub101bL326C44"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL326C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/scholarly-editing#Editor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasTitleLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text expression to a title literal it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textexpression hat Titelliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "text expression has title literal"
+      },
+      {
+        "@language": "fr",
+        "@value": "l'expression de texte a littéral du titre"
+      },
+      {
+        "@language": "it",
+        "@value": "espressione di testo ha letterale del titolo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#expressionHasTitleLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#ExpressionPart",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Identifier of a text expression."
+        "@value": "Part of an individual text expression, considered as incomplete."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Textexpressionsidentifikator"
+        "@language": "fr",
+        "@value": "partie d'expression de texte"
       },
       {
         "@language": "en",
-        "@value": "text expression identifier"
+        "@value": "text expression part"
+      },
+      {
+        "@language": "de",
+        "@value": "Textexpressionsteil"
       },
       {
         "@language": "it",
-        "@value": "identificatore di espressioni di testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "identificateur d'expression de texte"
+        "@value": "parte di espressione di testo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#ExpressionIdentifier"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ExpressionPart"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#isDraftOf",
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasVulgarizer",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a draft to its text expression."
+        "@value": "Relating a text expression to a person who vulgarized it."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Draft"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "est un brouillon d'expression de texte"
-      },
-      {
-        "@language": "it",
-        "@value": "è una bozza di espressione di testo"
+        "@value": "l'expression de texte a vulgarisateur"
       },
       {
         "@language": "en",
-        "@value": "is draft of text expression"
+        "@value": "text expression has vulgarizer"
       },
       {
         "@language": "de",
-        "@value": "ist Entwurf einer Textexpression"
+        "@value": "Textexpression hat VulgarisatorIn"
+      },
+      {
+        "@language": "it",
+        "@value": "l'espressione del testo ha volgarizzatore"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "_:ub101bL358C13"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasExplicitLiteral",
+    "@id": "_:ub101bL358C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub101bL358C44"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL358C44",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@language": "en",
-        "@value": "Relating an untitled text expression to the literal of an end part thereof as identifier of the text."
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a littéral d'un explicite"
-      },
-      {
-        "@language": "it",
-        "@value": "ha letterale del esplicito"
-      },
-      {
-        "@language": "en",
-        "@value": "has explicit literal"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Explicitliteralz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#hasIdentifierLiteral"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasTextLiteral"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Vulgarizer"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#VulgarizedScientificExpression",
+    "@id": "http://e-editiones.ch/ontology/text-expression#ScientificExpression",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text expression with vulgarized scientific content."
+        "@value": "Text expression with scientific content."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "vulgarized scientific expression"
-      },
-      {
         "@language": "it",
-        "@value": "espressione scientifica volgarizzata"
+        "@value": "espressione scientifica"
       },
       {
         "@language": "fr",
-        "@value": "expression scientifique vulgarisée"
+        "@value": "expression scientifique"
       },
       {
         "@language": "de",
-        "@value": "vulgarisierte wissenschaftliche Expression"
+        "@value": "wissenschaftliche Expression"
+      },
+      {
+        "@language": "en",
+        "@value": "scientific expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#ScientificExpression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#IndividualExpression"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasSubtitleLiteral",
+    "@id": "http://e-editiones.ch/ontology/text-expression#IndividualExpression",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text expression to a subtitle literal it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@value": "Text as individual expression."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Textexpression hat Untertitelliterale"
+        "@language": "fr",
+        "@value": "expression de texte individuelle"
       },
       {
         "@language": "en",
-        "@value": "text expression has subtitle literal"
+        "@value": "individual text expression"
       },
       {
         "@language": "it",
-        "@value": "espressione di testo ha letterale del sottotitoli"
+        "@value": "espressione di testo individuale"
       },
-      {
-        "@language": "fr",
-        "@value": "l'expression de texte a littéral du sous-titre"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#expressionHasSubtitleLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasMainAuthor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a poly-author text expression to its main author."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#PolyAuthorExpression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "hat Hauptautor"
-      },
-      {
-        "@language": "en",
-        "@value": "has main author"
-      },
-      {
-        "@language": "it",
-        "@value": "ha l'autore principale"
-      },
-      {
-        "@language": "fr",
-        "@value": "a l'auteur principal"
+        "@value": "individuelle Textexpression"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub98bL348C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL348C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       },
       {
-        "@id": "_:ub98bL348C44"
+        "@id": "http://e-editiones.ch/ontology/document#IndividualExpression"
       }
     ]
   },
   {
-    "@id": "_:ub98bL348C44",
+    "@id": "http://e-editiones.ch/ontology/text-expression#Manual",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#MainAuthor"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasCriticalEditor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text expression to a person who edited it critically."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@value": "Text expression providing procedural infromation."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "it",
-        "@value": "espressione di testo ha editor critico"
-      },
-      {
-        "@language": "fr",
-        "@value": "l'expression de texte a un éditeur critique"
+        "@value": "manuale"
       },
       {
         "@language": "de",
-        "@value": "Textexpression hat kritische Editor"
+        "@value": "Handbuch"
       },
       {
         "@language": "en",
-        "@value": "text expression has critical editor"
+        "@value": "manual"
+      },
+      {
+        "@language": "fr",
+        "@value": "manuel"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub98bL332C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL332C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub98bL332C44"
+        "@id": "http://e-editiones.ch/ontology/text-expression#IndividualExpression"
       }
     ]
   },
   {
-    "@id": "_:ub98bL332C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/scholarly-editing#CriticalEditor"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasIdeationalExtentLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text expression to a description literal of its ideational extent."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat ideeller Umfangbeschreibungliterale"
-      },
-      {
-        "@language": "it",
-        "@value": "ha letterale della descrizione della estensione ideazionale"
-      },
-      {
-        "@language": "fr",
-        "@value": "a littéral d'une description d'une étendue idéationnelle"
-      },
-      {
-        "@language": "en",
-        "@value": "has ideational extent description literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasDescriptionLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression",
+    "@id": "http://e-editiones.ch/ontology/text-expression",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -461,6 +399,12 @@
         "@value": "An ontology about text expression"
       }
     ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-06-11"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
@@ -469,415 +413,136 @@
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasVulgarizer",
+    "@id": "http://e-editiones.ch/ontology/text-expression#Author",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person being responsible for the creation of a text expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "autore di testo"
+      },
+      {
+        "@language": "en",
+        "@value": "text author"
+      },
+      {
+        "@language": "fr",
+        "@value": "auteur du texte"
+      },
+      {
+        "@language": "de",
+        "@value": "Textautor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Author"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Often an author is also the creator of a text expression."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasAuthor",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text expression to a person who vulgarized it."
+        "@value": "Relating a text expression to a person who authored it."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "fr",
-        "@value": "l'expression de texte a vulgarisateur"
+        "@language": "de",
+        "@value": "Textexpression hat Autor"
       },
       {
-        "@language": "it",
-        "@value": "l'espressione del testo ha volgarizzatore"
+        "@language": "fr",
+        "@value": "l'expression de texte a auteur"
       },
       {
         "@language": "en",
-        "@value": "text expression has vulgarizer"
+        "@value": "text expression has author"
       },
       {
-        "@language": "de",
-        "@value": "Textexpression hat VulgarisatorIn"
+        "@language": "it",
+        "@value": "l'espressione di testo ha autore"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub98bL356C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL356C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub98bL356C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL356C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Vulgarizer"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#CoAuthor",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person being co-responsible for the creation of a text expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "KoauthorIn"
-      },
-      {
-        "@language": "it",
-        "@value": "coautore"
-      },
-      {
-        "@language": "fr",
-        "@value": "co-auteure"
-      },
-      {
-        "@language": "en",
-        "@value": "co-author"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Author"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#ManOfLetters",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a man devoted to literary activity."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Literat"
-      },
-      {
-        "@language": "en",
-        "@value": "man of letters"
-      },
-      {
-        "@language": "it",
-        "@value": "uomo di lettere"
-      },
-      {
-        "@language": "fr",
-        "@value": "homme de lettres"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#PersonRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasCommentator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text expression to a person who commented on it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "espressione di testo ha commentatore"
-      },
-      {
-        "@language": "de",
-        "@value": "Textexpression hat KommentatorIn"
-      },
-      {
-        "@language": "fr",
-        "@value": "l'expression de texte a un commentateur"
-      },
-      {
-        "@language": "en",
-        "@value": "text expression has commentator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub98bL316C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL316C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub98bL316C44"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL316C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Commentator"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Conclusion",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Concluding section of a text expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textkonklusion"
-      },
-      {
-        "@language": "it",
-        "@value": "conclusione del testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "conclusion du texte"
-      },
-      {
-        "@language": "en",
-        "@value": "text conclusion"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#ExpressionPart"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasTitleLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text expression to a title literal it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "text expression has title literal"
-      },
-      {
-        "@language": "fr",
-        "@value": "l'expression de texte a littéral du titre"
-      },
-      {
-        "@language": "de",
-        "@value": "Textexpression hat Titelliterale"
-      },
-      {
-        "@language": "it",
-        "@value": "espressione di testo ha letterale del titolo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        "@id": "_:ub101bL300C13"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#expressionHasTitleLiteral"
+        "@id": "http://e-editiones.ch/ontology/creating#hasAuthor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A text can have more than one author."
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#ExpressionPart",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Part of an individual text expression, considered as incomplete."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textexpressionsteil"
-      },
-      {
-        "@language": "fr",
-        "@value": "partie d'expression de texte"
-      },
-      {
-        "@language": "it",
-        "@value": "parte di espressione di testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text expression part"
-      }
-    ],
+    "@id": "_:ub101bL300C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/human#Person"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#ExpressionPart"
+        "@id": "_:ub101bL300C44"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Introduction",
+    "@id": "_:ub101bL300C44",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@language": "en",
-        "@value": "Beginning section of a text expression, usually written by the (main) author, stating e.g. the subject, purpose and limits of its main section; usually remaining unchanged."
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "introduction du texte"
-      },
-      {
-        "@language": "en",
-        "@value": "text introduction"
-      },
-      {
-        "@language": "de",
-        "@value": "Texteinleitung"
-      },
-      {
-        "@language": "it",
-        "@value": "introduzione al testo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://www.abc-clio.com/ODLIS/odlis_f.aspx"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#ExpressionPart"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Author"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasIdentifier",
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasIdentifier",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -889,12 +554,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -903,12 +568,12 @@
         "@value": "l'espressione di testo ha un identificatore"
       },
       {
-        "@language": "de",
-        "@value": "Textexpression hat Identifikator"
-      },
-      {
         "@language": "fr",
         "@value": "l'expression de texte a un identifiant"
+      },
+      {
+        "@language": "de",
+        "@value": "Textexpression hat Identifikator"
       },
       {
         "@language": "en",
@@ -917,12 +582,1033 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Identifier"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Identifier"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasIdentifierLiteral",
+    "@id": "http://e-editiones.ch/ontology/text-expression#Commentary",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text expression in the form of a set of comments as analysis, interpretation or explanation of something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "commentaire"
+      },
+      {
+        "@language": "it",
+        "@value": "commento"
+      },
+      {
+        "@language": "en",
+        "@value": "commentary"
+      },
+      {
+        "@language": "de",
+        "@value": "Kommentar"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#CoAuthor",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person being co-responsible for the creation of a text expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "KoauthorIn"
+      },
+      {
+        "@language": "fr",
+        "@value": "co-auteure"
+      },
+      {
+        "@language": "it",
+        "@value": "coautore"
+      },
+      {
+        "@language": "en",
+        "@value": "co-author"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Author"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#Diary",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text expression with a diary content and possibly structure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "expression del diario"
+      },
+      {
+        "@language": "fr",
+        "@value": "expression d'un journal"
+      },
+      {
+        "@language": "de",
+        "@value": "Tagebuch-Expression"
+      },
+      {
+        "@language": "en",
+        "@value": "diary expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#IndividualExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#Dictionary",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "List of brief explanatory entries for terms of a human natural language, belonging to a certain domain, providing their meaning, mostly ordered, e.g. alphabetically."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Wörterbuch"
+      },
+      {
+        "@language": "en",
+        "@value": "dictionary"
+      },
+      {
+        "@language": "fr",
+        "@value": "dictionnaire"
+      },
+      {
+        "@language": "it",
+        "@value": "dizionario"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://www.abc-clio.com/ODLIS/odlis_f.aspx"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#IndividualExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#SentenceExpression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text expression with sentence structure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Satz-Expression"
+      },
+      {
+        "@language": "fr",
+        "@value": "expression de phrases"
+      },
+      {
+        "@language": "it",
+        "@value": "espressione di frase"
+      },
+      {
+        "@language": "en",
+        "@value": "sentence expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#PolyAuthorExpression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text expression by different authors."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Mehrautorentextexpression"
+      },
+      {
+        "@language": "fr",
+        "@value": "expression de texte poly-auteur"
+      },
+      {
+        "@language": "en",
+        "@value": "poly-author text expression"
+      },
+      {
+        "@language": "it",
+        "@value": "espressione di testo poli autore"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/document#PolyAuthorExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#isDraftOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a draft to its text expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Draft"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è una bozza di espressione di testo"
+      },
+      {
+        "@language": "en",
+        "@value": "is draft of text expression"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un brouillon d'expression de texte"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Entwurf einer Textexpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#ManOfLetters",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a man devoted to literary activity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Literat"
+      },
+      {
+        "@language": "fr",
+        "@value": "homme de lettres"
+      },
+      {
+        "@language": "en",
+        "@value": "man of letters"
+      },
+      {
+        "@language": "it",
+        "@value": "uomo di lettere"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#WomanOfLetters",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a woman devoted to literary activity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Literatin"
+      },
+      {
+        "@language": "it",
+        "@value": "donna di lettere"
+      },
+      {
+        "@language": "en",
+        "@value": "woman of letters"
+      },
+      {
+        "@language": "fr",
+        "@value": "femme de lettres"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#MainAuthor",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person being the main responsible person for the creation of a text expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "main text author"
+      },
+      {
+        "@language": "de",
+        "@value": "Haupttextautor"
+      },
+      {
+        "@language": "it",
+        "@value": "autore di testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "auteur du texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Author"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasIncipitLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an untitled text expression to the literal of a beginning part thereof as identifier of the text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha letterale del inizio"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral d'un incipit"
+      },
+      {
+        "@language": "en",
+        "@value": "has incipit literal"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Incipitliterale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#hasIdentifierLiteral"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasTextLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#Commentator",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person commenting on a text expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "commentatore"
+      },
+      {
+        "@language": "fr",
+        "@value": "commentateur"
+      },
+      {
+        "@language": "en",
+        "@value": "commentator"
+      },
+      {
+        "@language": "de",
+        "@value": "KommentatorIn"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasCommentator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text expression to a person who commented on it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "text expression has commentator"
+      },
+      {
+        "@language": "it",
+        "@value": "espressione di testo ha commentatore"
+      },
+      {
+        "@language": "de",
+        "@value": "Textexpression hat KommentatorIn"
+      },
+      {
+        "@language": "fr",
+        "@value": "l'expression de texte a un commentateur"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub101bL318C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL318C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub101bL318C44"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL318C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Commentator"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#Introduction",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Beginning section of a text expression, usually written by the (main) author, stating e.g. the subject, purpose and limits of its main section; usually remaining unchanged."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Texteinleitung"
+      },
+      {
+        "@language": "en",
+        "@value": "text introduction"
+      },
+      {
+        "@language": "it",
+        "@value": "introduzione al testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "introduction du texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://www.abc-clio.com/ODLIS/odlis_f.aspx"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#ExpressionPart"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasExplicitLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an untitled text expression to the literal of an end part thereof as identifier of the text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Explicitliteralz"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral d'un explicite"
+      },
+      {
+        "@language": "it",
+        "@value": "ha letterale del esplicito"
+      },
+      {
+        "@language": "en",
+        "@value": "has explicit literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasTextLiteral"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#hasIdentifierLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#Body",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Main section of a text expression, e.g. including footnotes and illustrations but excluding the front matter and back matter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "text body"
+      },
+      {
+        "@language": "it",
+        "@value": "corpo del testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "corps du texte"
+      },
+      {
+        "@language": "de",
+        "@value": "Texthauptteil"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://www.abc-clio.com/ODLIS/odlis_f.aspx"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#ExpressionPart"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasMainAuthor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a poly-author text expression to its main author."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#PolyAuthorExpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has main author"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Hauptautor"
+      },
+      {
+        "@language": "fr",
+        "@value": "a l'auteur principal"
+      },
+      {
+        "@language": "it",
+        "@value": "ha l'autore principale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub101bL350C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL350C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub101bL350C44"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL350C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#MainAuthor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#isPartOfExpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text expression part to an expression it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#ExpressionPart"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Teil einer Textexpression"
+      },
+      {
+        "@language": "en",
+        "@value": "is part of text expression"
+      },
+      {
+        "@language": "fr",
+        "@value": "fait partie de l'expression de texte"
+      },
+      {
+        "@language": "it",
+        "@value": "fa parte dell'espressione del testo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#isArticleAbout",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an article to a subject it is about."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Article"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "est un article sur"
+      },
+      {
+        "@language": "en",
+        "@value": "is article about"
+      },
+      {
+        "@language": "it",
+        "@value": "è un articolo su"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Artikel über"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#informationHasSubject"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasIdeationalExtentLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text expression to a description literal of its ideational extent."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has ideational extent description literal"
+      },
+      {
+        "@language": "de",
+        "@value": "hat ideeller Umfangbeschreibungliterale"
+      },
+      {
+        "@language": "fr",
+        "@value": "a littéral d'une description d'une étendue idéationnelle"
+      },
+      {
+        "@language": "it",
+        "@value": "ha letterale della descrizione della estensione ideazionale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasDescriptionLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasCriticalEditor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text expression to a person who edited it critically."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textexpression hat kritische Editor"
+      },
+      {
+        "@language": "it",
+        "@value": "espressione di testo ha editor critico"
+      },
+      {
+        "@language": "en",
+        "@value": "text expression has critical editor"
+      },
+      {
+        "@language": "fr",
+        "@value": "l'expression de texte a un éditeur critique"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub101bL334C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL334C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub101bL334C44"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub101bL334C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/scholarly-editing#CriticalEditor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasIdentifierLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -934,12 +1620,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -967,109 +1653,59 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/concept#hasIdentifierLiteral"
+        "@id": "http://e-editiones.ch/ontology/concept#hasIdentifierLiteral"
       }
     ],
     "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
       {
         "@list": [
           {
-            "@id": "http://www.e-editiones.ch/ontology/text-expression#hasIdentifier"
+            "@id": "http://e-editiones.ch/ontology/text-expression#hasIdentifier"
           },
           {
-            "@id": "http://www.e-editiones.ch/ontology/concept#identifierHasLiteral"
+            "@id": "http://e-editiones.ch/ontology/concept#identifierHasLiteral"
           }
         ]
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#isPartOfExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text expression part to an expression it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#ExpressionPart"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is part of text expression"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Teil einer Textexpression"
-      },
-      {
-        "@language": "fr",
-        "@value": "fait partie de l'expression de texte"
-      },
-      {
-        "@language": "it",
-        "@value": "fa parte dell'espressione del testo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasIncipitLiteral",
+    "@id": "http://e-editiones.ch/ontology/text-expression#hasSubtitleLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating an untitled text expression to the literal of a beginning part thereof as identifier of the text."
+        "@value": "Relating a text expression to a subtitle literal it has."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "hat Incipitliterale"
-      },
-      {
-        "@language": "en",
-        "@value": "has incipit literal"
-      },
-      {
-        "@language": "fr",
-        "@value": "a littéral d'un incipit"
+        "@value": "Textexpression hat Untertitelliterale"
       },
       {
         "@language": "it",
-        "@value": "ha letterale del inizio"
+        "@value": "espressione di testo ha letterale del sottotitoli"
+      },
+      {
+        "@language": "en",
+        "@value": "text expression has subtitle literal"
+      },
+      {
+        "@language": "fr",
+        "@value": "l'expression de texte a littéral du sous-titre"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1079,888 +1715,105 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text#hasTextLiteral"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#hasIdentifierLiteral"
+        "@id": "http://e-editiones.ch/ontology/document#expressionHasSubtitleLiteral"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Manual",
+    "@id": "http://e-editiones.ch/ontology/text-expression#Draft",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text expression providing procedural infromation."
+        "@value": "Document draft as text expression."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "manual"
-      },
-      {
-        "@language": "de",
-        "@value": "Handbuch"
-      },
-      {
-        "@language": "it",
-        "@value": "manuale"
-      },
-      {
-        "@language": "fr",
-        "@value": "manuel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#IndividualExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Commentator",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person commenting on a text expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "commentator"
-      },
-      {
-        "@language": "fr",
-        "@value": "commentateur"
-      },
-      {
-        "@language": "it",
-        "@value": "commentatore"
-      },
-      {
-        "@language": "de",
-        "@value": "KommentatorIn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#PersonRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#DiaryEntry",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Periodical, usually daily description of a personal experience or observation written in a diary."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "it",
-        "@value": "iscrizione del diario"
-      },
-      {
-        "@language": "de",
-        "@value": "Tagebucheintrag"
-      },
-      {
-        "@language": "en",
-        "@value": "diary entry"
+        "@value": "bozza di espressione di testo"
       },
       {
         "@language": "fr",
-        "@value": "entrée du journal"
+        "@value": "brouillon d'expression de texte"
+      },
+      {
+        "@language": "de",
+        "@value": "Textexpressionentwurf"
+      },
+      {
+        "@language": "en",
+        "@value": "text expression draft"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/document#Draft"
       },
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Vulgarizer",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person vulgarizing a text expression, e.g. a scientific one, or creating one using vulgarizing terminology."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Text-VulgarisatorIn"
-      },
-      {
-        "@language": "it",
-        "@value": "volgarizzatore di testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text vulgarizer"
-      },
-      {
-        "@language": "fr",
-        "@value": "vulgarisat-eur/rice du texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Vulgarizer"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#IndividualExpression",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text as individual expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "individuelle Textexpression"
-      },
-      {
-        "@language": "en",
-        "@value": "individual text expression"
-      },
-      {
-        "@language": "it",
-        "@value": "espressione di testo individuale"
-      },
-      {
-        "@language": "fr",
-        "@value": "expression de texte individuelle"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#IndividualExpression"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Diary",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text expression with a diary content and possibly structure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "expression del diario"
-      },
-      {
-        "@language": "en",
-        "@value": "diary expression"
-      },
-      {
-        "@language": "de",
-        "@value": "Tagebuch-Expression"
-      },
-      {
-        "@language": "fr",
-        "@value": "expression d'un journal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#IndividualExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasAuthor",
+    "@id": "http://e-editiones.ch/ontology/text-expression#isEntryOfDiary",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text expression to a person who authored it."
+        "@value": "Relating a diary entry to its diary expression."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#DiaryEntry"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "it",
-        "@value": "l'espressione di testo ha autore"
-      },
-      {
-        "@language": "en",
-        "@value": "text expression has author"
+        "@value": "è la voce dell'espressione del diario"
       },
       {
         "@language": "fr",
-        "@value": "l'expression de texte a auteur"
+        "@value": "est l'entrée de l'expression du journal"
       },
       {
         "@language": "de",
-        "@value": "Textexpression hat Autor"
+        "@value": "ist Eingabe einer Tagebuch-Expression"
+      },
+      {
+        "@language": "en",
+        "@value": "is entry of diary expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub98bL298C13"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Diary"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/creating#hasAuthor"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A text can have more than one author."
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
       }
     ]
   },
   {
-    "@id": "_:ub98bL298C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub98bL298C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL298C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Author"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Commentary",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text expression in the form of a set of comments as analysis, interpretation or explanation of something."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "commento"
-      },
-      {
-        "@language": "fr",
-        "@value": "commentaire"
-      },
-      {
-        "@language": "en",
-        "@value": "commentary"
-      },
-      {
-        "@language": "de",
-        "@value": "Kommentar"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#MainAuthor",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person being the main responsible person for the creation of a text expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "auteur du texte"
-      },
-      {
-        "@language": "en",
-        "@value": "main text author"
-      },
-      {
-        "@language": "de",
-        "@value": "Haupttextautor"
-      },
-      {
-        "@language": "it",
-        "@value": "autore di testo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Author"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Body",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Main section of a text expression, e.g. including footnotes and illustrations but excluding the front matter and back matter."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Texthauptteil"
-      },
-      {
-        "@language": "it",
-        "@value": "corpo del testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "corps du texte"
-      },
-      {
-        "@language": "en",
-        "@value": "text body"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://www.abc-clio.com/ODLIS/odlis_f.aspx"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#ExpressionPart"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#hasScientificEditor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text expression to a scholar who edited it scientifically."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "l'espressione testuale ha un editore accademico"
-      },
-      {
-        "@language": "en",
-        "@value": "text expression has scholarly editor"
-      },
-      {
-        "@language": "de",
-        "@value": "Textexpression hat wissenschaftliche Editor"
-      },
-      {
-        "@language": "fr",
-        "@value": "l'expression de texte a un éditeur savant"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub98bL324C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL324C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub98bL324C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub98bL324C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/scholarly-editing#Editor"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#isArticleAbout",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an article to a subject it is about."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Article"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est un article sur"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Artikel über"
-      },
-      {
-        "@language": "it",
-        "@value": "è un articolo su"
-      },
-      {
-        "@language": "en",
-        "@value": "is article about"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#informationHasSubject"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Document expression as text."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "espressione testuale"
-      },
-      {
-        "@language": "en",
-        "@value": "text expression"
-      },
-      {
-        "@language": "fr",
-        "@value": "expression textuelle"
-      },
-      {
-        "@language": "de",
-        "@value": "Textexpression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/document#Expression"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text#Text"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#SentenceExpression",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text expression with sentence structure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "espressione di frase"
-      },
-      {
-        "@language": "fr",
-        "@value": "expression de phrases"
-      },
-      {
-        "@language": "de",
-        "@value": "Satz-Expression"
-      },
-      {
-        "@language": "en",
-        "@value": "sentence expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Biography",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text expression about a person's life."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Biographie"
-      },
-      {
-        "@language": "en",
-        "@value": "biography"
-      },
-      {
-        "@language": "it",
-        "@value": "biografia"
-      },
-      {
-        "@language": "fr",
-        "@value": "biographie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#IndividualExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Article",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text expression about a defined main subject."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "article"
-      },
-      {
-        "@language": "de",
-        "@value": "Artikel"
-      },
-      {
-        "@language": "en",
-        "@value": "article"
-      },
-      {
-        "@language": "it",
-        "@value": "articolo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#IndividualExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Dictionary",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "List of brief explanatory entries for terms of a human natural language, belonging to a certain domain, providing their meaning, mostly ordered, e.g. alphabetically."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "dictionnaire"
-      },
-      {
-        "@language": "de",
-        "@value": "Wörterbuch"
-      },
-      {
-        "@language": "it",
-        "@value": "dizionario"
-      },
-      {
-        "@language": "en",
-        "@value": "dictionary"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://www.abc-clio.com/ODLIS/odlis_f.aspx"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#IndividualExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Author",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person being responsible for the creation of a text expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "auteur du texte"
-      },
-      {
-        "@language": "de",
-        "@value": "Textautor"
-      },
-      {
-        "@language": "it",
-        "@value": "autore di testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text author"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/creating#Author"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Often an author is also the creator of a text expression."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#WomanOfLetters",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a woman devoted to literary activity."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "woman of letters"
-      },
-      {
-        "@language": "it",
-        "@value": "donna di lettere"
-      },
-      {
-        "@language": "de",
-        "@value": "Literatin"
-      },
-      {
-        "@language": "fr",
-        "@value": "femme de lettres"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/human#PersonRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#isCommentaryOn",
+    "@id": "http://e-editiones.ch/ontology/text-expression#isCommentaryOn",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -1972,26 +1825,26 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Commentary"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Commentary"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "is commentary on"
+        "@language": "fr",
+        "@value": "est un commentaire sur"
       },
       {
         "@language": "de",
         "@value": "ist Kommentar zu"
       },
       {
-        "@language": "fr",
-        "@value": "est un commentaire sur"
+        "@language": "en",
+        "@value": "is commentary on"
       },
       {
         "@language": "it",
@@ -2005,178 +1858,331 @@
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#Draft",
+    "@id": "http://e-editiones.ch/ontology/text-expression#Biography",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Document draft as text expression."
+        "@value": "Text expression about a person's life."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "text expression draft"
+        "@value": "biography"
       },
       {
         "@language": "de",
-        "@value": "Textexpressionentwurf"
-      },
-      {
-        "@language": "it",
-        "@value": "bozza di espressione di testo"
+        "@value": "Biographie"
       },
       {
         "@language": "fr",
-        "@value": "brouillon d'expression de texte"
+        "@value": "biographie"
+      },
+      {
+        "@language": "it",
+        "@value": "biografia"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#Draft"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#IndividualExpression"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#PolyAuthorExpression",
+    "@id": "http://e-editiones.ch/ontology/text-expression#Article",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text expression by different authors."
+        "@value": "Text expression about a defined main subject."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "fr",
-        "@value": "expression de texte poly-auteur"
-      },
-      {
         "@language": "de",
-        "@value": "Mehrautorentextexpression"
-      },
-      {
-        "@language": "it",
-        "@value": "espressione di testo poli autore"
+        "@value": "Artikel"
       },
       {
         "@language": "en",
-        "@value": "poly-author text expression"
+        "@value": "article"
+      },
+      {
+        "@language": "fr",
+        "@value": "article"
+      },
+      {
+        "@language": "it",
+        "@value": "articolo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/document#PolyAuthorExpression"
-      },
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#IndividualExpression"
       }
     ]
   },
   {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#isEntryOfDiary",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a diary entry to its diary expression."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#DiaryEntry"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "è la voce dell'espressione del diario"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Eingabe einer Tagebuch-Expression"
-      },
-      {
-        "@language": "en",
-        "@value": "is entry of diary expression"
-      },
-      {
-        "@language": "fr",
-        "@value": "est l'entrée de l'expression du journal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#Diary"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.e-editiones.ch/ontology/text-expression#ScientificExpression",
+    "@id": "http://e-editiones.ch/ontology/text-expression#Conclusion",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text expression with scientific content."
+        "@value": "Concluding section of a text expression."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#"
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "fr",
+        "@value": "conclusion du texte"
+      },
+      {
         "@language": "de",
-        "@value": "wissenschaftliche Expression"
+        "@value": "Textkonklusion"
       },
       {
         "@language": "it",
-        "@value": "espressione scientifica"
+        "@value": "conclusione del testo"
       },
       {
         "@language": "en",
-        "@value": "scientific expression"
-      },
-      {
-        "@language": "fr",
-        "@value": "expression scientifique"
+        "@value": "text conclusion"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.e-editiones.ch/ontology/text-expression#IndividualExpression"
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#ExpressionPart"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#VulgarizedScientificExpression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text expression with vulgarized scientific content."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "expression scientifique vulgarisée"
+      },
+      {
+        "@language": "de",
+        "@value": "vulgarisierte wissenschaftliche Expression"
+      },
+      {
+        "@language": "en",
+        "@value": "vulgarized scientific expression"
+      },
+      {
+        "@language": "it",
+        "@value": "espressione scientifica volgarizzata"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#ScientificExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#Expression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Document expression as text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "espressione testuale"
+      },
+      {
+        "@language": "de",
+        "@value": "Textexpression"
+      },
+      {
+        "@language": "fr",
+        "@value": "expression textuelle"
+      },
+      {
+        "@language": "en",
+        "@value": "text expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#Text"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#Identifier",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Identifier of a text expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "identificatore di espressioni di testo"
+      },
+      {
+        "@language": "de",
+        "@value": "Textexpressionsidentifikator"
+      },
+      {
+        "@language": "en",
+        "@value": "text expression identifier"
+      },
+      {
+        "@language": "fr",
+        "@value": "identificateur d'expression de texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ExpressionIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#Vulgarizer",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person vulgarizing a text expression, e.g. a scientific one, or creating one using vulgarizing terminology."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "text vulgarizer"
+      },
+      {
+        "@language": "it",
+        "@value": "volgarizzatore di testo"
+      },
+      {
+        "@language": "de",
+        "@value": "Text-VulgarisatorIn"
+      },
+      {
+        "@language": "fr",
+        "@value": "vulgarisat-eur/rice du texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Vulgarizer"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-expression#DiaryEntry",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Periodical, usually daily description of a personal experience or observation written in a diary."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "entrée du journal"
+      },
+      {
+        "@language": "de",
+        "@value": "Tagebucheintrag"
+      },
+      {
+        "@language": "it",
+        "@value": "iscrizione del diario"
+      },
+      {
+        "@language": "en",
+        "@value": "diary entry"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ]
   }

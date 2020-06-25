@@ -10,13 +10,13 @@
 	This work is licensed under the Creative Commons Attribution-ShareAlike License.
 	To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/
 	or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
-	License: http://rhizomik.net/redefer/rdf2html.xsl.rdf
 -->
 
 <xsl:stylesheet version="2.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#">
 	
 	<xsl:output media-type="text/xhtml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" method="html"/>
 	
@@ -32,12 +32,13 @@
 	</xsl:template>
 	
 	<xsl:template match="rdf:RDF">
+
 		<div class="rdf2html" xmlns="http://www.w3.org/1999/xhtml">
 			<!-- Generate the xmlns for RDFa from those in the RDF/XML and attach to div#rdf2html -->
-<!-- 			<xsl:variable name="namespaces">
+			<xsl:variable name="namespaces">
 				<xsl:for-each select="/rdf:RDF/namespace::*[name()!='xml' and name()!='xsd']">
 					<xsl:choose>
-						<!-/- The base NS in the output is XHTML so keep base NS in input RDF file with alias "base" -/->
+						<!-- The base NS in the output is XHTML so keep base NS in input RDF file with alias "base" -->
 						<xsl:when test="name()=''">
 							<xsl:element name="base:dummy-for-xmlns" namespace="{.}"/>
 						</xsl:when>
@@ -47,28 +48,89 @@
 					</xsl:choose>
 				</xsl:for-each>
 				<xsl:element name="xsd:dummy-for-xmlns" namespace="http://www.w3.org/2001/XMLSchema#"/>
-			</xsl:variable> -->
-<!-- 			<xsl:copy-of select="$namespaces/*/namespace::*"/> -->
-
+			</xsl:variable> 
+			<xsl:copy-of select="$namespaces/*/namespace::*"/>
 			<!-- If no RDF descriptions... -->
 			<xsl:if test="count(child::*)=0">
 				<p xmlns="http://www.w3.org/1999/xhtml">No data retrieved.</p>
 			</xsl:if>
 			<!-- If rdf:RDF has child elements, they are descriptions... -->
-			<xsl:for-each select="child::*">
+
+			<!-- Start with the owl:Ontology element -->
+			<xsl:for-each select="child::owl:Ontology">
 				<xsl:sort select="@rdf:about" order="ascending"/>
 				<xsl:call-template name="rdfDescription"/>
 			</xsl:for-each>
+		
+			<!-- Write Classes title if there are classes -->
+			<xsl:choose>
+				<xsl:when test="count(child::rdfs:Class)>0">
+					<h2>Classes</h2>
+				</xsl:when>
+			</xsl:choose>
+			<!-- All rdfs:Class elements -->
+			<xsl:for-each select="child::rdfs:Class">
+				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:call-template name="rdfDescription"/>
+			</xsl:for-each>
+		
+			<!-- Write Instances title if there are instances -->
+			<xsl:choose>
+				<xsl:when test="count(child::*[not(self::owl:Ontology) and not(self::rdfs:Class) and not(ends-with(name(), 'Property'))])>0">
+					<h2>Instances</h2>
+				</xsl:when>
+			</xsl:choose>
+		
+			<xsl:for-each select="child::*[not(self::owl:Ontology) and not(self::rdfs:Class) and not(ends-with(name(), 'Property'))]">
+				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:call-template name="rdfDescription"/>
+			</xsl:for-each>
+			
+			<!-- Write Properties title if there are properties -->
+			<xsl:choose>
+				<xsl:when test="count(child::*[ends-with(name(), 'Property') and starts-with(name(), 'owl:')])>0">
+					<h2>Properties</h2>
+				</xsl:when>
+			</xsl:choose>
+			
+			<xsl:for-each select="child::*[ends-with(name(), 'Property') and starts-with(name(), 'owl:')]">
+				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:call-template name="rdfDescription"/>
+			</xsl:for-each>
+			
+<!--			<xsl:for-each select="child::owl:ObjectProperty">
+				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:call-template name="rdfDescription"/>
+			</xsl:for-each>
+			<xsl:for-each select="child::owl:DatatypeProperty">
+				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:call-template name="rdfDescription"/>
+			</xsl:for-each>			
+			<xsl:for-each select="child::owl:FunctionalProperty">
+				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:call-template name="rdfDescription"/>
+			</xsl:for-each>				
+			<xsl:for-each select="child::owl:SymmetricProperty">
+				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:call-template name="rdfDescription"/>
+			</xsl:for-each>				
+			<xsl:for-each select="child::owl:TransitiveProperty">
+				<xsl:sort select="@rdf:about" order="ascending"/>
+				<xsl:call-template name="rdfDescription"/>
+			</xsl:for-each>-->
+			
 		</div>
 	</xsl:template>
   	
 	<xsl:template name="rdfDescription">
+		<!-- Get string after '#' in @rdf:about and use it as the local name -->
+		<xsl:param name="thisLocalName" select="substring-after(./[@rdf:about], '#')"/>
 		<xsl:choose>
 			<!-- RDF Description that contains more than labels (e.g. just type instead of rdf:Description) or is the only description -->
 			<xsl:when test="(count(following-sibling::*)=0 and count(preceding-sibling::*)=0) or not(local-name()='Description') or
 							*[not(name()='http://www.w3.org/2000/01/rdf-schema#') and not(local-name()='label')] | 
 							@*[not(namespace-uri()='http://www.w3.org/2000/01/rdf-schema#') and not(local-name()='label' or local-name()='about')]">
-				<div class="description" xmlns="http://www.w3.org/1999/xhtml">
+				<div id="{$thisLocalName}" class="description" xmlns="http://www.w3.org/1999/xhtml">
 				<table xmlns="http://www.w3.org/1999/xhtml">
 					<xsl:if test="@rdf:ID|@rdf:about">
 						<xsl:attribute name="about" >
@@ -83,51 +145,6 @@
 			</xsl:when>
 			<xsl:otherwise><!-- Ignore RDF Descriptions with just labels --></xsl:otherwise>
 		</xsl:choose>
-	</xsl:template>
-	
-	<xsl:template name="rdfDescriptionActions">
-		<xsl:variable name="resource">
-			<xsl:value-of select="@rdf:ID|@rdf:about|@rdf:aboutEach|@rdf:aboutEachPrefix|@rdf:bagID"/>
-		</xsl:variable>
-		<a class="generic" href="?query=DESCRIBE%20%3Fr%20WHERE%20%7B%20%3Fr%20%3Fp%20&lt;{$resource}&gt;%20%7D"
-			onclick="javascript:rhz.describeReferrers('{$resource}'); return false;"
-			title="Referrers for {$resource}" xmlns="http://www.w3.org/1999/xhtml">Referrers</a>
-
-		<!-- Specific actions depending on the resource properties... -->
-        <!-- lat/long or geo point, show in map -->
-        <xsl:if test="(*[(namespace-uri()='http://www.w3.org/2003/01/geo/wgs84_pos#') and (local-name()='lat')] and 
-            		   *[(namespace-uri()='http://www.w3.org/2003/01/geo/wgs84_pos#') and (local-name()='long')])
-            		  or (*[(namespace-uri()='http://www.georss.org/georss#') and (local-name()='point')])">
-			 -
-			<a class="specific" href="#"
-            	onclick="javascript:rhz.callServiceOnResource('Map', '/services/map/map.jsp', '{$resource}'); return false;"
-				title="Map {$resource}" xmlns="http://www.w3.org/1999/xhtml"> Map </a>
-  		</xsl:if>
-        <!-- dtsart and dtend, show in timeline -->
-        <xsl:if test="(*[(namespace-uri()='http://www.w3.org/2002/12/cal/icaltzd#') and (local-name()='dtend')] and 
-        			  *[(namespace-uri()='http://www.w3.org/2002/12/cal/icaltzd#') and (local-name()='dtstart')]) or
-        			  *[(namespace-uri()='http://purl.org/dc/elements/1.1/') and (local-name()='date')]">
-			 -
-			<a class="specific" href="#"
-            	onclick="javascript:rhz.callServiceOnResource('Timeline', '/services/timeline/timeline.jsp', '{$resource}'); return false;"
-				title="Timeline {$resource}" xmlns="http://www.w3.org/1999/xhtml"> Timeline </a>
-        </xsl:if>
-        <!-- resource of type s5t:Audio, show in player -->
-		<xsl:if test="*[(namespace-uri()='http://rhizomik.net/s5t/s5t.owl#')]">
-			<a class="specific" href="#"
-            	onclick="javascript:rhz.callServiceOnResource('Player', '/services/player/player.jsp', '{$resource}'); return false;"
-				title="Play {$resource}" xmlns="http://www.w3.org/1999/xhtml"> - Play </a>
-        </xsl:if>
-	</xsl:template>
-	
-	<!-- Proposed edition actions template that can be redefined by the client XSL -->
-	<xsl:template name="rdfDescriptionEdition">
-		<a class="action" href="javascript:rhz.editResourceDescription('{@rdf:ID|@rdf:about}')"
-			title="Edit description" xmlns="http://www.w3.org/1999/xhtml">edit</a> - 
-		<a class="action" href="javascript:rhz.newResourceDescription('{@rdf:ID|@rdf:about}')"
-			title="New description" xmlns="http://www.w3.org/1999/xhtml">new</a> -
-		<a class="action" href="javascript:rhz.deleteResourceDescription('{@rdf:ID|@rdf:about}')"
-			title="Delete description" xmlns="http://www.w3.org/1999/xhtml">del</a>
 	</xsl:template>
 	
 	<xsl:template name="embeddedRdfDescription">
@@ -462,6 +479,10 @@
 													<xsl:with-param name="property" select="local-name()"/>
 													<xsl:with-param name="value" select="."/>
 												</xsl:call-template>
+												<!-- Indicate langueage, if it's a rdfs:label -->
+												<xsl:if test="name() = 'rdfs:label'">
+													(<xsl:value-of select="@xml:lang"/>)
+												</xsl:if>
 											</div>
 											<xsl:call-template name="connector">
 												<xsl:with-param name="criteria" select="following-sibling::*[local-name()=$property-name and
@@ -496,6 +517,8 @@
 														<xsl:with-param name="property" select="local-name()"/>
 														<xsl:with-param name="value" select="."/>
 													</xsl:call-template>
+													<!-- indicate language other than English -->
+													(<xsl:value-of select="@xml:lang"/>)
 												</div>
 												<xsl:call-template name="connector">
 													<xsl:with-param name="criteria" select="following-sibling::*[local-name()=$property-name and
@@ -734,7 +757,6 @@
 			</xsl:choose>
 		</xsl:variable>
 
-		
 		<xsl:variable name="namespace">
 			<xsl:call-template name="get-ns">
 				<xsl:with-param name="uri" select="$uri-noslash"/>
@@ -747,7 +769,8 @@
 		</xsl:variable>		
 		
 		<xsl:choose>
-			<xsl:when test="//*[@rdf:about=$uri]/rdfs:label[contains(@xml:lang,$language)]">
+			
+       <!-- <xsl:when test="//*[@rdf:about=$uri]/rdfs:label[contains(@xml:lang,$language)]">
 				<xsl:value-of select="//*[@rdf:about=$uri]/rdfs:label[contains(@xml:lang,$language)]"/>
 			</xsl:when>
 			<xsl:when test="//*[@rdf:about=$uri]/rdfs:label[contains(@xml:lang,'en')]">
@@ -755,13 +778,38 @@
 			</xsl:when>
 			<xsl:when test="//*[@rdf:about=$uri]/rdfs:label">
 				<xsl:value-of select="//*[@rdf:about=$uri]/rdfs:label"/>
+			</xsl:when> -->
+
+			<xsl:when test="contains($uri, 'e-editiones') and contains($uri, '#') and not(ends-with($uri,'#'))">
+			<!-- http://e-editiones.ch/ontology/calendar#PiPaPo-->
+				<xsl:variable name="namespaceAlias">
+					<xsl:value-of select="substring-before(substring-after($uri, 'http://e-editiones.ch/ontology/'),'#')"/>
+				</xsl:variable>
+				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
 			</xsl:when>
+			<xsl:when test="contains($uri, 'e-editiones') and ends-with($uri,'#')">
+				<!-- http://e-editiones.ch/ontology/calendar#-->
+				<xsl:variable name="namespaceAlias">
+					<xsl:value-of select="substring-before(substring-after($uri, 'http://e-editiones.ch/ontology/'),'#')"/>
+				</xsl:variable>
+				<xsl:value-of select="$namespaceAlias"/>
+			</xsl:when>
+			<xsl:when test="contains($uri, 'e-editiones') and not(contains($uri, '#'))">
+				<!-- http://e-editiones.ch/ontology/calendar -->
+				<xsl:variable name="namespaceAlias">
+					<xsl:value-of select="substring-after($uri, 'http://e-editiones.ch/ontology/')"/>
+				</xsl:variable>
+				<xsl:value-of select="$namespaceAlias"/>
+			</xsl:when>
+			
+			
 			<xsl:when test="$namespaces='true' and namespace::*[.=$namespace and name()!='']">
 				<xsl:variable name="namespaceAlias">
 					<xsl:value-of select="name(namespace::*[.=$namespace and name()!=''])"/>
 				</xsl:variable>
 				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
 			</xsl:when>
+			
 			<xsl:otherwise>
 				<xsl:choose>
 					<xsl:when test="$namespaces='true' and $namespace = namespace::*[name()='']">
@@ -781,6 +829,7 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:otherwise>
+			
 		</xsl:choose>
 	</xsl:template>
 	
