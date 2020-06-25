@@ -1,540 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:dct="http://purl.org/dc/terms/"
-<<<<<<< HEAD
-  xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-=======
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:concept="http://e-editiones.ch/ontology/concept#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
->>>>>>> 2020-06
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:concept="http://e-editiones.ch/ontology/concept#"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-<<<<<<< HEAD
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#AbbreviationCommentary">
-    <rdfs:label xml:lang="la">abbreviatio</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as an abbreviation.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#CompiledHandwrittenCommentary">
+    <rdfs:label xml:lang="de">zusammengestellter handgeschriebener Kommentar</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="de">Kurzfassung-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#AbbreviationCommentary"/>
-    <rdfs:label xml:lang="en">abbreviation commentary</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#Scholastic">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Person"/>
-    <rdfs:label xml:lang="de">DRCS ScholastikerIn</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Scholastic"/>
-    <rdfs:comment xml:lang="en">Scholastic as subject in the scientific study of Commentaries on Peter Lombard’s Sentences.</rdfs:comment>
-    <rdfs:label xml:lang="en">DRCS scholastic</rdfs:label>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCommentaryDescriptionLiteral">
-    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to a Stegmüller's description literal thereof.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="en">has Stegmüller's commentary description literal</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#CompiledPrintedCommentary">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CompiledText"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="de">zusammengestellter gedruckter Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as compiled handwritten text.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">compiled handwritten commentary</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#CompiledPrintedCommentary">
     <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as compiled printed text.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CompiledText"/>
     <rdfs:label xml:lang="en">compiled printed commentary</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TableCommentary">
-    <rdfs:label xml:lang="de">Tabelle-Kommentar</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing a table.</rdfs:comment>
-    <rdfs:label xml:lang="en">table commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#TableCommentary"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="de">zusammengestellter gedruckter Kommentar</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LiteralExpositionCommentary">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as a literal exposition.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LiteralExpositionCommentary"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#GlossCommentary">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="de">wörtliche Auslegung-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">literal exposition commentary</rdfs:label>
-  </rdfs:Class>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/drcs">
-    <dct:title xml:lang="en">An ontology for the Digital Repertory of Commentaries on Peter Lombard’s Sentences</dct:title>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:contributor xml:lang="en">Gabriel Müller, Faculty of Theology, University of Basel, Switzerland</dct:contributor>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:contributor xml:lang="en">Prof. Dr. Ueli Zahnd, Institut D'histoire De La Réformation, University of Geneva, Switzerland</dct:contributor>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <rdfs:seeAlso rdf:resource="https://de.wikipedia.org/wiki/Friedrich_Stegmüller"/>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, NIE, University of Basel, Switzerland</dct:creator>
-    <dct:description xml:lang="en">Formal description of specific concepts in the scientific study of Commentaries on Peter Lombard's Sentences, as in the Digital Repertory of Commentaries on Peter Lombard’s Sentences (DRCS).</dct:description>
-  </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#EditedCommentary">
-    <rdfs:label xml:lang="de">edierter Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">edited commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as edition.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing glosses.</rdfs:comment>
+    <rdfs:label xml:lang="de">Glosse-Kommentar</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LecturaCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LecturaCommentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="en">lectura commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as presented by its author in a lecture.</rdfs:comment>
-    <rdfs:label xml:lang="de">Lectura-Kommentar</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ConclusioCommentary">
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing conclusions.</rdfs:comment>
-    <rdfs:label xml:lang="de">Conclusio-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ConclusioCommentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="en">conclusio commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#SyllogismusCommentary">
-    <rdfs:label xml:lang="la">syllogismus</rdfs:label>
-    <rdfs:label xml:lang="en">syllogismus commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing syllogisms.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="de">Syllogismus-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#SyllogismusCommentary"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#HandwrittenCommentary">
-    <rdfs:label xml:lang="de">handgeschriebener Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as handwritten text.</rdfs:comment>
-    <rdfs:label xml:lang="en">handwritten commentary</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#VerseCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="de">Vers-Kommentar</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing verses.</rdfs:comment>
-    <rdfs:label xml:lang="en">verse commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#VerseCommentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TranscribedCommentary">
-    <rdfs:label xml:lang="de">transkribierter Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as handwritten transcribed text.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
-    <rdfs:label xml:lang="en">transcribed commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCodeValue">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCodeValue"/>
-    <rdfs:label xml:lang="en">has Stegmüller's code value</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <skos:note xml:lang="en">E.g. drcs-pd:commentary-1 drcs:hasStegmuellerCodeValue "x"^^drcs:stegmuellerDatatype]</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:range>
-      <rdfs:Datatype rdf:about="http://e-editiones.ch/ontology/drcs#stegmuellerDatatype">
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-        <rdfs:comment xml:lang="en">Datatype to type a Stegmüller's code.</rdfs:comment>
-        <rdfs:label xml:lang="en">Stegmüller-datatype</rdfs:label>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to its Stegmüller's code value.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TranslatedCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#PersonTranslation"/>
-    <rdfs:label xml:lang="en">translated commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as translation.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="de">übersetzter Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">gloss commentary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#GlossCommentary"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#PrintedCommentary">
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as printed text.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
-    <rdfs:label xml:lang="de">gedruckter Kommentar</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
     <rdfs:label xml:lang="en">printed commentary</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="de">gedruckter Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as printed text.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TranslatedCommentary">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:label xml:lang="de">übersetzter Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as translation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#PersonTranslation"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">translated commentary</rdfs:label>
+  </rdfs:Class>
+  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCode">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:label xml:lang="en">has Stegmüller's code</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCode"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/drcs#StegmuellerCode"/>
+    <skos:note xml:lang="en">E.g. drcs-pd:commentary-1 drcs:hasStegmuellerCode [concept:codeHasSystem drcs:stegmuellerSystem; concept:codeHasValue "x"^^drcs:stegmuellerDatatype]</skos:note>
+    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to its Stegmüller's code.</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/drcs">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
+    <dct:description xml:lang="en">Formal description of specific concepts in the scientific study of Commentaries on Peter Lombard's Sentences, as in the Digital Repertory of Commentaries on Peter Lombard’s Sentences (DRCS).</dct:description>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:contributor xml:lang="en">Prof. Dr. Ueli Zahnd, Institut D'histoire De La Réformation, University of Geneva, Switzerland</dct:contributor>
+    <rdfs:seeAlso rdf:resource="https://de.wikipedia.org/wiki/Friedrich_Stegmüller"/>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:contributor xml:lang="en">Gabriel Müller, Faculty of Theology, University of Basel, Switzerland</dct:contributor>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, NIE, University of Basel, Switzerland</dct:creator>
+    <dct:title xml:lang="en">An ontology for the Digital Repertory of Commentaries on Peter Lombard’s Sentences</dct:title>
+  </owl:Ontology>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCommentaryDescriptionLiteral">
+    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to a Stegmüller's description literal thereof.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:label xml:lang="en">has Stegmüller's commentary description literal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerPersonDescriptionLiteral">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">has Stegmüller's person description literal</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#hasDescriptionLiteral"/>
+    <rdfs:comment xml:lang="en">Relating a person to a Stegmüller's description literal thereof.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#VerseCommentary">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#VerseCommentary"/>
+    <rdfs:label xml:lang="de">Vers-Kommentar</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:label xml:lang="en">verse commentary</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing verses.</rdfs:comment>
   </rdfs:Class>
   <concept:CodingSystem rdf:about="http://e-editiones.ch/ontology/drcs#stegmuellerSystem">
-    <rdfs:comment xml:lang="en">The Stegmüller-system for coding a commentary on Petrus Lombardus' Sentences.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
     <rdfs:label xml:lang="en">Stegmüller-system</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:comment xml:lang="en">The Stegmüller-system for coding a commentary on Petrus Lombardus' Sentences.</rdfs:comment>
   </concept:CodingSystem>
-  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCode">
-    <skos:note xml:lang="en">E.g. drcs-pd:commentary-1 drcs:hasStegmuellerCode [concept:codeHasSystem drcs:stegmuellerSystem; concept:codeHasValue "x"^^drcs:stegmuellerDatatype]</skos:note>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCode"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/drcs#StegmuellerCode"/>
-    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to its Stegmüller's code.</rdfs:comment>
-    <rdfs:label xml:lang="en">has Stegmüller's code</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-  </owl:FunctionalProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#QuaestioCommentary">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing questions.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#QuaestioCommentary"/>
-    <rdfs:label xml:lang="en">quaestio commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Quaestio-Kommentar</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#HandwrittenCommentary">
+    <rdfs:label xml:lang="en">handwritten commentary</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerPersonDescriptionLiteral">
-    <rdfs:label xml:lang="en">has Stegmüller's person description literal</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#hasDescriptionLiteral"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Person"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Relating a person to a Stegmüller's description literal thereof.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#OrdinatioCommentary">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="en">ordinatio commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Ordinatio-Kommentar</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as composed for publication.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LecturaRevisaCommentary">
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as revised by its author after its presentation in a lecture.</rdfs:comment>
-    <rdfs:label xml:lang="en">lectura revisa commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="de">Lectura Revisa-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LecturaRevisaCommentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#GlossCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing glosses.</rdfs:comment>
-    <rdfs:label xml:lang="en">gloss commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#GlossCommentary"/>
-    <rdfs:label xml:lang="de">Glosse-Kommentar</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ParaphraseCommentary">
-    <rdfs:label xml:lang="de">Paraphrase-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">paraphrase commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as a paraphrase.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ParaphraseCommentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#CompiledHandwrittenCommentary">
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as compiled handwritten text.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as handwritten text.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
+    <rdfs:label xml:lang="de">handgeschriebener Kommentar</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="en">compiled handwritten commentary</rdfs:label>
-    <rdfs:label xml:lang="de">zusammengestellter handgeschriebener Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CompiledText"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ReportatioApprobataCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#ReportatioCommentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioApprobataCommentary"/>
-    <rdfs:label xml:lang="de">Reportatio Approbata-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">reportatio approbata commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as recorded by an auditor, e.g. a student, in a lecture, and approved by the lecturer or author.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#Person">
-    <rdfs:label xml:lang="de">DRCS Person</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/catholic-orders#Person"/>
-    <rdfs:label xml:lang="fr">personne de DRCS</rdfs:label>
-=======
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LiteralExpositionCommentary">
-    <rdfs:label xml:lang="de">wörtliche Auslegung-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">literal exposition commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LiteralExpositionCommentary"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as a literal exposition.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#CompiledPrintedCommentary">
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as compiled printed text.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
-    <rdfs:label xml:lang="de">zusammengestellter gedruckter Kommentar</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="en">compiled printed commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CompiledText"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#AbbreviationCommentary">
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as an abbreviation.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="la">abbreviatio</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#AbbreviationCommentary"/>
-    <rdfs:label xml:lang="en">abbreviation commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Kurzfassung-Kommentar</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ConclusioCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ConclusioCommentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="en">conclusio commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing conclusions.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="de">Conclusio-Kommentar</rdfs:label>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerPersonDescriptionLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="en">has Stegmüller's person description literal</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:comment xml:lang="en">Relating a person to a Stegmüller's description literal thereof.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#hasDescriptionLiteral"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TableCommentary">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#TableCommentary"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing a table.</rdfs:comment>
-    <rdfs:label xml:lang="en">table commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Tabelle-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#GlossCommentary">
-    <rdfs:label xml:lang="de">Glosse-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">gloss commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing glosses.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#GlossCommentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCodeValue">
-    <rdfs:label xml:lang="en">has Stegmüller's code value</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/drcs#stegmuellerDatatype"/>
-    <skos:note xml:lang="en">E.g. drcs-pd:commentary-1 drcs:hasStegmuellerCodeValue "x"^^drcs:stegmuellerDatatype]</skos:note>
-    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to its Stegmüller's code value.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCodeValue"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#VerseCommentary">
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing verses.</rdfs:comment>
-    <rdfs:label xml:lang="de">Vers-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#VerseCommentary"/>
-    <rdfs:label xml:lang="en">verse commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#OrdinatioCommentary">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as composed for publication.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary"/>
-    <rdfs:label xml:lang="en">ordinatio commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Ordinatio-Kommentar</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ParaphraseCommentary">
-    <rdfs:label xml:lang="en">paraphrase commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as a paraphrase.</rdfs:comment>
-    <rdfs:label xml:lang="de">Paraphrase-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ParaphraseCommentary"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#Scholastic">
     <rdfs:label xml:lang="de">DRCS ScholastikerIn</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Scholastic"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Scholastic as subject in the scientific study of Commentaries on Peter Lombard’s Sentences.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Person"/>
     <rdfs:label xml:lang="en">DRCS scholastic</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Scholastic"/>
+    <rdfs:comment xml:lang="en">Scholastic as subject in the scientific study of Commentaries on Peter Lombard’s Sentences.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#SyllogismusCommentary">
-    <rdfs:label xml:lang="en">syllogismus commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing syllogisms.</rdfs:comment>
-    <rdfs:label xml:lang="de">Syllogismus-Kommentar</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LecturaRevisaCommentary">
+    <rdfs:label xml:lang="de">Lectura Revisa-Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">lectura revisa commentary</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LecturaRevisaCommentary"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="la">syllogismus</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#SyllogismusCommentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#HandwrittenCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
-    <rdfs:label xml:lang="de">handgeschriebener Kommentar</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as handwritten text.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="en">handwritten commentary</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#CompiledHandwrittenCommentary">
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as compiled handwritten text.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CompiledText"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="de">zusammengestellter handgeschriebener Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">compiled handwritten commentary</rdfs:label>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCommentaryDescriptionLiteral">
-    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to a Stegmüller's description literal thereof.</rdfs:comment>
-    <rdfs:label xml:lang="en">has Stegmüller's commentary description literal</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ReportatioApprobataCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#ReportatioCommentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioApprobataCommentary"/>
-    <rdfs:label xml:lang="en">reportatio approbata commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Reportatio Approbata-Kommentar</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as recorded by an auditor, e.g. a student, in a lecture, and approved by the lecturer or author.</rdfs:comment>
-  </rdfs:Class>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/drcs">
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:contributor xml:lang="en">Prof. Dr. Ueli Zahnd, Institut D'histoire De La Réformation, University of Geneva, Switzerland</dct:contributor>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <rdfs:seeAlso rdf:resource="https://de.wikipedia.org/wiki/Friedrich_Stegmüller"/>
-    <dct:contributor xml:lang="en">Gabriel Müller, Faculty of Theology, University of Basel, Switzerland</dct:contributor>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:description xml:lang="en">Formal description of specific concepts in the scientific study of Commentaries on Peter Lombard's Sentences, as in the Digital Repertory of Commentaries on Peter Lombard’s Sentences (DRCS).</dct:description>
-    <dct:title xml:lang="en">An ontology for the Digital Repertory of Commentaries on Peter Lombard’s Sentences</dct:title>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, NIE, University of Basel, Switzerland</dct:creator>
-  </owl:Ontology>
-  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCode">
-    <rdfs:label xml:lang="en">has Stegmüller's code</rdfs:label>
-    <skos:note xml:lang="en">E.g. drcs-pd:commentary-1 drcs:hasStegmuellerCode [concept:codeHasSystem drcs:stegmuellerSystem; concept:codeHasValue "x"^^drcs:stegmuellerDatatype]</skos:note>
-    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to its Stegmüller's code.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCode"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/drcs#StegmuellerCode"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-  </owl:FunctionalProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TranscribedCommentary">
-    <rdfs:label xml:lang="de">transkribierter Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as handwritten transcribed text.</rdfs:comment>
-    <rdfs:label xml:lang="en">transcribed commentary</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LecturaCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LecturaCommentary"/>
-    <rdfs:label xml:lang="de">Lectura-Kommentar</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as presented by its author in a lecture.</rdfs:comment>
-    <rdfs:label xml:lang="en">lectura commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as revised by its author after its presentation in a lecture.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#QuaestioCommentary">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#QuaestioCommentary"/>
     <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing questions.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
     <rdfs:label xml:lang="en">quaestio commentary</rdfs:label>
     <rdfs:label xml:lang="de">Quaestio-Kommentar</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#QuaestioCommentary"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#SyllogismusCommentary">
+    <rdfs:label xml:lang="de">Syllogismus-Kommentar</rdfs:label>
+    <rdfs:label xml:lang="la">syllogismus</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing syllogisms.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#SyllogismusCommentary"/>
+    <rdfs:label xml:lang="en">syllogismus commentary</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/drcs#hasStegmuellerCodeValue">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCodeValue"/>
+    <rdfs:comment xml:lang="en">Relating a commentary on Petrus Lombardus' Sentences to its Stegmüller's code value.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">has Stegmüller's code value</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype rdf:about="http://e-editiones.ch/ontology/drcs#stegmuellerDatatype">
+        <rdfs:label xml:lang="en">Stegmüller-datatype</rdfs:label>
+        <rdfs:comment xml:lang="en">Datatype to type a Stegmüller's code.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <skos:note xml:lang="en">E.g. drcs-pd:commentary-1 drcs:hasStegmuellerCodeValue "x"^^drcs:stegmuellerDatatype]</skos:note>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#OrdinatioCommentary">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="de">Ordinatio-Kommentar</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as composed for publication.</rdfs:comment>
+    <rdfs:label xml:lang="en">ordinatio commentary</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TableCommentary">
+    <rdfs:label xml:lang="de">Tabelle-Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">table commentary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#TableCommentary"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing a table.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TranscribedCommentary">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
+    <rdfs:label xml:lang="de">transkribierter Kommentar</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">transcribed commentary</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as handwritten transcribed text.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ConclusioCommentary">
+    <rdfs:label xml:lang="de">Conclusio-Kommentar</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ConclusioCommentary"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">conclusio commentary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, containing conclusions.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ReportatioApprobataCommentary">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioApprobataCommentary"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#ReportatioCommentary"/>
+    <rdfs:label xml:lang="de">Reportatio Approbata-Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as recorded by an auditor, e.g. a student, in a lecture, and approved by the lecturer or author.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">reportatio approbata commentary</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LecturaCommentary">
+    <rdfs:label xml:lang="en">lectura commentary</rdfs:label>
+    <rdfs:label xml:lang="de">Lectura-Kommentar</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as presented by its author in a lecture.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LecturaCommentary"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#EditedCommentary">
     <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as edition.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
-    <rdfs:label xml:lang="en">edited commentary</rdfs:label>
     <rdfs:label xml:lang="de">edierter Kommentar</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#PrintedCommentary">
-    <rdfs:label xml:lang="de">gedruckter Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">printed commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as printed text.</rdfs:comment>
+    <rdfs:label xml:lang="en">edited commentary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#TranslatedCommentary">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LiteralExpositionCommentary">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:label xml:lang="de">übersetzter Kommentar</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="en">translated commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as translation.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/language#PersonTranslation"/>
+    <rdfs:label xml:lang="en">literal exposition commentary</rdfs:label>
+    <rdfs:label xml:lang="de">wörtliche Auslegung-Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as a literal exposition.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LiteralExpositionCommentary"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#LecturaRevisaCommentary">
-    <rdfs:label xml:lang="de">Lectura Revisa-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#LecturaRevisaCommentary"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#AbbreviationCommentary">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">abbreviation commentary</rdfs:label>
+    <rdfs:label xml:lang="la">abbreviatio</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#AbbreviationCommentary"/>
+    <rdfs:label xml:lang="de">Kurzfassung-Kommentar</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as revised by its author after its presentation in a lecture.</rdfs:comment>
-    <rdfs:label xml:lang="en">lectura revisa commentary</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as an abbreviation.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#stegmuellerSystem">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ParaphraseCommentary">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdf:type rdf:resource="http://e-editiones.ch/ontology/concept#CodingSystem"/>
-    <rdfs:label xml:lang="en">Stegmüller-system</rdfs:label>
-    <rdfs:comment xml:lang="en">The Stegmüller-system for coding a commentary on Petrus Lombardus' Sentences.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ParaphraseCommentary"/>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as a paraphrase.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:label xml:lang="de">Paraphrase-Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">paraphrase commentary</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#Person">
     <rdfs:label xml:lang="de">DRCS Person</rdfs:label>
-    <rdfs:label xml:lang="fr">personne de DRCS</rdfs:label>
-    <rdfs:label xml:lang="it">persona di DRCS</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/catholic-orders#Person"/>
->>>>>>> 2020-06
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
     <rdfs:label xml:lang="en">DRCS person</rdfs:label>
-    <rdfs:label xml:lang="it">persona di DRCS</rdfs:label>
     <rdfs:comment xml:lang="en">Person as subject in the scientific study of Commentaries on Peter Lombard’s Sentences.</rdfs:comment>
-  </rdfs:Class>
-<<<<<<< HEAD
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ReportatioCommentary">
-    <rdfs:label xml:lang="de">Reportatio-Kommentar</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/catholic-orders#Person"/>
+    <rdfs:label xml:lang="fr">personne de DRCS</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as recorded by an auditor, e.g. a student, in a lecture.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary"/>
-=======
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#Commentary">
-    <rdfs:label xml:lang="en">commentary</rdfs:label>
-    <rdfs:label xml:lang="la">commentarius</rdfs:label>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="de">Kommentar</rdfs:label>
+    <rdfs:label xml:lang="it">persona di DRCS</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#ReportatioCommentary">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as recorded by an auditor, e.g. a student, in a lecture.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary"/>
-    <rdfs:label xml:lang="de">Reportatio-Kommentar</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
->>>>>>> 2020-06
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary"/>
     <rdfs:label xml:lang="en">reportatio commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/drcs#Commentary"/>
+    <rdfs:label xml:lang="de">Reportatio-Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences, as recorded by an auditor, e.g. a student, in a lecture.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#Commentary">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
+    <rdfs:label xml:lang="en">commentary</rdfs:label>
+    <rdfs:label xml:lang="de">Kommentar</rdfs:label>
     <rdfs:label xml:lang="la">commentarius</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
     <rdfs:comment xml:lang="en">Commentary on Peter Lombard’s Sentences.</rdfs:comment>
-    <rdfs:label xml:lang="en">commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Kommentar</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#StegmuellerCode">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:comment xml:lang="en">Identifier belonging to the Stegmüller-system.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
     <rdfs:label xml:lang="de">Stegmueller-Kode</rdfs:label>
-    <rdfs:label xml:lang="en">Stegmueller code</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/drcs#StegmuellerCode">
     <rdfs:comment xml:lang="en">Identifier belonging to the Stegmüller-system.</rdfs:comment>
     <rdfs:label xml:lang="en">Stegmueller code</rdfs:label>
-    <rdfs:label xml:lang="de">Stegmueller-Kode</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
   </rdfs:Class>
-  <rdfs:Datatype rdf:about="http://e-editiones.ch/ontology/drcs#stegmuellerDatatype">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/drcs#"/>
-    <rdfs:label xml:lang="en">Stegmüller-datatype</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:comment xml:lang="en">Datatype to type a Stegmüller's code.</rdfs:comment>
-  </rdfs:Datatype>
 </rdf:RDF>
