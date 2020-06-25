@@ -88,9 +88,9 @@ To convert turtle files to the needed formats:
 
 The static website will be made available as a Docker container running an [NGINX][nginx] web server with the website on it. 
 
-To dockerize the website, run ``docker build -t e-editiones .``
+To dockerize the website, run ``docker build -t nieine/e-editiones .``
 
-To run the container locally, run ``docker run -p 80:80 e-editiones`` and visit http://localhost.
+To run the container locally, run ``docker run -p 80:80 nieine/e-editiones`` and visit http://localhost.
 
 #### NGINX Configuration
 
