@@ -17,7 +17,7 @@ All these dependencies represent a major challenge and, initially, a substantial
 
   
 To enable data expression in this new format, a series of ontologies are created, based on those standards.  
-These semantic models adhere to the [model theory of W3C RDF, RDFS](https://www.w3.org/TR/rdf-mt/), and [OWL Full](https://www.w3.org/TR/owl-semantics/), and are declared in [Turtle syntax](https://www.w3.org/TR/turtle/). They are directly accessable in the [ontology library](http://e-editiones.ch/ontology-library).  
+These semantic models adhere to the [model theory of W3C RDF, RDFS](https://www.w3.org/TR/rdf-mt/), and [OWL Full](https://www.w3.org/TR/owl-semantics/), and are declared in [Turtle syntax](https://www.w3.org/TR/turtle/). They are directly accessable in the [ontology library](/ontology).  
 Whenever possible [ontologies developed by others (external)](https://github.com/nie-ine/Ontologies/wiki/1.-Introduction-to-Semantic-Web-technology#other-ontologies-used-in-humanities-and-publishing) are used to base on. Local copies of such ontologies, when not available in Turtle or RDF-XML, are in the [Other-ontologies](https://github.com/nie-ine/Ontologies/tree/master/Other-ontologies) folder.  
 NIE-ontologies are highly interdependent and represent a networked collection of namespaces, rather than a strongly hierarchical pyramidal structure. They differ quite in size, granularity and specificity. A basic approach is to create a namespace that can be extended easily. Rarely ontological elements will be deprecated.  
 All the used ontologies are referenced in a prefix header in the Turtle files.  
