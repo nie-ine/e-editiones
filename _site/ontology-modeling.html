@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="e-editiones" />
+
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/about">About</a>
+          <a class="page-link" href="/semantic-web-technology">Semantic Web Technology</a>
+          <a class="page-link" href="/ontology-modeling">Ontology Modeling</a>
+          <a class="page-link" href="/ontologies">Ontologies</a>
+          <a class="page-link" href="/n3-rule-based-machine-reasoning">N3-rule-based Machine Reasoning</a>
+          <a class="page-link" href="/two-step-formalization">Two-step Formalization</a>
+          <a class="page-link" href="/literature">Literature</a>
+<!--<a class="page-link" href="/about">About</a><a class="page-link" href="/ontology">Ontologies</a><a class="page-link" href="/">Machine interpretable and interoperable semantics for Humanities</a><a class="page-link" href="/literature">Literature</a><a class="page-link" href="/n3-rule-based-machine-reasoning">N3-rule-based machine reasoning</a><a class="page-link" href="/ontology-modeling">Ontology Modeling</a><a class="page-link" href="/semantic-web-technology">Semantic Web Technology</a><a class="page-link" href="/two-step-formalization">Two-step formalization</a>-->
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Ontology Modeling</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="modeling-dependencies">Modeling dependencies</h2>
+<p>There are a series of dependencies that directly influence the implementation of SWT, especially the modeling of ontologies.</p>
+
+<!---![figure](/assets/images/ontology-dependence.png)
+**Figure 1: Resources on which ontology modeling is depending**--->
+
+<p>Directive are the W3C standards, the aforementioned standard and existing domain ontologies, basic modeling patterns, and best practices.
+NIE-INE supports overall eleven projects, eight of which currently on the SWT side. Moreover, several new projects already showed their willingness to collaborate with us. The input dependency is represented by the original data model and data, mostly in XML (5 projects using often, but not always TEI), SQL (2 projects), or mixed (1 project).
+Last but not least, there is a dependency on the tacit knowledge of the domain specialists in the editing projects, needed for the implementation of domain knowledge besides the restricted database models. To uncover this knowledge, a commitment on the part of domain specialists is needed, in order to reach consensus on semantics that goes beyond their own specific research objectives.</p>
+
+<p>All these dependencies represent a major challenge and, initially, a substantial overhead, but the return on investment (ROI) is big, and will be even bigger the more project database models are formalized along SWT. This formalization will also contribute to the more general, cross-project semantics, preventing possibly modeling the same concepts for new projects multiple times. Reaching a wide consensus (at the best on an international scale) on domain terminology contributes to the ROI and semantic interoperability.</p>
+
+<p>To enable data expression in this new format, a series of ontologies are created, based on those standards.<br />
+These semantic models adhere to the <a href="https://www.w3.org/TR/rdf-mt/">model theory of W3C RDF, RDFS</a>, and <a href="https://www.w3.org/TR/owl-semantics/">OWL Full</a>, and are declared in <a href="https://www.w3.org/TR/turtle/">Turtle syntax</a>. They are directly accessable in the <a href="http://e-editiones.ch/ontology-library">ontology library</a>.<br />
+Whenever possible <a href="https://github.com/nie-ine/Ontologies/wiki/1.-Introduction-to-Semantic-Web-technology#other-ontologies-used-in-humanities-and-publishing">ontologies developed by others (external)</a> are used to base on. Local copies of such ontologies, when not available in Turtle or RDF-XML, are in the <a href="https://github.com/nie-ine/Ontologies/tree/master/Other-ontologies">Other-ontologies</a> folder.<br />
+NIE-ontologies are highly interdependent and represent a networked collection of namespaces, rather than a strongly hierarchical pyramidal structure. They differ quite in size, granularity and specificity. A basic approach is to create a namespace that can be extended easily. Rarely ontological elements will be deprecated.<br />
+All the used ontologies are referenced in a prefix header in the Turtle files.<br />
+A series of <a href="https://github.com/nie-ine/Ontologies/wiki/2.-Basic-modeling-patterns">basic modeling patterns</a> are also published on the wiki.</p>
+
+<p>There are 2 series: more general and project ontologies. The former are grosso modo further divided into four levels: 1) general domain, 2) general Humanities, 3) specific Humanities, and 4) external terminology systems ontologies (see figure 1). This division is somehow arbitrary, meaning that it isn’t formalized, but it is convenient to illustrate the articulation of ontologies and their interrelations. Table 1 shows the status of the modeling at the end of September 2019. The most populated ontologies are ‘human’, ‘information carrier’, ‘document’, ‘text’, ‘text-expression’, ‘text-structure’, ‘scholarly-editing’, ‘publishing’, ‘literature’, and ‘linguistic-morphology’. The ‘time’-ontology contains properties mainly for N3-rule declarations.</p>
+
+<p><img src="/assets/images/ontologies-network.png" alt="figure" />
+<strong>Figure 1: A simplified representation of the e-editiones web of ontologies</strong></p>
+
+<!---![figure](/assets/images/e-editiones-ontologies_numbers.png)
+**Table 1: NIE ontologies in numbers at end of June 2020**--->
+
+<h2 id="general-domain-ontologies">General domain ontologies</h2>
+<p>Although all ontological classes are instantiable, the more general ones will often function as “glue” to search in an RDF-database with SPARQL queries, and to enhance machine reasoning, e.g. for subsumption (subclassing). For example, if a scholar wants to search for all translations of a certain text, the property ‘is translated into’ can be used without specifying the language. In another case, one would like to find all information carriers (e.g. manuscripts and prints) bearing creations from of a certain author, but crossing more than one project: one project refers to prints existing in an archive and having a signature, and another project uses manuscripts preserved in a library with a manuscript identifier; both the manuscripts and prints can be found with a super-property ‘is on carrier’.
+As a general domain ontology, the concept-ontology (see figure 7 in ‘Graphics’) describes for example concepts created by a person as abstract ideas, e.g. symbolic and propositional, basing on CIDOC-CRM and FRBROO. It contains entities such as ‘information’, ‘identifier’, and ‘thought-method’, and their relations to each other and to other entities, e.g. persons. The document-ontology (see also figures 1, 8, 9, and 13 in ‘Graphics’) describes documents, document structures, e.g. tables, identifiers and references, such as footnotes. It also contains the abstract document expression as based on FRBROO, and different relations between document structures.</p>
+
+<h2 id="general-humanities-ontologies">General Humanities Ontologies</h2>
+<p>The “general Humanities ontologies” comprise the core concepts for scholarly editions, as well as the bulk of entities modeled so far in agreement with the edition projects. The following is a description of five core vocabularies for scientific editing in Humanities.</p>
+
+<h3 id="text">Text</h3>
+<p>This ontology describes text as a human natural language expression serialized in writeable form (see figure 11 in ‘Graphics’). It contains all kinds of text forms (e.g. written, typewritten, transcribed, and printed) and roles of persons processing text (e.g. editor, annotator, and citer). It serves as basis for all text-related ontologies: text-expression, text-structure, text-editing, and literature ontology.</p>
+
+<h3 id="text-expression">Text expression</h3>
+<p>The eponymous core concept bases (via the document-ontology) on FRBROO, as text abstracted from its carrier (see Figure 9 in ‘Graphics’). The ontology declares further related roles (e.g. author and commentator) and general expression types (e.g. draft and commentary). It provides the basis for the literature- and scholarly-editing-ontology.</p>
+
+<h3 id="text-structure">Text structure</h3>
+<p>This ontology describes all kinds of textual structures (see figure 13 in ‘Graphics’), e.g. syntactic, compositional, content, scientific, readability. They form an upper layer to enable more flexible and extensive search, as well as machine reasoning. More specific entities are: word, sentence, paragraph, section, line, and text column. Extensions of this ontology are the note-structure- (see figure 14 in ‘Graphics’) and the prosodic-structure-ontology (see figure 15 in ‘Graphics’), containing entities such as marginal note and gloss, and verse and strophe respectively. An important relation between structures is ‘part of’, which, by its transitive nature, enables searching and machine reasoning in a way that do not require to explicitly state all possible relations between structures in the data, since they can be inferred via transitivity.</p>
+
+<h3 id="text-editing-and-scholarly-editing">Text editing and Scholarly editing</h3>
+<p>Both describe the necessary semantics for editing, the latter extending the former with specific scholarly entities, e.g. diplomatic transcription, critical edition, different types of apparatus, lemma, variant, editorial comment, witness, siglum and more alike. Also related roles are declared, e.g. editor, glossator, and critical text editor. An extensive set of properties relates these entities to each other, as well as to text, text structure and expression elements (see figures 1, 9, 16, and 17 in ‘Graphics’).</p>
+
+<h3 id="publishing">Publishing</h3>
+<p>This ontology describes classes and properties related to publishing, e.g. publication and its subclasses, e.g. printed and web publication, serial like newspaper, periodical, or magazine. There is a substantial set of properties relating expressions and other entities to elements in this ontology.</p>
+
+<h3 id="literature">Literature</h3>
+<p>This ontology describes literary genres such as narrative and different kinds of poetry, and further different types of literary expressions (e.g. poem, hymn, novel) and their subclasses. It also contains related roles, e.g. poet and novelist. Different types of literary structures are declared, e.g. foreword, preface, prologue, and epilogue, and related properties (see figures 1, 9, 21, and 22 in ‘Graphics’).</p>
+
+<h2 id="specific-humanities-ontologies">Specific Humanities ontologies</h2>
+<p>This series comprises more specific entities as used in different specialized domains in the Humanities, e.g. about scholasticism. Some ontologies are an onset (e.g. ‘indology’, ‘catholic organization’ and ‘philosophy’), providing the more general concepts as needed for the current projects, but they will be extended. ‘Catholic orders’ and ‘philosophies’ describe subclasses of classes in aforementioned ontologies, also to be extended.
+Although the scope of these ontologies is narrower, i.e. more project-oriented, the entities can be reused in another context, if applicable, meaning that they do not need to be restricted to a specific project.</p>
+
+<h2 id="external-terminology-systems-ontology">External terminology systems ontology</h2>
+<p>This ontology contains formal descriptions of datatypes, functioning as link between terminology or coding systems, and OWL ontologies. Such coding systems in the Humanities are general ISO1 standards (e.g. for languages), more specific ISO standards such as OAIS2, and GND3 for the DACH countries. It is also planned to use SKOS schemes and properties for this purpose in the near future.</p>
+
+<h2 id="project-ontologies">Project ontologies</h2>
+<p>These ontologies contain entities linked to the specific subjects of the projects, but they are still usable outside the respective projects, if applicable. For example, another national or international project about a same author could reuse some elements in order to be linkable with one of the projects supported by NIE-INE. It then would be possible to query the two different SPARQL endpoints simultaneously, which is essential for research since the triple stores can contain complementary information on the same subject. This is actually the case for the DRCS project, a project dealing with the commentaries on the Sentences of Peter Lombard, which is linked to another project of the University of Baltimore, U.S.. This case demonstrates the added value of semantic interoperability between disparate databases, facilitated by the use of the same external ontologies CIDOC-CRM and FRBROO.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:nie-ine@unibas.ch">nie-ine@unibas.ch</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <br/>
+          <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
