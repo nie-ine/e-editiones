@@ -1,1200 +1,5 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/time#hasStartDateTime",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an event to its start date time."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasMedianAge",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking a class to the median age of its members."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#yearLiteralToPeriod",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Used in a triple to invoke a backward N3 rule converting a literal to a period described by beginning and end date time, in this way explicitly stating the implicit period of a year margin."
-      },
-      {
-        "@language": "en",
-        "@value": "In N3 rules universally quantified variables are declared to pick up the respective values: ?yearLiteral time:yearLiteralToPeriod (?beginning ?end)."
-      },
-      {
-        "@language": "en",
-        "@value": "Linking a literal representing number of years to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a year."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasEndPeriodMargin",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking an event to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a period wherein it ends."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Formal description of time relations."
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@language": "en",
-        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "An ontology about time relations"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "http://eulersharp.sourceforge.net/2007/07test/rifP.n3"
-      },
-      {
-        "@id": "http://eulersharp.sourceforge.net/2003/03swap/prolog"
-      },
-      {
-        "@id": "http://eulersharp.sourceforge.net/2007/07test/biP.n3"
-      },
-      {
-        "@id": "http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-06-11"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way."
-      },
-      {
-        "@language": "en",
-        "@value": "There are properties with list as range. A list keeps things together in a better way than a blank node and improves reasoning performance. List content is tripled when needed, e.g. to permit SPARQL querying."
-      },
-      {
-        "@language": "en",
-        "@value": "For formal temporal reasoning, using e.g. the Unix Epoch time."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasSameBeginningAs",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#SymmetricProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 events beginning on the same moment."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#dateToPeriod",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Used in a triple to invoke a backward N3 rule converting an xsd:date typed literal to a period described by beginning and end date time, in this way explicitly stating the implicit time period margin."
-      },
-      {
-        "@language": "en",
-        "@value": "Linking an xsd:date typed literal to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a day."
-      },
-      {
-        "@language": "en",
-        "@value": "In N3 rules universally quantified variables are declared to pick up the respective values: ?date time:dateToPeriod (?beginning ?end)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasDuration",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying a duration of an event."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#duration"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasYearMonthPeriod",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something to its year-month period."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has year-month period"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Through a series of N3-rules a year-month literal is converted to its year-month period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasEndDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an event to its end date."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingAge",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying a calculated age in years for a list of something and a reference date time."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Triggering in an N3 rule a backward N3 rule to calculate an age of something depending on a reference date time."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#beginsSameAsEndOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking a beginning event to another event ending at the same moment."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#endsSameAsBeginningOf"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasYearPeriod",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something to its year period."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has year period"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Through a series of N3-rules a year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#beginsBefore",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking an earlier beginning to a later beginning event."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#beginsDuring",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying an event during which another event begins."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingSameBeginning",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and events beginning at a same time-point."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingIncludes",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      },
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event includes second."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingBeginsAfter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event begins after second."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasEarliestStartDateTime",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an event to its N3-rule-calculated earliest possible start date time, based on a set maximum event duration, in absence of the start date time."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasMaxDuration",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an event to its maximum duration."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat maximale Dauer"
-      },
-      {
-        "@language": "en",
-        "@value": "has maximum duration"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#duration"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingOverlaps",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      },
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and events overlap each other."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#endsDuring",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying an event during which another event ends."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasSnapshotDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying a snapshot event's date."
-      },
-      {
-        "@language": "en",
-        "@value": "A snapshot is an event with coinciding beginning and end."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Used in N3 rules calculating with date and duration using Unix Epoch time."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingBefore",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens before second."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingBeginsBefore",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event begins before second."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasAge",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying an age in years of something."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingAfter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      },
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens after second."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingEndsAfter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event ends after second."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingEndsBefore",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      },
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event ends before second."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasSameTimeAs",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#SymmetricProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 events happening at the same time."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#endsAfterBeginningOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking an ending event to an earlier beginning of another event."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/time#endsDuring"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/time#beginsAfter"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Used in an N3 rule conclusion."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#takesLessLongThan",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking a shorter to a longer event."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#takesLongerThan"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#beginsBeforeEndOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking a beginning event to a later ending of another event."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/time#beginsDuring"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/time#endsBefore"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Used in an N3 rule conclusion."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#endsSameAsBeginningOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking an ending event to another event beginning at the same moment."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#beginsSameAsEndOf"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
     "@id": "http://e-editiones.ch/ontology/time#hasEndDateTime",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -1222,91 +27,18 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#takesLongerThan",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking a longer to a shorter event."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#yearMonthLiteralToPeriod",
+    "@id": "http://e-editiones.ch/ontology/time#calculatingAfter",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Used in an N3 rule triple to invoke a backward N3 rule converting 2 literals to a period described by beginning and end date time, in this way explicitly stating the implicit period of a month margin."
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens after second."
       },
-      {
-        "@language": "en",
-        "@value": "Linking a list with 2 literals, resp representing number of years and number of months, to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a month."
-      },
-      {
-        "@language": "en",
-        "@value": "In N3 rules universally quantified variables are declared to pick up the respective values: (?yearLiteral ?monthLiteral) time:yearMonthLiteralToPeriod (?beginning ?end); at runtime this will generate e.g. subject (\"2010\" \"3\") and object (."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingDuring",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
         "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      },
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens during second."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1326,114 +58,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingDuration",
+    "@id": "http://e-editiones.ch/ontology/time#overlaps",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating an event to its calculated duration."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule calculating an event's duration in premise and returning the duration."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#duration"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingTakesLessLongThan",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      },
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event takes less long than second."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#during",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying an event during which another event happens."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#before",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#TransitiveProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking an earlier to a later event."
+        "@value": "Specifying an event overlapping another event."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1497,95 +129,56 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#hasSameEndAs",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#SymmetricProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 events ending on the same moment."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasSameDurationAs",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#SymmetricProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 events having the same duration."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasAges",
+    "@id": "http://e-editiones.ch/ontology/time#calculatingAge",
     "@type": [
       "http://www.w3.org/2002/07/owl#FunctionalProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Linking a group of something to a list of its members' ages in years."
+        "@value": "Specifying a calculated age in years for a list of something and a reference date time."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Triggering in an N3 rule a backward N3 rule to calculate an age of something depending on a reference date time."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingSameDuration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and events having same duration."
+      },
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1600,14 +193,53 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#hasStartDate",
+    "@id": "http://e-editiones.ch/ontology/time#hasYearPeriod",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating an event to its start date."
+        "@value": "Relating something to its year period."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has year period"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Through a series of N3-rules a year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#beginsSameAsEndOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking a beginning event to another event ending at the same moment."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1622,7 +254,61 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#endsSameAsBeginningOf"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasSameBeginningAs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 events beginning on the same moment."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
       }
     ]
   },
@@ -1714,163 +400,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingTakesLongerThan",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event takes longer than second."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasOutputDateTime",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a process to its output date-time."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Process"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has output date-time"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasLatestEndDateTime",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an event to its N3-rule-calculated latest possible end date time, based on a set maximum event duration, in absence of the end date time."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasDateTime",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying a point in time of something with a date time."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingSameEnd",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and events ending at a same time-point."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#beginsAfter",
+    "@id": "http://e-editiones.ch/ontology/time#includes",
     "@type": [
       "http://www.w3.org/2002/07/owl#TransitiveProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Linking a later beginning to an earlier beginning event."
+        "@value": "Specifying an event happening during another event."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1895,13 +432,114 @@
     ],
     "http://www.w3.org/2002/07/owl#inverseOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/time#beginsBefore"
+        "@id": "http://e-editiones.ch/ontology/time#during"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
         "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#dateToPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking an xsd:date typed literal to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a day."
+      },
+      {
+        "@language": "en",
+        "@value": "Used in a triple to invoke a backward N3 rule converting an xsd:date typed literal to a period described by beginning and end date time, in this way explicitly stating the implicit time period margin."
+      },
+      {
+        "@language": "en",
+        "@value": "In N3 rules universally quantified variables are declared to pick up the respective values: ?date time:dateToPeriod (?beginning ?end)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#yearLiteralToPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Used in a triple to invoke a backward N3 rule converting a literal to a period described by beginning and end date time, in this way explicitly stating the implicit period of a year margin."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking a literal representing number of years to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a year."
+      },
+      {
+        "@language": "en",
+        "@value": "In N3 rules universally quantified variables are declared to pick up the respective values: ?yearLiteral time:yearLiteralToPeriod (?beginning ?end)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingBeginsAfter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event begins after second."
+      },
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
       }
     ]
   },
@@ -1949,14 +587,296 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#overlaps",
+    "@id": "http://e-editiones.ch/ontology/time#hasLatestEndDateTime",
     "@type": [
-      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Specifying an event overlapping another event."
+        "@value": "Relating an event to its N3-rule-calculated latest possible end date time, based on a set maximum event duration, in absence of the end date time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasMedianAge",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking a class to the median age of its members."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Formal description of time relations."
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@language": "en",
+        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "An ontology about time relations"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "http://eulersharp.sourceforge.net/2007/07test/rifP.n3"
+      },
+      {
+        "@id": "http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules"
+      },
+      {
+        "@id": "http://eulersharp.sourceforge.net/2003/03swap/prolog"
+      },
+      {
+        "@id": "http://eulersharp.sourceforge.net/2007/07test/biP.n3"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-06-11"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "There are properties with list as range. A list keeps things together in a better way than a blank node and improves reasoning performance. List content is tripled when needed, e.g. to permit SPARQL querying."
+      },
+      {
+        "@language": "en",
+        "@value": "Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way."
+      },
+      {
+        "@language": "en",
+        "@value": "For formal temporal reasoning, using e.g. the Unix Epoch time."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingTakesLongerThan",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event takes longer than second."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasAge",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specifying an age in years of something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#yearMonthLiteralToPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Used in an N3 rule triple to invoke a backward N3 rule converting 2 literals to a period described by beginning and end date time, in this way explicitly stating the implicit period of a month margin."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking a list with 2 literals, resp representing number of years and number of months, to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a month."
+      },
+      {
+        "@language": "en",
+        "@value": "In N3 rules universally quantified variables are declared to pick up the respective values: (?yearLiteral ?monthLiteral) time:yearMonthLiteralToPeriod (?beginning ?end); at runtime this will generate e.g. subject (\"2010\" \"3\") and object (."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingIncludes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event includes second."
+      },
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasYearLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something to its year represented by a literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has year literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Used in the premise of an N3-rule to convert a year literal to a period of that year in the respective calendar with the start and end date represented by a list of 3 literals."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#beginsBefore",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking an earlier beginning to a later beginning event."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -2026,6 +946,187 @@
     ]
   },
   {
+    "@id": "http://e-editiones.ch/ontology/time#hasDateTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specifying a point in time of something with a date time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingBeginsBefore",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event begins before second."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasDurationDescription",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specifying a duration description for a temporal entity of something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasDuration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specifying a duration of an event."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#duration"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#during",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specifying an event during which another event happens."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingBefore",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens before second."
+      },
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
     "@id": "http://e-editiones.ch/ontology/time#after",
     "@type": [
       "http://www.w3.org/2002/07/owl#TransitiveProperty"
@@ -2069,88 +1170,18 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#hasYearLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something to its year represented by a literal."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has year literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Used in the premise of an N3-rule to convert a year literal to a period of that year in the respective calendar with the start and end date represented by a list of 3 literals."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasDurationDescription",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying a duration description for a temporal entity of something."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#dateLiteralToPeriod",
+    "@id": "http://e-editiones.ch/ontology/time#calculatingSameEnd",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Used in an N3 rule triple to invoke a backward N3 rule converting a date described by 3 literals to a period described by beginning and end date time, in this way explicitly stating the implicit period of a day margin."
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
       },
       {
         "@language": "en",
-        "@value": "Linking a list with 3 literals, resp representing number of years, number of months and number of days, to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a day."
-      },
-      {
-        "@language": "en",
-        "@value": "In N3 rules universally quantified variables are declared to pick up the respective values: (?yearLiteral ?monthLiteral ?dayLiteral) time:dateLiteralToPeriod (?beginning ?end)."
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and events ending at a same time-point."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -2170,14 +1201,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#includes",
+    "@id": "http://e-editiones.ch/ontology/time#takesLessLongThan",
     "@type": [
       "http://www.w3.org/2002/07/owl#TransitiveProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Specifying an event happening during another event."
+        "@value": "Linking a shorter to a longer event."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -2202,50 +1233,13 @@
     ],
     "http://www.w3.org/2002/07/owl#inverseOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/time#during"
+        "@id": "http://e-editiones.ch/ontology/time#takesLongerThan"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
         "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/time#hasSnapshotDateTime",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specifying a snapshot event's date and time."
-      },
-      {
-        "@language": "en",
-        "@value": "A snapshot is an event with coinciding beginning and end."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/time#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Used in N3 rules calculating with date time and duration using Unix Epoch time."
       }
     ]
   },
@@ -2288,14 +1282,635 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#hasBeginningPeriodMargin",
+    "@id": "http://e-editiones.ch/ontology/time#calculatingEndsAfter",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Linking an event to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a period wherein it begins."
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event ends after second."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasEndDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an event to its end date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingSameBeginning",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and events beginning at a same time-point."
+      },
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#beginsAfter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking a later beginning to an earlier beginning event."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#beginsBefore"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingDuration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an event to its calculated duration."
+      },
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule calculating an event's duration in premise and returning the duration."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#duration"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasSameTimeAs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 events happening at the same time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasOutputDateTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a process to its output date-time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has output date-time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#beginsDuring",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specifying an event during which another event begins."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasAges",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking a group of something to a list of its members' ages in years."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasEarliestStartDateTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an event to its N3-rule-calculated earliest possible start date time, based on a set maximum event duration, in absence of the start date time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingOverlaps",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and events overlap each other."
+      },
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasStartDateTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an event to its start date time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#beginsBeforeEndOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking a beginning event to a later ending of another event."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/time#beginsDuring"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/time#endsBefore"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Used in an N3 rule conclusion."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#dateLiteralToPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "In N3 rules universally quantified variables are declared to pick up the respective values: (?yearLiteral ?monthLiteral ?dayLiteral) time:dateLiteralToPeriod (?beginning ?end)."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking a list with 3 literals, resp representing number of years, number of months and number of days, to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a day."
+      },
+      {
+        "@language": "en",
+        "@value": "Used in an N3 rule triple to invoke a backward N3 rule converting a date described by 3 literals to a period described by beginning and end date time, in this way explicitly stating the implicit period of a day margin."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#endsAfterBeginningOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking an ending event to an earlier beginning of another event."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/time#endsDuring"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/time#beginsAfter"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Used in an N3 rule conclusion."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingDuring",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens during second."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasSameEndAs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 events ending on the same moment."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasYearMonthLiteralList",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something to its year-month represented by a list of 2 literals."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has year-month literal list"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Used in the premise of an N3-rule to convert a year-month to a period of that month in that year in the respective calendar with the start and end date represented by a list of 3 literals."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasEndPeriodMargin",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking an event to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a period wherein it ends."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -2315,23 +1930,126 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#calculatingSameDuration",
+    "@id": "http://e-editiones.ch/ontology/time#hasSnapshotDateTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specifying a snapshot event's date and time."
+      },
+      {
+        "@language": "en",
+        "@value": "A snapshot is an event with coinciding beginning and end."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Used in N3 rules calculating with date time and duration using Unix Epoch time."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasSameDurationAs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking 2 events having the same duration."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#endsDuring",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and events having same duration."
-      },
-      {
-        "@language": "en",
-        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+        "@value": "Specifying an event during which another event ends."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasBeginningPeriodMargin",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking an event to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a period wherein it begins."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -2377,14 +2095,178 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/time#hasYearMonthLiteralList",
+    "@id": "http://e-editiones.ch/ontology/time#hasMaxDuration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an event to its maximum duration."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat maximale Dauer"
+      },
+      {
+        "@language": "en",
+        "@value": "has maximum duration"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#duration"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingEndsBefore",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating something to its year-month represented by a list of 2 literals."
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event ends before second."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasStartDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an event to its start date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#calculatingTakesLessLongThan",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple."
+      },
+      {
+        "@language": "en",
+        "@value": "Linking 2 lists with each a beginning and end date time typed literal of an event, and first event takes less long than second."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#takesLongerThan",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking a longer to a shorter event."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasYearMonthPeriod",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something to its year-month period."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -2400,18 +2282,136 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has year-month literal list"
+        "@value": "has year-month period"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+        "@id": "http://e-editiones.ch/ontology/event#Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Used in the premise of an N3-rule to convert a year-month to a period of that month in that year in the respective calendar with the start and end date represented by a list of 3 literals."
+        "@value": "Through a series of N3-rules a year-month literal is converted to its year-month period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#before",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking an earlier to a later event."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#endsSameAsBeginningOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Linking an ending event to another event beginning at the same moment."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#timeRelatedTo"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#beginsSameAsEndOf"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/time#hasSnapshotDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specifying a snapshot event's date."
+      },
+      {
+        "@language": "en",
+        "@value": "A snapshot is an event with coinciding beginning and end."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/time#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Used in N3 rules calculating with date and duration using Unix Epoch time."
       }
     ]
   }

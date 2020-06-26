@@ -1,94 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:concept="http://e-editiones.ch/ontology/concept#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:concept="http://e-editiones.ch/ontology/concept#"
   xmlns:tcs="http://e-editiones.ch/ontology/terminology-code-systems#"
 >
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#hasGNDNumber">
-    <rdfs:label xml:lang="en">has GND-number</rdfs:label>
-    <rdfs:label xml:lang="de">hat GND-Identifikator</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <skos:note xml:lang="en">example:personX tcs:hasGNDNumber [concept:codeHasSystem tcs:gndSystem; concept:codeHasValue "118679325"^^tcs:gnd].</skos:note>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCode"/>
+    <rdfs:label xml:lang="de">hat GND-Identifikator</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a resource to its GND-identifier.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
+    <rdfs:label xml:lang="en">has GND-number</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#hasOAIIdentifier">
+    <rdfs:label xml:lang="en">has OAI-identifier</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCode"/>
+    <rdfs:label xml:lang="de">hat OAI-Identifikator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
     <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCode"/>
-    <rdfs:comment xml:lang="en">Relating a resource to its GND-identifier.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Relating a resource to its OAI-identifier.</rdfs:comment>
   </owl:ObjectProperty>
-  <concept:CodingSystem rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#gndSystem">
-    <rdfs:comment xml:lang="en">The Integrated Authority File (in German Gemeinsame Normdatei, GND) is an authority file for persons, corporate bodies, conferences and events, geographic information, topics and works.</rdfs:comment>
-    <rdfs:label xml:lang="en">GND-system</rdfs:label>
-    <rdfs:seeAlso rdf:resource="https://www.dnb.de/EN/Standardisierung/GND/gnd_node.html"/>
-    <concept:codingSystemHasDataType rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#gnd"/>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#hasHexadecimalColorCodeValue">
+    <rdfs:label xml:lang="en">has hexadecimal color code value</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a resource to a hexadecimal color code value.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCodeValue"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
-  </concept:CodingSystem>
+    <skos:note xml:lang="en">example:page1 tcs:hasHexadecimalColorCodeValue "000000"^^tcs:hexadecimalColor.</skos:note>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="de">hat hexadezimaler Farbekodewert</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"/>
+  </owl:DatatypeProperty>
+  <tcs:ColorCodingSystem rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColorCodingSystem">
+    <rdfs:label xml:lang="en">hexadecimal color coding system</rdfs:label>
+    <concept:codingSystemHasDataType rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
+    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Web_colors"/>
+    <rdfs:comment xml:lang="en">Color coding system to represent a color with a hex triplet or six-digit, three-byte hexadecimal number. The bytes represent the red, green and blue components of the color. Used in HTML, CSS, SVG, and other computing applications.</rdfs:comment>
+  </tcs:ColorCodingSystem>
   <concept:CodingSystem rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#oaiSystem">
-    <rdfs:label xml:lang="en">OAI-system</rdfs:label>
-    <concept:codingSystemHasDataType rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#oai"/>
-    <rdfs:comment xml:lang="en">The Open Archives Initiative.</rdfs:comment>
     <rdfs:seeAlso rdf:resource="https://www.openarchives.org/"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
+    <concept:codingSystemHasDataType rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#oai"/>
+    <rdfs:comment xml:lang="en">The Open Archives Initiative.</rdfs:comment>
+    <rdfs:label xml:lang="en">OAI-system</rdfs:label>
+  </concept:CodingSystem>
+  <concept:CodingSystem rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#gndSystem">
+    <rdfs:seeAlso rdf:resource="https://www.dnb.de/EN/Standardisierung/GND/gnd_node.html"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
+    <rdfs:label xml:lang="en">GND-system</rdfs:label>
+    <rdfs:comment xml:lang="en">The Integrated Authority File (in German Gemeinsame Normdatei, GND) is an authority file for persons, corporate bodies, conferences and events, geographic information, topics and works.</rdfs:comment>
+    <concept:codingSystemHasDataType rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#gnd"/>
   </concept:CodingSystem>
   <owl:Ontology rdf:about="http://e-editiones.ch/ontology/terminology-code-systems">
-    <dct:title xml:lang="en">An ontology about terminology and code systems</dct:title>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <skos:note xml:lang="en">Other datatypes are declared in a respective domain ontology, e.g. calendar:julianDate, languages:iso639-2, and text:characterSize.</skos:note>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
     <dct:description xml:lang="en">Formal description of terminology and code systems and their datatypes, as link between system data and OWL-ontologies and RDF-data.</dct:description>
     <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
     <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <skos:note xml:lang="en">Other datatypes are declared in a respective domain ontology, e.g. calendar:julianDate, languages:iso639-2, and text:characterSize.</skos:note>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:title xml:lang="en">An ontology about terminology and code systems</dct:title>
   </owl:Ontology>
-  <tcs:ColorCodingSystem rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColorCodingSystem">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
-    <concept:codingSystemHasDataType rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"/>
-    <rdfs:label xml:lang="en">hexadecimal color coding system</rdfs:label>
-    <rdfs:comment xml:lang="en">Color coding system to represent a color with a hex triplet or six-digit, three-byte hexadecimal number. The bytes represent the red, green and blue components of the color. Used in HTML, CSS, SVG, and other computing applications.</rdfs:comment>
-    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Web_colors"/>
-  </tcs:ColorCodingSystem>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#hasHexadecimalColorCodeValue">
-    <rdfs:label xml:lang="en">has hexadecimal color code value</rdfs:label>
-    <skos:note xml:lang="en">example:page1 tcs:hasHexadecimalColorCodeValue "000000"^^tcs:hexadecimalColor.</skos:note>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCodeValue"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:label xml:lang="de">hat hexadezimaler Farbekodewert</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a resource to a hexadecimal color code value.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#hasOAIIdentifier">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasCode"/>
-    <rdfs:comment xml:lang="en">Relating a resource to its OAI-identifier.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
-    <rdfs:label xml:lang="en">has OAI-identifier</rdfs:label>
-    <rdfs:label xml:lang="de">hat OAI-Identifikator</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Datatype rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#oai">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#oai">
     <rdfs:comment xml:lang="en">Datatype to type an OAI-identifier literal.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
     <rdfs:label xml:lang="en">OAI-datatype</rdfs:label>
-  </rdfs:Datatype>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#ColorCodingSystem">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
-    <rdfs:comment xml:lang="en">System to code colors.</rdfs:comment>
-    <rdfs:label xml:lang="en">color coding system</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#CodingSystem"/>
   </rdfs:Class>
-  <rdfs:Datatype rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#gnd">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:comment xml:lang="en">Datatype to type a GND-number numeral.</rdfs:comment>
-    <rdfs:label xml:lang="en">GND-datatype</rdfs:label>
-  </rdfs:Datatype>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
     <rdfs:label xml:lang="en">hexadecimal color datatype</rdfs:label>
     <rdfs:comment xml:lang="en">Datatype to type a literal representing a hexadecimal color code.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#ColorCodingSystem">
+    <rdfs:label xml:lang="en">color coding system</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#CodingSystem"/>
+    <rdfs:comment xml:lang="en">System to code colors.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/terminology-code-systems#gnd">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label xml:lang="en">GND-datatype</rdfs:label>
+    <rdfs:comment xml:lang="en">Datatype to type a GND-number numeral.</rdfs:comment>
   </rdfs:Class>
 </rdf:RDF>

@@ -1,13 +1,18 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/event#Action",
+    "@id": "http://e-editiones.ch/ontology/event#hasState",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Process involving one or more agents causing change."
+        "@value": "Relating a resource to a state."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -18,16 +23,277 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Aktion"
+        "@value": "hat Zustand"
       },
       {
         "@language": "en",
-        "@value": "action"
+        "@value": "has state"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#State"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#hasEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating someone or something - eg. an organization, event, procedure - to an event."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Ereignis"
+      },
+      {
+        "@language": "en",
+        "@value": "has event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#Output",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Postcondition to change in a process."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "output"
+      },
+      {
+        "@language": "de",
+        "@value": "Output"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/event#Process"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#Existence",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Event of being."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Existenz"
+      },
+      {
+        "@language": "en",
+        "@value": "existence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Formal description of event, general subclasses such as action, related classes and properties."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/3.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@language": "en",
+        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "An ontology about 'event'"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-06-11"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#Stage",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Extent of a process."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "stage"
+      },
+      {
+        "@language": "de",
+        "@value": "Stufe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#outputInvolvesRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an output of an action to a role it involves."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Output"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Output involviert Rolle"
+      },
+      {
+        "@language": "en",
+        "@value": "output involves role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/agent#Role"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/event#involvesRole"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#Intent",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Purpose of an action."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "intent"
+      },
+      {
+        "@language": "de",
+        "@value": "Absicht"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ]
   },
@@ -74,14 +340,46 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/event#Intent",
+    "@id": "http://e-editiones.ch/ontology/event#Action",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Purpose of an action."
+        "@value": "Process involving one or more agents causing change."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "action"
+      },
+      {
+        "@language": "de",
+        "@value": "Aktion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Process"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#Event",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Space-time occurrence."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -92,16 +390,128 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Absicht"
+        "@value": "Ereignis"
       },
       {
         "@language": "en",
-        "@value": "intent"
+        "@value": "event"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Time"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#Staging",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Determining the extent of a process."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Staging"
+      },
+      {
+        "@language": "en",
+        "@value": "staging"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Action"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#Creating",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Changing matter and, or energy."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Kreierung"
+      },
+      {
+        "@language": "en",
+        "@value": "creating"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Action"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#isSubEventOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an event to another one it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Subereignis von"
+      },
+      {
+        "@language": "en",
+        "@value": "is sub-event of"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#isPartOf"
+      },
+      {
+        "@id": "http://schema.org/subEvent"
       }
     ]
   },
@@ -139,149 +549,6 @@
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://e-editiones.ch/ontology/event#Stage"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#Staging",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Determining the extent of a process."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "staging"
-      },
-      {
-        "@language": "de",
-        "@value": "Staging"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Action"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#Existence",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Event of being."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Existenz"
-      },
-      {
-        "@language": "en",
-        "@value": "existence"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#isInputOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an input to a process."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Input"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is input of"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Input von"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Process"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#hasExistence",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating someone or something to her/his/its existence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Existenz"
-      },
-      {
-        "@language": "en",
-        "@value": "has existence"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Existence"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#hasEvent"
       }
     ]
   },
@@ -365,19 +632,61 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/event#outputInvolvesRole",
+    "@id": "http://e-editiones.ch/ontology/event#hasNameLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an event to its name."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Name"
+      },
+      {
+        "@language": "en",
+        "@value": "has name"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/event#hasExistence",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating an output of an action to a role it involves."
+        "@value": "Relating someone or something to her/his/its existence."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/event#Output"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -388,72 +697,33 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "output involves role"
+        "@value": "has existence"
       },
       {
         "@language": "de",
-        "@value": "Output involviert Rolle"
+        "@value": "hat Existenz"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/agent#Role"
+        "@id": "http://e-editiones.ch/ontology/event#Existence"
       }
     ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/event#involvesRole"
-          }
-        ]
+        "@id": "http://e-editiones.ch/ontology/event#hasEvent"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/event#Stage",
+    "@id": "http://e-editiones.ch/ontology/event#Process",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Extent of a process."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Stufe"
-      },
-      {
-        "@language": "en",
-        "@value": "stage"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#Creating",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Changing matter and, or energy."
+        "@value": "Event implying change, with an input and an output, in one or more steps."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -464,16 +734,16 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "creating"
+        "@value": "process"
       },
       {
         "@language": "de",
-        "@value": "Kreierung"
+        "@value": "Verfahren"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/event#Action"
+        "@id": "http://e-editiones.ch/ontology/event#Event"
       }
     ]
   },
@@ -510,98 +780,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/event#Process",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Event implying change, with an input and an output, in one or more steps."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Verfahren"
-      },
-      {
-        "@language": "en",
-        "@value": "process"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Formal description of event, general subclasses such as action, related classes and properties."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "http://creativecommons.org/licenses/by/3.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@language": "en",
-        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "An ontology about 'event'"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-06-11"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#hasState",
+    "@id": "http://e-editiones.ch/ontology/event#isInputOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a resource to a state."
+        "@value": "Relating an input to a process."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+        "@id": "http://e-editiones.ch/ontology/event#Input"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -612,28 +803,33 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has state"
+        "@value": "is input of"
       },
       {
         "@language": "de",
-        "@value": "hat Zustand"
+        "@value": "ist Input von"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/event#State"
+        "@id": "http://e-editiones.ch/ontology/event#Process"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/event#State",
+    "@id": "http://e-editiones.ch/ontology/event#involvesRole",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Mode of being."
+        "@value": "Relating an action to a role it involves."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Action"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -644,51 +840,16 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Zustand"
+        "@value": "involviert Rolle"
       },
       {
         "@language": "en",
-        "@value": "state"
+        "@value": "involves role"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#Event",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Space-time occurrence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "event"
-      },
-      {
-        "@language": "de",
-        "@value": "Ereignis"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Time"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
+        "@id": "http://e-editiones.ch/ontology/agent#Role"
       }
     ]
   },
@@ -725,175 +886,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/event#hasEvent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating someone or something - eg. an organization, event, procedure - to an event."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Ereignis"
-      },
-      {
-        "@language": "en",
-        "@value": "has event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#isSubEventOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an event to another one it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Subereignis von"
-      },
-      {
-        "@language": "en",
-        "@value": "is sub-event of"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#isPartOf"
-      },
-      {
-        "@id": "http://schema.org/subEvent"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#hasNameLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an event to its name."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has name"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Name"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#involvesRole",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an action to a role it involves."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Action"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "involves role"
-      },
-      {
-        "@language": "de",
-        "@value": "involviert Rolle"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/agent#Role"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/event#Output",
+    "@id": "http://e-editiones.ch/ontology/event#State",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Postcondition to change in a process."
+        "@value": "Mode of being."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -904,11 +904,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Output"
+        "@value": "Zustand"
       },
       {
         "@language": "en",
-        "@value": "output"
+        "@value": "state"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [

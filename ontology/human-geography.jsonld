@@ -1,18 +1,87 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/human-geography#addressHasTownNameLiteral",
+    "@id": "http://e-editiones.ch/ontology/human-geography#hasDomicile",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a postal address to its town name literal."
+        "@value": "Relating a human agent - person or group - to a place of registered staying and contactability."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
+        "@id": "http://e-editiones.ch/ontology/human#Agent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Sitz"
+      },
+      {
+        "@language": "en",
+        "@value": "has domicile"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Place"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#hasLocation"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#City",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Large town."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Stadt"
+      },
+      {
+        "@language": "en",
+        "@value": "city"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#State",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Political organization of a nation with an own government."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -23,21 +92,112 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "postal address has town name literal"
+        "@value": "state"
       },
       {
         "@language": "de",
-        "@value": "Postanschrift hat Ortsnameliterale"
+        "@value": "Staat"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        "@id": "http://e-editiones.ch/ontology/organization#PoliticalOrganization"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#Monarchy",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "State wherein one person or family governs."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "monarchy"
+      },
+      {
+        "@language": "de",
+        "@value": "Monarchie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#State"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Postanschrift"
+      },
+      {
+        "@language": "en",
+        "@value": "postal address"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#SymbolicEntity"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#Street",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Strasse"
+      },
+      {
+        "@language": "en",
+        "@value": "street"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
       }
     ]
   },
@@ -64,17 +224,165 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "hat Rücksendung-Postanschrift"
-      },
-      {
         "@language": "en",
         "@value": "has return postal address"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Rücksendung-Postanschrift"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#StreetPlace",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Strassenplatz"
+      },
+      {
+        "@language": "en",
+        "@value": "street place"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#Village",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Small place with political boundaries but without an own government."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "village"
+      },
+      {
+        "@language": "de",
+        "@value": "Dorf"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#addressHasPostcodeValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a postal address to its postcode value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "postal address has postcode value"
+      },
+      {
+        "@language": "de",
+        "@value": "Postanschrift hat Postleitzahlwert"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#addressHasStreetNameLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a postal address to the name literal of the street."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Postanschrift hat Strassennameliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "postal address has street name literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
       }
     ]
   },
@@ -133,53 +441,21 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "de",
+        "@value": "Monarch"
+      },
+      {
         "@language": "en",
         "@value": "monarch"
       },
       {
         "@language": "fr",
         "@value": "monarque"
-      },
-      {
-        "@language": "de",
-        "@value": "Monarch"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/human#PersonRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#District",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Part of a city with own administration."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "district"
-      },
-      {
-        "@language": "de",
-        "@value": "Stadtviertel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
       }
     ]
   },
@@ -221,112 +497,6 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/human-geography#addressHasStreetNameLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a postal address to the name literal of the street."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Postanschrift hat Strassennameliterale"
-      },
-      {
-        "@language": "en",
-        "@value": "postal address has street name literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#Village",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Small place with political boundaries but without an own government."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dorf"
-      },
-      {
-        "@language": "en",
-        "@value": "village"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#Nation",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Stable political organization with a commonality e.g. ethnicity, language, culture, ."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "nation"
-      },
-      {
-        "@language": "de",
-        "@value": "Nation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#PoliticalOrganization"
-      }
-    ]
-  },
-  {
     "@id": "http://e-editiones.ch/ontology/human-geography#Country",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
@@ -344,12 +514,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Land"
-      },
-      {
         "@language": "en",
         "@value": "country"
+      },
+      {
+        "@language": "de",
+        "@value": "Land"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -359,14 +529,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress",
+    "@id": "http://e-editiones.ch/ontology/human-geography#Town",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "."
+        "@value": "Smallest place with political boundaries and an own government."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -377,90 +547,16 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Postanschrift"
+        "@value": "Ortschaft"
       },
       {
         "@language": "en",
-        "@value": "postal address"
+        "@value": "town"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#SymbolicEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#Monarchy",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "State wherein one person or family governs."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "monarchy"
-      },
-      {
-        "@language": "de",
-        "@value": "Monarchie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#State"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#hasDomicile",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a human agent - person or group - to a place of registered staying and contactability."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Agent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has domicile"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Sitz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Place"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#hasLocation"
+        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
       }
     ]
   },
@@ -487,12 +583,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "postal address has country name literal"
-      },
-      {
         "@language": "de",
         "@value": "Postanschrift hat Ländernameliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "postal address has country name literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -503,240 +599,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#addressHasAddresseeNameLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a postal address to an addressee name literal."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "postal address has addressee name literal"
-      },
-      {
-        "@language": "de",
-        "@value": "Postanschrift hat AdressatIns Nameliterale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#Town",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Smallest place with political boundaries and an own government."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "town"
-      },
-      {
-        "@language": "de",
-        "@value": "Ortschaft"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#StreetPlace",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Strassenplatz"
-      },
-      {
-        "@language": "en",
-        "@value": "street place"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#Street",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "street"
-      },
-      {
-        "@language": "de",
-        "@value": "Strasse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#Empire",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Group of nations with an overarching government."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "empire"
-      },
-      {
-        "@language": "de",
-        "@value": "Imperium"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#PoliticalOrganization"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#State",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Political organization of a nation with an own government."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "state"
-      },
-      {
-        "@language": "de",
-        "@value": "Staat"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#PoliticalOrganization"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#City",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Large town."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "city"
-      },
-      {
-        "@language": "de",
-        "@value": "Stadt"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
       }
     ]
   },
@@ -763,12 +625,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "postal address has house number numeral"
-      },
-      {
         "@language": "de",
         "@value": "Postanschrift hat Hausnummernumerale"
+      },
+      {
+        "@language": "en",
+        "@value": "postal address has house number numeral"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -779,48 +641,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/human-geography#addressHasPostcodeValue",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a postal address to its postcode value."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "postal address has postcode value"
-      },
-      {
-        "@language": "de",
-        "@value": "Postanschrift hat Postleitzahlwert"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
       }
     ]
   },
@@ -862,6 +682,186 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2020-06-11"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#addressHasAddresseeNameLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a postal address to an addressee name literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Postanschrift hat AdressatIns Nameliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "postal address has addressee name literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#addressHasTownNameLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a postal address to its town name literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#PostalAddress"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "postal address has town name literal"
+      },
+      {
+        "@language": "de",
+        "@value": "Postanschrift hat Ortsnameliterale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#District",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Part of a city with own administration."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Stadtviertel"
+      },
+      {
+        "@language": "en",
+        "@value": "district"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#EarthPlace"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#Empire",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Group of nations with an overarching government."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "empire"
+      },
+      {
+        "@language": "de",
+        "@value": "Imperium"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#PoliticalOrganization"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/human-geography#Nation",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Stable political organization with a commonality e.g. ethnicity, language, culture, ."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "nation"
+      },
+      {
+        "@language": "de",
+        "@value": "Nation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#PoliticalOrganization"
       }
     ]
   }
