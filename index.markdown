@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Machine interpretable and interoperable semantics for Humanities
+layout: home
+title: Machine Interpretable and Interoperable Semantics for Humanities
 ---
 
 ![graphic](/assets/images/basic-concepts_page.png)

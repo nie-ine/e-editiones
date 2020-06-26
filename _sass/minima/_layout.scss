@@ -1,6 +1,21 @@
 /**
  * Site header
  */
+.home {
+  text-align: center;
+}
+
+.home img {
+  with: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+}
+
+/**
+ * Site header
+ */
 .site-header {
   border-top: 5px solid #f7d336;;
   border-bottom: 1px solid $grey-color-light;
@@ -141,18 +156,20 @@
 }
 
 .footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(33% - (#{$spacing-unit} / 2));
+  width:         calc(33% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(33% - (#{$spacing-unit} / 2));
+  width:         calc(33% - (#{$spacing-unit} / 2));
+  text-align: center;
 }
 
 .footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(33% - (#{$spacing-unit} / 2));
+  width:         calc(33% - (#{$spacing-unit} / 2));
+  text-align: right;
 }
 
 @include media-query($on-laptop) {
@@ -160,11 +177,13 @@
   .footer-col-2 {
     width: -webkit-calc(50% - (#{$spacing-unit} / 2));
     width:         calc(50% - (#{$spacing-unit} / 2));
+    text-align: center;
   }
 
   .footer-col-3 {
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width:         calc(100% - (#{$spacing-unit} / 2));
+    text-align: center;
   }
 }
 
@@ -271,10 +290,10 @@
   padding: 8px;
 }
 
-/* Create four equal columns that floats next to each other */
+/* Create 6 equal columns that floats next to each other */
 .ontology-column {
   float: left;
-  width: 20%;
+  width: 16%;
 }
 
 /* Clear floats after rows */
@@ -286,37 +305,82 @@
 
 /* Content */
 .ontology-content {
-  background-color: #f0f0f0;
   padding: 10px;
   border-radius: 5px;
-  height: 275px;
+  height: 250px;
+  color: white;
+  font-size: 0.8em;
 }
 
-/* Responsive layout - makes a 4 column-layout instead of 5 columns */
+.ontology-content a {
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.generalDomain {
+  background-color: #663399;
+}
+
+.generalHumanities {
+  background-color: #336699;
+}
+
+.specificHumanities {
+  background-color: #669999;  
+}
+
+.external {
+  background-color: #669966;
+}
+
+.project {
+  background-color: #66CCFF;
+}
+
+/* Responsive layout - makes a 5 column-layout */
 @media screen and (max-width: 1600px) {
+  .ontology-column {
+    width: 20%;
+  }
+  .ontology-content {
+
+  }
+}
+
+/* Responsive layout - makes a 4 column-layout */
+@media screen and (max-width: 1200px) {
   .ontology-column {
     width: 25%;
   }
-}
-
-/* Responsive layout */
-@media screen and (max-width: 1280px) {
   .ontology-content {
-    height: 325px;
+
   }
 }
 
-/* Responsive layout - makes a 2 column-layout instead of 4 columns */
-@media screen and (max-width: 900px) {
-  .ontology-column {
-    width: 50%;
+@media screen and (max-width: 1000px) {
+  .ontology-content {
+    height: 300px;
   }
+}
+
+@media screen and (max-width: 800px) {
   .ontology-content {
     height: 350px;
   }
 }
 
-/* Responsive layout - makes a 1 column-layout instead of 2 columns */
+/* Responsive layout - makes a 2 column-layout */
+@media screen and (max-width: 700px) {
+  .ontology-column {
+    width: 50%;
+  }
+  .ontology-content {
+    height: 250px;
+  }
+}
+
+/* Responsive layout - makes a 1 column-layout */
 @media screen and (max-width: 450px) {
   .ontology-column {
     width: 100%;
