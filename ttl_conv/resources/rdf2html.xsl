@@ -97,28 +97,7 @@
 				<xsl:sort select="@rdf:about" order="ascending"/>
 				<xsl:call-template name="rdfDescription"/>
 			</xsl:for-each>
-			
-<!--			<xsl:for-each select="child::owl:ObjectProperty">
-				<xsl:sort select="@rdf:about" order="ascending"/>
-				<xsl:call-template name="rdfDescription"/>
-			</xsl:for-each>
-			<xsl:for-each select="child::owl:DatatypeProperty">
-				<xsl:sort select="@rdf:about" order="ascending"/>
-				<xsl:call-template name="rdfDescription"/>
-			</xsl:for-each>			
-			<xsl:for-each select="child::owl:FunctionalProperty">
-				<xsl:sort select="@rdf:about" order="ascending"/>
-				<xsl:call-template name="rdfDescription"/>
-			</xsl:for-each>				
-			<xsl:for-each select="child::owl:SymmetricProperty">
-				<xsl:sort select="@rdf:about" order="ascending"/>
-				<xsl:call-template name="rdfDescription"/>
-			</xsl:for-each>				
-			<xsl:for-each select="child::owl:TransitiveProperty">
-				<xsl:sort select="@rdf:about" order="ascending"/>
-				<xsl:call-template name="rdfDescription"/>
-			</xsl:for-each>-->
-			
+
 		</div>
 	</xsl:template>
   	
@@ -769,39 +748,57 @@
 		</xsl:variable>		
 		
 		<xsl:choose>
-			
-       <!-- <xsl:when test="//*[@rdf:about=$uri]/rdfs:label[contains(@xml:lang,$language)]">
-				<xsl:value-of select="//*[@rdf:about=$uri]/rdfs:label[contains(@xml:lang,$language)]"/>
-			</xsl:when>
-			<xsl:when test="//*[@rdf:about=$uri]/rdfs:label[contains(@xml:lang,'en')]">
-				<xsl:value-of select="//*[@rdf:about=$uri]/rdfs:label[contains(@xml:lang,'en')]"/>
-			</xsl:when>
-			<xsl:when test="//*[@rdf:about=$uri]/rdfs:label">
-				<xsl:value-of select="//*[@rdf:about=$uri]/rdfs:label"/>
-			</xsl:when> -->
-
-			<xsl:when test="contains($uri, 'e-editiones') and contains($uri, '#') and not(ends-with($uri,'#'))">
-			<!-- http://e-editiones.ch/ontology/calendar#PiPaPo-->
+			<!-- Check for e-editiones IRI -->
+			<xsl:when test="contains($uri, 'e-editiones') and contains($uri, '#')">
 				<xsl:variable name="namespaceAlias">
 					<xsl:value-of select="substring-before(substring-after($uri, 'http://e-editiones.ch/ontology/'),'#')"/>
 				</xsl:variable>
 				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
-			</xsl:when>
-			<xsl:when test="contains($uri, 'e-editiones') and ends-with($uri,'#')">
-				<!-- http://e-editiones.ch/ontology/calendar#-->
-				<xsl:variable name="namespaceAlias">
-					<xsl:value-of select="substring-before(substring-after($uri, 'http://e-editiones.ch/ontology/'),'#')"/>
-				</xsl:variable>
-				<xsl:value-of select="$namespaceAlias"/>
 			</xsl:when>
 			<xsl:when test="contains($uri, 'e-editiones') and not(contains($uri, '#'))">
 				<!-- http://e-editiones.ch/ontology/calendar -->
 				<xsl:variable name="namespaceAlias">
 					<xsl:value-of select="substring-after($uri, 'http://e-editiones.ch/ontology/')"/>
 				</xsl:variable>
-				<xsl:value-of select="$namespaceAlias"/>
+				<xsl:value-of select="concat($namespaceAlias,':')"/>
 			</xsl:when>
 			
+			<xsl:when test="contains($uri, 'e-editiones') and not(contains($uri, '#'))">
+				<!-- http://e-editiones.ch/ontology/calendar -->
+				<xsl:variable name="namespaceAlias">
+					<xsl:value-of select="substring-after($uri, 'http://e-editiones.ch/ontology/')"/>
+				</xsl:variable>
+				<xsl:value-of select="concat($namespaceAlias,':')"/>
+			</xsl:when>			
+			
+			<!-- Check for foaf IRI -->
+			<xsl:when test="contains($uri, 'http://xmlns.com/foaf/')">
+				<xsl:variable name="namespaceAlias" select="'foaf'"/>
+				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
+			</xsl:when>
+			
+			<!-- Check for cidoc IRI -->
+			<xsl:when test="contains($uri, 'http://www.cidoc-crm.org/cidoc-crm/')">
+				<xsl:variable name="namespaceAlias" select="'cidoc'"/>
+				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
+			</xsl:when>
+			
+			<!-- Check for frbroo IRI -->
+			<xsl:when test="contains($uri, 'http://iflastandards.info/ns/fr/frbr/frbroo/')">
+				<xsl:variable name="namespaceAlias" select="'frbroo'"/>
+				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
+			</xsl:when>	
+			
+			<!-- Check for xsd IRI -->
+			<xsl:when test="contains($uri, 'http://www.w3.org/2001/XMLSchema#')">
+				<xsl:variable name="namespaceAlias" select="'xsd'"/>
+				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
+			</xsl:when>	
+			
+			<!--foaf: http://xmlns.com/foaf/0.1/
+			cidoc: http://www.cidoc-crm.org/cidoc-crm/
+			frbroo: http://iflastandards.info/ns/fr/frbr/frbroo/
+			xsd: http://www.w3.org/2001/XMLSchema#-->
 			
 			<xsl:when test="$namespaces='true' and namespace::*[.=$namespace and name()!='']">
 				<xsl:variable name="namespaceAlias">
