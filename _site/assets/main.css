@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { mar
 main { display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */ }
 
 /** Images */
-img { max-width: 100%; vertical-align: middle; }
+img { max-width: 95%; display: block; margin-left: auto; margin-right: auto; }
 
 /** Figures */
 figure > img { display: block; }
@@ -54,9 +54,9 @@ pre { padding: 8px 12px; overflow-x: auto; }
 pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 /** Wrapper */
-.wrapper { max-width: -webkit-calc(60% - (30px * 2)); max-width: calc(60% - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
+.wrapper { max-width: -webkit-calc(95% - (30px * 2)); max-width: calc(95% - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
 
-@media screen and (max-width: 920px) { .wrapper { max-width: -webkit-calc(60% - (30px)); max-width: calc(60% - (30px)); padding-right: 15px; padding-left: 15px; } }
+@media screen and (max-width: 920px) { .wrapper { max-width: -webkit-calc(95% - (30px)); max-width: calc(95% - (30px)); padding-right: 15px; padding-left: 15px; } }
 
 /** Ontology Wrapper */
 .ontology-wrapper { max-width: -webkit-calc(95% - (30px * 2)); max-width: calc(95% - (30px * 2)); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
@@ -81,6 +81,11 @@ table th, table td { padding: 10px 15px; }
 table th { background-color: #f0f0f0; border: 1px solid #dedede; border-bottom-color: #c9c9c9; }
 
 table td { border: 1px solid #e8e8e8; }
+
+/** Site header */
+.home { text-align: center; }
+
+.home img { with: 80%; display: block; margin-left: auto; margin-right: auto; margin-top: 4%; }
 
 /** Site header */
 .site-header { border-top: 5px solid #f7d336; border-bottom: 1px solid #e8e8e8; min-height: 55.95px; position: relative; position: fixed; width: 100%; z-index: 2; background: white; }
@@ -112,13 +117,13 @@ table td { border: 1px solid #e8e8e8; }
 
 .footer-col { float: left; margin-bottom: 15px; padding-left: 15px; }
 
-.footer-col-1 { width: -webkit-calc(35% - (30px / 2)); width: calc(35% - (30px / 2)); }
+.footer-col-1 { width: -webkit-calc(33% - (30px / 2)); width: calc(33% - (30px / 2)); }
 
-.footer-col-2 { width: -webkit-calc(20% - (30px / 2)); width: calc(20% - (30px / 2)); }
+.footer-col-2 { width: -webkit-calc(33% - (30px / 2)); width: calc(33% - (30px / 2)); text-align: center; }
 
-.footer-col-3 { width: -webkit-calc(45% - (30px / 2)); width: calc(45% - (30px / 2)); }
+.footer-col-3 { width: -webkit-calc(33% - (30px / 2)); width: calc(33% - (30px / 2)); text-align: right; }
 
-@media screen and (max-width: 920px) { .footer-col-1, .footer-col-2 { width: -webkit-calc(50% - (30px / 2)); width: calc(50% - (30px / 2)); } .footer-col-3 { width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
+@media screen and (max-width: 920px) { .footer-col-1, .footer-col-2 { width: -webkit-calc(50% - (30px / 2)); width: calc(50% - (30px / 2)); text-align: center; } .footer-col-3 { width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); text-align: center; } }
 
 @media screen and (max-width: 920px) { .footer-col { float: none; width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
 
@@ -164,20 +169,42 @@ table td { border: 1px solid #e8e8e8; }
 /* Add padding BETWEEN each column (if you want) */
 .ontology-row, .ontology-row > .ontology-column { padding: 8px; }
 
-/* Create four equal columns that floats next to each other */
-.ontology-column { float: left; width: 25%; }
+/* Create 6 equal columns that floats next to each other */
+.ontology-column { float: left; width: 16%; }
 
 /* Clear floats after rows */
 .ontology-row:after { content: ""; display: table; clear: both; }
 
 /* Content */
-.ontology-content { background-color: #f0f0f0; padding: 10px; border-radius: 5px; height: 400px; }
+.ontology-content { padding: 10px; border-radius: 5px; height: 250px; color: white; font-size: 0.8em; }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 1600px) { .ontology-column { width: 50%; } }
+.ontology-content a { color: white; font-size: 0.8em; font-weight: bold; }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 750px) { .ontology-column { width: 100%; } }
+.generalDomain { background-color: #663399; }
+
+.generalHumanities { background-color: #336699; }
+
+.specificHumanities { background-color: #669999; }
+
+.external { background-color: #669966; }
+
+.project { background-color: #66CCFF; }
+
+/* Responsive layout - makes a 5 column-layout */
+@media screen and (max-width: 1600px) { .ontology-column { width: 20%; } }
+
+/* Responsive layout - makes a 4 column-layout */
+@media screen and (max-width: 1200px) { .ontology-column { width: 25%; } }
+
+@media screen and (max-width: 1000px) { .ontology-content { height: 300px; } }
+
+@media screen and (max-width: 800px) { .ontology-content { height: 350px; } }
+
+/* Responsive layout - makes a 2 column-layout */
+@media screen and (max-width: 700px) { .ontology-column { width: 50%; } .ontology-content { height: 250px; } }
+
+/* Responsive layout - makes a 1 column-layout */
+@media screen and (max-width: 450px) { .ontology-column { width: 100%; } .ontology-content { height: 200px; } }
 
 /** Ontology */
 .ontology-formats { text-align: right; font-size: 1.5em; margin-bottom: 10px; }

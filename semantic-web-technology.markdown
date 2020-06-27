@@ -32,25 +32,42 @@ The Web already comes with digital resources bearing an IRI or Internationalized
 
 Semantic Web technology provides 3 languages with increasing expressiveness: [Resource Description Framework (RDF), RDF Schema (RDFS)](https://www.w3.org/TR/rdf-mt/), and the [Web Ontology Language (OWL)](https://www.w3.org/TR/owl2-primer/), which can be used seperately to express formal elements in a growing complexity, resp. data, thesauri and ontologies (or formal dictionaries).  
 In our project we always use the 3 together without making such distinctions.  
+<<<<<<< HEAD
 In Figure 2 the 3 foundational ontologies of the 3 languages themselves are shown together as the basis, arguing that even for the simplest data expression the [RDF-ontology](http://www.w3.org/1999/02/22-rdf-syntax-ns#) is needed. Once declaring domain knowledge in [own ontologies](/ontologies), also elements of the [RDFS-](http://www.w3.org/2000/01/rdf-schema#) and [OWL-ontology](http://www.w3.org/2002/07/owl#) are needed.  
+=======
+In Figure 2 the 3 foundational ontologies of the 3 languages themselves are shown together as the basis, arguing that even for the simplest data expression the [RDF-ontology](http://www.w3.org/1999/02/22-rdf-syntax-ns#) is needed. Once declaring domain knowledge in [own ontologies](/ontologies), also elements of the [RDFS-](http://www.w3.org/2000/01/rdf-schema#) and [OWL-ontology](http://www.w3.org/2002/07/owl#) are needed.
+>>>>>>> 0116d755c245033aa443e8982300232894ee69d6
 The next layer represents the formal data expressed using the ontologies.  
 Ontologies and data can be serialized in [Turtle](https://www.w3.org/TR/turtle/), [RDF/XML](), or [N-Triples](https://www.w3.org/TR/n-triples/) syntax.  
 [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) is the RDF query language, to retrieve data from an RDF graph database or triple store. It has its own syntax.
 Rules are the means for inferring new data from data with machine reasoning.  
 All these layers are embedded in the logic layer.  
+<<<<<<< HEAD
 More precisely the languages (except SPARQL) have their model (or interpretation) theory based on first order predicate logic and set theory (math).  
 The [Notation 3 language (N3)](https://www.w3.org/TeamSubmission/n3/) is an overarching language and still a Team Submission, i.e. not a standard (or recommendation) yet. Besides ontologies and data, it permits the declaration of inference rules and queries, as "end-rule" (see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)). Turtle is a sublanguage of N3.  
+=======
+More precisely the languages (except SPARQL) have their model (or interpretation) theory based on first order predicate logic and set theory (math).  
+The [Notation 3 language (N3)](https://www.w3.org/TeamSubmission/n3/) is an overarching language and still a Team Submission, i.e. not a standard (or recommendation) yet. Besides ontologies and data, it permits the declaration of inference rules and queries, as "end-rule" (see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)). Turtle is a sublanguage of N3.  
+>>>>>>> 0116d755c245033aa443e8982300232894ee69d6
 Note: there is a W3C N3-dev working group (of which T. Berners-Lee, Jod De Roo, the developer of the EYE reasoner, and Hans Cools, the author, are members) to further develop N3 and bring it to a possible standard.
 
 ## Advantages of SWT:
 - Semantics:
 	- Natural language independent
 	- Explicit -> data and model quality control feedback loop -> data management, comparison
+<<<<<<< HEAD
 	- Unified -> linkable -> semantic interoperability
 	- Machine-interpretable
 		-> semi-automated semantic interoperability
 		-> machine reasoning  
 		-> semantic conversion of data models ([2-step formalization](http://e-editiones.ch/two-step-formalization))
+=======
+	- Unified -> linkable -> semantic interoperability
+	- Machine-interpretable
+		-> semi-automated semantic interoperability
+		-> machine reasoning  
+		-> semantic conversion of data models ([2-step formalization](http://e-editiones.ch/two-step-formalization))
+>>>>>>> 0116d755c245033aa443e8982300232894ee69d6
 		-> enrich data; analysis, mining, and, together with probability theory, enable decision support
 	- domain knowledge expressed in reusable consented ontologies and N3-rules
 

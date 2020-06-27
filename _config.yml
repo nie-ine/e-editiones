@@ -21,9 +21,9 @@
 title: e-editiones
 email: nie-ine@unibas.ch
 description: >- # this means to ignore newlines until "baseurl:"
-  Ontologies for Humanities
+  Machine interpretable and interoperable semantics for Humanities
 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 
 url: "http://e-editiones.ch" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -34,13 +34,22 @@ github_ontologies: https://github.com/nie-ine/Ontologies/blob/master/Nie-ontolog
 
 # Build settings
 # theme: minima
-plugins:
-  - jekyll-feed
+#plugins:
+
 
 # Ontology collections
 collections_dir: collections
 collections: 
-  generic:
+  generalDomain:
+    output: true
+    permalink: /ontology/:name
+  generalHumanities:
+    output: true
+    permalink: /ontology/:name
+  specificHumanities:
+    output: true
+    permalink: /ontology/:name
+  external:
     output: true
     permalink: /ontology/:name
   project: 
@@ -50,7 +59,22 @@ collections:
 defaults: 
   - scope:
       path: ""
-      type: "generic"
+      type: "generalDomain"
+    values:
+      layout: "ontology"
+  - scope:
+      path: ""
+      type: "generalHumanities"
+    values:
+      layout: "ontology"
+  - scope:
+      path: ""
+      type: "specificHumanities"
+    values:
+      layout: "ontology"
+  - scope:
+      path: ""
+      type: "external"
     values:
       layout: "ontology"
   - scope:
@@ -78,5 +102,4 @@ defaults:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-#   - file_conversions/
 exclude: [ttl_conv, nginx_conf, Dockerfile]

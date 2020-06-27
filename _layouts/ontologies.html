@@ -13,11 +13,54 @@ layout: default
 
   	<h2 id="generic-ontologies">Generic Ontologies</h2>
 
+    <h4 id="general-domain">General Domain Ontologies</h4>
     <div class="ontology-row">
-    {% for ontology in site.generic %}
+    {% for ontology in site.generalDomain %}
 
     <div class="ontology-column">
-        <div class="ontology-content">
+        <div class="ontology-content generalDomain">
+          <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
+          <p>{{ ontology.description }}</p>
+        </div>
+    </div>
+    
+    {% endfor %}
+    </div>
+
+    <h4 id="general-humanities">General Humanities Ontologies</h4>
+    <div class="ontology-row">
+    {% for ontology in site.generalHumanities %}
+
+    <div class="ontology-column">
+        <div class="ontology-content generalHumanities">
+          <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
+          <p>{{ ontology.description }}</p>
+        </div>
+    </div>
+    
+    {% endfor %}
+    </div>
+
+    <h4 id="specific-humanities">Specific Humanities Ontologies</h4>
+    <div class="ontology-row">
+    {% for ontology in site.specificHumanities %}
+
+    <div class="ontology-column">
+        <div class="ontology-content specificHumanities">
+          <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
+          <p>{{ ontology.description }}</p>
+        </div>
+    </div>
+    
+    {% endfor %}
+    </div>
+
+    <h4 id="external-ontologies">External Terminology & Code Systems Ontology</h4>
+    <div class="ontology-row">
+    {% for ontology in site.external %}
+
+    <div class="ontology-column">
+        <div class="ontology-content external">
           <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
           <p>{{ ontology.description }}</p>
         </div>
@@ -31,7 +74,7 @@ layout: default
     <div class="ontology-row">
     {% for ontology in site.project %}
     <div class="ontology-column">
-        <div class="ontology-content">
+        <div class="ontology-content project">
           <h4><a href="{{ ontology.url }}">{{ ontology.title }}</a></h4>
           <p>{{ ontology.description }}</p>
         </div>

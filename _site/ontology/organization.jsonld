@@ -1,13 +1,54 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/organization#PoliticalOrganization",
+    "@id": "http://e-editiones.ch/ontology/organization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Formal description of organization involving persons, general subclasses, related classes and properties."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/3.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@language": "en",
+        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "An ontology about person organization"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-06-11"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/organization#Company",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Organization being involved in politics."
+        "@value": "Organization having primarily an economical role."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -18,16 +59,93 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "politische Organisation"
+        "@value": "Betrieb"
       },
       {
         "@language": "en",
-        "@value": "political organization"
+        "@value": "company"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/organization#Organization"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/organization#Creator",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Publisher as role of an organization."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Organisation-Erschafferin"
+      },
+      {
+        "@language": "en",
+        "@value": "organization creator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#AgentCreator"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#Role"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/organization#isMemberOfReligiousOrganization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a person to a religious organization the person is a member of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#ReligiousPerson"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Mitglied einer religiösen Organization"
+      },
+      {
+        "@language": "en",
+        "@value": "is member of religious organization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#ReligiousOrganization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#isMemberOf"
       }
     ]
   },
@@ -64,7 +182,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub125bL202C13"
+        "@id": "_:ub103bL202C13"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -74,18 +192,18 @@
     ]
   },
   {
-    "@id": "_:ub125bL202C13",
+    "@id": "_:ub103bL202C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#Organization"
+        "@id": "_:ub103bL202C48"
       },
       {
-        "@id": "_:ub125bL202C48"
+        "@id": "http://e-editiones.ch/ontology/organization#Organization"
       }
     ]
   },
   {
-    "@id": "_:ub125bL202C48",
+    "@id": "_:ub103bL202C48",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -101,19 +219,65 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/organization#isMemberOfCompany",
+    "@id": "http://e-editiones.ch/ontology/organization#CulturalHeritageInstitution",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a person to a company the person is a member of."
+        "@value": "Organization having a role of preserving a repository of public knowledge, such as a library, an archive, museum, sites and monuments record, clearinghouse, a provider of a digital library, and a data aggregation service, which serve as memories for given societies or mankind."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://e-editiones.ch/ontology/human#Person"
+        "@id": "http://e-editiones.ch/ontology/organization#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Kulturerbeinstitution"
+      },
+      {
+        "@language": "en",
+        "@value": "cultural heritage institution"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#Organization"
+      },
+      {
+        "@id": "_:ub103bL108C36"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub103bL108C36",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#hasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#Preserver"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/organization#PoliticalOrganization",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Organization being involved in politics."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -124,21 +288,48 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is member of company"
+        "@value": "political organization"
       },
       {
         "@language": "de",
-        "@value": "ist Mitglied einer Firme"
+        "@value": "politische Organisation"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#Company"
+        "@id": "http://e-editiones.ch/ontology/organization#Organization"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/organization#ReligiousOrganization",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Organization of religious persons."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#isMemberOf"
+        "@id": "http://e-editiones.ch/ontology/organization#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "religious organization"
+      },
+      {
+        "@language": "de",
+        "@value": "religiöse Organisation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#Organization"
       }
     ]
   },
@@ -170,16 +361,16 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/agent#Organization"
+        "@id": "http://xmlns.com/foaf/0.1/Organization"
       },
       {
         "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F11_Corporate_Body"
       },
       {
-        "@id": "http://xmlns.com/foaf/0.1/Organization"
+        "@id": "http://e-editiones.ch/ontology/human#Group"
       },
       {
-        "@id": "http://e-editiones.ch/ontology/human#Group"
+        "@id": "http://e-editiones.ch/ontology/agent#Organization"
       }
     ],
     "http://www.w3.org/2002/07/owl#disjointWith": [
@@ -195,14 +386,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/organization#Library",
+    "@id": "http://e-editiones.ch/ontology/organization#MasonicLodge",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Organization having a role of preserving and making accessible information carriers to a defined community for reference or borrowing. An information carrier can be a book, periodical, newspaper, manuscript, film, map, print, also in microform, CD, cassette, videotape, DVD, Blu-ray Disc, e-book, audiobook, database, and other document format."
+        "@value": "Organizational unit of Freemasonry."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -213,24 +404,16 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "library"
+        "@value": "Masonic lodge"
       },
       {
         "@language": "de",
-        "@value": "Bibliothek"
-      },
-      {
-        "@language": "it",
-        "@value": "biblioteca"
-      },
-      {
-        "@language": "fr",
-        "@value": "bibliothèque"
+        "@value": "Freimaurerloge"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#CulturalHeritageInstitution"
+        "@id": "http://e-editiones.ch/ontology/organization#Organization"
       }
     ]
   },
@@ -263,19 +446,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/organization#hasNameLiteral",
+    "@id": "http://e-editiones.ch/ontology/organization#isMemberOfCompany",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a person organization to the literal of a name of that organization."
+        "@value": "Relating a person to a company the person is a member of."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#Organization"
+        "@id": "http://e-editiones.ch/ontology/human#Person"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -285,22 +468,22 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "person organization has name literal"
+        "@language": "de",
+        "@value": "ist Mitglied einer Firme"
       },
       {
-        "@language": "de",
-        "@value": "Personensorganisation hat Nameliterale"
+        "@language": "en",
+        "@value": "is member of company"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        "@id": "http://e-editiones.ch/ontology/organization#Company"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
+        "@id": "http://e-editiones.ch/ontology/organization#isMemberOf"
       }
     ]
   },
@@ -382,19 +565,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/organization#isMemberOfReligiousOrganization",
+    "@id": "http://e-editiones.ch/ontology/organization#hasNameLiteral",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a person to a religious organization the person is a member of."
+        "@value": "Relating a person organization to the literal of a name of that organization."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#ReligiousPerson"
+        "@id": "http://e-editiones.ch/ontology/organization#Organization"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -405,33 +588,33 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is member of religious organization"
+        "@value": "person organization has name literal"
       },
       {
         "@language": "de",
-        "@value": "ist Mitglied einer religiösen Organization"
+        "@value": "Personensorganisation hat Nameliterale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#ReligiousOrganization"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#isMemberOf"
+        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/organization#ReligiousPerson",
+    "@id": "http://e-editiones.ch/ontology/organization#Museum",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Person having religious faith or believing."
+        "@value": "Organization having roles of preserving and exhibiting objects of historical, scientific, artistic, or cultural interest in a special building also called museum."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -441,53 +624,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "religious person"
-      },
-      {
-        "@language": "fr",
-        "@value": "personne réligieuse"
-      },
-      {
         "@language": "de",
-        "@value": "religiöse Person"
+        "@value": "Museum"
+      },
+      {
+        "@language": "en",
+        "@value": "museum"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/human#Person"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/organization#Administration",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of an organization administering a group of people on any level, e.g. international, national, regional or city level."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "administration"
-      },
-      {
-        "@language": "de",
-        "@value": "Verwaltung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#Role"
+        "@id": "http://e-editiones.ch/ontology/organization#CulturalHeritageInstitution"
       }
     ]
   },
@@ -514,12 +661,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "is member of person organization"
-      },
-      {
         "@language": "de",
         "@value": "ist Mitglied einer Personensorganisation"
+      },
+      {
+        "@language": "en",
+        "@value": "is member of person organization"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -534,14 +681,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/organization#ReligiousOrganization",
+    "@id": "http://e-editiones.ch/ontology/organization#ReligiousPerson",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Organization of religious persons."
+        "@value": "Person having religious faith or believing."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -551,17 +698,21 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "religious organization"
+        "@language": "de",
+        "@value": "religiöse Person"
       },
       {
-        "@language": "de",
-        "@value": "religiöse Organisation"
+        "@language": "en",
+        "@value": "religious person"
+      },
+      {
+        "@language": "fr",
+        "@value": "personne réligieuse"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/organization#Organization"
+        "@id": "http://e-editiones.ch/ontology/human#Person"
       }
     ]
   },
@@ -608,55 +759,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/organization",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Formal description of organization involving persons, general subclasses, related classes and properties."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "http://creativecommons.org/licenses/by/3.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@language": "en",
-        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "An ontology about person organization"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-06-11"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/organization#CulturalHeritageInstitution",
+    "@id": "http://e-editiones.ch/ontology/organization#Library",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Organization having a role of preserving a repository of public knowledge, such as a library, an archive, museum, sites and monuments record, clearinghouse, a provider of a digital library, and a data aggregation service, which serve as memories for given societies or mankind."
+        "@value": "Organization having a role of preserving and making accessible information carriers to a defined community for reference or borrowing. An information carrier can be a book, periodical, newspaper, manuscript, film, map, print, also in microform, CD, cassette, videotape, DVD, Blu-ray Disc, e-book, audiobook, database, and other document format."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -666,63 +776,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "it",
+        "@value": "biblioteca"
+      },
+      {
         "@language": "en",
-        "@value": "cultural heritage institution"
+        "@value": "library"
       },
       {
         "@language": "de",
-        "@value": "Kulturerbeinstitution"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub125bL108C36"
+        "@value": "Bibliothek"
       },
       {
-        "@id": "http://e-editiones.ch/ontology/organization#Organization"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub125bL108C36",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#hasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#Preserver"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/organization#Museum",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Organization having roles of preserving and exhibiting objects of historical, scientific, artistic, or cultural interest in a special building also called museum."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Museum"
-      },
-      {
-        "@language": "en",
-        "@value": "museum"
+        "@language": "fr",
+        "@value": "bibliothèque"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -749,12 +816,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "politician role"
-      },
-      {
         "@language": "de",
         "@value": "Politiker-Rolle"
+      },
+      {
+        "@language": "en",
+        "@value": "politician role"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -764,14 +831,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/organization#MasonicLodge",
+    "@id": "http://e-editiones.ch/ontology/organization#Administration",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Organizational unit of Freemasonry."
+        "@value": "Role of an organization administering a group of people on any level, e.g. international, national, regional or city level."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -782,83 +849,16 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Freimaurerloge"
+        "@value": "Verwaltung"
       },
       {
         "@language": "en",
-        "@value": "Masonic lodge"
+        "@value": "administration"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#Organization"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/organization#Creator",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Publisher as role of an organization."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "organization creator"
-      },
-      {
-        "@language": "de",
-        "@value": "Organisation-Erschafferin"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#AgentCreator"
-      },
       {
         "@id": "http://e-editiones.ch/ontology/organization#Role"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/organization#Company",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Organization having primarily an economical role."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "company"
-      },
-      {
-        "@language": "de",
-        "@value": "Betrieb"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#Organization"
       }
     ]
   }

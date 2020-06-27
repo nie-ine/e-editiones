@@ -1,13 +1,18 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/creating#Collection",
+    "@id": "http://e-editiones.ch/ontology/creating#hasCreating",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Things brought together as a person-creation."
+        "@value": "Relating a creation by a person to the creating thereof."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -18,16 +23,53 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Sammlung"
+        "@value": "hat Kreierung"
       },
       {
         "@language": "en",
-        "@value": "collection"
+        "@value": "has creating"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creating"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#CreationSet",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Group of person-creations belonging together."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Person-Kreationsreihe"
+      },
+      {
+        "@language": "en",
+        "@value": "person-creation set"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/creating#Creation"
+        "@id": "http://e-editiones.ch/ontology/creating#CreationGroup"
       }
     ]
   },
@@ -54,17 +96,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "has author"
-      },
-      {
         "@language": "de",
         "@value": "hat Autor"
+      },
+      {
+        "@language": "en",
+        "@value": "has author"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub141bL193C13"
+        "@id": "_:ub123bL193C13"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
@@ -75,10 +117,10 @@
     ]
   },
   {
-    "@id": "_:ub141bL193C13",
+    "@id": "_:ub123bL193C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:ub141bL193C44"
+        "@id": "_:ub123bL193C44"
       },
       {
         "@id": "http://e-editiones.ch/ontology/human#Person"
@@ -86,7 +128,7 @@
     ]
   },
   {
-    "@id": "_:ub141bL193C44",
+    "@id": "_:ub123bL193C44",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -98,6 +140,377 @@
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
         "@id": "http://e-editiones.ch/ontology/creating#Author"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#AgentCreator",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a human agent, i.e. person or group, creating something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "agent creator"
+      },
+      {
+        "@language": "de",
+        "@value": "Agent-ErschafferIn"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#AgentRole"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/agent#Creator"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#AnonymousCreation",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Something created by one or more unidentified persons."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "anonyme Kreation"
+      },
+      {
+        "@language": "en",
+        "@value": "anonymous creation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creation"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#hasCreator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a creation to a human agent - a person or a group - that created it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has creator"
+      },
+      {
+        "@language": "de",
+        "@value": "hat ErschafferIn"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub123bL183C13"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/agent#hasCreator"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub123bL183C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub123bL183C43"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub123bL183C43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#AgentCreator"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#Relic",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Preserved remaining of interest of a person or of a person's belongings."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "relic"
+      },
+      {
+        "@language": "de",
+        "@value": "Relikt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#PhysicalCreation"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#Creation",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Something created by one or more persons."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "creation"
+      },
+      {
+        "@language": "de",
+        "@value": "Person-Kreation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub123bL70C58"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Output"
+      },
+      {
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub123bL70C58",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creating"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#Creating",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Creating as a person-action."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "person-creating"
+      },
+      {
+        "@language": "de",
+        "@value": "Person-Kreierung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Action"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/event#Creating"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Formal description of creating by humans, general subclasses, related classes and properties."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/3.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@language": "en",
+        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "An ontology about human creating"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-06-11"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#IntendedFinalVersion",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Person's creation as intended last version, e.g. of a development."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "intended final version"
+      },
+      {
+        "@language": "de",
+        "@value": "beabsichtigte Endversion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#FinalVersion"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#PersonCreator",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Creator as role of a person."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Person-ErschafferIn"
+      },
+      {
+        "@language": "en",
+        "@value": "person creator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#AgentCreator"
       }
     ]
   },
@@ -119,17 +532,263 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "person-creation group"
-      },
-      {
         "@language": "de",
         "@value": "Person-Kreationsgruppe"
+      },
+      {
+        "@language": "en",
+        "@value": "person-creation group"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#Copy",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Reproduction of a person's creation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "copy"
+      },
+      {
+        "@language": "de",
+        "@value": "Kopie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#PhysicalCreation"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#creationHasDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a creation by a person to a date it was created on."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Kreation hat Datum"
+      },
+      {
+        "@language": "en",
+        "@value": "creation has date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/time#hasEndDate"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#PersonAuthor",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person being responsible for a creation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "person author"
+      },
+      {
+        "@language": "de",
+        "@value": "Person-Autor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#isCreationOfSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a creation to a set it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Kreation einer Reihe"
+      },
+      {
+        "@language": "en",
+        "@value": "is creation of set"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#CreationSet"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#FirstVersion",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Person's creation as first version."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "first version"
+      },
+      {
+        "@language": "de",
+        "@value": "Erstversion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#CreationVersion"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#Collection",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Things brought together as a person-creation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "collection"
+      },
+      {
+        "@language": "de",
+        "@value": "Sammlung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creation"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#CreationDerivative",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Derivative of a person's creation, e.g. a translation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "creation derivative"
+      },
+      {
+        "@language": "de",
+        "@value": "Derivat einer Kreation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#Creation"
       }
     ]
   },
@@ -183,14 +842,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/creating#PhysicalCreation",
+    "@id": "http://e-editiones.ch/ontology/creating#CreationVersion",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Person creation as a physical resource."
+        "@value": "Person's creation differing in certain respects - e.g. time, extent - from onther e.g. earlier or standard one."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -201,103 +860,34 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "physische Person-Kreation"
+        "@value": "Version einer Kreation"
       },
       {
         "@language": "en",
-        "@value": "physical person creation"
+        "@value": "creation version"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/creating#Creation"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
-      },
-      {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing"
       }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#hasCreator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Relating a creation to a human agent - a person or a group - that created it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#Creation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has creator"
-      },
-      {
-        "@language": "de",
-        "@value": "hat ErschafferIn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub141bL183C13"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/agent#hasCreator"
+        "@value": "A version is created by the same person or group of persons who created another version."
       }
     ]
   },
   {
-    "@id": "_:ub141bL183C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Agent"
-      },
-      {
-        "@id": "_:ub141bL183C43"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub141bL183C43",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#AgentCreator"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#CreationDerivative",
+    "@id": "http://e-editiones.ch/ontology/creating#UnfinishedCreation",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Derivative of a person's creation, e.g. a translation."
+        "@value": "Creation in a state of not having all envisioned features."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -308,16 +898,48 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Derivat einer Kreation"
+        "@value": "unfertige Kreation"
       },
       {
         "@language": "en",
-        "@value": "creation derivative"
+        "@value": "unfinished creation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/creating#Creation"
+        "@id": "http://e-editiones.ch/ontology/creating#CreationVersion"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/creating#FinalVersion",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Person's creation as last version."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "final version"
+      },
+      {
+        "@language": "de",
+        "@value": "Endversion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#CreationVersion"
       }
     ]
   },
@@ -354,461 +976,6 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/creating#FirstVersion",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Person's creation as first version."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Erstversion"
-      },
-      {
-        "@language": "en",
-        "@value": "first version"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#CreationVersion"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#Relic",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Preserved remaining of interest of a person or of a person's belongings."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Relikt"
-      },
-      {
-        "@language": "en",
-        "@value": "relic"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#PhysicalCreation"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#Copy",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Reproduction of a person's creation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "copy"
-      },
-      {
-        "@language": "de",
-        "@value": "Kopie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#PhysicalCreation"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#CreationVersion",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Person's creation differing in certain respects - e.g. time, extent - from onther e.g. earlier or standard one."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "creation version"
-      },
-      {
-        "@language": "de",
-        "@value": "Version einer Kreation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#Creation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A version is created by the same person or group of persons who created another version."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#PersonAuthor",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person being responsible for a creation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Person-Autor"
-      },
-      {
-        "@language": "en",
-        "@value": "person author"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#AgentCreator",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a human agent, i.e. person or group, creating something."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "agent creator"
-      },
-      {
-        "@language": "de",
-        "@value": "Agent-ErschafferIn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/agent#Creator"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/human#AgentRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#Creation",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Something created by one or more persons."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Person-Kreation"
-      },
-      {
-        "@language": "en",
-        "@value": "creation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Output"
-      },
-      {
-        "@id": "_:ub141bL70C58"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub141bL70C58",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#Creating"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#FinalVersion",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Person's creation as last version."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Endversion"
-      },
-      {
-        "@language": "en",
-        "@value": "final version"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#CreationVersion"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#Creating",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Creating as a person-action."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "person-creating"
-      },
-      {
-        "@language": "de",
-        "@value": "Person-Kreierung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Action"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Creating"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#creationHasDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a creation by a person to a date it was created on."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#Creation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "creation has date"
-      },
-      {
-        "@language": "de",
-        "@value": "Kreation hat Datum"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/time#hasEndDate"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#isCreationOfSet",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a creation to a set it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#Creation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Kreation einer Reihe"
-      },
-      {
-        "@language": "en",
-        "@value": "is creation of set"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#CreationSet"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Formal description of creating by humans, general subclasses, related classes and properties."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "http://creativecommons.org/licenses/by/3.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@language": "en",
-        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "An ontology about human creating"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-06-11"
-      }
-    ]
-  },
-  {
     "@id": "http://e-editiones.ch/ontology/creating#hasModificationDate",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -831,12 +998,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "hat Änderungsdatum"
-      },
-      {
         "@language": "en",
         "@value": "has modification date"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Änderungsdatum"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -846,14 +1013,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/creating#UnfinishedCreation",
+    "@id": "http://e-editiones.ch/ontology/creating#PhysicalCreation",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Creation in a state of not having all envisioned features."
+        "@value": "Person creation as a physical resource."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -864,189 +1031,22 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "unfinished creation"
+        "@value": "physical person creation"
       },
       {
         "@language": "de",
-        "@value": "unfertige Kreation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#CreationVersion"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#PersonCreator",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Creator as role of a person."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "person creator"
-      },
-      {
-        "@language": "de",
-        "@value": "Person-ErschafferIn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#AgentCreator"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#AnonymousCreation",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Something created by one or more unidentified persons."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "anonyme Kreation"
-      },
-      {
-        "@language": "en",
-        "@value": "anonymous creation"
+        "@value": "physische Person-Kreation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/creating#Creation"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#hasCreating",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a creation by a person to the creating thereof."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#Creation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has creating"
       },
       {
-        "@language": "de",
-        "@value": "hat Kreierung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#Creating"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#isOutputOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#CreationSet",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Group of person-creations belonging together."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "person-creation set"
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
       },
       {
-        "@language": "de",
-        "@value": "Person-Kreationsreihe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#CreationGroup"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/creating#IntendedFinalVersion",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Person's creation as intended last version, e.g. of a development."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "beabsichtigte Endversion"
-      },
-      {
-        "@language": "en",
-        "@value": "intended final version"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#FinalVersion"
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing"
       }
     ]
   }
