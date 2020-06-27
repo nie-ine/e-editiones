@@ -4,12 +4,18 @@ title: Ontology Modeling
 permalink: /ontology-modeling
 ---
 ## Modeling dependencies
-There are a series of dependencies that directly influence the implementation of SWT, especially the modeling of ontologies.
+There are a series of dependencies that directly influence the modeling of ontologies.
 
 <!---![figure](/assets/images/ontology-dependence.png)
 **Figure 1: Resources on which ontology modeling is depending**--->
 
-Directive are the W3C standards, the aforementioned standard and existing domain ontologies, basic modeling patterns, and best practices.
+Directive are the [W3C Semantic Web standard ontologies](/semantic-web-technology#w3c-semantic-web-standards).  
+When modeling for a certain domain, one does not have to start from scratch. The longer the SWT is among us, the more likely someone else already created an ontology to cover the needed semantics (partially), often more generic concepts.
+There is a variety of [existing ontologies](/semantic-web-technology#other-ontologies-used-in-humanities-and-publishing). Some are very generic, others are quite specific. Some have become a de facto standard, e.g. SKOS and DC Elements, or practically are, e.g. Geo.  
+We have chosen the [CIDOC-CRM](http://www.cidoc-crm.org/) and [FRBRoo](http://iflastandards.info/ns/fr/frbr/frbroo/) (depending on the former) ontologies to base on. Especially using such more generic domain ontologies will enable semantic interoperability.  
+
+<!--- the aforementioned standard and existing domain ontologies, basic modeling patterns, and best practices.--->
+
 NIE-INE supports overall eleven projects, eight of which currently on the SWT side. Moreover, several new projects already showed their willingness to collaborate with us. The input dependency is represented by the original data model and data, mostly in XML (5 projects using often, but not always TEI), SQL (2 projects), or mixed (1 project).
 Last but not least, there is a dependency on the tacit knowledge of the domain specialists in the editing projects, needed for the implementation of domain knowledge besides the restricted database models. To uncover this knowledge, a commitment on the part of domain specialists is needed, in order to reach consensus on semantics that goes beyond their own specific research objectives.
 

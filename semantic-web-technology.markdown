@@ -32,22 +32,24 @@ The Web already comes with digital resources bearing an IRI or Internationalized
 
 Semantic Web technology provides 3 languages with increasing expressiveness: [Resource Description Framework (RDF), RDF Schema (RDFS)](https://www.w3.org/TR/rdf-mt/), and the [Web Ontology Language (OWL)](https://www.w3.org/TR/owl2-primer/), which can be used seperately to express formal elements in a growing complexity, resp. data, thesauri and ontologies (or formal dictionaries).  
 In our project we always use the 3 together without making such distinctions.  
-In Figure 2 the 3 ontologies of the 3 languages themselves are shown together as the basis, arguing that even for the simplest data expression the RDF-ontology is needed. Once declaring domain knowledge in own [ontologies](http://e-editiones.ch/ontologies), elements of the 3 foundational ontologies are needed.  
+In Figure 2 the 3 foundational ontologies of the 3 languages themselves are shown together as the basis, arguing that even for the simplest data expression the [RDF-ontology](http://www.w3.org/1999/02/22-rdf-syntax-ns#) is needed. Once declaring domain knowledge in [own ontologies](/ontologies), also elements of the [RDFS-](http://www.w3.org/2000/01/rdf-schema#) and [OWL-ontology](http://www.w3.org/2002/07/owl#) are needed.  
 The next layer represents the formal data expressed using the ontologies.  
 Ontologies and data can be serialized in [Turtle](https://www.w3.org/TR/turtle/), [RDF/XML](), or [N-Triples](https://www.w3.org/TR/n-triples/) syntax.  
 [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) is the RDF query language, to retrieve data from an RDF graph database or triple store. It has its own syntax.
 Rules are the means for inferring new data from data with machine reasoning.  
 All these layers are embedded in the logic layer.  
-More precisely the languages (except SPARQL) have their model (or interpretation) theory based on (first order predicate) logic and set theory (math).  
-The [Notation 3 language (N3)](https://www.w3.org/TeamSubmission/n3/) is an overarching language and still a Team Submission, i.e. not a standard (or recommendation) yet. Besides ontologies and data, it permits the declaration of inference rules and queries, as "end-rule" (See also [N3-rule-based machine reasoning](http://e-editiones.ch/n3-rule-based-machine-reasoning)). Turtle is a sublanguage of N3.  
+More precisely the languages (except SPARQL) have their model (or interpretation) theory based on first order predicate logic and set theory (math).  
+The [Notation 3 language (N3)](https://www.w3.org/TeamSubmission/n3/) is an overarching language and still a Team Submission, i.e. not a standard (or recommendation) yet. Besides ontologies and data, it permits the declaration of inference rules and queries, as "end-rule" (see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)). Turtle is a sublanguage of N3.  
 Note: there is a W3C N3-dev working group (of which T. Berners-Lee, Jod De Roo, the developer of the EYE reasoner, and Hans Cools, the author, are members) to further develop N3 and bring it to a possible standard.
 
 ## Advantages of SWT:
 - Semantics:
 	- Natural language independent
 	- Explicit -> data and model quality control feedback loop -> data management, comparison
-	- Unified -> linkable -> semi-automated semantic interoperability
-	- Machine-interpretable -> Machine reasoning  
+	- Unified -> linkable -> semantic interoperability
+	- Machine-interpretable
+		-> semi-automated semantic interoperability
+		-> machine reasoning  
 		-> semantic conversion of data models ([2-step formalization](http://e-editiones.ch/two-step-formalization))
 		-> enrich data; analysis, mining, and, together with probability theory, enable decision support
 	- domain knowledge expressed in reusable consented ontologies and N3-rules
@@ -61,13 +63,14 @@ Note: not meant to be exhaustive.
 	- Dublin Core (DC)
 		- [DC Elements](http://dublincore.org/documents/2012/06/14/dces/)
 		- [DC Terms](http://purl.org/dc/terms/)
+	- [Place (coordinated): Geo (WGS84) Vocabulary](http://www.w3.org/2003/01/geo/wgs84_pos#)
 	- [Friend of a Friend (FOAF)](http://xmlns.com/foaf/0.1/)
 	- [Countries](http://eulersharp.sourceforge.net/2003/03swap/countries#)
-	- [Place (coordinated)](http://www.w3.org/2003/01/geo/wgs84_pos#)
+- Natural science ontologies: also used in Humanities
 	- [The Semantic Web for Earth and Environmental Terminology (SWEET) Ontologies](https://github.com/ESIPFed/sweet)
 - Humanities domain ontologies:
 	- [CIDOC Conceptual Reference Model (CRM)](http://www.cidoc-crm.org/)
-	- [Functional Requirements for Bibliographic Records, Object Oriented (FRBROO)](http://iflastandards.info/ns/fr/frbr/frbroo/)
+	- [Functional Requirements for Bibliographic Records, Object Oriented (FRBRoo)](http://iflastandards.info/ns/fr/frbr/frbroo/)
         - [Scholastic Commentaries and Text Archive ontology (SCTA)](https://github.com/scta/scta-ontology/blob/master/SCTAOntologySpec.md)
 	- [Semantic Publishing and Referencing (SPAR)](http://www.sparontologies.net/)
 		- [FRBR-aligned Bibliographic Ontology (FaBiO)](http://www.sparontologies.net/ontologies/fabio)
