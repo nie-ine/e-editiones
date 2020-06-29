@@ -1,18 +1,18 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#hasSendingLocation",
+    "@id": "http://e-editiones.ch/ontology/physical-entity#placeHasNameLiteral",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating something material to a location it was sent from."
+        "@value": "Relating a place to its name literal."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Place"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -22,34 +22,34 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "hat Absendeort"
+        "@language": "en",
+        "@value": "place has name literal"
       },
       {
-        "@language": "en",
-        "@value": "has sending location"
+        "@language": "de",
+        "@value": "Platz hat Nameliterale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Place"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#hasLocation"
+        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Compound",
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Point",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Physical entity composed of more than 1 type of substance."
+        "@value": "Entity without dimension."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -59,23 +59,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "compound"
+        "@language": "de",
+        "@value": "Punkt"
       },
       {
-        "@language": "de",
-        "@value": "Mischung"
+        "@language": "en",
+        "@value": "point"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Entity"
+      },
       {
-        "@language": "en",
-        "@value": "This can be anything, e.g. chemical compound containing more than 1 elementary substance."
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
       }
     ]
   },
@@ -113,213 +110,6 @@
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://e-editiones.ch/ontology/physical-entity#ExistingState"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Place",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Specific space with a position reference, e.g. in a positioning reference system, e.g. the geodetic system of the Earth."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "place"
-      },
-      {
-        "@language": "de",
-        "@value": "Platz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E53_Place"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Time",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Physical entity."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "time"
-      },
-      {
-        "@language": "de",
-        "@value": "Zeit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Entity"
-      },
-      {
-        "@id": "http://sweetontology.net/propTimeTime"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Matter",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Physical entity having mass and volume."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Materie"
-      },
-      {
-        "@language": "en",
-        "@value": "matter"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.org/dc/terms/PhysicalResource"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "As in classical physics observed in everyday life."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#hasReceiver",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something material to a human agent - a person or a group - that received it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has receiver"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Empfänger"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub107bL216C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub107bL216C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Agent"
-      },
-      {
-        "@id": "_:ub107bL216C43"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub107bL216C43",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#AgentReceiver"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Product",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Matter as result of producing in broadest sense, e.g. honey produced by bees."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "product"
-      },
-      {
-        "@language": "de",
-        "@value": "Produkt"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
       }
     ]
   },
@@ -393,14 +183,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#ExistingState",
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Time",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "State of a physical entity existing, partially existing, or having existed."
+        "@value": "Physical entity."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -411,34 +201,120 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "existing state"
+        "@value": "time"
       },
       {
         "@language": "de",
-        "@value": "Existenzzustand"
+        "@value": "Zeit"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/event#State"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#oneOf": [
+        "@id": "http://sweetontology.net/propTimeTime"
+      },
       {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/physical-entity#Existing"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/physical-entity#Gone"
-          }
-        ]
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Entity"
       }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#hasSizeDescription",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
-    "http://www.w3.org/2004/02/skos/core#note": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "To be stated with a time indicator."
+        "@value": "Relating a space to a size description it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has size description"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Grössebeschreibung"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#hasReceiver",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something material to a human agent - a person or a group - that received it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Empfänger"
+      },
+      {
+        "@language": "en",
+        "@value": "has receiver"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub104bL216C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub104bL216C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub104bL216C43"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub104bL216C43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#AgentReceiver"
       }
     ]
   },
@@ -480,88 +356,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#hasSizeDescription",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a space to a size description it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Grössebeschreibung"
-      },
-      {
-        "@language": "en",
-        "@value": "has size description"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#hasReceivingDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something material to a date it was received on."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Empfangsdatum"
-      },
-      {
-        "@language": "en",
-        "@value": "has receiving date"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Length",
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Entity",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Spatial quantity representing 1 dimension."
+        "@value": "."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -571,171 +373,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Länge"
+        "@language": "en",
+        "@value": "physical entity"
       },
       {
-        "@language": "en",
-        "@value": "length"
+        "@language": "de",
+        "@value": "physische Entität"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://sweetontology.net/propSpaceDistanceLength"
-      },
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Space",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Physical entity."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "space"
-      },
-      {
-        "@language": "de",
-        "@value": "Raum"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://sweetontology.net/reprSpaceSpace"
-      },
-      {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Formal description of physical entity in broadest sense, general subclasses, related classes, and properties."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "http://creativecommons.org/licenses/by/3.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@language": "en",
-        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "Physical Entity"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-06-11"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#isPartOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a space to another one it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is part of"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Teil von"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Size",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Spatial extent having 1 to 3 dimensions."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "size"
-      },
-      {
-        "@language": "de",
-        "@value": "Grösse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      },
-      {
-        "@id": "http://sweetontology.net/propSpaceDistanceSize"
+        "@id": "http://e-editiones.ch/ontology/event#Output"
       }
     ]
   },
@@ -782,19 +430,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#placeHasNameLiteral",
+    "@id": "http://e-editiones.ch/ontology/physical-entity#isPartOf",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a place to its name literal."
+        "@value": "Relating a space to another one it is part of."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Place"
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -804,22 +452,89 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Platz hat Nameliterale"
+        "@language": "en",
+        "@value": "is part of"
       },
       {
-        "@language": "en",
-        "@value": "place has name literal"
+        "@language": "de",
+        "@value": "ist Teil von"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#hasSize",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a space to its size."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/text#hasNameLiteral"
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has size"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Grösse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Size"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Distance",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Length of the space between two points."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "distance"
+      },
+      {
+        "@language": "de",
+        "@value": "Abstand"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Length"
+      },
+      {
+        "@id": "http://sweetontology.net/propSpaceDistanceDistance"
       }
     ]
   },
@@ -866,6 +581,351 @@
     ]
   },
   {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#hasReceivingDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something material to a date it was received on."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Empfangsdatum"
+      },
+      {
+        "@language": "en",
+        "@value": "has receiving date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#hasSender",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something material to a human agent - a person or a group - that sent it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has sender"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Absender"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub104bL208C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub104bL208C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub104bL208C43"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub104bL208C43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#AgentSender"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#ExistingState",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "State of a physical entity existing, partially existing, or having existed."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Existenzzustand"
+      },
+      {
+        "@language": "en",
+        "@value": "existing state"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#State"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#oneOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/physical-entity#Existing"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/physical-entity#Gone"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "To be stated with a time indicator."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#hasSendingLocation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something material to a location it was sent from."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has sending location"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Absendeort"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Place"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#hasLocation"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Matter",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Physical entity having mass and volume."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "matter"
+      },
+      {
+        "@language": "de",
+        "@value": "Materie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/dc/terms/PhysicalResource"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "As in classical physics observed in everyday life."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Product",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Matter as result of producing in broadest sense, e.g. honey produced by bees."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Produkt"
+      },
+      {
+        "@language": "en",
+        "@value": "product"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Space",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Physical entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "space"
+      },
+      {
+        "@language": "de",
+        "@value": "Raum"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://sweetontology.net/reprSpaceSpace"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Entity"
+      },
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Formal description of physical entity in broadest sense, general subclasses, related classes, and properties."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/3.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@language": "en",
+        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "Physical Entity"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-06-11"
+      }
+    ]
+  },
+  {
     "@id": "http://e-editiones.ch/ontology/physical-entity#Existing",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
@@ -898,14 +958,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Point",
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Length",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Entity without dimension."
+        "@value": "Spatial quantity representing 1 dimension."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -916,187 +976,127 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Punkt"
+        "@value": "Länge"
       },
       {
         "@language": "en",
-        "@value": "point"
+        "@value": "length"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       },
       {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Entity"
+        "@id": "http://sweetontology.net/propSpaceDistanceLength"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#hasSender",
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Size",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating something material to a human agent - a person or a group - that sent it."
+        "@value": "Spatial extent having 1 to 3 dimensions."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "size"
+      },
+      {
+        "@language": "de",
+        "@value": "Grösse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://sweetontology.net/propSpaceDistanceSize"
+      },
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Place",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Specific space with a position reference, e.g. in a positioning reference system, e.g. the geodetic system of the Earth."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Platz"
+      },
+      {
+        "@language": "en",
+        "@value": "place"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E53_Place"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-entity#Compound",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Physical entity composed of more than 1 type of substance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Mischung"
+      },
+      {
+        "@language": "en",
+        "@value": "compound"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/physical-entity#Matter"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat Absender"
-      },
+    "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "has sender"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub107bL208C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub107bL208C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub107bL208C43"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Agent"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub107bL208C43",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#AgentSender"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Distance",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Length of the space between two points."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "distance"
-      },
-      {
-        "@language": "de",
-        "@value": "Abstand"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Length"
-      },
-      {
-        "@id": "http://sweetontology.net/propSpaceDistanceDistance"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#hasSize",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a space to its size."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has size"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Grösse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Size"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-entity#Entity",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "physische Entität"
-      },
-      {
-        "@language": "en",
-        "@value": "physical entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#Output"
+        "@value": "This can be anything, e.g. chemical compound containing more than 1 elementary substance."
       }
     ]
   }

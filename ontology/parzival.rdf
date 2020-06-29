@@ -1,247 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isSectionOfNovel">
-    <rdfs:comment xml:lang="en">Relating a verse section to a version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#VerseSection"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#CriticalEdition">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="en">is verse section of verse novel 'Parzival'</rdfs:label>
-    <rdfs:label xml:lang="de">ist Versabschnitt des Versromans 'Parzival'</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#VerseNovel"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfVerseNovel"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isAddedToDreissiger">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#AddedVerse"/>
-    <rdfs:comment xml:lang="en">Relating an edition verse to the dreissiger it is added to.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
-    <rdfs:label xml:lang="en">is added to dreissiger</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="de">zum Dreissiger hinzugefügt</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#Page">
-    <rdfs:comment xml:lang="en">Page of a manual transcript of 'Parzival'.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
-    <rdfs:label xml:lang="de">Seite 'Parzivals'</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="en">page of 'Parzival'</rdfs:label>
-    <rdfs:comment xml:lang="de">Seite eines Manuellen Transkripts 'Parzivals'.</rdfs:comment>
-  </rdfs:Class>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/parzival">
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <skos:note xml:lang="en">Labels are triple quoted due to single quoted literal.</skos:note>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:contributor xml:lang="en">Reinhard Priber, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
-    <dct:title xml:lang="en">An ontology about Wolfram von Eschenbach's 'Parzival' </dct:title>
-    <dct:description xml:lang="en">Formal description of specific concepts in the critical and digital edition of Wolfram von Eschenbach's 'Parzival.</dct:description>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-  </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#PrintedVerseNovel">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
-    <rdfs:label xml:lang="en">printed version of 'Parzival'</rdfs:label>
-    <rdfs:comment xml:lang="en">Printed version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:label xml:lang="de">gedruckte Version 'Parzivals'</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovelPart">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
-    <rdfs:label xml:lang="de">handtranskribiertes Teil 'Parzivals'</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:comment xml:lang="en">Part of a handwritten transcribed version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
-    <rdfs:label xml:lang="en">handwritten transcribed part of 'Parzival'</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isDreissigerOfSection">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
-    <rdfs:comment xml:lang="en">Relating a dreissiger to the verse section it is part of.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#VerseSection"/>
-    <rdfs:label xml:lang="de">ist Dreissiger eines Abschnitts</rdfs:label>
-    <rdfs:label xml:lang="en">is dreissiger of section</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isDreissigerOfPage">
-    <rdfs:label xml:lang="en">is dreissiger of edition page</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:comment xml:lang="en">Relating a dreissiger to a scientific edition page it is part of.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#EditionPage"/>
-    <rdfs:label xml:lang="de">ist Dreissiger einer Editionseite</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#dreissigerHasNumber">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="en">dreissiger has number</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#hasIdentifier"/>
-    <rdfs:label xml:lang="de">Dreissiger hat Nummer</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#DreissigerNumber"/>
-    <rdfs:comment xml:lang="en">Relating a dreissiger to its number.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#ScholarlyEdition">
-    <rdfs:comment xml:lang="en">Scholarly text edition of a transcript of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
+    <rdfs:label xml:lang="de">kritische Textedition eines Dreissigers</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/publishing#Expression"/>
-    <rdfs:label xml:lang="en">scholarly text edition of 'Parzival'</rdfs:label>
-    <rdfs:label xml:lang="de">wissenschaftliche Textedition von 'Parzival'</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
+    <rdfs:label xml:lang="en">critical text edition of a dreissiger</rdfs:label>
+    <rdfs:comment xml:lang="en">Critical text edition of a dreissiger depending on one or more transcripts of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscript">
-    <rdfs:label xml:lang="en">manual transcript of 'Parzival'</rdfs:label>
-    <rdfs:comment xml:lang="en">Manual transcript of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManualTranscript"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Codex"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/parzival#VerseNovelCopy"/>
     <rdfs:label xml:lang="de">manuelles Transkript 'Parzivals'</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManualTranscript"/>
+    <rdfs:label xml:lang="en">manual transcript of 'Parzival'</rdfs:label>
+    <rdfs:comment xml:lang="en">Manual transcript of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovel">
-    <rdfs:comment xml:lang="en">Handwritten transcribed version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:label xml:lang="de">handtranskribierte Version 'Parzivals'</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#PrintedVerseNovel">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:comment xml:lang="en">Printed version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:label xml:lang="en">printed version of 'Parzival'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
-    <rdfs:label xml:lang="en">handwritten transcribed version of 'Parzival'</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
+    <rdfs:label xml:lang="de">gedruckte Version 'Parzivals'</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#TextPage">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Page"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
-    <rdfs:comment xml:lang="en">Text page of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:label xml:lang="en">text page of 'Parzival'</rdfs:label>
-    <rdfs:label xml:lang="de">Textseite von 'Parzival'</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptRemnant">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManualTranscript"/>
-    <rdfs:comment xml:lang="en">Manual transcript remnant of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="de">manuelles Transkriptüberrest 'Parzivals'</rdfs:label>
-    <rdfs:label xml:lang="en">manual transcript remnant of 'Parzival'</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Remnant"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#DocumentPage">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/document#Page"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="en">document page of 'Parzival'</rdfs:label>
-    <rdfs:label xml:lang="de">Dokumentseite von 'Parzival'</rdfs:label>
-    <rdfs:comment xml:lang="en">Document page of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/document#ExpressionPart"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#CriticalEdition">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="de">kritische Textedition eines Dreissigers</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
-    <rdfs:comment xml:lang="en">Critical text edition of a dreissiger depending on one or more transcripts of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:label xml:lang="en">critical text edition of a dreissiger</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/publishing#Expression"/>
-  </rdfs:Class>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/parzival">
+    <dct:contributor xml:lang="en">Reinhard Priber, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:description xml:lang="en">Formal description of specific concepts in the critical and digital edition of Wolfram von Eschenbach's 'Parzival.</dct:description>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:title xml:lang="en">An ontology about Wolfram von Eschenbach's 'Parzival' </dct:title>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <skos:note xml:lang="en">Labels are triple quoted due to single quoted literal.</skos:note>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+  </owl:Ontology>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptFragment">
     <rdfs:comment xml:lang="en">Manual transcript fragment of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManualTranscript"/>
-    <rdfs:label xml:lang="en">manual transcript fragment of 'Parzival'</rdfs:label>
     <rdfs:label xml:lang="de">manuelles Transkriptfragment 'Parzivals'</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Fragment"/>
+    <rdfs:label xml:lang="en">manual transcript fragment of 'Parzival'</rdfs:label>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isVerseOfDreissiger">
-    <rdfs:label xml:lang="de">ist Vers eines Dreissigers</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isDreissigerOfSection">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#VerseSection"/>
+    <rdfs:label xml:lang="de">ist Dreissiger eines Abschnitts</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:comment xml:lang="en">Relating a verse to its dreissiger.</rdfs:comment>
-    <rdfs:label xml:lang="en">is verse of dreissiger</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#Verse"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
+    <rdfs:comment xml:lang="en">Relating a dreissiger to the verse section it is part of.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="en">is dreissiger of section</rdfs:label>
   </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#TextPage">
+    <rdfs:comment xml:lang="en">Text page of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Page"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
+    <rdfs:label xml:lang="de">Textseite von 'Parzival'</rdfs:label>
+    <rdfs:label xml:lang="en">text page of 'Parzival'</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isSectionOfNovel">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#VerseNovel"/>
+    <rdfs:label xml:lang="de">ist Versabschnitt des Versromans 'Parzival'</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#VerseSection"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfVerseNovel"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:comment xml:lang="en">Relating a verse section to a version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:label xml:lang="en">is verse section of verse novel 'Parzival'</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovelPart">
+    <rdfs:label xml:lang="de">handtranskribiertes Teil 'Parzivals'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
+    <rdfs:comment xml:lang="en">Part of a handwritten transcribed version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
+    <rdfs:label xml:lang="en">handwritten transcribed part of 'Parzival'</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptRemnant">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManualTranscript"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Remnant"/>
+    <rdfs:label xml:lang="en">manual transcript remnant of 'Parzival'</rdfs:label>
+    <rdfs:label xml:lang="de">manuelles Transkriptüberrest 'Parzivals'</rdfs:label>
+    <rdfs:comment xml:lang="en">Manual transcript remnant of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#DocumentPage">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/document#ExpressionPart"/>
+    <rdfs:label xml:lang="en">document page of 'Parzival'</rdfs:label>
+    <rdfs:label xml:lang="de">Dokumentseite von 'Parzival'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/document#Page"/>
+    <rdfs:comment xml:lang="en">Document page of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#ScholarlyEdition">
+    <rdfs:comment xml:lang="en">Scholarly text edition of a transcript of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:label xml:lang="en">scholarly text edition of 'Parzival'</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/publishing#Expression"/>
+    <rdfs:label xml:lang="de">wissenschaftliche Textedition von 'Parzival'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Edition"/>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#VerseNovelPrint">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
+    <rdfs:label xml:lang="en">print of 'Parzival'</rdfs:label>
+    <rdfs:label xml:lang="de">Druck von 'Parzival'</rdfs:label>
     <rdfs:comment xml:lang="en">Print of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/parzival#VerseNovelCopy"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
-    <rdfs:label xml:lang="de">Druck von 'Parzival'</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="en">print of 'Parzival'</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#VerseNovel">
-    <rdfs:label xml:lang="de">Version 'Parzivals'</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#dreissigerHasNumber">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#hasIdentifier"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#DreissigerNumber"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="en">version of 'Parzival'</rdfs:label>
-    <rdfs:comment xml:lang="en">Any version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#VerseNovel"/>
+    <rdfs:label xml:lang="de">Dreissiger hat Nummer</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
+    <rdfs:comment xml:lang="en">Relating a dreissiger to its number.</rdfs:comment>
+    <rdfs:label xml:lang="en">dreissiger has number</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovel">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel"/>
+    <rdfs:label xml:lang="de">handtranskribierte Version 'Parzivals'</rdfs:label>
+    <rdfs:comment xml:lang="en">Handwritten transcribed version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:label xml:lang="en">handwritten transcribed version of 'Parzival'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#EditionPage">
-    <rdfs:label xml:lang="en">edition page of 'Parzival'</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
-    <rdfs:comment xml:lang="en">Page of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isVerseOfDreissiger">
+    <rdfs:label xml:lang="en">is verse of dreissiger</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Page"/>
-    <rdfs:label xml:lang="de">Editionseite 'Parzivals'</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel">
-    <rdfs:comment xml:lang="en">Copied version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:label xml:lang="en">copied version of 'Parzival'</rdfs:label>
-    <rdfs:label xml:lang="de">kopierte Version 'Parzivals'</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#VerseNovel"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Witness"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#Verse"/>
+    <rdfs:comment xml:lang="en">Relating a verse to its dreissiger.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
+    <rdfs:label xml:lang="de">ist Vers eines Dreissigers</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isDreissigerOfPage">
+    <rdfs:label xml:lang="en">is dreissiger of edition page</rdfs:label>
+    <rdfs:label xml:lang="de">ist Dreissiger einer Editionseite</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a dreissiger to a scientific edition page it is part of.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CopiedText"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#EditionPage"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/parzival#isAddedToDreissiger">
+    <rdfs:comment xml:lang="en">Relating an edition verse to the dreissiger it is added to.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/parzival#Dreissiger"/>
+    <rdfs:label xml:lang="de">zum Dreissiger hinzugefügt</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/parzival#AddedVerse"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="en">is added to dreissiger</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#Page">
+    <rdfs:label xml:lang="en">page of 'Parzival'</rdfs:label>
+    <rdfs:comment xml:lang="en">Page of a manual transcript of 'Parzival'.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
+    <rdfs:label xml:lang="de">Seite 'Parzivals'</rdfs:label>
+    <rdfs:comment xml:lang="de">Seite eines Manuellen Transkripts 'Parzivals'.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#VerseNovelCopy">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="en">copy of 'Parzival'</rdfs:label>
-    <rdfs:label xml:lang="de">Kopie 'Parzivals'</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#TextCopy"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
     <rdfs:comment xml:lang="en">Copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#DreissigerNumber">
+    <rdfs:label xml:lang="de">Kopie 'Parzivals'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#TextCopy"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="de">Dreissigernummer</rdfs:label>
-    <rdfs:label xml:lang="en">dreissiger number</rdfs:label>
-    <rdfs:comment xml:lang="en">Number of a dreissiger.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#NaturalNumber"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Identifier"/>
+    <rdfs:label xml:lang="en">copy of 'Parzival'</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#Verse">
-    <rdfs:comment xml:lang="en">Verse of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#AddedVerse">
+    <rdfs:comment xml:lang="en">Verse added to a dreissiger, of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:label xml:lang="de">hinzugefügter Editionvers 'Parzivals'</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:label xml:lang="de">Editionvers 'Parzivals'</rdfs:label>
-    <rdfs:label xml:lang="en">edition verse of 'Parzival'</rdfs:label>
+    <rdfs:label xml:lang="en">added edition verse of 'Parzival'</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#Dreissiger">
-    <rdfs:label xml:lang="it">dreissiger</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
-    <rdfs:label xml:lang="en">dreissiger</rdfs:label>
-    <rdfs:label xml:lang="de">Dreissiger</rdfs:label>
-    <rdfs:comment xml:lang="en">Set of about 30 verses in a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:seeAlso xml:lang="en">Bumke Joachim, "Wolfram von Eschenbach", Springer-Verlag, Stuttgart, 2004.</rdfs:seeAlso>
-    <rdfs:label xml:lang="fr">dreissiger</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#Verse">
+    <rdfs:label xml:lang="de">Editionvers 'Parzivals'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:label xml:lang="en">edition verse of 'Parzival'</rdfs:label>
+    <rdfs:comment xml:lang="en">Verse of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#VerseSection">
     <rdfs:label xml:lang="de">Versabschnitt von 'Parzival'</rdfs:label>
+    <rdfs:comment xml:lang="en">Verse section of about 50 dreissiger in Wolfram Von Eschenbach's verse novel 'Parzival', or a version or derivative thereof.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
     <rdfs:label xml:lang="en">verse section of 'Parzival'</rdfs:label>
-    <rdfs:comment xml:lang="en">Verse section of about 50 dreissiger in Wolfram Von Eschenbach's verse novel 'Parzival', or a version or derivative thereof.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#AddedVerse">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#VerseNovel">
+    <rdfs:comment xml:lang="en">Any version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:label xml:lang="de">Version 'Parzivals'</rdfs:label>
+    <rdfs:label xml:lang="en">version of 'Parzival'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#VerseNovel"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
-    <rdfs:comment xml:lang="en">Verse added to a dreissiger, of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
-    <rdfs:label xml:lang="en">added edition verse of 'Parzival'</rdfs:label>
-    <rdfs:label xml:lang="de">hinzugefügter Editionvers 'Parzivals'</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#Dreissiger">
+    <rdfs:label xml:lang="en">dreissiger</rdfs:label>
+    <rdfs:seeAlso xml:lang="en">Bumke Joachim, "Wolfram von Eschenbach", Springer-Verlag, Stuttgart, 2004.</rdfs:seeAlso>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
+    <rdfs:label xml:lang="fr">dreissiger</rdfs:label>
+    <rdfs:label xml:lang="de">Dreissiger</rdfs:label>
+    <rdfs:label xml:lang="it">dreissiger</rdfs:label>
+    <rdfs:comment xml:lang="en">Set of about 30 verses in a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#DreissigerNumber">
+    <rdfs:comment xml:lang="en">Number of a dreissiger.</rdfs:comment>
+    <rdfs:label xml:lang="de">Dreissigernummer</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#NaturalNumber"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:label xml:lang="en">dreissiger number</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Identifier"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Witness"/>
+    <rdfs:comment xml:lang="en">Copied version of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:label xml:lang="de">kopierte Version 'Parzivals'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#VerseNovel"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
+    <rdfs:label xml:lang="en">copied version of 'Parzival'</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#CopiedText"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/parzival#EditionPage">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholarly-editing#Page"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
+    <rdfs:comment xml:lang="en">Page of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</rdfs:comment>
+    <rdfs:label xml:lang="de">Editionseite 'Parzivals'</rdfs:label>
+    <rdfs:label xml:lang="en">edition page of 'Parzival'</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/parzival#"/>
   </rdfs:Class>
 </rdf:RDF>
