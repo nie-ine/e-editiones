@@ -22,16 +22,14 @@ In 1990 at the onset of the World Wide Web (WWW), Tim Berners-Lee already envisi
 
 Figure 1 shows the common representation of the different technologies comprised in the SW stack.   
 
-![figure](/assets/images/semantic-web-stack.png)  
-**Figure 1: The Semantic Web Stack**
+{% include image.html url="/assets/images/semantic-web-stack.png" description="Figure 1: The Semantic Web Stack" %}
 
 The Web already comes with digital resources bearing an IRI or Internationalized Resource Identifier (URI or Uniform Resource Identifier and URL or Uniform Resource Locator are respective sub-concepts).  
 The Semantic Web provides 3 languages with increasing expressiveness: [Resource Description Framework (RDF), RDF Schema (RDFS)](https://www.w3.org/TR/rdf-mt/), and the [Web Ontology Language (OWL)](https://www.w3.org/TR/owl2-primer/), which can be used seperately to express formal elements in a growing complexity, resp. data, thesauri and ontologies (or formal dictionaries).  
 In our project we always use the 3 together without making such distinctions.  
 The author took the liberty to slightly change the previous graphic to the one in Figure 2 to emphasize the dependency on formal logic, and place ontologies at a basic level. 
 
-![figure](/assets/images/SWT-stack-N3.png)  
-**Figure 2: Adapted Semantic Web Stack featuring N3**
+{% include image.html url="/assets/images/SWT-stack-N3.png" description="Figure 2: Adapted Semantic Web Stack featuring N3" %}
 
 The figure shows the 3 foundational ontologies of the 3 languages themselves together as the basis, arguing that even for the simplest data expression the [RDF-ontology](http://www.w3.org/1999/02/22-rdf-syntax-ns#) is needed. Once declaring domain knowledge in [own ontologies](/ontologies), also elements of the [RDFS-](http://www.w3.org/2000/01/rdf-schema#) and [OWL-ontology](http://www.w3.org/2002/07/owl#) are needed.  
 The next layer represents the formal data expressed using the ontologies.  
@@ -52,7 +50,7 @@ Note: there is a W3C N3-dev working group (of which T. Berners-Lee, Jod De Roo, 
 	- Machine-interpretable  
 		→ semi-automated semantic interoperability  
 		→ machine reasoning  
-		→ semantic conversion of data models ([2-step formalization](http://e-editiones.ch/two-step-formalization))  
+		→ semantic conversion of data models ([2-step formalization](/two-step-formalization))  
 		→ enrich data; analysis, mining, and, together with probability theory, enable decision support  
 
 <!--- ° added value of RDF: e.g. no relation HDC and first publication in source data : adding relations between concepts ° Pre-processing year literals at conversion:--->

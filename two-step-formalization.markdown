@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Two-step formalization
+title: Two-Step Formalization
 permalink: /two-step-formalization
 
 ---
@@ -38,9 +38,7 @@ Very generally speaking, entities that are directly or 'harldy' coupled are like
 
 We discuss now in detail the two-step formalization (Figure 1).
 
-![](/assets/images/two-step-formalization.png)
-
-**Figure 1: 2-step formalization and analysis of RDF-data**
+{% include image.html url="/assets/images/two-step-formalization.png" description="Figure 1: 2-step formalization and analysis of RDF-data" %}
 
 <!---° In the processing of data we distinguish an operational and a formal world.--->
 
