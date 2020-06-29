@@ -2,7 +2,6 @@
 layout: page
 title: N3-rule-based machine reasoning
 permalink: /n3-rule-based-machine-reasoning
-
 ---
 ## Machine reasoning (when the fun really starts)
 Besides the domain ontologies, rules for machine resoning are developed. They are expressed in the [Notation 3 language](https://www.w3.org/TeamSubmission/n3/), also using elements of NIE and external ontologies. 
