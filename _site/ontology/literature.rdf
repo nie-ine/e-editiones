@@ -1,171 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#isArgumentOf">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Argument"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#isHymnOfCollection">
+    <rdfs:comment xml:lang="en">Relating a hymn to a collection it is part of.</rdfs:comment>
+    <rdfs:label xml:lang="en">is hymn of collection</rdfs:label>
+    <rdfs:label xml:lang="de">ist Hymne einer Sammlung</rdfs:label>
+    <rdfs:label xml:lang="it">è l'inno della collezione</rdfs:label>
+    <rdfs:label xml:lang="fr">est un hymne de collection</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Hymn"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#HymnCollection"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="de">ist Argument von</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an argument to a literary expression it is part of.</rdfs:comment>
-    <rdfs:label xml:lang="en">is argument of</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
-    <rdfs:label xml:lang="it">è argomento di</rdfs:label>
-    <rdfs:label xml:lang="fr">est l'argument de</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Epilogue">
-    <rdfs:label xml:lang="it">epilogo</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#VerseNovel">
+    <rdfs:label xml:lang="de">Versroman</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="ub11bL231C41">
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
+        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">roman en vers</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="de">Epilog</rdfs:label>
-    <rdfs:comment xml:lang="en">Conclusion of a literary expression or part of it.</rdfs:comment>
-    <rdfs:label xml:lang="en">epilogue</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Conclusion"/>
-    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
-    <rdfs:label xml:lang="fr">épilogue</rdfs:label>
+    <rdfs:label xml:lang="it">romanzo del verso</rdfs:label>
+    <rdfs:label xml:lang="en">verse novel</rdfs:label>
+    <rdfs:comment xml:lang="en">Narrative fiction expression in verse - possibly partially - and with novel-length, wherein character development and plot are more important than poetry.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#isVerseSongOfCollection">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VerseSongCollection"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#VerseSong"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:comment xml:lang="en">Relating a verse song to the collection it is part of.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Versgesang einer Sammlung</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#NonfictionNovel">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#SentenceExpression"/>
+    <rdfs:comment xml:lang="en">Narrative nonfiction expression in prose.</rdfs:comment>
+    <rdfs:label xml:lang="it">romanzo di saggistica</rdfs:label>
+    <rdfs:label xml:lang="en">nonfiction novel</rdfs:label>
+    <rdfs:label xml:lang="de">sachliche Roman</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="ub11bL248C87">
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
+        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="https://www.britannica.com/art/Nonfiction-novel"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="fr">est le verset de la collection</rdfs:label>
-    <rdfs:label xml:lang="en">is verse song of collection</rdfs:label>
-    <rdfs:label xml:lang="it">è il verso della raccolta</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Postface">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
-    <rdfs:label xml:lang="it">postfazione</rdfs:label>
-    <rdfs:seeAlso rdf:resource="https://www.merriam-webster.com/dictionary/postface"/>
-    <rdfs:comment xml:lang="en">Text expression following a literary expression, usually written by the (main) author.</rdfs:comment>
-    <rdfs:label xml:lang="fr">postface</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="en">postface</rdfs:label>
-    <rdfs:label xml:lang="de">Nachwort</rdfs:label>
+    <rdfs:label xml:lang="fr">roman de non-fiction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#NonfictionExpression"/>
   </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#anthologyHasExpression">
-    <rdfs:label xml:lang="de">hat Expression</rdfs:label>
+    <rdfs:label xml:lang="it">ha espressione</rdfs:label>
+    <rdfs:label xml:lang="fr">a une expression</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an anthology to a literary expression it has.</rdfs:comment>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
     <rdfs:label xml:lang="en">has expression</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an anthology to a literary expression it has.</rdfs:comment>
-    <rdfs:label xml:lang="fr">a une expression</rdfs:label>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Anthology"/>
-    <rdfs:label xml:lang="it">ha espressione</rdfs:label>
+    <rdfs:label xml:lang="de">hat Expression</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#ProsePoem">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poem"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#SentenceExpression"/>
-    <rdfs:label xml:lang="it">poesia in prosa</rdfs:label>
-    <rdfs:label xml:lang="fr">poème en prose</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#hasPoetryGenre">
+    <rdfs:label xml:lang="en">has poetry</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
+    <rdfs:label xml:lang="it">ha poesia</rdfs:label>
+    <rdfs:label xml:lang="de">hat Poetik</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:comment xml:lang="en">Poem written in prose.</rdfs:comment>
-    <rdfs:label xml:lang="de">Prosagedicht</rdfs:label>
-    <rdfs:label xml:lang="en">prose poem</rdfs:label>
-    <rdfs:comment xml:lang="de">Gedicht in Prosa geschrieben.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Playwright">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="it">drammaturgo</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Author"/>
-    <rdfs:label xml:lang="de">DramatikerIn</rdfs:label>
-    <rdfs:comment xml:lang="en">Author of a play.</rdfs:comment>
-    <rdfs:label xml:lang="fr">dramaturge</rdfs:label>
-    <rdfs:label xml:lang="en">playwright</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Prologue">
-    <rdfs:label xml:lang="fr">prologue</rdfs:label>
-    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Introduction"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="it">prologo</rdfs:label>
-    <rdfs:label xml:lang="de">Prolog</rdfs:label>
-    <rdfs:label xml:lang="en">prologue</rdfs:label>
-    <rdfs:comment xml:lang="en">Introduction of a literary expression providing context and background, e.g. an earlier story that ties into the main one.</rdfs:comment>
-  </rdfs:Class>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Poem"/>
+    <rdfs:comment xml:lang="en">Relating a poem to its genre of poetry.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a de la poésie</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#hasGenre">
+        <rdfs:comment xml:lang="en">Relating a literary expression to a genre it has.</rdfs:comment>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
+        <skos:note xml:lang="en">A literary expression can have more than one genre.</skos:note>
+        <rdfs:label xml:lang="en">has literary genre</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasContentNature"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+        <rdfs:label xml:lang="fr">a un genre littéraire</rdfs:label>
+        <rdfs:label xml:lang="de">hat literarische Gattung</rdfs:label>
+        <rdfs:label xml:lang="it">ha un genere letterario</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#hasPoet">
-    <rdfs:label xml:lang="it">ha poeta</rdfs:label>
-    <rdfs:label xml:lang="en">has poet</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a poem to a person who authored it.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-expression#hasAuthor"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="de">hat Dichter</rdfs:label>
+    <rdfs:label xml:lang="it">ha poeta</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Poem"/>
     <rdfs:range>
       <rdf:Description rdf:nodeID="ub11bL392C13">
-        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
         <rdfs:subClassOf>
           <owl:Restriction rdf:nodeID="ub11bL392C44">
             <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Poet"/>
             <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
           </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
       </rdf:Description>
     </rdfs:range>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Poem"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-expression#hasAuthor"/>
+    <rdfs:label xml:lang="en">has poet</rdfs:label>
     <rdfs:label xml:lang="fr">a un poète</rdfs:label>
-    <rdfs:label xml:lang="de">hat Dichter</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
   </owl:ObjectProperty>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/literature">
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
-    <dct:title xml:lang="en">An ontology about literature</dct:title>
-    <dct:description xml:lang="en">Formal description of literature, its general subclasses, related classes and properties.</dct:description>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, and software developer, University of Basel, Switzerland</dct:creator>
-  </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Foreword">
-    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
-    <rdfs:comment xml:lang="en">Text expression preceding a literary expression, usually written by a person other than the (main) author, about the relation with the author or the literary expression, and possibly rewritten to alert the reader to changes in the literary expression.</rdfs:comment>
-    <rdfs:label xml:lang="fr">préface</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Playwright">
+    <rdfs:label xml:lang="en">playwright</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Author"/>
+    <rdfs:label xml:lang="de">DramatikerIn</rdfs:label>
+    <rdfs:label xml:lang="fr">dramaturge</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
-    <rdfs:label xml:lang="de">Einleitung</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
-    <rdfs:label xml:lang="it">preambolo</rdfs:label>
-    <rdfs:label xml:lang="en">foreword</rdfs:label>
+    <rdfs:comment xml:lang="en">Author of a play.</rdfs:comment>
+    <rdfs:label xml:lang="it">drammaturgo</rdfs:label>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#hasPoetryGenre">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Poem"/>
-    <rdfs:label xml:lang="it">ha poesia</rdfs:label>
-    <rdfs:label xml:lang="en">has poetry</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
-    <rdfs:label xml:lang="de">hat Poetik</rdfs:label>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#hasGenre">
-        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
-        <rdfs:label xml:lang="en">has literary genre</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
-        <skos:note xml:lang="en">A literary expression can have more than one genre.</skos:note>
-        <rdfs:label xml:lang="de">hat literarische Gattung</rdfs:label>
-        <rdfs:comment xml:lang="en">Relating a literary expression to a genre it has.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasContentNature"/>
-        <rdfs:label xml:lang="fr">a un genre littéraire</rdfs:label>
-        <rdfs:label xml:lang="it">ha un genere letterario</rdfs:label>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#isArgumentOf">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Argument"/>
+    <rdfs:label xml:lang="fr">est l'argument de</rdfs:label>
+    <rdfs:label xml:lang="en">is argument of</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an argument to a literary expression it is part of.</rdfs:comment>
+    <rdfs:label xml:lang="de">ist Argument von</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="it">è argomento di</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="fr">a de la poésie</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a poem to its genre of poetry.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
   </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Motto">
-    <rdfs:label xml:lang="it">motto</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#Citation"/>
-    <rdfs:seeAlso rdf:resource="https://www.collinsdictionary.com/dictionary/english/vice-versa"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:comment xml:lang="en">Citation prefacing a literary expression or part of it.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Preface"/>
-    <rdfs:label xml:lang="en">motto</rdfs:label>
-    <rdfs:label xml:lang="de">Motto</rdfs:label>
+    <rdfs:label xml:lang="it">motto</rdfs:label>
+    <rdfs:seeAlso rdf:resource="https://www.collinsdictionary.com/dictionary/english/vice-versa"/>
     <rdfs:label xml:lang="fr">motto</rdfs:label>
+    <rdfs:label xml:lang="en">motto</rdfs:label>
+    <rdfs:comment xml:lang="en">Citation prefacing a literary expression or part of it.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#Citation"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="de">Motto</rdfs:label>
   </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Epilogue">
+    <rdfs:label xml:lang="it">epilogo</rdfs:label>
+    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
+    <rdfs:label xml:lang="fr">épilogue</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Conclusion"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="en">epilogue</rdfs:label>
+    <rdfs:label xml:lang="de">Epilog</rdfs:label>
+    <rdfs:comment xml:lang="en">Conclusion of a literary expression or part of it.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Foreword">
+    <rdfs:label xml:lang="it">preambolo</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:comment xml:lang="en">Text expression preceding a literary expression, usually written by a person other than the (main) author, about the relation with the author or the literary expression, and possibly rewritten to alert the reader to changes in the literary expression.</rdfs:comment>
+    <rdfs:label xml:lang="en">foreword</rdfs:label>
+    <rdfs:label xml:lang="de">Einleitung</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
+    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
+    <rdfs:label xml:lang="fr">préface</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#ProsePoem">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poem"/>
+    <rdfs:label xml:lang="it">poesia in prosa</rdfs:label>
+    <rdfs:label xml:lang="en">prose poem</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#SentenceExpression"/>
+    <rdfs:comment xml:lang="en">Poem written in prose.</rdfs:comment>
+    <rdfs:label xml:lang="fr">poème en prose</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:comment xml:lang="de">Gedicht in Prosa geschrieben.</rdfs:comment>
+    <rdfs:label xml:lang="de">Prosagedicht</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#isVerseSongOfCollection">
+    <rdfs:label xml:lang="fr">est le verset de la collection</rdfs:label>
+    <rdfs:label xml:lang="it">è il verso della raccolta</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a verse song to the collection it is part of.</rdfs:comment>
+    <rdfs:label xml:lang="en">is verse song of collection</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="de">ist Versgesang einer Sammlung</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VerseSongCollection"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#VerseSong"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#hasNovelist">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:comment xml:lang="en">Relating a novel to a person who authored it.</rdfs:comment>
+    <rdfs:label xml:lang="it">ha romanziere</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-expression#hasAuthor"/>
+    <rdfs:label xml:lang="de">hat RomanautorIn</rdfs:label>
     <rdfs:range>
       <rdf:Description rdf:nodeID="ub11bL401C13">
         <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
@@ -177,230 +195,267 @@
         </rdfs:subClassOf>
       </rdf:Description>
     </rdfs:range>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-expression#hasAuthor"/>
-    <rdfs:comment xml:lang="en">Relating a novel to a person who authored it.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Novel"/>
-    <rdfs:label xml:lang="it">ha romanziere</rdfs:label>
-    <rdfs:label xml:lang="de">hat RomanautorIn</rdfs:label>
-    <rdfs:label xml:lang="fr">a un romancier</rdfs:label>
     <rdfs:label xml:lang="en">has novelist</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Novel"/>
+    <rdfs:label xml:lang="fr">a un romancier</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#NonfictionNovel">
-    <rdfs:label xml:lang="it">romanzo di saggistica</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#SentenceExpression"/>
-    <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub11bL248C87">
-        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">roman de non-fiction</rdfs:label>
-    <rdfs:seeAlso rdf:resource="https://www.britannica.com/art/Nonfiction-novel"/>
-    <rdfs:label xml:lang="en">nonfiction novel</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#NonfictionExpression"/>
-    <rdfs:label xml:lang="de">sachliche Roman</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:comment xml:lang="en">Narrative nonfiction expression in prose.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#VerseNovel">
-    <rdfs:label xml:lang="de">Versroman</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub11bL231C41">
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
-        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">verse novel</rdfs:label>
-    <rdfs:comment xml:lang="en">Narrative fiction expression in verse - possibly partially - and with novel-length, wherein character development and plot are more important than poetry.</rdfs:comment>
-    <rdfs:label xml:lang="fr">roman en vers</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="it">romanzo del verso</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/literature#isHymnOfCollection">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#HymnCollection"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/literature#Hymn"/>
-    <rdfs:label xml:lang="de">ist Hymne einer Sammlung</rdfs:label>
-    <rdfs:label xml:lang="en">is hymn of collection</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:comment xml:lang="en">Relating a hymn to a collection it is part of.</rdfs:comment>
-    <rdfs:label xml:lang="it">è l'inno della collezione</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="fr">est un hymne de collection</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Preface">
-    <rdfs:label xml:lang="en">preface</rdfs:label>
-    <rdfs:label xml:lang="it">prefazione</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/literature">
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, and software developer, University of Basel, Switzerland</dct:creator>
+    <dct:title xml:lang="en">An ontology about literature</dct:title>
+    <dct:description xml:lang="en">Formal description of literature, its general subclasses, related classes and properties.</dct:description>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
+  </owl:Ontology>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Prologue">
     <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
-    <rdfs:label xml:lang="fr">avant-propos</rdfs:label>
-    <rdfs:comment xml:lang="en">Text expression preceding a literary expression, usually written by the (main) author, stating the origin of the literary expression, its scope, purpose, plan, and intended audience, and including any afterthoughts and acknowledgments of assistance; possibly rewritten to alert the reader to changes in the literary expression.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Introduction"/>
+    <rdfs:comment xml:lang="en">Introduction of a literary expression providing context and background, e.g. an earlier story that ties into the main one.</rdfs:comment>
+    <rdfs:label xml:lang="de">Prolog</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="it">prologo</rdfs:label>
+    <rdfs:label xml:lang="fr">prologue</rdfs:label>
+    <rdfs:label xml:lang="en">prologue</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Postface">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="en">postface</rdfs:label>
+    <rdfs:label xml:lang="de">Nachwort</rdfs:label>
+    <rdfs:comment xml:lang="en">Text expression following a literary expression, usually written by the (main) author.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
+    <rdfs:label xml:lang="it">postfazione</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
-    <rdfs:label xml:lang="de">Vorwort</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#EpicNarrative">
-    <rdfs:label xml:lang="en">epic narrative</rdfs:label>
-    <rdfs:label xml:lang="fr">récit épique</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:comment xml:lang="en">Narrative about heroism.</rdfs:comment>
-    <rdfs:label xml:lang="de">epische Narration</rdfs:label>
-    <rdfs:label xml:lang="it">narrativa epica</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#ScientificPoetry">
-    <rdfs:comment xml:lang="en">Poetry expressed in a scientific description.</rdfs:comment>
-    <rdfs:label xml:lang="en">scientific poetry</rdfs:label>
-    <rdfs:label xml:lang="it">poesia scientifica</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#DescriptivePoetry"/>
-    <rdfs:label xml:lang="fr">poésie scientifique</rdfs:label>
-    <rdfs:label xml:lang="de">wissenschaftliche Poetik</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:seeAlso rdf:resource="https://www.merriam-webster.com/dictionary/postface"/>
+    <rdfs:label xml:lang="fr">postface</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Fiction">
-    <rdfs:label xml:lang="en">literary fiction</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="de">literarische Fiktion</rdfs:label>
-    <rdfs:label xml:lang="it">finzione letteraria</rdfs:label>
     <rdfs:comment xml:lang="en">Literature having content derived from imagination.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#Fiction"/>
-    <rdfs:label xml:lang="fr">fiction littéraire</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Nonfiction">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#Nonfiction"/>
-    <rdfs:comment xml:lang="en">Literature having content based on fact.</rdfs:comment>
-    <rdfs:label xml:lang="de">sachliche Literatur</rdfs:label>
-    <rdfs:label xml:lang="en">literary nonfiction</rdfs:label>
-    <rdfs:label xml:lang="it">saggistica letteraria</rdfs:label>
-    <rdfs:label xml:lang="fr">documentaire littéraire</rdfs:label>
+    <rdfs:label xml:lang="en">literary fiction</rdfs:label>
+    <rdfs:label xml:lang="it">finzione letteraria</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
+    <rdfs:label xml:lang="de">literarische Fiktion</rdfs:label>
+    <rdfs:label xml:lang="fr">fiction littéraire</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#Fiction"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Poem">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Drama">
+    <rdfs:comment xml:lang="en">Literature for oral performance.</rdfs:comment>
+    <rdfs:label xml:lang="fr">drame</rdfs:label>
+    <rdfs:label xml:lang="it">dramma</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="de">Dramatik</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
+    <rdfs:label xml:lang="en">drama</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#VerseSongCollection">
+    <rdfs:label xml:lang="de">Versgesangsammlung</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="en">poem</rdfs:label>
-    <rdfs:comment xml:lang="de">Poetische Expression.</rdfs:comment>
-    <rdfs:label xml:lang="it">poesia</rdfs:label>
-    <rdfs:label xml:lang="de">Gedicht</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub11bL172C41">
-        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">poème</rdfs:label>
-    <rdfs:comment xml:lang="en">Poetic expression.</rdfs:comment>
+    <rdfs:label xml:lang="fr">collection de chansons en vers</rdfs:label>
+    <rdfs:label xml:lang="en">verse song collection</rdfs:label>
+    <rdfs:comment xml:lang="en">Collection of verse songs.</rdfs:comment>
+    <rdfs:label xml:lang="it">raccolta di canzoni versi</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Collection"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Novelist">
-    <rdfs:comment xml:lang="en">Author of a novel.</rdfs:comment>
-    <rdfs:label xml:lang="en">novelist</rdfs:label>
-    <rdfs:label xml:lang="it">novelliere</rdfs:label>
-    <rdfs:label xml:lang="de">Romanschriftsteller</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#NarrativePoetry">
+    <rdfs:label xml:lang="en">narrative poetry</rdfs:label>
+    <rdfs:label xml:lang="fr">poésie narrative</rdfs:label>
+    <rdfs:label xml:lang="de">narrative Poetik</rdfs:label>
+    <rdfs:label xml:lang="it">poesia narrativa</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="fr">romancier</rdfs:label>
+    <rdfs:comment xml:lang="en">Poetry expressed in a narrative.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Poet">
+    <rdfs:label xml:lang="fr">poète</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Author"/>
+    <rdfs:label xml:lang="it">poeta</rdfs:label>
+    <rdfs:label xml:lang="de">Dichter</rdfs:label>
+    <rdfs:comment xml:lang="en">Author of a poem.</rdfs:comment>
+    <rdfs:label xml:lang="en">poet</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#NonfictionExpression">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
-    <rdfs:label xml:lang="fr">expression littéraire non fictionnelle</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#EpicNarrative">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
+    <rdfs:label xml:lang="it">narrativa epica</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="de">sachliche literarische Expression</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub11bL157C41">
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
-        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Nonfiction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="it">espressione letteraria di saggistica</rdfs:label>
-    <rdfs:label xml:lang="en">literary nonfiction expression</rdfs:label>
-    <rdfs:comment xml:lang="en">Literary expression having the nonfiction genre.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Argument">
-    <rdfs:comment xml:lang="en">Summary of a literary expression or part of it, often a poem, often at the beginning of a section, to orient a reader.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="en">argument</rdfs:label>
-    <rdfs:label xml:lang="it">argomento</rdfs:label>
-    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
-    <rdfs:label xml:lang="fr">argument</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Introduction"/>
-    <rdfs:label xml:lang="de">Argument</rdfs:label>
+    <rdfs:label xml:lang="de">epische Narration</rdfs:label>
+    <rdfs:label xml:lang="fr">récit épique</rdfs:label>
+    <rdfs:comment xml:lang="en">Narrative about heroism.</rdfs:comment>
+    <rdfs:label xml:lang="en">epic narrative</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Anthology">
-    <rdfs:label xml:lang="en">anthology</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
     <rdfs:comment xml:lang="en">Collection of literary expressions or parts thereof, by one or more authors, selected along certain criteria.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Collection"/>
-    <rdfs:label xml:lang="it">antologia</rdfs:label>
-    <rdfs:label xml:lang="de">Anthologie</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="en">anthology</rdfs:label>
     <rdfs:label xml:lang="fr">anthologie</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#HymnCollection">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Collection"/>
-    <rdfs:label xml:lang="en">hymn collection</rdfs:label>
-    <rdfs:label xml:lang="it">collezione di inni</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
-    <rdfs:label xml:lang="de">Hymnesammlung</rdfs:label>
-    <rdfs:comment xml:lang="en">Collection of hymns.</rdfs:comment>
-    <rdfs:label xml:lang="fr">collection d'hymnes</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#EpicPoetry">
-    <rdfs:label xml:lang="it">poesia epica</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#EpicNarrative"/>
-    <rdfs:label xml:lang="en">epic poetry</rdfs:label>
-    <rdfs:label xml:lang="fr">poésie épique</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#NarrativePoetry"/>
-    <rdfs:comment xml:lang="en">Poetry expressed in an epic narrative.</rdfs:comment>
-    <rdfs:label xml:lang="de">epische Poetik</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Expression">
-    <rdfs:label xml:lang="de">literarische Expression</rdfs:label>
-    <rdfs:comment xml:lang="en">Text expression as literature.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="fr">expression littéraire</rdfs:label>
-    <rdfs:label xml:lang="en">literary expression</rdfs:label>
-    <rdfs:label xml:lang="it">espressione letteraria</rdfs:label>
+    <rdfs:label xml:lang="de">Anthologie</rdfs:label>
+    <rdfs:label xml:lang="it">antologia</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
-    <rdfs:comment xml:lang="de">Textexpression als Literatur.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#VerseSong">
-    <rdfs:label xml:lang="it">canzone del verso</rdfs:label>
-    <rdfs:comment xml:lang="de">Versgedicht als Liedtext.</rdfs:comment>
-    <rdfs:label xml:lang="fr">chanson en vers</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#VersePoem"/>
-    <rdfs:label xml:lang="de">Verslied</rdfs:label>
-    <rdfs:comment xml:lang="en">Verse poem as lyrics of a song.</rdfs:comment>
-    <rdfs:label xml:lang="en">verse song</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#VersePoem">
-    <rdfs:label xml:lang="en">verse poem</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poem"/>
-    <rdfs:label xml:lang="it">poesia del verso</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:comment xml:lang="en">Poem written in verse.</rdfs:comment>
-    <rdfs:comment xml:lang="det">Gedicht ausgedruckt in Vers.</rdfs:comment>
-    <rdfs:label xml:lang="fr">poème en vers</rdfs:label>
-    <rdfs:label xml:lang="de">Versgedicht</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Collection"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Literature">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#ContentNature"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#WrittenText"/>
-    <rdfs:label xml:lang="de">Literatur</rdfs:label>
-    <rdfs:label xml:lang="en">literature</rdfs:label>
-    <rdfs:comment xml:lang="en">Text distinctively written with certain expressive quality, considered as art.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
     <rdfs:label xml:lang="fr">littérature</rdfs:label>
+    <rdfs:label xml:lang="en">literature</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#WrittenText"/>
+    <rdfs:comment xml:lang="en">Text distinctively written with certain expressive quality, considered as art.</rdfs:comment>
     <rdfs:label xml:lang="it">letteratura</rdfs:label>
+    <rdfs:label xml:lang="de">Literatur</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Nonfiction">
+    <rdfs:label xml:lang="fr">documentaire littéraire</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#Nonfiction"/>
+    <rdfs:label xml:lang="it">saggistica letteraria</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
+    <rdfs:comment xml:lang="en">Literature having content based on fact.</rdfs:comment>
+    <rdfs:label xml:lang="de">sachliche Literatur</rdfs:label>
+    <rdfs:label xml:lang="en">literary nonfiction</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#EpicPoetry">
+    <rdfs:label xml:lang="de">epische Poetik</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#NarrativePoetry"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#EpicNarrative"/>
+    <rdfs:label xml:lang="fr">poésie épique</rdfs:label>
+    <rdfs:label xml:lang="it">poesia epica</rdfs:label>
+    <rdfs:comment xml:lang="en">Poetry expressed in an epic narrative.</rdfs:comment>
+    <rdfs:label xml:lang="en">epic poetry</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#LyricPoetry">
+    <rdfs:comment xml:lang="en">Poetry expressing emotion.</rdfs:comment>
+    <rdfs:label xml:lang="it">poesia lirica</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
+    <rdfs:label xml:lang="en">lyric poetry</rdfs:label>
+    <rdfs:label xml:lang="fr"> poésie lyrique</rdfs:label>
+    <rdfs:label xml:lang="de">lyrische Poetik</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Preface">
+    <rdfs:label xml:lang="en">preface</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="fr">avant-propos</rdfs:label>
+    <rdfs:comment xml:lang="en">Text expression preceding a literary expression, usually written by the (main) author, stating the origin of the literary expression, its scope, purpose, plan, and intended audience, and including any afterthoughts and acknowledgments of assistance; possibly rewritten to alert the reader to changes in the literary expression.</rdfs:comment>
+    <rdfs:label xml:lang="de">Vorwort</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#ExpressionPart"/>
+    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
+    <rdfs:label xml:lang="it">prefazione</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#PoesieFugitive">
+    <rdfs:label xml:lang="de">Poésie fugitive</rdfs:label>
+    <rdfs:label xml:lang="it">Poésie fugitive</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
+    <rdfs:label xml:lang="fr">Poésie fugitive</rdfs:label>
+    <rdfs:label xml:lang="en">poésie fugitive</rdfs:label>
+    <rdfs:comment xml:lang="en">Poetry of the Rococo  in seventeenth century France.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Novelist">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Author"/>
+    <rdfs:label xml:lang="en">novelist</rdfs:label>
+    <rdfs:label xml:lang="de">Romanschriftsteller</rdfs:label>
+    <rdfs:comment xml:lang="en">Author of a novel.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="fr">romancier</rdfs:label>
+    <rdfs:label xml:lang="it">novelliere</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#DescriptiveLiterature">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="fr">littérature descriptive</rdfs:label>
+    <rdfs:comment xml:lang="en">Literature expressed in a descriptive way.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
+    <rdfs:label xml:lang="it">letteratura descrittiva</rdfs:label>
+    <rdfs:label xml:lang="en">descriptive literature</rdfs:label>
+    <rdfs:label xml:lang="de">deskriptive Literatur</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Argument">
+    <rdfs:label xml:lang="de">Argument</rdfs:label>
+    <rdfs:label xml:lang="fr">argument</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:comment xml:lang="en">Summary of a literary expression or part of it, often a poem, often at the beginning of a section, to orient a reader.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Introduction"/>
+    <rdfs:seeAlso rdf:resource="https://www.abc-clio.com/ODLIS/odlis_f.aspx"/>
+    <rdfs:label xml:lang="it">argomento</rdfs:label>
+    <rdfs:label xml:lang="en">argument</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#DescriptivePoetry">
+    <rdfs:label xml:lang="en">descriptive poetry</rdfs:label>
+    <rdfs:label xml:lang="it">poesia descrittiva</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Nonfiction"/>
+    <rdfs:label xml:lang="fr">poésie descriptive</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
+    <rdfs:label xml:lang="de">deskriptive Poetik</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#DescriptiveLiterature"/>
+    <rdfs:comment xml:lang="en">Poetry expressed in a didactic or demonstrative description.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#DramaticPoetry">
+    <rdfs:comment xml:lang="en">Poetry expressed in drama.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Drama"/>
+    <rdfs:label xml:lang="fr">poésie dramatique</rdfs:label>
+    <rdfs:label xml:lang="de">dramatische Poetik</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
+    <rdfs:label xml:lang="it">poesia drammatica</rdfs:label>
+    <rdfs:label xml:lang="en">dramatic poetry</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#VersePoem">
+    <rdfs:label xml:lang="de">Versgedicht</rdfs:label>
+    <rdfs:label xml:lang="fr">poème en vers</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:comment xml:lang="en">Poem written in verse.</rdfs:comment>
+    <rdfs:comment xml:lang="det">Gedicht ausgedruckt in Vers.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poem"/>
+    <rdfs:label xml:lang="it">poesia del verso</rdfs:label>
+    <rdfs:label xml:lang="en">verse poem</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Novel">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#FictionExpression"/>
+    <rdfs:label xml:lang="it">romanzo</rdfs:label>
+    <rdfs:label xml:lang="fr">roman</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#SentenceExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="ub11bL239C84">
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
+        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">novel</rdfs:label>
+    <rdfs:comment xml:lang="en">Narrative fiction expression in prose.</rdfs:comment>
+    <rdfs:label xml:lang="de">Roman</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Hymn">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="la">hymnus</rdfs:label>
+    <rdfs:label xml:lang="it">inno</rdfs:label>
+    <rdfs:label xml:lang="fr">hymne</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#VerseSong"/>
+    <rdfs:comment xml:lang="en">Verse song of adoration for a deity or prominent person.</rdfs:comment>
+    <rdfs:label xml:lang="de">Hymne</rdfs:label>
+    <rdfs:label xml:lang="en">hymn</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Narrative">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="en">literary narrative</rdfs:label>
+    <rdfs:label xml:lang="fr">récit littéraire</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
+    <rdfs:label xml:lang="de">literarische Narration</rdfs:label>
+    <rdfs:label xml:lang="it">narrativa letteraria</rdfs:label>
+    <rdfs:comment xml:lang="en">Storytelling literature.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Poetry">
-    <rdfs:label xml:lang="en">poetry</rdfs:label>
+    <rdfs:comment xml:lang="en">Literature expressing imagination in text structure through prosody, besides content.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
+    <rdfs:label xml:lang="en">poetry</rdfs:label>
+    <rdfs:label xml:lang="de">Poetik</rdfs:label>
+    <rdfs:label xml:lang="it">poesia</rdfs:label>
     <owl:unionOf rdf:parseType="Collection">
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/literature#LyricPoetry"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/literature#NarrativePoetry"/>
@@ -410,146 +465,91 @@
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/literature#ScientificPoetry"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/literature#PoesieFugitive"/>
     </owl:unionOf>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
-    <rdfs:comment xml:lang="en">Literature expressing imagination in text structure through prosody, besides content.</rdfs:comment>
-    <rdfs:label xml:lang="it">poesia</rdfs:label>
-    <rdfs:label xml:lang="de">Poetik</rdfs:label>
     <rdfs:label xml:lang="fr">poésie</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#DescriptiveLiterature">
-    <rdfs:label xml:lang="it">letteratura descrittiva</rdfs:label>
-    <rdfs:label xml:lang="fr">littérature descriptive</rdfs:label>
-    <rdfs:label xml:lang="en">descriptive literature</rdfs:label>
-    <rdfs:comment xml:lang="en">Literature expressed in a descriptive way.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
-    <rdfs:label xml:lang="de">deskriptive Literatur</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#HymnCollection">
+    <rdfs:comment xml:lang="en">Collection of hymns.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Collection"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Hymn">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="en">hymn</rdfs:label>
-    <rdfs:label xml:lang="fr">hymne</rdfs:label>
-    <rdfs:label xml:lang="la">hymnus</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#VerseSong"/>
-    <rdfs:label xml:lang="it">inno</rdfs:label>
-    <rdfs:comment xml:lang="en">Verse song of adoration for a deity or prominent person.</rdfs:comment>
-    <rdfs:label xml:lang="de">Hymne</rdfs:label>
+    <rdfs:label xml:lang="fr">collection d'hymnes</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
+    <rdfs:label xml:lang="de">Hymnesammlung</rdfs:label>
+    <rdfs:label xml:lang="it">collezione di inni</rdfs:label>
+    <rdfs:label xml:lang="en">hymn collection</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#FictionExpression">
-    <rdfs:label xml:lang="fr">expression de fiction littéraire</rdfs:label>
     <rdfs:label xml:lang="en">literary fiction expression</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
     <rdfs:subClassOf>
       <owl:Restriction rdf:nodeID="ub11bL149C41">
         <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
         <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Fiction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="de">literarische Fiktion-Expression</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
-    <rdfs:label xml:lang="it">espressione finzione letteraria</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="de">literarische Fiktion-Expression</rdfs:label>
     <rdfs:comment xml:lang="en">Literary expression having the fiction genre.</rdfs:comment>
+    <rdfs:label xml:lang="fr">expression de fiction littéraire</rdfs:label>
+    <rdfs:label xml:lang="it">espressione finzione letteraria</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Novel">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#VerseSong">
+    <rdfs:label xml:lang="de">Verslied</rdfs:label>
+    <rdfs:label xml:lang="en">verse song</rdfs:label>
+    <rdfs:comment xml:lang="de">Versgedicht als Liedtext.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
+    <rdfs:label xml:lang="fr">chanson en vers</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#VersePoem"/>
+    <rdfs:label xml:lang="it">canzone del verso</rdfs:label>
+    <rdfs:comment xml:lang="en">Verse poem as lyrics of a song.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Poem">
+    <rdfs:comment xml:lang="de">Poetische Expression.</rdfs:comment>
+    <rdfs:label xml:lang="de">Gedicht</rdfs:label>
+    <rdfs:label xml:lang="en">poem</rdfs:label>
+    <rdfs:label xml:lang="fr">poème</rdfs:label>
+    <rdfs:comment xml:lang="en">Poetic expression.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
     <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub11bL239C84">
+      <owl:Restriction rdf:nodeID="ub11bL172C41">
+        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
         <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
-        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="fr">roman</rdfs:label>
-    <rdfs:label xml:lang="de">Roman</rdfs:label>
-    <rdfs:label xml:lang="en">novel</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#FictionExpression"/>
-    <rdfs:comment xml:lang="en">Narrative fiction expression in prose.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#SentenceExpression"/>
-    <rdfs:label xml:lang="it">romanzo</rdfs:label>
+    <rdfs:label xml:lang="it">poesia</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Drama">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#NonfictionExpression">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="fr">drame</rdfs:label>
-    <rdfs:label xml:lang="en">drama</rdfs:label>
-    <rdfs:label xml:lang="de">Dramatik</rdfs:label>
-    <rdfs:label xml:lang="it">dramma</rdfs:label>
-    <rdfs:comment xml:lang="en">Literature for oral performance.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Narrative">
-    <rdfs:label xml:lang="de">literarische Narration</rdfs:label>
-    <rdfs:label xml:lang="en">literary narrative</rdfs:label>
-    <rdfs:label xml:lang="it">narrativa letteraria</rdfs:label>
-    <rdfs:label xml:lang="fr">récit littéraire</rdfs:label>
-    <rdfs:comment xml:lang="en">Storytelling literature.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Literature"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#NarrativePoetry">
-    <rdfs:label xml:lang="de">narrative Poetik</rdfs:label>
-    <rdfs:label xml:lang="en">narrative poetry</rdfs:label>
-    <rdfs:label xml:lang="fr">poésie narrative</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Narrative"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:comment xml:lang="en">Poetry expressed in a narrative.</rdfs:comment>
-    <rdfs:label xml:lang="it">poesia narrativa</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#DescriptivePoetry">
-    <rdfs:label xml:lang="en">descriptive poetry</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#DescriptiveLiterature"/>
-    <rdfs:label xml:lang="fr">poésie descriptive</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:comment xml:lang="en">Poetry expressed in a didactic or demonstrative description.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Nonfiction"/>
-    <rdfs:label xml:lang="de">deskriptive Poetik</rdfs:label>
-    <rdfs:label xml:lang="it">poesia descrittiva</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Poet">
-    <rdfs:comment xml:lang="en">Author of a poem.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Author"/>
-    <rdfs:label xml:lang="fr">poète</rdfs:label>
-    <rdfs:label xml:lang="it">poeta</rdfs:label>
-    <rdfs:label xml:lang="de">Dichter</rdfs:label>
-    <rdfs:label xml:lang="en">poet</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#LyricPoetry">
-    <rdfs:label xml:lang="de">lyrische Poetik</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
-    <rdfs:label xml:lang="fr"> poésie lyrique</rdfs:label>
-    <rdfs:label xml:lang="it">poesia lirica</rdfs:label>
-    <rdfs:comment xml:lang="en">Poetry expressing emotion.</rdfs:comment>
-    <rdfs:label xml:lang="en">lyric poetry</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#VerseSongCollection">
-    <rdfs:label xml:lang="it">raccolta di canzoni versi</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Collection"/>
-    <rdfs:label xml:lang="fr">collection de chansons en vers</rdfs:label>
-    <rdfs:comment xml:lang="en">Collection of verse songs.</rdfs:comment>
+    <rdfs:label xml:lang="it">espressione letteraria di saggistica</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="ub11bL157C41">
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/literature#hasGenre"/>
+        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/literature#Nonfiction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fr">expression littéraire non fictionnelle</rdfs:label>
+    <rdfs:label xml:lang="de">sachliche literarische Expression</rdfs:label>
+    <rdfs:comment xml:lang="en">Literary expression having the nonfiction genre.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Expression"/>
-    <rdfs:label xml:lang="en">verse song collection</rdfs:label>
-    <rdfs:label xml:lang="de">Versgesangsammlung</rdfs:label>
+    <rdfs:label xml:lang="en">literary nonfiction expression</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#ScientificPoetry">
+    <rdfs:label xml:lang="de">wissenschaftliche Poetik</rdfs:label>
+    <rdfs:label xml:lang="it">poesia scientifica</rdfs:label>
+    <rdfs:comment xml:lang="en">Poetry expressed in a scientific description.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#DescriptivePoetry"/>
+    <rdfs:label xml:lang="fr">poésie scientifique</rdfs:label>
+    <rdfs:label xml:lang="en">scientific poetry</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#PoesieFugitive">
-    <rdfs:comment xml:lang="en">Poetry of the Rococo  in seventeenth century France.</rdfs:comment>
-    <rdfs:label xml:lang="de">Poésie fugitive</rdfs:label>
-    <rdfs:label xml:lang="it">Poésie fugitive</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
-    <rdfs:label xml:lang="en">poésie fugitive</rdfs:label>
-    <rdfs:label xml:lang="fr">Poésie fugitive</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#Expression">
+    <rdfs:comment xml:lang="en">Text expression as literature.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:label xml:lang="en">literary expression</rdfs:label>
+    <rdfs:label xml:lang="it">espressione letteraria</rdfs:label>
+    <rdfs:label xml:lang="de">literarische Expression</rdfs:label>
+    <rdfs:label xml:lang="fr">expression littéraire</rdfs:label>
+    <rdfs:comment xml:lang="de">Textexpression als Literatur.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/literature#DramaticPoetry">
-    <rdfs:label xml:lang="de">dramatische Poetik</rdfs:label>
-    <rdfs:comment xml:lang="en">Poetry expressed in drama.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Drama"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/literature#"/>
-    <rdfs:label xml:lang="fr">poésie dramatique</rdfs:label>
-    <rdfs:label xml:lang="en">dramatic poetry</rdfs:label>
-    <rdfs:label xml:lang="it">poesia drammatica</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/literature#Poetry"/>
   </rdfs:Class>
 </rdf:RDF>

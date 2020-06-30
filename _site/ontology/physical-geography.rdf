@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/physical-geography">
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:contributor xml:lang="en">Dominique Steinbach, tool coordinator and software developer, University of Basel, Switzerland</dct:contributor>
-    <dct:description xml:lang="en">Formal description of physical geography, general subclasses, related classes, and properties.</dct:description>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:title xml:lang="en">Physical Geography</dct:title>
-    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/World_Geodetic_System"/>
-  </owl:Ontology>
   <owl:InverseFunctionalProperty rdf:about="http://e-editiones.ch/ontology/physical-geography#hasLatitude">
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/physical-geography#"/>
     <rdfs:label xml:lang="en">has latitude</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/physical-geography#EarthPlace"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
     <skos:note xml:lang="en">Points with the same latitude lie on a circle around the Earth parallel to its equator. There are different latitudes, depending on the abstracted shape of the earth as spherical or ellipsoid, and other aspects. The decimal value can be converted to a sexagesimal using an N3 rule stating: [decimal degrees - (decimal degrees modulus (%) 1)]° [decimal degrees % 1 x 60 - decimal degrees % 1 x 60 % 1]' + [decimal degrees % 1 * 60 % 1 * 60]''</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/physical-geography#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">Relating a place of a point or space on the Earth's surface to its geographic coordinate specifying the north–south position of that point, based on the World Geodetic System (WGS) standard. The coordinate is expressed as the angle between the equatorial plane and the normal, for a sphere from the center, to the surface at that point.</rdfs:comment>
-  </owl:InverseFunctionalProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/physical-geography#hasElevation">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/physical-geography#"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/physical-geography#EarthPlace"/>
-    <rdfs:label xml:lang="en">has elevation</rdfs:label>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://e-editiones.ch/ontology/physical-geography#hasElevation">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/physical-geography#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
     <rdfs:comment xml:lang="en">Relating a place of a point or space on the Earth's surface to its height above or below a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/physical-geography#hasLongitude">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdfs:label xml:lang="en">has elevation</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/physical-geography#EarthPlace"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://e-editiones.ch/ontology/physical-geography#hasLongitude">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:note xml:lang="en">Points with the same longitude lie on a meridian or semi-circle between the poles. There are different longitudes, depending on the abstracted shape of the earth as spherical or ellipsoid, and other aspects. The decimal value can be converted to a sexagesimal using an N3 rule stating: [decimal degrees - (decimal degrees modulus (%) 1)]° [decimal degrees % 1 x 60 - decimal degrees % 1 x 60 % 1]' + [decimal degrees % 1 * 60 % 1 * 60]''</skos:note>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/physical-geography#EarthPlace"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    <rdfs:label xml:lang="en">has longitude</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/physical-geography#"/>
     <rdfs:comment xml:lang="en">Relating a place of a point or space on the Earth's surface to its geographic coordinate specifying the east-west position of that point, based on the World Geodetic System (WGS) standard. The coordinate is expressed as the angle in the equatorial plane between a meridian plane containing the surface point and a by convention allocated prime meridian plane at 0 degrees longitude. The IERS Reference Meridian is used here as prime meridian.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/physical-geography#EarthPlace"/>
-    <rdfs:label xml:lang="en">has longitude</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <skos:note xml:lang="en">Points with the same longitude lie on a meridian or semi-circle between the poles. There are different longitudes, depending on the abstracted shape of the earth as spherical or ellipsoid, and other aspects. The decimal value can be converted to a sexagesimal using an N3 rule stating: [decimal degrees - (decimal degrees modulus (%) 1)]° [decimal degrees % 1 x 60 - decimal degrees % 1 x 60 % 1]' + [decimal degrees % 1 * 60 % 1 * 60]''</skos:note>
-  </owl:DatatypeProperty>
+  </owl:InverseFunctionalProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/physical-geography">
+    <dct:title xml:lang="en">Physical Geography</dct:title>
+    <dct:description xml:lang="en">Formal description of physical geography, general subclasses, related classes, and properties.</dct:description>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/World_Geodetic_System"/>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:contributor xml:lang="en">Dominique Steinbach, tool coordinator and software developer, University of Basel, Switzerland</dct:contributor>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+  </owl:Ontology>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/physical-geography#EarthPlace">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/physical-geography#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#Place"/>
     <rdfs:label xml:lang="de">Platz auf Erde</rdfs:label>
-    <rdfs:comment xml:lang="en">Place on earth, positionable using the World Geodetic System (WGS) standard.</rdfs:comment>
     <rdfs:label xml:lang="en">place on Earth</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#Place"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/physical-geography#"/>
+    <rdfs:comment xml:lang="en">Place on earth, positionable using the World Geodetic System (WGS) standard.</rdfs:comment>
   </rdfs:Class>
 </rdf:RDF>
