@@ -1,160 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholasticism#commentaryHasProcedure">
-    <rdfs:label xml:lang="de">Kommentar hat Prozedur</rdfs:label>
-    <rdfs:label xml:lang="en">commentary has procedure</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholasticism#CommentingProcedure"/>
-    <rdfs:comment xml:lang="en">Relating a scholastic commentary to a procedure it is created in.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/event#isOutputOf"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:label xml:lang="de">Kommentar hat Prozedur</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a scholastic commentary to a procedure it is created in.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholasticism#CommentingProcedure"/>
+    <rdfs:label xml:lang="en">commentary has procedure</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Scholasticism">
-    <rdfs:comment xml:lang="en">Method of critical thought dominating theological and philosophical study in Western Christianity and teaching by academics or scholastics (schoolmen) of universities in Europe from about 1100 to 1700.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ThoughtMethod"/>
-    <rdfs:label xml:lang="en">scholasticism</rdfs:label>
-    <rdfs:label xml:lang="de">Scholastik</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-  </rdfs:Class>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/scholasticism">
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, NIE, University of Basel, Switzerland</dct:creator>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, Basel University, Switzerland</dct:contributor>
-    <dct:contributor xml:lang="en">Prof. Dr. Ueli Zahnd, Institut D'histoire De La Réformation, University of Geneva, Switzerland</dct:contributor>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:description xml:lang="en">Formal description of elements in Scholasticism.</dct:description>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:title xml:lang="en">An ontology about Scholasticism</dct:title>
-    <dct:contributor xml:lang="en">Gabriel Müller, Faculty of Theology, University of Basel, Switzerland</dct:contributor>
-  </owl:Ontology>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholasticism#commentaryHasReportator">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary"/>
     <rdfs:label xml:lang="en">commentary has reportator</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a reportatio commentary of a lecture to a scholastic who reported it.</rdfs:comment>
     <rdfs:range>
-      <rdf:Description rdf:nodeID="ub10bL217C13">
+      <rdf:Description rdf:nodeID="ub16bL217C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Scholastic"/>
         <rdfs:subClassOf>
-          <owl:Restriction rdf:nodeID="ub10bL217C49">
-            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/scholasticism#Reportator"/>
+          <owl:Restriction rdf:nodeID="ub16bL217C49">
             <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/scholasticism#hasRole"/>
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/scholasticism#Reportator"/>
           </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Scholastic"/>
       </rdf:Description>
     </rdfs:range>
     <rdfs:label xml:lang="de">Kommentar hat Reportator</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a reportatio commentary of a lecture to a scholastic who reported it.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#VerseCommentary">
-    <rdfs:label xml:lang="de">Vers-Kommentar</rdfs:label>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/scholasticism">
+    <dct:title xml:lang="en">An ontology about Scholasticism</dct:title>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:contributor xml:lang="en">Gabriel Müller, Faculty of Theology, University of Basel, Switzerland</dct:contributor>
+    <dct:contributor xml:lang="en">Prof. Dr. Ueli Zahnd, Institut D'histoire De La Réformation, University of Geneva, Switzerland</dct:contributor>
+    <dct:description xml:lang="en">Formal description of elements in Scholasticism.</dct:description>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, Basel University, Switzerland</dct:contributor>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, NIE, University of Basel, Switzerland</dct:creator>
+  </owl:Ontology>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Scholasticism">
+    <rdfs:label xml:lang="en">scholasticism</rdfs:label>
+    <rdfs:comment xml:lang="en">Method of critical thought dominating theological and philosophical study in Western Christianity and teaching by academics or scholastics (schoolmen) of universities in Europe from about 1100 to 1700.</rdfs:comment>
+    <rdfs:label xml:lang="de">Scholastik</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:comment xml:lang="en">Scholastic commentary containing verses.</rdfs:comment>
-    <rdfs:label xml:lang="en">verse commentary</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Role">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#PersonRole"/>
-    <rdfs:comment xml:lang="en">Role a scholastic has.</rdfs:comment>
-    <rdfs:label xml:lang="en">scholastic role</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Scholastic">
-    <rdfs:label xml:lang="en">scholastic</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <skos:note xml:lang="en">There are no female scholastics because women were not allowed to universities in the era of scholasticism.</skos:note>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
-    <rdfs:label xml:lang="de">ScholastikerIn</rdfs:label>
-    <rdfs:comment xml:lang="en">An adherent of Scholasticism.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#ConclusioCommentary">
-    <rdfs:comment xml:lang="en">Scholastic commentary containing conclusions.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:label xml:lang="en">conclusio commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Conclusio-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="la">conclusio</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholasticism#hasRole">
-    <rdfs:comment xml:lang="en">Relating a scholastic to a role s/he has.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholasticism#Scholastic"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholasticism#Role"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="en">has role</rdfs:label>
-    <rdfs:label xml:lang="de">hat Rolle</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#CommentingProcedure">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:comment xml:lang="en">Commenting procedure wherein a scholastic commentary is created.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Procedure"/>
-    <rdfs:label xml:lang="en">scholastic commenting procedure</rdfs:label>
-    <rdfs:label xml:lang="de">scholastische Kommentierungsprozedur</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#ReportatioApprobataCommentary">
-    <rdfs:label xml:lang="la">reportatio approbata</rdfs:label>
-    <rdfs:label xml:lang="de">Reportatio Approbata-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">reportatio approbata commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary"/>
-    <rdfs:comment xml:lang="en">Scholastic commentary on a text expression, as recorded by an auditor, e.g. a student, in a lecture, and approved by the lecturer or author.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Reportator">
-    <rdfs:comment xml:lang="en">Role of a scholastic - e.g. a student, secretary or lecturer - recording the content of a lecture.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Role"/>
-    <rdfs:label xml:lang="la">reportator</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="en">reportator</rdfs:label>
-    <rdfs:label xml:lang="de">Reportator</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="en">reportatio commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Reportatio-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="la">reportatio</rdfs:label>
-    <rdfs:comment xml:lang="en">Scholastic commentary on a text expression, as reported by an auditor, e.g. a student, in a lecture.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ProceduralCommentary"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#QuaestioCommentary">
-    <rdfs:label xml:lang="de">Quaestio-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">quaestio commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="la">quaestio</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:comment xml:lang="en">Scholastic commentary containing questions.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#AbbreviationCommentary">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:comment xml:lang="en">Scholastic commentary as abbreviation.</rdfs:comment>
-    <rdfs:label xml:lang="en">abbreviation commentary</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="la">abbreviatio</rdfs:label>
-    <rdfs:label xml:lang="de">Kurzfassung-Kommentar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Abbreviation"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ThoughtMethod"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#LecturaRevisaCommentary">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
     <rdfs:comment xml:lang="en">Scholastic commentary on a text expression, as revised by its author after its presentation in a lecture.</rdfs:comment>
     <rdfs:label xml:lang="en">lectura revisa commentary</rdfs:label>
-    <rdfs:label xml:lang="de">Lectura Revisa-Kommentar</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ProceduralCommentary"/>
+    <rdfs:label xml:lang="de">Lectura Revisa-Kommentar</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#ParaphraseCommentary">
-    <rdfs:label xml:lang="en">paraphrase commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Scholastic commentary as paraphrase.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="de">Paraphrase-Kommentar</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
+    <rdfs:comment xml:lang="en">Scholastic commentary as paraphrase.</rdfs:comment>
+    <rdfs:label xml:lang="de">Paraphrase-Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">paraphrase commentary</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#ProceduralCommentary">
-    <rdfs:comment xml:lang="en">Scholastic commentary as result of a creation procedure.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="de">prozeduraler scholastischer Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholastic commentary as result of a creation procedure.</rdfs:comment>
     <owl:disjointUnionOf rdf:parseType="Collection">
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/scholasticism#LecturaCommentary"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/scholasticism#LecturaRevisaCommentary"/>
@@ -163,23 +77,105 @@
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary"/>
     </owl:disjointUnionOf>
     <rdfs:label xml:lang="en">procedural scholastic commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
+    <rdfs:label xml:lang="de">prozeduraler scholastischer Kommentar</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#LecturaCommentary">
-    <rdfs:label xml:lang="en">lectura commentary</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#SyllogismusCommentary">
+    <rdfs:label xml:lang="de">Syllogismus-Kommentar</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:comment xml:lang="en">Scholastic commentary on a text expression, as presented by its author in a lecture.</rdfs:comment>
+    <rdfs:label xml:lang="en">syllogismus commentary</rdfs:label>
+    <rdfs:label xml:lang="la">syllogismus</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholastic commentary containing syllogisms.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Role">
+    <rdfs:comment xml:lang="en">Role a scholastic has.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#PersonRole"/>
+    <rdfs:label xml:lang="en">scholastic role</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Reportator">
+    <rdfs:label xml:lang="la">reportator</rdfs:label>
+    <rdfs:label xml:lang="de">Reportator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Role"/>
+    <rdfs:label xml:lang="en">reportator</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a scholastic - e.g. a student, secretary or lecturer - recording the content of a lecture.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#ReportatioApprobataCommentary">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:comment xml:lang="en">Scholastic commentary on a text expression, as recorded by an auditor, e.g. a student, in a lecture, and approved by the lecturer or author.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary"/>
+    <rdfs:label xml:lang="la">reportatio approbata</rdfs:label>
+    <rdfs:label xml:lang="en">reportatio approbata commentary</rdfs:label>
+    <rdfs:label xml:lang="de">Reportatio Approbata-Kommentar</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#ReportatioCommentary">
+    <rdfs:label xml:lang="en">reportatio commentary</rdfs:label>
+    <rdfs:label xml:lang="la">reportatio</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:comment xml:lang="en">Scholastic commentary on a text expression, as reported by an auditor, e.g. a student, in a lecture.</rdfs:comment>
+    <rdfs:label xml:lang="de">Reportatio-Kommentar</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ProceduralCommentary"/>
-    <rdfs:label xml:lang="de">Lectura-Kommentar</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#GlossCommentary">
-    <rdfs:comment xml:lang="en">Scholastic commentary containing glosses.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary">
+    <rdfs:label xml:lang="la">ordinatio</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ProceduralCommentary"/>
+    <rdfs:label xml:lang="en">ordinatio commentary</rdfs:label>
+    <rdfs:label xml:lang="de">Ordinatio-Kommentar</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:comment xml:lang="en">Scholastic commentary on a text expression as composed for publication.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Scholastic">
+    <rdfs:label xml:lang="en">scholastic</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+    <rdfs:comment xml:lang="en">An adherent of Scholasticism.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:label xml:lang="de">ScholastikerIn</rdfs:label>
+    <skos:note xml:lang="en">There are no female scholastics because women were not allowed to universities in the era of scholasticism.</skos:note>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#VerseCommentary">
+    <rdfs:label xml:lang="en">verse commentary</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="de">Glosse-Kommentar</rdfs:label>
-    <rdfs:label xml:lang="en">gloss commentary</rdfs:label>
+    <rdfs:label xml:lang="de">Vers-Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholastic commentary containing verses.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#ConclusioCommentary">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
+    <rdfs:comment xml:lang="en">Scholastic commentary containing conclusions.</rdfs:comment>
+    <rdfs:label xml:lang="la">conclusio</rdfs:label>
+    <rdfs:label xml:lang="en">conclusio commentary</rdfs:label>
+    <rdfs:label xml:lang="de">Conclusio-Kommentar</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/scholasticism#hasRole">
+    <rdfs:label xml:lang="en">has role</rdfs:label>
+    <rdfs:label xml:lang="de">hat Rolle</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/scholasticism#Scholastic"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:comment xml:lang="en">Relating a scholastic to a role s/he has.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/scholasticism#Role"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#AbbreviationCommentary">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:comment xml:lang="en">Scholastic commentary as abbreviation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Abbreviation"/>
+    <rdfs:label xml:lang="la">abbreviatio</rdfs:label>
+    <rdfs:label xml:lang="de">Kurzfassung-Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">abbreviation commentary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#LiteralExpositionCommentary">
+    <rdfs:label xml:lang="de">wörtliche Auslegung-Kommentar</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
+    <rdfs:label xml:lang="en">literal exposition commentary</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholastic commentary as literal exposition.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#Commentary">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Commentary"/>
     <owl:unionOf rdf:parseType="Collection">
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/scholasticism#GlossCommentary"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/scholasticism#VerseCommentary"/>
@@ -191,41 +187,45 @@
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/scholasticism#ParaphraseCommentary"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/scholasticism#LiteralExpositionCommentary"/>
     </owl:unionOf>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="la">commentarius scholasticus</rdfs:label>
     <rdfs:comment xml:lang="en">Commentary made by a scholastic.</rdfs:comment>
-    <rdfs:label xml:lang="en">scholastic commentary</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Commentary"/>
     <rdfs:label xml:lang="de">scholastischer Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">scholastic commentary</rdfs:label>
+    <rdfs:label xml:lang="la">commentarius scholasticus</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#TableCommentary">
-    <rdfs:label xml:lang="de">Tabelle-Kommentar</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#GlossCommentary">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:comment xml:lang="en">Scholastic commentary containing a table.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:label xml:lang="en">table commentary</rdfs:label>
+    <rdfs:label xml:lang="en">gloss commentary</rdfs:label>
+    <rdfs:label xml:lang="de">Glosse-Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholastic commentary containing glosses.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary">
-    <rdfs:label xml:lang="la">ordinatio</rdfs:label>
-    <rdfs:comment xml:lang="en">Scholastic commentary on a text expression as composed for publication.</rdfs:comment>
-    <rdfs:label xml:lang="de">Ordinatio-Kommentar</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#LecturaCommentary">
+    <rdfs:label xml:lang="en">lectura commentary</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholastic commentary on a text expression, as presented by its author in a lecture.</rdfs:comment>
+    <rdfs:label xml:lang="de">Lectura-Kommentar</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="en">ordinatio commentary</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#ProceduralCommentary"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#SyllogismusCommentary">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#QuaestioCommentary">
+    <rdfs:label xml:lang="la">quaestio</rdfs:label>
+    <rdfs:label xml:lang="de">Quaestio-Kommentar</rdfs:label>
+    <rdfs:label xml:lang="en">quaestio commentary</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholastic commentary containing questions.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:label xml:lang="la">syllogismus</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
-    <rdfs:label xml:lang="en">syllogismus commentary</rdfs:label>
-    <rdfs:comment xml:lang="en">Scholastic commentary containing syllogisms.</rdfs:comment>
-    <rdfs:label xml:lang="de">Syllogismus-Kommentar</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#LiteralExpositionCommentary">
-    <rdfs:comment xml:lang="en">Scholastic commentary as literal exposition.</rdfs:comment>
-    <rdfs:label xml:lang="de">wörtliche Auslegung-Kommentar</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#TableCommentary">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/scholasticism#Commentary"/>
-    <rdfs:label xml:lang="en">literal exposition commentary</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:label xml:lang="en">table commentary</rdfs:label>
+    <rdfs:label xml:lang="de">Tabelle-Kommentar</rdfs:label>
+    <rdfs:comment xml:lang="en">Scholastic commentary containing a table.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/scholasticism#CommentingProcedure">
+    <rdfs:comment xml:lang="en">Commenting procedure wherein a scholastic commentary is created.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Procedure"/>
+    <rdfs:label xml:lang="en">scholastic commenting procedure</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/scholasticism#"/>
+    <rdfs:label xml:lang="de">scholastische Kommentierungsprozedur</rdfs:label>
   </rdfs:Class>
 </rdf:RDF>

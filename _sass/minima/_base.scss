@@ -12,8 +12,6 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
@@ -32,8 +30,6 @@ body {
   flex-direction: column;
 }
 
-
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -44,8 +40,6 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
-
-
 /**
  * `main` element
  */
@@ -53,30 +47,60 @@ main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
-
-
-/**
- * Images
- */
-img {
-  max-width: 95%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /**
  * Figures
  */
-figure > img {
+figure {
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.home-figure {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+ .small-figure {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+.wide-figure {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 
 figcaption {
   font-size: $small-font-size;
+  text-align: center;
+  font-weight: bold;
 }
 
+@media screen and (max-width: 500px) {
+  .home-figure {
+    width: 100%;
+  }
+}
 
+@media screen and (max-width: 500px) {
+  .small-figure {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wide-figure {
+    width: 100%;
+  }
+}
 
 /**
  * Lists
@@ -92,16 +116,12 @@ li {
   }
 }
 
-
-
 /**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
-
-
 
 /**
  * Links
@@ -128,7 +148,6 @@ a {
   }
 }
 
-
 /**
  * Blockquotes
  */
@@ -144,8 +163,6 @@ blockquote {
     margin-bottom: 0;
   }
 }
-
-
 
 /**
  * Code formatting
@@ -172,8 +189,6 @@ pre {
     padding-left: 0;
   }
 }
-
-
 
 /**
  * Wrapper
@@ -215,7 +230,6 @@ pre {
   }
 }
 
-
 /**
  * Clearfix
  */
@@ -248,6 +262,7 @@ pre {
  * Tables
  */
 table {
+  table-layout:auto;
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;

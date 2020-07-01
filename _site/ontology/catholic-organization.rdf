@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/catholic-organization">
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:title xml:lang="en">An ontology about catholic organization</dct:title>
-    <dct:description xml:lang="en">Formal description of catholic organization, general subclasses, related classes, properties, and instances.</dct:description>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
-    <dct:contributor xml:lang="en">Prof. Dr. Ueli Zahnd, Faculty of Theology, University of Basel, Switzerland</dct:contributor>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-  </owl:Ontology>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/catholic-organization#isMemberOf">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/catholic-organization#Organization"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/organization#isMemberOfReligiousOrganization"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/catholic-organization#"/>
-    <rdfs:label xml:lang="en">is member of catholic organization</rdfs:label>
-    <rdfs:label xml:lang="de">ist Mitglied einer katholischen Organization</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a person to a catholic organization the person is a member of.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/catholic-organization#Person"/>
-  </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/catholic-organization#SecularClergy">
+    <rdfs:label xml:lang="en">secular clergy</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/catholic-organization#Organization"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/catholic-organization#"/>
     <rdfs:comment xml:lang="en">Catholic organization whose member does not take religious vows and does not live in an institution.</rdfs:comment>
-    <rdfs:label xml:lang="en">secular clergy</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/catholic-organization#Person">
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/catholic-organization">
+    <dct:title xml:lang="en">An ontology about catholic organization</dct:title>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:contributor xml:lang="en">Prof. Dr. Ueli Zahnd, Faculty of Theology, University of Basel, Switzerland</dct:contributor>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:description xml:lang="en">Formal description of catholic organization, general subclasses, related classes, properties, and instances.</dct:description>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/catholic-organization#isMemberOf">
+    <rdfs:comment xml:lang="en">Relating a person to a catholic organization the person is a member of.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/catholic-organization#Person"/>
+    <rdfs:label xml:lang="de">ist Mitglied einer katholischen Organization</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/catholic-organization#Organization"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/catholic-organization#"/>
+    <rdfs:label xml:lang="en">is member of catholic organization</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/organization#isMemberOfReligiousOrganization"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/catholic-organization#Person">
     <rdfs:label xml:lang="de">katholische Person</rdfs:label>
-    <rdfs:label xml:lang="fr">personne catholique</rdfs:label>
-    <rdfs:label xml:lang="en">catholic person</rdfs:label>
     <rdfs:comment xml:lang="en">Person having a catholic belief.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#ReligiousPerson"/>
     <rdfs:label xml:lang="it">persona cattolica</rdfs:label>
+    <rdfs:label xml:lang="fr">personne catholique</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#ReligiousPerson"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/catholic-organization#"/>
+    <rdfs:label xml:lang="en">catholic person</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/catholic-organization#Organization">
     <rdfs:comment xml:lang="en">Organization representing a catholic belief.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#ReligiousOrganization"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/catholic-organization#"/>
     <rdfs:label xml:lang="en">catholic organization</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/catholic-organization#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#ReligiousOrganization"/>
   </rdfs:Class>
 </rdf:RDF>

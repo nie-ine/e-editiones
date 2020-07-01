@@ -237,7 +237,7 @@
 								<!-- and not(local-name='about' or local-name='ID' or local-name='type')]" -->
 			<xsl:sort select="local-name()" order="ascending"/>
 			<tr xmlns="http://www.w3.org/1999/xhtml"> 
-				<td xmlns="http://www.w3.org/1999/xhtml">
+				<td xmlns="http://www.w3.org/1999/xhtml" style="width: 25%;">
 					<xsl:call-template name="resourceDetailLink">
 						<xsl:with-param name="property" select="''"/>
 						<xsl:with-param name="namespace" select="namespace-uri()"/>
@@ -426,7 +426,7 @@
 								</xsl:when>
 								<xsl:otherwise>
 									<tr class="{$property-namespace}{$property-name}" xmlns="http://www.w3.org/1999/xhtml">
-										<td xmlns="http://www.w3.org/1999/xhtml">
+										<td xmlns="http://www.w3.org/1999/xhtml" style="width: 25%;">
 											<xsl:call-template name="resourceDetailLink">
 												<xsl:with-param name="property" select="''"/>
 												<xsl:with-param name="namespace" select="namespace-uri()"/>
@@ -542,7 +542,7 @@
 						</xsl:when>
 						<xsl:otherwise>
 							<tr class="{$property-namespace}{$property-name}" xmlns="http://www.w3.org/1999/xhtml">
-								<td xmlns="http://www.w3.org/1999/xhtml">
+								<td xmlns="http://www.w3.org/1999/xhtml" style="width: 25%;">
 									<xsl:call-template name="resourceDetailLink">
 										<xsl:with-param name="property" select="''"/>
 										<xsl:with-param name="namespace" select="namespace-uri()"/>
@@ -683,14 +683,15 @@
 		</xsl:for-each>
 	</xsl:template>
 	
+	<!-- I got rid of the connectors by removing the characters here. I keep the functionality though. -->
 	<xsl:template name="connector">
 		<xsl:param name="criteria"/>
 		<xsl:choose>
 			<xsl:when test="count($criteria)>1">
-				<div class="connector" xmlns="http://www.w3.org/1999/xhtml"><xsl:text>,</xsl:text></div>
+				<div class="connector" xmlns="http://www.w3.org/1999/xhtml"><xsl:text></xsl:text></div>
 			</xsl:when>
 			<xsl:when test="count($criteria)=1">
-				<div class="connector" xmlns="http://www.w3.org/1999/xhtml"><xsl:text disable-output-escaping="yes">and</xsl:text></div>
+				<div class="connector" xmlns="http://www.w3.org/1999/xhtml"><xsl:text disable-output-escaping="yes"></xsl:text></div>
 			</xsl:when>
 		</xsl:choose>	
 	</xsl:template>

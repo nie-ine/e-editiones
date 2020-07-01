@@ -1,47 +1,5 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/indology#hasIndologicCommentLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something to the literal of an Indological comment as a textual statement about that something."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/indology#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "hat indologischer Kommentarliterale"
-      },
-      {
-        "@language": "en",
-        "@value": "has Indological comment literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#hasCommentLiteral"
-      }
-    ]
-  },
-  {
     "@id": "http://e-editiones.ch/ontology/indology#Samhitapatha",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -64,24 +22,24 @@
         "@value": "Samhitapatha"
       },
       {
-        "@language": "sa",
-        "@value": "Samhita-pāṭha"
-      },
-      {
         "@language": "en",
         "@value": "Samhitapatha"
+      },
+      {
+        "@language": "sa",
+        "@value": "Samhita-pāṭha"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/indology#Veda",
+    "@id": "http://e-editiones.ch/ontology/indology#Literature",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Hindu text written in Vedic Sanskrit, in a period dated roughly from 1700 to 400 BC."
+        "@value": "Literature in Indian culture."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -91,17 +49,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Veda"
+        "@language": "en",
+        "@value": "Indian literature"
       },
       {
-        "@language": "en",
-        "@value": "Veda"
+        "@language": "de",
+        "@value": "indische Literatur"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/indology#Expression"
+        "@id": "http://e-editiones.ch/ontology/literature#Literature"
       }
     ]
   },
@@ -156,14 +114,46 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/indology#vedaHasRecitingStyle",
+    "@id": "http://e-editiones.ch/ontology/indology#Padapatha",
+    "@type": [
+      "http://e-editiones.ch/ontology/indology#Patha",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "One of the eleven Pathas, with a word by word recitation, marked by a conscious pause after every word, and after any special grammatical code embedded in the text; suppresses euphonic combination and restores each word in its original intended form."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/indology#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Padapatha"
+      },
+      {
+        "@language": "de",
+        "@value": "Padapatha"
+      },
+      {
+        "@language": "sa",
+        "@value": "Pada-pāṭha"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/indology#vedaHasGenre",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a Veda to a reciting style it has."
+        "@value": "Relating a Veda to a genre it has."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -179,16 +169,21 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Veda hat Rezitationsstil"
+        "@value": "Veda hat literarische Gattung"
       },
       {
         "@language": "en",
-        "@value": "Veda has reciting style"
+        "@value": "Veda has literary genre"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/indology#Patha"
+        "@id": "http://e-editiones.ch/ontology/indology#VedaLiterature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/literature#hasGenre"
       }
     ]
   },
@@ -214,12 +209,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "indische literarische Expression"
-      },
-      {
         "@language": "en",
         "@value": "Indian literary expression"
+      },
+      {
+        "@language": "de",
+        "@value": "indische literarische Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -229,47 +224,66 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/indology#Samhita",
+    "@id": "http://e-editiones.ch/ontology/indology",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://e-editiones.ch/ontology/indology#VedaLiterature"
+      "http://www.w3.org/2002/07/owl#Ontology"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://purl.org/dc/terms/contributor": [
       {
         "@language": "en",
-        "@value": "One of the four text styles, and the oldest part, in a Veda, wherein text or verses are methodically put together."
+        "@value": "Magdalena Plamada, PhD, Zürich University, Switzerland"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/indology#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://purl.org/dc/terms/creator": [
       {
         "@language": "en",
-        "@value": "Samhita"
-      },
+        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
       {
-        "@language": "sa",
-        "@value": "Samhita"
-      },
+        "@language": "en",
+        "@value": "Formal description of Indology, general subclasses, related classes, and properties."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
       {
-        "@language": "de",
-        "@value": "Samhita"
+        "@id": "http://creativecommons.org/licenses/by/3.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@language": "en",
+        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "An ontology about Indology"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-06-11"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/indology#Padapatha",
+    "@id": "http://e-editiones.ch/ontology/indology#hasIndologicCommentLiteral",
     "@type": [
-      "http://e-editiones.ch/ontology/indology#Patha",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "One of the eleven Pathas, with a word by word recitation, marked by a conscious pause after every word, and after any special grammatical code embedded in the text; suppresses euphonic combination and restores each word in its original intended form."
+        "@value": "Relating something to the literal of an Indological comment as a textual statement about that something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -279,16 +293,22 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "sa",
-        "@value": "Pada-pāṭha"
+        "@language": "de",
+        "@value": "hat indologischer Kommentarliterale"
       },
       {
         "@language": "en",
-        "@value": "Padapatha"
-      },
+        "@value": "has Indological comment literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@language": "de",
-        "@value": "Padapatha"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasCommentLiteral"
       }
     ]
   },
@@ -310,16 +330,16 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "sa",
+        "@value": "pāṭha"
+      },
+      {
         "@language": "en",
         "@value": "patha"
       },
       {
         "@language": "de",
         "@value": "Patha"
-      },
-      {
-        "@language": "sa",
-        "@value": "pāṭha"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -374,14 +394,15 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/indology#Literature",
+    "@id": "http://e-editiones.ch/ontology/indology#Samhita",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://e-editiones.ch/ontology/indology#VedaLiterature"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Literature in Indian culture."
+        "@value": "One of the four text styles, and the oldest part, in a Veda, wherein text or verses are methodically put together."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -391,76 +412,60 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "indische Literatur"
+        "@language": "sa",
+        "@value": "Samhita"
       },
       {
         "@language": "en",
-        "@value": "Indian literature"
+        "@value": "Samhita"
+      },
+      {
+        "@language": "de",
+        "@value": "Samhita"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/indology#Veda",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Hindu text written in Vedic Sanskrit, in a period dated roughly from 1700 to 400 BC."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/indology#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Veda"
+      },
+      {
+        "@language": "de",
+        "@value": "Veda"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/literature#Literature"
+        "@id": "http://e-editiones.ch/ontology/indology#Expression"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/indology",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Magdalena Plamada, PhD, Zürich University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Formal description of Indology, general subclasses, related classes, and properties."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "http://creativecommons.org/licenses/by/3.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@language": "en",
-        "@value": "Universities of Basel, Bern, and Zürich, Switzerland"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "An ontology about Indology"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-06-11"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/indology#vedaHasGenre",
+    "@id": "http://e-editiones.ch/ontology/indology#vedaHasRecitingStyle",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a Veda to a genre it has."
+        "@value": "Relating a Veda to a reciting style it has."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -476,21 +481,16 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Veda has literary genre"
+        "@value": "Veda has reciting style"
       },
       {
         "@language": "de",
-        "@value": "Veda hat literarische Gattung"
+        "@value": "Veda hat Rezitationsstil"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/indology#VedaLiterature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/literature#hasGenre"
+        "@id": "http://e-editiones.ch/ontology/indology#Patha"
       }
     ]
   }

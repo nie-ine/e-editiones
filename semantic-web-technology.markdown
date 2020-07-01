@@ -23,8 +23,7 @@ For clarity it has to be said that the novel element in the SW is not the semant
 
 Figure 1 shows the common representation of the different technologies with their respective standards comprised in the SW stack.   
 
-![figure](/assets/images/semantic-web-stack.png)  
-**Figure 1: The Semantic Web Stack**
+{% include image.html type="small-figure" url="/assets/images/semantic-web-stack.png" description="Figure 1: The Semantic Web Stack" %}
 
 The Web already comes with digital resources bearing an IRI or Internationalized Resource Identifier (URI or Uniform Resource Identifier and URL or Uniform Resource Locator are respective sub-concepts). So, it is already good to know what resource an agent (person or machine) is speaking about because the former is identified, and if another agent looks for it, it can find it (if accessible).
 The next is for the other agent to understand what the resource is about, hence the following layers, all depending on formal logic. More precisely the different languages (except SPARQL) have their model (or interpretation) theory based on first order predicate logic and set theory (math).  
@@ -40,8 +39,7 @@ All but the last layer subjects are further discussed in separate sections.
 
 The author took the liberty to slightly change the previous graphic to the one in Figure 2 to emphasize the dependency on formal logic, and place ontologies at a basic level. 
 
-![figure](/assets/images/SWT-stack-N3.png)  
-**Figure 2: Adapted Semantic Web Stack featuring N3**
+{% include image.html type="small-figure" url="/assets/images/SWT-stack-N3.png" description="Figure 2: Adapted Semantic Web Stack featuring N3" %}
 
 In our project we always use the RDF, RDFS, and OWL together without making the aforementioned distinctions. The figure shows the foundational ontologies of the 3 languages themselves together as the basis, arguing that even for the simplest data expression the [RDF-ontology](http://www.w3.org/1999/02/22-rdf-syntax-ns#) is needed. Once declaring domain knowledge in [own ontologies](/_includes/ontologies), also elements of the [RDFS-](http://www.w3.org/2000/01/rdf-schema#) and [OWL-ontology](http://www.w3.org/2002/07/owl#) are needed.  
 From a formal model point of view we can describe an ontology further as a collection of classes (or sets, categories) and properties (or relations, predicates)  between instances (individuals) of classes.
@@ -59,7 +57,7 @@ Note: there is a W3C N3-dev working group (of which T. Berners-Lee, Jod De Roo, 
 	- Machine-interpretable  
 		→ semi-automated semantic interoperability  
 		→ machine reasoning  
-		→ semantic conversion of data models ([2-step formalization](http://e-editiones.ch/two-step-formalization))  
+		→ semantic conversion of data models ([2-step formalization](/two-step-formalization))  
 		→ enrich data; analysis, mining, and, together with probability theory, enable decision support  
 
 <!--- ° added value of RDF: e.g. no relation HDC and first publication in source data : adding relations between concepts ° Pre-processing year literals at conversion:--->

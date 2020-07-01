@@ -32,8 +32,7 @@ A series of [basic modeling patterns](https://github.com/nie-ine/Ontologies/wiki
 
 There are 2 series: more general and project ontologies. The former are grosso modo further divided into four levels: 1) general domain, 2) general Humanities, 3) specific Humanities, and 4) external terminology systems ontologies (see figure 1). This division is somehow arbitrary, meaning that it isn’t formalized, but it is convenient to illustrate the articulation of ontologies and their interrelations. Table 1 shows the status of the modeling at the end of September 2019. The most populated ontologies are ‘human’, ‘information carrier’, ‘document’, ‘text’, ‘text-expression’, ‘text-structure’, ‘scholarly-editing’, ‘publishing’, ‘literature’, and ‘linguistic-morphology’. The ‘time’-ontology contains properties mainly for N3-rule declarations.
 
-![figure](/assets/images/ontologies-network.png)
-**Figure 1: A simplified representation of the e-editiones web of ontologies**
+{% include image.html url="/assets/images/ontologies-network.png" description="Figure 1: A simplified representation of the e-editiones web of ontologies" %}
 
 <!---![figure](/assets/images/e-editiones-ontologies_numbers.png)
 **Table 1: NIE ontologies in numbers at end of June 2020**--->

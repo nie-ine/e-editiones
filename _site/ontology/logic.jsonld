@@ -1,5 +1,69 @@
 [
   {
+    "@id": "http://e-editiones.ch/ontology/logic#Conclusion",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Statement ... ."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/logic#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Konklusion"
+      },
+      {
+        "@language": "en",
+        "@value": "conclusion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/linguistics#Statement"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/logic#Argument",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Premise(s) presenting a reason for accepting a conclusion."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/logic#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Argument"
+      },
+      {
+        "@language": "en",
+        "@value": "argument"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
+      }
+    ]
+  },
+  {
     "@id": "http://e-editiones.ch/ontology/logic#Syllogism",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
@@ -32,19 +96,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/logic#isPremiseOfArgument",
+    "@id": "http://e-editiones.ch/ontology/logic#isConclusionOfArgument",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a premise to an argument it is part of."
+        "@value": "Relating a conclusion to an argument it is part of."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/logic#Premise"
+        "@id": "http://e-editiones.ch/ontology/logic#Conclusion"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -54,12 +118,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "ist Prämisse eines Argumentes"
+        "@language": "en",
+        "@value": "is conclusion of argument"
       },
       {
-        "@language": "en",
-        "@value": "is premise of argument"
+        "@language": "de",
+        "@value": "ist Konklusion eines Argumentes"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -115,46 +179,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/logic#Conclusion",
+    "@id": "http://e-editiones.ch/ontology/logic#isPremiseOfArgument",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Statement ... ."
+        "@value": "Relating a premise to an argument it is part of."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/logic#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Konklusion"
-      },
-      {
-        "@language": "en",
-        "@value": "conclusion"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/linguistics#Statement"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/logic#Argument",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Premise(s) presenting a reason for accepting a conclusion."
+        "@id": "http://e-editiones.ch/ontology/logic#Premise"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -165,16 +202,21 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "argument"
+        "@value": "is premise of argument"
       },
       {
         "@language": "de",
-        "@value": "Argument"
+        "@value": "ist Prämisse eines Argumentes"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
+        "@id": "http://e-editiones.ch/ontology/logic#Argument"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#isSentenceOfParagraph"
       }
     ]
   },
@@ -196,59 +238,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Prämisse"
-      },
-      {
         "@language": "en",
         "@value": "premise"
+      },
+      {
+        "@language": "de",
+        "@value": "Prämisse"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/linguistics#Statement"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/logic#isConclusionOfArgument",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a conclusion to an argument it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#Conclusion"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is conclusion of argument"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Konklusion eines Argumentes"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#Argument"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#isSentenceOfParagraph"
       }
     ]
   }

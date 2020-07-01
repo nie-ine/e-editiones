@@ -4,32 +4,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" href="/assets/main.css">
-
-</head>
+  <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger">
-          <a class="page-link" href="/about">About</a>
-          <a class="page-link" href="/semantic-web-technology">Semantic Web Technology</a>
-          <a class="page-link" href="/ontology-modeling">Ontology Modeling</a>
-          <a class="page-link" href="/ontology">Ontologies</a>
-          <a class="page-link" href="/n3-rule-based-machine-reasoning">N3-rule-based Machine Reasoning</a>
-          <a class="page-link" href="/two-step-formalization">Two-step Formalization</a>
-          <a class="page-link" href="/literature">Literature</a>
-<!--<a class="page-link" href="/about">About</a><a class="page-link" href="/ontology">Ontologies</a><a class="page-link" href="/">Machine Interpretable and Interoperable Semantics for Humanities</a><a class="page-link" href="/literature">Literature</a><a class="page-link" href="/n3-rule-based-machine-reasoning">N3-rule-based machine reasoning</a><a class="page-link" href="/ontology-modeling">Ontology Modeling</a><a class="page-link" href="/semantic-web-technology">Semantic Web Technology</a><a class="page-link" href="/two-step-formalization">Two-step formalization</a>-->
+  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
+        <a href="/about">About</a>
+        <div class="dropdown">
+          <button class="dropbtn">Semantic Web Technology</button>
+          <div class="dropdown-content">
+            <a href="/semantic-web-technology">Introduction</a>
+            <a href="/semantic-web-technology#advantages-of-swt">Advantages</a>
+          </div>
         </div>
-      </nav></div>
+        <div class="dropdown">
+          <button class="dropbtn">Ontology</button>
+          <div class="dropdown-content">
+            <a href="/ontology">Library</a>
+            <a href="/ontology-modeling">Modeling</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
+          <div class="dropdown-content">
+            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+          </div>
+        </div>
+        <a href="/two-step-formalization">Two-Step Formalization</a>
+        <a href="/literature">Literature</a>
+        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+      </div>
+      <script>
+        function openBurger() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -59,8 +73,10 @@ For clarity it has to be said that the novel element in the SW is not the semant
 
 <p>Figure 1 shows the common representation of the different technologies with their respective standards comprised in the SW stack.</p>
 
-<p><img src="/assets/images/semantic-web-stack.png" alt="figure" /><br />
-<strong>Figure 1: The Semantic Web Stack</strong></p>
+<figure class="image">
+  <img class="small-figure" src="/assets/images/semantic-web-stack.png" alt="Figure 1: The Semantic Web Stack" />
+  <figcaption>Figure 1: The Semantic Web Stack</figcaption>
+</figure>
 
 <p>The Web already comes with digital resources bearing an IRI or Internationalized Resource Identifier (URI or Uniform Resource Identifier and URL or Uniform Resource Locator are respective sub-concepts). So, it is already good to know what resource an agent (person or machine) is speaking about because the former is identified, and if another agent looks for it, it can find it (if accessible).
 The next is for the other agent to understand what the resource is about, hence the following layers, all depending on formal logic. More precisely the different languages (except SPARQL) have their model (or interpretation) theory based on first order predicate logic and set theory (math).<br />
@@ -76,8 +92,10 @@ All but the last layer subjects are further discussed in separate sections.</p>
 
 <p>The author took the liberty to slightly change the previous graphic to the one in Figure 2 to emphasize the dependency on formal logic, and place ontologies at a basic level.</p>
 
-<p><img src="/assets/images/SWT-stack-N3.png" alt="figure" /><br />
-<strong>Figure 2: Adapted Semantic Web Stack featuring N3</strong></p>
+<figure class="image">
+  <img class="small-figure" src="/assets/images/SWT-stack-N3.png" alt="Figure 2: Adapted Semantic Web Stack featuring N3" />
+  <figcaption>Figure 2: Adapted Semantic Web Stack featuring N3</figcaption>
+</figure>
 
 <p>In our project we always use the RDF, RDFS, and OWL together without making the aforementioned distinctions. The figure shows the foundational ontologies of the 3 languages themselves together as the basis, arguing that even for the simplest data expression the <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">RDF-ontology</a> is needed. Once declaring domain knowledge in <a href="/_includes/ontologies">own ontologies</a>, also elements of the <a href="http://www.w3.org/2000/01/rdf-schema#">RDFS-</a> and <a href="http://www.w3.org/2002/07/owl#">OWL-ontology</a> are needed.<br />
 From a formal model point of view we can describe an ontology further as a collection of classes (or sets, categories) and properties (or relations, predicates)  between instances (individuals) of classes.
@@ -97,7 +115,7 @@ The <a href="https://www.w3.org/TeamSubmission/n3/">Notation 3 language (N3)</a>
       <li>Machine-interpretable<br />
   → semi-automated semantic interoperability<br />
   → machine reasoning<br />
-  → semantic conversion of data models (<a href="http://e-editiones.ch/two-step-formalization">2-step formalization</a>)<br />
+  → semantic conversion of data models (<a href="/two-step-formalization">2-step formalization</a>)<br />
   → enrich data; analysis, mining, and, together with probability theory, enable decision support</li>
     </ul>
   </li>
