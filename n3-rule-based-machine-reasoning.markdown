@@ -83,6 +83,7 @@ and a set of rules that can be made as general as possible, but very likely only
 See also [Verborg and De Roo 2015](https://e-editiones.ch/literature).
 Development: https://github.com/josd/eye  
 Download site: https://sourceforge.net/projects/eulersharp/files/eulersharp/  
+<!---http://eulersharp.sourceforge.net/2003/03swap/eye-owl2.html--->
 EYE comes with syntax check and intrinsic functionality provided by [built-ins](https://raw.githubusercontent.com/josd/eye/master/eye-builtins.n3), 
 All other reasoning material has to be input, i.e. OWL-ontologies, RDF-data, N3-rules.  
 

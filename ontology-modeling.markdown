@@ -4,22 +4,24 @@ title: Ontology Modeling
 permalink: /ontology-modeling
 ---
 ## Modeling dependencies
-There are a series of dependencies that directly influence the modeling of ontologies.
+There are a series of dependencies that directly influence the modeling of ontologies.  
 
 <!---![figure](/assets/images/ontology-dependence.png)
 **Figure 1: Resources on which ontology modeling is depending**--->
 
-Directive are the [W3C Semantic Web standard ontologies](/semantic-web-technology#w3c-semantic-web-standards).  
+Directive are the [W3C Semantic Web standard or foundational ontologies](/semantic-web-technology#w3c-semantic-web-standards).  
+
 When modeling for a certain domain, one does not have to start from scratch. The longer the SWT is among us, the more likely someone else already created an ontology to cover the needed semantics (partially), often more generic concepts.
 There is a variety of [existing ontologies](/semantic-web-technology#other-ontologies-used-in-humanities-and-publishing). Some are very generic, others are quite specific. Some have become a de facto standard, e.g. SKOS and DC Elements, or practically are, e.g. Geo.  
+
 We have chosen the [CIDOC-CRM](http://www.cidoc-crm.org/) and [FRBRoo](http://iflastandards.info/ns/fr/frbr/frbroo/) (depending on the former) ontologies to base on. Especially using such more generic domain ontologies will enable semantic interoperability.  
 
 <!--- the aforementioned standard and existing domain ontologies, basic modeling patterns, and best practices.--->
 
-NIE-INE supports overall eleven projects, eight of which currently on the SWT side. Moreover, several new projects already showed their willingness to collaborate with us. The input dependency is represented by the original data model and data, mostly in XML (5 projects using often, but not always TEI), SQL (2 projects), or mixed (1 project).
-Last but not least, there is a dependency on the tacit knowledge of the domain specialists in the editing projects, needed for the implementation of domain knowledge besides the restricted database models. To uncover this knowledge, a commitment on the part of domain specialists is needed, in order to reach consensus on semantics that goes beyond their own specific research objectives.
+NIE-INE supports eleven projects, ten of which currently on the SWT side. Moreover, several new projects already showed their interest to collaborate with us. The input dependency is represented by the original data model and data, mostly in XML (5 projects using often, but not always TEI), SQL (2 projects), or mixed (1 project).
+Last but not least, there is a dependency on the tacit knowledge of the domain specialists in the editing projects, needed for the implementation of domain knowledge besides the restricted database models. To uncover this knowledge, a commitment on the part of domain specialists is needed, in order to reach consensus on semantics that often goes to a certain extent beyond their own specific research objectives.
 
-All these dependencies represent a major challenge and, initially, a substantial overhead, but the return on investment (ROI) is big, and will be even bigger the more project database models are formalized along SWT. This formalization will also contribute to the more general, cross-project semantics, preventing possibly modeling the same concepts for new projects multiple times. Reaching a wide consensus (at the best on an international scale) on domain terminology contributes to the ROI and semantic interoperability.
+All these dependencies represent a major challenge and, initially, a substantial overhead, but the ROI is big, and will be even bigger the more project database models are formalized along SWT, because this formalization will also contribute to the more general, cross-project semantics, preventing modeling the same concepts for new projects multiple times. Reaching a wide consensus on domain terminology (at the best on an international scale) contributes to the ROI and semantic interoperability.
 
 To enable data expression in this new format, a series of ontologies are created, based on those standards.  
 These semantic models adhere to the [model theory of W3C RDF, RDFS](https://www.w3.org/TR/rdf-mt/), and [OWL Full](https://www.w3.org/TR/owl-semantics/), and are declared in [Turtle syntax](https://www.w3.org/TR/turtle/). They are directly accessable in the [ontology library](/ontology).  
