@@ -4,10 +4,10 @@ title: About
 permalink: /about
 ---
 This website contains the knowledge and products as outcome of the [NIE-INE](http://www.nie-ine.ch)-project, which runs at the Swiss Universities of Basel, Bern, Zürich, and Geneva from Oct. 2016 until the end of 2020.
+ 
+It developes the infrastructure [inseri]() (to come) to enable scholarly edition projects in the Humanities to express their data in an enriched format, adhering to the FAIR-principles. It provides the projects with the necessary apps and visualizations, and ensures long-term storage of the data by transferring those to another framework, the Data and Service Center for humanities (DaSCH)<!---(https://dasch.swiss/)--->.
 
-It developes the infrastructure inseri to enable scholarly edition projects in the Humanities to express their data in an enriched format, adhering to the FAIR-principles. It provides the projects with the necessary apps and visualizations, and ensures long-term storage of the data by transferring those to another framework, the Data and Service Center for humanities (DaSCH)<!---(https://dasch.swiss/)--->.
-
-The essence of the infrastructure is that data, e.g. in XML or SQL, are converted to a different i.e. machine-interpretable format by using the W3C's [Semantic Web technology (SWT)](/semantic-web-technology) standards and by making the semantics of the data explicit. This represents a first step towards semantic interoperability.  
+The essence of the infrastructure is that data, e.g. in XML or SQL, are converted to a different i.e. machine-interpretable format by using the W3C's [Semantic Web technology (SWT)](/semantic-web-technology) standards and by making the semantics of the data explicit. This represents a new, i.e. semantic interoperability.  
 
 To enable domain data expression in this new format, a series of dictionaries or [domain ontologies](/ontology) are modeled with great care, based on those standards.  
 
@@ -16,7 +16,9 @@ The crux of SWT is using the formal OWL-ontologies and the RDF-data expressed by
 
 We adopted a [two-step formalization](/two-step-formalization) methodology to implement the SWT end-to-end.  
 
-Of course this novel way of modeling and processing data is also applicable to science outside Humanities.
+Of course this novel way of modeling and processing data is also applicable to science outside Humanities, and other domains.
 
 The development part of the NIE-INE project is in the [GitHub project](https://github.com/nie-ine).
-There are also the repositories unrelated to SWT.
+There are also the repositories unrelated to SWT.  
+
+After 2020 the website will be maintained and the ontologies on GitHub will be developed further.
