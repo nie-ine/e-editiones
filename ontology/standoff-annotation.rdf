@@ -1,45 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:sa="http://e-editiones.ch/ontology/standoff-annotation#"
-  xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:sa="http://e-editiones.ch/ontology/standoff-annotation#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#GivenNameTag">
-    <rdfs:label xml:lang="de">Vorname-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a given name literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#PersonNameTag"/>
-    <rdfs:label xml:lang="en">given name stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#HorizontalLineTag">
-    <rdfs:label xml:lang="en">horizontal line stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">horizontale Linie-Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DiagonalLineTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's diagonal line.</rdfs:comment>
+    <rdfs:label xml:lang="en">diagonal line stand-off tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineOrientationTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's horizontal line.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">diagonale Linie-Stand-off-Tag</rdfs:label>
   </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasCharacterSize">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/text#characterSize"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CharacterSizeTag"/>
+    <rdfs:label xml:lang="en">stand-off tag has character size</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasNumeral"/>
+    <rdfs:label xml:lang="de">Stand-off-Tag hat Zeichengrösse</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a stand-off tag to the size of the text literal it tags.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#VerticalLineTag">
+    <rdfs:label xml:lang="en">vertical line stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineOrientationTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">vertikale Linie-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's vertical line.</rdfs:comment>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasContentSubject">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Stand-off-Tag hat Inhaltsthema</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a stand-off annotation tag to the content subject of the text literal it tags.</rdfs:comment>
+    <rdfs:label xml:lang="en">stand-off tag has content subject</rdfs:label>
+  </owl:ObjectProperty>
+  <sa:FontTag rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ArialTag">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label xml:lang="de">Arial-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">Arial stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's Arial font.</rdfs:comment>
+  </sa:FontTag>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#MathematicalNotationTag">
-    <rdfs:label xml:lang="en">mathematical notation stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a mathematical notation literal.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
     <rdfs:label xml:lang="de">mathematische Notation-Stand-off-Tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="en">mathematical notation stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a mathematical notation literal.</rdfs:comment>
+  </rdfs:Class>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/standoff-annotation">
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:title xml:lang="en">An ontology about standoff-annotation</dct:title>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:contributor xml:lang="en">Dominique Steinbach, project coordinator, software developer, Basel University, Switzerland</dct:contributor>
+    <dct:contributor xml:lang="en">Olga Serbaeva Saraogi, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <rdfs:seeAlso rdf:resource="https://tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASO"/>
+    <dct:description xml:lang="en">Formal description of standoff-annotation in broadest sense, general subclasses, related classes, and properties.</dct:description>
+    <dct:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator, software developer, Basel University, Switzerland</dct:contributor>
+  </owl:Ontology>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#StrikethroughTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
+    <rdfs:label xml:lang="de">Durchstreichung-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">strikethrough stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's strikethrough.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#YearMonthTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a year month literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Jahr-Monat-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">year month stand-off tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DateTag">
+    <rdfs:label xml:lang="en">date stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="ub43bL477C39">
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="de">Datum-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a date literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CoordinateSetTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Beschreibung-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">coordinate set stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a coordinate set literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SubscriptTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#VerticalShiftTag"/>
+    <rdfs:label xml:lang="de">Tiefstellung-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">subscript stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's subscript.</rdfs:comment>
+  </rdfs:Class>
+  <sa:CaseTag rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ObliqueTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TiltTag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's oblique.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label xml:lang="de">Oblique-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">oblique stand-off tag</rdfs:label>
+  </sa:CaseTag>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#URLTag">
+    <rdfs:label xml:lang="en">URL stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <skos:note xml:lang="en">URL stands for Uniform Resource Locator.</skos:note>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a URL literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#IdentifierTag"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="ub43bL522C36">
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="de">URL-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ItalicTag">
+    <rdfs:label xml:lang="de">Kursivschrift-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TiltTag"/>
+    <rdfs:label xml:lang="en">italic stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's italic.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#UnorderedListElementTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating an unordered text list element literal.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#TitleTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">ungeordnete Liste-Element-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">unordered list element stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">Titel-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">title stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text title literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#UppercaseTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CaseTag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character uppercase.</rdfs:comment>
+    <rdfs:label xml:lang="en">uppercase stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Großschrift-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasPlace">
+    <rdfs:label xml:lang="de">Person-Stand-off-Tag hat Person</rdfs:label>
+    <rdfs:label xml:lang="en">place stand-off tag has person</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#PlaceTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Relating a place stand-off tag to a place described by the text literal it refers to.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/physical-entity#Place"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#OverLineTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's overline.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
+    <rdfs:label xml:lang="de">Überstreichung-Stand-off-Tag</rdfs:label>
+    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Overline"/>
+    <rdfs:label xml:lang="en">overline stand-off tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#HeaderTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text header literal.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">header stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
+    <rdfs:label xml:lang="de">Kopfzeile-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#WordTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a word literal.</rdfs:comment>
+    <rdfs:label xml:lang="de">Wort-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">word stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#SyntacticStructureTag"/>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasCharacterColorValue">
+    <rdfs:comment xml:lang="en">Relating a stand-off tag to the color of the text literal it tags.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Stand-off-Tag hat Zeichenfarbe</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CharacterColorTag"/>
+    <rdfs:label xml:lang="en">stand-off tag has character color</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SectionTag">
+    <rdfs:label xml:lang="de">Abschnitt-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">section stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text section literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#AcuteAccentTag">
+    <rdfs:label xml:lang="en">acute accent stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Akut-Akzent-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's acute accent.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DiacriticTag"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#HorizontalLineTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's horizontal line.</rdfs:comment>
+    <rdfs:label xml:lang="de">horizontale Linie-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">horizontal line stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineOrientationTag"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#UnorderedListTag">
+    <rdfs:label xml:lang="de">ungeordnete Liste-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">unordered list stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ListTag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating an unordered text list literal.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#TripleLineTag">
+    <rdfs:label xml:lang="de">dreifache Linie-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineNumberTag"/>
+    <rdfs:label xml:lang="en">triple line stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's triple line.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ColorTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">color stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character color.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="de">Farbe-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#FamilyNameTag">
+    <rdfs:label xml:lang="de">Nachname-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#PersonNameTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a family name literal.</rdfs:comment>
+    <rdfs:label xml:lang="en">family name stand-off tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#OrderedListTag">
+    <rdfs:label xml:lang="de">geordnete Liste-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating an ordered text list literal.</rdfs:comment>
+    <rdfs:label xml:lang="en">ordered list stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ListTag"/>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasColorCodeValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Stand-off-Tag hat Farbekodewert</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#NameTag"/>
+    <rdfs:label xml:lang="en">stand-off tag has color code value</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a stand-off tag to the code of the color of the text literal it tags.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ParagraphTag">
+    <rdfs:label xml:lang="en">paragraph stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">Paragraf-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text paragraph literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SingleLineTag">
+    <rdfs:label xml:lang="en">single line stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineNumberTag"/>
+    <rdfs:label xml:lang="de">einzelne Linie-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's single line.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#OrderedListElementTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating an ordered text list element literal.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">geordnete Liste-Element-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">ordered list element stand-off tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ListElementTag"/>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasWeather">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#WeatherTag"/>
-    <rdfs:label xml:lang="en">weather stand-off tag has weather</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasPerson">
+    <rdfs:comment xml:lang="en">Relating a person stand-off tag to a person described by the text literal it refers to.</rdfs:comment>
+    <rdfs:label xml:lang="de">Person-Stand-off-Tag hat Person</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#PersonTag"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">person stand-off tag has person</rdfs:label>
+    <skos:note xml:lang="en"><![CDATA[
+		example:tagX
+			a sa:WordTag, sa:BoldTag, sa:FamilyNameTag, sa:PersonTag; # Instance of multiple classes.
+			sa:hasStartCharacterOrdinalNumeral “13”^^xsd:nonNegativeInteger;
+			sa:hasEndCharacterOrdinalNumeral “21”^^xsd:nonNegativeInteger;
+			tcs:hasCSSLiteral "font-weight: bold;”^^tcs:css;
+			sa:hasPerson <https://d-nb.info/gnd/118587943>; # Resource of Gemeinsame Normdatei (GND)
+			sa:hasFamilyName "Nietzsche". # The name can be reified as in CIDOC.]]></skos:note>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#UnderlineTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">underline stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">Unterstreichung-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's underline.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#YearTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a year literal.</rdfs:comment>
+    <rdfs:label xml:lang="de">Jahr-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag"/>
+    <rdfs:label xml:lang="en">year stand-off tag</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasWeather">
+    <rdfs:comment xml:lang="en">Relating a weather stand-off tag to a weather described by the text literal it refers to.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#WeatherTag"/>
     <rdfs:label xml:lang="de">Wetter-Stand-off-Tag hat Wetter</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
     <skos:note xml:lang="en">
 		example:tagX # All text literals having 'weather' as content subject are colored blue.
 			a sa:CharacterColorTag, sa:WeatherTag;
@@ -49,329 +317,148 @@
 			sa:hasCSSLiteral "color: #0066b3;"^^sa:css;
 			sa:hasWeather data:blueSky1.
 		data:blueSky1 a weather:BlueSky.</skos:note>
-    <rdfs:comment xml:lang="en">Relating a weather stand-off tag to a weather described by the text literal it refers to.</rdfs:comment>
+    <rdfs:label xml:lang="en">weather stand-off tag has weather</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ObliqueTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TiltTag"/>
-    <rdfs:label xml:lang="de">Oblique-Stand-off-Tag</rdfs:label>
-    <rdf:type rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CaseTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's oblique.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">oblique stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CharacterTiltTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character tilt.</rdfs:comment>
-    <rdfs:label xml:lang="en">character tilt stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">Zeichenneigungswinkel-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CoordinateSetTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:label xml:lang="en">coordinate set stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a coordinate set literal.</rdfs:comment>
-    <rdfs:label xml:lang="de">Beschreibung-Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#UnderlineTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's underline.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
-    <rdfs:label xml:lang="en">underline stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Unterstreichung-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#TripleLineTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">triple line stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's triple line.</rdfs:comment>
-    <rdfs:label xml:lang="de">dreifache Linie-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineNumberTag"/>
-  </rdfs:Class>
-  <sa:FontTag rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ArialTag">
-    <rdfs:label xml:lang="de">Arial-Stand-off-Tag</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">Arial stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's Arial font.</rdfs:comment>
-  </sa:FontTag>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasStartCharacterOrdinalNumeral">
-    <rdfs:comment xml:lang="en">Relating a stand-off annotation tag to the start character ordinal numeral of the text literal it tags.</rdfs:comment>
-    <rdfs:label xml:lang="en">stand-off tag has start character ordinal numeral</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">Stand-off-Tag hat Startzeichenordinalnumerale</rdfs:label>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SentenceTag">
-    <rdfs:label xml:lang="de">Satz-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ContentStructureTag"/>
-    <rdfs:label xml:lang="en">sentence stand-off tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#SyntacticStructureTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a sentence literal.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasCharacterSize">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasNumeral"/>
-    <rdfs:comment xml:lang="en">Relating a stand-off tag to the size of the text literal it tags.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CharacterSizeTag"/>
-    <rdfs:label xml:lang="en">stand-off tag has character size</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/text#characterSize"/>
-    <rdfs:label xml:lang="de">Stand-off-Tag hat Zeichengrösse</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasCharacterColorValue">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">stand-off tag has character color</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CharacterColorTag"/>
-    <rdfs:comment xml:lang="en">Relating a stand-off tag to the color of the text literal it tags.</rdfs:comment>
-    <rdfs:label xml:lang="de">Stand-off-Tag hat Zeichenfarbe</rdfs:label>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#YearMonthTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a year month literal.</rdfs:comment>
-    <rdfs:label xml:lang="de">Jahr-Monat-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag"/>
-    <rdfs:label xml:lang="en">year month stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasPerson">
-    <rdfs:label xml:lang="de">Person-Stand-off-Tag hat Person</rdfs:label>
-    <skos:note xml:lang="en"><![CDATA[
-		example:tagX
-			a sa:WordTag, sa:BoldTag, sa:FamilyNameTag, sa:PersonTag; # Instance of multiple classes.
-			sa:hasStartCharacterOrdinalNumeral “13”^^xsd:nonNegativeInteger;
-			sa:hasEndCharacterOrdinalNumeral “21”^^xsd:nonNegativeInteger;
-			tcs:hasCSSLiteral "font-weight: bold;”^^tcs:css;
-			sa:hasPerson <https://d-nb.info/gnd/118587943>; # Resource of Gemeinsame Normdatei (GND)
-			sa:hasFamilyName "Nietzsche". # The name can be reified as in CIDOC.]]></skos:note>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#PersonTag"/>
-    <rdfs:comment xml:lang="en">Relating a person stand-off tag to a person described by the text literal it refers to.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">person stand-off tag has person</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#YearTag">
-    <rdfs:label xml:lang="de">Jahr-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a year literal.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">year stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#FamilyNameTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#PersonNameTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a family name literal.</rdfs:comment>
-    <rdfs:label xml:lang="en">family name stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Nachname-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LeftLineTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
-    <rdfs:label xml:lang="de">linke Linie-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's left line.</rdfs:comment>
-    <rdfs:label xml:lang="en">left line stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DateTimeTag">
-    <rdfs:label xml:lang="de">Datum-Zeit-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag"/>
-    <rdfs:label xml:lang="en">date time stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a date time literal.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#IntegerTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating an integer numeral.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub43bL462C33">
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/mathematics#hasNumeral"/>
-        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">integer stand-off tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DecimalTag"/>
-    <rdfs:label xml:lang="de">Integer-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ColorTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">color stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Farbe-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character color.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#IRITag">
-    <skos:note xml:lang="en">IRI stands for Internationalized Resource Identifier.</skos:note>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#IdentifierTag"/>
-    <rdfs:label xml:lang="de">IRI-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating an IRI literal.</rdfs:comment>
-    <rdfs:label xml:lang="en">IRI stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasContentSubject">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:comment xml:lang="en">Relating a stand-off annotation tag to the content subject of the text literal it tags.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">stand-off tag has content subject</rdfs:label>
-    <rdfs:label xml:lang="de">Stand-off-Tag hat Inhaltsthema</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/standoff-annotation">
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <rdfs:seeAlso rdf:resource="https://tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASO"/>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator, software developer, Basel University, Switzerland</dct:contributor>
-    <dct:title xml:lang="en">An ontology about standoff-annotation</dct:title>
-    <dct:contributor xml:lang="en">Olga Serbaeva Saraogi, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
-    <dct:description xml:lang="en">Formal description of standoff-annotation in broadest sense, general subclasses, related classes, and properties.</dct:description>
-    <dct:contributor xml:lang="en">Dominique Steinbach, project coordinator, software developer, Basel University, Switzerland</dct:contributor>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-  </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ItalicTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's italic.</rdfs:comment>
-    <rdfs:label xml:lang="en">italic stand-off tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TiltTag"/>
-    <rdfs:label xml:lang="de">Kursivschrift-Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LowercaseTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CaseTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character lower case.</rdfs:comment>
-    <rdfs:label xml:lang="de">Kleinschrift-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">lower case stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#BoldTag">
     <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's bold.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#WeightTag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">Fettdruck-Stand-off-Tag</rdfs:label>
     <rdfs:label xml:lang="en">bold stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">Fettdruck-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#WeightTag"/>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasStartCharacterOrdinalNumeral">
+    <rdfs:comment xml:lang="en">Relating a stand-off annotation tag to the start character ordinal numeral of the text literal it tags.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:label xml:lang="de">Stand-off-Tag hat Startzeichenordinalnumerale</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">stand-off tag has start character ordinal numeral</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DoubleLineTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's double line.</rdfs:comment>
+    <rdfs:label xml:lang="en">double line stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineNumberTag"/>
+    <rdfs:label xml:lang="de">doppelte Linie-Stand-off-Tag</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CompositionalStructureTag">
-    <rdfs:label xml:lang="de">kompositionelle Textstruktur-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
     <rdfs:label xml:lang="en">compositional text structure stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">kompositionelle Textstruktur-Stand-off-Tag</rdfs:label>
     <rdfs:comment xml:lang="en">Stand-off tag annotating a compositional text structure literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#AcuteAccentTag">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CitationTag">
+    <rdfs:label xml:lang="de">Zitat-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">citation stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ContentStructureTag"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's acute accent.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DiacriticTag"/>
-    <rdfs:label xml:lang="en">acute accent stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Akut-Akzent-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasColorCodeValue">
-    <rdfs:comment xml:lang="en">Relating a stand-off tag to the code of the color of the text literal it tags.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">Stand-off-Tag hat Farbekodewert</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#NameTag"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="en">stand-off tag has color code value</rdfs:label>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#VerticalLineTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's vertical line.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineOrientationTag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">vertical line stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">vertikale Linie-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#UnorderedListTag">
-    <rdfs:label xml:lang="en">unordered list stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">ungeordnete Liste-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ListTag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating an unordered text list literal.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ParagraphTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text paragraph literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-    <rdfs:label xml:lang="en">paragraph stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Paragraf-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#OverLineTag">
-    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Overline"/>
-    <rdfs:label xml:lang="en">overline stand-off tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's overline.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">Überstreichung-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasPlace">
-    <rdfs:label xml:lang="en">place stand-off tag has person</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a place stand-off tag to a place described by the text literal it refers to.</rdfs:comment>
-    <rdfs:label xml:lang="de">Person-Stand-off-Tag hat Person</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#PlaceTag"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/physical-entity#Place"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#HeaderTag">
-    <rdfs:label xml:lang="en">header stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Kopfzeile-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text header literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#OrderedListElementTag">
-    <rdfs:label xml:lang="de">geordnete Liste-Element-Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">ordered list element stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating an ordered text list element literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ListElementTag"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SuperscriptTag">
-    <rdfs:label xml:lang="de">Hochstellung-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#VerticalShiftTag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">superscript stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's superscript.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a citation literal.</rdfs:comment>
   </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#textHasStandoffAnnotation">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Relating a text to a stand-off annotation tag.</rdfs:comment>
-    <rdfs:label xml:lang="en">text has stand-off annotation</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
-    <rdfs:label xml:lang="de">Text hat Stand-off-Annotation</rdfs:label>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="en">text has stand-off annotation</rdfs:label>
+    <rdfs:label xml:lang="de">Text hat Stand-off-Annotation</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a text to a stand-off annotation tag.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DiagonalLineTag">
-    <rdfs:label xml:lang="de">diagonale Linie-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">diagonal line stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's diagonal line.</rdfs:comment>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasEndCharacterOrdinalNumeral">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
+    <rdfs:comment xml:lang="en">Relating a stand-off annotation tag to the end character ordinal numeral of the text literal it tags.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:label xml:lang="de">Stand-off-Tag hat Endzeichenordinalnumerale</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineOrientationTag"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#StrikethroughTag">
+    <rdfs:label xml:lang="en">stand-off tag has end character ordinal numeral</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#IntegerTag">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's strikethrough.</rdfs:comment>
-    <rdfs:label xml:lang="de">Durchstreichung-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
-    <rdfs:label xml:lang="en">strikethrough stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#URLTag">
+    <rdfs:label xml:lang="de">Integer-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">integer stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating an integer numeral.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DecimalTag"/>
     <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub43bL522C36">
-        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
+      <owl:Restriction rdf:nodeID="ub43bL462C33">
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/mathematics#hasNumeral"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">URL-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">URL stand-off tag</rdfs:label>
-    <skos:note xml:lang="en">URL stands for Uniform Resource Locator.</skos:note>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a URL literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#IdentifierTag"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DoubleLineTag">
-    <rdfs:label xml:lang="de">doppelte Linie-Stand-off-Tag</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LeftLineTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's left line.</rdfs:comment>
+    <rdfs:label xml:lang="de">linke Linie-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">left line stand-off tag</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">double line stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's double line.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineNumberTag"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LowercaseTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character lower case.</rdfs:comment>
+    <rdfs:label xml:lang="de">Kleinschrift-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CaseTag"/>
+    <rdfs:label xml:lang="en">lower case stand-off tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#HeadingTag">
+    <rdfs:label xml:lang="de">Kopfzeile-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
+    <rdfs:label xml:lang="en">header stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text header literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DateTimeTag">
+    <rdfs:label xml:lang="en">date time stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a date time literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag"/>
+    <rdfs:label xml:lang="de">Datum-Zeit-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SuperscriptTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#VerticalShiftTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's superscript.</rdfs:comment>
+    <rdfs:label xml:lang="de">Hochstellung-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">superscript stand-off tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#RightLineTag">
+    <rdfs:label xml:lang="de">rechtse Linie-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">right line stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's right line.</rdfs:comment>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasNameLiteral">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">stand-off tag has name literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a stand-off tag to a name literal.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#NameTag"/>
+    <rdfs:label xml:lang="de">Stand-off-Tag hat Nameliterale</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#UnorderedListElementTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ListElementTag"/>
+    <rdfs:label xml:lang="de">ungeordnete Liste-Element-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">unordered list element stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating an unordered text list element literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SentenceTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a sentence literal.</rdfs:comment>
+    <rdfs:label xml:lang="de">Satz-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">sentence stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#SyntacticStructureTag"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ContentStructureTag"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#IRITag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating an IRI literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#IdentifierTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">IRI-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">IRI stand-off tag</rdfs:label>
+    <skos:note xml:lang="en">IRI stands for Internationalized Resource Identifier.</skos:note>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#HTMLTag">
     <rdfs:subClassOf>
@@ -380,288 +467,74 @@
         <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="de">HTML-Stand-off-Tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ComputerCodeTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
     <rdfs:label xml:lang="en">HTML stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">HTML-Stand-off-Tag</rdfs:label>
     <rdfs:comment xml:lang="en">Stand-off tag annotating an HTML code literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#GivenNameTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#PersonNameTag"/>
+    <rdfs:label xml:lang="de">Vorname-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">given name stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a given name literal.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#UppercaseTag">
-    <rdfs:label xml:lang="en">uppercase stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Großschrift-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character uppercase.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CharacterTiltTag">
+    <rdfs:label xml:lang="de">Zeichenneigungswinkel-Stand-off-Tag</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#CaseTag"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SectionTag">
-    <rdfs:label xml:lang="en">section stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text section literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-    <rdfs:label xml:lang="de">Abschnitt-Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasNameLiteral">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#NameTag"/>
-    <rdfs:comment xml:lang="en">Relating a stand-off tag to a name literal.</rdfs:comment>
-    <rdfs:label xml:lang="de">Stand-off-Tag hat Nameliterale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:label xml:lang="en">stand-off tag has name literal</rdfs:label>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#OrderedListTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ListTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating an ordered text list literal.</rdfs:comment>
-    <rdfs:label xml:lang="de">geordnete Liste-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">ordered list stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#TitleTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text title literal.</rdfs:comment>
-    <rdfs:label xml:lang="en">title stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Titel-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CitationTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">Zitat-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a citation literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#ContentStructureTag"/>
-    <rdfs:label xml:lang="en">citation stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/standoff-annotation#hasEndCharacterOrdinalNumeral">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:label xml:lang="de">Stand-off-Tag hat Endzeichenordinalnumerale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a stand-off annotation tag to the end character ordinal numeral of the text literal it tags.</rdfs:comment>
-    <rdfs:label xml:lang="en">stand-off tag has end character ordinal numeral</rdfs:label>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SubscriptTag">
-    <rdfs:label xml:lang="en">subscript stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Tiefstellung-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#VerticalShiftTag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's subscript.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DateTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub43bL477C39">
-        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag"/>
-    <rdfs:label xml:lang="de">Datum-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">date stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a date literal.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SingleLineTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's single line.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LineNumberTag"/>
-    <rdfs:label xml:lang="de">einzelne Linie-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">single line stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#HeadingTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text header literal.</rdfs:comment>
-    <rdfs:label xml:lang="en">header stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Kopfzeile-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#RightLineTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's right line.</rdfs:comment>
-    <rdfs:label xml:lang="en">right line stand-off tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag"/>
-    <rdfs:label xml:lang="de">rechtse Linie-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#WordTag">
-    <rdfs:label xml:lang="de">Wort-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">word stand-off tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#SyntacticStructureTag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a word literal.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#PersonTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DescriptionTag"/>
-    <rdfs:label xml:lang="en">person stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Person-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a person description literal.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ListTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text list literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-    <rdfs:label xml:lang="en">list stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Liste-Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ComputerCodeTag">
+    <rdfs:label xml:lang="en">character tilt stand-off tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a computer code literal.</rdfs:comment>
-    <rdfs:label xml:lang="en">computer code stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Identifikator-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DecimalTag">
-    <rdfs:label xml:lang="de">Dezimal-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#NumberTag"/>
-    <rdfs:label xml:lang="en">decimal stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a decimal numeral.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub43bL454C32">
-        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/mathematics#hasNumeral"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LineOrientationTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's line's orientation.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">line orientation stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Linieorientierung-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag">
-    <rdfs:label xml:lang="en">time indicator stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a time indicator literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">Zeitindikator-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#NameTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">name stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a name literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:label xml:lang="de">Name-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CharacterColorTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character color.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">character color stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Zeichenfarbe-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#WeightTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character weight.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">weight stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Zeichengewicht-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character tilt.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ListElementTag">
-    <rdfs:label xml:lang="de">Liste-Element-Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">list element stand-off tag</rdfs:label>
     <rdfs:comment xml:lang="en">Stand-off tag annotating a text list element literal.</rdfs:comment>
+    <rdfs:label xml:lang="de">Liste-Element-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">list element stand-off tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CaseTag">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:label xml:lang="en">case stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Buchstabengröße Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character case.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#PersonNameTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a person name literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#NameTag"/>
-    <rdfs:label xml:lang="de">Personenname-Stand-off-Tag</rdfs:label>
-    <rdfs:label xml:lang="en">person name stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#FontTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">font stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's font.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:label xml:lang="de">Schriftart-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LineNumberTag">
-    <rdfs:label xml:lang="de">Linieanzahl-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's attached line number.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#VerticalShiftTag">
+    <rdfs:label xml:lang="de">vertikales Verschiebung-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's vertical shift.</rdfs:comment>
+    <rdfs:label xml:lang="en">vertical shift stand-off tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">line number stand-off tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text structure literal.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">text structure stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Textstruktur-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#WeatherTag">
-    <rdfs:label xml:lang="de">Wetter-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a weather description literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DescriptionTag"/>
-    <rdfs:label xml:lang="en">weather stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#IdentifierTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">identifier stand-off tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating an identifier literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:label xml:lang="de">Identifikator-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SyntacticStructureTag">
-    <rdfs:label xml:lang="en">syntactic text structure stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a syntactic text structure literal.</rdfs:comment>
-    <rdfs:label xml:lang="de">syntaktische Textstruktur-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#PlaceTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DescriptionTag"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">place stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Ort-Stand-off-Tag</rdfs:label>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a place description literal.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LinePlaceTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's attached line.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
     <rdfs:label xml:lang="en">line place stand-off tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
     <rdfs:label xml:lang="de">Linieplatz-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#Tag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
-    <rdfs:label xml:lang="en">stand-off tag</rdfs:label>
-    <skos:note xml:lang="en">A stand-off tag does not contain a document element literal itself, e.g. a text literal or an HTML literal, but is a semantic hub describing the different meanings attributed to the literal it refers to.</skos:note>
-    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
-    <rdfs:comment xml:lang="en">Digital tag annotating a text literal.</rdfs:comment>
-    <rdfs:label xml:lang="de">Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ContentStructureTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a content text structure literal.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
-    <rdfs:label xml:lang="en">content text structure stand-off tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="de">inhaltliche Textstruktur-Stand-off-Tag</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#NumberTag">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
-    <rdfs:label xml:lang="en">number stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">Zahl-Stand-off-Tag</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a numeral.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's attached line.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CharacterSizeTag">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:label xml:lang="de">Zeichengröße-Stand-off-Tag</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
     <rdfs:label xml:lang="en">character size stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
     <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character size.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Zeichengröße-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#PersonTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DescriptionTag"/>
+    <rdfs:label xml:lang="de">Person-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">person stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a person description literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CharacterColorTag">
+    <rdfs:label xml:lang="en">character color stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="de">Zeichenfarbe-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character color.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#PersonNameTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a person name literal.</rdfs:comment>
+    <rdfs:label xml:lang="de">Personenname-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#NameTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">person name stand-off tag</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DescriptionTag">
     <rdfs:label xml:lang="en">description stand-off tag</rdfs:label>
@@ -670,18 +543,145 @@
     <rdfs:label xml:lang="de">Beschreibung-Stand-off-Tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DiacriticTag">
-    <rdfs:label xml:lang="en">diacritic stand-off tag</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LineNumberTag">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's attached line number.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="en">line number stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">Linieanzahl-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#PlaceTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a place description literal.</rdfs:comment>
+    <rdfs:label xml:lang="en">place stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DescriptionTag"/>
+    <rdfs:label xml:lang="de">Ort-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DiacriticTag">
     <rdfs:label xml:lang="de">diakritisches Zeichen-Stand-off-Tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="en">diacritic stand-off tag</rdfs:label>
     <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's diacritic.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ListTag">
+    <rdfs:label xml:lang="en">list stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text list literal.</rdfs:comment>
+    <rdfs:label xml:lang="de">Liste-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#WeightTag">
+    <rdfs:label xml:lang="en">weight stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Zeichengewicht-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character weight.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#VerticalShiftTag">
-    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's vertical shift.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#LineOrientationTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Linieorientierung-Stand-off-Tag</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
-    <rdfs:label xml:lang="en">vertical shift stand-off tag</rdfs:label>
-    <rdfs:label xml:lang="de">vertikales Verschiebung-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">line orientation stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's line's orientation.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#TimeIndicatorTag">
+    <rdfs:label xml:lang="de">Zeitindikator-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a time indicator literal.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="en">time indicator stand-off tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#FontTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's font.</rdfs:comment>
+    <rdfs:label xml:lang="en">font stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Schriftart-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ContentStructureTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a content text structure literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
+    <rdfs:label xml:lang="en">content text structure stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">inhaltliche Textstruktur-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#NumberTag">
+    <rdfs:label xml:lang="en">number stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Zahl-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a numeral.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#DecimalTag">
+    <rdfs:label xml:lang="de">Dezimal-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">decimal stand-off tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#NumberTag"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a decimal numeral.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="ub43bL454C32">
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/mathematics#hasNumeral"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#Tag">
+    <rdfs:label xml:lang="de">Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">stand-off tag</rdfs:label>
+    <skos:note xml:lang="en">A stand-off tag does not contain a document element literal itself, e.g. a text literal or an HTML literal, but is a semantic hub describing the different meanings attributed to the literal it refers to.</skos:note>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Digital tag annotating a text literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#CaseTag">
+    <rdfs:label xml:lang="en">case stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text literal's character case.</rdfs:comment>
+    <rdfs:label xml:lang="de">Buchstabengröße Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="en">text structure stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Textstruktur-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a text structure literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#WeatherTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a weather description literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#DescriptionTag"/>
+    <rdfs:label xml:lang="en">weather stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">Wetter-Stand-off-Tag</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#IdentifierTag">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+    <rdfs:label xml:lang="de">Identifikator-Stand-off-Tag</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="en">identifier stand-off tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating an identifier literal.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#SyntacticStructureTag">
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a syntactic text structure literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#TextStructureTag"/>
+    <rdfs:label xml:lang="de">syntaktische Textstruktur-Stand-off-Tag</rdfs:label>
+    <rdfs:label xml:lang="en">syntactic text structure stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#NameTag">
+    <rdfs:label xml:lang="de">Name-Stand-off-Tag</rdfs:label>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a name literal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:label xml:lang="en">name stand-off tag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/standoff-annotation#ComputerCodeTag">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#Tag"/>
+    <rdfs:comment xml:lang="en">Stand-off tag annotating a computer code literal.</rdfs:comment>
+    <rdfs:label xml:lang="en">computer code stand-off tag</rdfs:label>
+    <rdfs:label xml:lang="de">Identifikator-Stand-off-Tag</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/standoff-annotation#"/>
   </rdfs:Class>
 </rdf:RDF>
