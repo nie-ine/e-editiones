@@ -1,6 +1,38 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/logic#Conclusion",
+    "@id": "http://e-editiones.ch/ontology/logic#Syllogism",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/logic#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "syllogism"
+      },
+      {
+        "@language": "de",
+        "@value": "Syllogismus"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/logic#Argument"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/logic#Premise",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
@@ -18,11 +50,43 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Konklusion"
+        "@value": "Prämisse"
       },
       {
         "@language": "en",
+        "@value": "premise"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/linguistics#Statement"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/logic#Conclusion",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Statement ... ."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/logic#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
         "@value": "conclusion"
+      },
+      {
+        "@language": "de",
+        "@value": "Konklusion"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -49,49 +113,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Argument"
-      },
-      {
         "@language": "en",
         "@value": "argument"
+      },
+      {
+        "@language": "de",
+        "@value": "Argument"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/logic#Syllogism",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Syllogismus"
-      },
-      {
-        "@language": "en",
-        "@value": "syllogism"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#Argument"
       }
     ]
   },
@@ -124,6 +156,48 @@
       {
         "@language": "de",
         "@value": "ist Konklusion eines Argumentes"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/logic#Argument"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#isSentenceOfParagraph"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/logic#isPremiseOfArgument",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a premise to an argument it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/logic#Premise"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/logic#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is premise of argument"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Prämisse eines Argumentes"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -175,80 +249,6 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2020-06-11"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/logic#isPremiseOfArgument",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a premise to an argument it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#Premise"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is premise of argument"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Prämisse eines Argumentes"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#Argument"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#isSentenceOfParagraph"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/logic#Premise",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Statement ... ."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/logic#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "premise"
-      },
-      {
-        "@language": "de",
-        "@value": "Prämisse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/linguistics#Statement"
       }
     ]
   }

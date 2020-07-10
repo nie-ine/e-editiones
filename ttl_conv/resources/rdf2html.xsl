@@ -715,7 +715,7 @@
 				<xsl:value-of select="true()"/>
 			</xsl:when>
 			<!-- Otherwise, ignore -->
-			<xsl:otherwise><xsl:value-of select="false()"/></xsl:otherwise>
+			<xsl:otherwise><xsl:value-of select="true()"/></xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
