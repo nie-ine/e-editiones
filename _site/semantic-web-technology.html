@@ -44,9 +44,9 @@
           }
         }
       </script></div>
-</header>
-<main class="page-content" aria-label="Content">
+</header><main class="page-content" aria-label="Content">
       <div class="wrapper">
+        <div id="inprogress">The content of this website is still in progress</div>
         <article class="post">
 
   <header class="post-header">
@@ -54,17 +54,37 @@
   </header>
 
   <div class="post-content">
-    <h2 id="heterogeneity-of-digital-data">Heterogeneity of digital data</h2>
+    <ul id="markdown-toc">
+  <li><a href="#heterogeneity-of-digital-data" id="markdown-toc-heterogeneity-of-digital-data">Heterogeneity of digital data</a></li>
+  <li><a href="#data-and-their-semantics-for-humans-and-machines" id="markdown-toc-data-and-their-semantics-for-humans-and-machines">Data and their semantics for humans and machines</a></li>
+  <li><a href="#w3c-semantic-web-standards" id="markdown-toc-w3c-semantic-web-standards">W3C Semantic Web standards</a>    <ul>
+      <li><a href="#identify-iri" id="markdown-toc-identify-iri">Identify: IRI</a></li>
+      <li><a href="#formalize-data-data-models-and-domain-knowledge-languages-of-logic" id="markdown-toc-formalize-data-data-models-and-domain-knowledge-languages-of-logic">Formalize data, data models, and domain knowledge: languages of logic</a></li>
+      <li><a href="#query-sparql" id="markdown-toc-query-sparql">Query: SPARQL</a></li>
+      <li><a href="#formalize-means-to-infer-rule" id="markdown-toc-formalize-means-to-infer-rule">Formalize means to infer: rule</a></li>
+      <li><a href="#infer-unifying-logic" id="markdown-toc-infer-unifying-logic">Infer: unifying logic</a></li>
+      <li><a href="#proof-machine-reasoning" id="markdown-toc-proof-machine-reasoning">Proof: machine reasoning</a></li>
+      <li><a href="#trust" id="markdown-toc-trust">Trust</a></li>
+      <li><a href="#focus-on-logic-and-machine-reasoning" id="markdown-toc-focus-on-logic-and-machine-reasoning">Focus on logic and machine reasoning</a></li>
+    </ul>
+  </li>
+  <li><a href="#advantages-of-swt" id="markdown-toc-advantages-of-swt">Advantages of SWT</a></li>
+  <li><a href="#domain-ontologies-used-in-humanities-and-publishing" id="markdown-toc-domain-ontologies-used-in-humanities-and-publishing">Domain ontologies used in Humanities and Publishing</a></li>
+</ul>
+
+<h2 id="heterogeneity-of-digital-data">Heterogeneity of digital data</h2>
 <p>In general a growing number of people produce in their activities, both professionally and leisurely, an ever faster growing amount of very heterogeneous digital data, resulting in a very complex information landscape.<br />
 This heterogeneity has several causes.<br />
 Humans have developed more than 7800 <strong>natural languages</strong>, each of them with more or less own interpretation and description models of the observation of reality. Even when different languages belong to the same group, a 1-1 translation is often impossible.<br />
 Within a language, the way people describe things with a certain vocabulary or <strong>terminology</strong> or jargon differs along education, occupation, industry and other <strong>domains</strong>. But also intra-disciplinary terms not always bear exactly the same meaning.<br />
 On the technological side, a lot of data are <strong>little or not structured</strong> (free text). One can secondarily structure data through parsing the text, but unless the accuracy of text recognition is 100%, a secondary data error is introduced. Creating possibilities to up-front input sufficiently structured data might be an easier, cheaper and more reliable approach.<br />
 Last but not least, even when data input is structured in databases (e.g. in XML or SQL), and even when 2 databases contain very similar information, their schemas or <strong>data models</strong>, though capturing consented domain knowledge (as found in literature, or in tacit knowledge in the heads of domain specialists) are often <strong>localized</strong> through natural language and personal representations such as abbreviations and cryptic naming, not fully described. In other words they are not always stating meaning explicitly.</p>
+
 <h2 id="data-and-their-semantics-for-humans-and-machines">Data and their semantics for humans and machines</h2>
 <p>In order to communicate the growing amount of heterogeneous information, humans need another paradigm of the interoperability of computer systems to enable enhanced data linkability. Hyperlinking identified resources on the Web, e.g. a wiki-page or an application, is only one part of the story. Going to the content of the pages, the meaning of every resource, e.g. a document, a subject, an image, has to be known, i.e. described, in a way a machine can handle it, in order to be really linkable in an automated way.<br />
 This paradigm emerges as a <strong>unifying standard language</strong> to express the information’s semantics in such a way that it solves the aformentioned issues.<br />
 It is a tremendous advantage to escape from natural language translations and have a language with more basic semantics of logic and mathematics. It permits structuring information in a database with explicitly stated data models. And even as a standard, it will enable also the expression of subtle differences in terminologies, instead of needing to make the information landscape less complex by simplifying its semantics. The biggest advantage of such a unifying language of logic is making its <strong>semantics machine interpretable</strong>, because this enables formal logic inference with machine reasoning. With this kind of artificial intelligence, new knowledge can be derived from existing one.</p>
+
 <h2 id="w3c-semantic-web-standards">W3C Semantic Web standards</h2>
 <p>In 1990 at the onset of the World Wide Web (WWW), Tim Berners-Lee already envisioned a unifying language of logic. But it wasn’t until 2001 that the <a href="https://www.w3.org/">WWW Consortium (W3C)</a> started the development of the <a href="https://www.w3.org/standards/semanticweb/">Semantic Web (SW)</a> aka Web 3.0, resulting in a set of open source technology standards. W3C is the international organization occupied with standardization of the technology driving the Web, also e.g. HTML and XML.<br />
 The SW standards enhance the interoperability of computer systems through the introduction of <strong>machine interpretable or formal semantics</strong> of natural language.<br />
@@ -80,21 +100,28 @@ For clarity it has to be said that the novel element in the SW is not the semant
 <h3 id="identify-iri">Identify: IRI</h3>
 <p>The Web already comes with digital resources bearing an IRI or Internationalized Resource Identifier (URI or Uniform Resource Identifier and URL or Uniform Resource Locator are respective sub-concepts). So, it is already good to know what resource an agent (person or machine) is speaking about because the former is identified, and if another agent looks for it, it can find it (if accessible).
 The next is for the other agent to understand what the resource is about, hence the following layers, all depending on formal logic. More precisely the different languages (except SPARQL) have their <a href="https://en.wikipedia.org/wiki/Model_theory">model (or interpretation) theory</a> based on <a href="https://en.wikipedia.org/wiki/First-order_logic">first order logic</a> and <a href="https://en.wikipedia.org/wiki/Set_theory">set theory</a>.</p>
+
 <h3 id="formalize-data-data-models-and-domain-knowledge-languages-of-logic">Formalize data, data models, and domain knowledge: languages of logic</h3>
 <p>The first 3 languages have an increasing expressiveness: <a href="https://www.w3.org/TR/rdf-mt/">Resource Description Framework (RDF), RDF Schema (RDFS)</a>, and the <a href="https://www.w3.org/TR/owl2-primer/">Web Ontology Language (OWL)</a>, which can be used seperately to express formal epressions in a growing complexity, resp. data, simple ontologies and more complex ontologies (or formal dictionaries). OWL itself has different grades of expressiveness with <a href="https://www.w3.org/TR/owl2-primer/#OWL_2_DL_and_OWL_2_Full">OWL 2 DL, OWL 2 Full</a> and <a href="https://www.w3.org/TR/owl2-primer/#OWL_2_Profiles">profiles</a> as discussed in the W3C document. We use OWL 2 Full.<br />
 Some descriptions of ‘ontology’ in the SW are: “a conceptualization of a domain to enable knowledge sharing” (<a href="https://www.w3.org/2005/Incubator/w3pm/XGR-w3pm-20091008/#A">W3C 2009</a>) and “a representation of terms and their interrelationships” (<a href="https://www.w3.org/TR/2004/REC-owl-features-20040210/#s1">W3C 2004</a>).<br />
 Ontologies and data can be serialized in <a href="https://www.w3.org/TR/turtle/">Turtle</a>, <a href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>, or <a href="https://www.w3.org/TR/n-triples/">N-Triples</a> syntax.</p>
+
 <h3 id="query-sparql">Query: SPARQL</h3>
 <p><a href="https://www.w3.org/TR/rdf-sparql-query/">SPARQL</a> is the RDF query language, to retrieve data from an RDF graph database or triple store. It has its own syntax.</p>
+
 <h3 id="formalize-means-to-infer-rule">Formalize means to infer: rule</h3>
 <p>Rules are the means for inferring new data from data with machine reasoning. The <a href="https://www.w3.org/TR/rif-dtb/">Rule Interchange Format (RIF) Datatypes and Built-Ins 1.0</a> contains standard specifications.</p>
+
 <h3 id="infer-unifying-logic">Infer: unifying logic</h3>
 <p>Unifying logic establishes consistency and correctness of data sets and permits to infer conclusions not explicitly stated but required by or consistent with a known set of data, by applying the rules using a machine reasoner having the logic implemented.</p>
+
 <h3 id="proof-machine-reasoning">Proof: machine reasoning</h3>
 <p>Proof provides trace or explanation of the steps of logical reasoning and needs to be given by the reasoner.</p>
+
 <h3 id="trust">Trust</h3>
 <p>A trust layer offers authentication of identity and evidence of the trustworthiness of data, services, and agents.<br />
 All but the last layer subjects are further discussed in separate sections.</p>
+
 <h3 id="focus-on-logic-and-machine-reasoning">Focus on logic and machine reasoning</h3>
 <p>The author took the liberty to slightly change the previous graphic to the one in Figure 2 to emphasize the dependency on formal logic, and place ontologies at a basic level.</p>
 

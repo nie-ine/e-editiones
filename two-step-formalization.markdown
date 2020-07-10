@@ -4,6 +4,8 @@ title: Two-Step Formalization
 permalink: /two-step-formalization
 
 ---
+* 
+{:toc}
 
 ## Converting data source to formal domain knowledge semantics
 There are the W3C formal standard languages RDF, RDFS and OWL with built-in logic, and their respective foundational ontologies.  
