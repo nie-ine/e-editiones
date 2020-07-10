@@ -27,13 +27,13 @@ Figure 1 shows the common representation of the different technologies with thei
 ### Identify: IRI
 The Web already comes with digital resources bearing an IRI or Internationalized Resource Identifier (URI or Uniform Resource Identifier and URL or Uniform Resource Locator are respective sub-concepts). So, it is already good to know what resource an agent (person or machine) is speaking about because the former is identified, and if another agent looks for it, it can find it (if accessible).
 The next is for the other agent to understand what the resource is about, hence the following layers, all depending on formal logic. More precisely the different languages (except SPARQL) have their [model (or interpretation) theory](https://en.wikipedia.org/wiki/Model_theory) based on [first order logic](https://en.wikipedia.org/wiki/First-order_logic) and [set theory](https://en.wikipedia.org/wiki/Set_theory).  
-### Formalize data and data models: languages of logic
+### Formalize data, data models, and domain knowledge: languages of logic
 The first 3 languages have an increasing expressiveness: [Resource Description Framework (RDF), RDF Schema (RDFS)](https://www.w3.org/TR/rdf-mt/), and the [Web Ontology Language (OWL)](https://www.w3.org/TR/owl2-primer/), which can be used seperately to express formal epressions in a growing complexity, resp. data, simple ontologies and more complex ontologies (or formal dictionaries). OWL itself has different grades of expressiveness with [OWL 2 DL, OWL 2 Full](https://www.w3.org/TR/owl2-primer/#OWL_2_DL_and_OWL_2_Full) and [profiles](https://www.w3.org/TR/owl2-primer/#OWL_2_Profiles) as discussed in the W3C document. We use OWL 2 Full.  
 Some descriptions of 'ontology' in the SW are: "a conceptualization of a domain to enable knowledge sharing" ([W3C 2009](https://www.w3.org/2005/Incubator/w3pm/XGR-w3pm-20091008/#A)) and "a representation of terms and their interrelationships" ([W3C 2004](https://www.w3.org/TR/2004/REC-owl-features-20040210/#s1)).  
 Ontologies and data can be serialized in [Turtle](https://www.w3.org/TR/turtle/), [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), or [N-Triples](https://www.w3.org/TR/n-triples/) syntax.  
 ### Query: SPARQL
 [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) is the RDF query language, to retrieve data from an RDF graph database or triple store. It has its own syntax.
-### Formalize domain knowledge: rule  
+### Formalize means to infer: rule
 Rules are the means for inferring new data from data with machine reasoning. The [Rule Interchange Format (RIF) Datatypes and Built-Ins 1.0](https://www.w3.org/TR/rif-dtb/) contains standard specifications.  
 ### Infer: unifying logic
 Unifying logic establishes consistency and correctness of data sets and permits to infer conclusions not explicitly stated but required by or consistent with a known set of data, by applying the rules using a machine reasoner having the logic implemented.  
