@@ -17,7 +17,7 @@ Last but not least, even when data input is structured in databases (e.g. in XML
 
 ## Data and their semantics for humans and machines
 In order to communicate the growing amount of heterogeneous information, humans need another paradigm of the interoperability of computer systems to enable enhanced data linkability. Hyperlinking identified resources on the Web, e.g. a wiki-page or an application, is only one part of the story. Going to the content of the pages, the meaning of every resource, e.g. a document, a subject, an image, has to be known, i.e. described, in a way a machine can handle it, in order to be really linkable in an automated way.  
-This paradigm emerges as a **unifying standard language** to express the information's semantics in such a way that it solves the aformentioned issues.  
+This paradigm emerges as a **unifying standard language** to express the information's semantics in such a way that it solves the aforementioned issues.  
 It is a tremendous advantage to escape from natural language translations and have a language with more basic semantics of logic and mathematics. It permits structuring information in a database with explicitly stated data models. And even as a standard, it will enable also the expression of subtle differences in terminologies, instead of needing to make the information landscape less complex by simplifying its semantics. The biggest advantage of such a unifying language of logic is making its **semantics machine interpretable**, because this enables formal logic inference with machine reasoning. With this kind of artificial intelligence, new knowledge can be derived from existing one.  
 
 ## W3C Semantic Web standards
@@ -30,21 +30,26 @@ Figure 1 shows the common representation of the different technologies with thei
 {% include image.html type="small-figure" url="/assets/images/semantic-web-stack.png" description="Figure 1: The Semantic Web Stack" %}
 
 ### Identify: IRI
-The Web already comes with digital resources bearing an IRI or Internationalized Resource Identifier (URI or Uniform Resource Identifier and URL or Uniform Resource Locator are respective sub-concepts). So, it is already good to know what resource an agent (person or machine) is speaking about because the former is identified, and if another agent looks for it, it can find it (if accessible).
-The next is for the other agent to understand what the resource is about, hence the following layers, all depending on formal logic. More precisely the different languages (except SPARQL) have their [model (or interpretation) theory](https://en.wikipedia.org/wiki/Model_theory) based on [first order logic](https://en.wikipedia.org/wiki/First-order_logic) and [set theory](https://en.wikipedia.org/wiki/Set_theory).  
+The Web already comes with digital resources bearing an IRI or Internationalized Resource Identifier (URI or Uniform Resource Identifier and URL or Uniform Resource Locator are respective sub-concepts). So, it is already good to know what resource an agent—person or machine—is speaking about because the former is identified, and if another agent looks for it, it can find it (if accessible).  
+The next step is for the other agent—again person or machine—to understand what the resource is about. The fact that also the machine 'understands' content is the game changer. Therefore it needs explicit formal semantics based on logic. More precisely the different standard languages (except SPARQL) have their [model (or interpretation) theory](https://en.wikipedia.org/wiki/Model_theory) based on [first order logic](https://en.wikipedia.org/wiki/First-order_logic) and [set theory](https://en.wikipedia.org/wiki/Set_theory).
 
 ### Formalize data, data models, and domain knowledge: languages of logic
-The first 3 languages have an increasing expressiveness: [Resource Description Framework (RDF), RDF Schema (RDFS)](https://www.w3.org/TR/rdf-mt/), and the [Web Ontology Language (OWL)](https://www.w3.org/TR/owl2-primer/), which can be used seperately to express formal epressions in a growing complexity, resp. data, simple ontologies and more complex ontologies (or formal dictionaries). OWL itself has different grades of expressiveness with [OWL 2 DL, OWL 2 Full](https://www.w3.org/TR/owl2-primer/#OWL_2_DL_and_OWL_2_Full) and [profiles](https://www.w3.org/TR/owl2-primer/#OWL_2_Profiles) as discussed in the W3C document. We use OWL 2 Full.  
+Those languages are [Resource Description Framework (RDF), RDF Schema (RDFS)](https://www.w3.org/TR/rdf-mt/), and the [Web Ontology Language (OWL)](https://www.w3.org/TR/owl2-primer/), having an increasing expressiveness, i.e. they can be used separately to express formal statements in a growing complexity.  
+RDF enables mere data expression, without declaring a model. RDFS already permits modeling a simple ontology, and OWL is meant for the declaration of a more complex ontology (or formal dictionary).  
+OWL itself has different grades of expressiveness with [OWL 2 DL, OWL 2 Full](https://www.w3.org/TR/owl2-primer/#OWL_2_DL_and_OWL_2_Full) and [profiles](https://www.w3.org/TR/owl2-primer/#OWL_2_Profiles) as discussed in the W3C document. We use OWL 2 Full.  
 Some descriptions of 'ontology' in the SW are: "a conceptualization of a domain to enable knowledge sharing" ([W3C 2009](https://www.w3.org/2005/Incubator/w3pm/XGR-w3pm-20091008/#A)) and "a representation of terms and their interrelationships" ([W3C 2004](https://www.w3.org/TR/2004/REC-owl-features-20040210/#s1)).  
 Ontologies and data can be serialized in [Turtle](https://www.w3.org/TR/turtle/), [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), or [N-Triples](https://www.w3.org/TR/n-triples/) syntax.  
 
 ### Query: SPARQL
-[SPARQL](https://www.w3.org/TR/rdf-sparql-query/) is the RDF query language, to retrieve data from an RDF graph database or triple store. It has its own syntax.
+[SPARQL](https://www.w3.org/TR/rdf-sparql-query/) is the RDF query language, to retrieve data from an RDF graph database or triple store. It has its own syntax.  
+We use the open source [Apache Jena Fuseki SPARQL server](https://jena.apache.org/documentation/fuseki2/).
+
+<!---link to SPARQL microservice with Jena-Fuseki-TDB2--->
 
 ### Formalize means to infer: rule
 Rules are the means for inferring new data from data with machine reasoning. The [Rule Interchange Format (RIF) Datatypes and Built-Ins 1.0](https://www.w3.org/TR/rif-dtb/) contains standard specifications.  
 
-### Infer: unifying logic
+### Infer: unifying logic and machine reasoning
 Unifying logic establishes consistency and correctness of data sets and permits to infer conclusions not explicitly stated but required by or consistent with a known set of data, by applying the rules using a machine reasoner having the logic implemented.  
 
 ### Proof: machine reasoning
@@ -59,12 +64,12 @@ The author took the liberty to slightly change the previous graphic to the one i
 
 {% include image.html type="small-figure" url="/assets/images/SWT-stack-N3.png" description="Figure 2: Adapted Semantic Web Stack featuring N3" %}
 
-In our project we always use the RDF, RDFS, and OWL together without making the aforementioned distinctions. The figure shows the foundational ontologies of the 3 languages themselves together as the basis, arguing that even for the simplest data expression the [RDF-ontology](http://www.w3.org/1999/02/22-rdf-syntax-ns#) is needed. Once declaring domain knowledge in [own ontologies](/_includes/ontologies), also elements of the [RDFS-](http://www.w3.org/2000/01/rdf-schema#) and [OWL-ontology](http://www.w3.org/2002/07/owl#) are needed.  
+We always use RDF, RDFS, and OWL together without making the aforementioned distinctions. The figure shows the foundational ontologies of the 3 languages themselves together as the basis, arguing that even for the simplest data expression the [RDF-ontology](http://www.w3.org/1999/02/22-rdf-syntax-ns#) is needed. Once declaring domain knowledge in [own ontologies](/_includes/ontologies), also elements of the [RDFS-](http://www.w3.org/2000/01/rdf-schema#) and [OWL-ontology](http://www.w3.org/2002/07/owl#) are needed.  
 From a formal model point of view we can describe an ontology further as a collection of classes (or sets, categories) and properties (or relations, predicates)  between instances (individuals) of classes.
 The next layer represents the formal data expressed using the ontologies.  
 The [Notation 3 language (N3)](https://www.w3.org/TeamSubmission/n3/) is an overarching language and still a Team Submission, i.e. not a standard (or recommendation) yet. Besides ontologies and data, it permits the declaration of inference rules and queries, as "end-rule" (see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)). As such Turtle is a sublanguage of N3.  
 
-Note: there is a W3C N3-dev working group (of which T. Berners-Lee, Jod De Roo, the developer of the EYE reasoner, and Hans Cools, the author, are members) to further develop N3 and bring it to a possible standard.
+Note: there is a W3C N3-dev working group (of which T. Berners-Lee, Jos De Roo, the developer of the EYE reasoner, and Hans Cools, the author, are members) to further develop N3 and bring it to a possible standard.
 
 ## Advantages of SWT
 - Semantics:

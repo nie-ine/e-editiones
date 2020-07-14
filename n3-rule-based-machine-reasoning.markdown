@@ -87,11 +87,11 @@ The repository contains a reasoning example on sequence numbers or ordinals, der
 and a set of rules that can be made as general as possible, but very likely only within a certain project, considering the numerous possible combinations in creating alphanumeric identifiers.
 
 ## Machine Reasoner EYE (Euler Yet another proof Engine):
-See also [Verborg and De Roo 2015](/literature).
-Development: https://github.com/josd/eye  
-Download site: https://sourceforge.net/projects/eulersharp/files/eulersharp/  
+See also [Verborg and De Roo 2015](/literature).  
+[Development](https://github.com/josd/eye)  
+[Download](https://sourceforge.net/projects/eulersharp/files/eulersharp/)  
 <!---http://eulersharp.sourceforge.net/2003/03swap/eye-owl2.html--->
-EYE comes with syntax check and intrinsic functionality provided by [built-ins](https://raw.githubusercontent.com/josd/eye/master/eye-builtins.n3), 
+EYE comes with syntax check and intrinsic functionality provided by [built-ins](https://raw.githubusercontent.com/josd/eye/master/eye-builtins.n3).  
 All other reasoning material has to be input, i.e. OWL-ontologies, RDF-data, N3-rules.  
 
 ## Basic command example for EYE:
