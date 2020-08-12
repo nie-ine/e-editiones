@@ -45,7 +45,7 @@ publish:Expression
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/publishing#>;
 	a rdfs:Class;
 	rdfs:label "publication expression"@en, "Publikation-Expression"@de, "expression de publication"@fr, "espressione di pubblicazione"@it;
-	rdfs:comment """Document expression as abstracted from a publication carrier, conform FRBROO."""@en;
+	rdfs:comment """Document expression as abstracted from a publication carrier, based on FRBRoo."""@en;
 	rdfs:subClassOf document:Expression, frbroo:F24_Publication_Expression.
 
 publish:TextExpression
@@ -152,7 +152,7 @@ publish:PartitionedPublication
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/publishing#>;
 	a rdfs:Class;
 	rdfs:label "partitioned publication"@en, "partitionierte Publikation"@de, "publication partitionnée"@fr, "pubblicazione partizionata"@it;
-	rdfs:comment """Publication comprising the volumes of a partitioned work, e.g. a dictionary."""@en;
+	rdfs:comment """Publication comprising the volumes of a partitioned work, e.g. carrying a dictionary."""@en;
 	rdfs:subClassOf publish:Publication, infocar:PartitionedWork.
 
 publish:PrintedPublication
@@ -507,7 +507,7 @@ publish:hasYearPeriod
 publish:hasYearMonthPeriod
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/publishing#>;
 	a owl:ObjectProperty;
-	rdfs:label "publication has year-month period"@en, "Publikation hat Jahr-Monatperiode"@de, "la publication a une période année-mois"@fr, "la pubblicazione ha un periodo di anno-mese"@it;
+	rdfs:label "publication has year-month period"@en, "Publikation hat Jahr-Monatperiode"@de, "publication a une période année-mois"@fr, "pubblicazione ha un periodo di anno-mese"@it;
 	rdfs:comment """Relating a publication to the year-month period it is published in."""@en;
 	skos:note """Through a series of N3-rules a publication year-month literal is converted to its year-month period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."""@en;
 	rdfs:domain publish:Publication;
@@ -516,8 +516,8 @@ publish:hasYearMonthPeriod
 publish:hasStartYearPeriod
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/publishing#>;
 	a owl:ObjectProperty;
-	rdfs:label "partitioned publishing has start year period"@en, "partitioniertes Publizieren hat Startjahrperiode"@de, "la publication partitionnée a une période de début d'année"@fr, "la pubblicazione partizionata ha un periodo di inizio anno"@it;
-	rdfs:comment """Relating a partitioned publishing to the year—as a period—the first volume is published in."""@en;
+	rdfs:label "publishing has start year period"@en, "Publizieren hat Startjahrperiode"@de, "publication a la période d'année de début"@fr, "pubblicazione ha il periodo d'anno d'inizio"@it;
+	rdfs:comment """Relating a publishing to the year period the first volume is published in."""@en;
 	skos:note """Through a series of N3-rules a year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."""@en;
 	rdfs:domain publish:Publishing;
 	rdfs:range event:Event.
@@ -525,9 +525,18 @@ publish:hasStartYearPeriod
 publish:hasEndYearPeriod
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/publishing#>;
 	a owl:ObjectProperty;
-	rdfs:label "partitioned publishing has year period"@en, "partitioniertes Publizieren hat EndeJahrperiode"@de, "la publication partitionnée a une période d'un an"@fr, "la pubblicazione partizionata ha un periodo di un anno"@it;
-	rdfs:comment """Relating a partitioned publishing to the year—as a period—the last volume is published in."""@en;
+	rdfs:label "publishing has end year period"@en, "Publizieren hat Endejahrperiode"@de, "publication a la période d'année de fin"@fr, "pubblicazione ha il periodo d'anno di fino"@it;
+	rdfs:comment """Relating a publishing to the year period the last volume is published in."""@en;
 	skos:note """Through a series of N3-rules a year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."""@en;
+	rdfs:domain publish:Publishing;
+	rdfs:range event:Event.
+
+publish:hasEndDecadePeriod
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/publishing#>;
+	a owl:ObjectProperty;
+	rdfs:label "publishing has end decade period"@en, "Publizieren hat Endejahrzehntperiode"@de, "publication a la période de décennie de fin"@fr, "pubblicazione ha il periodo di decennio fino"@it;
+	rdfs:comment """Relating a publishing to the decade period the last volume is published in."""@en;
+	skos:note """Through a series of N3-rules a year literal without the year digit is converted to its decade period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning."""@en;
 	rdfs:domain publish:Publishing;
 	rdfs:range event:Event.
 

@@ -12,12 +12,12 @@ There are a series of resources that directly influence the modeling of ontologi
 {% include image.html type="intermediate-figure" url="/assets/images/modeling-dependencies.png" description="Figure 1: Resources influencing ontology modeling" %}
 
 ### Foundational W3C Ontologies
-Directive are the foundational ontologies of the [W3C Semantic Web standard languages](/semantic-web-technology#formalize-data-data-models-and-domain-knowledge-languages-of-logic).  
+Directive are the foundational ontologies of the [W3C Semantic Web standard languages](/semantic-web-technology-introduction#formalize-data-data-models-and-domain-knowledge-languages-of-logic).  
 Using these brings standardization of syntax and built-in logic, making ontologies and data machine interpretable.  
 
 ### External Ontologies
 When modeling for a certain domain, one does not have to start from scratch. The longer the SW is among us, the more likely someone else already created an ontology to cover needed semantics, possibly partially, often declaring more generic concepts.
-There is a variety of [existing ontologies](/semantic-web-technology#domain-ontologies-used-in-humanities-and-publishing). Some are very generic, others are quite specific. Some have become a de facto standard, e.g. SKOS and DC Elements, or practically are, e.g. Geo.  
+There is a variety of [existing ontologies](/semantic-web-technology-introduction#domain-ontologies-used-in-humanities-and-publishing). Some are very generic, others are quite specific. Some have become a de facto standard, e.g. SKOS and DC Elements, or practically are, e.g. Geo.  
 We use, i.e. base on following ontologies.
 <p align=left style="background-color:rgba(243, 241, 239, 1); font-size:12pt; font-style:bold">SKOS and DC Terms are mainly for ontology description purpose.<br/>Geo, FOAF, Schema.org, SWEET, and mainly the more Humanities oriented CIDOC-CRM and FRBRoo (depending on the former) are used to base on.<br/>Especially more generic domain ontologies will enable semantic interoperability.
 </p>  
@@ -88,7 +88,7 @@ person_X has_Name "Gauss".
 </p>
 The element in any position can be an IRI. The subject can also be a list (N3-rules), a plain or typed literal value, an anonymous resource (blank node), or a variable (SPARQL query, N3-rule). The property can also be a blank node or a variable. The object can also be a plain or typed literal value, a blank node or a variable.  
 A set of triples makes a **graph**, hence an OWL-ontology, RDF-data, the result of SPARQL querying, and an N3-rule are all graphs.  
-Figure 6 shows an example of such an identification and serialization in RDF triples converted from a sentence in natural language or encoded in XML.
+Figure 6 shows an example of such an identification and serialization in RDF triples converted from a sentence in natural language and encoded in XML.
 
 {% include image.html type="intermediate-figure" url="/assets/images/triples.png" description="Figure 6: Sentence in natural language and XML converted in RDF triples" %}  
 
@@ -188,6 +188,6 @@ Formal description of specific concepts in the [critical edition of the correspo
 Formal description of specific concepts in the [critical and digital edition of the verse novel Parzival of Wolfram von Eschenbach (c. 1160-c. 1220)](http://www.parzival.unibe.ch/home.html). These concepts are on one hand about a series of transcriptions (or parts) of the verse novel, on the level of expressions and information carriers. On the other hand the critical edition with different apparatus is described formally, using extensively the  scholarly editing ontology.  
 
 #### Wölfflin
-Formal description of specific concepts in the [scientific study Heinrich Wölfflins gesammelte Werke (1864-1945)](https://www.khist.uzh.ch/de/chairs/neuzeit/res/hwgw.html). Due to the current absence of a consolidated source data model, the ontology is not published yet. However, it can be noted that most of the needed semantics is already covered in more generic ontologies.
+Formal description of specific concepts in the [scientific study Heinrich Wölfflins gesammelte Werke (1864-1945)](https://www.khist.uzh.ch/de/chairs/neuzeit/res/hwgw.html). Due to the current absence of a consolidated source data model, the ontology is not published yet. However, it can be noted that most of the needed semantics is already covered in more generic ontologies.  
 
 The [Kritische Robert Walser-Ausgabe (1878-1956)](https://kritische-walser-ausgabe.ch/) and the [Anton Webern Gesamtausgabe (1883-1945)](https://anton-webern.ch/index.php?id=17) govern their own ontologies, with the intention to link to our ontologies in a later stage. Therefore, we already see to it that this will be possible.

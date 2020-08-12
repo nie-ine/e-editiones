@@ -7,7 +7,7 @@ This website contains the knowledge and products as outcome of the [NIE-INE](htt
  
 It developes the infrastructure [inseri]() (to come) to enable scholarly edition projects in the Humanities to express their data in an enriched format, adhering to the FAIR-principles. It provides the projects with the necessary apps and visualizations, and ensures long-term storage of the data by transferring those to another framework, the Data and Service Center for humanities (DaSCH)<!---(https://dasch.swiss/)--->.
 
-The essence of the infrastructure is that data, e.g. in XML or SQL, are converted to a different i.e. machine-interpretable format by using the W3C's [Semantic Web technology (SWT)](/semantic-web-technology) standards and by making the semantics of the data explicit. This represents a new, i.e. semantic interoperability.  
+The essence of the infrastructure is that data, e.g. in XML or SQL, are converted to a different i.e. machine-interpretable format by using the W3C's [Semantic Web technology (SWT)](/semantic-web-technology-introduction) standards and by making the semantics of the data explicit. This represents a new, i.e. semantic interoperability.  
 
 To enable domain data expression in this new format, a series of dictionaries or [domain ontologies](/ontology) are modeled with great care, based on those standards.  
 
@@ -21,4 +21,9 @@ Of course this novel way of modeling and processing data is also applicable to s
 The development part of the NIE-INE project is in the [GitHub project](https://github.com/nie-ine).
 There are also the repositories unrelated to SWT.  
 
-After 2020 the website will be maintained and the ontologies on GitHub will be developed further.
+After 2020 the website will be maintained and the ontologies on GitHub will be developed further.  
+
+
+Hans Cools  
+e-editiones.ch  
+NIE-INE

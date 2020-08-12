@@ -1,6 +1,6 @@
 ---
 layout: ontologies
-title: Ontologies
+title: Ontology Library
 permalink: /ontology
 ---
 

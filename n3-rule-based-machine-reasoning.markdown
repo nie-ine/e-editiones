@@ -1,16 +1,18 @@
 ---
 layout: page
-title: N3-Rule-Based Machine Reasoning
+title: N3-rule-based Machine Reasoning
 permalink: /n3-rule-based-machine-reasoning
 ---
 * 
 {:toc}
 
-## Machine reasoning (when the fun really starts)
-Besides the domain ontologies, rules for machine resoning are developed. They are expressed in the [Notation 3 language](https://www.w3.org/TeamSubmission/n3/), also using elements of NIE and external ontologies. 
-Notation 3 is an assertion and logic language which is a superset of RDF. N3 extends the RDF datamodel by adding formulae (literals which are graphs themselves), variables, logical implication, and functional predicates, as well as providing a textual syntax (alternative to RDF/XML). In this way Turtle is a subset of N3.  
+## Machine reasoning
+Having semantic interoperability is only the beginning of the journey and part of the return on investment (ROI).
+The crux of SWT is using the formal OWL-ontologies and the RDF-data expressed by them to infer new data from existing data bringing ultimately new domain knowledge. In other words, concretely using the built-in logic of the standard languages with N3-rule-based machine reasoning represents the other part of the ROI, ánd the fun.  
 
-The general external ontologies for N3-rule declaration are in following namespaces:  
+Besides the domain ontologies, rules for machine resoning are developed. They are expressed in the [Notation 3 language](/semantic-web-technology-introduction#notation-3-language), also using elements of NIE and external ontologies.  
+
+The following namespaces contain general external ontologies for N3-rule declaration:  
 	<http://www.w3.org/2000/10/swap/string#>  
 	<http://www.w3.org/2000/10/swap/list#>  
 	<http://www.w3.org/2000/10/swap/log#>  
@@ -57,7 +59,6 @@ User-defined restrictions can be checked upon, e.g. a cardinality restriction fo
 		owl:maxCardinality "1"^^xs:nonNegativeInteger].
 ```
 **Figure 1: Class declaration with a cardinality restriction of maximum 1**
-    owl:maxCardinality "1"^^xs:nonNegativeInteger].
 
 A reasoning example on cardinality is given in the repository, using 2 external ontologies and an RDF data set on images of the [Knora server application](https://www.knora.org/), developed by the [DHLab (DHL)](https://dhlab.philhist.unibas.ch/en/home/) at the University of Basel and the [Data and Service Center for humanities (DaSCH)](https://dasch.swiss/).
 

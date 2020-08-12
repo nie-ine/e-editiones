@@ -53,6 +53,3 @@ The source data can be in XML or in an SQL database, using natural language desc
 In the first step of the formalization process there is a 1-1 conversion of the source data to RDF. 1-1 here means that the semantics are not interpreted and not expressed in formal domain knowledge. The syntax of the original model is converted to the RDF data model, and making all of the existing semantics explicit and machine interpretable. The RDF-data also become largely natural language independent. The data can then be stored in this format in an application RDF database (or triple store), or stored as Turtle file. The data can then be directly consumed as Turtle file or queried with SPARQL from the triple store.
 In a second step the source-specific RDF-data are converted to explicit, semantically enriched RDF-data using domain ontologies, enabling semantic interoperability, independent from the data source and application semantics.
 Note: the ultimate goal is to directly produce data in RDF, without XML or SQL, but still in 2 steps, permitting the semantic connection of disparate RDF-graphs.
-
-Hans Cools  
-NIE-INE

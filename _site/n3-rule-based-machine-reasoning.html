@@ -12,8 +12,8 @@
         <div class="dropdown">
           <button class="dropbtn">Semantic Web Technology</button>
           <div class="dropdown-content">
-            <a href="/semantic-web-technology">Introduction</a>
-            <a href="/semantic-web-technology#advantages-of-swt">Advantages</a>
+            <a href="/semantic-web-technology-introduction">Introduction</a>
+            <a href="/semantic-web-technology-advantages">Advantages</a>
           </div>
         </div>
         <div class="dropdown">
@@ -50,12 +50,12 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">N3-Rule-Based Machine Reasoning</h1>
+    <h1 class="post-title">N3-rule-based Machine Reasoning</h1>
   </header>
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#machine-reasoning-when-the-fun-really-starts" id="markdown-toc-machine-reasoning-when-the-fun-really-starts">Machine reasoning (when the fun really starts)</a></li>
+  <li><a href="#machine-reasoning" id="markdown-toc-machine-reasoning">Machine reasoning</a></li>
   <li><a href="#n3-rules-serve-different-purposes" id="markdown-toc-n3-rules-serve-different-purposes">N3-rules serve different purposes:</a>    <ul>
       <li><a href="#implementation-of-the-rdf-model-theory" id="markdown-toc-implementation-of-the-rdf-model-theory">Implementation of the RDF model theory:</a></li>
       <li><a href="#consistency-check-for-user-defined-restrictions" id="markdown-toc-consistency-check-for-user-defined-restrictions">Consistency check for user defined restrictions:</a></li>
@@ -67,11 +67,13 @@
   <li><a href="#basic-command-example-for-eye" id="markdown-toc-basic-command-example-for-eye">Basic command example for EYE:</a></li>
 </ul>
 
-<h2 id="machine-reasoning-when-the-fun-really-starts">Machine reasoning (when the fun really starts)</h2>
-<p>Besides the domain ontologies, rules for machine resoning are developed. They are expressed in the <a href="https://www.w3.org/TeamSubmission/n3/">Notation 3 language</a>, also using elements of NIE and external ontologies. 
-Notation 3 is an assertion and logic language which is a superset of RDF. N3 extends the RDF datamodel by adding formulae (literals which are graphs themselves), variables, logical implication, and functional predicates, as well as providing a textual syntax (alternative to RDF/XML). In this way Turtle is a subset of N3.</p>
+<h2 id="machine-reasoning">Machine reasoning</h2>
+<p>Having semantic interoperability is only the beginning of the journey and part of the return on investment (ROI).
+The crux of SWT is using the formal OWL-ontologies and the RDF-data expressed by them to infer new data from existing data bringing ultimately new domain knowledge. In other words, concretely using the built-in logic of the standard languages with N3-rule-based machine reasoning represents the other part of the ROI, ánd the fun.</p>
 
-<p>The general external ontologies for N3-rule declaration are in following namespaces:<br />
+<p>Besides the domain ontologies, rules for machine resoning are developed. They are expressed in the <a href="/semantic-web-technology-introduction#notation-3-language">Notation 3 language</a>, also using elements of NIE and external ontologies.</p>
+
+<p>The following namespaces contain general external ontologies for N3-rule declaration:<br />
 	<a href="http://www.w3.org/2000/10/swap/string#">http://www.w3.org/2000/10/swap/string#</a><br />
 	<a href="http://www.w3.org/2000/10/swap/list#">http://www.w3.org/2000/10/swap/list#</a><br />
 	<a href="http://www.w3.org/2000/10/swap/log#">http://www.w3.org/2000/10/swap/log#</a><br />
@@ -114,8 +116,7 @@ Examples are rules for the implementation of:</p>
 		owl:onProperty human:hasBiologicalSex;
 		owl:maxCardinality "1"^^xs:nonNegativeInteger].
 </code></pre></div></div>
-<p><strong>Figure 1: Class declaration with a cardinality restriction of maximum 1</strong>
-    owl:maxCardinality “1”^^xs:nonNegativeInteger].</p>
+<p><strong>Figure 1: Class declaration with a cardinality restriction of maximum 1</strong></p>
 
 <p>A reasoning example on cardinality is given in the repository, using 2 external ontologies and an RDF data set on images of the <a href="https://www.knora.org/">Knora server application</a>, developed by the <a href="https://dhlab.philhist.unibas.ch/en/home/">DHLab (DHL)</a> at the University of Basel and the <a href="https://dasch.swiss/">Data and Service Center for humanities (DaSCH)</a>.</p>
 
