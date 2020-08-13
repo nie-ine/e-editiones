@@ -18,10 +18,10 @@ Similarly there will be a conceptual enrichment **between different domains of d
 For a machine to deal with formal semantics all intended **meaning has to be stated explicitly** (no hidden assumtions). In first instance this can be confronting for a researcher, realizing that own data are not transparent and bearing some gaps, only well understood by the creator(s) of the data model(s). This need for explicitness creates a **quality control feedback loop for the source data model and data**.  
 More transparant data models also lead to **easier data management**, less depending on specific persons. In this context it is worthwhile to mention that OWL-ontologies are self-describing formal vocabularies, by means of the human oriented labels and comments (definitions) of ontological elements, and documentation in queries and rules.
 ## Reusable consented domain knowledge
-From a pure content point of view domain knowledge becomes highly exchangeable and reusable through expression in formal ontologies and N3-rules.
+From a pure content point of view domain knowledge becomes highly exchangeable and reusable through expression in formal domain ontologies and N3-rules.
 ## Machine-interpretable semantics
-The built-in logic of the W3C SW standards makes the semantics machine-interpretable enabling **semi-automated semantic interoperability**. Semi because to add new knowledge human intervention is mostly needed.
-The biggest advantage is **machine reasoning** ([N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning))
+The built-in logic of the W3C SW standards makes the semantics machine-interpretable enabling **semi-automated semantic interoperability**. Semi because to add new knowledge human intervention is still mostly needed.
+The biggest advantage is [**machine reasoning**](/n3-rule-based-machine-reasoning), to make inferences of all kinds. For example simpler semantics expressed with a source data model can be converted to more complex semantics expressed with domain ontologies ([two-step formalization](/two-step-formalization)). Ex. Data automatedly enriched with domain knowledge.
 
 <!---The advantages of SWT are summerized in Table 1.  
 - Formal Semantics:
