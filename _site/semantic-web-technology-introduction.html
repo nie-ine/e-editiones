@@ -61,7 +61,7 @@
       <li><a href="#identify-iri" id="markdown-toc-identify-iri">Identify: IRI</a></li>
       <li><a href="#formalize-data-data-models-and-domain-knowledge-languages-of-logic" id="markdown-toc-formalize-data-data-models-and-domain-knowledge-languages-of-logic">Formalize data, data models, and domain knowledge: languages of logic</a></li>
       <li><a href="#query-sparql" id="markdown-toc-query-sparql">Query: SPARQL</a></li>
-      <li><a href="#formalize-means-to-infer-rule" id="markdown-toc-formalize-means-to-infer-rule">Formalize means to infer: rule</a></li>
+      <li><a href="#formalize-the-means-to-infer-rule" id="markdown-toc-formalize-the-means-to-infer-rule">Formalize the means to infer: rule</a></li>
       <li><a href="#infer-unifying-logic-and-machine-reasoning" id="markdown-toc-infer-unifying-logic-and-machine-reasoning">Infer: unifying logic and machine reasoning</a></li>
       <li><a href="#proof-machine-reasoning" id="markdown-toc-proof-machine-reasoning">Proof: machine reasoning</a></li>
       <li><a href="#trust" id="markdown-toc-trust">Trust</a></li>
@@ -69,6 +69,7 @@
       <li><a href="#notation-3-language" id="markdown-toc-notation-3-language">Notation 3 language</a></li>
     </ul>
   </li>
+  <li><a href="#a-reflection" id="markdown-toc-a-reflection">A reflection</a></li>
   <li><a href="#domain-ontologies-used-in-humanities-and-publishing" id="markdown-toc-domain-ontologies-used-in-humanities-and-publishing">Domain ontologies used in Humanities and Publishing</a></li>
 </ul>
 
@@ -114,7 +115,7 @@ We use the open source <a href="https://jena.apache.org/documentation/fuseki2/">
 
 <!---link to SPARQL microservice with Jena-Fuseki-TDB2--->
 
-<h3 id="formalize-means-to-infer-rule">Formalize means to infer: rule</h3>
+<h3 id="formalize-the-means-to-infer-rule">Formalize the means to infer: rule</h3>
 <p>Rules are the means for inferring new data from data with machine reasoning. The <a href="https://www.w3.org/TR/rif-dtb/">Rule Interchange Format (RIF) Datatypes and Built-Ins 1.0</a> contains standard specifications.</p>
 
 <h3 id="infer-unifying-logic-and-machine-reasoning">Infer: unifying logic and machine reasoning</h3>
@@ -143,6 +144,11 @@ The next layer represents the formal data expressed using the ontologies.</p>
 <p><a href="https://www.w3.org/TeamSubmission/n3/">Notation 3 (N3)</a> is an assertion and logic language which is a superset of RDF, and still a Team Submission, i.e. not a standard (or recommendation) yet. N3 extends the RDF datamodel by adding formulae (literals which are graphs themselves), variables, logical implication (‘if…then’; =&gt;), and functional predicates, as well as providing a textual syntax (alternative to RDF/XML). Besides ontologies and data, it permits the declaration of inference N3-rules and N3-queries (see also <a href="/n3-rule-based-machine-reasoning">N3-rule-based machine reasoning</a>). In this way Turtle is a subset of N3.</p>
 
 <p>Note: there is a W3C N3-dev working group (of which e.g. T. Berners-Lee, Jos De Roo, the developer of the EYE reasoner, and Hans Cools, the author, are members) to further develop N3 and bring it to a possible standard.</p>
+
+<h2 id="a-reflection">A reflection</h2>
+<p>Implementing the SW standards or <em>RDF-izing</em> data (as <em>pars pro toto</em>) just for (long-term) data storage is not that fruitful. RDF is not ‘yet another data format’. To create and/or reuse the necessary ontologies to formalize data is an investment that often meets misunderstanding and reluctance. RDF is not suitable for very quick ad hoc development, but aims at a fundamentally different data processing of which the translation of source data into RDF is only the beginning. Of course development complexity and time depend on the needed semantics to express data and solve academic, industrial or other data flow and research issues. On one hand an existing ontology can suffice and a limited set of rules can solve the issues. On the other hand a library of new ontologies (mostly basing on existing ones) has to be created and a series of rules sets has to be developed providing very different functionalities to solve all kinds of issues, as is the case in our environment.<br />
+If modeling the needed domain semantics is not your cup of tea (it can be pretty time-consuming) you can try to learn it by adopting certain best practices and efficiency or leave it to people who are interested in this kind of work. It is a kind of job covering different aspects: semiotics, linguistics, formal logic, math, analysis, an eye for detail but also keeping an overview, participation in conceptual discussions with domain specialists, and very iterative, possibly taking a while until satisfying.<br />
+There are people in the RDF community that want SWT to be more digestible for ‘the average IT developer’. This should not be translated into ad hoc usage of the W3C standards, deviating from the original goals of the Semantic Web. Semantic interoperability and machine reasoning should be at all time be preserved.</p>
 
 <h2 id="domain-ontologies-used-in-humanities-and-publishing">Domain ontologies used in Humanities and Publishing</h2>
 <p>Note: not meant to be exhaustive.</p>

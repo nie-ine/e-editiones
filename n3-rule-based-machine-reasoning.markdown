@@ -9,6 +9,7 @@ permalink: /n3-rule-based-machine-reasoning
 ## Machine reasoning
 Having semantic interoperability is only the beginning of the journey and part of the return on investment (ROI).
 The crux of SWT is using the formal OWL-ontologies and the RDF-data expressed by them to infer new data from existing data bringing ultimately new domain knowledge. In other words, concretely using the built-in logic of the standard languages with N3-rule-based machine reasoning represents the other part of the ROI, ánd the fun.  
+Also other types of inference are possible, e.g. inductive and abductive. 
 
 Besides the domain ontologies, rules for machine resoning are developed. They are expressed in the [Notation 3 language](/semantic-web-technology-introduction#notation-3-language), also using elements of NIE and external ontologies.  
 

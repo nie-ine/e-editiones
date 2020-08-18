@@ -38,7 +38,7 @@ Those languages are [Resource Description Framework (RDF), RDF Schema (RDFS)](ht
 RDF enables mere data expression, without declaring a model. RDFS already permits modeling a simple ontology, and OWL is meant for the declaration of a more complex ontology (or formal dictionary).  
 OWL itself has different grades of expressiveness with [OWL 2 DL, OWL 2 Full](https://www.w3.org/TR/owl2-primer/#OWL_2_DL_and_OWL_2_Full) and [profiles](https://www.w3.org/TR/owl2-primer/#OWL_2_Profiles) as discussed in the W3C document. We use OWL 2 Full.  
 Some descriptions of 'ontology' in the SW are: "a conceptualization of a domain to enable knowledge sharing" ([W3C 2009](https://www.w3.org/2005/Incubator/w3pm/XGR-w3pm-20091008/#A)) and "a representation of terms and their interrelationships" ([W3C 2004](https://www.w3.org/TR/2004/REC-owl-features-20040210/#s1)).  
-Ontologies and data can be serialized in [Turtle](https://www.w3.org/TR/turtle/), [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), or [N-Triples](https://www.w3.org/TR/n-triples/) syntax.  
+Ontologies and data can be serialized in [Turtle](https://www.w3.org/TR/turtle/), [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), or [N-Triples](https://www.w3.org/TR/n-triples/) syntax.
 
 ### Query: SPARQL
 [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) is the RDF query language, to retrieve data from an RDF graph database or triple store. It has its own syntax.  
@@ -46,7 +46,7 @@ We use the open source [Apache Jena Fuseki SPARQL server](https://jena.apache.or
 
 <!---link to SPARQL microservice with Jena-Fuseki-TDB2--->
 
-### Formalize means to infer: rule
+### Formalize the means to infer: rule
 Rules are the means for inferring new data from data with machine reasoning. The [Rule Interchange Format (RIF) Datatypes and Built-Ins 1.0](https://www.w3.org/TR/rif-dtb/) contains standard specifications.  
 
 ### Infer: unifying logic and machine reasoning
@@ -72,6 +72,11 @@ The next layer represents the formal data expressed using the ontologies.
 [Notation 3 (N3)](https://www.w3.org/TeamSubmission/n3/) is an assertion and logic language which is a superset of RDF, and still a Team Submission, i.e. not a standard (or recommendation) yet. N3 extends the RDF datamodel by adding formulae (literals which are graphs themselves), variables, logical implication ('if...then'; =>), and functional predicates, as well as providing a textual syntax (alternative to RDF/XML). Besides ontologies and data, it permits the declaration of inference N3-rules and N3-queries (see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)). In this way Turtle is a subset of N3.  
 
 Note: there is a W3C N3-dev working group (of which e.g. T. Berners-Lee, Jos De Roo, the developer of the EYE reasoner, and Hans Cools, the author, are members) to further develop N3 and bring it to a possible standard.
+
+## A reflection
+Implementing the SW standards or *RDF-izing* data (as *pars pro toto*) just for (long-term) data storage is not that fruitful. RDF is not 'yet another data format'. To create and/or reuse the necessary ontologies to formalize data is an investment that often meets misunderstanding and reluctance. RDF is not suitable for very quick ad hoc development, but aims at a fundamentally different data processing of which the translation of source data into RDF is only the beginning. Of course development complexity and time depend on the needed semantics to express data and solve academic, industrial or other data flow and research issues. On one hand an existing ontology can suffice and a limited set of rules can solve the issues. On the other hand a library of new ontologies (mostly basing on existing ones) has to be created and a series of rules sets has to be developed providing very different functionalities to solve all kinds of issues, as is the case in our environment.  
+If modeling the needed domain semantics is not your cup of tea (it can be pretty time-consuming) you can try to learn it by adopting certain best practices and efficiency or leave it to people who are interested in this kind of work. It is a kind of job covering different aspects: semiotics, linguistics, formal logic, math, analysis, an eye for detail but also keeping an overview, participation in conceptual discussions with domain specialists, and very iterative, possibly taking a while until satisfying.  
+There are people in the RDF community that want SWT to be more digestible for 'the average IT developer'. This should not be translated into ad hoc usage of the W3C standards, deviating from the original goals of the Semantic Web. Semantic interoperability and machine reasoning should be at all time be preserved.
 
 ## Domain ontologies used in Humanities and Publishing
 Note: not meant to be exhaustive.
