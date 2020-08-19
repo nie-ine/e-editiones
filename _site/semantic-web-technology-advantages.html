@@ -57,11 +57,19 @@
     <ul id="markdown-toc">
   <li><a href="#independence-from-natural-language" id="markdown-toc-independence-from-natural-language">Independence from natural language</a></li>
   <li><a href="#conceptual-enrichment-by-merging-natural-languages" id="markdown-toc-conceptual-enrichment-by-merging-natural-languages">Conceptual enrichment by merging natural languages</a></li>
-  <li><a href="#explicit-data-models-and-quality-control" id="markdown-toc-explicit-data-models-and-quality-control">Explicit data models and quality control</a></li>
+  <li><a href="#explicit-data-models" id="markdown-toc-explicit-data-models">Explicit data models</a>    <ul>
+      <li><a href="#quality-control" id="markdown-toc-quality-control">Quality control</a></li>
+      <li><a href="#easier-data-management" id="markdown-toc-easier-data-management">Easier data management</a></li>
+    </ul>
+  </li>
   <li><a href="#reusable-consented-domain-knowledge" id="markdown-toc-reusable-consented-domain-knowledge">Reusable consented domain knowledge</a></li>
   <li><a href="#machine-interpretable-semantics" id="markdown-toc-machine-interpretable-semantics">Machine-interpretable semantics</a>    <ul>
       <li><a href="#automated-semantic-interoperability" id="markdown-toc-automated-semantic-interoperability">Automated semantic interoperability</a></li>
-      <li><a href="#machine-reasoning" id="markdown-toc-machine-reasoning">Machine reasoning</a></li>
+      <li><a href="#machine-reasoning" id="markdown-toc-machine-reasoning">Machine reasoning</a>        <ul>
+          <li><a href="#semantic-conversion-and-enrichment" id="markdown-toc-semantic-conversion-and-enrichment">Semantic conversion and enrichment</a></li>
+          <li><a href="#research" id="markdown-toc-research">Research</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -69,23 +77,30 @@
 <p>The advantages of implementing SWT with formal semantics are multifold.</p>
 <h2 id="independence-from-natural-language">Independence from natural language</h2>
 <p>Translating data models and data into a formal lingua franca, i.e. the unifying standard language of logic mentioned in the introduction, the <strong>meaning of concepts becomes natural language independent</strong>. Of course this also implies that in the modeling process of the concepts there needs to be a minimal international concensus between domain specialists speaking different languages.
-Unifying formal semantics directly leads to <strong>semantic interoperability</strong> and also makes <strong>data</strong> from different sources <strong>comparable</strong>.</p>
+<strong>Unifying</strong> formal semantics directly leads to <strong>semantic interoperability</strong> and also makes <strong>data</strong> from different sources <strong>comparable</strong>.</p>
 <h2 id="conceptual-enrichment-by-merging-natural-languages">Conceptual enrichment by merging natural languages</h2>
 <p>Since there are natural language specific concepts only existing in 1 language or languages of the same group, a formal vocabulary means a conceptual enrichment compaired to a domain specialist’s natural language. At the end different domain specialists will mutually benefit from each other using formal vocabularies based on different natural languages.<br />
 Similarly there will be a conceptual enrichment <strong>between different domains of discours</strong> in the same natural language, e.g. between different scientific domains, or a scientific and industrial domain, and even between different groups within the same domain.</p>
-<h2 id="explicit-data-models-and-quality-control">Explicit data models and quality control</h2>
-<p>For a machine to deal with formal semantics all intended <strong>meaning has to be stated explicitly</strong> (no hidden assumtions). In first instance this can be confronting for a researcher, realizing that own data are not transparent and bearing some gaps, only well understood by the creator(s) of the data model(s). This need for explicitness creates a <strong>quality control feedback loop for the source data model and data</strong>.<br />
-More transparant data models also lead to <strong>easier data management</strong>, less depending on specific persons. In this context it is worthwhile to mention that OWL-ontologies are self-describing formal vocabularies, by means of the human oriented labels and comments (definitions) of ontological elements, and documentation in queries and rules.</p>
+<h2 id="explicit-data-models">Explicit data models</h2>
+<p>For a machine to deal with formal semantics all intended <strong>meaning has to be stated explicitly</strong> (no hidden assumtions). In first instance this can be confronting for a researcher, realizing that own data are not transparent and bearing some gaps, only well understood by the creator(s) of the data model(s).</p>
+<h3 id="quality-control">Quality control</h3>
+<p>This need for explicitness creates a <strong>quality control feedback loop for the source data model and data</strong>.</p>
+<h3 id="easier-data-management">Easier data management</h3>
+<p>More transparant data models also lead to <strong>easier data management</strong>, less depending on specific persons. In this context it is worthwhile to mention that OWL-ontologies are self-describing formal vocabularies, by means of the human oriented labels and comments (definitions) of ontological elements, and documentation in queries and rules.</p>
 <h2 id="reusable-consented-domain-knowledge">Reusable consented domain knowledge</h2>
 <p>From a pure content point of view domain knowledge becomes highly exchangeable and reusable through expression in formal domain ontologies and N3-rules.</p>
 <h2 id="machine-interpretable-semantics">Machine-interpretable semantics</h2>
 <p>The built-in logic of the W3C SW standards makes the semantics machine-interpretable enabling automated semantic interoperability and machine reasoning.</p>
 <h3 id="automated-semantic-interoperability">Automated semantic interoperability</h3>
-<p>It has to be pointed out that for adding new knowledge in ontologies and rules human intervention is mostly still needed. Interoperability on the semantic level is the highest, crossing the borders of natural languages and knowledge domains. This strongly enhances data availability, since very disparate data sources will be usable together, generating unprecedented research possibilites.</p>
+<p>Interoperability on the semantic level is the highest, crossing the borders of natural languages and knowledge domains. This strongly enhances <strong>data availability</strong>, since very disparate data sources will be usable together, generating unprecedented research possibilites.
+It has to be pointed out that for adding new knowledge in ontologies and rules human intervention is mostly still needed.</p>
 <h3 id="machine-reasoning">Machine reasoning</h3>
-<p>The biggest advantage is <a href="/n3-rule-based-machine-reasoning">machine reasoning</a>, to make inferences of all kinds by deriving new from existing data. For example data expressed with a simpler model can be converted to data expressed with more complex domain ontologies (<a href="/two-step-formalization">two-step formalization</a>). E.g. a plain literal value indicating implicitly a year (“1789”) can be converted to a year period of which the start and end are explicitly expressed with a datatyped literal date in the Gregorian calendar (“1789-01-01^^xsd:date” and “1789-12-31^^xsd:date”), with which can be calculated as time indicators. Also measurements of a certain quantity can be formally expressed with a certain unit (e.g. length and foot), and converted to an SI unit (e.g. meter).<br />
-Data can be automatedly enriched with formal domain knowledge in ontologies and N3-rules, or with data from another (external) RDF-data source.
-<!---analysis, mining, and, together with probability theory, enable decision support---></p>
+<p>The biggest advantage, building further on the previous one, is <a href="/n3-rule-based-machine-reasoning">machine reasoning</a>, to make inferences of all kinds by deriving new from existing data.</p>
+<h4 id="semantic-conversion-and-enrichment">Semantic conversion and enrichment</h4>
+<p>For example data expressed with a simpler model can be in a deductive way <strong>converted to data expressed with more complex domain ontologies</strong> (<a href="/two-step-formalization">two-step formalization</a>). Lifting a tip of the veil, a plain literal value indicating implicitly a year (e.g. “1789”) can be converted to a year period of which the start and end are explicitly expressed with a datatyped literal date in the Gregorian calendar (e.g. “1789-01-01^^xsd:date” and “1789-12-31^^xsd:date”), with which can be calculated as time indicators. Also measurements of a certain quantity can be formally expressed in a certain unit (e.g. length in foot), and converted to an SI unit (e.g. meter). This other unit together with the foot-related scale factor (0.3048) is then the formal built-in domain knowledge in this case, stored in an ontology and used in an N3-rule, which can <strong>automatedly enriched the processed data</strong>. Such formal knowledge can also come from linked (external) RDF-data  sources.</p>
+<h4 id="research">Research</h4>
+<p>Rules can also be applied to analyse data, e.g. text. All kinds of research questions can be answered.
+Further advanced applications are data mining and decision support, requiring implementation of probability theory (e.g. Bayesian inference).</p>
 
 <!---The advantages of SWT are summerized in Table 1.  
 - Formal Semantics:
@@ -97,8 +112,8 @@ Data can be automatedly enriched with formal domain knowledge in ontologies and 
 	- Machine-interpretable ← unifying standard language of logic
 		→ semi-automated semantic interoperability  
 		→ machine reasoning  
-		→ semantic conversion of data models ([2-step formalization](/two-step-formalization))  
-		→ enrich data; analysis, mining, and, together with probability theory, enable decision support  
+		→ semantic conversion of data models and enrichment of data ([2-step formalization](/two-step-formalization))  
+		→ enrich data; analysis, mining, and, together with probability theory, decision support  
 
 <figure class="image">
   <img class="small-figure" src="/assets/images/advantages-of-swt.png" alt="Table 1: Advantages of SWT">

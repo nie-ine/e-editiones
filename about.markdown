@@ -12,7 +12,7 @@ The essence of the infrastructure is that data, e.g. in XML or SQL, are converte
 To enable domain data expression in this new format, a series of formal dictionaries or [domain ontologies](/ontology) are [modeled](/ontology-modeling) with great care, based on those standards.  
 
 Having semantic interoperability is only the beginning of the journey and part of the return on investment (ROI).
-The crux of SWT is using the ontologies and the formal data expressed by them to infer new data from existing data bringing ultimately new domain knowledge. In other words, concretely using the built-in logic of the standard languages with [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning) represents the other part of the ROI.  
+The crux of SWT, and the other part of the ROI, is using the ontologies and the formal data expressed by them in [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning) to infer new data from existing data, bringing ultimately new domain knowledge.  
 
 We adopted a [two-step formalization](/two-step-formalization) methodology to implement the SWT end-to-end.  
 
