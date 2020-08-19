@@ -55,7 +55,7 @@
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#machine-reasoning" id="markdown-toc-machine-reasoning">Machine reasoning</a></li>
+  <li><a href="#the-semantics-in-the-machine" id="markdown-toc-the-semantics-in-the-machine">The semantics in the machine</a></li>
   <li><a href="#n3-rules-serve-different-purposes" id="markdown-toc-n3-rules-serve-different-purposes">N3-rules serve different purposes:</a>    <ul>
       <li><a href="#implementation-of-the-rdf-model-theory" id="markdown-toc-implementation-of-the-rdf-model-theory">Implementation of the RDF model theory:</a></li>
       <li><a href="#consistency-check-for-user-defined-restrictions" id="markdown-toc-consistency-check-for-user-defined-restrictions">Consistency check for user defined restrictions:</a></li>
@@ -67,12 +67,14 @@
   <li><a href="#basic-command-example-for-eye" id="markdown-toc-basic-command-example-for-eye">Basic command example for EYE:</a></li>
 </ul>
 
-<h2 id="machine-reasoning">Machine reasoning</h2>
-<p>Having semantic interoperability is only the beginning of the journey and part of the return on investment (ROI).
-The crux of SWT is using the formal OWL-ontologies and the RDF-data expressed by them to infer new data from existing data bringing ultimately new domain knowledge. In other words, concretely using the built-in logic of the standard languages with N3-rule-based machine reasoning represents the other part of the ROI, ánd the fun.<br />
-Also other types of inference are possible, e.g. inductive and abductive.</p>
-
-<p>Besides the domain ontologies, rules for machine resoning are developed. They are expressed in the <a href="/semantic-web-technology-introduction#notation-3-language">Notation 3 language</a>, also using elements of NIE and external ontologies.</p>
+<h2 id="the-semantics-in-the-machine">The semantics in the machine</h2>
+<p>Once having domain ontologies as formal dictionaries and RDF-data expressed by them, a machine can interpret their semantics thanks to the built-in logic of the formal standard languages in which the ontologies and data are expressed.<br />
+A machine reasoner is software that has basic built-in functionality and needs <strong>inference units or rules</strong> to derive new data from existing data, consuming ontologies, data and other rules.<br />
+Built-in functions are for instance mathematical (e.g. addition and subtraction), and logical operations (e.g. implication), and others like string manipulation.<br />
+A short description of the <a href="/semantic-web-technology-advantages#machine-reasoning">advantages</a> of machine reasoning (MR) is in the SWT part.<br />
+Basic rules, e.g. for model-theoretic inference (e.g. for subsumption or transitivity), or temporal reasoning, can come with a reasoner or have to be created or reused from other developers. Rules for processing own domain data have to be developed.
+Rules are expressed in the <a href="/semantic-web-technology-introduction#notation-3-language">Notation 3 language</a>, hence called N3-rules.<br />
+Also rules are declared by using domain ontologies, but also external ontologies providing specific properties to invoke the built-in functions fo the reasoner.</p>
 
 <p>The following namespaces contain general external ontologies for N3-rule declaration:<br />
 	<a href="http://www.w3.org/2000/10/swap/string#">http://www.w3.org/2000/10/swap/string#</a><br />

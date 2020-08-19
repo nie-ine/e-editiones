@@ -69,7 +69,7 @@ From a formal model point of view we can describe an ontology further as a colle
 The next layer represents the formal data expressed using the ontologies.  
 
 ### Notation 3 language
-[Notation 3 (N3)](https://www.w3.org/TeamSubmission/n3/) is an assertion and logic language which is a superset of RDF, and still a Team Submission, i.e. not a standard (or recommendation) yet. N3 extends the RDF datamodel by adding formulae (literals which are graphs themselves), variables, logical implication ('if...then'; =>), and functional predicates, as well as providing a textual syntax (alternative to RDF/XML). Besides ontologies and data, it permits the declaration of inference N3-rules and N3-queries (see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)). In this way Turtle is a subset of N3.  
+[Notation 3 (N3)](https://www.w3.org/TeamSubmission/n3/) is an assertion and logic language which is a superset of RDF, and still a Team Submission, i.e. not a standard (or recommendation) yet. N3 extends the RDF datamodel by adding formulae (literals which are graphs themselves), variables, logical implication ('if/then'; =>), and functional predicates, as well as providing a textual syntax (alternative to RDF/XML). Besides ontologies and data, it permits the declaration of inference N3-rules and N3-queries (see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)). In this way Turtle is a subset of N3.  
 
 Note: there is a W3C N3-dev working group (of which e.g. T. Berners-Lee, Jos De Roo, the developer of the EYE reasoner, and Hans Cools, the author, are members) to further develop N3 and bring it to a possible standard.
 

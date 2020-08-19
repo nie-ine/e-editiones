@@ -9,6 +9,7 @@ W3C. 2004. OWL Web Ontology Language Overview. Edited by Deborah McGuinness and 
 W3C. 2009. Product Modelling using Semantic Web Technologies. Edited by Michel Böhms, David Leal, Henson Graves and Kendall Clark.
 https://www.w3.org/2005/Incubator/w3pm/XGR-w3pm-20091008/#A  
 
-[lombardus]  
+To come:
+[Lombardus]  
 [GraphSDE2019]  
 [Olga]

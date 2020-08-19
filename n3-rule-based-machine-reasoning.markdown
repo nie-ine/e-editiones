@@ -6,12 +6,14 @@ permalink: /n3-rule-based-machine-reasoning
 * 
 {:toc}
 
-## Machine reasoning
-Having semantic interoperability is only the beginning of the journey and part of the return on investment (ROI).
-The crux of SWT is using the formal OWL-ontologies and the RDF-data expressed by them to infer new data from existing data bringing ultimately new domain knowledge. In other words, concretely using the built-in logic of the standard languages with N3-rule-based machine reasoning represents the other part of the ROI, ánd the fun.  
-Also other types of inference are possible, e.g. inductive and abductive. 
-
-Besides the domain ontologies, rules for machine resoning are developed. They are expressed in the [Notation 3 language](/semantic-web-technology-introduction#notation-3-language), also using elements of NIE and external ontologies.  
+## The semantics in the machine
+Once having domain ontologies as formal dictionaries and RDF-data expressed by them, a machine can interpret their semantics thanks to the built-in logic of the formal standard languages in which the ontologies and data are expressed.  
+A machine reasoner is software that has basic built-in functionality and needs **inference units or rules** to derive new data from existing data, consuming ontologies, data and other rules.  
+Built-in functions are for instance mathematical (e.g. addition and subtraction), and logical operations (e.g. implication), and others like string manipulation.  
+A short description of the [advantages](/semantic-web-technology-advantages#machine-reasoning) of machine reasoning (MR) is in the SWT part.  
+Basic rules, e.g. for model-theoretic inference (e.g. for subsumption or transitivity), or temporal reasoning, can come with a reasoner or have to be created or reused from other developers. Rules for processing own domain data have to be developed.
+Rules are expressed in the [Notation 3 language](/semantic-web-technology-introduction#notation-3-language), hence called N3-rules.  
+Also rules are declared by using domain ontologies, but also external ontologies providing specific properties to invoke the built-in functions fo the reasoner.  
 
 The following namespaces contain general external ontologies for N3-rule declaration:  
 	<http://www.w3.org/2000/10/swap/string#>  
