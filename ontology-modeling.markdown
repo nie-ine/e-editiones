@@ -13,7 +13,7 @@ There are a series of resources that directly influence the modeling of ontologi
 
 ### Foundational W3C Ontologies
 Directive are the foundational ontologies of the [W3C Semantic Web standard languages](/semantic-web-technology-introduction#formalize-data-data-models-and-domain-knowledge-languages-of-logic).  
-Using these brings standardization of syntax and built-in logic, making ontologies and data machine interpretable.  
+Using these brings standardization of syntax and basic semantics, and built-in logic, making ontologies and data machine interpretable.  
 
 ### External Ontologies
 When modeling for a certain domain, one does not have to start from scratch. The longer the SW is among us, the more likely someone else already created an ontology to cover needed semantics, possibly partially, often declaring more generic concepts.
@@ -63,7 +63,7 @@ The authoritative files are open source and published on this website in the [on
 The ontologies are directly accessible (dereferenceable) with their namespace IRI.
 
 ### Development Tools
-Ontologies, and also SPARQL queries and N3-rules, are created with the text editor [Sublime Text and plug-ins](https://www.sublimetext.com/), and tested on syntax and logic consistency with the open source [EYE machine reasoner](https://github.com/josd/eye) and the [editor Protégé](https://protege.stanford.edu/). The latter is particularly useful for offering a quick overview of merged ontologies to detect logical flaws, e.g. in subsumption or sub-property relations, or semantic shortcuts (gaps).  
+Ontologies, and also SPARQL queries and N3-rules, are created with the text editor [Sublime Text and plug-ins](https://www.sublimetext.com/), and tested on syntax and logic consistency with the open source **EYE machine reasoner** ([De Roo 2020](https://github.com/josd/eye); see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)) and the **editor Protégé** [(Stanford University 2020)](https://protege.stanford.edu/). The latter is particularly useful for offering a quick overview of merged ontologies to detect logical flaws, e.g. in subsumption or sub-property relations, or semantic shortcuts (gaps).  
 
 <!---iterative epistemological hermeneutic process (Pierazzo 2015)--->
 
@@ -156,7 +156,7 @@ This series comprises more specific entities as used in different specialized do
 Although the scope of these ontologies is narrower, i.e. more project-oriented, the entities can be reused in another context, if applicable, meaning that they do not need to be restricted to a specific project.
 
 ### External terminology and code systems ontology
-This ontology contains formal descriptions of terminology and code systems and their datatypes, as link between such systems’ data and OWL-ontologies and RDF-data. Examples of terminology and code systems in the Humanities are the [ISO](https://www.iso.org) standard [Open Archival Information System (OAIS)](http://www.oais.info/), and the [Gemeinsame Normdatei (GND)](https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html) for the DACH countries. A generic system is for example the hexadecimal color coding to describe e.g. text color. Other datatypes are declared in respective domain ontologies. Examples are  calendar:julianDate in the calendar-ontology to type a Julian date literal, languages:iso639-2 in the languages-ontology to type ISO language standard codes, and text:characterSize in the text-ontology to type a numeral representing a character size.
+This ontology contains formal descriptions of terminology and code systems and their datatypes, as link between such systems’ data and OWL-ontologies and RDF-data. Examples of terminology and code systems in the Humanities are the **Open Archives Initiative** [(OAI 2020)](https://openarchives.org/), and the **Gemeinsame Normdatei (GND)** [(Deutsche Nationalbibliothek 2020)](https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html) for the DACH countries. A generic system is for example the hexadecimal color coding to describe e.g. text color. Other datatypes are declared in respective domain ontologies. Examples are  calendar:julianDate in the calendar-ontology to type a Julian date literal, languages:iso639-2 in the languages-ontology to type ISO language standard codes, and text:characterSize in the text-ontology to type a numeral representing a character size.
 
 ### Project ontologies
 These ontologies contain entities only used in the respective projects, but they are still usable outside those projects, if applicable. E.g. the Parzival-ontology contains the concept of “Dreissiger”, being a set of about 30 verses, reusable in another project about the verse novel Parzival.

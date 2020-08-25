@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about
 ---
-This website contains the knowledge and products as outcome of the [NIE-INE](http://www.nie-ine.ch)-project, which runs at the Swiss Universities of Basel, Bern, Zürich, and Geneva from Oct. 2016 until the end of 2020.
+This website contains the knowledge and products as outcome of the [NIE-INE](http://www.nie-ine.ch)-project, which runs at the Swiss Universities of Basel, Bern, and Zürich, from Oct. 2016 until the end of 2020, funded by [swissuniversities](https://www.swissuniversities.ch/en/?r=1).
  
 It developes the infrastructure [inseri]() (to come) to enable scholarly edition projects in the Humanities to express their data in an enriched format, adhering to the FAIR-principles. It provides the projects with the necessary apps and visualizations, and ensures long-term storage of the data, partially by transferring those to another framework, the Data and Service Center for humanities (DaSCH)<!---(https://dasch.swiss/)--->.
 

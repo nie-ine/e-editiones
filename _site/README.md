@@ -75,7 +75,7 @@ To convert turtle files to the needed formats:
 1. Any turtle file needs to be in the "ontology" folder.
    - Be aware of the correct file naming (see [Add New Ontologies](#add-new-ontologies) below)
 1. cd into "ttl_conv" with ``cd ttl_conv``.
-1. Activate your virtual environment if not activated. 
+1. Activate your virtual environment, if not activated, with ``source ttl_conv/bin/activate``.
 1. Run ``python3 -W ignore convert_files.py``.
    - ``-W ignore`` is optional but it ignores some default RDFlib messages.
    - The script validates available turtle files and stops with error messages if there are invalid files.
@@ -121,11 +121,11 @@ To add a new ontology to the website, the following steps are necessary:
 
 1. Have the ontology ready as a turtle file.
 1. Name the ontology file in accordance with the ending of the IRI.
-   - I.e. if the base IRI is http://www.e-editiones.ch/ontology/agent, the ontology file should be agent.ttl.
+   - I.e. if the base IRI is http://e-editiones.ch/ontology/agent, the ontology file should be agent.ttl.
 1. Save the ontology file in the "ontology" folder.
 1. Create a new markdown file in the "collections" folder (either within "\_generic" or "\_project").
    - The name of the file must be the same as the name of the ontolgoy file.
-   - You can create a new collection by creating a new subfolder and updating the "\_confix.yml" file accordingly.
+   - You can create a new collection by creating a new subfolder and updating the "\_config.yml" file accordingly.
 1. Add front-matter meta data to the newly created markdown file (title, description, file). E.g.:
    ```
    ---

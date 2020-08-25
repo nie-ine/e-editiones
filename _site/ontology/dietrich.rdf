@@ -1,34 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
   xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/dietrich#DiaryVolume">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
+    <rdfs:label xml:lang="de">Tagebuch-Band des Paters Joseph Dietrich</rdfs:label>
+    <rdfs:label xml:lang="en">diary volume by father Joseph Dietrich</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Volume"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Diary"/>
+    <rdfs:comment xml:lang="en">Diary volume written and authored by father Joseph Dietrich.</rdfs:comment>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/dietrich#personHasEinsiedlerProfessIdentifier">
+    <rdfs:label xml:lang="de">Person hat Einsiedler-Eintrittidentifikator</rdfs:label>
+    <rdfs:label xml:lang="en">person has Einsiedler profess identifier</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="en">Relating a catholic order person to an identifier for being professed into the order of the monastery of Einsiedeln.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/catholic-order#Person"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/dietrich#personHasNonEinsiedler-StGaller-PfaeferserProfessIdentifier">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/catholic-order#Person"/>
+    <rdfs:label xml:lang="de">Person hat non-Einsiedler-StGaller-Pfaeferser-Eintrittidentifikator</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a catholic order person to an identifier for being professed into the order of the monastery other than the one of Einsiedeln, St. Gallen, and Pfäfers.</rdfs:comment>
+    <rdfs:label xml:lang="en">person has non-Einsiedler-StGaller-Pfaeferser profess identifier</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/dietrich#personHasPfaeferserProfessIdentifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
+    <rdfs:comment xml:lang="en">Relating a catholic order person to an identifier for being professed into the order of the monastery of Pfäfers.</rdfs:comment>
+    <rdfs:label xml:lang="de">Person hat St. Pfäferser-Eintrittidentifikator</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/catholic-order#Person"/>
+    <rdfs:label xml:lang="en">person has Pfäferser profess identifier</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/dietrich#personHasStGallerProfessIdentifier">
+    <rdfs:label xml:lang="de">Person hat St. Galler-Eintrittidentifikator</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="en">Relating a catholic order person to an identifier for being professed into the order of the monastery of St. Gallen.</rdfs:comment>
+    <rdfs:label xml:lang="en">person has St. Galler profess identifier</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/catholic-order#Person"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
+  </owl:DatatypeProperty>
   <owl:Ontology rdf:about="http://e-editiones.ch/ontology/dietrich">
     <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:description xml:lang="en">Formal description of specific concepts in the scientific study "Das Kloster-Tagebuch des Einsiedler Paters Joseph Dietrich, 1670-1704".</dct:description>
     <dct:contributor xml:lang="en">Reinhard Priber, tool coordinator and software developer, University of Bern, Switzerland</dct:contributor>
     <dct:title xml:lang="en">An ontology about father Joseph Dietrich's monastery diary</dct:title>
+    <dct:description xml:lang="en">Formal description of specific concepts in the scientific study "Das Kloster-Tagebuch des Einsiedler Paters Joseph Dietrich, 1670-1704".</dct:description>
     <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
     <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
   </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/dietrich#DiaryVolume">
-    <rdfs:comment xml:lang="en">Diary volume written and authored by father Joseph Dietrich.</rdfs:comment>
-    <rdfs:label xml:lang="en">diary volume by father Joseph Dietrich</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Diary"/>
-    <rdfs:label xml:lang="de">Tagebuch-Band des Paters Joseph Dietrich</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Volume"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/dietrich#hasExternalResource">
+    <rdfs:label xml:lang="de">hat externe Ressource</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
-  </rdfs:Class>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Relating a Dietrich-project resource to an external, i.e. non-Dietrich-project resource.</rdfs:comment>
+    <rdfs:label xml:lang="en">has external resource</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/dietrich#personHasEinsiedlerAbbot">
+    <rdfs:comment xml:lang="en">Relating a catholic order person to the person being the abbot of the monastery of Einsiedeln.</rdfs:comment>
+    <rdfs:range>
+      <owl:Restriction rdf:nodeID="ub35bL94C29">
+        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/catholic-order#Abbot"/>
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+      </owl:Restriction>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/catholic-order#Person"/>
+    <rdfs:label xml:lang="en">person has Einsiedler abbot</rdfs:label>
+    <rdfs:label xml:lang="de">Person hat Einsiedler-Abt</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/catholic-order#Person"/>
+  </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/dietrich#DiaryEntry">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#DiaryEntry"/>
-    <rdfs:comment xml:lang="en">Diary entry authored by father Joseph Dietrich.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
-    <rdfs:label xml:lang="de">Tagebucheintrag des Paters Joseph Dietrich</rdfs:label>
-    <rdfs:label xml:lang="en">diary entry by father Joseph Dietrich</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
+    <rdfs:comment xml:lang="en">Diary entry authored by father Joseph Dietrich.</rdfs:comment>
+    <rdfs:label xml:lang="de">Tagebucheintrag des Paters Joseph Dietrich</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#DiaryEntry"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/dietrich#"/>
+    <rdfs:label xml:lang="en">diary entry by father Joseph Dietrich</rdfs:label>
   </rdfs:Class>
 </rdf:RDF>

@@ -1,14 +1,13 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/physical-geography#hasLatitude",
+    "@id": "http://e-editiones.ch/ontology/physical-geography#earthPlaceHasIdentifierLiteral",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#InverseFunctionalProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a place of a point or space on the Earth's surface to its geographic coordinate specifying the north–south position of that point, based on the World Geodetic System (WGS) standard. The coordinate is expressed as the angle between the equatorial plane and the normal, for a sphere from the center, to the surface at that point."
+        "@value": "Relating a place on Earth to its identifier literal."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -24,23 +23,49 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has latitude"
+        "@value": "earth place has identifier literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+        "@id": "http://e-editiones.ch/ontology/concept#hasIdentifierLiteral"
       }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-geography#EarthPlace",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
-    "http://www.w3.org/2004/02/skos/core#note": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Points with the same latitude lie on a circle around the Earth parallel to its equator. There are different latitudes, depending on the abstracted shape of the earth as spherical or ellipsoid, and other aspects. The decimal value can be converted to a sexagesimal using an N3 rule stating: [decimal degrees - (decimal degrees modulus (%) 1)]° [decimal degrees % 1 x 60 - decimal degrees % 1 x 60 % 1]' + [decimal degrees % 1 * 60 % 1 * 60]''"
+        "@value": "Place on earth, positionable using the World Geodetic System (WGS) standard."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "place on Earth"
+      },
+      {
+        "@language": "de",
+        "@value": "Platz auf Erde"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#Place"
       }
     ]
   },
@@ -97,10 +122,132 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/physical-geography#hasLongitude",
+    "@id": "http://e-editiones.ch/ontology/physical-geography#hasLatitude",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "http://www.w3.org/2002/07/owl#InverseFunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a place of a point or space on the Earth's surface to its geographic coordinate specifying the north–south position of that point, based on the World Geodetic System (WGS) standard. The coordinate is expressed as the angle between the equatorial plane and the normal, for a sphere from the center, to the surface at that point."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-geography#EarthPlace"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has latitude"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Points with the same latitude lie on a circle around the Earth parallel to its equator. There are different latitudes, depending on the abstracted shape of the earth as spherical or ellipsoid, and other aspects. The decimal value can be converted to a sexagesimal using an N3 rule stating: [decimal degrees - (decimal degrees modulus (%) 1)]° [decimal degrees % 1 x 60 - decimal degrees % 1 x 60 % 1]' + [decimal degrees % 1 * 60 % 1 * 60]''"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-geography#earthPlaceHasNameLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a place on Earth to its name literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-geography#EarthPlace"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "earth place has name literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-entity#placeHasNameLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-geography#hasElevation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a place of a point or space on the Earth's surface to its height above or below a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-geography#EarthPlace"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/physical-geography#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has elevation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/physical-geography#hasLongitude",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -138,77 +285,6 @@
       {
         "@language": "en",
         "@value": "Points with the same longitude lie on a meridian or semi-circle between the poles. There are different longitudes, depending on the abstracted shape of the earth as spherical or ellipsoid, and other aspects. The decimal value can be converted to a sexagesimal using an N3 rule stating: [decimal degrees - (decimal degrees modulus (%) 1)]° [decimal degrees % 1 x 60 - decimal degrees % 1 x 60 % 1]' + [decimal degrees % 1 * 60 % 1 * 60]''"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-geography#EarthPlace",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Place on earth, positionable using the World Geodetic System (WGS) standard."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Platz auf Erde"
-      },
-      {
-        "@language": "en",
-        "@value": "place on Earth"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-entity#Place"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/physical-geography#hasElevation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#InverseFunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a place of a point or space on the Earth's surface to its height above or below a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-geography#EarthPlace"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/physical-geography#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has elevation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
       }
     ]
   }

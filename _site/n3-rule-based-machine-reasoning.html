@@ -89,7 +89,6 @@ Also rules are declared by using domain ontologies, but also external ontologies
 These built-ins are mentioned in some of the following rule examples.</p>
 
 <h2 id="n3-rules-serve-different-purposes">N3-rules serve different purposes:</h2>
-<p>Note: also mentioned in the use case catalogue.</p>
 <h3 id="implementation-of-the-rdf-model-theory">Implementation of the RDF model theory:</h3>
 <p>A set of <a href="https://github.com/josd/eye/tree/master/reasoning/rpo">N3-rules implementing the RDF model theory</a> permits to infer data from data based on the built-in logic of the W3C Semantic Web standard languages.
 Examples are rules for the implementation of:</p>
@@ -110,7 +109,7 @@ Examples are rules for the implementation of:</p>
 <p>A complete reasoning example on transitivity for the ‘is part of’ property for text and text structures as prosodic entities is given in the repository, also involving a series of other RDFS- and OWL-rules. The data and query files are commented.</p>
 
 <h3 id="consistency-check-for-user-defined-restrictions">Consistency check for user defined restrictions:</h3>
-<p>User-defined restrictions can be checked upon, e.g. a cardinality restriction for the object value of a certain property of a certain subject class instance. Figure 1 shows part of the ‘human’ class declaration in Turtle with a cardinality restriction of maximum 1 on the property ‘has biological sex’, IOW a human can only have exactly 1 biological sex, i.e. female, male or intersexual (see <a href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/human.ttl">human-ontology</a>).</p>
+<p>User-defined restrictions can be checked upon, e.g. a cardinality restriction for the object value of a certain property of a certain subject class instance. The box below shows part of the ‘Human’ class declaration in the ‘human’ ontology in Turtle with a cardinality restriction of maximum 1 on the property ‘has biological sex’, meaning a human can only have exactly 1 biological sex, i.e. female, male or intersexual (see <a href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/human.ttl">human-ontology</a>).</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@prefix human: &lt;http://www.e-editiones.ch/ontology/human#&gt;.
 
@@ -119,7 +118,6 @@ Examples are rules for the implementation of:</p>
 		owl:onProperty human:hasBiologicalSex;
 		owl:maxCardinality "1"^^xs:nonNegativeInteger].
 </code></pre></div></div>
-<p><strong>Figure 1: Class declaration with a cardinality restriction of maximum 1</strong></p>
 
 <p>A reasoning example on cardinality is given in the repository, using 2 external ontologies and an RDF data set on images of the <a href="https://www.knora.org/">Knora server application</a>, developed by the <a href="https://dhlab.philhist.unibas.ch/en/home/">DHLab (DHL)</a> at the University of Basel and the <a href="https://dasch.swiss/">Data and Service Center for humanities (DaSCH)</a>.</p>
 
@@ -127,14 +125,14 @@ Examples are rules for the implementation of:</p>
 <p>This type of reasoning is crucial for formal data to be reusable and interchangeable, because its first step is a unification of time expressions in different calendars and/or with different accuracy.<br />
 Time expressions with the accuracy of a day (date) from different calendars are converted to the respective Julian Day Numbers, and in this way comparable.<br />
 A time expression with less accuracy than a day, i.e. a year or year-month, is converted to the period with the start and end date of the specific calendar, and with the start and end Julian Day Number.
-For this process the machine reasoner provides an extensive set of <a href="https://raw.githubusercontent.com/josd/eye/master/eye-builtins.n3">Time and RIF Built-ins</a> based on W3C standards <a href="https://www.w3.org/TR/2013/REC-rif-dtb-20130205/">RIF Datatypes and Built-Ins 1.0</a>, using for instance literals typed with e.g. xsd:date, xsd:dateTime, and xsd:duration from the <a href="http://www.w3.org/2001/XMLSchema#">http://www.w3.org/2001/XMLSchema#</a> namespace.
-Further functionality is provided by the <a href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/time.ttl">time-ontology</a>, and the <a href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/calendar.ttl">calendar-ontology</a>, declaring the properties used in N3-rules.</p>
+For this process the machine reasoner provides an extensive set of <strong>Time and RIF Built-ins</strong> <a href="https://raw.githubusercontent.com/josd/eye/master/eye-builtins.n3">(De Roo 2020-1)</a> based on W3C standards <strong>RIF Datatypes and Built-Ins 1.0</strong> <a href="https://www.w3.org/TR/rif-dtb/">(W3C 2013)</a>, using for instance literals typed with e.g. xsd:date, xsd:dateTime, and xsd:duration from the XML Schema namespace <a href="http://www.w3.org/2001/XMLSchema#">(W3C 2014-4)</a>.
+Further functionality is provided by the <a href="ontology/time">time-ontology</a>, and the <a href="ontology/calendar">calendar-ontology</a>, declaring the properties used in N3-rules.</p>
 
 <p>A temporal reasoning example is given in the repository, converting calendrical time expressions to a unifying Julian Day Number.<br />
 Another example deals with an event without a start or end date, with the specific example of missing birth- or death date.</p>
 
 <h3 id="miscellaneous-functionalities-and-calculations">Miscellaneous functionalities and calculations:</h3>
-<p>Also for this type of N3-rules a large set of <a href="https://raw.githubusercontent.com/josd/eye/master/eye-builtins.n3">built-ins</a> is available, dealing with e.g. logical and mathematical operators, lists, and strings.
+<p>Also for this type of N3-rules a large set of <strong>built-ins</strong> <a href="https://raw.githubusercontent.com/josd/eye/master/eye-builtins.n3">(De Roo 2020-1)</a> is available, dealing with e.g. logical and mathematical operators, lists, and strings.
 For example string manipulation, e.g. parsing using regular expressions, is possible with formal expressions, offering the advantage of staying in the formal N3/RDF environment until a fully reasoned upon data set or deductive closure is obtained, which can be stored in an RDF database and queried with SPARQL, or which can be transformed to JSON(-LD) for GUI application.</p>
 
 <p>The repository contains a reasoning example on sequence numbers or ordinals, derived from entity identifiers, using following properties declared in the respective ontology:</p>
@@ -148,9 +146,9 @@ For example string manipulation, e.g. parsing using regular expressions, is poss
 <p>and a set of rules that can be made as general as possible, but very likely only within a certain project, considering the numerous possible combinations in creating alphanumeric identifiers.</p>
 
 <h2 id="machine-reasoner-eye-euler-yet-another-proof-engine">Machine Reasoner EYE (Euler Yet another proof Engine):</h2>
-<p>See also <a href="/literature">Verborg and De Roo 2015</a>.<br />
-<a href="https://github.com/josd/eye">Development</a><br />
-<a href="https://sourceforge.net/projects/eulersharp/files/eulersharp/">Download</a><br />
+<p>See also <a href="https://josd.github.io/Papers/EYE.pdf">Verborgh and De Roo 2015</a>.<br />
+<strong>Development</strong> <a href="https://github.com/josd/eye">(De Roo 2020)</a><br />
+<a href="https://sourceforge.net/projects/eulersharp/files/eulersharp/"><strong>Download</strong></a><br />
 <!---http://eulersharp.sourceforge.net/2003/03swap/eye-owl2.html--->
 EYE comes with syntax check and intrinsic functionality provided by <a href="https://raw.githubusercontent.com/josd/eye/master/eye-builtins.n3">built-ins</a>.<br />
 All other reasoning material has to be input, i.e. OWL-ontologies, RDF-data, N3-rules.</p>
@@ -170,7 +168,7 @@ All other reasoning material has to be input, i.e. OWL-ontologies, RDF-data, N3-
                          # output as a pass OR an N3-query:  
 --pass                   # output deductive closure: all the stated and inferred triples except the rules 
 --pass-all               # output deductive closure plus rules  
---query                  # output filtered with N3-query  
+--query query.n3         # output filtered with N3-query  
 &gt;                        # output can be written to a file
 .../result.n3            # result file
 </code></pre></div></div>
