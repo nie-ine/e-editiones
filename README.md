@@ -110,7 +110,7 @@ By default, the server returns HTML.
 
 ### Deploy
 
-1. Dockerize the website with a current date tag (YYYY-MM-DD) with ``docker build -t nieine/e-editiones:YYYY-MM-DD``
+1. Dockerize the website with a current date tag (YYYY-MM-DD) with ``docker build -t nieine/e-editiones:YYYY-MM-DD .``
 1. Push the new image to dockerhub with ``docker push nieine/e-editiones:YYYY-MM-DD``
 1. Change docker compose file accordingly, if necessary.
 1. Restart the server.

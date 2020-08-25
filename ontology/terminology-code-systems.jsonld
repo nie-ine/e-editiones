@@ -1,5 +1,77 @@
 [
   {
+    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Datatype to type a literal representing a hexadecimal color code."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hexadecimal color datatype"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#oai",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Datatype to type an OAI-identifier literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "OAI-datatype"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#gnd",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Datatype to type a GND-number numeral."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "GND-datatype"
+      }
+    ]
+  },
+  {
     "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hasGNDNumber",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -95,20 +167,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#oaiSystem",
+    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hasHexadecimalColorCodeValue",
     "@type": [
-      "http://e-editiones.ch/ontology/concept#CodingSystem",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://e-editiones.ch/ontology/concept#codingSystemHasDatatype": [
-      {
-        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#oai"
-      }
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The Open Archives Initiative."
+        "@value": "Relating a resource to a hexadecimal color code value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -119,25 +190,45 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "OAI-system"
+        "@value": "has hexadecimal color code value"
+      },
+      {
+        "@language": "de",
+        "@value": "hat hexadezimaler Farbekodewert"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://www.openarchives.org/"
+        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#hasCodeValue"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "example:page1 tcs:hasHexadecimalColorCodeValue \"000000\"^^tcs:hexadecimalColor."
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#gnd",
+    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColorCodingSystem",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Datatype",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://e-editiones.ch/ontology/terminology-code-systems#ColorCodingSystem"
+    ],
+    "http://e-editiones.ch/ontology/concept#codingSystemHasDatatype": [
+      {
+        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Datatype to type a GND-number numeral."
+        "@value": "Color coding system to represent a color with a hex triplet or six-digit, three-byte hexadecimal number. The bytes represent the red, green and blue components of the color. Used in HTML, CSS, SVG, and other computing applications."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -148,15 +239,20 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "GND-datatype"
+        "@value": "hexadecimal color coding system"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://en.wikipedia.org/wiki/Web_colors"
       }
     ]
   },
   {
     "@id": "http://e-editiones.ch/ontology/terminology-code-systems#gndSystem",
     "@type": [
-      "http://e-editiones.ch/ontology/concept#CodingSystem",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://e-editiones.ch/ontology/concept#CodingSystem"
     ],
     "http://e-editiones.ch/ontology/concept#codingSystemHasDatatype": [
       {
@@ -257,92 +353,20 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor",
+    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#oaiSystem",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "http://e-editiones.ch/ontology/concept#CodingSystem",
       "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Datatype to type a literal representing a hexadecimal color code."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hexadecimal color datatype"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hasHexadecimalColorCodeValue",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a resource to a hexadecimal color code value."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has hexadecimal color code value"
-      },
-      {
-        "@language": "de",
-        "@value": "hat hexadezimaler Farbekodewert"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#hasCodeValue"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "example:page1 tcs:hasHexadecimalColorCodeValue \"000000\"^^tcs:hexadecimalColor."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColorCodingSystem",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://e-editiones.ch/ontology/terminology-code-systems#ColorCodingSystem"
     ],
     "http://e-editiones.ch/ontology/concept#codingSystemHasDatatype": [
       {
-        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#hexadecimalColor"
+        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#oai"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Color coding system to represent a color with a hex triplet or six-digit, three-byte hexadecimal number. The bytes represent the red, green and blue components of the color. Used in HTML, CSS, SVG, and other computing applications."
+        "@value": "The Open Archives Initiative."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -353,36 +377,12 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "hexadecimal color coding system"
+        "@value": "OAI-system"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
       {
-        "@id": "https://en.wikipedia.org/wiki/Web_colors"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/terminology-code-systems#oai",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Datatype",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Datatype to type an OAI-identifier literal."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/terminology-code-systems#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "OAI-datatype"
+        "@id": "https://www.openarchives.org/"
       }
     ]
   }

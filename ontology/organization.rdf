@@ -1,204 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#actsIn">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#actsIn"/>
-    <rdfs:comment xml:lang="en">Relating a person organization to an action it acts in.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/human#Action"/>
-    <rdfs:label xml:lang="de">Personensorganisation agiert in</rdfs:label>
-    <rdfs:label xml:lang="en">person organization acts in</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#isMemberOfCompany">
+    <rdfs:label xml:lang="en">is member of company</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+    <rdfs:label xml:lang="de">ist Mitglied einer Firme</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:comment xml:lang="en">Relating a person to a company the person is a member of.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#isMemberOf">
+        <rdfs:label xml:lang="en">is member of person organization</rdfs:label>
+        <rdfs:label xml:lang="de">ist Mitglied einer Personensorganisation</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#isMemberOf"/>
+        <rdfs:comment xml:lang="en">Relating a person to an organization the person is a member of.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/organization#Company"/>
   </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#MasonicLodge">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
     <rdfs:label xml:lang="de">Freimaurerloge</rdfs:label>
+    <rdfs:label xml:lang="en">Masonic lodge</rdfs:label>
     <rdfs:comment xml:lang="en">Organizational unit of Freemasonry.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
-    <rdfs:label xml:lang="en">Masonic lodge</rdfs:label>
   </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/organization#hasNameLiteral">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Politician">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:label xml:lang="en">person organization has name literal</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a person organization to the literal of a name of that organization.</rdfs:comment>
+    <rdfs:label xml:lang="de">Politiker-Rolle</rdfs:label>
+    <rdfs:label xml:lang="en">politician role</rdfs:label>
+    <rdfs:comment xml:lang="en">Occupational role of being professionally involved in politics, especially as a holder of an elected office.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#OccupationalRole"/>
+  </rdfs:Class>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/organization">
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:description xml:lang="en">Formal description of organization involving persons, general subclasses, related classes and properties.</dct:description>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:title xml:lang="en">An ontology about person organization</dct:title>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#actsIn">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:comment xml:lang="en">Relating a person organization to an action it acts in.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#actsIn"/>
+    <rdfs:label xml:lang="de">Personensorganisation agiert in</rdfs:label>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="de">Personensorganisation hat Nameliterale</rdfs:label>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Museum">
+    <rdfs:label xml:lang="en">person organization acts in</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/human#Action"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Library">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:label xml:lang="de">Bibliothek</rdfs:label>
+    <rdfs:comment xml:lang="en">Organization having a role of preserving and making accessible information carriers to a defined community for reference or borrowing. An information carrier can be a book, periodical, newspaper, manuscript, film, map, print, also in microform, CD, cassette, videotape, DVD, Blu-ray Disc, e-book, audiobook, database, and other document format.</rdfs:comment>
+    <rdfs:label xml:lang="it">biblioteca</rdfs:label>
+    <rdfs:label xml:lang="en">library</rdfs:label>
+    <rdfs:label xml:lang="fr">bibliothèque</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#CulturalHeritageInstitution"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:comment xml:lang="en">Organization having roles of preserving and exhibiting objects of historical, scientific, artistic, or cultural interest in a special building also called museum.</rdfs:comment>
-    <rdfs:label xml:lang="de">Museum</rdfs:label>
-    <rdfs:label xml:lang="en">museum</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#PoliticalOrganization">
-    <rdfs:label xml:lang="de">politische Organisation</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#isMemberOfReligiousOrganization">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/organization#ReligiousPerson"/>
+    <rdfs:label xml:lang="de">ist Mitglied einer religiösen Organization</rdfs:label>
+    <rdfs:label xml:lang="en">is member of religious organization</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/organization#isMemberOf"/>
+    <rdfs:comment xml:lang="en">Relating a person to a religious organization the person is a member of.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/organization#ReligiousOrganization"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#PoliticalOrganization">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:label xml:lang="de">politische Organisation</rdfs:label>
+    <rdfs:comment xml:lang="en">Organization being involved in politics.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
     <rdfs:label xml:lang="en">political organization</rdfs:label>
-    <rdfs:comment xml:lang="en">Organization being involved in politics.</rdfs:comment>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/organization#hasNameLiteral">
+    <rdfs:label xml:lang="en">person organization has name literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a person organization to the literal of a name of that organization.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+    <rdfs:label xml:lang="de">Personensorganisation hat Nameliterale</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Creator">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#AgentCreator"/>
+    <rdfs:label xml:lang="de">Organisation-Erschafferin</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:comment xml:lang="en">Publisher as role of an organization.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Role"/>
+    <rdfs:label xml:lang="en">organization creator</rdfs:label>
   </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#isMemberOfAdministration">
+    <rdfs:label xml:lang="en">is member of administration</rdfs:label>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub26bL202C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub26bL202C48">
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/organization#Administration"/>
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/organization#hasRole"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:range>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
     <rdfs:comment xml:lang="en">Relating a person to an administration organization the person is a member of.</rdfs:comment>
     <rdfs:label xml:lang="de">ist Mitglied einer Verwaltung</rdfs:label>
-    <rdfs:label xml:lang="en">is member of administration</rdfs:label>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#isMemberOf">
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-        <rdfs:comment xml:lang="en">Relating a person to an organization the person is a member of.</rdfs:comment>
-        <rdfs:label xml:lang="de">ist Mitglied einer Personensorganisation</rdfs:label>
-        <rdfs:label xml:lang="en">is member of person organization</rdfs:label>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#isMemberOf"/>
-        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:range>
-      <rdf:Description rdf:nodeID="ub37bL202C13">
-        <rdfs:subClassOf>
-          <owl:Restriction rdf:nodeID="ub37bL202C48">
-            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/organization#hasRole"/>
-            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/organization#Administration"/>
-          </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
-      </rdf:Description>
-    </rdfs:range>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#isMemberOfReligiousOrganization">
-    <rdfs:label xml:lang="de">ist Mitglied einer religiösen Organization</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/organization#ReligiousPerson"/>
-    <rdfs:comment xml:lang="en">Relating a person to a religious organization the person is a member of.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:label xml:lang="en">is member of religious organization</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/organization#isMemberOf"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/organization#ReligiousOrganization"/>
   </owl:ObjectProperty>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/organization">
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:title xml:lang="en">An ontology about person organization</dct:title>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:description xml:lang="en">Formal description of organization involving persons, general subclasses, related classes and properties.</dct:description>
-  </owl:Ontology>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#isMemberOfCompany">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/organization#isMemberOf"/>
-    <rdfs:label xml:lang="en">is member of company</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/organization#Company"/>
-    <rdfs:comment xml:lang="en">Relating a person to a company the person is a member of.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Museum">
+    <rdfs:label xml:lang="en">museum</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
-    <rdfs:label xml:lang="de">ist Mitglied einer Firme</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Library">
-    <rdfs:label xml:lang="de">Bibliothek</rdfs:label>
+    <rdfs:comment xml:lang="en">Organization having roles of preserving and exhibiting objects of historical, scientific, artistic, or cultural interest in a special building also called museum.</rdfs:comment>
+    <rdfs:label xml:lang="de">Museum</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#CulturalHeritageInstitution"/>
-    <rdfs:label xml:lang="fr">bibliothèque</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:label xml:lang="en">library</rdfs:label>
-    <rdfs:label xml:lang="it">biblioteca</rdfs:label>
-    <rdfs:comment xml:lang="en">Organization having a role of preserving and making accessible information carriers to a defined community for reference or borrowing. An information carrier can be a book, periodical, newspaper, manuscript, film, map, print, also in microform, CD, cassette, videotape, DVD, Blu-ray Disc, e-book, audiobook, database, and other document format.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Politician">
-    <rdfs:comment xml:lang="en">Occupational role of being professionally involved in politics, especially as a holder of an elected office.</rdfs:comment>
-    <rdfs:label xml:lang="en">politician role</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Role">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#GroupRole"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:label xml:lang="de">Politiker-Rolle</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#OccupationalRole"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Creator">
-    <rdfs:comment xml:lang="en">Publisher as role of an organization.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#AgentCreator"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Role"/>
-    <rdfs:label xml:lang="en">organization creator</rdfs:label>
-    <rdfs:label xml:lang="de">Organisation-Erschafferin</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Organization">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Organization"/>
-    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F11_Corporate_Body"/>
-    <rdfs:label xml:lang="en">person organization</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Group"/>
-    <rdfs:comment xml:lang="en">Organized group of persons.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:label xml:lang="de">Personensorganisation</rdfs:label>
-    <owl:disjointWith rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
-    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-    <skos:note xml:lang="en">An organization can be a legal person.</skos:note>
+    <rdfs:label xml:lang="en">organization's role</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person organization.</rdfs:comment>
   </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/organization#hasRole">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
-    <rdfs:comment xml:lang="en">Relating a person organization to a role it has.</rdfs:comment>
-    <rdfs:label xml:lang="en">person organization has role</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#groupHasRole"/>
-    <rdfs:label xml:lang="de">Personensorganisation hat Rolle</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/human#groupHasRole"/>
+    <rdfs:label xml:lang="en">person organization has role</rdfs:label>
+    <rdfs:label xml:lang="de">Personensorganisation hat Rolle</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a person organization to a role it has.</rdfs:comment>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/organization#Role"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Administration">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#ReligiousPerson">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:label xml:lang="de">religiöse Person</rdfs:label>
+    <rdfs:comment xml:lang="en">Person having religious faith or believing.</rdfs:comment>
+    <rdfs:label xml:lang="fr">personne réligieuse</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+    <rdfs:label xml:lang="en">religious person</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#ReligiousOrganization">
+    <rdfs:label xml:lang="de">religiöse Organisation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:comment xml:lang="en">Organization of religious persons.</rdfs:comment>
+    <rdfs:label xml:lang="en">religious organization</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Organization">
+    <skos:note xml:lang="en">An organization can be a legal person.</skos:note>
+    <rdfs:label xml:lang="de">Personensorganisation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Organization"/>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <owl:disjointWith rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Group"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F11_Corporate_Body"/>
+    <rdfs:comment xml:lang="en">Organized group of persons.</rdfs:comment>
+    <rdfs:label xml:lang="en">person organization</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Preserver">
+    <rdfs:label xml:lang="de">Organisation-Erhalter</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#AgentPreserver"/>
+    <rdfs:comment xml:lang="en">Role of a person organization as preserver.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Role"/>
+    <rdfs:label xml:lang="en">organization preserver</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#CulturalHeritageInstitution">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
+    <rdfs:label xml:lang="de">Kulturerbeinstitution</rdfs:label>
+    <rdfs:comment xml:lang="en">Organization having a role of preserving a repository of public knowledge, such as a library, an archive, museum, sites and monuments record, clearinghouse, a provider of a digital library, and a data aggregation service, which serve as memories for given societies or mankind.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:label xml:lang="en">cultural heritage institution</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="ub26bL108C36">
+        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/organization#hasRole"/>
+        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/organization#Preserver"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Administration">
     <rdfs:label xml:lang="de">Verwaltung</rdfs:label>
     <rdfs:comment xml:lang="en">Role of an organization administering a group of people on any level, e.g. international, national, regional or city level.</rdfs:comment>
     <rdfs:label xml:lang="en">administration</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Role"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Company">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
     <rdfs:label xml:lang="en">company</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
     <rdfs:comment xml:lang="en">Organization having primarily an economical role.</rdfs:comment>
     <rdfs:label xml:lang="de">Betrieb</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#CulturalHeritageInstitution">
-    <rdfs:subClassOf>
-      <owl:Restriction rdf:nodeID="ub37bL108C36">
-        <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/organization#Preserver"/>
-        <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/organization#hasRole"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en">Organization having a role of preserving a repository of public knowledge, such as a library, an archive, museum, sites and monuments record, clearinghouse, a provider of a digital library, and a data aggregation service, which serve as memories for given societies or mankind.</rdfs:comment>
-    <rdfs:label xml:lang="en">cultural heritage institution</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:label xml:lang="de">Kulturerbeinstitution</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Role">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#GroupRole"/>
-    <rdfs:label xml:lang="en">organization's role</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:comment xml:lang="en">Role of a person organization.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#ReligiousOrganization">
-    <rdfs:comment xml:lang="en">Organization of religious persons.</rdfs:comment>
-    <rdfs:label xml:lang="en">religious organization</rdfs:label>
-    <rdfs:label xml:lang="de">religiöse Organisation</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Organization"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#ReligiousPerson">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
-    <rdfs:label xml:lang="en">religious person</rdfs:label>
-    <rdfs:label xml:lang="de">religiöse Person</rdfs:label>
-    <rdfs:label xml:lang="fr">personne réligieuse</rdfs:label>
-    <rdfs:comment xml:lang="en">Person having religious faith or believing.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/organization#Preserver">
-    <rdfs:label xml:lang="en">organization preserver</rdfs:label>
-    <rdfs:comment xml:lang="en">Role of a person organization as preserver.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/organization#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#AgentPreserver"/>
-    <rdfs:label xml:lang="de">Organisation-Erhalter</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Role"/>
   </rdfs:Class>
 </rdf:RDF>

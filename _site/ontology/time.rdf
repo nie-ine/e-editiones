@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#yearLiteralToPeriod">
-    <rdfs:comment xml:lang="en">Used in a triple to invoke a backward N3 rule converting a literal to a period described by beginning and end date time, in this way explicitly stating the implicit period of a year margin.</rdfs:comment>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingOverlaps">
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">In N3 rules universally quantified variables are declared to pick up the respective values: ?yearLiteral time:yearLiteralToPeriod (?beginning ?end).</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events overlap each other.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Linking a literal representing number of years to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a year.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#yearMonthLiteralToPeriod">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking a list with 2 literals, resp representing number of years and number of months, to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a month.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Used in an N3 rule triple to invoke a backward N3 rule converting 2 literals to a period described by beginning and end date time, in this way explicitly stating the implicit period of a month margin.</rdfs:comment>
-    <rdfs:comment xml:lang="en">In N3 rules universally quantified variables are declared to pick up the respective values: (?yearLiteral ?monthLiteral) time:yearMonthLiteralToPeriod (?beginning ?end); at runtime this will generate e.g. subject ("2010" "3") and object (.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingTakesLessLongThan">
     <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event takes less long than second.</rdfs:comment>
@@ -29,168 +20,122 @@
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </owl:ObjectProperty>
-  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/time#hasMedianAge">
-    <rdfs:comment xml:lang="en">Linking a class to the median age of its members.</rdfs:comment>
-    <rdfs:range rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"/>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasYearLiteral">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:FunctionalProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingSameEnd">
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events ending at a same time-point.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingOverlaps">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events overlap each other.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/time#hasAge">
+    <rdfs:label xml:lang="en">has year literal</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"/>
-    <rdfs:comment xml:lang="en">Specifying an age in years of something.</rdfs:comment>
-  </owl:FunctionalProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasSnapshotDateTime">
-    <skos:note xml:lang="en">Used in N3 rules calculating with date time and duration using Unix Epoch time.</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">A snapshot is an event with coinciding beginning and end.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Specifying a snapshot event's date and time.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasDate">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <rdfs:label xml:lang="en">has date</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Relating something to its date.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasMaxDuration">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Relating an event to its maximum duration.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:label xml:lang="de">hat maximale Dauer</rdfs:label>
-    <rdfs:label xml:lang="en">has maximum duration</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasYearMonthPeriod">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <skos:note xml:lang="en">Through a series of N3-rules a year-month literal is converted to its year-month period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning.</skos:note>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:comment xml:lang="en">Relating something to its year-month period.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:label xml:lang="en">has year-month period</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingBeginsAfter">
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event begins after second.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasDurationDescription">
+    <rdfs:comment xml:lang="en">Relating something to its year represented by a literal.</rdfs:comment>
+    <skos:note xml:lang="en">Used in the premise of an N3-rule to convert a year literal to a period of that year in the respective calendar with the start and end date represented by a list of 3 literals.</skos:note>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:comment xml:lang="en">Specifying a duration description for a temporal entity of something.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#dateToPeriod">
-    <rdfs:comment xml:lang="en">Linking an xsd:date typed literal to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a day.</rdfs:comment>
-    <rdfs:comment xml:lang="en">In N3 rules universally quantified variables are declared to pick up the respective values: ?date time:dateToPeriod (?beginning ?end).</rdfs:comment>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingDuring">
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Used in a triple to invoke a backward N3 rule converting an xsd:date typed literal to a period described by beginning and end date time, in this way explicitly stating the implicit time period margin.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens during second.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/time">
+    <dct:description xml:lang="en">Formal description of time relations.</dct:description>
+    <skos:note xml:lang="en">For formal temporal reasoning, using e.g. the Unix Epoch time.</skos:note>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <skos:note xml:lang="en">Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way.</skos:note>
+    <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules"/>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <skos:note xml:lang="en">There are properties with list as range. A list keeps things together in a better way than a blank node and improves reasoning performance. List content is tripled when needed, e.g. to permit SPARQL querying.</skos:note>
+    <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/prolog"/>
+    <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2007/07test/biP.n3"/>
+    <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2007/07test/rifP.n3"/>
+    <dct:title xml:lang="en">An ontology about time relations</dct:title>
+  </owl:Ontology>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingSameBeginning">
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
     <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events beginning at a same time-point.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasDateLiteralList">
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <skos:note xml:lang="en">Used in the premise of an N3-rule to convert a date literal list to the respective calendar date represented by a list of 3 literals.</skos:note>
-    <rdfs:label xml:lang="en">has date literal list</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Relating something to its date represented by a list of 3 literals.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingSameTime">
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events happen during same time.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingBeginsBefore">
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event begins before second.</rdfs:comment>
     <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingIncludes">
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event includes second.</rdfs:comment>
   </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasYearLiteral">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <skos:note xml:lang="en">Used in the premise of an N3-rule to convert a year literal to a period of that year in the respective calendar with the start and end date represented by a list of 3 literals.</skos:note>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasDate">
+    <rdfs:label xml:lang="en">has date</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Relating something to its date.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Relating something to its year represented by a literal.</rdfs:comment>
-    <rdfs:label xml:lang="en">has year literal</rdfs:label>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingSameDuration">
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasYearPeriod">
+    <skos:note xml:lang="en">Through a series of N3-rules a year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning.</skos:note>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">has year period</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating something to its year period.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events having same duration.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingAfter">
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens after second.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasBeginningPeriodMargin">
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:comment xml:lang="en">Linking an event to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a period wherein it begins.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </owl:ObjectProperty>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/time">
-    <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2007/07test/biP.n3"/>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <skos:note xml:lang="en">There are properties with list as range. A list keeps things together in a better way than a blank node and improves reasoning performance. List content is tripled when needed, e.g. to permit SPARQL querying.</skos:note>
-    <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/prolog"/>
-    <skos:note xml:lang="en">Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way.</skos:note>
-    <dct:title xml:lang="en">An ontology about time relations</dct:title>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules"/>
-    <rdfs:seeAlso rdf:resource="http://eulersharp.sourceforge.net/2007/07test/rifP.n3"/>
-    <skos:note xml:lang="en">For formal temporal reasoning, using e.g. the Unix Epoch time.</skos:note>
-    <dct:description xml:lang="en">Formal description of time relations.</dct:description>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-  </owl:Ontology>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#dateLiteralToPeriod">
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">In N3 rules universally quantified variables are declared to pick up the respective values: (?yearLiteral ?monthLiteral ?dayLiteral) time:dateLiteralToPeriod (?beginning ?end).</rdfs:comment>
     <rdfs:comment xml:lang="en">Linking a list with 3 literals, resp representing number of years, number of months and number of days, to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a day.</rdfs:comment>
+    <rdfs:comment xml:lang="en">In N3 rules universally quantified variables are declared to pick up the respective values: (?yearLiteral ?monthLiteral ?dayLiteral) time:dateLiteralToPeriod (?beginning ?end).</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:comment xml:lang="en">Used in an N3 rule triple to invoke a backward N3 rule converting a date described by 3 literals to a period described by beginning and end date time, in this way explicitly stating the implicit period of a day margin.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasLatestEndDateTime">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en">Relating an event to its N3-rule-calculated latest possible end date time, based on a set maximum event duration, in absence of the end date time.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/time#hasMedianAge">
+    <rdfs:comment xml:lang="en">Linking a class to the median age of its members.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:range rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasSnapshotDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Specifying a snapshot event's date.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <skos:note xml:lang="en">Used in N3 rules calculating with date and duration using Unix Epoch time.</skos:note>
+    <rdfs:comment xml:lang="en">A snapshot is an event with coinciding beginning and end.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasYearMonthLiteralList">
+    <rdfs:label xml:lang="en">has year-month literal list</rdfs:label>
+    <skos:note xml:lang="en">Used in the premise of an N3-rule to convert a year-month to a period of that month in that year in the respective calendar with the start and end date represented by a list of 3 literals.</skos:note>
+    <rdfs:comment xml:lang="en">Relating something to its year-month represented by a list of 2 literals.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#endsAfterBeginningOf">
-    <skos:note xml:lang="en">Used in an N3 rule conclusion.</skos:note>
-    <rdfs:comment xml:lang="en">Linking an ending event to an earlier beginning of another event.</rdfs:comment>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#endsDuring"/>
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#beginsAfter"/>
-    </owl:propertyChainAxiom>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#timeRelatedTo">
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
         <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+        <rdfs:comment xml:lang="en">Relating 2 events in time.</rdfs:comment>
         <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
         <owl:oneOf rdf:parseType="Collection">
           <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#beginsBefore"/>
@@ -212,337 +157,393 @@
           <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#takesLongerThan"/>
           <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#takesLessLongThan"/>
         </owl:oneOf>
-        <rdfs:comment xml:lang="en">Relating 2 events in time.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#endsDuring"/>
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#beginsAfter"/>
+    </owl:propertyChainAxiom>
+    <skos:note xml:lang="en">Used in an N3 rule conclusion.</skos:note>
+    <rdfs:comment xml:lang="en">Linking an ending event to an earlier beginning of another event.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
   </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasLatestEndDateTime">
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasSnapshotDateTime">
+    <skos:note xml:lang="en">Used in N3 rules calculating with date time and duration using Unix Epoch time.</skos:note>
+    <rdfs:comment xml:lang="en">Specifying a snapshot event's date and time.</rdfs:comment>
+    <rdfs:comment xml:lang="en">A snapshot is an event with coinciding beginning and end.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Relating an event to its N3-rule-calculated latest possible end date time, based on a set maximum event duration, in absence of the end date time.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingSameEnd">
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events ending at a same time-point.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingEndsAfter">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event ends after second.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasOutputDateTime">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Process"/>
+    <rdfs:label xml:lang="en">has output date-time</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a process to its output date-time.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#yearMonthLiteralToPeriod">
+    <rdfs:comment xml:lang="en">Used in an N3 rule triple to invoke a backward N3 rule converting 2 literals to a period described by beginning and end date time, in this way explicitly stating the implicit period of a month margin.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Linking a list with 2 literals, resp representing number of years and number of months, to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a month.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">In N3 rules universally quantified variables are declared to pick up the respective values: (?yearLiteral ?monthLiteral) time:yearMonthLiteralToPeriod (?beginning ?end); at runtime this will generate e.g. subject ("2010" "3") and object (.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasDurationDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Specifying a duration description for a temporal entity of something.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasEndPeriodMargin">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:comment xml:lang="en">Linking an event to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a period wherein it ends.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingEndsBefore">
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event ends before second.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasStartDateTime">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Relating an event to its start date time.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasDateLiteralList">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <skos:note xml:lang="en">Used in the premise of an N3-rule to convert a date literal list to the respective calendar date represented by a list of 3 literals.</skos:note>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">has date literal list</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating something to its date represented by a list of 3 literals.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasYearMonthPeriod">
+    <skos:note xml:lang="en">Through a series of N3-rules a year-month literal is converted to its year-month period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning.</skos:note>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Relating something to its year-month period.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:label xml:lang="en">has year-month period</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#yearLiteralToPeriod">
+    <rdfs:comment xml:lang="en">Linking a literal representing number of years to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a year.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Used in a triple to invoke a backward N3 rule converting a literal to a period described by beginning and end date time, in this way explicitly stating the implicit period of a year margin.</rdfs:comment>
+    <rdfs:comment xml:lang="en">In N3 rules universally quantified variables are declared to pick up the respective values: ?yearLiteral time:yearLiteralToPeriod (?beginning ?end).</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#dateToPeriod">
+    <rdfs:comment xml:lang="en">Used in a triple to invoke a backward N3 rule converting an xsd:date typed literal to a period described by beginning and end date time, in this way explicitly stating the implicit time period margin.</rdfs:comment>
+    <rdfs:comment xml:lang="en">In N3 rules universally quantified variables are declared to pick up the respective values: ?date time:dateToPeriod (?beginning ?end).</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Linking an xsd:date typed literal to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a day.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingSameTime">
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events happen during same time.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingAfter">
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens after second.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasStartDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:comment xml:lang="en">Relating an event to its start date.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasEndDate">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
     <rdfs:comment xml:lang="en">Relating an event to its end date.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasStartDateTime">
-    <rdfs:comment xml:lang="en">Relating an event to its start date time.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingBefore">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens before second.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasSnapshotDate">
-    <skos:note xml:lang="en">Used in N3 rules calculating with date and duration using Unix Epoch time.</skos:note>
-    <rdfs:comment xml:lang="en">A snapshot is an event with coinciding beginning and end.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Specifying a snapshot event's date.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasEndDateTime">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:comment xml:lang="en">Relating an event to its end date time.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasYearMonthLiteralList">
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <skos:note xml:lang="en">Used in the premise of an N3-rule to convert a year-month to a period of that month in that year in the respective calendar with the start and end date represented by a list of 3 literals.</skos:note>
-    <rdfs:label xml:lang="en">has year-month literal list</rdfs:label>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasMaxDuration">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Relating something to its year-month represented by a list of 2 literals.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingDuring">
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens during second.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasOutputDateTime">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Process"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:comment xml:lang="en">Relating a process to its output date-time.</rdfs:comment>
-    <rdfs:label xml:lang="en">has output date-time</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingEndsBefore">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event ends before second.</rdfs:comment>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingDuration">
-    <rdfs:comment xml:lang="en">Relating an event to its calculated duration.</rdfs:comment>
+    <rdfs:label xml:lang="en">has maximum duration</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an event to its maximum duration.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule calculating an event's duration in premise and returning the duration.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:label xml:lang="de">hat maximale Dauer</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasDateTime">
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:comment xml:lang="en">Specifying a point in time of something with a date time.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingTakesLongerThan">
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event takes longer than second.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasYearPeriod">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Relating something to its year period.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:label xml:lang="en">has year period</rdfs:label>
-    <skos:note xml:lang="en">Through a series of N3-rules a year literal is converted to its year period with the respective calendar start and end date typed literal, and with the start and end Julian Day Number, to enable interval calculus for temporal reasoning.</skos:note>
     <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </owl:ObjectProperty>
-  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingAge">
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <skos:note xml:lang="en">Triggering in an N3 rule a backward N3 rule to calculate an age of something depending on a reference date time.</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"/>
-    <rdfs:comment xml:lang="en">Specifying a calculated age in years for a list of something and a reference date time.</rdfs:comment>
-  </owl:FunctionalProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasStartDate">
-    <rdfs:comment xml:lang="en">Relating an event to its start date.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasBeginningPeriodMargin">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking an event to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a period wherein it begins.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/time#hasAges">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking a group of something to a list of its members' ages in years.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-  </owl:FunctionalProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#hasEndPeriodMargin">
-    <rdfs:comment xml:lang="en">Linking an event to a list with 2 xsd:dateTime typed literals representing a beginning and an end of a period wherein it ends.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasEarliestStartDateTime">
-    <rdfs:comment xml:lang="en">Relating an event to its N3-rule-calculated earliest possible start date time, based on a set maximum event duration, in absence of the start date time.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingBeginsBefore">
-    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event begins before second.</rdfs:comment>
-  </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasDuration">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
     <rdfs:comment xml:lang="en">Specifying a duration of an event.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingEndsAfter">
+  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/time#hasAge">
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Specifying an age in years of something.</rdfs:comment>
+    <rdfs:range rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+  </owl:FunctionalProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingTakesLongerThan">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event takes longer than second.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/time#hasAges">
+    <rdfs:comment xml:lang="en">Linking a group of something to a list of its members' ages in years.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </owl:FunctionalProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingSameDuration">
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event ends after second.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and events having same duration.</rdfs:comment>
   </owl:ObjectProperty>
-  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#overlaps">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <rdfs:comment xml:lang="en">Specifying an event overlapping another event.</rdfs:comment>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingBefore">
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-  </owl:SymmetricProperty>
-  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#beginsBefore">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event happens before second.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#hasEarliestStartDateTime">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en">Relating an event to its N3-rule-calculated earliest possible start date time, based on a set maximum event duration, in absence of the start date time.</rdfs:comment>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking an earlier beginning to a later beginning event.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingDuration">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Relating an event to its calculated duration.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule calculating an event's duration in premise and returning the duration.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingBeginsAfter">
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Such a triple invokes in an N3 rule a backward N3 rule checking this time relation for 2 events in premise and returning the triple.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Linking 2 lists with each a beginning and end date time typed literal of an event, and first event begins after second.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:about="http://e-editiones.ch/ontology/time#calculatingAge">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/log-rules#Number"/>
+    <skos:note xml:lang="en">Triggering in an N3 rule a backward N3 rule to calculate an age of something depending on a reference date time.</skos:note>
+    <rdfs:comment xml:lang="en">Specifying a calculated age in years for a list of something and a reference date time.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </owl:FunctionalProperty>
+  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#after">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#before">
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+        <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+        <rdfs:comment xml:lang="en">Linking an earlier to a later event.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+      </owl:TransitiveProperty>
+    </owl:inverseOf>
+    <rdfs:comment xml:lang="en">Linking a later to an earlier event.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
     <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
   </owl:TransitiveProperty>
-  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#hasSameEndAs">
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#beginsSameAsEndOf">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
     <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <rdfs:comment xml:lang="en">Linking 2 events ending on the same moment.</rdfs:comment>
-  </owl:SymmetricProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#endsSameAsBeginningOf">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:comment xml:lang="en">Linking a beginning event to another event ending at the same moment.</rdfs:comment>
     <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#beginsSameAsEndOf">
-        <owl:inverseOf rdf:resource="http://e-editiones.ch/ontology/time#endsSameAsBeginningOf"/>
-        <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-        <rdfs:comment xml:lang="en">Linking a beginning event to another event ending at the same moment.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#endsSameAsBeginningOf">
         <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+        <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+        <rdfs:comment xml:lang="en">Linking an ending event to another event beginning at the same moment.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+        <owl:inverseOf rdf:resource="http://e-editiones.ch/ontology/time#beginsSameAsEndOf"/>
       </owl:ObjectProperty>
     </owl:inverseOf>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-    <rdfs:comment xml:lang="en">Linking an ending event to another event beginning at the same moment.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
   </owl:ObjectProperty>
-  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#beginsAfter">
+  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#during">
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking a later beginning to an earlier beginning event.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Specifying an event during which another event happens.</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-    <owl:inverseOf rdf:resource="http://e-editiones.ch/ontology/time#beginsBefore"/>
   </owl:TransitiveProperty>
-  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#includes">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <owl:inverseOf>
-      <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#during">
-        <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-        <rdfs:comment xml:lang="en">Specifying an event during which another event happens.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-      </owl:TransitiveProperty>
-    </owl:inverseOf>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Specifying an event happening during another event.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-  </owl:TransitiveProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#beginsDuring">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <rdfs:comment xml:lang="en">Specifying an event during which another event begins.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#hasSameTimeAs">
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking 2 events happening at the same time.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-  </owl:SymmetricProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#endsDuring">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:comment xml:lang="en">Specifying an event during which another event ends.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-  </owl:ObjectProperty>
   <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#takesLessLongThan">
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <owl:inverseOf>
       <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#takesLongerThan">
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+        <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
         <rdfs:comment xml:lang="en">Linking a longer to a shorter event.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+      </owl:TransitiveProperty>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+    <rdfs:comment xml:lang="en">Linking a shorter to a longer event.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#beginsAfter">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <rdfs:comment xml:lang="en">Linking a later beginning to an earlier beginning event.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#beginsBefore">
         <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
         <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
         <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
         <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+        <rdfs:comment xml:lang="en">Linking an earlier beginning to a later beginning event.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
       </owl:TransitiveProperty>
     </owl:inverseOf>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking a shorter to a longer event.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
   </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#endsBefore">
+    <rdfs:comment xml:lang="en">Linking an earlier ending to a later ending event.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+  </owl:TransitiveProperty>
+  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#hasSameBeginningAs">
+    <rdfs:comment xml:lang="en">Linking 2 events beginning on the same moment.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+  </owl:SymmetricProperty>
+  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#endsAfter">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <owl:inverseOf rdf:resource="http://e-editiones.ch/ontology/time#endsBefore"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <rdfs:comment xml:lang="en">Linking a later ending to an earlier ending event.</rdfs:comment>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#includes">
+    <owl:inverseOf rdf:resource="http://e-editiones.ch/ontology/time#during"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Specifying an event happening during another event.</rdfs:comment>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+  </owl:TransitiveProperty>
+  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#hasSameTimeAs">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <rdfs:comment xml:lang="en">Linking 2 events happening at the same time.</rdfs:comment>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#hasSameDurationAs">
+    <rdfs:comment xml:lang="en">Linking 2 events having the same duration.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#hasSameEndAs">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:comment xml:lang="en">Linking 2 events ending on the same moment.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+  </owl:SymmetricProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#beginsDuring">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:comment xml:lang="en">Specifying an event during which another event begins.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+  </owl:ObjectProperty>
+  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#overlaps">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <rdfs:comment xml:lang="en">Specifying an event overlapping another event.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+  </owl:SymmetricProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#endsDuring">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <rdfs:comment xml:lang="en">Specifying an event during which another event ends.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/time#beginsBeforeEndOf">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
     <owl:propertyChainAxiom rdf:parseType="Collection">
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#beginsDuring"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/time#endsBefore"/>
     </owl:propertyChainAxiom>
-    <skos:note xml:lang="en">Used in an N3 rule conclusion.</skos:note>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
     <rdfs:comment xml:lang="en">Linking a beginning event to a later ending of another event.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
+    <skos:note xml:lang="en">Used in an N3 rule conclusion.</skos:note>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
   </owl:ObjectProperty>
-  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#before">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking an earlier to a later event.</rdfs:comment>
-  </owl:TransitiveProperty>
-  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#endsBefore">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking an earlier ending to a later ending event.</rdfs:comment>
-  </owl:TransitiveProperty>
-  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#hasSameBeginningAs">
-    <rdfs:comment xml:lang="en">Linking 2 events beginning on the same moment.</rdfs:comment>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-  </owl:SymmetricProperty>
-  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#endsAfter">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <owl:inverseOf rdf:resource="http://e-editiones.ch/ontology/time#endsBefore"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking a later ending to an earlier ending event.</rdfs:comment>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-  </owl:TransitiveProperty>
-  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/time#after">
-    <owl:inverseOf rdf:resource="http://e-editiones.ch/ontology/time#before"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking a later to an earlier event.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-  </owl:TransitiveProperty>
-  <owl:SymmetricProperty rdf:about="http://e-editiones.ch/ontology/time#hasSameDurationAs">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/time#timeRelatedTo"/>
-    <skos:note xml:lang="en">Further formalized in an N3 rule by calculation in http://e-editiones.ch/ontology/eventTime_rules.n3, enabling reasoning with date/time values.</skos:note>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/time#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Event"/>
-    <rdfs:comment xml:lang="en">Linking 2 events having the same duration.</rdfs:comment>
-  </owl:SymmetricProperty>
 </rdf:RDF>

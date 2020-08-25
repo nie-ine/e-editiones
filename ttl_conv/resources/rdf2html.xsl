@@ -207,7 +207,10 @@
 	
 	<xsl:template name="types">
 		<!-- textual decoration if there are types-->
-		<xsl:if test="@rdf:ID|@rdf:about and (not(local-name()='Description') or count(*[namespace-uri()='http://www.w3.org/1999/02/22-rdf-syntax-ns#' and local-name()='type'])>0)">
+		<xsl:if test="@rdf:ID|@rdf:about and local-name()='Ontology'">
+			<div class="connector"></div>
+		</xsl:if>
+		<xsl:if test="@rdf:ID|@rdf:about and not(local-name()='Ontology') and (not(local-name()='Description') or count(*[namespace-uri()='http://www.w3.org/1999/02/22-rdf-syntax-ns#' and local-name()='type'])>0)">
 			<div class="connector"> a </div>
 		</xsl:if>
 		<!-- embedded rdf:type -->
@@ -751,26 +754,20 @@
 		<xsl:choose>
 			<!-- Check for e-editiones IRI -->
 			<xsl:when test="contains($uri, 'e-editiones') and contains($uri, '#')">
+				<!-- http://e-editiones.ch/ontology/calendar# -->
 				<xsl:variable name="namespaceAlias">
 					<xsl:value-of select="substring-before(substring-after($uri, 'http://e-editiones.ch/ontology/'),'#')"/>
 				</xsl:variable>
 				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
 			</xsl:when>
-			<xsl:when test="contains($uri, 'e-editiones') and not(contains($uri, '#'))">
-				<!-- http://e-editiones.ch/ontology/calendar -->
-				<xsl:variable name="namespaceAlias">
-					<xsl:value-of select="substring-after($uri, 'http://e-editiones.ch/ontology/')"/>
-				</xsl:variable>
-				<xsl:value-of select="concat($namespaceAlias,':')"/>
-			</xsl:when>
 			
 			<xsl:when test="contains($uri, 'e-editiones') and not(contains($uri, '#'))">
 				<!-- http://e-editiones.ch/ontology/calendar -->
-				<xsl:variable name="namespaceAlias">
+				<!-- <xsl:variable name="namespaceAlias">
 					<xsl:value-of select="substring-after($uri, 'http://e-editiones.ch/ontology/')"/>
 				</xsl:variable>
-				<xsl:value-of select="concat($namespaceAlias,':')"/>
-			</xsl:when>			
+				<xsl:value-of select="concat($namespaceAlias,':')"/> -->
+			</xsl:when>
 			
 			<!-- Check for foaf IRI -->
 			<xsl:when test="contains($uri, 'http://xmlns.com/foaf/')">
@@ -795,11 +792,6 @@
 				<xsl:variable name="namespaceAlias" select="'xsd'"/>
 				<xsl:value-of select="concat(concat($namespaceAlias,':'),$localname)"/>
 			</xsl:when>	
-			
-			<!--foaf: http://xmlns.com/foaf/0.1/
-			cidoc: http://www.cidoc-crm.org/cidoc-crm/
-			frbroo: http://iflastandards.info/ns/fr/frbr/frbroo/
-			xsd: http://www.w3.org/2001/XMLSchema#-->
 			
 			<xsl:when test="$namespaces='true' and namespace::*[.=$namespace and name()!='']">
 				<xsl:variable name="namespaceAlias">

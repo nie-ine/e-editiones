@@ -1,5 +1,40 @@
 [
   {
+    "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Natural number used to order, i.e. denoting the position of something in a sequence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Ordinalzahl"
+      },
+      {
+        "@language": "en",
+        "@value": "ordinal number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#NaturalNumber"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalSymbol"
+      }
+    ]
+  },
+  {
     "@id": "http://e-editiones.ch/ontology/mathematics#hasNumeral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -22,12 +57,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "hat Numerale"
-      },
-      {
         "@language": "en",
         "@value": "has numeral"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Numerale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -60,14 +95,49 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral",
+    "@id": "http://e-editiones.ch/ontology/mathematics#Set",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating something to the numeral denoting its position in a sequence."
+        "@value": "Set of mathematical objects."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "mathematische Sammlung"
+      },
+      {
+        "@language": "en",
+        "@value": "mathematical set"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#MathematicalObject"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#Set"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something to the symbolic entity denoting its position in a sequence."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -83,33 +153,137 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has ordinal numeral"
+        "@value": "has ordinal symbol"
       },
       {
         "@language": "de",
-        "@value": "hat Ordinalnumerale"
+        "@value": "hat Ordinalsymbol"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalSymbol"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral"
+        "@id": "http://e-editiones.ch/ontology/concept#hasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a number to its representing numeral."
       }
     ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
-          }
-        ]
+        "@id": "http://e-editiones.ch/ontology/mathematics#Number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "number has numeral"
+      },
+      {
+        "@language": "de",
+        "@value": "Nummer hat Numerale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating something to the number denoting its position in a sequence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has ordinal number"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Ordinalzahl"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalSymbol",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Symbol used to order, i.e. denoting the position of something in a sequence, e.g. the letters of an alphabet with literals a to z or A to Z."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ordinal symbol"
+      },
+      {
+        "@language": "de",
+        "@value": "Ordinalsymbol"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
       }
     ]
   },
@@ -160,14 +334,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalSymbol",
+    "@id": "http://e-editiones.ch/ontology/mathematics#NaturalNumber",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Symbol used to order, i.e. denoting the position of something in a sequence, e.g. the letters of an alphabet with literals a to z or A to Z."
+        "@value": "Non-negative whole number used for counting and ordering."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -178,256 +352,41 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "ordinal symbol"
+        "@value": "natural number"
       },
       {
         "@language": "de",
-        "@value": "Ordinalsymbol"
+        "@value": "natürliche Zahl"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something to the number denoting its position in a sequence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has ordinal number"
+        "@id": "_:ub112bL48C31"
       },
-      {
-        "@language": "de",
-        "@value": "hat Ordinalzahl"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a number to its representing numeral."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "http://e-editiones.ch/ontology/mathematics#Number"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "number has numeral"
-      },
-      {
-        "@language": "de",
-        "@value": "Nummer hat Numerale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"
+        "@value": "Conform ISO 80000-2:2009."
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/mathematics#MathematicalObject",
+    "@id": "_:ub112bL48C31",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@language": "en",
-        "@value": "Conceptual entity in mathematics."
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://e-editiones.ch/ontology/mathematics#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "mathematisches Objekt"
-      },
-      {
-        "@language": "en",
-        "@value": "mathematical object"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#ConceptualEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating something to the literal denoting its position in a sequence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has ordinal literal"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Ordinalliterale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/mathematics#Set",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Set of mathematical objects."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "mathematische Sammlung"
-      },
-      {
-        "@language": "en",
-        "@value": "mathematical set"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#Set"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#MathematicalObject"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Natural number used to order, i.e. denoting the position of something in a sequence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "ordinal number"
-      },
-      {
-        "@language": "de",
-        "@value": "Ordinalzahl"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalSymbol"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#NaturalNumber"
+        "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
       }
     ]
   },
@@ -474,14 +433,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol",
+    "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating something to the symbolic entity denoting its position in a sequence."
+        "@value": "Relating something to the literal denoting its position in a sequence."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -497,33 +456,50 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "hat Ordinalsymbol"
+        "@value": "hat Ordinalliterale"
       },
       {
         "@language": "en",
-        "@value": "has ordinal symbol"
+        "@value": "has ordinal literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalSymbol"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#hasIdentifier"
+        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"
+          }
+        ]
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/mathematics#NaturalNumber",
+    "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Non-negative whole number used for counting and ordering."
+        "@value": "Relating something to the numeral denoting its position in a sequence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Resource"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -534,41 +510,65 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "natürliche Zahl"
+        "@value": "hat Ordinalnumerale"
       },
       {
         "@language": "en",
-        "@value": "natural number"
+        "@value": "has ordinal numeral"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub74bL48C31"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#Number"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Conform ISO 80000-2:2009."
-      }
-    ]
-  },
-  {
-    "@id": "_:ub74bL48C31",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/mathematics#MathematicalObject",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conceptual entity in mathematics."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "mathematisches Objekt"
+      },
+      {
+        "@language": "en",
+        "@value": "mathematical object"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#ConceptualEntity"
       }
     ]
   },
@@ -600,10 +600,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#SymbolicEntity"
+        "@id": "http://e-editiones.ch/ontology/mathematics#MathematicalObject"
       },
       {
-        "@id": "http://e-editiones.ch/ontology/mathematics#MathematicalObject"
+        "@id": "http://e-editiones.ch/ontology/concept#SymbolicEntity"
       }
     ]
   }

@@ -1,630 +1,658 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#AccusativeCase">
-    <rdfs:comment xml:lang="en">Grammatical case indicating the object in an accusative language.</rdfs:comment>
-    <rdfs:label xml:lang="en">accusative case</rdfs:label>
-    <rdfs:label xml:lang="de">Akkusativ</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasLexeme">
-    <rdfs:label xml:lang="de">hat Lexem</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Relating a syntactic word form to its lexeme.</rdfs:comment>
-    <rdfs:label xml:lang="en">has lexeme</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistics#Lexeme"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasVerbalVoice">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:comment xml:lang="en">Relating a verbform to a voice.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
-    <rdfs:label xml:lang="en">has verbal voice</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">hat Diathese</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Residual">
-    <rdfs:label xml:lang="en">residual</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Part of speech outside of the traditionally accepted range.</rdfs:comment>
-    <rdfs:label xml:lang="de">Residual</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#IndefinitePronoun">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
-    <rdfs:label xml:lang="de">Indefinitpronomen</rdfs:label>
-    <rdfs:comment xml:lang="en">Pronoun stating an undefined entity.</rdfs:comment>
-    <rdfs:label xml:lang="en">indefinite pronoun</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SubordinatingConjunction">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Conjunction"/>
-    <rdfs:comment xml:lang="en">Part of speech that orders one syntactic entity under another.</rdfs:comment>
-    <rdfs:label xml:lang="de">unterordnende Konjunktion, Subjunktion</rdfs:label>
-    <rdfs:label xml:lang="en">subordinating conjunction</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Punctuation">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:label xml:lang="en">punctuation</rdfs:label>
-    <rdfs:comment xml:lang="en">Part of speech describing the non letter or number based parts of a sentence.</rdfs:comment>
-    <rdfs:label xml:lang="de">Interpunktion</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#OptativeMood">
-    <rdfs:label xml:lang="de">Optativ</rdfs:label>
-    <rdfs:label xml:lang="en">optative mood</rdfs:label>
-    <rdfs:comment xml:lang="en">Verbal mood indicating wishes.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasGrammaticalGender">
-    <rdfs:comment xml:lang="en">Relating a syntactic word form to its grammatical gender.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">has grammatical gender</rdfs:label>
-    <rdfs:label xml:lang="de">hat grammatisches Genus</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Pluperfect">
-    <rdfs:label xml:lang="en">pluperfect</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
-    <rdfs:label xml:lang="de">Plusquamperfekt</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">...</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Plural">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Number"/>
-    <rdfs:label xml:lang="de">Plural</rdfs:label>
-    <rdfs:label xml:lang="en">plural</rdfs:label>
-    <rdfs:comment xml:lang="en">Number of a word indicating a plurality.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#DativeCase">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-    <rdfs:label xml:lang="de">Dativ</rdfs:label>
-    <rdfs:comment xml:lang="en">Grammatical case indicating an indirect object.</rdfs:comment>
-    <rdfs:label xml:lang="en">dative case</rdfs:label>
-  </rdfs:Class>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasTagLiteral">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:comment xml:lang="en">Relating a part of speech to a tag literal.</rdfs:comment>
     <rdfs:label xml:lang="en">has tag literal</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:comment xml:lang="en">Relating a part of speech to a tag literal.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
     <rdfs:label xml:lang="de">hat Tagliterale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
   </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Positive">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree"/>
-    <rdfs:label xml:lang="de">Positiv</rdfs:label>
-    <rdfs:comment xml:lang="en">Base degree of adjective comparison.</rdfs:comment>
-    <rdfs:label xml:lang="en">positive</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Future">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
-    <rdfs:label xml:lang="de">Futur</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">...</rdfs:comment>
-    <rdfs:label xml:lang="en">future</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#RelativePronoun">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Relativpronomen</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
-    <rdfs:comment xml:lang="en">Pronoun introducing a relative clause.</rdfs:comment>
-    <rdfs:label xml:lang="en">relative pronoun</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#MedialVoice">
-    <rdfs:label xml:lang="de">medial</rdfs:label>
-    <rdfs:comment xml:lang="en">.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">medial voice</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#PassiveVoice">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">passiv</rdfs:label>
-    <rdfs:label xml:lang="en">passive voice</rdfs:label>
-    <rdfs:comment xml:lang="en">Voice that (prototypically) sets the subject as the patient.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Adverb">
-    <rdfs:label xml:lang="en">adverb</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Verb">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:label xml:lang="de">Adverb</rdfs:label>
-    <rdfs:comment xml:lang="en">Part of speech modifying a verb (e.g. describing an action), adjective, pronoun, clause, preposition, or sentence.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Part of speech governing a sentences by introducing existence, change, action, and linking a subject and object.</rdfs:comment>
+    <rdfs:label xml:lang="en">verb</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasCase">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">has grammatical case</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-    <rdfs:comment xml:lang="en">Relating a syntactic word form to its grammatical case.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:label xml:lang="de">hat Kasus</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#DemonstrativePronoun">
-    <rdfs:label xml:lang="en">demonstrative pronoun</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
-    <rdfs:label xml:lang="de">Demonstrativpronomen</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Pronoun used to point.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ProperNoun">
-    <skos:note xml:lang="en">Written with starting capital, for naming, e.g. a person, a geographical entity (e.g. a country); in English and German also a calendar entity (e.g. resp. 'Monday', 'Montag')</skos:note>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Noun"/>
-    <rdfs:label xml:lang="en">proper noun</rdfs:label>
-    <rdfs:label xml:lang="de">Eigenname</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Part of speech representing an instance.</rdfs:comment>
-  </rdfs:Class>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/linguistic-morphology">
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
-    <dct:title xml:lang="en">An ontology about language</dct:title>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:description xml:lang="en">Formal description of linguistic-morphology, general subclasses, related classes and properties.</dct:description>
-    <rdfs:seeAlso rdf:resource="https://files.ifi.uzh.ch/cl/siclemat/lehre/hs09/ecl1/script/html/script.html"/>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-  </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Adjective">
-    <rdfs:comment xml:lang="en">Part of speech describing an object.</rdfs:comment>
-    <rdfs:label xml:lang="de">Adjektiv</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:label xml:lang="en">adjective</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Comparative">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">comparative</rdfs:label>
-    <rdfs:label xml:lang="de">Komparativ</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree"/>
-    <rdfs:comment xml:lang="en">Degree of adjective comparison that sets two or more entities into relation.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#InjuncitveMood">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">injunctive mood</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
-    <rdfs:label xml:lang="de">Injunktiv</rdfs:label>
-    <rdfs:comment xml:lang="en">Verbal mood ... .</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ExistentialParticle">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:label xml:lang="de">...</rdfs:label>
-    <rdfs:comment xml:lang="en">Part of speech designating non traditionally accepted parts of speech with strong grammatical function.</rdfs:comment>
-    <rdfs:label xml:lang="en">existential particle</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#CardinalNumeral">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Numeral"/>
-    <rdfs:label xml:lang="de">Kardinalzahl</rdfs:label>
-    <rdfs:comment xml:lang="en">Part of speech describing numbers as a measure.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">cardinal numeral</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasVerbalMood">
-    <rdfs:label xml:lang="en">has verbal mode</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:comment xml:lang="en">Relating a verbform to mood.</rdfs:comment>
-    <rdfs:label xml:lang="de">hat Modus</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#VocativeCase">
-    <rdfs:comment xml:lang="en">Grammatical case of a noun or pronoun used to address a person in grammatical sense.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">vocative case</rdfs:label>
-    <rdfs:label xml:lang="de">Vokativ</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#NeuterGrammaticalGender">
-    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/NeuterGender"/>
-    <skos:note xml:lang="en">E.g. in Indoeuropean languages.</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">grammatisches Neutrum</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender"/>
-    <rdfs:comment xml:lang="en">Grammatical gender being neuter.</rdfs:comment>
-    <rdfs:label xml:lang="en">neuter grammatical gender</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Aorist">
-    <rdfs:label xml:lang="en">aorist</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
-    <rdfs:comment xml:lang="en">...</rdfs:comment>
-    <rdfs:label xml:lang="de">Aorist</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Root">
-    <rdfs:label xml:lang="en">root morpheme</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Morpheme"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Wortwurzel</rdfs:label>
-    <rdfs:comment xml:lang="en">Individual or free morpheme with own semantics.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#FeminineGrammaticalGender">
-    <skos:note xml:lang="en">E.g. in Indoeuropean and Semitic languages.</skos:note>
-    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/FeminineGender"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender"/>
-    <rdfs:comment xml:lang="en">Grammatical gender being feminine.</rdfs:comment>
-    <rdfs:label xml:lang="en">feminine grammatical gender</rdfs:label>
-    <rdfs:label xml:lang="de">grammatisches Femininum</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Superlative">
-    <rdfs:comment xml:lang="en">Degree of adjective comparison that lies at the end of the scale.</rdfs:comment>
-    <rdfs:label xml:lang="de">Superlativ</rdfs:label>
-    <rdfs:label xml:lang="en">superlative</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Perfect">
-    <rdfs:comment xml:lang="en">...</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
-    <rdfs:label xml:lang="en">perfect</rdfs:label>
-    <rdfs:label xml:lang="de">Perfekt</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasTense">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Relating a verbform to tense.</rdfs:comment>
-    <rdfs:label xml:lang="de">hat Tempus</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
-    <rdfs:label xml:lang="en">has tense</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ActiveVoice">
-    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/ActiveVoice"/>
-    <rdfs:label xml:lang="de">aktiv</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">active voice</rdfs:label>
-    <rdfs:comment xml:lang="en">Voice that (prototypically) sets the subject as the agent.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Singular">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Number"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Number of a word indicating a singularity.</rdfs:comment>
-    <rdfs:label xml:lang="de">Singular</rdfs:label>
-    <rdfs:label xml:lang="en">singular</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SubjunctiveMood">
-    <rdfs:label xml:lang="en">subjunctive mood</rdfs:label>
-    <rdfs:label xml:lang="de">Subjunktiv</rdfs:label>
-    <rdfs:comment xml:lang="en">Verbal mood ... .</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#LocativeCase">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-    <rdfs:comment xml:lang="en">Grammatical case indicating a position.</rdfs:comment>
-    <rdfs:label xml:lang="en">locative case</rdfs:label>
-    <rdfs:label xml:lang="de">Lokativ</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ThirdPerson">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">3. Person</rdfs:label>
-    <rdfs:label xml:lang="en">3rd person</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Person"/>
-    <rdfs:comment xml:lang="en">Degree of comparison in adjectives or adverbs.</rdfs:comment>
+    <rdfs:label xml:lang="de">Verb</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#DefiniteArticle">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Article"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Article indicating that an object is known.</rdfs:comment>
     <rdfs:label xml:lang="de">bestimmter Artikel</rdfs:label>
     <rdfs:label xml:lang="en">definite article</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Article"/>
+    <rdfs:comment xml:lang="en">Article indicating that an object is known.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Preposition">
-    <rdfs:label xml:lang="en">preposition</rdfs:label>
-    <rdfs:comment xml:lang="en">Part of speech indicating relationship to objects, standing before them.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#InterrogativePronoun">
+    <rdfs:label xml:lang="en">interrogative pronoun</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Adposition"/>
-    <rdfs:label xml:lang="de">Präposition</rdfs:label>
+    <rdfs:label xml:lang="de">Interrogativpronomen</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
+    <rdfs:comment xml:lang="en">Pronoun introducing a question.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ConditionalMood">
-    <rdfs:comment xml:lang="en">Verbal mood expressiong conditions.</rdfs:comment>
-    <rdfs:label xml:lang="de">Konditional</rdfs:label>
-    <rdfs:label xml:lang="en">conditional mood</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Singular">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+    <rdfs:label xml:lang="en">singular</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Number"/>
+    <rdfs:comment xml:lang="en">Number of a word indicating a singularity.</rdfs:comment>
+    <rdfs:label xml:lang="de">Singular</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Postposition">
-    <rdfs:comment xml:lang="en">Part of speech indicating relationship to objects, standing after them.</rdfs:comment>
-    <rdfs:label xml:lang="de">Postposition</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasPartOfSpeech">
+    <rdfs:comment xml:lang="en">Relating a syntactic word form to its part of speech.</rdfs:comment>
+    <rdfs:label xml:lang="de">hat Wortart</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:label xml:lang="en">has part of speech</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">postposition</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Adposition"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SecondPerson">
+    <rdfs:label xml:lang="en">2nd person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Person"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">2. Person</rdfs:label>
+    <rdfs:comment xml:lang="en">Mentioned entity overlaps with listener.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Pluperfect">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">...</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
+    <rdfs:label xml:lang="en">pluperfect</rdfs:label>
+    <rdfs:label xml:lang="de">Plusquamperfekt</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#IndicativeMood">
     <rdfs:label xml:lang="de">Indikativ</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
     <rdfs:label xml:lang="en">indicative mood</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
     <rdfs:comment xml:lang="en">Verbal mood for stating facts.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Present">
+    <rdfs:label xml:lang="en">present</rdfs:label>
+    <rdfs:comment xml:lang="en">...</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Präsens</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#MasculineGrammaticalGender">
+    <rdfs:label xml:lang="de">grammatisches Maskulinum</rdfs:label>
+    <rdfs:label xml:lang="en">masculine grammatical gender</rdfs:label>
+    <skos:note xml:lang="en">E.g. in Indoeuropean and Semitic languages.</skos:note>
+    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/MasculineGender"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Grammatical gender being masculine.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#PersonalPronoun">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
+    <rdfs:label xml:lang="en">personal pronoun</rdfs:label>
+    <rdfs:label xml:lang="de">Personalpronomen</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Pronoun referring to a person, and declined by person, gender, number, case and formality.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#StaticVoice">
+    <rdfs:label xml:lang="en">static voice</rdfs:label>
+    <rdfs:label xml:lang="de">statisch</rdfs:label>
+    <rdfs:comment xml:lang="en">.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Root">
+    <rdfs:comment xml:lang="en">Individual or free morpheme with own semantics.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Morpheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Wortwurzel</rdfs:label>
+    <rdfs:label xml:lang="en">root morpheme</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ReflexivePronoun">
+    <rdfs:label xml:lang="de">Reflexivpronomen</rdfs:label>
+    <rdfs:label xml:lang="en">reflexive pronoun</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
+    <rdfs:comment xml:lang="en">Pronoun pointing back to the subject of the sentence, e.g. 'yourself'.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#PrecativeMood">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Präkativ</rdfs:label>
+    <rdfs:comment xml:lang="en">Verbal mood ... .</rdfs:comment>
+    <rdfs:label xml:lang="en">precative mood</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Adjective">
+    <rdfs:label xml:lang="de">Adjektiv</rdfs:label>
+    <rdfs:label xml:lang="en">adjective</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech describing an object.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#CardinalNumeral">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Numeral"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Part of speech describing numbers as a measure.</rdfs:comment>
+    <rdfs:label xml:lang="de">Kardinalzahl</rdfs:label>
+    <rdfs:label xml:lang="en">cardinal numeral</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SemanticGender">
-    <rdfs:label xml:lang="en">semantic gender</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">semantic gender</rdfs:label>
     <rdfs:comment xml:lang="en">Semantic gender of a lexeme.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
     <rdfs:label xml:lang="de">semantisches Genus</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#InterrogativePronoun">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
-    <rdfs:comment xml:lang="en">Pronoun introducing a question.</rdfs:comment>
-    <rdfs:label xml:lang="en">interrogative pronoun</rdfs:label>
-    <rdfs:label xml:lang="de">Interrogativpronomen</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#AblativeCase">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Ablativ</rdfs:label>
-    <rdfs:comment xml:lang="en">Grammatical case specifying a separation.</rdfs:comment>
-    <rdfs:label xml:lang="en">ablative case</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#OrdinalNumeral">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Numeral"/>
-    <rdfs:comment xml:lang="en">Part of speech describing numbers as an order.</rdfs:comment>
-    <rdfs:label xml:lang="de">Ordinalzahl</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">ordinal numeral</rdfs:label>
-  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Suffix">
+    <rdfs:comment xml:lang="en">Affix at the end of a word, e.g. 'ship' in 'friendship'.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Affix"/>
     <rdfs:label xml:lang="en">suffix</rdfs:label>
     <rdfs:label xml:lang="de">Suffix</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Affix"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Aorist">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Affix at the end of a word, e.g. 'ship' in 'friendship'.</rdfs:comment>
+    <rdfs:comment xml:lang="en">...</rdfs:comment>
+    <rdfs:label xml:lang="de">Aorist</rdfs:label>
+    <rdfs:label xml:lang="en">aorist</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#NegativeParticle">
+    <rdfs:label xml:lang="de">Negationspartikel</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech designating non traditionally accepted parts of speech with strong grammatical function.</rdfs:comment>
+    <rdfs:label xml:lang="en">negative particle</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasComparisonDegree">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">hat Komparationsstufe</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree"/>
+    <rdfs:label xml:lang="en">has comparison degree</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a wordform to a comparison degree.</rdfs:comment>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Dual">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Dual</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Number"/>
+    <rdfs:comment xml:lang="en">Number of a word indicating a duality.</rdfs:comment>
+    <rdfs:label xml:lang="en">dual</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasPerson">
+    <rdfs:label xml:lang="en">has person</rdfs:label>
+    <rdfs:label xml:lang="de">hat Person</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a wordform to a person property.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Person"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#OptativeMood">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Optativ</rdfs:label>
+    <rdfs:comment xml:lang="en">Verbal mood indicating wishes.</rdfs:comment>
+    <rdfs:label xml:lang="en">optative mood</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#RelativePronoun">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
+    <rdfs:label xml:lang="en">relative pronoun</rdfs:label>
+    <rdfs:label xml:lang="de">Relativpronomen</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Pronoun introducing a relative clause.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Imperfect">
     <rdfs:comment xml:lang="en">...</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
-    <rdfs:label xml:lang="en">imperfect</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
     <rdfs:label xml:lang="de">Imperfekt</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#NominativeCase">
-    <rdfs:comment xml:lang="en">Grammatical case indicating the agent in an accusative language.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">nominative case</rdfs:label>
-    <rdfs:label xml:lang="de">Nominative</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#InfinitiveMarker">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:label xml:lang="en">infinitive marker</rdfs:label>
-    <rdfs:label xml:lang="de">Infinitivpartikel</rdfs:label>
-    <rdfs:comment xml:lang="en">Part of speech designating non traditionally accepted parts of speech with strong grammatical function.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ReflexivePronoun">
-    <rdfs:label xml:lang="de">Reflexivpronomen</rdfs:label>
-    <rdfs:comment xml:lang="en">Pronoun pointing back to the subject of the sentence, e.g. 'yourself'.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
-    <rdfs:label xml:lang="en">reflexive pronoun</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasPerson">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:label xml:lang="en">has person</rdfs:label>
-    <rdfs:label xml:lang="de">hat Person</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Relating a wordform to a person property.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Person"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#MasculineGrammaticalGender">
-    <rdfs:comment xml:lang="en">Grammatical gender being masculine.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender"/>
-    <skos:note xml:lang="en">E.g. in Indoeuropean and Semitic languages.</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/MasculineGender"/>
-    <rdfs:label xml:lang="en">masculine grammatical gender</rdfs:label>
-    <rdfs:label xml:lang="de">grammatisches Maskulinum</rdfs:label>
+    <rdfs:label xml:lang="en">imperfect</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ReciprocalPronoun">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
     <rdfs:label xml:lang="de">Reziprokpronomen</rdfs:label>
     <rdfs:comment xml:lang="en">Pronoun pointing to the different members of the group as subject of the sentence, e.g. 'each other'.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
     <rdfs:label xml:lang="en">reciprocal pronoun</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#InstrumentalCase">
-    <rdfs:label xml:lang="de">Instrumental</rdfs:label>
-    <rdfs:comment xml:lang="en">Grammatical case indicating an instrument or a tool for an action.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
     <rdfs:label xml:lang="en">instrumental case</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Grammatical case indicating an instrument or a tool for an action.</rdfs:comment>
+    <rdfs:label xml:lang="de">Instrumental</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#CoordinatingConjunction">
-    <rdfs:comment xml:lang="en">Part of speech that links syntactic entities on the same level.</rdfs:comment>
-    <rdfs:label xml:lang="en">coordinating conjunction</rdfs:label>
-    <rdfs:label xml:lang="de">nebenordnende Konjunktion</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Conjunction"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Verb">
-    <rdfs:label xml:lang="de">Verb</rdfs:label>
-    <rdfs:label xml:lang="en">verb</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:comment xml:lang="en">Part of speech governing a sentences by introducing existence, change, action, and linking a subject and object.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Superlative">
+    <rdfs:label xml:lang="en">superlative</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree"/>
+    <rdfs:comment xml:lang="en">Degree of adjective comparison that lies at the end of the scale.</rdfs:comment>
+    <rdfs:label xml:lang="de">Superlativ</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#GermanCase">
-    <rdfs:label xml:lang="en">German case</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ProperNoun">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Noun"/>
+    <skos:note xml:lang="en">Written with starting capital, for naming, e.g. a person, a geographical entity (e.g. a country); in English and German also a calendar entity (e.g. resp. 'Monday', 'Montag')</skos:note>
+    <rdfs:comment xml:lang="en">Part of speech representing an instance.</rdfs:comment>
+    <rdfs:label xml:lang="de">Eigenname</rdfs:label>
+    <rdfs:label xml:lang="en">proper noun</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">German case form of a word.</rdfs:comment>
-    <rdfs:label xml:lang="de">deutscher Kasus</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#FirstPerson">
-    <rdfs:comment xml:lang="en">Mentioned entitiy overlaps with speaker.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Person"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">1. Person</rdfs:label>
-    <rdfs:label xml:lang="en">1st person</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#GenitiveCase">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
-    <rdfs:label xml:lang="en">genitive case</rdfs:label>
     <rdfs:comment xml:lang="en">Grammatical case indicating possession and similar relations.</rdfs:comment>
+    <rdfs:label xml:lang="en">genitive case</rdfs:label>
     <rdfs:label xml:lang="de">Genitiv</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#StaticVoice">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">statisch</rdfs:label>
-    <rdfs:comment xml:lang="en">.</rdfs:comment>
-    <rdfs:label xml:lang="en">static voice</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#PrecativeMood">
-    <rdfs:label xml:lang="de">Präkativ</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">precative mood</rdfs:label>
-    <rdfs:comment xml:lang="en">Verbal mood ... .</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#IndefiniteArticle">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">unbestimmter Artikel</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Article"/>
-    <rdfs:label xml:lang="en">indefinite article</rdfs:label>
-    <rdfs:comment xml:lang="en">Article indicating that an object is newly introduced.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#CommonNoun">
-    <rdfs:label xml:lang="en">common noun</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Noun"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Substantiv</rdfs:label>
-    <rdfs:comment xml:lang="en">Part of speech representing a concept or class.</rdfs:comment>
-    <skos:note xml:lang="en">In German written with starting capital.</skos:note>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#NegativeParticle">
-    <rdfs:label xml:lang="en">negative particle</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Negationspartikel</rdfs:label>
-    <rdfs:comment xml:lang="en">Part of speech designating non traditionally accepted parts of speech with strong grammatical function.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SecondPerson">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">2. Person</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Person"/>
-    <rdfs:label xml:lang="en">2nd person</rdfs:label>
-    <rdfs:comment xml:lang="en">Mentioned entity overlaps with listener.</rdfs:comment>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasComparisonDegree">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Relating a wordform to a comparison degree.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:label xml:lang="en">has comparison degree</rdfs:label>
-    <rdfs:label xml:lang="de">hat Komparationsstufe</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#PersonalPronoun">
-    <rdfs:label xml:lang="en">personal pronoun</rdfs:label>
-    <rdfs:comment xml:lang="en">Pronoun referring to a person, and declined by person, gender, number, case and formality.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Personalpronomen</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Present">
-    <rdfs:comment xml:lang="en">...</rdfs:comment>
-    <rdfs:label xml:lang="de">Präsens</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Perfect">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
-    <rdfs:label xml:lang="en">present</rdfs:label>
+    <rdfs:label xml:lang="de">Perfekt</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">...</rdfs:comment>
+    <rdfs:label xml:lang="en">perfect</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Interjection">
-    <rdfs:label xml:lang="de">Interjektion</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ImperativeMood">
+    <rdfs:comment xml:lang="en">Verbal mood expressing orders.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+    <rdfs:label xml:lang="de">Imperativ</rdfs:label>
+    <rdfs:label xml:lang="en">imperative mood</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ConditionalMood">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Konditional</rdfs:label>
+    <rdfs:label xml:lang="en">conditional mood</rdfs:label>
+    <rdfs:comment xml:lang="en">Verbal mood expressiong conditions.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#MedialVoice">
+    <rdfs:comment xml:lang="en">.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">medial voice</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
+    <rdfs:label xml:lang="de">medial</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#InjuncitveMood">
+    <rdfs:comment xml:lang="en">Verbal mood ... .</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+    <rdfs:label xml:lang="en">injunctive mood</rdfs:label>
+    <rdfs:label xml:lang="de">Injunktiv</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Punctuation">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Part of speech designating a spontaneous feeling or reaction.</rdfs:comment>
-    <rdfs:label xml:lang="en">interjection</rdfs:label>
+    <rdfs:label xml:lang="en">punctuation</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech describing the non letter or number based parts of a sentence.</rdfs:comment>
+    <rdfs:label xml:lang="de">Interpunktion</rdfs:label>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasPartOfSpeech">
-    <rdfs:comment xml:lang="en">Relating a syntactic word form to its part of speech.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#PassiveVoice">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
+    <rdfs:label xml:lang="en">passive voice</rdfs:label>
+    <rdfs:label xml:lang="de">passiv</rdfs:label>
+    <rdfs:comment xml:lang="en">Voice that (prototypically) sets the subject as the patient.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">has part of speech</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ActiveVoice">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/ActiveVoice"/>
+    <rdfs:comment xml:lang="en">Voice that (prototypically) sets the subject as the agent.</rdfs:comment>
+    <rdfs:label xml:lang="en">active voice</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
+    <rdfs:label xml:lang="de">aktiv</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasTense">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:label xml:lang="de">hat Wortart</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Dual">
-    <rdfs:label xml:lang="en">dual</rdfs:label>
+    <rdfs:label xml:lang="de">hat Tempus</rdfs:label>
+    <rdfs:label xml:lang="en">has tense</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a verbform to tense.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Dual</rdfs:label>
-    <rdfs:comment xml:lang="en">Number of a word indicating a duality.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasVerbalMood">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
+    <rdfs:label xml:lang="en">has verbal mode</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Relating a verbform to mood.</rdfs:comment>
+    <rdfs:label xml:lang="de">hat Modus</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#NeuterGrammaticalGender">
+    <rdfs:label xml:lang="de">grammatisches Neutrum</rdfs:label>
+    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/NeuterGender"/>
+    <rdfs:comment xml:lang="en">Grammatical gender being neuter.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">neuter grammatical gender</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender"/>
+    <skos:note xml:lang="en">E.g. in Indoeuropean languages.</skos:note>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SubjunctiveMood">
+    <rdfs:label xml:lang="en">subjunctive mood</rdfs:label>
+    <rdfs:comment xml:lang="en">Verbal mood ... .</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+    <rdfs:label xml:lang="de">Subjunktiv</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Plural">
+    <rdfs:label xml:lang="de">Plural</rdfs:label>
+    <rdfs:label xml:lang="en">plural</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Number"/>
+    <rdfs:comment xml:lang="en">Number of a word indicating a plurality.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Positive">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree"/>
+    <rdfs:label xml:lang="de">Positiv</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">positive</rdfs:label>
+    <rdfs:comment xml:lang="en">Base degree of adjective comparison.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Comparative">
+    <rdfs:label xml:lang="en">comparative</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Komparativ</rdfs:label>
+    <rdfs:comment xml:lang="en">Degree of adjective comparison that sets two or more entities into relation.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#AccusativeCase">
+    <rdfs:label xml:lang="en">accusative case</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Grammatical case indicating the object in an accusative language.</rdfs:comment>
+    <rdfs:label xml:lang="de">Akkusativ</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ExistentialParticle">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:comment xml:lang="en">Part of speech designating non traditionally accepted parts of speech with strong grammatical function.</rdfs:comment>
+    <rdfs:label xml:lang="en">existential particle</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">...</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#FeminineGrammaticalGender">
+    <rdfs:label xml:lang="en">feminine grammatical gender</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Grammatical gender being feminine.</rdfs:comment>
+    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/FeminineGender"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender"/>
+    <rdfs:label xml:lang="de">grammatisches Femininum</rdfs:label>
+    <skos:note xml:lang="en">E.g. in Indoeuropean and Semitic languages.</skos:note>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasVerbalVoice">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Relating a verbform to a voice.</rdfs:comment>
+    <rdfs:label xml:lang="en">has verbal voice</rdfs:label>
+    <rdfs:label xml:lang="de">hat Diathese</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#GermanCase">
+    <rdfs:label xml:lang="en">German case</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
+    <rdfs:comment xml:lang="en">German case form of a word.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">deutscher Kasus</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#DemonstrativePronoun">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">demonstrative pronoun</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
+    <rdfs:comment xml:lang="en">Pronoun used to point.</rdfs:comment>
+    <rdfs:label xml:lang="de">Demonstrativpronomen</rdfs:label>
   </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasNumber">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Number"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">syntactische Wortform hat Numerus</rdfs:label>
-    <rdfs:label xml:lang="en">syntactic word form has number</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a syntactic word to its number.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">syntactic word form has number</rdfs:label>
+    <rdfs:label xml:lang="de">syntactische Wortform hat Numerus</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Number"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ImperativeMood">
-    <rdfs:label xml:lang="en">imperative mood</rdfs:label>
-    <rdfs:comment xml:lang="en">Verbal mood expressing orders.</rdfs:comment>
-    <rdfs:label xml:lang="de">Imperativ</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Preposition">
+    <rdfs:label xml:lang="de">Präposition</rdfs:label>
+    <rdfs:label xml:lang="en">preposition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Adposition"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Part of speech indicating relationship to objects, standing before them.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#DativeCase">
+    <rdfs:label xml:lang="en">dative case</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
+    <rdfs:comment xml:lang="en">Grammatical case indicating an indirect object.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Dativ</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#OrdinalNumeral">
+    <rdfs:label xml:lang="en">ordinal numeral</rdfs:label>
+    <rdfs:label xml:lang="de">Ordinalzahl</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Numeral"/>
+    <rdfs:comment xml:lang="en">Part of speech describing numbers as an order.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Affix">
-    <rdfs:comment xml:lang="en">Bound morpheme without own semantics, depending on a root; part of a word, complement of a word stem.</rdfs:comment>
-    <rdfs:label xml:lang="de">Affix</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#NominativeCase">
+    <rdfs:comment xml:lang="en">Grammatical case indicating the agent in an accusative language.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">nominative case</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
+    <rdfs:label xml:lang="de">Nominative</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#InfinitiveMarker">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Infinitivpartikel</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech designating non traditionally accepted parts of speech with strong grammatical function.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:label xml:lang="en">infinitive marker</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#IndefinitePronoun">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun"/>
+    <rdfs:comment xml:lang="en">Pronoun stating an undefined entity.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">indefinite pronoun</rdfs:label>
+    <rdfs:label xml:lang="de">Indefinitpronomen</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasCase">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
+    <rdfs:comment xml:lang="en">Relating a syntactic word form to its grammatical case.</rdfs:comment>
+    <rdfs:label xml:lang="en">has grammatical case</rdfs:label>
+    <rdfs:label xml:lang="de">hat Kasus</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Adverb">
+    <rdfs:label xml:lang="de">Adverb</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech modifying a verb (e.g. describing an action), adjective, pronoun, clause, preposition, or sentence.</rdfs:comment>
+    <rdfs:label xml:lang="en">adverb</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Postposition">
+    <rdfs:label xml:lang="de">Postposition</rdfs:label>
+    <rdfs:label xml:lang="en">postposition</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech indicating relationship to objects, standing after them.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Adposition"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SubordinatingConjunction">
+    <rdfs:label xml:lang="en">subordinating conjunction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Conjunction"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">unterordnende Konjunktion, Subjunktion</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech that orders one syntactic entity under another.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#IndefiniteArticle">
+    <rdfs:label xml:lang="en">indefinite article</rdfs:label>
+    <rdfs:comment xml:lang="en">Article indicating that an object is newly introduced.</rdfs:comment>
+    <rdfs:label xml:lang="de">unbestimmter Artikel</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Article"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#CoordinatingConjunction">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Conjunction"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">coordinating conjunction</rdfs:label>
+    <rdfs:label xml:lang="de">nebenordnende Konjunktion</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech that links syntactic entities on the same level.</rdfs:comment>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasLexeme">
+    <rdfs:comment xml:lang="en">Relating a syntactic word form to its lexeme.</rdfs:comment>
+    <rdfs:label xml:lang="en">has lexeme</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistics#Lexeme"/>
+    <rdfs:label xml:lang="de">hat Lexem</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Residual">
+    <rdfs:label xml:lang="en">residual</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:comment xml:lang="en">Part of speech outside of the traditionally accepted range.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Residual</rdfs:label>
+  </rdfs:Class>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/linguistic-morphology">
+    <dct:description xml:lang="en">Formal description of linguistic-morphology, general subclasses, related classes and properties.</dct:description>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <rdfs:seeAlso rdf:resource="https://files.ifi.uzh.ch/cl/siclemat/lehre/hs09/ecl1/script/html/script.html"/>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:title xml:lang="en">An ontology about language</dct:title>
+    <dct:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland</dct:contributor>
+  </owl:Ontology>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#AblativeCase">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
+    <rdfs:label xml:lang="en">ablative case</rdfs:label>
+    <rdfs:label xml:lang="de">Ablativ</rdfs:label>
+    <rdfs:comment xml:lang="en">Grammatical case specifying a separation.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Future">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Tense"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">future</rdfs:label>
+    <rdfs:comment xml:lang="en">...</rdfs:comment>
+    <rdfs:label xml:lang="de">Futur</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ThirdPerson">
+    <rdfs:comment xml:lang="en">Degree of comparison in adjectives or adverbs.</rdfs:comment>
+    <rdfs:label xml:lang="de">3. Person</rdfs:label>
+    <rdfs:label xml:lang="en">3rd person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Person"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#hasGrammaticalGender">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">has grammatical gender</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a syntactic word form to its grammatical gender.</rdfs:comment>
+    <rdfs:label xml:lang="de">hat grammatisches Genus</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#FirstPerson">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Person"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">1. Person</rdfs:label>
+    <rdfs:comment xml:lang="en">Mentioned entitiy overlaps with speaker.</rdfs:comment>
+    <rdfs:label xml:lang="en">1st person</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#CommonNoun">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Substantiv</rdfs:label>
+    <skos:note xml:lang="en">In German written with starting capital.</skos:note>
+    <rdfs:comment xml:lang="en">Part of speech representing a concept or class.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Noun"/>
+    <rdfs:label xml:lang="en">common noun</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#LocativeCase">
+    <rdfs:comment xml:lang="en">Grammatical case indicating a position.</rdfs:comment>
+    <rdfs:label xml:lang="en">locative case</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Lokativ</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#VocativeCase">
+    <rdfs:comment xml:lang="en">Grammatical case of a noun or pronoun used to address a person in grammatical sense.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Case"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">vocative case</rdfs:label>
+    <rdfs:label xml:lang="de">Vokativ</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Interjection">
+    <rdfs:comment xml:lang="en">Part of speech designating a spontaneous feeling or reaction.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Interjektion</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:label xml:lang="en">interjection</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech">
+    <rdfs:comment xml:lang="en">Word with certain grammatical properties and syntactic role in the structure of a sentence.</rdfs:comment>
+    <rdfs:label xml:lang="en">part of speech</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Wortart</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Article">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Artikel</rdfs:label>
+    <rdfs:label xml:lang="en">article</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech specifying grammatical definiteness, i.e. indicating if an object is known or newly introduced.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Conjunction">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:label xml:lang="de">Konjunktion</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech linking syntactic entities.</rdfs:comment>
+    <rdfs:label xml:lang="en">conjunction</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Tense">
+    <rdfs:label xml:lang="en">tense</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:comment xml:lang="en">...</rdfs:comment>
+    <rdfs:label xml:lang="de">Tempus</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Person">
+    <rdfs:label xml:lang="de">Person</rdfs:label>
+    <rdfs:comment xml:lang="en">Property indicating the relation between an entity in an utterance and the speaker.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Number">
+    <rdfs:comment xml:lang="en">Grammatical declension of a word expressing a number of a word.</rdfs:comment>
+    <rdfs:label xml:lang="de">Numerus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="en">number</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice">
+    <rdfs:label xml:lang="en">verbal voice</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:comment xml:lang="en">Property of verb forms that specifies the roles of the dependent entities.</rdfs:comment>
+    <rdfs:label xml:lang="de">Diathese</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/VoiceProperty"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Numeral">
+    <rdfs:label xml:lang="en">numeral</rdfs:label>
+    <rdfs:label xml:lang="de">Numerale</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Part of speech designating a number.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Affix">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:label xml:lang="de">Affix</rdfs:label>
+    <rdfs:comment xml:lang="en">Bound morpheme without own semantics, depending on a root; part of a word, complement of a word stem.</rdfs:comment>
     <rdfs:label xml:lang="en">affix</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#Morpheme"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">grammatical gender</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-    <rdfs:label xml:lang="de">grammatisches Genus</rdfs:label>
-    <rdfs:comment xml:lang="en">Grammatical declension of a noun indicating a gender, independent from a semantic gender.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm">
-    <rdfs:label xml:lang="de">syntaktische Wortform</rdfs:label>
-    <rdfs:label xml:lang="en">syntactic word form</rdfs:label>
-    <skos:note xml:lang="en">A sentence can contain 2 times the syntactic word 'sun', unified by 1 syntactic word form 'sun'.</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Linguistic concept unifying occurrences of syntactic words with identical literal and grammemes.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Case">
-    <rdfs:label xml:lang="en">grammatical case</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-    <rdfs:label xml:lang="de">Kasus</rdfs:label>
-    <rdfs:comment xml:lang="en">Grammatical declension of a noun, pronoun, adjective, participle, article, or numeral, expressing its grammatical function, hence its semantic relation to other words in a sentence, clause or phrase.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#VerbalMood">
-    <rdfs:label xml:lang="en">verbal mood</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
     <rdfs:label xml:lang="de">verbaler Modus</rdfs:label>
     <rdfs:comment xml:lang="en">Property of verbs indicating real or hypothetic utterances.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree">
-    <rdfs:label xml:lang="en">comparison degree</rdfs:label>
+    <rdfs:label xml:lang="en">verbal mood</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Komparationsstufe</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-    <rdfs:comment xml:lang="en">Degree of comparison in adjectives or adverbs.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Morpheme">
     <rdfs:comment xml:lang="en">Linguistic concept as the smallest entity in human natural language with a grammatical function, inflectable, free or bound.</rdfs:comment>
@@ -633,27 +661,19 @@
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
     <rdfs:label xml:lang="en">morpheme</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#VerbalVoice">
-    <rdfs:label xml:lang="de">Diathese</rdfs:label>
-    <rdfs:comment xml:lang="en">Property of verb forms that specifies the roles of the dependent entities.</rdfs:comment>
-    <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/VoiceProperty"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">verbal voice</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech">
-    <rdfs:label xml:lang="de">Wortart</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-    <rdfs:comment xml:lang="en">Word with certain grammatical properties and syntactic role in the structure of a sentence.</rdfs:comment>
-    <rdfs:label xml:lang="en">part of speech</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Article">
-    <rdfs:comment xml:lang="en">Part of speech specifying grammatical definiteness, i.e. indicating if an object is known or newly introduced.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">article</rdfs:label>
-    <rdfs:label xml:lang="de">Artikel</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Noun">
+    <rdfs:label xml:lang="en">noun</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <skos:note xml:lang="en">In German there is no grouping concept for 'Substantiv' and 'Pronomen'.</skos:note>
+    <rdfs:comment xml:lang="en">Part of speech representing a class or instance.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#GrammaticalGender">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Grammatical declension of a noun indicating a gender, independent from a semantic gender.</rdfs:comment>
+    <rdfs:label xml:lang="en">grammatical gender</rdfs:label>
+    <rdfs:label xml:lang="de">grammatisches Genus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Adposition">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
@@ -662,53 +682,33 @@
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
     <rdfs:comment xml:lang="en">Part of speech indicating a relationship to objects.</rdfs:comment>
   </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#ComparisonDegree">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:comment xml:lang="en">Degree of comparison in adjectives or adverbs.</rdfs:comment>
+    <rdfs:label xml:lang="en">comparison degree</rdfs:label>
+    <rdfs:label xml:lang="de">Komparationsstufe</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm">
+    <rdfs:label xml:lang="en">syntactic word form</rdfs:label>
+    <rdfs:label xml:lang="de">syntaktische Wortform</rdfs:label>
+    <rdfs:comment xml:lang="en">Linguistic concept unifying occurrences of syntactic words with identical literal and grammemes.</rdfs:comment>
+    <skos:note xml:lang="en">A sentence can contain 2 times the syntactic word 'sun', unified by 1 syntactic word form 'sun'.</skos:note>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Case">
+    <rdfs:label xml:lang="de">Kasus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
+    <rdfs:label xml:lang="en">grammatical case</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:comment xml:lang="en">Grammatical declension of a noun, pronoun, adjective, participle, article, or numeral, expressing its grammatical function, hence its semantic relation to other words in a sentence, clause or phrase.</rdfs:comment>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Pronoun">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Part of speech quantifying or replacing an object.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
     <rdfs:label xml:lang="en">pronoun</rdfs:label>
+    <rdfs:comment xml:lang="en">Part of speech quantifying or replacing an object.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
     <rdfs:label xml:lang="de">Pronomen</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Tense">
-    <rdfs:label xml:lang="en">tense</rdfs:label>
-    <rdfs:label xml:lang="de">Tempus</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-    <rdfs:comment xml:lang="en">...</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Numeral">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <rdfs:comment xml:lang="en">Part of speech designating a number.</rdfs:comment>
-    <rdfs:label xml:lang="en">numeral</rdfs:label>
-    <rdfs:label xml:lang="de">Numerale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Number">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Numerus</rdfs:label>
-    <rdfs:label xml:lang="en">number</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
-    <rdfs:comment xml:lang="en">Grammatical declension of a word expressing a number of a word.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Conjunction">
-    <rdfs:comment xml:lang="en">Part of speech linking syntactic entities.</rdfs:comment>
-    <rdfs:label xml:lang="en">conjunction</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="de">Konjunktion</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Noun">
-    <rdfs:label xml:lang="en">noun</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#PartOfSpeech"/>
-    <skos:note xml:lang="en">In German there is no grouping concept for 'Substantiv' and 'Pronomen'.</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:comment xml:lang="en">Part of speech representing a class or instance.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/linguistic-morphology#Person">
-    <rdfs:label xml:lang="de">Person</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/linguistic-morphology#"/>
-    <rdfs:label xml:lang="en">person</rdfs:label>
-    <rdfs:comment xml:lang="en">Property indicating the relation between an entity in an utterance and the speaker.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/linguistics#Concept"/>
   </rdfs:Class>
 </rdf:RDF>
