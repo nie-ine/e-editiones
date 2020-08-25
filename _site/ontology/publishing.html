@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -76,7 +120,7 @@
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/publishing" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/publishing" title="Browse http://e-editiones.ch/ontology/publishing">publishing:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/publishing" title="Browse http://e-editiones.ch/ontology/publishing"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/creator">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
@@ -111,7 +155,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e701="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e399="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -137,21 +181,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="agent publisher" xml:lang="en">
-               <div class="property-object">agent publisher
-                  													(en)
+            <td property="rdfs:label" content="agent-éditeur" xml:lang="fr">
+               <div class="property-object">agent-éditeur
+                  													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Agent-Herausgeber" xml:lang="de"></span><div class="property-object">Agent-Herausgeber
+               <div class="connector"></div><span property="rdfs:label" content="agent publisher" xml:lang="en"></span><div class="property-object">agent publisher
                   													
-                  													(de)
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="agente-editore" xml:lang="it"></span><div class="property-object">agente-editore
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="agent-éditeur" xml:lang="fr"></span><div class="property-object">agent-éditeur
+               <div class="connector"></div><span property="rdfs:label" content="Agent-Herausgeber" xml:lang="de"></span><div class="property-object">Agent-Herausgeber
                   													
-                  													(fr)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -182,30 +226,30 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="publication article" xml:lang="en">
-               <div class="property-object">publication article
-                  													(en)
+            <td property="rdfs:label" content="Publikationsartikel" xml:lang="de">
+               <div class="property-object">Publikationsartikel
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="article de publication" xml:lang="fr"></span><div class="property-object">article de publication
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Publikationsartikel" xml:lang="de"></span><div class="property-object">Publikationsartikel
-                  													
-                  													(de)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="articolo pubblicazione" xml:lang="it"></span><div class="property-object">articolo pubblicazione
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publication article" xml:lang="en"></span><div class="property-object">publication article
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#TextExpression" title="Browse http://e-editiones.ch/ontology/publishing#TextExpression">publishing:TextExpression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Article" title="Browse http://e-editiones.ch/ontology/text-expression#Article">text-expression:Article</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#TextExpression" title="Browse http://e-editiones.ch/ontology/publishing#TextExpression">publishing:TextExpression</a></div>
             </td>
          </tr>
       </table>
@@ -229,8 +273,12 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="authorized publication" xml:lang="en">
-               <div class="property-object">authorized publication
+            <td property="rdfs:label" content="autorisierte Ausgabe" xml:lang="de">
+               <div class="property-object">autorisierte Ausgabe
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="authorized publication" xml:lang="en"></span><div class="property-object">authorized publication
+                  													
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication autorisée" xml:lang="fr"></span><div class="property-object">publication autorisée
@@ -240,10 +288,6 @@
                <div class="connector"></div><span property="rdfs:label" content="pubblicazione autorizzata" xml:lang="it"></span><div class="property-object">pubblicazione autorizzata
                   													
                   													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="autorisierte Ausgabe" xml:lang="de"></span><div class="property-object">autorisierte Ausgabe
-                  													
-                  													(de)
                   												</div>
             </td>
          </tr>
@@ -274,17 +318,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="elektronische Publikation" xml:lang="de">
-               <div class="property-object">elektronische Publikation
-                  													(de)
+            <td property="rdfs:label" content="pubblicazione elettronica" xml:lang="it">
+               <div class="property-object">pubblicazione elettronica
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="electronic publication" xml:lang="en"></span><div class="property-object">electronic publication
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione elettronica" xml:lang="it"></span><div class="property-object">pubblicazione elettronica
+               <div class="connector"></div><span property="rdfs:label" content="elektronische Publikation" xml:lang="de"></span><div class="property-object">elektronische Publikation
                   													
-                  													(it)
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication électronique" xml:lang="fr"></span><div class="property-object">publication électronique
                   													
@@ -321,30 +365,30 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Publikation-Expression" xml:lang="de">
-               <div class="property-object">Publikation-Expression
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publication expression" xml:lang="en"></span><div class="property-object">publication expression
-                  													
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="espressione di pubblicazione" xml:lang="it"></span><div class="property-object">espressione di pubblicazione
-                  													
+            <td property="rdfs:label" content="espressione di pubblicazione" xml:lang="it">
+               <div class="property-object">espressione di pubblicazione
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Publikation-Expression" xml:lang="de"></span><div class="property-object">Publikation-Expression
+                  													
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="expression de publication" xml:lang="fr"></span><div class="property-object">expression de publication
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publication expression" xml:lang="en"></span><div class="property-object">publication expression
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/document#Expression" title="Browse http://e-editiones.ch/ontology/document#Expression">document:Expression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression" title="Browse http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression">frbroo:F24 Publication Expression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/document#Expression" title="Browse http://e-editiones.ch/ontology/document#Expression">document:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -368,21 +412,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Erstausgabe" xml:lang="de">
-               <div class="property-object">Erstausgabe
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="first publication" xml:lang="en"></span><div class="property-object">first publication
-                  													
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="prima pubblicazione" xml:lang="it"></span><div class="property-object">prima pubblicazione
-                  													
+            <td property="rdfs:label" content="prima pubblicazione" xml:lang="it">
+               <div class="property-object">prima pubblicazione
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Erstausgabe" xml:lang="de"></span><div class="property-object">Erstausgabe
+                  													
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="première publication" xml:lang="fr"></span><div class="property-object">première publication
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="first publication" xml:lang="en"></span><div class="property-object">first publication
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -413,21 +457,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="giornale" xml:lang="it">
-               <div class="property-object">giornale
-                  													(it)
+            <td property="rdfs:label" content="revue" xml:lang="fr">
+               <div class="property-object">revue
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="journal" xml:lang="en"></span><div class="property-object">journal
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="revue" xml:lang="fr"></span><div class="property-object">revue
-                  													
-                  													(fr)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="Journal" xml:lang="de"></span><div class="property-object">Journal
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="giornale" xml:lang="it"></span><div class="property-object">giornale
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -440,9 +484,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Periodical" title="Browse http://e-editiones.ch/ontology/publishing#Periodical">publishing:Periodical</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Book" title="Browse http://e-editiones.ch/ontology/information-carrier#Book">information-carrier:Book</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Periodical" title="Browse http://e-editiones.ch/ontology/publishing#Periodical">publishing:Periodical</a></div>
             </td>
          </tr>
       </table>
@@ -466,12 +510,8 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="letzte Ausgabe" xml:lang="de">
-               <div class="property-object">letzte Ausgabe
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="last publication" xml:lang="en"></span><div class="property-object">last publication
-                  													
+            <td property="rdfs:label" content="last publication" xml:lang="en">
+               <div class="property-object">last publication
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ultima pubblicazione" xml:lang="it"></span><div class="property-object">ultima pubblicazione
@@ -481,6 +521,10 @@
                <div class="connector"></div><span property="rdfs:label" content="dernière publication" xml:lang="fr"></span><div class="property-object">dernière publication
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="letzte Ausgabe" xml:lang="de"></span><div class="property-object">letzte Ausgabe
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -511,13 +555,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Magazin" xml:lang="de">
-               <div class="property-object">Magazin
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="rivista" xml:lang="it"></span><div class="property-object">rivista
-                  													
+            <td property="rdfs:label" content="rivista" xml:lang="it">
+               <div class="property-object">rivista
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Magazin" xml:lang="de"></span><div class="property-object">Magazin
+                  													
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="magazine" xml:lang="fr"></span><div class="property-object">magazine
                   													
@@ -568,17 +612,17 @@
                <div class="property-object">pubblicazione in nachlass
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="nachlass publication" xml:lang="en"></span><div class="property-object">nachlass publication
+               <div class="connector"></div><span property="rdfs:label" content="Nachlassausgabe" xml:lang="de"></span><div class="property-object">Nachlassausgabe
                   													
-                  													(en)
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication nachlass" xml:lang="fr"></span><div class="property-object">publication nachlass
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Nachlassausgabe" xml:lang="de"></span><div class="property-object">Nachlassausgabe
+               <div class="connector"></div><span property="rdfs:label" content="nachlass publication" xml:lang="en"></span><div class="property-object">nachlass publication
                   													
-                  													(de)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -611,12 +655,8 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Nachrichtenartikel" xml:lang="de">
-               <div class="property-object">Nachrichtenartikel
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="articolo di giornale" xml:lang="it"></span><div class="property-object">articolo di giornale
-                  													
+            <td property="rdfs:label" content="articolo di giornale" xml:lang="it">
+               <div class="property-object">articolo di giornale
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="article d'actualité" xml:lang="fr"></span><div class="property-object">article d'actualité
@@ -626,6 +666,10 @@
                <div class="connector"></div><span property="rdfs:label" content="news article" xml:lang="en"></span><div class="property-object">news article
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Nachrichtenartikel" xml:lang="de"></span><div class="property-object">Nachrichtenartikel
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -656,21 +700,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="newspaper" xml:lang="en">
-               <div class="property-object">newspaper
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="journal" xml:lang="fr"></span><div class="property-object">journal
-                  													
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Zeitung" xml:lang="de"></span><div class="property-object">Zeitung
-                  													
+            <td property="rdfs:label" content="Zeitung" xml:lang="de">
+               <div class="property-object">Zeitung
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="newspaper" xml:lang="en"></span><div class="property-object">newspaper
+                  													
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="giornale" xml:lang="it"></span><div class="property-object">giornale
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="journal" xml:lang="fr"></span><div class="property-object">journal
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -711,13 +755,13 @@
                <div class="property-object">newspaper publisher
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Zeitungsverleger" xml:lang="de"></span><div class="property-object">Zeitungsverleger
-                  													
-                  													(de)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="editore di giornali" xml:lang="it"></span><div class="property-object">editore di giornali
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Zeitungsverleger" xml:lang="de"></span><div class="property-object">Zeitungsverleger
+                  													
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="éditeur de journaux" xml:lang="fr"></span><div class="property-object">éditeur de journaux
                   													
@@ -799,17 +843,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="publication partitionnée" xml:lang="fr">
-               <div class="property-object">publication partitionnée
+            <td property="rdfs:label" content="pubblicazione partizionata" xml:lang="it">
+               <div class="property-object">pubblicazione partizionata
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publication partitionnée" xml:lang="fr"></span><div class="property-object">publication partitionnée
+                  													
                   													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="partitionierte Publikation" xml:lang="de"></span><div class="property-object">partitionierte Publikation
                   													
                   													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione partizionata" xml:lang="it"></span><div class="property-object">pubblicazione partizionata
-                  													
-                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="partitioned publication" xml:lang="en"></span><div class="property-object">partitioned publication
                   													
@@ -820,9 +864,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#PartitionedWork" title="Browse http://e-editiones.ch/ontology/information-carrier#PartitionedWork">information-carrier:PartitionedWork</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Publication" title="Browse http://e-editiones.ch/ontology/publishing#Publication">publishing:Publication</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#PartitionedWork" title="Browse http://e-editiones.ch/ontology/information-carrier#PartitionedWork">information-carrier:PartitionedWork</a></div>
             </td>
          </tr>
       </table>
@@ -850,6 +894,10 @@
                <div class="property-object">partitioned publishing
                   													(en)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="pubblicazione in partizione" xml:lang="it"></span><div class="property-object">pubblicazione in partizione
+                  													
+                  													(it)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication en partition" xml:lang="fr"></span><div class="property-object">publication en partition
                   													
                   													(fr)
@@ -857,10 +905,6 @@
                <div class="connector"></div><span property="rdfs:label" content="partitioniertes Publizieren" xml:lang="de"></span><div class="property-object">partitioniertes Publizieren
                   													
                   													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione in partizione" xml:lang="it"></span><div class="property-object">pubblicazione in partizione
-                  													
-                  													(it)
                   												</div>
             </td>
          </tr>
@@ -896,6 +940,10 @@
                <div class="property-object">périodique
                   													(fr)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="periodico" xml:lang="it"></span><div class="property-object">periodico
+                  													
+                  													(it)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="Zeitschrift" xml:lang="de"></span><div class="property-object">Zeitschrift
                   													
                   													(de)
@@ -903,10 +951,6 @@
                <div class="connector"></div><span property="rdfs:label" content="periodical publication" xml:lang="en"></span><div class="property-object">periodical publication
                   													
                   													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="periodico" xml:lang="it"></span><div class="property-object">periodico
-                  													
-                  													(it)
                   												</div>
             </td>
          </tr>
@@ -943,17 +987,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="personne-éditeur" xml:lang="fr">
-               <div class="property-object">personne-éditeur
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="persona editore" xml:lang="it"></span><div class="property-object">persona editore
-                  													
+            <td property="rdfs:label" content="persona editore" xml:lang="it">
+               <div class="property-object">persona editore
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Person-HerausgeberIn" xml:lang="de"></span><div class="property-object">Person-HerausgeberIn
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="personne-éditeur" xml:lang="fr"></span><div class="property-object">personne-éditeur
+                  													
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="person publisher" xml:lang="en"></span><div class="property-object">person publisher
                   													
@@ -964,9 +1008,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#PersonRole" title="Browse http://e-editiones.ch/ontology/human#PersonRole">human:PersonRole</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#AgentPublisher" title="Browse http://e-editiones.ch/ontology/publishing#AgentPublisher">publishing:AgentPublisher</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#PersonRole" title="Browse http://e-editiones.ch/ontology/human#PersonRole">human:PersonRole</a></div>
             </td>
          </tr>
       </table>
@@ -990,21 +1034,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Mehrautorenpublikation" xml:lang="de">
-               <div class="property-object">Mehrautorenpublikation
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publication de plusieurs auteurs" xml:lang="fr"></span><div class="property-object">publication de plusieurs auteurs
-                  													
+            <td property="rdfs:label" content="publication de plusieurs auteurs" xml:lang="fr">
+               <div class="property-object">publication de plusieurs auteurs
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poly-author publication" xml:lang="en"></span><div class="property-object">poly-author publication
+                  													
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="pubblicazione poli-autore" xml:lang="it"></span><div class="property-object">pubblicazione poli-autore
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poly-author publication" xml:lang="en"></span><div class="property-object">poly-author publication
+               <div class="connector"></div><span property="rdfs:label" content="Mehrautorenpublikation" xml:lang="de"></span><div class="property-object">Mehrautorenpublikation
                   													
-                  													(en)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1043,22 +1087,22 @@
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publication imprimée" xml:lang="fr"></span><div class="property-object">publication imprimée
-                  													
-                  													(fr)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="gedruckte Publikation" xml:lang="de"></span><div class="property-object">gedruckte Publikation
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publication imprimée" xml:lang="fr"></span><div class="property-object">publication imprimée
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Publication" title="Browse http://e-editiones.ch/ontology/publishing#Publication">publishing:Publication</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Print" title="Browse http://e-editiones.ch/ontology/information-carrier#Print">information-carrier:Print</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Publication" title="Browse http://e-editiones.ch/ontology/publishing#Publication">publishing:Publication</a></div>
             </td>
          </tr>
       </table>
@@ -1082,28 +1126,28 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="publication" xml:lang="en">
+            <td property="rdfs:label" content="publication" xml:lang="fr">
                <div class="property-object">publication
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Publikation" xml:lang="de"></span><div class="property-object">Publikation
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publication" xml:lang="en"></span><div class="property-object">publication
+                  													
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="pubblicazione" xml:lang="it"></span><div class="property-object">pubblicazione
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Publikation" xml:lang="de"></span><div class="property-object">Publikation
-                  													
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publication" xml:lang="fr"></span><div class="property-object">publication
-                  													
-                  													(fr)
-                  												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Carrier" title="Browse http://e-editiones.ch/ontology/information-carrier#Carrier">information-carrier:Carrier</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item" title="Browse http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item">frbroo:F5 Item</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf">
                   <table typeof="owl:Restriction">
@@ -1125,7 +1169,7 @@
                   </table>
                </div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item" title="Browse http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item">frbroo:F5 Item</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Carrier" title="Browse http://e-editiones.ch/ontology/information-carrier#Carrier">information-carrier:Carrier</a></div>
             </td>
          </tr>
       </table>
@@ -1149,17 +1193,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="publiée" xml:lang="fr">
-               <div class="property-object">publiée
+            <td property="rdfs:label" content="publiziert" xml:lang="de">
+               <div class="property-object">publiziert
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publiée" xml:lang="fr"></span><div class="property-object">publiée
+                  													
                   													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="published" xml:lang="en"></span><div class="property-object">published
                   													
                   													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publiziert" xml:lang="de"></span><div class="property-object">publiziert
-                  													
-                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publicada" xml:lang="it"></span><div class="property-object">publicada
                   													
@@ -1194,30 +1238,30 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Publizieren" xml:lang="de">
-               <div class="property-object">Publizieren
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Pubblicare" xml:lang="it"></span><div class="property-object">Pubblicare
-                  													
-                  													(it)
+            <td property="rdfs:label" content="publishing" xml:lang="en">
+               <div class="property-object">publishing
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publier" xml:lang="fr"></span><div class="property-object">publier
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publishing" xml:lang="en"></span><div class="property-object">publishing
+               <div class="connector"></div><span property="rdfs:label" content="Pubblicare" xml:lang="it"></span><div class="property-object">Pubblicare
                   													
-                  													(en)
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Publizieren" xml:lang="de"></span><div class="property-object">Publizieren
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Procedure" title="Browse http://e-editiones.ch/ontology/human#Procedure">human:Procedure</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event" title="Browse http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event">frbroo:F30 Publication Event</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Procedure" title="Browse http://e-editiones.ch/ontology/human#Procedure">human:Procedure</a></div>
             </td>
          </tr>
       </table>
@@ -1245,10 +1289,6 @@
                <div class="property-object">état de publication
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Publikationszustand" xml:lang="de"></span><div class="property-object">Publikationszustand
-                  													
-                  													(de)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="publishing state" xml:lang="en"></span><div class="property-object">publishing state
                   													
                   													(en)
@@ -1256,6 +1296,10 @@
                <div class="connector"></div><span property="rdfs:label" content="stato editoriale" xml:lang="it"></span><div class="property-object">stato editoriale
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Publikationszustand" xml:lang="de"></span><div class="property-object">Publikationszustand
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1303,21 +1347,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="redattore" xml:lang="it">
-               <div class="property-object">redattore
-                  													(it)
+            <td property="rdfs:label" content="rédacteur" xml:lang="fr">
+               <div class="property-object">rédacteur
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="redactor" xml:lang="en"></span><div class="property-object">redactor
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="rédacteur" xml:lang="fr"></span><div class="property-object">rédacteur
-                  													
-                  													(fr)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="Redaktor" xml:lang="de"></span><div class="property-object">Redaktor
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="redattore" xml:lang="it"></span><div class="property-object">redattore
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -1348,21 +1392,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ripubblicazione" xml:lang="it">
-               <div class="property-object">ripubblicazione
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="republication" xml:lang="fr"></span><div class="property-object">republication
-                  													
-                  													(fr)
+            <td property="rdfs:label" content="Herausgabe" xml:lang="de">
+               <div class="property-object">Herausgabe
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="republication" xml:lang="en"></span><div class="property-object">republication
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Herausgabe" xml:lang="de"></span><div class="property-object">Herausgabe
+               <div class="connector"></div><span property="rdfs:label" content="republication" xml:lang="fr"></span><div class="property-object">republication
                   													
-                  													(de)
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ripubblicazione" xml:lang="it"></span><div class="property-object">ripubblicazione
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -1397,6 +1441,10 @@
                <div class="property-object">Rezensionsartikel
                   													(de)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="article de revue" xml:lang="fr"></span><div class="property-object">article de revue
+                  													
+                  													(fr)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="review article" xml:lang="en"></span><div class="property-object">review article
                   													
                   													(en)
@@ -1404,10 +1452,6 @@
                <div class="connector"></div><span property="rdfs:label" content="articolo di revisione" xml:lang="it"></span><div class="property-object">articolo di revisione
                   													
                   													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="article de revue" xml:lang="fr"></span><div class="property-object">article de revue
-                  													
-                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -1439,21 +1483,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="serial issue" xml:lang="en">
-               <div class="property-object">serial issue
-                  													(en)
+            <td property="rdfs:label" content="Reihe-Ausgabe" xml:lang="de">
+               <div class="property-object">Reihe-Ausgabe
+                  													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione seriale" xml:lang="it"></span><div class="property-object">pubblicazione seriale
+               <div class="connector"></div><span property="rdfs:label" content="serial issue" xml:lang="en"></span><div class="property-object">serial issue
                   													
-                  													(it)
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication sérielle" xml:lang="fr"></span><div class="property-object">publication sérielle
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Reihe-Ausgabe" xml:lang="de"></span><div class="property-object">Reihe-Ausgabe
+               <div class="connector"></div><span property="rdfs:label" content="pubblicazione seriale" xml:lang="it"></span><div class="property-object">pubblicazione seriale
                   													
-                  													(de)
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -1490,21 +1534,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="volume série" xml:lang="fr">
-               <div class="property-object">volume série
-                  													(fr)
+            <td property="rdfs:label" content="Reihe-Ausgabevolumen" xml:lang="de">
+               <div class="property-object">Reihe-Ausgabevolumen
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="serial volume" xml:lang="en"></span><div class="property-object">serial volume
                   													
                   													(en)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="volume série" xml:lang="fr"></span><div class="property-object">volume série
+                  													
+                  													(fr)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="volume seriale" xml:lang="it"></span><div class="property-object">volume seriale
                   													
                   													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Reihe-Ausgabevolumen" xml:lang="de"></span><div class="property-object">Reihe-Ausgabevolumen
-                  													
-                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1548,9 +1592,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/event#Existence" title="Browse http://e-editiones.ch/ontology/event#Existence">event:Existence</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Publishing" title="Browse http://e-editiones.ch/ontology/publishing#Publishing">publishing:Publishing</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/event#Existence" title="Browse http://e-editiones.ch/ontology/event#Existence">event:Existence</a></div>
             </td>
          </tr>
       </table>
@@ -1574,17 +1618,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="expression de texte de publication" xml:lang="fr">
-               <div class="property-object">expression de texte de publication
-                  													(fr)
+            <td property="rdfs:label" content="publication text expression" xml:lang="en">
+               <div class="property-object">publication text expression
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="espressione del testo della pubblicazione" xml:lang="it"></span><div class="property-object">espressione del testo della pubblicazione
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publication text expression" xml:lang="en"></span><div class="property-object">publication text expression
+               <div class="connector"></div><span property="rdfs:label" content="expression de texte de publication" xml:lang="fr"></span><div class="property-object">expression de texte de publication
                   													
-                  													(en)
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Publikation-Textexpression" xml:lang="de"></span><div class="property-object">Publikation-Textexpression
                   													
@@ -1595,9 +1639,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Expression" title="Browse http://e-editiones.ch/ontology/text-expression#Expression">text-expression:Expression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -1674,13 +1718,13 @@
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="non publiée" xml:lang="fr"></span><div class="property-object">non publiée
-                  													
-                  													(fr)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="unpubliziert" xml:lang="de"></span><div class="property-object">unpubliziert
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="non publiée" xml:lang="fr"></span><div class="property-object">non publiée
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -1711,21 +1755,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="publication de page Web" xml:lang="fr">
-               <div class="property-object">publication de page Web
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="webpage publication" xml:lang="en"></span><div class="property-object">webpage publication
-                  													
-                  													(en)
+            <td property="rdfs:label" content="pubblicazione della pagina web" xml:lang="it">
+               <div class="property-object">pubblicazione della pagina web
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Webseite-Publikation" xml:lang="de"></span><div class="property-object">Webseite-Publikation
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione della pagina web" xml:lang="it"></span><div class="property-object">pubblicazione della pagina web
+               <div class="connector"></div><span property="rdfs:label" content="webpage publication" xml:lang="en"></span><div class="property-object">webpage publication
                   													
-                  													(it)
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publication de page Web" xml:lang="fr"></span><div class="property-object">publication de page Web
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -1758,26 +1802,26 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="website publication" xml:lang="en">
-               <div class="property-object">website publication
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Website-Publikation" xml:lang="de"></span><div class="property-object">Website-Publikation
-                  													
+            <td property="rdfs:label" content="Website-Publikation" xml:lang="de">
+               <div class="property-object">Website-Publikation
                   													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication du site Web" xml:lang="fr"></span><div class="property-object">publication du site Web
                   													
                   													(fr)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="website publication" xml:lang="en"></span><div class="property-object">website publication
+                  													
+                  													(en)
+                  												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#ElectronicPublication" title="Browse http://e-editiones.ch/ontology/publishing#ElectronicPublication">publishing:ElectronicPublication</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Website" title="Browse http://e-editiones.ch/ontology/information-carrier#Website">information-carrier:Website</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#ElectronicPublication" title="Browse http://e-editiones.ch/ontology/publishing#ElectronicPublication">publishing:ElectronicPublication</a></div>
             </td>
          </tr>
       </table>
@@ -1808,21 +1852,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Publikation hat datum" xml:lang="de">
-               <div class="property-object">Publikation hat datum
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publication has date" xml:lang="en"></span><div class="property-object">publication has date
-                  													
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha una data" xml:lang="it"></span><div class="property-object">pubblicazione ha una data
-                  													
+            <td property="rdfs:label" content="pubblicazione ha una data" xml:lang="it">
+               <div class="property-object">pubblicazione ha una data
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Publikation hat datum" xml:lang="de"></span><div class="property-object">Publikation hat datum
+                  													
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication a une date" xml:lang="fr"></span><div class="property-object">publication a une date
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publication has date" xml:lang="en"></span><div class="property-object">publication has date
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1865,21 +1909,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="pubblicazione ha letterale della descrizione" xml:lang="it">
-               <div class="property-object">pubblicazione ha letterale della descrizione
-                  													(it)
+            <td property="rdfs:label" content="Publikation hat beschreibungliterale" xml:lang="de">
+               <div class="property-object">Publikation hat beschreibungliterale
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication has description literal" xml:lang="en"></span><div class="property-object">publication has description literal
                   													
                   													(en)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha letterale della descrizione" xml:lang="it"></span><div class="property-object">pubblicazione ha letterale della descrizione
+                  													
+                  													(it)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication a littéral d'une description" xml:lang="fr"></span><div class="property-object">publication a littéral d'une description
                   													
                   													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Publikation hat beschreibungliterale" xml:lang="de"></span><div class="property-object">Publikation hat beschreibungliterale
-                  													
-                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1926,17 +1970,17 @@
                <div class="property-object">a une publication électronique
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat elektronische Publikation" xml:lang="de"></span><div class="property-object">hat elektronische Publikation
+               <div class="connector"></div><span property="rdfs:label" content="has electronic publication" xml:lang="en"></span><div class="property-object">has electronic publication
                   													
-                  													(de)
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione elettronica" xml:lang="it"></span><div class="property-object">ha una pubblicazione elettronica
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has electronic publication" xml:lang="en"></span><div class="property-object">has electronic publication
+               <div class="connector"></div><span property="rdfs:label" content="hat elektronische Publikation" xml:lang="de"></span><div class="property-object">hat elektronische Publikation
                   													
-                  													(en)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1949,9 +1993,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#hasPublication" title="Browse http://e-editiones.ch/ontology/publishing#hasPublication">publishing:hasPublication</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#isOnElectronicCarrier" title="Browse http://e-editiones.ch/ontology/information-carrier#isOnElectronicCarrier">information-carrier:isOnElectronicCarrier</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#hasPublication" title="Browse http://e-editiones.ch/ontology/publishing#hasPublication">publishing:hasPublication</a></div>
             </td>
          </tr>
       </table>
@@ -1989,13 +2033,13 @@
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha il periodo di decennio fino" xml:lang="it"></span><div class="property-object">pubblicazione ha il periodo di decennio fino
-                  													
-                  													(it)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="Publizieren hat Endejahrzehntperiode" xml:lang="de"></span><div class="property-object">Publizieren hat Endejahrzehntperiode
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha il periodo di decennio fino" xml:lang="it"></span><div class="property-object">pubblicazione ha il periodo di decennio fino
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -2041,21 +2085,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="publication a la période d'année de fin" xml:lang="fr">
-               <div class="property-object">publication a la période d'année de fin
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Publizieren hat Endejahrperiode" xml:lang="de"></span><div class="property-object">Publizieren hat Endejahrperiode
-                  													
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publishing has end year period" xml:lang="en"></span><div class="property-object">publishing has end year period
-                  													
+            <td property="rdfs:label" content="publishing has end year period" xml:lang="en">
+               <div class="property-object">publishing has end year period
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha il periodo d'anno di fino" xml:lang="it"></span><div class="property-object">pubblicazione ha il periodo d'anno di fino
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Publizieren hat Endejahrperiode" xml:lang="de"></span><div class="property-object">Publizieren hat Endejahrperiode
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="publication a la période d'année de fin" xml:lang="fr"></span><div class="property-object">publication a la période d'année de fin
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -2100,17 +2144,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ha una prima pubblicazione" xml:lang="it">
-               <div class="property-object">ha una prima pubblicazione
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="a une première publication" xml:lang="fr"></span><div class="property-object">a une première publication
-                  													
+            <td property="rdfs:label" content="a une première publication" xml:lang="fr">
+               <div class="property-object">a une première publication
                   													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="has first publication" xml:lang="en"></span><div class="property-object">has first publication
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ha una prima pubblicazione" xml:lang="it"></span><div class="property-object">ha una prima pubblicazione
+                  													
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="hat erste Publikation" xml:lang="de"></span><div class="property-object">hat erste Publikation
                   													
@@ -2157,12 +2201,8 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="a une publication autorisée" xml:lang="fr">
-               <div class="property-object">a une publication autorisée
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione autorizzata" xml:lang="it"></span><div class="property-object">ha una pubblicazione autorizzata
-                  													
+            <td property="rdfs:label" content="ha una pubblicazione autorizzata" xml:lang="it">
+               <div class="property-object">ha una pubblicazione autorizzata
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="hat letzte autorisierte Publikation" xml:lang="de"></span><div class="property-object">hat letzte autorisierte Publikation
@@ -2172,6 +2212,10 @@
                <div class="connector"></div><span property="rdfs:label" content="has last authorized publication" xml:lang="en"></span><div class="property-object">has last authorized publication
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a une publication autorisée" xml:lang="fr"></span><div class="property-object">a une publication autorisée
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -2204,57 +2248,7 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subPropertyOf">
-                  <table about="http://e-editiones.ch/ontology/publishing#hasPublication" typeof="owl:ObjectProperty">
-                     <tr>
-                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/publishing#hasPublication" title="Browse http://e-editiones.ch/ontology/publishing#hasPublication">publishing:hasPublication</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-                        <td property="rdfs:comment" content="Relating an expression to a publication it has." xml:lang="en">
-                           <div class="property-object">Relating an expression to a publication it has.</div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/document#Expression" title="Browse http://e-editiones.ch/ontology/document#Expression">document:Expression</a></div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/publishing#" title="Browse http://e-editiones.ch/ontology/publishing#">publishing:</a></div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-                        <td property="rdfs:label" content="has publication" xml:lang="en">
-                           <div class="property-object">has publication
-                              													(en)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="hat Publikation" xml:lang="de"></span><div class="property-object">hat Publikation
-                              													
-                              													(de)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="a une publication" xml:lang="fr"></span><div class="property-object">a une publication
-                              													
-                              													(fr)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione" xml:lang="it"></span><div class="property-object">ha una pubblicazione
-                              													
-                              													(it)
-                              												</div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Publication" title="Browse http://e-editiones.ch/ontology/publishing#Publication">publishing:Publication</a></div>
-                        </td>
-                     </tr>
-                  </table>
-               </div>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#hasPublication" title="Browse http://e-editiones.ch/ontology/publishing#hasPublication">publishing:hasPublication</a></div>
             </td>
          </tr>
       </table>
@@ -2288,13 +2282,13 @@
                <div class="property-object">ha un'ultima pubblicazione
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has last publication" xml:lang="en"></span><div class="property-object">has last publication
-                  													
-                  													(en)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="a une dernière publication" xml:lang="fr"></span><div class="property-object">a une dernière publication
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has last publication" xml:lang="en"></span><div class="property-object">has last publication
+                  													
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="hat letzte Publikation" xml:lang="de"></span><div class="property-object">hat letzte Publikation
                   													
@@ -2341,21 +2335,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="hat Nachlassausgabe" xml:lang="de">
-               <div class="property-object">hat Nachlassausgabe
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has nachlass publication" xml:lang="en"></span><div class="property-object">has nachlass publication
-                  													
+            <td property="rdfs:label" content="has nachlass publication" xml:lang="en">
+               <div class="property-object">has nachlass publication
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione nachlass" xml:lang="it"></span><div class="property-object">ha una pubblicazione nachlass
+               <div class="connector"></div><span property="rdfs:label" content="hat Nachlassausgabe" xml:lang="de"></span><div class="property-object">hat Nachlassausgabe
                   													
-                  													(it)
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="a une publication nachlass" xml:lang="fr"></span><div class="property-object">a une publication nachlass
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione nachlass" xml:lang="it"></span><div class="property-object">ha una pubblicazione nachlass
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -2396,17 +2390,17 @@
                <div class="property-object">has nachlass publication description literal
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Nachlassausgabebeschreibungliterale" xml:lang="de"></span><div class="property-object">hat Nachlassausgabebeschreibungliterale
+               <div class="connector"></div><span property="rdfs:label" content="ha letterale della descrizione di pubblicazione nachlass" xml:lang="it"></span><div class="property-object">ha letterale della descrizione di pubblicazione nachlass
                   													
-                  													(de)
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="a littéral d'une description d'une publication nachlass" xml:lang="fr"></span><div class="property-object">a littéral d'une description d'une publication nachlass
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha letterale della descrizione di pubblicazione nachlass" xml:lang="it"></span><div class="property-object">ha letterale della descrizione di pubblicazione nachlass
+               <div class="connector"></div><span property="rdfs:label" content="hat Nachlassausgabebeschreibungliterale" xml:lang="de"></span><div class="property-object">hat Nachlassausgabebeschreibungliterale
                   													
-                  													(it)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2453,17 +2447,17 @@
                <div class="property-object">Publikation hat Numerale
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha cifra" xml:lang="it"></span><div class="property-object">pubblicazione ha cifra
+               <div class="connector"></div><span property="rdfs:label" content="publication has numeral" xml:lang="en"></span><div class="property-object">publication has numeral
                   													
-                  													(it)
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication a numéral" xml:lang="fr"></span><div class="property-object">publication a numéral
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publication has numeral" xml:lang="en"></span><div class="property-object">publication has numeral
+               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha cifra" xml:lang="it"></span><div class="property-object">pubblicazione ha cifra
                   													
-                  													(en)
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -2506,12 +2500,8 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Publikation hat partitioniertes Publizieren" xml:lang="de">
-               <div class="property-object">Publikation hat partitioniertes Publizieren
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha editoriale partizionata" xml:lang="it"></span><div class="property-object">pubblicazione ha editoriale partizionata
-                  													
+            <td property="rdfs:label" content="pubblicazione ha editoriale partizionata" xml:lang="it">
+               <div class="property-object">pubblicazione ha editoriale partizionata
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication a 'un publier' partitionné" xml:lang="fr"></span><div class="property-object">publication a 'un publier' partitionné
@@ -2521,6 +2511,10 @@
                <div class="connector"></div><span property="rdfs:label" content="publication has partitioned publishing" xml:lang="en"></span><div class="property-object">publication has partitioned publishing
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Publikation hat partitioniertes Publizieren" xml:lang="de"></span><div class="property-object">Publikation hat partitioniertes Publizieren
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2564,12 +2558,8 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has poly-author publication" xml:lang="en">
-               <div class="property-object">has poly-author publication
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione poli-autore" xml:lang="it"></span><div class="property-object">ha una pubblicazione poli-autore
-                  													
+            <td property="rdfs:label" content="ha una pubblicazione poli-autore" xml:lang="it">
+               <div class="property-object">ha una pubblicazione poli-autore
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="hat Publikation mehrerer Autoren" xml:lang="de"></span><div class="property-object">hat Publikation mehrerer Autoren
@@ -2579,6 +2569,10 @@
                <div class="connector"></div><span property="rdfs:label" content="a une publication de plusieurs auteurs" xml:lang="fr"></span><div class="property-object">a une publication de plusieurs auteurs
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has poly-author publication" xml:lang="en"></span><div class="property-object">has poly-author publication
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2591,7 +2585,57 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#hasPublication" title="Browse http://e-editiones.ch/ontology/publishing#hasPublication">publishing:hasPublication</a></div>
+               <div class="property-object" rel="rdfs:subPropertyOf">
+                  <table about="http://e-editiones.ch/ontology/publishing#hasPublication" typeof="owl:ObjectProperty">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/publishing#hasPublication" title="Browse http://e-editiones.ch/ontology/publishing#hasPublication">publishing:hasPublication</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Relating an expression to a publication it has." xml:lang="en">
+                           <div class="property-object">Relating an expression to a publication it has.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/document#Expression" title="Browse http://e-editiones.ch/ontology/document#Expression">document:Expression</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/publishing#" title="Browse http://e-editiones.ch/ontology/publishing#">publishing:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="has publication" xml:lang="en">
+                           <div class="property-object">has publication
+                              													(en)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="a une publication" xml:lang="fr"></span><div class="property-object">a une publication
+                              													
+                              													(fr)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="hat Publikation" xml:lang="de"></span><div class="property-object">hat Publikation
+                              													
+                              													(de)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione" xml:lang="it"></span><div class="property-object">ha una pubblicazione
+                              													
+                              													(it)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Publication" title="Browse http://e-editiones.ch/ontology/publishing#Publication">publishing:Publication</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
             </td>
          </tr>
       </table>
@@ -2621,21 +2665,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="a littéral d'une description de l'imprimante" xml:lang="fr">
-               <div class="property-object">a littéral d'une description de l'imprimante
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has printer description literal" xml:lang="en"></span><div class="property-object">has printer description literal
-                  													
-                  													(en)
+            <td property="rdfs:label" content="hat Druckerbeschreibungliterale" xml:lang="de">
+               <div class="property-object">hat Druckerbeschreibungliterale
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ha letterale della descrizione della stampante" xml:lang="it"></span><div class="property-object">ha letterale della descrizione della stampante
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Druckerbeschreibungliterale" xml:lang="de"></span><div class="property-object">hat Druckerbeschreibungliterale
+               <div class="connector"></div><span property="rdfs:label" content="a littéral d'une description de l'imprimante" xml:lang="fr"></span><div class="property-object">a littéral d'une description de l'imprimante
                   													
-                  													(de)
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has printer description literal" xml:lang="en"></span><div class="property-object">has printer description literal
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2678,8 +2722,12 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="a un numéro de publication" xml:lang="fr">
-               <div class="property-object">a un numéro de publication
+            <td property="rdfs:label" content="has publication number" xml:lang="en">
+               <div class="property-object">has publication number
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a un numéro de publication" xml:lang="fr"></span><div class="property-object">a un numéro de publication
+                  													
                   													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ha un numero di pubblicazione" xml:lang="it"></span><div class="property-object">ha un numero di pubblicazione
@@ -2689,10 +2737,6 @@
                <div class="connector"></div><span property="rdfs:label" content="hat Publikationsnummer" xml:lang="de"></span><div class="property-object">hat Publikationsnummer
                   													
                   													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has publication number" xml:lang="en"></span><div class="property-object">has publication number
-                  													
-                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2729,17 +2773,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="a un éditeur" xml:lang="fr">
-               <div class="property-object">a un éditeur
+            <td property="rdfs:label" content="has publisher" xml:lang="en">
+               <div class="property-object">has publisher
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a un éditeur" xml:lang="fr"></span><div class="property-object">a un éditeur
+                  													
                   													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ha un editore" xml:lang="it"></span><div class="property-object">ha un editore
                   													
                   													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has publisher" xml:lang="en"></span><div class="property-object">has publisher
-                  													
-                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="hat Herausgeber" xml:lang="de"></span><div class="property-object">hat Herausgeber
                   													
@@ -2755,6 +2799,8 @@
                      <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
                         <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Agent" title="Browse http://e-editiones.ch/ontology/human#Agent">human:Agent</a></div>
+                           <div class="connector"></div>
                            <div class="property-object" rel="rdfs:subClassOf">
                               <table typeof="owl:Restriction">
                                  <tr>
@@ -2774,8 +2820,6 @@
                                  </tr>
                               </table>
                            </div>
-                           <div class="connector"></div>
-                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Agent" title="Browse http://e-editiones.ch/ontology/human#Agent">human:Agent</a></div>
                         </td>
                      </tr>
                   </table>
@@ -2815,21 +2859,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="hat Herausgeberbeschreibungliterale" xml:lang="de">
-               <div class="property-object">hat Herausgeberbeschreibungliterale
-                  													(de)
+            <td property="rdfs:label" content="a littéral d'une description d'éditeur" xml:lang="fr">
+               <div class="property-object">a littéral d'une description d'éditeur
+                  													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has publisher description literal" xml:lang="en"></span><div class="property-object">has publisher description literal
+               <div class="connector"></div><span property="rdfs:label" content="hat Herausgeberbeschreibungliterale" xml:lang="de"></span><div class="property-object">hat Herausgeberbeschreibungliterale
                   													
-                  													(en)
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ha letterale della descrizione dell'editore" xml:lang="it"></span><div class="property-object">ha letterale della descrizione dell'editore
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="a littéral d'une description d'éditeur" xml:lang="fr"></span><div class="property-object">a littéral d'une description d'éditeur
+               <div class="connector"></div><span property="rdfs:label" content="has publisher description literal" xml:lang="en"></span><div class="property-object">has publisher description literal
                   													
-                  													(fr)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2925,21 +2969,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="a un état de publication" xml:lang="fr">
-               <div class="property-object">a un état de publication
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has publishing state" xml:lang="en"></span><div class="property-object">has publishing state
-                  													
+            <td property="rdfs:label" content="has publishing state" xml:lang="en">
+               <div class="property-object">has publishing state
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha uno stato editoriale" xml:lang="it"></span><div class="property-object">ha uno stato editoriale
+               <div class="connector"></div><span property="rdfs:label" content="a un état de publication" xml:lang="fr"></span><div class="property-object">a un état de publication
                   													
-                  													(it)
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="hat Publikationszustand" xml:lang="de"></span><div class="property-object">hat Publikationszustand
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ha uno stato editoriale" xml:lang="it"></span><div class="property-object">ha uno stato editoriale
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -2982,12 +3026,8 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="hat Redakteur" xml:lang="de">
-               <div class="property-object">hat Redakteur
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha redattore" xml:lang="it"></span><div class="property-object">ha redattore
-                  													
+            <td property="rdfs:label" content="ha redattore" xml:lang="it">
+               <div class="property-object">ha redattore
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="a un rédacteur" xml:lang="fr"></span><div class="property-object">a un rédacteur
@@ -2997,6 +3037,10 @@
                <div class="connector"></div><span property="rdfs:label" content="has redactor" xml:lang="en"></span><div class="property-object">has redactor
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Redakteur" xml:lang="de"></span><div class="property-object">hat Redakteur
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -3062,21 +3106,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has bibliographic reference" xml:lang="en">
-               <div class="property-object">has bibliographic reference
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat bibliographische Referenz" xml:lang="de"></span><div class="property-object">hat bibliographische Referenz
-                  													
+            <td property="rdfs:label" content="hat bibliographische Referenz" xml:lang="de">
+               <div class="property-object">hat bibliographische Referenz
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="a une référence bibliographique" xml:lang="fr"></span><div class="property-object">a une référence bibliographique
+               <div class="connector"></div><span property="rdfs:label" content="has bibliographic reference" xml:lang="en"></span><div class="property-object">has bibliographic reference
                   													
-                  													(fr)
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ha riferimenti bibliografici" xml:lang="it"></span><div class="property-object">ha riferimenti bibliografici
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a une référence bibliographique" xml:lang="fr"></span><div class="property-object">a une référence bibliographique
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -3124,6 +3168,10 @@
                <div class="property-object">has bibliographic reference literal
                   													(en)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat bibliographische Referenzliterale" xml:lang="de"></span><div class="property-object">hat bibliographische Referenzliterale
+                  													
+                  													(de)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="a un littéral de référence bibliographique" xml:lang="fr"></span><div class="property-object">a un littéral de référence bibliographique
                   													
                   													(fr)
@@ -3131,10 +3179,6 @@
                <div class="connector"></div><span property="rdfs:label" content="ha riferimenti bibliografici letterali" xml:lang="it"></span><div class="property-object">ha riferimenti bibliografici letterali
                   													
                   													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat bibliographische Referenzliterale" xml:lang="de"></span><div class="property-object">hat bibliographische Referenzliterale
-                  													
-                  													(de)
                   												</div>
             </td>
          </tr>
@@ -3194,8 +3238,12 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="pubblicazione ha il periodo d'anno d'inizio" xml:lang="it">
-               <div class="property-object">pubblicazione ha il periodo d'anno d'inizio
+            <td property="rdfs:label" content="publishing has start year period" xml:lang="en">
+               <div class="property-object">publishing has start year period
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha il periodo d'anno d'inizio" xml:lang="it"></span><div class="property-object">pubblicazione ha il periodo d'anno d'inizio
+                  													
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="publication a la période d'année de début" xml:lang="fr"></span><div class="property-object">publication a la période d'année de début
@@ -3205,10 +3253,6 @@
                <div class="connector"></div><span property="rdfs:label" content="Publizieren hat Startjahrperiode" xml:lang="de"></span><div class="property-object">Publizieren hat Startjahrperiode
                   													
                   													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publishing has start year period" xml:lang="en"></span><div class="property-object">publishing has start year period
-                  													
-                  													(en)
                   												</div>
             </td>
          </tr>
@@ -3253,21 +3297,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="publication a littéral du titre" xml:lang="fr">
-               <div class="property-object">publication a littéral du titre
-                  													(fr)
+            <td property="rdfs:label" content="pubblicazione ha letterale del titolo" xml:lang="it">
+               <div class="property-object">pubblicazione ha letterale del titolo
+                  													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="publication has title literal" xml:lang="en"></span><div class="property-object">publication has title literal
+               <div class="connector"></div><span property="rdfs:label" content="publication a littéral du titre" xml:lang="fr"></span><div class="property-object">publication a littéral du titre
                   													
-                  													(en)
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Publikation hat Titelliterale" xml:lang="de"></span><div class="property-object">Publikation hat Titelliterale
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="pubblicazione ha letterale del titolo" xml:lang="it"></span><div class="property-object">pubblicazione ha letterale del titolo
+               <div class="connector"></div><span property="rdfs:label" content="publication has title literal" xml:lang="en"></span><div class="property-object">publication has title literal
                   													
-                  													(it)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -3310,21 +3354,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="hat nicht-autorisierte Wiederpublikation" xml:lang="de">
-               <div class="property-object">hat nicht-autorisierte Wiederpublikation
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha una republicazzine non autorizzata" xml:lang="it"></span><div class="property-object">ha una republicazzine non autorizzata
-                  													
+            <td property="rdfs:label" content="ha una republicazzine non autorizzata" xml:lang="it">
+               <div class="property-object">ha una republicazzine non autorizzata
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a une republication non autorisée" xml:lang="fr"></span><div class="property-object">a une republication non autorisée
+                  													
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="has unauthorized republication" xml:lang="en"></span><div class="property-object">has unauthorized republication
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="a une republication non autorisée" xml:lang="fr"></span><div class="property-object">a une republication non autorisée
+               <div class="connector"></div><span property="rdfs:label" content="hat nicht-autorisierte Wiederpublikation" xml:lang="de"></span><div class="property-object">hat nicht-autorisierte Wiederpublikation
                   													
-                  													(fr)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -3382,21 +3426,21 @@
                      </tr>
                      <tr class="http://www.w3.org/2000/01/rdf-schema#label">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-                        <td property="rdfs:label" content="ha una publicazzione non autorizzata" xml:lang="it">
-                           <div class="property-object">ha una publicazzione non autorizzata
-                              													(it)
+                        <td property="rdfs:label" content="a une publication non autorisée" xml:lang="fr">
+                           <div class="property-object">a une publication non autorisée
+                              													(fr)
                               												</div>
                            <div class="connector"></div><span property="rdfs:label" content="hat nicht-autorisierte Publikation" xml:lang="de"></span><div class="property-object">hat nicht-autorisierte Publikation
                               													
                               													(de)
                               												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="a une publication non autorisée" xml:lang="fr"></span><div class="property-object">a une publication non autorisée
-                              													
-                              													(fr)
-                              												</div>
                            <div class="connector"></div><span property="rdfs:label" content="has unauthorized publication" xml:lang="en"></span><div class="property-object">has unauthorized publication
                               													
                               													(en)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="ha una publicazzione non autorizzata" xml:lang="it"></span><div class="property-object">ha una publicazzione non autorizzata
+                              													
+                              													(it)
                               												</div>
                         </td>
                      </tr>
@@ -3562,21 +3606,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="est publiée sur le Web" xml:lang="fr">
-               <div class="property-object">est publiée sur le Web
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is published on Web" xml:lang="en"></span><div class="property-object">is published on Web
-                  													
-                  													(en)
+            <td property="rdfs:label" content="è pubblicata sul Web" xml:lang="it">
+               <div class="property-object">è pubblicata sul Web
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ist Web-publiziert" xml:lang="de"></span><div class="property-object">ist Web-publiziert
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="è pubblicata sul Web" xml:lang="it"></span><div class="property-object">è pubblicata sul Web
+               <div class="connector"></div><span property="rdfs:label" content="est publiée sur le Web" xml:lang="fr"></span><div class="property-object">est publiée sur le Web
                   													
-                  													(it)
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is published on Web" xml:lang="en"></span><div class="property-object">is published on Web
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -3589,6 +3633,64 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
             <td>
+               <div class="property-object" rel="rdfs:subPropertyOf">
+                  <table about="http://e-editiones.ch/ontology/publishing#isPublishedIn" typeof="owl:ObjectProperty">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/publishing#isPublishedIn" title="Browse http://e-editiones.ch/ontology/publishing#isPublishedIn">publishing:isPublishedIn</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Relating a publication expression to a publication thereof." xml:lang="en">
+                           <div class="property-object">Relating a publication expression to a publication thereof.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/publishing#" title="Browse http://e-editiones.ch/ontology/publishing#">publishing:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="est publiée dans" xml:lang="fr">
+                           <div class="property-object">est publiée dans
+                              													(fr)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="è pubblicata in" xml:lang="it"></span><div class="property-object">è pubblicata in
+                              													
+                              													(it)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="ist publiziert in" xml:lang="de"></span><div class="property-object">ist publiziert in
+                              													
+                              													(de)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="is published in" xml:lang="en"></span><div class="property-object">is published in
+                              													
+                              													(en)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Publication" title="Browse http://e-editiones.ch/ontology/publishing#Publication">publishing:Publication</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#isOnCarrier" title="Browse http://e-editiones.ch/ontology/information-carrier#isOnCarrier">information-carrier:isOnCarrier</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subPropertyOf">
                   <table about="http://e-editiones.ch/ontology/publishing#hasWebPublication" typeof="owl:ObjectProperty">
                      <tr>
@@ -3618,10 +3720,6 @@
                            <div class="property-object">has web publication
                               													(en)
                               												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione web" xml:lang="it"></span><div class="property-object">ha una pubblicazione web
-                              													
-                              													(it)
-                              												</div>
                            <div class="connector"></div><span property="rdfs:label" content="hat Web-Publikation" xml:lang="de"></span><div class="property-object">hat Web-Publikation
                               													
                               													(de)
@@ -3629,6 +3727,10 @@
                            <div class="connector"></div><span property="rdfs:label" content="a une publication web" xml:lang="fr"></span><div class="property-object">a une publication web
                               													
                               													(fr)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="ha una pubblicazione web" xml:lang="it"></span><div class="property-object">ha una pubblicazione web
+                              													
+                              													(it)
                               												</div>
                         </td>
                      </tr>
@@ -3642,64 +3744,6 @@
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
                         <td>
                            <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#hasElectronicPublication" title="Browse http://e-editiones.ch/ontology/publishing#hasElectronicPublication">publishing:hasElectronicPublication</a></div>
-                        </td>
-                     </tr>
-                  </table>
-               </div>
-               <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subPropertyOf">
-                  <table about="http://e-editiones.ch/ontology/publishing#isPublishedIn" typeof="owl:ObjectProperty">
-                     <tr>
-                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/publishing#isPublishedIn" title="Browse http://e-editiones.ch/ontology/publishing#isPublishedIn">publishing:isPublishedIn</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-                        <td property="rdfs:comment" content="Relating a publication expression to a publication thereof." xml:lang="en">
-                           <div class="property-object">Relating a publication expression to a publication thereof.</div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/publishing#" title="Browse http://e-editiones.ch/ontology/publishing#">publishing:</a></div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-                        <td property="rdfs:label" content="è pubblicata in" xml:lang="it">
-                           <div class="property-object">è pubblicata in
-                              													(it)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="est publiée dans" xml:lang="fr"></span><div class="property-object">est publiée dans
-                              													
-                              													(fr)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="is published in" xml:lang="en"></span><div class="property-object">is published in
-                              													
-                              													(en)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="ist publiziert in" xml:lang="de"></span><div class="property-object">ist publiziert in
-                              													
-                              													(de)
-                              												</div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Publication" title="Browse http://e-editiones.ch/ontology/publishing#Publication">publishing:Publication</a></div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#isOnCarrier" title="Browse http://e-editiones.ch/ontology/information-carrier#isOnCarrier">information-carrier:isOnCarrier</a></div>
                         </td>
                      </tr>
                   </table>
@@ -3733,9 +3777,9 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="è recensione di" xml:lang="it">
-               <div class="property-object">è recensione di
-                  													(it)
+            <td property="rdfs:label" content="est une recension de" xml:lang="fr">
+               <div class="property-object">est une recension de
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="is review of" xml:lang="en"></span><div class="property-object">is review of
                   													
@@ -3745,9 +3789,9 @@
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="est une recension de" xml:lang="fr"></span><div class="property-object">est une recension de
+               <div class="connector"></div><span property="rdfs:label" content="è recensione di" xml:lang="it"></span><div class="property-object">è recensione di
                   													
-                  													(fr)
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -3790,21 +3834,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="è pubblicazione seriale del volume" xml:lang="it">
-               <div class="property-object">è pubblicazione seriale del volume
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is serial of volume" xml:lang="en"></span><div class="property-object">is serial of volume
-                  													
+            <td property="rdfs:label" content="is serial of volume" xml:lang="en">
+               <div class="property-object">is serial of volume
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="est publication sérielle du volume" xml:lang="fr"></span><div class="property-object">est publication sérielle du volume
+               <div class="connector"></div><span property="rdfs:label" content="è pubblicazione seriale del volume" xml:lang="it"></span><div class="property-object">è pubblicazione seriale del volume
                   													
-                  													(fr)
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ist Reihe-Ausgabe eines Volumens" xml:lang="de"></span><div class="property-object">ist Reihe-Ausgabe eines Volumens
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="est publication sérielle du volume" xml:lang="fr"></span><div class="property-object">est publication sérielle du volume
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -3847,21 +3891,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="bibliographische Referenz hat Literale" xml:lang="de">
-               <div class="property-object">bibliographische Referenz hat Literale
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="bibliographic reference has literal" xml:lang="en"></span><div class="property-object">bibliographic reference has literal
-                  													
+            <td property="rdfs:label" content="bibliographic reference has literal" xml:lang="en">
+               <div class="property-object">bibliographic reference has literal
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="référence bibliographique a un littéral" xml:lang="fr"></span><div class="property-object">référence bibliographique a un littéral
+               <div class="connector"></div><span property="rdfs:label" content="bibliographische Referenz hat Literale" xml:lang="de"></span><div class="property-object">bibliographische Referenz hat Literale
                   													
-                  													(fr)
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="riferimento bibliografico ha un letterale" xml:lang="it"></span><div class="property-object">riferimento bibliografico ha un letterale
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="référence bibliographique a un littéral" xml:lang="fr"></span><div class="property-object">référence bibliographique a un littéral
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>

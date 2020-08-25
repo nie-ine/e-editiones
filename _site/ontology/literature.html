@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -76,7 +120,7 @@
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/literature" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/literature" title="Browse http://e-editiones.ch/ontology/literature">literature:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/literature" title="Browse http://e-editiones.ch/ontology/literature"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/contributor">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
@@ -118,7 +162,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e253="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e220="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -145,30 +189,30 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Anthologie" xml:lang="de">
-               <div class="property-object">Anthologie
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="anthologie" xml:lang="fr"></span><div class="property-object">anthologie
-                  													
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="anthology" xml:lang="en"></span><div class="property-object">anthology
-                  													
+            <td property="rdfs:label" content="anthology" xml:lang="en">
+               <div class="property-object">anthology
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Anthologie" xml:lang="de"></span><div class="property-object">Anthologie
+                  													
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="antologia" xml:lang="it"></span><div class="property-object">antologia
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="anthologie" xml:lang="fr"></span><div class="property-object">anthologie
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Expression" title="Browse http://e-editiones.ch/ontology/text-expression#Expression">text-expression:Expression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Collection" title="Browse http://e-editiones.ch/ontology/creating#Collection">creating:Collection</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Expression" title="Browse http://e-editiones.ch/ontology/text-expression#Expression">text-expression:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -193,17 +237,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="argument" xml:lang="en">
-               <div class="property-object">argument
+            <td property="rdfs:label" content="Argument" xml:lang="de">
+               <div class="property-object">Argument
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="argument" xml:lang="en"></span><div class="property-object">argument
+                  													
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="argument" xml:lang="fr"></span><div class="property-object">argument
                   													
                   													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Argument" xml:lang="de"></span><div class="property-object">Argument
-                  													
-                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="argomento" xml:lang="it"></span><div class="property-object">argomento
                   													
@@ -244,21 +288,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="letteratura descrittiva" xml:lang="it">
-               <div class="property-object">letteratura descrittiva
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="deskriptive Literatur" xml:lang="de"></span><div class="property-object">deskriptive Literatur
-                  													
+            <td property="rdfs:label" content="deskriptive Literatur" xml:lang="de">
+               <div class="property-object">deskriptive Literatur
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="descriptive literature" xml:lang="en"></span><div class="property-object">descriptive literature
+               <div class="connector"></div><span property="rdfs:label" content="letteratura descrittiva" xml:lang="it"></span><div class="property-object">letteratura descrittiva
                   													
-                  													(en)
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="littérature descriptive" xml:lang="fr"></span><div class="property-object">littérature descriptive
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="descriptive literature" xml:lang="en"></span><div class="property-object">descriptive literature
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -289,30 +333,30 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="deskriptive Poetik" xml:lang="de">
-               <div class="property-object">deskriptive Poetik
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="descriptive poetry" xml:lang="en"></span><div class="property-object">descriptive poetry
-                  													
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poesia descrittiva" xml:lang="it"></span><div class="property-object">poesia descrittiva
-                  													
+            <td property="rdfs:label" content="poesia descrittiva" xml:lang="it">
+               <div class="property-object">poesia descrittiva
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="poésie descriptive" xml:lang="fr"></span><div class="property-object">poésie descriptive
                   													
                   													(fr)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="deskriptive Poetik" xml:lang="de"></span><div class="property-object">deskriptive Poetik
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="descriptive poetry" xml:lang="en"></span><div class="property-object">descriptive poetry
+                  													
+                  													(en)
+                  												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Poetry" title="Browse http://e-editiones.ch/ontology/literature#Poetry">literature:Poetry</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Nonfiction" title="Browse http://e-editiones.ch/ontology/literature#Nonfiction">literature:Nonfiction</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Poetry" title="Browse http://e-editiones.ch/ontology/literature#Poetry">literature:Poetry</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#DescriptiveLiterature" title="Browse http://e-editiones.ch/ontology/literature#DescriptiveLiterature">literature:DescriptiveLiterature</a></div>
             </td>
@@ -338,17 +382,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="drama" xml:lang="en">
-               <div class="property-object">drama
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Dramatik" xml:lang="de"></span><div class="property-object">Dramatik
-                  													
+            <td property="rdfs:label" content="Dramatik" xml:lang="de">
+               <div class="property-object">Dramatik
                   													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="dramma" xml:lang="it"></span><div class="property-object">dramma
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="drama" xml:lang="en"></span><div class="property-object">drama
+                  													
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="drame" xml:lang="fr"></span><div class="property-object">drame
                   													
@@ -383,21 +427,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="dramatic poetry" xml:lang="en">
-               <div class="property-object">dramatic poetry
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poésie dramatique" xml:lang="fr"></span><div class="property-object">poésie dramatique
-                  													
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="dramatische Poetik" xml:lang="de"></span><div class="property-object">dramatische Poetik
-                  													
+            <td property="rdfs:label" content="dramatische Poetik" xml:lang="de">
+               <div class="property-object">dramatische Poetik
                   													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="poesia drammatica" xml:lang="it"></span><div class="property-object">poesia drammatica
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="dramatic poetry" xml:lang="en"></span><div class="property-object">dramatic poetry
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poésie dramatique" xml:lang="fr"></span><div class="property-object">poésie dramatique
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -430,9 +474,9 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="récit épique" xml:lang="fr">
-               <div class="property-object">récit épique
-                  													(fr)
+            <td property="rdfs:label" content="narrativa epica" xml:lang="it">
+               <div class="property-object">narrativa epica
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="epische Narration" xml:lang="de"></span><div class="property-object">epische Narration
                   													
@@ -442,9 +486,9 @@
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="narrativa epica" xml:lang="it"></span><div class="property-object">narrativa epica
+               <div class="connector"></div><span property="rdfs:label" content="récit épique" xml:lang="fr"></span><div class="property-object">récit épique
                   													
-                  													(it)
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -479,6 +523,10 @@
                <div class="property-object">poésie épique
                   													(fr)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="epic poetry" xml:lang="en"></span><div class="property-object">epic poetry
+                  													
+                  													(en)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="epische Poetik" xml:lang="de"></span><div class="property-object">epische Poetik
                   													
                   													(de)
@@ -487,18 +535,14 @@
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="epic poetry" xml:lang="en"></span><div class="property-object">epic poetry
-                  													
-                  													(en)
-                  												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#EpicNarrative" title="Browse http://e-editiones.ch/ontology/literature#EpicNarrative">literature:EpicNarrative</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#NarrativePoetry" title="Browse http://e-editiones.ch/ontology/literature#NarrativePoetry">literature:NarrativePoetry</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#EpicNarrative" title="Browse http://e-editiones.ch/ontology/literature#EpicNarrative">literature:EpicNarrative</a></div>
             </td>
          </tr>
       </table>
@@ -526,10 +570,6 @@
                <div class="property-object">épilogue
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Epilog" xml:lang="de"></span><div class="property-object">Epilog
-                  													
-                  													(de)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="epilogo" xml:lang="it"></span><div class="property-object">epilogo
                   													
                   													(it)
@@ -537,6 +577,10 @@
                <div class="connector"></div><span property="rdfs:label" content="epilogue" xml:lang="en"></span><div class="property-object">epilogue
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Epilog" xml:lang="de"></span><div class="property-object">Epilog
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -577,17 +621,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="literary expression" xml:lang="en">
-               <div class="property-object">literary expression
+            <td property="rdfs:label" content="literarische Expression" xml:lang="de">
+               <div class="property-object">literarische Expression
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="literary expression" xml:lang="en"></span><div class="property-object">literary expression
+                  													
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="espressione letteraria" xml:lang="it"></span><div class="property-object">espressione letteraria
                   													
                   													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="literarische Expression" xml:lang="de"></span><div class="property-object">literarische Expression
-                  													
-                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="expression littéraire" xml:lang="fr"></span><div class="property-object">expression littéraire
                   													
@@ -622,30 +666,30 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="literarische Fiktion" xml:lang="de">
-               <div class="property-object">literarische Fiktion
-                  													(de)
+            <td property="rdfs:label" content="fiction littéraire" xml:lang="fr">
+               <div class="property-object">fiction littéraire
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="finzione letteraria" xml:lang="it"></span><div class="property-object">finzione letteraria
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="fiction littéraire" xml:lang="fr"></span><div class="property-object">fiction littéraire
-                  													
-                  													(fr)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="literary fiction" xml:lang="en"></span><div class="property-object">literary fiction
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="literarische Fiktion" xml:lang="de"></span><div class="property-object">literarische Fiktion
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Fiction" title="Browse http://e-editiones.ch/ontology/text#Fiction">text:Fiction</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Literature" title="Browse http://e-editiones.ch/ontology/literature#Literature">literature:Literature</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Fiction" title="Browse http://e-editiones.ch/ontology/text#Fiction">text:Fiction</a></div>
             </td>
          </tr>
       </table>
@@ -669,9 +713,9 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="literarische Fiktion-Expression" xml:lang="de">
-               <div class="property-object">literarische Fiktion-Expression
-                  													(de)
+            <td property="rdfs:label" content="expression de fiction littéraire" xml:lang="fr">
+               <div class="property-object">expression de fiction littéraire
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="espressione finzione letteraria" xml:lang="it"></span><div class="property-object">espressione finzione letteraria
                   													
@@ -681,9 +725,9 @@
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="expression de fiction littéraire" xml:lang="fr"></span><div class="property-object">expression de fiction littéraire
+               <div class="connector"></div><span property="rdfs:label" content="literarische Fiktion-Expression" xml:lang="de"></span><div class="property-object">literarische Fiktion-Expression
                   													
-                  													(fr)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -736,21 +780,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="foreword" xml:lang="en">
-               <div class="property-object">foreword
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="preambolo" xml:lang="it"></span><div class="property-object">preambolo
-                  													
-                  													(it)
+            <td property="rdfs:label" content="Einleitung" xml:lang="de">
+               <div class="property-object">Einleitung
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="préface" xml:lang="fr"></span><div class="property-object">préface
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Einleitung" xml:lang="de"></span><div class="property-object">Einleitung
+               <div class="connector"></div><span property="rdfs:label" content="foreword" xml:lang="en"></span><div class="property-object">foreword
                   													
-                  													(de)
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="preambolo" xml:lang="it"></span><div class="property-object">preambolo
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -763,9 +807,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure" title="Browse http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure">text-structure:CompositionalContentStructure</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure" title="Browse http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure">text-structure:CompositionalContentStructure</a></div>
             </td>
          </tr>
       </table>
@@ -793,21 +837,21 @@
                <div class="property-object">hymn
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hymne" xml:lang="fr"></span><div class="property-object">hymne
+               <div class="connector"></div><span property="rdfs:label" content="inno" xml:lang="it"></span><div class="property-object">inno
                   													
-                  													(fr)
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Hymne" xml:lang="de"></span><div class="property-object">Hymne
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="inno" xml:lang="it"></span><div class="property-object">inno
-                  													
-                  													(it)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="hymnus" xml:lang="la"></span><div class="property-object">hymnus
                   													
                   													(la)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hymne" xml:lang="fr"></span><div class="property-object">hymne
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -842,26 +886,26 @@
                <div class="property-object">Hymnesammlung
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="collezione di inni" xml:lang="it"></span><div class="property-object">collezione di inni
+               <div class="connector"></div><span property="rdfs:label" content="collection d'hymnes" xml:lang="fr"></span><div class="property-object">collection d'hymnes
                   													
-                  													(it)
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="hymn collection" xml:lang="en"></span><div class="property-object">hymn collection
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="collection d'hymnes" xml:lang="fr"></span><div class="property-object">collection d'hymnes
+               <div class="connector"></div><span property="rdfs:label" content="collezione di inni" xml:lang="it"></span><div class="property-object">collezione di inni
                   													
-                  													(fr)
+                  													(it)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Collection" title="Browse http://e-editiones.ch/ontology/creating#Collection">creating:Collection</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Expression" title="Browse http://e-editiones.ch/ontology/literature#Expression">literature:Expression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Collection" title="Browse http://e-editiones.ch/ontology/creating#Collection">creating:Collection</a></div>
             </td>
          </tr>
       </table>
@@ -885,21 +929,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="letteratura" xml:lang="it">
-               <div class="property-object">letteratura
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="literature" xml:lang="en"></span><div class="property-object">literature
-                  													
-                  													(en)
+            <td property="rdfs:label" content="Literatur" xml:lang="de">
+               <div class="property-object">Literatur
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="littérature" xml:lang="fr"></span><div class="property-object">littérature
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Literatur" xml:lang="de"></span><div class="property-object">Literatur
+               <div class="connector"></div><span property="rdfs:label" content="letteratura" xml:lang="it"></span><div class="property-object">letteratura
                   													
-                  													(de)
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="literature" xml:lang="en"></span><div class="property-object">literature
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -932,21 +976,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="lyric poetry" xml:lang="en">
-               <div class="property-object">lyric poetry
-                  													(en)
+            <td property="rdfs:label" content="lyrische Poetik" xml:lang="de">
+               <div class="property-object">lyrische Poetik
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="poesia lirica" xml:lang="it"></span><div class="property-object">poesia lirica
                   													
                   													(it)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="lyric poetry" xml:lang="en"></span><div class="property-object">lyric poetry
+                  													
+                  													(en)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content=" poésie lyrique" xml:lang="fr"></span><div class="property-object"> poésie lyrique
                   													
                   													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="lyrische Poetik" xml:lang="de"></span><div class="property-object">lyrische Poetik
-                  													
-                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1004,9 +1048,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Citation" title="Browse http://e-editiones.ch/ontology/text#Citation">text:Citation</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Preface" title="Browse http://e-editiones.ch/ontology/literature#Preface">literature:Preface</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Citation" title="Browse http://e-editiones.ch/ontology/text#Citation">text:Citation</a></div>
             </td>
          </tr>
       </table>
@@ -1075,17 +1119,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="poesia narrativa" xml:lang="it">
-               <div class="property-object">poesia narrativa
+            <td property="rdfs:label" content="narrative Poetik" xml:lang="de">
+               <div class="property-object">narrative Poetik
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poesia narrativa" xml:lang="it"></span><div class="property-object">poesia narrativa
+                  													
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="poésie narrative" xml:lang="fr"></span><div class="property-object">poésie narrative
                   													
                   													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="narrative Poetik" xml:lang="de"></span><div class="property-object">narrative Poetik
-                  													
-                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="narrative poetry" xml:lang="en"></span><div class="property-object">narrative poetry
                   													
@@ -1096,9 +1140,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Narrative" title="Browse http://e-editiones.ch/ontology/literature#Narrative">literature:Narrative</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Poetry" title="Browse http://e-editiones.ch/ontology/literature#Poetry">literature:Poetry</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Narrative" title="Browse http://e-editiones.ch/ontology/literature#Narrative">literature:Narrative</a></div>
             </td>
          </tr>
       </table>
@@ -1130,13 +1174,13 @@
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="documentaire littéraire" xml:lang="fr"></span><div class="property-object">documentaire littéraire
-                  													
-                  													(fr)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="saggistica letteraria" xml:lang="it"></span><div class="property-object">saggistica letteraria
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="documentaire littéraire" xml:lang="fr"></span><div class="property-object">documentaire littéraire
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -1169,12 +1213,8 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="sachliche literarische Expression" xml:lang="de">
-               <div class="property-object">sachliche literarische Expression
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="expression littéraire non fictionnelle" xml:lang="fr"></span><div class="property-object">expression littéraire non fictionnelle
-                  													
+            <td property="rdfs:label" content="expression littéraire non fictionnelle" xml:lang="fr">
+               <div class="property-object">expression littéraire non fictionnelle
                   													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="literary nonfiction expression" xml:lang="en"></span><div class="property-object">literary nonfiction expression
@@ -1184,6 +1224,10 @@
                <div class="connector"></div><span property="rdfs:label" content="espressione letteraria di saggistica" xml:lang="it"></span><div class="property-object">espressione letteraria di saggistica
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="sachliche literarische Expression" xml:lang="de"></span><div class="property-object">sachliche literarische Expression
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1234,17 +1278,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="romanzo di saggistica" xml:lang="it">
-               <div class="property-object">romanzo di saggistica
-                  													(it)
+            <td property="rdfs:label" content="sachliche Roman" xml:lang="de">
+               <div class="property-object">sachliche Roman
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="roman de non-fiction" xml:lang="fr"></span><div class="property-object">roman de non-fiction
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="sachliche Roman" xml:lang="de"></span><div class="property-object">sachliche Roman
+               <div class="connector"></div><span property="rdfs:label" content="romanzo di saggistica" xml:lang="it"></span><div class="property-object">romanzo di saggistica
                   													
-                  													(de)
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="nonfiction novel" xml:lang="en"></span><div class="property-object">nonfiction novel
                   													
@@ -1261,6 +1305,8 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#SentenceExpression" title="Browse http://e-editiones.ch/ontology/text-expression#SentenceExpression">text-expression:SentenceExpression</a></div>
+               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf">
                   <table typeof="owl:Restriction">
                      <tr>
@@ -1282,8 +1328,6 @@
                </div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#NonfictionExpression" title="Browse http://e-editiones.ch/ontology/literature#NonfictionExpression">literature:NonfictionExpression</a></div>
-               <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#SentenceExpression" title="Browse http://e-editiones.ch/ontology/text-expression#SentenceExpression">text-expression:SentenceExpression</a></div>
             </td>
          </tr>
       </table>
@@ -1307,21 +1351,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="roman" xml:lang="fr">
-               <div class="property-object">roman
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Roman" xml:lang="de"></span><div class="property-object">Roman
-                  													
-                  													(de)
+            <td property="rdfs:label" content="romanzo" xml:lang="it">
+               <div class="property-object">romanzo
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="novel" xml:lang="en"></span><div class="property-object">novel
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="romanzo" xml:lang="it"></span><div class="property-object">romanzo
+               <div class="connector"></div><span property="rdfs:label" content="Roman" xml:lang="de"></span><div class="property-object">Roman
                   													
-                  													(it)
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="roman" xml:lang="fr"></span><div class="property-object">roman
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -1348,9 +1392,9 @@
                   </table>
                </div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#FictionExpression" title="Browse http://e-editiones.ch/ontology/literature#FictionExpression">literature:FictionExpression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#SentenceExpression" title="Browse http://e-editiones.ch/ontology/text-expression#SentenceExpression">text-expression:SentenceExpression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#FictionExpression" title="Browse http://e-editiones.ch/ontology/literature#FictionExpression">literature:FictionExpression</a></div>
             </td>
          </tr>
       </table>
@@ -1374,21 +1418,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="novelliere" xml:lang="it">
-               <div class="property-object">novelliere
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="novelist" xml:lang="en"></span><div class="property-object">novelist
-                  													
+            <td property="rdfs:label" content="novelist" xml:lang="en">
+               <div class="property-object">novelist
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="romancier" xml:lang="fr"></span><div class="property-object">romancier
+                  													
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Romanschriftsteller" xml:lang="de"></span><div class="property-object">Romanschriftsteller
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="romancier" xml:lang="fr"></span><div class="property-object">romancier
+               <div class="connector"></div><span property="rdfs:label" content="novelliere" xml:lang="it"></span><div class="property-object">novelliere
                   													
-                  													(fr)
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -1419,8 +1463,12 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="playwright" xml:lang="en">
-               <div class="property-object">playwright
+            <td property="rdfs:label" content="dramaturge" xml:lang="fr">
+               <div class="property-object">dramaturge
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="playwright" xml:lang="en"></span><div class="property-object">playwright
+                  													
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="DramatikerIn" xml:lang="de"></span><div class="property-object">DramatikerIn
@@ -1430,10 +1478,6 @@
                <div class="connector"></div><span property="rdfs:label" content="drammaturgo" xml:lang="it"></span><div class="property-object">drammaturgo
                   													
                   													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="dramaturge" xml:lang="fr"></span><div class="property-object">dramaturge
-                  													
-                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -1452,11 +1496,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Poetic expression." xml:lang="en">
-               <div class="property-object">Poetic expression.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Poetische Expression." xml:lang="de"></span><div class="property-object">Poetische Expression.
+            <td property="rdfs:comment" content="Poetische Expression." xml:lang="de">
+               <div class="property-object">Poetische Expression.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Poetic expression." xml:lang="en"></span><div class="property-object">Poetic expression.
                   													
-                  													(de)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1468,13 +1512,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Gedicht" xml:lang="de">
-               <div class="property-object">Gedicht
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poesia" xml:lang="it"></span><div class="property-object">poesia
-                  													
+            <td property="rdfs:label" content="poesia" xml:lang="it">
+               <div class="property-object">poesia
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Gedicht" xml:lang="de"></span><div class="property-object">Gedicht
+                  													
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="poème" xml:lang="fr"></span><div class="property-object">poème
                   													
@@ -1489,6 +1533,8 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Expression" title="Browse http://e-editiones.ch/ontology/literature#Expression">literature:Expression</a></div>
+               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf">
                   <table typeof="owl:Restriction">
                      <tr>
@@ -1508,8 +1554,6 @@
                      </tr>
                   </table>
                </div>
-               <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Expression" title="Browse http://e-editiones.ch/ontology/literature#Expression">literature:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -1537,10 +1581,6 @@
                <div class="property-object">Poésie fugitive
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poésie fugitive" xml:lang="en"></span><div class="property-object">poésie fugitive
-                  													
-                  													(en)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="Poésie fugitive" xml:lang="it"></span><div class="property-object">Poésie fugitive
                   													
                   													(it)
@@ -1548,6 +1588,10 @@
                <div class="connector"></div><span property="rdfs:label" content="Poésie fugitive" xml:lang="de"></span><div class="property-object">Poésie fugitive
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poésie fugitive" xml:lang="en"></span><div class="property-object">poésie fugitive
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1578,8 +1622,12 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Dichter" xml:lang="de">
-               <div class="property-object">Dichter
+            <td property="rdfs:label" content="poet" xml:lang="en">
+               <div class="property-object">poet
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Dichter" xml:lang="de"></span><div class="property-object">Dichter
+                  													
                   													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="poeta" xml:lang="it"></span><div class="property-object">poeta
@@ -1589,10 +1637,6 @@
                <div class="connector"></div><span property="rdfs:label" content="poète" xml:lang="fr"></span><div class="property-object">poète
                   													
                   													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poet" xml:lang="en"></span><div class="property-object">poet
-                  													
-                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1623,21 +1667,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="poetry" xml:lang="en">
-               <div class="property-object">poetry
-                  													(en)
+            <td property="rdfs:label" content="poesia" xml:lang="it">
+               <div class="property-object">poesia
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="poésie" xml:lang="fr"></span><div class="property-object">poésie
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poesia" xml:lang="it"></span><div class="property-object">poesia
-                  													
-                  													(it)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="Poetik" xml:lang="de"></span><div class="property-object">Poetik
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poetry" xml:lang="en"></span><div class="property-object">poetry
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1719,17 +1763,17 @@
                <div class="property-object">Nachwort
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="postface" xml:lang="fr"></span><div class="property-object">postface
+               <div class="connector"></div><span property="rdfs:label" content="postfazione" xml:lang="it"></span><div class="property-object">postfazione
                   													
-                  													(fr)
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="postface" xml:lang="en"></span><div class="property-object">postface
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="postfazione" xml:lang="it"></span><div class="property-object">postfazione
+               <div class="connector"></div><span property="rdfs:label" content="postface" xml:lang="fr"></span><div class="property-object">postface
                   													
-                  													(it)
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -1771,21 +1815,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="avant-propos" xml:lang="fr">
-               <div class="property-object">avant-propos
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="preface" xml:lang="en"></span><div class="property-object">preface
-                  													
+            <td property="rdfs:label" content="preface" xml:lang="en">
+               <div class="property-object">preface
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="prefazione" xml:lang="it"></span><div class="property-object">prefazione
+               <div class="connector"></div><span property="rdfs:label" content="avant-propos" xml:lang="fr"></span><div class="property-object">avant-propos
                   													
-                  													(it)
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Vorwort" xml:lang="de"></span><div class="property-object">Vorwort
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="prefazione" xml:lang="it"></span><div class="property-object">prefazione
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -1798,9 +1842,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure" title="Browse http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure">text-structure:CompositionalContentStructure</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
             </td>
          </tr>
       </table>
@@ -1825,21 +1869,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="prologue" xml:lang="fr">
+            <td property="rdfs:label" content="prologue" xml:lang="en">
                <div class="property-object">prologue
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Prolog" xml:lang="de"></span><div class="property-object">Prolog
-                  													
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="prologue" xml:lang="en"></span><div class="property-object">prologue
-                  													
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="prologo" xml:lang="it"></span><div class="property-object">prologo
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="prologue" xml:lang="fr"></span><div class="property-object">prologue
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Prolog" xml:lang="de"></span><div class="property-object">Prolog
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1864,11 +1908,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Poem written in prose." xml:lang="en">
-               <div class="property-object">Poem written in prose.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Gedicht in Prosa geschrieben." xml:lang="de"></span><div class="property-object">Gedicht in Prosa geschrieben.
+            <td property="rdfs:comment" content="Gedicht in Prosa geschrieben." xml:lang="de">
+               <div class="property-object">Gedicht in Prosa geschrieben.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Poem written in prose." xml:lang="en"></span><div class="property-object">Poem written in prose.
                   													
-                  													(de)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1880,17 +1924,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="poesia in prosa" xml:lang="it">
-               <div class="property-object">poesia in prosa
+            <td property="rdfs:label" content="Prosagedicht" xml:lang="de">
+               <div class="property-object">Prosagedicht
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poesia in prosa" xml:lang="it"></span><div class="property-object">poesia in prosa
+                  													
                   													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="poème en prose" xml:lang="fr"></span><div class="property-object">poème en prose
                   													
                   													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Prosagedicht" xml:lang="de"></span><div class="property-object">Prosagedicht
-                  													
-                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="prose poem" xml:lang="en"></span><div class="property-object">prose poem
                   													
@@ -1927,21 +1971,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="poésie scientifique" xml:lang="fr">
-               <div class="property-object">poésie scientifique
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="scientific poetry" xml:lang="en"></span><div class="property-object">scientific poetry
-                  													
+            <td property="rdfs:label" content="scientific poetry" xml:lang="en">
+               <div class="property-object">scientific poetry
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poesia scientifica" xml:lang="it"></span><div class="property-object">poesia scientifica
+                  													
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="wissenschaftliche Poetik" xml:lang="de"></span><div class="property-object">wissenschaftliche Poetik
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poesia scientifica" xml:lang="it"></span><div class="property-object">poesia scientifica
+               <div class="connector"></div><span property="rdfs:label" content="poésie scientifique" xml:lang="fr"></span><div class="property-object">poésie scientifique
                   													
-                  													(it)
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -1973,17 +2017,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Versroman" xml:lang="de">
-               <div class="property-object">Versroman
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="roman en vers" xml:lang="fr"></span><div class="property-object">roman en vers
-                  													
+            <td property="rdfs:label" content="roman en vers" xml:lang="fr">
+               <div class="property-object">roman en vers
                   													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="verse novel" xml:lang="en"></span><div class="property-object">verse novel
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Versroman" xml:lang="de"></span><div class="property-object">Versroman
+                  													
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="romanzo del verso" xml:lang="it"></span><div class="property-object">romanzo del verso
                   													
@@ -1994,8 +2038,6 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Expression" title="Browse http://e-editiones.ch/ontology/literature#Expression">literature:Expression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf">
                   <table typeof="owl:Restriction">
                      <tr>
@@ -2015,6 +2057,8 @@
                      </tr>
                   </table>
                </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Expression" title="Browse http://e-editiones.ch/ontology/literature#Expression">literature:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -2026,11 +2070,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Gedicht ausgedruckt in Vers." xml:lang="det">
-               <div class="property-object">Gedicht ausgedruckt in Vers.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Poem written in verse." xml:lang="en"></span><div class="property-object">Poem written in verse.
+            <td property="rdfs:comment" content="Poem written in verse." xml:lang="en">
+               <div class="property-object">Poem written in verse.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Gedicht ausgedruckt in Vers." xml:lang="det"></span><div class="property-object">Gedicht ausgedruckt in Vers.
                   													
-                  													(en)
+                  													(det)
                   												</div>
             </td>
          </tr>
@@ -2042,21 +2086,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="poème en vers" xml:lang="fr">
-               <div class="property-object">poème en vers
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="poesia del verso" xml:lang="it"></span><div class="property-object">poesia del verso
-                  													
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="verse poem" xml:lang="en"></span><div class="property-object">verse poem
-                  													
+            <td property="rdfs:label" content="verse poem" xml:lang="en">
+               <div class="property-object">verse poem
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Versgedicht" xml:lang="de"></span><div class="property-object">Versgedicht
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poesia del verso" xml:lang="it"></span><div class="property-object">poesia del verso
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="poème en vers" xml:lang="fr"></span><div class="property-object">poème en vers
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -2075,11 +2119,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Versgedicht als Liedtext." xml:lang="de">
-               <div class="property-object">Versgedicht als Liedtext.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Verse poem as lyrics of a song." xml:lang="en"></span><div class="property-object">Verse poem as lyrics of a song.
+            <td property="rdfs:comment" content="Verse poem as lyrics of a song." xml:lang="en">
+               <div class="property-object">Verse poem as lyrics of a song.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Versgedicht als Liedtext." xml:lang="de"></span><div class="property-object">Versgedicht als Liedtext.
                   													
-                  													(en)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2140,10 +2184,6 @@
                <div class="property-object">verse song collection
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Versgesangsammlung" xml:lang="de"></span><div class="property-object">Versgesangsammlung
-                  													
-                  													(de)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="raccolta di canzoni versi" xml:lang="it"></span><div class="property-object">raccolta di canzoni versi
                   													
                   													(it)
@@ -2152,14 +2192,18 @@
                   													
                   													(fr)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Versgesangsammlung" xml:lang="de"></span><div class="property-object">Versgesangsammlung
+                  													
+                  													(de)
+                  												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Expression" title="Browse http://e-editiones.ch/ontology/literature#Expression">literature:Expression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Collection" title="Browse http://e-editiones.ch/ontology/creating#Collection">creating:Collection</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Expression" title="Browse http://e-editiones.ch/ontology/literature#Expression">literature:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -2190,21 +2234,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has expression" xml:lang="en">
-               <div class="property-object">has expression
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha espressione" xml:lang="it"></span><div class="property-object">ha espressione
-                  													
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Expression" xml:lang="de"></span><div class="property-object">hat Expression
-                  													
+            <td property="rdfs:label" content="hat Expression" xml:lang="de">
+               <div class="property-object">hat Expression
                   													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="a une expression" xml:lang="fr"></span><div class="property-object">a une expression
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has expression" xml:lang="en"></span><div class="property-object">has expression
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ha espressione" xml:lang="it"></span><div class="property-object">ha espressione
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -2241,12 +2285,8 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has novelist" xml:lang="en">
-               <div class="property-object">has novelist
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat RomanautorIn" xml:lang="de"></span><div class="property-object">hat RomanautorIn
-                  													
+            <td property="rdfs:label" content="hat RomanautorIn" xml:lang="de">
+               <div class="property-object">hat RomanautorIn
                   													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="a un romancier" xml:lang="fr"></span><div class="property-object">a un romancier
@@ -2256,6 +2296,10 @@
                <div class="connector"></div><span property="rdfs:label" content="ha romanziere" xml:lang="it"></span><div class="property-object">ha romanziere
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has novelist" xml:lang="en"></span><div class="property-object">has novelist
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2267,8 +2311,6 @@
                      <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
                         <td>
-                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
-                           <div class="connector"></div>
                            <div class="property-object" rel="rdfs:subClassOf">
                               <table typeof="owl:Restriction">
                                  <tr>
@@ -2288,6 +2330,8 @@
                                  </tr>
                               </table>
                            </div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
                         </td>
                      </tr>
                   </table>
@@ -2327,21 +2371,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="a un poète" xml:lang="fr">
-               <div class="property-object">a un poète
-                  													(fr)
+            <td property="rdfs:label" content="ha poeta" xml:lang="it">
+               <div class="property-object">ha poeta
+                  													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Dichter" xml:lang="de"></span><div class="property-object">hat Dichter
+               <div class="connector"></div><span property="rdfs:label" content="a un poète" xml:lang="fr"></span><div class="property-object">a un poète
                   													
-                  													(de)
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="has poet" xml:lang="en"></span><div class="property-object">has poet
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ha poeta" xml:lang="it"></span><div class="property-object">ha poeta
+               <div class="connector"></div><span property="rdfs:label" content="hat Dichter" xml:lang="de"></span><div class="property-object">hat Dichter
                   													
-                  													(it)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2353,6 +2397,8 @@
                      <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
                         <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
+                           <div class="connector"></div>
                            <div class="property-object" rel="rdfs:subClassOf">
                               <table typeof="owl:Restriction">
                                  <tr>
@@ -2372,8 +2418,6 @@
                                  </tr>
                               </table>
                            </div>
-                           <div class="connector"></div>
-                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
                         </td>
                      </tr>
                   </table>
@@ -2413,13 +2457,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="a de la poésie" xml:lang="fr">
-               <div class="property-object">a de la poésie
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has poetry" xml:lang="en"></span><div class="property-object">has poetry
-                  													
+            <td property="rdfs:label" content="has poetry" xml:lang="en">
+               <div class="property-object">has poetry
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a de la poésie" xml:lang="fr"></span><div class="property-object">a de la poésie
+                  													
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="ha poesia" xml:lang="it"></span><div class="property-object">ha poesia
                   													
@@ -2465,21 +2509,21 @@
                      </tr>
                      <tr class="http://www.w3.org/2000/01/rdf-schema#label">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-                        <td property="rdfs:label" content="a un genre littéraire" xml:lang="fr">
-                           <div class="property-object">a un genre littéraire
-                              													(fr)
+                        <td property="rdfs:label" content="has literary genre" xml:lang="en">
+                           <div class="property-object">has literary genre
+                              													(en)
                               												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="hat literarische Gattung" xml:lang="de"></span><div class="property-object">hat literarische Gattung
+                           <div class="connector"></div><span property="rdfs:label" content="a un genre littéraire" xml:lang="fr"></span><div class="property-object">a un genre littéraire
                               													
-                              													(de)
+                              													(fr)
                               												</div>
                            <div class="connector"></div><span property="rdfs:label" content="ha un genere letterario" xml:lang="it"></span><div class="property-object">ha un genere letterario
                               													
                               													(it)
                               												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="has literary genre" xml:lang="en"></span><div class="property-object">has literary genre
+                           <div class="connector"></div><span property="rdfs:label" content="hat literarische Gattung" xml:lang="de"></span><div class="property-object">hat literarische Gattung
                               													
-                              													(en)
+                              													(de)
                               												</div>
                         </td>
                      </tr>
@@ -2532,21 +2576,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="est l'argument de" xml:lang="fr">
-               <div class="property-object">est l'argument de
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is argument of" xml:lang="en"></span><div class="property-object">is argument of
-                  													
-                  													(en)
+            <td property="rdfs:label" content="ist Argument von" xml:lang="de">
+               <div class="property-object">ist Argument von
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="è argomento di" xml:lang="it"></span><div class="property-object">è argomento di
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ist Argument von" xml:lang="de"></span><div class="property-object">ist Argument von
+               <div class="connector"></div><span property="rdfs:label" content="is argument of" xml:lang="en"></span><div class="property-object">is argument of
                   													
-                  													(de)
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="est l'argument de" xml:lang="fr"></span><div class="property-object">est l'argument de
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -2593,6 +2637,10 @@
                <div class="property-object">is hymn of collection
                   													(en)
                   												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Hymne einer Sammlung" xml:lang="de"></span><div class="property-object">ist Hymne einer Sammlung
+                  													
+                  													(de)
+                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="è l'inno della collezione" xml:lang="it"></span><div class="property-object">è l'inno della collezione
                   													
                   													(it)
@@ -2600,10 +2648,6 @@
                <div class="connector"></div><span property="rdfs:label" content="est un hymne de collection" xml:lang="fr"></span><div class="property-object">est un hymne de collection
                   													
                   													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ist Hymne einer Sammlung" xml:lang="de"></span><div class="property-object">ist Hymne einer Sammlung
-                  													
-                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2646,17 +2690,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ist Versgesang einer Sammlung" xml:lang="de">
-               <div class="property-object">ist Versgesang einer Sammlung
+            <td property="rdfs:label" content="is verse song of collection" xml:lang="en">
+               <div class="property-object">is verse song of collection
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Versgesang einer Sammlung" xml:lang="de"></span><div class="property-object">ist Versgesang einer Sammlung
+                  													
                   													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="est le verset de la collection" xml:lang="fr"></span><div class="property-object">est le verset de la collection
                   													
                   													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is verse song of collection" xml:lang="en"></span><div class="property-object">is verse song of collection
-                  													
-                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="è il verso della raccolta" xml:lang="it"></span><div class="property-object">è il verso della raccolta
                   													

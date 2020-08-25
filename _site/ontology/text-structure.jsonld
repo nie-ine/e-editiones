@@ -1,104 +1,18 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "One or more language symbols in written text, different from a letter, to help interpret semantics of a sentence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Interpunktion"
-      },
-      {
-        "@language": "it",
-        "@value": "punteggiatura"
-      },
-      {
-        "@language": "en",
-        "@value": "punctuation"
-      },
-      {
-        "@language": "fr",
-        "@value": "ponctuation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticStructure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/linguistics#Symbol"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Prose",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Syntactic structure with a sentence as unit, in a natural flow of speech."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Prosa"
-      },
-      {
-        "@language": "it",
-        "@value": "prosa"
-      },
-      {
-        "@language": "fr",
-        "@value": "prose"
-      },
-      {
-        "@language": "en",
-        "@value": "prose"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SentenceStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isLineOfPage",
+    "@id": "http://e-editiones.ch/ontology/text-structure#lineHasIdentifier",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text line to a page it is part of."
+        "@value": "Relating a text line to its identifier."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#PageLine"
+        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -108,30 +22,30 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "is line of page"
-      },
-      {
-        "@language": "it",
-        "@value": "è una riga di una pagina"
+        "@language": "de",
+        "@value": "Textzeile hat Identifikator"
       },
       {
         "@language": "fr",
-        "@value": "est une ligne d'une page"
+        "@value": "ligne de texte a identifiant"
       },
       {
-        "@language": "de",
-        "@value": "ist Zeile einer Seite"
+        "@language": "it",
+        "@value": "riga di testo ha identificatore"
+      },
+      {
+        "@language": "en",
+        "@value": "text line has identifier"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Page"
+        "@id": "http://e-editiones.ch/ontology/text-structure#LineIdentifier"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+        "@id": "http://e-editiones.ch/ontology/text-structure#hasIdentifier"
       }
     ]
   },
@@ -143,11 +57,11 @@
     "http://purl.org/dc/terms/contributor": [
       {
         "@language": "en",
-        "@value": "Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland"
+        "@value": "Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland"
       },
       {
         "@language": "en",
-        "@value": "Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland"
+        "@value": "Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland"
       }
     ],
     "http://purl.org/dc/terms/creator": [
@@ -193,28 +107,23 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Text and text editing are described in other ontologies"
+        "@value": "Prosodic structure and note structure are described in other ontologies"
       },
       {
         "@language": "en",
-        "@value": "Prosodic structure and note structure are described in other ontologies"
+        "@value": "Text and text editing are described in other ontologies"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-structure#sectionHasOrdinalNumber",
+    "@id": "http://e-editiones.ch/ontology/text-structure#PageLine",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text section to its ordinal number."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Section"
+        "@value": "Text line of a text page."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -225,24 +134,1666 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Textabschnitt hat Ordinalzahl"
-      },
-      {
-        "@language": "fr",
-        "@value": "section de texte a numéro"
+        "@value": "Textzeile einer Seite"
       },
       {
         "@language": "en",
-        "@value": "text section has ordinal number"
+        "@value": "page text line"
+      },
+      {
+        "@language": "fr",
+        "@value": "ligne de texte de page"
       },
       {
         "@language": "it",
-        "@value": "sezione di testo ha numero"
+        "@value": "riga di testo di pagina"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "In case of a horizontal line, its maximum length equals the page width minus margins."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticStructure",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text structure depending on natural language-specific syntax, e.g. a word, sentence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "syntaktische Textstruktur"
+      },
+      {
+        "@language": "en",
+        "@value": "syntactic text structure"
+      },
+      {
+        "@language": "it",
+        "@value": "struttura sintattica del testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "structure syntaxique du texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Structure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Section",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Composition of paragraphs, mostly about a certain topic."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "sezione di testo"
+      },
+      {
+        "@language": "en",
+        "@value": "text section"
+      },
+      {
+        "@language": "fr",
+        "@value": "section de texte"
+      },
+      {
+        "@language": "de",
+        "@value": "Textabschnitt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SentenceStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isSentenceOfProse",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a sentence to a prose it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Sentence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is sentence of prose"
+      },
+      {
+        "@language": "it",
+        "@value": "è una frase di prosa"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Satz einer Prosa"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une phrase de prose"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SectionOrdinalNumber"
+        "@id": "http://e-editiones.ch/ontology/text-structure#Prose"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isTextOfPage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text page to a document page it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Page"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è un testo di una pagina"
+      },
+      {
+        "@language": "en",
+        "@value": "is text of page"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un texte d'une page"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Text einer Seite"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Page"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Smallest independent orthographic entity composed of symbols, surrounded by whitespace in a written text line."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "orthographisches Wort"
+      },
+      {
+        "@language": "it",
+        "@value": "parola ortografica"
+      },
+      {
+        "@language": "fr",
+        "@value": "mot orthographique"
+      },
+      {
+        "@language": "en",
+        "@value": "orthographic word"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/linguistics#Concept"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text#WrittenText"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#OrthographoSyntacticWord",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Word being orthographic and syntactic."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "orthographosyntaktisches Wort"
+      },
+      {
+        "@language": "en",
+        "@value": "orthographo-syntactic word"
+      },
+      {
+        "@language": "it",
+        "@value": "parola ortografico-sintattica"
+      },
+      {
+        "@language": "fr",
+        "@value": "mot orthographo-syntaxique"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Common word."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#paragraphHasNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a paragraph to its number."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Paragraf hat Nummer"
+      },
+      {
+        "@language": "en",
+        "@value": "paragraph has number"
+      },
+      {
+        "@language": "it",
+        "@value": "il paragrafo ha un numero"
+      },
+      {
+        "@language": "fr",
+        "@value": "le paragraphe a un numéro"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Smallest independent syntactic structure composed of symbols that can be replaced in a sentence or verse."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "parola sintattica"
+      },
+      {
+        "@language": "fr",
+        "@value": "mot syntaxique"
+      },
+      {
+        "@language": "de",
+        "@value": "syntaktisches Wort"
+      },
+      {
+        "@language": "en",
+        "@value": "syntactic word"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/linguistics#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isLineOfColumn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text line to a column it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ColumnLine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è una riga della colonna"
+      },
+      {
+        "@language": "en",
+        "@value": "is line of column"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Zeile einer Spalte"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une ligne de la colonne"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Column"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#LineOrdinalNumber",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Ordinal number of a text line."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "numero ordinale della riga di testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "nombre ordinal de ligne de texte"
+      },
+      {
+        "@language": "en",
+        "@value": "text line ordinal number"
+      },
+      {
+        "@language": "de",
+        "@value": "Textzeile-Ordinalzahl"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#LineIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Prose",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Syntactic structure with a sentence as unit, in a natural flow of speech."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Prosa"
+      },
+      {
+        "@language": "it",
+        "@value": "prosa"
+      },
+      {
+        "@language": "fr",
+        "@value": "prose"
+      },
+      {
+        "@language": "en",
+        "@value": "prose"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SentenceStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isWordOfLine",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an orthographic word to the text line it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is word of line"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un mot d'une ligne"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Wort einer Zeile"
+      },
+      {
+        "@language": "it",
+        "@value": "è una parola di linea"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#syntacticWordHasForm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a syntactic word to its form."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "mot syntaxique a une forme"
+      },
+      {
+        "@language": "it",
+        "@value": "la parola sintattica ha forma"
+      },
+      {
+        "@language": "de",
+        "@value": "syntaktisches Wort hat Form"
+      },
+      {
+        "@language": "en",
+        "@value": "syntactic word has form"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Column",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text structured as a column."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "colonne de texte"
+      },
+      {
+        "@language": "en",
+        "@value": "text column"
+      },
+      {
+        "@language": "it",
+        "@value": "colonna di testo"
+      },
+      {
+        "@language": "de",
+        "@value": "Textspalte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#LineIdentifier",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Identifier of a text line."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "identificatore della riga di testo"
+      },
+      {
+        "@language": "en",
+        "@value": "text line identifier"
+      },
+      {
+        "@language": "de",
+        "@value": "Textzeile-Identifikator"
+      },
+      {
+        "@language": "fr",
+        "@value": "identifiant de ligne de texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Page",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text structured as a page."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "page de texte"
+      },
+      {
+        "@language": "de",
+        "@value": "Textseite"
+      },
+      {
+        "@language": "en",
+        "@value": "text page"
+      },
+      {
+        "@language": "it",
+        "@value": "pagina di testo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Page"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Postcard",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text with postcard structure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "structure de carte postale"
+      },
+      {
+        "@language": "de",
+        "@value": "Postkarte-Struktur"
+      },
+      {
+        "@language": "it",
+        "@value": "struttura da cartolina"
+      },
+      {
+        "@language": "en",
+        "@value": "postcard structure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#paragraphHasTitleLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a paragraph to its title literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "le paragraphe a littéral du titre"
+      },
+      {
+        "@language": "de",
+        "@value": "Paragraf hat Titelliterale"
+      },
+      {
+        "@language": "it",
+        "@value": "il paragrafo ha letterale del titolo"
+      },
+      {
+        "@language": "en",
+        "@value": "paragraph has title literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#SectionOrdinalNumber",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Ordinal number of a text section."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textabschnittordinalzahl"
+      },
+      {
+        "@language": "en",
+        "@value": "text section ordinal number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SectionIdentifier"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Diary",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text with diary structure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "diary structure"
+      },
+      {
+        "@language": "fr",
+        "@value": "structure de journal"
+      },
+      {
+        "@language": "de",
+        "@value": "Tagebuch-Struktur"
+      },
+      {
+        "@language": "it",
+        "@value": "struttura del diario"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isPunctuationBeforeWord",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a punctuation to the word it precedes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è una punteggiatura prima di una parola"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une ponctuation devant un mot"
+      },
+      {
+        "@language": "en",
+        "@value": "is punctuation before word"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Interpunktion vor einem Wort"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Rhyme",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Words or phrases with whole or end corresponding sound, especially when involving the last stressed vowel and all succeeding sounds."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Reim"
+      },
+      {
+        "@language": "en",
+        "@value": "rhyme"
+      },
+      {
+        "@language": "fr",
+        "@value": "rime"
+      },
+      {
+        "@language": "it",
+        "@value": "rima"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text structure to a text expression it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Structure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textstruktur ist Teil einer Textexpression"
+      },
+      {
+        "@language": "fr",
+        "@value": "la structure du texte fait partie de l'expression de texte"
+      },
+      {
+        "@language": "en",
+        "@value": "text structure is part of text expression"
+      },
+      {
+        "@language": "it",
+        "@value": "la struttura del testo fa parte dell'espressione del testo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isSpaceBeforeWord",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text line space to the orthographic word it precedes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è uno spazio prima della parola"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un espace avant le mot"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Leerzeichen vor einem Wort"
+      },
+      {
+        "@language": "en",
+        "@value": "is space before word"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isPostcardStructureOfExpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a postcard structure to a text expression it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Postcard"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "est une structure d'expression de carte postale"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Postkarte-Struktur einer Expression"
+      },
+      {
+        "@language": "en",
+        "@value": "is postcard structure of expression"
+      },
+      {
+        "@language": "it",
+        "@value": "è una struttura espressiva da cartolina"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#SurfaceSentence",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Sentence expressed on a surface."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "frase di superficie"
+      },
+      {
+        "@language": "en",
+        "@value": "surface sentence"
+      },
+      {
+        "@language": "fr",
+        "@value": "phrase de surface"
+      },
+      {
+        "@language": "de",
+        "@value": "Flächesatz"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Sentence"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A surface sentence can be considered as a syntactic directed text line or text vector."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isPunctuationBeforeSpace",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a punctuation to the space it precedes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è una punteggiatura prima dello spazio"
+      },
+      {
+        "@language": "en",
+        "@value": "is punctuation before space"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une ponctuation avant l'espace"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Interpunktion vor einem Leerzeichen"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isWordBeforePunctuation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a syntactic word to the punctuation it precedes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is word before punctuation"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Wort vor einer Interpunktion"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un mot avant la ponctuation"
+      },
+      {
+        "@language": "it",
+        "@value": "è una parola prima della punteggiatura"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "One or more language symbols in written text, different from a letter, to help interpret semantics of a sentence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "ponctuation"
+      },
+      {
+        "@language": "de",
+        "@value": "Interpunktion"
+      },
+      {
+        "@language": "it",
+        "@value": "punteggiatura"
+      },
+      {
+        "@language": "en",
+        "@value": "punctuation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/linguistics#Symbol"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isPunctuationOfSentence",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a punctuation to the sentence it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è una punteggiatura di una frase"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une ponctuation d'une phrase"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Interpunktion eines Satzes"
+      },
+      {
+        "@language": "en",
+        "@value": "is punctuation of sentence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Sentence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isLineOfPage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text line to a page it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#PageLine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is line of page"
+      },
+      {
+        "@language": "it",
+        "@value": "è una riga di una pagina"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Zeile einer Seite"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une ligne d'une page"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Page"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalStructure",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text structure depending on text composition in a two-dimensional plane, e.g. a line, paragraph, section, page."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "compositional text structure"
+      },
+      {
+        "@language": "de",
+        "@value": "kompositionelle Textstruktur"
+      },
+      {
+        "@language": "it",
+        "@value": "struttura compositiva del testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "structure de composition de texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Structure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#lineHasOrdinalNumeral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text line to its ordinal numeral."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textzeile hat Ordinalnumerale"
+      },
+      {
+        "@language": "fr",
+        "@value": "ligne de texte a numéral ordinal"
+      },
+      {
+        "@language": "en",
+        "@value": "text line has ordinal numeral"
+      },
+      {
+        "@language": "it",
+        "@value": "riga di testo ha numerale ordinale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/text-structure#lineHasOrdinalNumber"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isSpaceOfLine",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a space to a text line it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Leerzeichen einer Zeile"
+      },
+      {
+        "@language": "en",
+        "@value": "is space of line"
+      },
+      {
+        "@language": "it",
+        "@value": "è uno spazio prima della parola"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un espace avant le mot"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isWordOfSentence",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a syntactic word to the sentence it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "est un mot de phrase"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Wort eines Satzes"
+      },
+      {
+        "@language": "it",
+        "@value": "è una parola di frase"
+      },
+      {
+        "@language": "en",
+        "@value": "is word of sentence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Sentence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Empty space between orthographic words in a text line."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Leerzeichen einer Textzeile"
+      },
+      {
+        "@language": "fr",
+        "@value": "espace de ligne de texte"
+      },
+      {
+        "@language": "it",
+        "@value": "spazio della riga di testo"
+      },
+      {
+        "@language": "en",
+        "@value": "text line space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
       }
     ]
   },
@@ -277,12 +1828,12 @@
         "@value": "ist Spalte einer Textseite"
       },
       {
-        "@language": "it",
-        "@value": "è una colonna della pagina di testo"
-      },
-      {
         "@language": "en",
         "@value": "is column of text page"
+      },
+      {
+        "@language": "it",
+        "@value": "è una colonna della pagina di testo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -297,19 +1848,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-structure#syntacticWordHasForm",
+    "@id": "http://e-editiones.ch/ontology/text-structure#SectionIdentifier",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a syntactic word to its form."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
+        "@value": "Identifier of a text section."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -319,92 +1865,29 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "la parola sintattica ha forma"
-      },
-      {
         "@language": "en",
-        "@value": "syntactic word has form"
+        "@value": "text section identifier"
       },
       {
         "@language": "de",
-        "@value": "syntaktisches Wort hat Form"
-      },
-      {
-        "@language": "fr",
-        "@value": "mot syntaxique a une forme"
+        "@value": "Textabschnittidentifikator"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/linguistic-morphology#SyntacticWordForm"
+        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isSpaceOfLine",
+    "@id": "http://e-editiones.ch/ontology/text-structure#SentenceStructure",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a space to a text line it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Leerzeichen einer Zeile"
-      },
-      {
-        "@language": "it",
-        "@value": "è uno spazio prima della parola"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un espace avant le mot"
-      },
-      {
-        "@language": "en",
-        "@value": "is space of line"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#lineHasOrdinalNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text line to its ordinal number."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
+        "@value": "Content structure depending on sentences, e.g. a paragraph, section, prose"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -415,127 +1898,24 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "text line has ordinal number"
+        "@value": "sentence structure"
       },
       {
         "@language": "it",
-        "@value": "riga di testo ha numero ordinale"
-      },
-      {
-        "@language": "de",
-        "@value": "Textzeile hat Ordinalzahl"
+        "@value": "Struttura della frase"
       },
       {
         "@language": "fr",
-        "@value": "ligne de texte a nombre ordinal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#LineOrdinalNumber"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#lineHasIdentifier"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isSpaceBeforeWord",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text line space to the orthographic word it precedes."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Leerzeichen vor einem Wort"
-      },
-      {
-        "@language": "it",
-        "@value": "è uno spazio prima della parola"
-      },
-      {
-        "@language": "en",
-        "@value": "is space before word"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un espace avant le mot"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isDiaryStructureOfExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a diary structure to a text expression it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Diary"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est une structure d'expression du journal"
+        "@value": "structure de phrase"
       },
       {
         "@language": "de",
-        "@value": "ist Tagebuch-Struktur einer Expression"
-      },
-      {
-        "@language": "en",
-        "@value": "is diary structure of expression"
-      },
-      {
-        "@language": "it",
-        "@value": "è una struttura di espressione del diario"
+        "@value": "Satzstruktur"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
+        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
       }
     ]
   },
@@ -557,20 +1937,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "tabella di testo"
-      },
-      {
-        "@language": "de",
-        "@value": "Texttabelle"
+        "@language": "en",
+        "@value": "text table"
       },
       {
         "@language": "fr",
         "@value": "table de texte"
       },
       {
-        "@language": "en",
-        "@value": "text table"
+        "@language": "de",
+        "@value": "Texttabelle"
+      },
+      {
+        "@language": "it",
+        "@value": "tabella di testo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -583,59 +1963,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isWordBeforePunctuation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a syntactic word to the punctuation it precedes."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "è una parola prima della punteggiatura"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Wort vor einer Interpunktion"
-      },
-      {
-        "@language": "en",
-        "@value": "is word before punctuation"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un mot avant la ponctuation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#ScientificStructure",
+    "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Content text structure depending on scientific purpose, e.g. a critical apparatus."
+        "@value": "Compositional text structure providing text readability, e.g. a line, column, page."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -645,432 +1980,28 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "scientific text structure"
-      },
-      {
         "@language": "it",
-        "@value": "struttura del testo scientifico"
+        "@value": "struttura della leggibilità del testo"
       },
       {
         "@language": "fr",
-        "@value": "structure du texte scientifique"
+        "@value": "structure de lisibilité du texte"
       },
       {
         "@language": "de",
-        "@value": "wissenschaftliche Textstruktur"
+        "@value": "Textlesbarkeitstruktur"
+      },
+      {
+        "@language": "en",
+        "@value": "text readability structure"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isProseOfExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a prose to a sentence expression it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Prose"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Prosa einer Satz-Expression"
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalStructure"
       },
       {
-        "@language": "en",
-        "@value": "is prose of sentence expression"
-      },
-      {
-        "@language": "fr",
-        "@value": "est une prose d'expression de phrase"
-      },
-      {
-        "@language": "it",
-        "@value": "è una prosa di espressione di frase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#SentenceExpression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#ColumnLine",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text line of a text column."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "column text line"
-      },
-      {
-        "@language": "it",
-        "@value": "riga di testo di colonna"
-      },
-      {
-        "@language": "fr",
-        "@value": "ligne de texte de colonne"
-      },
-      {
-        "@language": "de",
-        "@value": "Text zeile einer Spalte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Maximum length of a column line equals the column width."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text structure to a text expression it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Structure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "la struttura del testo fa parte dell'espressione del testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "la structure du texte fait partie de l'expression de texte"
-      },
-      {
-        "@language": "en",
-        "@value": "text structure is part of text expression"
-      },
-      {
-        "@language": "de",
-        "@value": "Textstruktur ist Teil einer Textexpression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticStructure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text structure depending on natural language-specific syntax, e.g. a word, sentence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "syntaktische Textstruktur"
-      },
-      {
-        "@language": "it",
-        "@value": "struttura sintattica del testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "structure syntaxique du texte"
-      },
-      {
-        "@language": "en",
-        "@value": "syntactic text structure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#paragraphHasTitleLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a paragraph to its title literal."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "il paragrafo ha letterale del titolo"
-      },
-      {
-        "@language": "en",
-        "@value": "paragraph has title literal"
-      },
-      {
-        "@language": "de",
-        "@value": "Paragraf hat Titelliterale"
-      },
-      {
-        "@language": "fr",
-        "@value": "le paragraphe a littéral du titre"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Composition of sentences ending with a line break."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Paragraf"
-      },
-      {
-        "@language": "fr",
-        "@value": "paragraphe"
-      },
-      {
-        "@language": "en",
-        "@value": "paragraph"
-      },
-      {
-        "@language": "it",
-        "@value": "paragrafo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SentenceStructure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Diary",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text with diary structure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "diary structure"
-      },
-      {
-        "@language": "de",
-        "@value": "Tagebuch-Struktur"
-      },
-      {
-        "@language": "it",
-        "@value": "struttura del diario"
-      },
-      {
-        "@language": "fr",
-        "@value": "structure de journal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#paragraphHasNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a paragraph to its number."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Paragraf hat Nummer"
-      },
-      {
-        "@language": "it",
-        "@value": "il paragrafo ha un numero"
-      },
-      {
-        "@language": "en",
-        "@value": "paragraph has number"
-      },
-      {
-        "@language": "fr",
-        "@value": "le paragraphe a un numéro"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Page",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text structured as a page."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textseite"
-      },
-      {
-        "@language": "fr",
-        "@value": "page de texte"
-      },
-      {
-        "@language": "en",
-        "@value": "text page"
-      },
-      {
-        "@language": "it",
-        "@value": "pagina di testo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Page"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
+        "@id": "http://e-editiones.ch/ontology/text#SurfaceText"
       }
     ]
   },
@@ -1121,6 +2052,783 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://e-editiones.ch/ontology/document#contentStructureHasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#ColumnLine",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text line of a text column."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Text zeile einer Spalte"
+      },
+      {
+        "@language": "en",
+        "@value": "column text line"
+      },
+      {
+        "@language": "fr",
+        "@value": "ligne de texte de colonne"
+      },
+      {
+        "@language": "it",
+        "@value": "riga di testo di colonna"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Maximum length of a column line equals the column width."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Composition of sentences ending with a line break."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Paragraf"
+      },
+      {
+        "@language": "fr",
+        "@value": "paragraphe"
+      },
+      {
+        "@language": "it",
+        "@value": "paragrafo"
+      },
+      {
+        "@language": "en",
+        "@value": "paragraph"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SentenceStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isSectionOfExpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a section to the sentence expression it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Section"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is section of sentence expression"
+      },
+      {
+        "@language": "it",
+        "@value": "è una sezione dell'espressione della frase"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une section d'expression de phrase"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Abschnitt eines Satz-Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#SentenceExpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isDiaryStructureOfExpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a diary structure to a text expression it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Diary"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Tagebuch-Struktur einer Expression"
+      },
+      {
+        "@language": "en",
+        "@value": "is diary structure of expression"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une structure d'expression du journal"
+      },
+      {
+        "@language": "it",
+        "@value": "è una struttura di espressione del diario"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Structure",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text as structure abstracted from its carrier, e.g. a word, sentence, text line, paragraph, section, verse, strophe, citation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "struttura del testo"
+      },
+      {
+        "@language": "de",
+        "@value": "Textstruktur"
+      },
+      {
+        "@language": "fr",
+        "@value": "structure de texte"
+      },
+      {
+        "@language": "en",
+        "@value": "text structure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Making up a text expression, without necessarily being one itself."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#lineHasOrdinalNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text line to its ordinal number."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "riga di testo ha numero ordinale"
+      },
+      {
+        "@language": "fr",
+        "@value": "ligne de texte a nombre ordinal"
+      },
+      {
+        "@language": "de",
+        "@value": "Textzeile hat Ordinalzahl"
+      },
+      {
+        "@language": "en",
+        "@value": "text line has ordinal number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#LineOrdinalNumber"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#lineHasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isProseOfExpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a prose to a sentence expression it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Prose"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Prosa einer Satz-Expression"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une prose d'expression de phrase"
+      },
+      {
+        "@language": "en",
+        "@value": "is prose of sentence expression"
+      },
+      {
+        "@language": "it",
+        "@value": "è una prosa di espressione di frase"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#SentenceExpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Dialogue",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text with dialogue structure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "dialogo"
+      },
+      {
+        "@language": "de",
+        "@value": "Dialog"
+      },
+      {
+        "@language": "en",
+        "@value": "dialogue"
+      },
+      {
+        "@language": "fr",
+        "@value": "dialogue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#sectionHasTitleLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text section to its title literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Section"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "sezione di testo ha letterale del titolo"
+      },
+      {
+        "@language": "de",
+        "@value": "Textabschnitt hat Titelliterale"
+      },
+      {
+        "@language": "en",
+        "@value": "text section has title literal"
+      },
+      {
+        "@language": "fr",
+        "@value": "section de texte a littéral du titre"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Content text structure depending on text composition, e.g. a paragraph, section."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "compositional content text structure"
+      },
+      {
+        "@language": "it",
+        "@value": "struttura compositiva del testo del contenuto"
+      },
+      {
+        "@language": "de",
+        "@value": "kompositionelle inhaltliche Textstruktur"
+      },
+      {
+        "@language": "fr",
+        "@value": "structure de composition du texte du contenu"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text structure depending on text content, e.g. a paragraph, section, prose, citation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "inhaltliche Textstruktur"
+      },
+      {
+        "@language": "en",
+        "@value": "content text structure"
+      },
+      {
+        "@language": "it",
+        "@value": "struttura del contenuto del testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "structure du contenu du texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Structure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isTextOfColumn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating text to a column it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Column"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is text of column"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Text einer Spalte"
+      },
+      {
+        "@language": "it",
+        "@value": "è un testo di colonna"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un texte de colonne"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Column"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Identifier",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Identifier of a text structure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textstrukturidentifikator"
+      },
+      {
+        "@language": "fr",
+        "@value": "identifiant de structure de texte"
+      },
+      {
+        "@language": "it",
+        "@value": "identificatore della struttura del testo"
+      },
+      {
+        "@language": "en",
+        "@value": "text structure identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#isParagraphOfSection",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a paragraph to a section it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Paragraf eines Textabschnittes"
+      },
+      {
+        "@language": "en",
+        "@value": "is paragraph of section"
+      },
+      {
+        "@language": "it",
+        "@value": "è un paragrafo della sezione"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un paragraphe d'une section"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Section"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Line",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text structured as a line, filling a two-dimensional space, with an orientation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "riga di testo"
+      },
+      {
+        "@language": "de",
+        "@value": "Textzeile"
+      },
+      {
+        "@language": "fr",
+        "@value": "ligne de texte"
+      },
+      {
+        "@language": "en",
+        "@value": "text line"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#ScientificStructure",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Content text structure depending on scientific purpose, e.g. a critical apparatus."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "wissenschaftliche Textstruktur"
+      },
+      {
+        "@language": "it",
+        "@value": "struttura del testo scientifico"
+      },
+      {
+        "@language": "en",
+        "@value": "scientific text structure"
+      },
+      {
+        "@language": "fr",
+        "@value": "structure du texte scientifique"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-structure#Sentence",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Syntactic structure comprising one or more linked syntactic words, basically a subject and predicate."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Satz"
+      },
+      {
+        "@language": "it",
+        "@value": "frase"
+      },
+      {
+        "@language": "fr",
+        "@value": "phrase"
+      },
+      {
+        "@language": "en",
+        "@value": "sentence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticStructure"
       }
     ]
   },
@@ -1179,560 +2887,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isSentenceOfProse",
+    "@id": "http://e-editiones.ch/ontology/text-structure#sectionHasOrdinalNumber",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a sentence to a prose it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Sentence"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est une phrase de prose"
-      },
-      {
-        "@language": "it",
-        "@value": "è una frase di prosa"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Satz einer Prosa"
-      },
-      {
-        "@language": "en",
-        "@value": "is sentence of prose"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Prose"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text structure depending on text content, e.g. a paragraph, section, prose, citation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "structure du contenu du texte"
-      },
-      {
-        "@language": "it",
-        "@value": "struttura del contenuto del testo"
-      },
-      {
-        "@language": "de",
-        "@value": "inhaltliche Textstruktur"
-      },
-      {
-        "@language": "en",
-        "@value": "content text structure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isParagraphOfSection",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a paragraph to a section it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Paragraph"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Paragraf eines Textabschnittes"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un paragraphe d'une section"
-      },
-      {
-        "@language": "it",
-        "@value": "è un paragrafo della sezione"
-      },
-      {
-        "@language": "en",
-        "@value": "is paragraph of section"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Section"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#lineHasOrdinalNumeral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text line to its ordinal numeral."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textzeile hat Ordinalnumerale"
-      },
-      {
-        "@language": "it",
-        "@value": "riga di testo ha numerale ordinale"
-      },
-      {
-        "@language": "en",
-        "@value": "text line has ordinal numeral"
-      },
-      {
-        "@language": "fr",
-        "@value": "ligne de texte a numéral ordinal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/text-structure#lineHasOrdinalNumber"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Compositional text structure providing text readability, e.g. a line, column, page."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "text readability structure"
-      },
-      {
-        "@language": "it",
-        "@value": "struttura della leggibilità del testo"
-      },
-      {
-        "@language": "de",
-        "@value": "Textlesbarkeitstruktur"
-      },
-      {
-        "@language": "fr",
-        "@value": "structure de lisibilité du texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalStructure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text#SurfaceText"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isWordBeforeSpace",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an orthographic word to the text line space it precedes."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Wort vor einem Leerzeichen"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un mot avant un espace"
-      },
-      {
-        "@language": "en",
-        "@value": "is word before space"
-      },
-      {
-        "@language": "it",
-        "@value": "è una parola prima di uno spazio"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#SectionIdentifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identifier of a text section."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textabschnittidentifikator"
-      },
-      {
-        "@language": "en",
-        "@value": "text section identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#SurfaceSentence",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Sentence expressed on a surface."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "surface sentence"
-      },
-      {
-        "@language": "it",
-        "@value": "frase di superficie"
-      },
-      {
-        "@language": "fr",
-        "@value": "phrase de surface"
-      },
-      {
-        "@language": "de",
-        "@value": "Flächesatz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Sentence"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A surface sentence can be considered as a syntactic directed text line or text vector."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#LineOrdinalNumber",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Ordinal number of a text line."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textzeile-Ordinalzahl"
-      },
-      {
-        "@language": "fr",
-        "@value": "nombre ordinal de ligne de texte"
-      },
-      {
-        "@language": "it",
-        "@value": "numero ordinale della riga di testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text line ordinal number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#LineIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Rhyme",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Words or phrases with whole or end corresponding sound, especially when involving the last stressed vowel and all succeeding sounds."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Reim"
-      },
-      {
-        "@language": "fr",
-        "@value": "rime"
-      },
-      {
-        "@language": "it",
-        "@value": "rima"
-      },
-      {
-        "@language": "en",
-        "@value": "rhyme"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Sentence",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Syntactic structure comprising one or more linked syntactic words, basically a subject and predicate."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "frase"
-      },
-      {
-        "@language": "de",
-        "@value": "Satz"
-      },
-      {
-        "@language": "fr",
-        "@value": "phrase"
-      },
-      {
-        "@language": "en",
-        "@value": "sentence"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#OrthographoSyntacticWord",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Word being orthographic and syntactic."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "parola ortografico-sintattica"
-      },
-      {
-        "@language": "de",
-        "@value": "orthographosyntaktisches Wort"
-      },
-      {
-        "@language": "fr",
-        "@value": "mot orthographo-syntaxique"
-      },
-      {
-        "@language": "en",
-        "@value": "orthographo-syntactic word"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Common word."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#sectionHasTitleLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text section to its title literal."
+        "@value": "Relating a text section to its ordinal number."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -1747,350 +2909,25 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "text section has title literal"
-      },
-      {
-        "@language": "it",
-        "@value": "sezione di testo ha letterale del titolo"
-      },
-      {
         "@language": "fr",
-        "@value": "section de texte a littéral du titre"
+        "@value": "section de texte a numéro"
+      },
+      {
+        "@language": "en",
+        "@value": "text section has ordinal number"
       },
       {
         "@language": "de",
-        "@value": "Textabschnitt hat Titelliterale"
+        "@value": "Textabschnitt hat Ordinalzahl"
+      },
+      {
+        "@language": "it",
+        "@value": "sezione di testo ha numero"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isTextOfColumn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating text to a column it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Column"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is text of column"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un texte de colonne"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Text einer Spalte"
-      },
-      {
-        "@language": "it",
-        "@value": "è un testo di colonna"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Column"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isPageOfExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text page to a text expression it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Page"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Seite einer Textexpression"
-      },
-      {
-        "@language": "it",
-        "@value": "è una pagina di espressione di testo"
-      },
-      {
-        "@language": "en",
-        "@value": "is page of text expression"
-      },
-      {
-        "@language": "fr",
-        "@value": "est une page d'expression de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isLineOfColumn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text line to a column it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ColumnLine"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is line of column"
-      },
-      {
-        "@language": "it",
-        "@value": "è una riga della colonna"
-      },
-      {
-        "@language": "fr",
-        "@value": "est une ligne de la colonne"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Zeile einer Spalte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Column"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Line",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text structured as a line, filling a two-dimensional space, with an orientation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "text line"
-      },
-      {
-        "@language": "de",
-        "@value": "Textzeile"
-      },
-      {
-        "@language": "it",
-        "@value": "riga di testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "ligne de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isWordOfSentence",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a syntactic word to the sentence it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is word of sentence"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Wort eines Satzes"
-      },
-      {
-        "@language": "it",
-        "@value": "è una parola di frase"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un mot de phrase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Sentence"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalStructure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text structure depending on text composition in a two-dimensional plane, e.g. a line, paragraph, section, page."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "struttura compositiva del testo"
-      },
-      {
-        "@language": "de",
-        "@value": "kompositionelle Textstruktur"
-      },
-      {
-        "@language": "en",
-        "@value": "compositional text structure"
-      },
-      {
-        "@language": "fr",
-        "@value": "structure de composition de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Dialogue",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text with dialogue structure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "dialogue"
-      },
-      {
-        "@language": "fr",
-        "@value": "dialogue"
-      },
-      {
-        "@language": "it",
-        "@value": "dialogo"
-      },
-      {
-        "@language": "de",
-        "@value": "Dialog"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
+        "@id": "http://e-editiones.ch/ontology/text-structure#SectionOrdinalNumber"
       }
     ]
   },
@@ -2117,12 +2954,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "è una frase del paragrafo"
-      },
-      {
         "@language": "de",
         "@value": "ist Satz eines Paragrafen"
+      },
+      {
+        "@language": "it",
+        "@value": "è una frase del paragrafo"
       },
       {
         "@language": "en",
@@ -2145,19 +2982,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isPunctuationOfSentence",
+    "@id": "http://e-editiones.ch/ontology/text-structure#isWordBeforeSpace",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a punctuation to the sentence it is part of."
+        "@value": "Relating an orthographic word to the text line space it precedes."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation"
+        "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -2167,42 +3004,37 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "ist Interpunktion eines Satzes"
-      },
-      {
-        "@language": "it",
-        "@value": "è una punteggiatura di una frase"
-      },
-      {
         "@language": "en",
-        "@value": "is punctuation of sentence"
+        "@value": "is word before space"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Wort vor einem Leerzeichen"
       },
       {
         "@language": "fr",
-        "@value": "est une ponctuation d'une phrase"
+        "@value": "est un mot avant un espace"
+      },
+      {
+        "@language": "it",
+        "@value": "è una parola prima di uno spazio"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Sentence"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+        "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isTextOfPage",
+    "@id": "http://e-editiones.ch/ontology/text-structure#isPageOfExpression",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text page to a document page it is part of."
+        "@value": "Relating a text page to a text expression it is part of."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -2218,671 +3050,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is text of page"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Text einer Seite"
+        "@value": "is page of text expression"
       },
       {
         "@language": "it",
-        "@value": "è un testo di una pagina"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un texte d'une page"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Page"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Section",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Composition of paragraphs, mostly about a certain topic."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textabschnitt"
-      },
-      {
-        "@language": "en",
-        "@value": "text section"
-      },
-      {
-        "@language": "it",
-        "@value": "sezione di testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "section de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SentenceStructure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Structure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text as structure abstracted from its carrier, e.g. a word, sentence, text line, paragraph, section, verse, strophe, citation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "struttura del testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text structure"
-      },
-      {
-        "@language": "fr",
-        "@value": "structure de texte"
+        "@value": "è una pagina di espressione di testo"
       },
       {
         "@language": "de",
-        "@value": "Textstruktur"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#Text"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Making up a text expression, without necessarily being one itself."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isWordOfLine",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an orthographic word to the text line it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est un mot d'une ligne"
-      },
-      {
-        "@language": "en",
-        "@value": "is word of line"
-      },
-      {
-        "@language": "it",
-        "@value": "è una parola di linea"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Wort einer Zeile"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#OrthographicWord",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Smallest independent orthographic entity composed of symbols, surrounded by whitespace in a written text line."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "parola ortografica"
-      },
-      {
-        "@language": "de",
-        "@value": "orthographisches Wort"
-      },
-      {
-        "@language": "en",
-        "@value": "orthographic word"
+        "@value": "ist Seite einer Textexpression"
       },
       {
         "@language": "fr",
-        "@value": "mot orthographique"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#WrittenText"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/linguistics#Concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Postcard",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text with postcard structure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "struttura da cartolina"
-      },
-      {
-        "@language": "en",
-        "@value": "postcard structure"
-      },
-      {
-        "@language": "fr",
-        "@value": "structure de carte postale"
-      },
-      {
-        "@language": "de",
-        "@value": "Postkarte-Struktur"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#PageLine",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text line of a text page."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "riga di testo di pagina"
-      },
-      {
-        "@language": "fr",
-        "@value": "ligne de texte de page"
-      },
-      {
-        "@language": "en",
-        "@value": "page text line"
-      },
-      {
-        "@language": "de",
-        "@value": "Textzeile einer Seite"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "In case of a horizontal line, its maximum length equals the page width minus margins."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#SentenceStructure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Content structure depending on sentences, e.g. a paragraph, section, prose"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "Struttura della frase"
-      },
-      {
-        "@language": "fr",
-        "@value": "structure de phrase"
-      },
-      {
-        "@language": "de",
-        "@value": "Satzstruktur"
-      },
-      {
-        "@language": "en",
-        "@value": "sentence structure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isPunctuationBeforeWord",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a punctuation to the word it precedes."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est une ponctuation devant un mot"
-      },
-      {
-        "@language": "en",
-        "@value": "is punctuation before word"
-      },
-      {
-        "@language": "it",
-        "@value": "è una punteggiatura prima di una parola"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Interpunktion vor einem Wort"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Content text structure depending on text composition, e.g. a paragraph, section."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "struttura compositiva del testo del contenuto"
-      },
-      {
-        "@language": "en",
-        "@value": "compositional content text structure"
-      },
-      {
-        "@language": "de",
-        "@value": "kompositionelle inhaltliche Textstruktur"
-      },
-      {
-        "@language": "fr",
-        "@value": "structure de composition du texte du contenu"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#CompositionalStructure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isPunctuationBeforeSpace",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a punctuation to the space it precedes."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Punctuation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "è una punteggiatura prima dello spazio"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Interpunktion vor einem Leerzeichen"
-      },
-      {
-        "@language": "fr",
-        "@value": "est une ponctuation avant l'espace"
-      },
-      {
-        "@language": "en",
-        "@value": "is punctuation before space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#LineSpace",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Empty space between orthographic words in a text line."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "spazio della riga di testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text line space"
-      },
-      {
-        "@language": "fr",
-        "@value": "espace de ligne de texte"
-      },
-      {
-        "@language": "de",
-        "@value": "Leerzeichen einer Textzeile"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticWord",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Smallest independent syntactic structure composed of symbols that can be replaced in a sentence or verse."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "parola sintattica"
-      },
-      {
-        "@language": "fr",
-        "@value": "mot syntaxique"
-      },
-      {
-        "@language": "de",
-        "@value": "syntaktisches Wort"
-      },
-      {
-        "@language": "en",
-        "@value": "syntactic word"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/linguistics#Concept"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SyntacticStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#SectionOrdinalNumber",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Ordinal number of a text section."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textabschnittordinalzahl"
-      },
-      {
-        "@language": "en",
-        "@value": "text section ordinal number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#SectionIdentifier"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#LineIdentifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identifier of a text line."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "identificatore della riga di testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "identifiant de ligne de texte"
-      },
-      {
-        "@language": "en",
-        "@value": "text line identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "Textzeile-Identifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isPostcardStructureOfExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a postcard structure to a text expression it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Postcard"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "est une structure d'expression de carte postale"
-      },
-      {
-        "@language": "en",
-        "@value": "is postcard structure of expression"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Postkarte-Struktur einer Expression"
-      },
-      {
-        "@language": "it",
-        "@value": "è una struttura espressiva da cartolina"
+        "@value": "est une page d'expression de texte"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2892,187 +3072,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#isSectionOfExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a section to the sentence expression it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Section"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is section of sentence expression"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Abschnitt eines Satz-Expression"
-      },
-      {
-        "@language": "it",
-        "@value": "è una sezione dell'espressione della frase"
-      },
-      {
-        "@language": "fr",
-        "@value": "est une section d'expression de phrase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#SentenceExpression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Column",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text structured as a column."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "colonna di testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text column"
-      },
-      {
-        "@language": "de",
-        "@value": "Textspalte"
-      },
-      {
-        "@language": "fr",
-        "@value": "colonne de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ReadabilityStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#lineHasIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text line to its identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Line"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "ligne de texte a identifiant"
-      },
-      {
-        "@language": "en",
-        "@value": "text line has identifier"
-      },
-      {
-        "@language": "it",
-        "@value": "riga di testo ha identificatore"
-      },
-      {
-        "@language": "de",
-        "@value": "Textzeile hat Identifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#LineIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#hasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-structure#Identifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identifier of a text structure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "identificatore della struttura del testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text structure identifier"
-      },
-      {
-        "@language": "fr",
-        "@value": "identifiant de structure de texte"
-      },
-      {
-        "@language": "de",
-        "@value": "Textstrukturidentifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier"
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
       }
     ]
   }

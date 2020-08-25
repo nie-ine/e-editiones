@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -76,7 +120,7 @@
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/language" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/language" title="Browse http://e-editiones.ch/ontology/language">language:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/language" title="Browse http://e-editiones.ch/ontology/language"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/creator">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
@@ -111,7 +155,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e178="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e184="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -138,13 +182,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Agent-Übersetzer" xml:lang="de">
-               <div class="property-object">Agent-Übersetzer
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="agent translator" xml:lang="en"></span><div class="property-object">agent translator
-                  													
+            <td property="rdfs:label" content="agent translator" xml:lang="en">
+               <div class="property-object">agent translator
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Agent-Übersetzer" xml:lang="de"></span><div class="property-object">Agent-Übersetzer
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -179,10 +223,6 @@
                <div class="property-object">Sprache-Kode
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="language code" xml:lang="en"></span><div class="property-object">language code
-                  													
-                  													(en)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="codice della lingua" xml:lang="it"></span><div class="property-object">codice della lingua
                   													
                   													(it)
@@ -190,6 +230,10 @@
                <div class="connector"></div><span property="rdfs:label" content="code de langue" xml:lang="fr"></span><div class="property-object">code de langue
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="language code" xml:lang="en"></span><div class="property-object">language code
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -387,13 +431,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="human natural language expression" xml:lang="en">
-               <div class="property-object">human natural language expression
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="menschliche naturliche sprachliche Äusserung" xml:lang="de"></span><div class="property-object">menschliche naturliche sprachliche Äusserung
-                  													
+            <td property="rdfs:label" content="menschliche naturliche sprachliche Äusserung" xml:lang="de">
+               <div class="property-object">menschliche naturliche sprachliche Äusserung
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="human natural language expression" xml:lang="en"></span><div class="property-object">human natural language expression
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -406,9 +450,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#Information" title="Browse http://e-editiones.ch/ontology/concept#Information">concept:Information</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object" title="Browse http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">cidoc:E33 Linguistic Object</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#Information" title="Browse http://e-editiones.ch/ontology/concept#Information">concept:Information</a></div>
             </td>
          </tr>
       </table>
@@ -446,9 +490,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://purl.org/dc/terms/LinguisticSystem" title="Browse http://purl.org/dc/terms/LinguisticSystem">dct:LinguisticSystem</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://purl.org/dc/terms/LinguisticSystem" title="Browse http://purl.org/dc/terms/LinguisticSystem">dct:LinguisticSystem</a></div>
             </td>
          </tr>
       </table>
@@ -472,9 +516,9 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="machine translation" xml:lang="en">
-               <div class="property-object">machine translation
-                  													(en)
+            <td property="rdfs:label" content="traduzione automatica" xml:lang="it">
+               <div class="property-object">traduzione automatica
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Maschinenübersetzung" xml:lang="de"></span><div class="property-object">Maschinenübersetzung
                   													
@@ -484,9 +528,9 @@
                   													
                   													(fr)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="traduzione automatica" xml:lang="it"></span><div class="property-object">traduzione automatica
+               <div class="connector"></div><span property="rdfs:label" content="machine translation" xml:lang="en"></span><div class="property-object">machine translation
                   													
-                  													(it)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -554,22 +598,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="person's translation" xml:lang="en">
-               <div class="property-object">person's translation
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Übersetzung einer Person" xml:lang="de"></span><div class="property-object">Übersetzung einer Person
-                  													
+            <td property="rdfs:label" content="Übersetzung einer Person" xml:lang="de">
+               <div class="property-object">Übersetzung einer Person
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="person's translation" xml:lang="en"></span><div class="property-object">person's translation
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationDerivative" title="Browse http://e-editiones.ch/ontology/creating#CreationDerivative">creating:CreationDerivative</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#Translation" title="Browse http://e-editiones.ch/ontology/language#Translation">language:Translation</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationDerivative" title="Browse http://e-editiones.ch/ontology/creating#CreationDerivative">creating:CreationDerivative</a></div>
             </td>
          </tr>
       </table>
@@ -593,13 +637,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="person-translator" xml:lang="en">
-               <div class="property-object">person-translator
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Person-Übersetzer" xml:lang="de"></span><div class="property-object">Person-Übersetzer
-                  													
+            <td property="rdfs:label" content="Person-Übersetzer" xml:lang="de">
+               <div class="property-object">Person-Übersetzer
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="person-translator" xml:lang="en"></span><div class="property-object">person-translator
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -632,17 +676,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="traduzione" xml:lang="it">
-               <div class="property-object">traduzione
-                  													(it)
+            <td property="rdfs:label" content="translation" xml:lang="en">
+               <div class="property-object">translation
+                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Übersetzung" xml:lang="de"></span><div class="property-object">Übersetzung
                   													
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="translation" xml:lang="en"></span><div class="property-object">translation
+               <div class="connector"></div><span property="rdfs:label" content="traduzione" xml:lang="it"></span><div class="property-object">traduzione
                   													
-                  													(en)
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="traduction" xml:lang="fr"></span><div class="property-object">traduction
                   													
@@ -697,13 +741,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="expressed in dialect" xml:lang="en">
-               <div class="property-object">expressed in dialect
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="geäußert in Mundart" xml:lang="de"></span><div class="property-object">geäußert in Mundart
-                  													
+            <td property="rdfs:label" content="geäußert in Mundart" xml:lang="de">
+               <div class="property-object">geäußert in Mundart
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="expressed in dialect" xml:lang="en"></span><div class="property-object">expressed in dialect
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -789,13 +833,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has content literal" xml:lang="en">
-               <div class="property-object">has content literal
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Inhaltliterale" xml:lang="de"></span><div class="property-object">hat Inhaltliterale
-                  													
+            <td property="rdfs:label" content="hat Inhaltliterale" xml:lang="de">
+               <div class="property-object">hat Inhaltliterale
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has content literal" xml:lang="en"></span><div class="property-object">has content literal
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -838,13 +882,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="hat Machine-Übersetzer" xml:lang="de">
-               <div class="property-object">hat Machine-Übersetzer
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has machine-translator" xml:lang="en"></span><div class="property-object">has machine-translator
-                  													
+            <td property="rdfs:label" content="has machine-translator" xml:lang="en">
+               <div class="property-object">has machine-translator
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Machine-Übersetzer" xml:lang="de"></span><div class="property-object">hat Machine-Übersetzer
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -856,8 +900,6 @@
                      <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
                         <td>
-                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/device#DigitalElectronicComputer" title="Browse http://e-editiones.ch/ontology/device#DigitalElectronicComputer">device:DigitalElectronicComputer</a></div>
-                           <div class="connector"></div>
                            <div class="property-object" rel="rdfs:subClassOf">
                               <table typeof="owl:Restriction">
                                  <tr>
@@ -877,6 +919,8 @@
                                  </tr>
                               </table>
                            </div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/device#DigitalElectronicComputer" title="Browse http://e-editiones.ch/ontology/device#DigitalElectronicComputer">device:DigitalElectronicComputer</a></div>
                         </td>
                      </tr>
                   </table>
@@ -886,78 +930,7 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subPropertyOf">
-                  <table about="http://e-editiones.ch/ontology/language#hasTranslator" typeof="owl:ObjectProperty">
-                     <tr>
-                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/language#hasTranslator" title="Browse http://e-editiones.ch/ontology/language#hasTranslator">language:hasTranslator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-                        <td property="rdfs:comment" content="Relating a natural language expression to an agent that translated it." xml:lang="en">
-                           <div class="property-object">Relating a natural language expression to an agent that translated it.</div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression" title="Browse http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression">language:HumanNaturalLanguageExpression</a></div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/language#" title="Browse http://e-editiones.ch/ontology/language#">language:</a></div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-                        <td property="rdfs:label" content="has translator" xml:lang="en">
-                           <div class="property-object">has translator
-                              													(en)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="hat Übersetzer" xml:lang="de"></span><div class="property-object">hat Übersetzer
-                              													
-                              													(de)
-                              												</div>
-                        </td>
-                     </tr>
-                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
-                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
-                        <td>
-                           <div class="property-object" rel="rdfs:range">
-                              <table typeof="rdfs:Resource">
-                                 <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
-                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
-                                    <td>
-                                       <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/agent#Agent" title="Browse http://e-editiones.ch/ontology/agent#Agent">agent:Agent</a></div>
-                                       <div class="connector"></div>
-                                       <div class="property-object" rel="rdfs:subClassOf">
-                                          <table typeof="owl:Restriction">
-                                             <tr>
-                                                <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
-                                             </tr>
-                                             <tr class="http://www.w3.org/2002/07/owl#onProperty">
-                                                <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
-                                                <td>
-                                                   <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/agent#hasRole" title="Browse http://e-editiones.ch/ontology/agent#hasRole">agent:hasRole</a></div>
-                                                </td>
-                                             </tr>
-                                             <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
-                                                <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
-                                                <td>
-                                                   <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/language#AgentTranslator" title="Browse http://e-editiones.ch/ontology/language#AgentTranslator">language:AgentTranslator</a></div>
-                                                </td>
-                                             </tr>
-                                          </table>
-                                       </div>
-                                    </td>
-                                 </tr>
-                              </table>
-                           </div>
-                        </td>
-                     </tr>
-                  </table>
-               </div>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/language#hasTranslator" title="Browse http://e-editiones.ch/ontology/language#hasTranslator">language:hasTranslator</a></div>
             </td>
          </tr>
       </table>
@@ -1035,7 +1008,78 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/language#hasTranslator" title="Browse http://e-editiones.ch/ontology/language#hasTranslator">language:hasTranslator</a></div>
+               <div class="property-object" rel="rdfs:subPropertyOf">
+                  <table about="http://e-editiones.ch/ontology/language#hasTranslator" typeof="owl:ObjectProperty">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/language#hasTranslator" title="Browse http://e-editiones.ch/ontology/language#hasTranslator">language:hasTranslator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Relating a natural language expression to an agent that translated it." xml:lang="en">
+                           <div class="property-object">Relating a natural language expression to an agent that translated it.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression" title="Browse http://e-editiones.ch/ontology/language#HumanNaturalLanguageExpression">language:HumanNaturalLanguageExpression</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/language#" title="Browse http://e-editiones.ch/ontology/language#">language:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="has translator" xml:lang="en">
+                           <div class="property-object">has translator
+                              													(en)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="hat Übersetzer" xml:lang="de"></span><div class="property-object">hat Übersetzer
+                              													
+                              													(de)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:range">
+                              <table typeof="rdfs:Resource">
+                                 <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                                    <td>
+                                       <div class="property-object" rel="rdfs:subClassOf">
+                                          <table typeof="owl:Restriction">
+                                             <tr>
+                                                <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                             </tr>
+                                             <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                                <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                                <td>
+                                                   <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/agent#hasRole" title="Browse http://e-editiones.ch/ontology/agent#hasRole">agent:hasRole</a></div>
+                                                </td>
+                                             </tr>
+                                             <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                                <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                                <td>
+                                                   <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/language#AgentTranslator" title="Browse http://e-editiones.ch/ontology/language#AgentTranslator">language:AgentTranslator</a></div>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                       <div class="connector"></div>
+                                       <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/agent#Agent" title="Browse http://e-editiones.ch/ontology/agent#Agent">agent:Agent</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
             </td>
          </tr>
       </table>
@@ -1213,13 +1257,13 @@
                      </tr>
                      <tr class="http://www.w3.org/2000/01/rdf-schema#label">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-                        <td property="rdfs:label" content="geäußert in naturlichen Sprache" xml:lang="de">
-                           <div class="property-object">geäußert in naturlichen Sprache
-                              													(de)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="expressed in natural language" xml:lang="en"></span><div class="property-object">expressed in natural language
-                              													
+                        <td property="rdfs:label" content="expressed in natural language" xml:lang="en">
+                           <div class="property-object">expressed in natural language
                               													(en)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="geäußert in naturlichen Sprache" xml:lang="de"></span><div class="property-object">geäußert in naturlichen Sprache
+                              													
+                              													(de)
                               												</div>
                         </td>
                      </tr>
@@ -1266,13 +1310,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Übersetzung hat Machine-Übersetzer" xml:lang="de">
-               <div class="property-object">Übersetzung hat Machine-Übersetzer
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="translation has machine-translator" xml:lang="en"></span><div class="property-object">translation has machine-translator
-                  													
+            <td property="rdfs:label" content="translation has machine-translator" xml:lang="en">
+               <div class="property-object">translation has machine-translator
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Übersetzung hat Machine-Übersetzer" xml:lang="de"></span><div class="property-object">Übersetzung hat Machine-Übersetzer
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1284,6 +1328,8 @@
                      <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
                         <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/device#DigitalElectronicComputer" title="Browse http://e-editiones.ch/ontology/device#DigitalElectronicComputer">device:DigitalElectronicComputer</a></div>
+                           <div class="connector"></div>
                            <div class="property-object" rel="rdfs:subClassOf">
                               <table typeof="owl:Restriction">
                                  <tr>
@@ -1303,8 +1349,6 @@
                                  </tr>
                               </table>
                            </div>
-                           <div class="connector"></div>
-                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/device#DigitalElectronicComputer" title="Browse http://e-editiones.ch/ontology/device#DigitalElectronicComputer">device:DigitalElectronicComputer</a></div>
                         </td>
                      </tr>
                   </table>
@@ -1433,8 +1477,6 @@
                      <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
                         <td>
-                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
-                           <div class="connector"></div>
                            <div class="property-object" rel="rdfs:subClassOf">
                               <table typeof="owl:Restriction">
                                  <tr>
@@ -1454,6 +1496,8 @@
                                  </tr>
                               </table>
                            </div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
                         </td>
                      </tr>
                   </table>

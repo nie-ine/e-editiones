@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -76,7 +120,7 @@
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/raeber" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/raeber" title="Browse http://e-editiones.ch/ontology/raeber">raeber:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/raeber" title="Browse http://e-editiones.ch/ontology/raeber"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/creator">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
@@ -112,7 +156,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e138="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e157="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -175,13 +219,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Element eines Kuno Raeber-Konvoluts" xml:lang="de">
-               <div class="property-object">Element eines Kuno Raeber-Konvoluts
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber convolute element" xml:lang="en"></span><div class="property-object">Kuno Raeber convolute element
-                  													
+            <td property="rdfs:label" content="Kuno Raeber convolute element" xml:lang="en">
+               <div class="property-object">Kuno Raeber convolute element
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Element eines Kuno Raeber-Konvoluts" xml:lang="de"></span><div class="property-object">Element eines Kuno Raeber-Konvoluts
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -232,13 +276,13 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Diary" title="Browse http://e-editiones.ch/ontology/information-carrier#Diary">information-carrier:Diary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Manuscript" title="Browse http://e-editiones.ch/ontology/information-carrier#Manuscript">information-carrier:Manuscript</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Book" title="Browse http://e-editiones.ch/ontology/information-carrier#Book">information-carrier:Book</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Book" title="Browse http://e-editiones.ch/ontology/information-carrier#Book">information-carrier:Book</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Diary" title="Browse http://e-editiones.ch/ontology/information-carrier#Diary">information-carrier:Diary</a></div>
             </td>
          </tr>
       </table>
@@ -262,22 +306,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber diary convolute" xml:lang="en">
-               <div class="property-object">Kuno Raeber diary convolute
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Tagebuch-Konvolut Kuno Raebers" xml:lang="de"></span><div class="property-object">Tagebuch-Konvolut Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Tagebuch-Konvolut Kuno Raebers" xml:lang="de">
+               <div class="property-object">Tagebuch-Konvolut Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber diary convolute" xml:lang="en"></span><div class="property-object">Kuno Raeber diary convolute
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Convolute" title="Browse http://e-editiones.ch/ontology/raeber#Convolute">raeber:Convolute</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
             </td>
          </tr>
       </table>
@@ -301,22 +345,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber diary entry" xml:lang="en">
-               <div class="property-object">Kuno Raeber diary entry
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Tagebucheintrag Kuno Raebers" xml:lang="de"></span><div class="property-object">Tagebucheintrag Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Tagebucheintrag Kuno Raebers" xml:lang="de">
+               <div class="property-object">Tagebucheintrag Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber diary entry" xml:lang="en"></span><div class="property-object">Kuno Raeber diary entry
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#DiaryEntry" title="Browse http://e-editiones.ch/ontology/text-expression#DiaryEntry">text-expression:DiaryEntry</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#DiaryEntry" title="Browse http://e-editiones.ch/ontology/text-expression#DiaryEntry">text-expression:DiaryEntry</a></div>
             </td>
          </tr>
       </table>
@@ -328,11 +372,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Diplomatic transcription of a text authored by Kuno Raeber." xml:lang="en">
-               <div class="property-object">Diplomatic transcription of a text authored by Kuno Raeber.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Diplomatische Umschrift eines von Kuno Raeber verfassten Texts." xml:lang="de"></span><div class="property-object">Diplomatische Umschrift eines von Kuno Raeber verfassten Texts.
+            <td property="rdfs:comment" content="Diplomatische Umschrift eines von Kuno Raeber verfassten Texts." xml:lang="de">
+               <div class="property-object">Diplomatische Umschrift eines von Kuno Raeber verfassten Texts.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Diplomatic transcription of a text authored by Kuno Raeber." xml:lang="en"></span><div class="property-object">Diplomatic transcription of a text authored by Kuno Raeber.
                   													
-                  													(de)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -344,13 +388,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="diplomatische Umschrift eines Kuno Raeber Textes" xml:lang="de">
-               <div class="property-object">diplomatische Umschrift eines Kuno Raeber Textes
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber text diplomatic transcription" xml:lang="en"></span><div class="property-object">Kuno Raeber text diplomatic transcription
-                  													
+            <td property="rdfs:label" content="Kuno Raeber text diplomatic transcription" xml:lang="en">
+               <div class="property-object">Kuno Raeber text diplomatic transcription
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="diplomatische Umschrift eines Kuno Raeber Textes" xml:lang="de"></span><div class="property-object">diplomatische Umschrift eines Kuno Raeber Textes
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -394,9 +438,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Draft" title="Browse http://e-editiones.ch/ontology/text-expression#Draft">text-expression:Draft</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Preface" title="Browse http://e-editiones.ch/ontology/raeber#Preface">raeber:Preface</a></div>
             </td>
@@ -435,9 +479,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Draft" title="Browse http://e-editiones.ch/ontology/text-expression#Draft">text-expression:Draft</a></div>
             </td>
@@ -467,22 +511,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="handgeschriebenes Gedicht Kuno Raebers" xml:lang="de">
-               <div class="property-object">handgeschriebenes Gedicht Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber handwritten poem" xml:lang="en"></span><div class="property-object">Kuno Raeber handwritten poem
-                  													
+            <td property="rdfs:label" content="Kuno Raeber handwritten poem" xml:lang="en">
+               <div class="property-object">Kuno Raeber handwritten poem
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="handgeschriebenes Gedicht Kuno Raebers" xml:lang="de"></span><div class="property-object">handgeschriebenes Gedicht Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Poem" title="Browse http://e-editiones.ch/ontology/raeber#Poem">raeber:Poem</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Poem" title="Browse http://e-editiones.ch/ontology/raeber#Poem">raeber:Poem</a></div>
             </td>
          </tr>
       </table>
@@ -506,22 +550,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber letter" xml:lang="en">
-               <div class="property-object">Kuno Raeber letter
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Brief Kuno Raebers" xml:lang="de"></span><div class="property-object">Brief Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Brief Kuno Raebers" xml:lang="de">
+               <div class="property-object">Brief Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber letter" xml:lang="en"></span><div class="property-object">Kuno Raeber letter
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/letter-corresponding#Letter" title="Browse http://e-editiones.ch/ontology/letter-corresponding#Letter">letter-corresponding:Letter</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
             </td>
          </tr>
       </table>
@@ -545,13 +589,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Briefekonvolut Kuno Raebers" xml:lang="de">
-               <div class="property-object">Briefekonvolut Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber letter convolute" xml:lang="en"></span><div class="property-object">Kuno Raeber letter convolute
-                  													
+            <td property="rdfs:label" content="Kuno Raeber letter convolute" xml:lang="en">
+               <div class="property-object">Kuno Raeber letter convolute
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Briefekonvolut Kuno Raebers" xml:lang="de"></span><div class="property-object">Briefekonvolut Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -584,13 +628,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Brief-Expression Kuno Raebers" xml:lang="de">
-               <div class="property-object">Brief-Expression Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber letter expression" xml:lang="en"></span><div class="property-object">Kuno Raeber letter expression
-                  													
+            <td property="rdfs:label" content="Kuno Raeber letter expression" xml:lang="en">
+               <div class="property-object">Kuno Raeber letter expression
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Brief-Expression Kuno Raebers" xml:lang="de"></span><div class="property-object">Brief-Expression Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -599,9 +643,9 @@
             <td>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#WrittenText" title="Browse http://e-editiones.ch/ontology/text#WrittenText">text:WrittenText</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/letter-corresponding#Expression" title="Browse http://e-editiones.ch/ontology/letter-corresponding#Expression">letter-corresponding:Expression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
             </td>
          </tr>
       </table>
@@ -625,26 +669,26 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber manuscript" xml:lang="en">
-               <div class="property-object">Kuno Raeber manuscript
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Manuskript Kuno Raebers" xml:lang="de"></span><div class="property-object">Manuskript Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Manuskript Kuno Raebers" xml:lang="de">
+               <div class="property-object">Manuskript Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber manuscript" xml:lang="en"></span><div class="property-object">Kuno Raeber manuscript
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Leaf" title="Browse http://e-editiones.ch/ontology/information-carrier#Leaf">information-carrier:Leaf</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#ConvoluteElement" title="Browse http://e-editiones.ch/ontology/raeber#ConvoluteElement">raeber:ConvoluteElement</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Manuscript" title="Browse http://e-editiones.ch/ontology/information-carrier#Manuscript">information-carrier:Manuscript</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Leaf" title="Browse http://e-editiones.ch/ontology/information-carrier#Leaf">information-carrier:Leaf</a></div>
             </td>
          </tr>
       </table>
@@ -720,11 +764,11 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#NachlassPublication" title="Browse http://e-editiones.ch/ontology/publishing#NachlassPublication">publishing:NachlassPublication</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#PrintedPublication" title="Browse http://e-editiones.ch/ontology/publishing#PrintedPublication">publishing:PrintedPublication</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Volume" title="Browse http://e-editiones.ch/ontology/information-carrier#Volume">information-carrier:Volume</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#NachlassPublication" title="Browse http://e-editiones.ch/ontology/publishing#NachlassPublication">publishing:NachlassPublication</a></div>
             </td>
          </tr>
       </table>
@@ -736,11 +780,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Seite mit einem handgeschriebenen Gedicht Kuno Raebers." xml:lang="de">
-               <div class="property-object">Seite mit einem handgeschriebenen Gedicht Kuno Raebers.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Page with a handwritten poem by Kuno Raeber." xml:lang="en"></span><div class="property-object">Page with a handwritten poem by Kuno Raeber.
+            <td property="rdfs:comment" content="Page with a handwritten poem by Kuno Raeber." xml:lang="en">
+               <div class="property-object">Page with a handwritten poem by Kuno Raeber.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Seite mit einem handgeschriebenen Gedicht Kuno Raebers." xml:lang="de"></span><div class="property-object">Seite mit einem handgeschriebenen Gedicht Kuno Raebers.
                   													
-                  													(en)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -802,9 +846,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Poem" title="Browse http://e-editiones.ch/ontology/literature#Poem">literature:Poem</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
             </td>
          </tr>
       </table>
@@ -853,11 +897,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Gedichtnotiz Kuno Raebers." xml:lang="de">
-               <div class="property-object">Gedichtnotiz Kuno Raebers.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Poem note authored by Kuno Raeber." xml:lang="en"></span><div class="property-object">Poem note authored by Kuno Raeber.
+            <td property="rdfs:comment" content="Poem note authored by Kuno Raeber." xml:lang="en">
+               <div class="property-object">Poem note authored by Kuno Raeber.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Gedichtnotiz Kuno Raebers." xml:lang="de"></span><div class="property-object">Gedichtnotiz Kuno Raebers.
                   													
-                  													(en)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -908,24 +952,24 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Gedichten-Notizbuch Kuno Raebers" xml:lang="de">
-               <div class="property-object">Gedichten-Notizbuch Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber poem notebook" xml:lang="en"></span><div class="property-object">Kuno Raeber poem notebook
-                  													
+            <td property="rdfs:label" content="Kuno Raeber poem notebook" xml:lang="en">
+               <div class="property-object">Kuno Raeber poem notebook
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Gedichten-Notizbuch Kuno Raebers" xml:lang="de"></span><div class="property-object">Gedichten-Notizbuch Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Convolute" title="Browse http://e-editiones.ch/ontology/raeber#Convolute">raeber:Convolute</a></div>
+               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Notebook" title="Browse http://e-editiones.ch/ontology/information-carrier#Notebook">information-carrier:Notebook</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Manuscript" title="Browse http://e-editiones.ch/ontology/information-carrier#Manuscript">information-carrier:Manuscript</a></div>
-               <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Convolute" title="Browse http://e-editiones.ch/ontology/raeber#Convolute">raeber:Convolute</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
             </td>
@@ -951,13 +995,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Gedicht-Postkarte Kuno Raebers" xml:lang="de">
-               <div class="property-object">Gedicht-Postkarte Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber poem postcard" xml:lang="en"></span><div class="property-object">Kuno Raeber poem postcard
-                  													
+            <td property="rdfs:label" content="Kuno Raeber poem postcard" xml:lang="en">
+               <div class="property-object">Kuno Raeber poem postcard
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Gedicht-Postkarte Kuno Raebers" xml:lang="de"></span><div class="property-object">Gedicht-Postkarte Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -966,11 +1010,11 @@
             <td>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Postcard" title="Browse http://e-editiones.ch/ontology/information-carrier#Postcard">information-carrier:Postcard</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Manuscript" title="Browse http://e-editiones.ch/ontology/information-carrier#Manuscript">information-carrier:Manuscript</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ConvoluteElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ConvoluteElement">information-carrier:ConvoluteElement</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Manuscript" title="Browse http://e-editiones.ch/ontology/information-carrier#Manuscript">information-carrier:Manuscript</a></div>
             </td>
          </tr>
       </table>
@@ -994,13 +1038,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Gedicht-Postkartenkonvolut Kuno Raebers" xml:lang="de">
-               <div class="property-object">Gedicht-Postkartenkonvolut Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber poem postcard convolute" xml:lang="en"></span><div class="property-object">Kuno Raeber poem postcard convolute
-                  													
+            <td property="rdfs:label" content="Kuno Raeber poem postcard convolute" xml:lang="en">
+               <div class="property-object">Kuno Raeber poem postcard convolute
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Gedicht-Postkartenkonvolut Kuno Raebers" xml:lang="de"></span><div class="property-object">Gedicht-Postkartenkonvolut Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1031,13 +1075,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber poem typescript" xml:lang="en">
-               <div class="property-object">Kuno Raeber poem typescript
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Gedichttyposkript Kuno Raebers" xml:lang="de"></span><div class="property-object">Gedichttyposkript Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Gedichttyposkript Kuno Raebers" xml:lang="de">
+               <div class="property-object">Gedichttyposkript Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber poem typescript" xml:lang="en"></span><div class="property-object">Kuno Raeber poem typescript
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1108,13 +1152,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber poly-author publication convolute" xml:lang="en">
-               <div class="property-object">Kuno Raeber poly-author publication convolute
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Mehrautorenpublikationen-Konvolut Kuno Raebers" xml:lang="de"></span><div class="property-object">Mehrautorenpublikationen-Konvolut Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Mehrautorenpublikationen-Konvolut Kuno Raebers" xml:lang="de">
+               <div class="property-object">Mehrautorenpublikationen-Konvolut Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber poly-author publication convolute" xml:lang="en"></span><div class="property-object">Kuno Raeber poly-author publication convolute
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1149,13 +1193,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Postkarten-Gedicht Kuno Raebers" xml:lang="de">
-               <div class="property-object">Postkarten-Gedicht Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber postcard poem" xml:lang="en"></span><div class="property-object">Kuno Raeber postcard poem
-                  													
+            <td property="rdfs:label" content="Kuno Raeber postcard poem" xml:lang="en">
+               <div class="property-object">Kuno Raeber postcard poem
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Postkarten-Gedicht Kuno Raebers" xml:lang="de"></span><div class="property-object">Postkarten-Gedicht Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1186,24 +1230,24 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Nachwort Kuno Raebers" xml:lang="de">
-               <div class="property-object">Nachwort Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber postface" xml:lang="en"></span><div class="property-object">Kuno Raeber postface
-                  													
+            <td property="rdfs:label" content="Kuno Raeber postface" xml:lang="en">
+               <div class="property-object">Kuno Raeber postface
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Nachwort Kuno Raebers" xml:lang="de"></span><div class="property-object">Nachwort Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Postface" title="Browse http://e-editiones.ch/ontology/literature#Postface">literature:Postface</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Nonfiction" title="Browse http://e-editiones.ch/ontology/text#Nonfiction">text:Nonfiction</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Nonfiction" title="Browse http://e-editiones.ch/ontology/text#Nonfiction">text:Nonfiction</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Postface" title="Browse http://e-editiones.ch/ontology/literature#Postface">literature:Postface</a></div>
             </td>
          </tr>
       </table>
@@ -1227,24 +1271,24 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Vorwort Kuno Raebers" xml:lang="de">
-               <div class="property-object">Vorwort Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber preface" xml:lang="en"></span><div class="property-object">Kuno Raeber preface
-                  													
+            <td property="rdfs:label" content="Kuno Raeber preface" xml:lang="en">
+               <div class="property-object">Kuno Raeber preface
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Vorwort Kuno Raebers" xml:lang="de"></span><div class="property-object">Vorwort Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Nonfiction" title="Browse http://e-editiones.ch/ontology/text#Nonfiction">text:Nonfiction</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Preface" title="Browse http://e-editiones.ch/ontology/literature#Preface">literature:Preface</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Nonfiction" title="Browse http://e-editiones.ch/ontology/text#Nonfiction">text:Nonfiction</a></div>
             </td>
          </tr>
       </table>
@@ -1281,11 +1325,11 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#PrintedPublication" title="Browse http://e-editiones.ch/ontology/publishing#PrintedPublication">publishing:PrintedPublication</a></div>
+               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Book" title="Browse http://e-editiones.ch/ontology/information-carrier#Book">information-carrier:Book</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Convolute" title="Browse http://e-editiones.ch/ontology/raeber#Convolute">raeber:Convolute</a></div>
-               <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#PrintedPublication" title="Browse http://e-editiones.ch/ontology/publishing#PrintedPublication">publishing:PrintedPublication</a></div>
             </td>
          </tr>
       </table>
@@ -1324,9 +1368,9 @@
             <td>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#Motto" title="Browse http://e-editiones.ch/ontology/literature#Motto">literature:Motto</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -1338,11 +1382,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Poem authored by Kuno Raeber, as published." xml:lang="en">
-               <div class="property-object">Poem authored by Kuno Raeber, as published.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Gedicht Kuno Raebers wie publiziert." xml:lang="de"></span><div class="property-object">Gedicht Kuno Raebers wie publiziert.
+            <td property="rdfs:comment" content="Gedicht Kuno Raebers wie publiziert." xml:lang="de">
+               <div class="property-object">Gedicht Kuno Raebers wie publiziert.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Poem authored by Kuno Raeber, as published." xml:lang="en"></span><div class="property-object">Poem authored by Kuno Raeber, as published.
                   													
-                  													(de)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1432,22 +1476,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber publication text expression part" xml:lang="en">
-               <div class="property-object">Kuno Raeber publication text expression part
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Publikation-Textexpressionsteil Kuno Raebers" xml:lang="de"></span><div class="property-object">Publikation-Textexpressionsteil Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Publikation-Textexpressionsteil Kuno Raebers" xml:lang="de">
+               <div class="property-object">Publikation-Textexpressionsteil Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber publication text expression part" xml:lang="en"></span><div class="property-object">Kuno Raeber publication text expression part
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -1475,13 +1519,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="wissenschaftliche Edition eines Kuno Raeber Textes" xml:lang="de">
-               <div class="property-object">wissenschaftliche Edition eines Kuno Raeber Textes
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="scholarly Kuno Raeber text edition" xml:lang="en"></span><div class="property-object">scholarly Kuno Raeber text edition
-                  													
+            <td property="rdfs:label" content="scholarly Kuno Raeber text edition" xml:lang="en">
+               <div class="property-object">scholarly Kuno Raeber text edition
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="wissenschaftliche Edition eines Kuno Raeber Textes" xml:lang="de"></span><div class="property-object">wissenschaftliche Edition eines Kuno Raeber Textes
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1549,26 +1593,26 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber typescript" xml:lang="en">
-               <div class="property-object">Kuno Raeber typescript
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Typoskript Kuno Raebers" xml:lang="de"></span><div class="property-object">Typoskript Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Typoskript Kuno Raebers" xml:lang="de">
+               <div class="property-object">Typoskript Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber typescript" xml:lang="en"></span><div class="property-object">Kuno Raeber typescript
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#ConvoluteElement" title="Browse http://e-editiones.ch/ontology/raeber#ConvoluteElement">raeber:ConvoluteElement</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Typescript" title="Browse http://e-editiones.ch/ontology/information-carrier#Typescript">information-carrier:Typescript</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Leaf" title="Browse http://e-editiones.ch/ontology/information-carrier#Leaf">information-carrier:Leaf</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#ConvoluteElement" title="Browse http://e-editiones.ch/ontology/raeber#ConvoluteElement">raeber:ConvoluteElement</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Typescript" title="Browse http://e-editiones.ch/ontology/information-carrier#Typescript">information-carrier:Typescript</a></div>
             </td>
          </tr>
       </table>
@@ -1592,13 +1636,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber typescript convolute" xml:lang="en">
-               <div class="property-object">Kuno Raeber typescript convolute
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Typoskriptenconvolut Kuno Raebers" xml:lang="de"></span><div class="property-object">Typoskriptenconvolut Kuno Raebers
-                  													
+            <td property="rdfs:label" content="Typoskriptenconvolut Kuno Raebers" xml:lang="de">
+               <div class="property-object">Typoskriptenconvolut Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber typescript convolute" xml:lang="en"></span><div class="property-object">Kuno Raeber typescript convolute
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1631,13 +1675,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Typoskriptenconvolut Kuno Raebers mit Bild" xml:lang="de">
-               <div class="property-object">Typoskriptenconvolut Kuno Raebers mit Bild
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber typescript convolute with image" xml:lang="en"></span><div class="property-object">Kuno Raeber typescript convolute with image
-                  													
+            <td property="rdfs:label" content="Kuno Raeber typescript convolute with image" xml:lang="en">
+               <div class="property-object">Kuno Raeber typescript convolute with image
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Typoskriptenconvolut Kuno Raebers mit Bild" xml:lang="de"></span><div class="property-object">Typoskriptenconvolut Kuno Raebers mit Bild
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1668,26 +1712,26 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kuno Raeber typewritten commentary" xml:lang="en">
-               <div class="property-object">Kuno Raeber typewritten commentary
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="maschinengeschriebener Kommentar Kuno Raebers" xml:lang="de"></span><div class="property-object">maschinengeschriebener Kommentar Kuno Raebers
-                  													
+            <td property="rdfs:label" content="maschinengeschriebener Kommentar Kuno Raebers" xml:lang="de">
+               <div class="property-object">maschinengeschriebener Kommentar Kuno Raebers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber typewritten commentary" xml:lang="en"></span><div class="property-object">Kuno Raeber typewritten commentary
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TypewrittenText" title="Browse http://e-editiones.ch/ontology/text#TypewrittenText">text:TypewrittenText</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Commentary" title="Browse http://e-editiones.ch/ontology/text-expression#Commentary">text-expression:Commentary</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Nonfiction" title="Browse http://e-editiones.ch/ontology/text#Nonfiction">text:Nonfiction</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TypewrittenText" title="Browse http://e-editiones.ch/ontology/text#TypewrittenText">text:TypewrittenText</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Commentary" title="Browse http://e-editiones.ch/ontology/text-expression#Commentary">text-expression:Commentary</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Text" title="Browse http://e-editiones.ch/ontology/raeber#Text">raeber:Text</a></div>
             </td>
          </tr>
       </table>
@@ -1699,11 +1743,11 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Typewritten poem authored by Kuno Raeber." xml:lang="en">
-               <div class="property-object">Typewritten poem authored by Kuno Raeber.</div>
-               <div class="connector"></div><span property="rdfs:comment" content="Maschinengeschriebenes Gedicht Kuno Raebers." xml:lang="de"></span><div class="property-object">Maschinengeschriebenes Gedicht Kuno Raebers.
+            <td property="rdfs:comment" content="Maschinengeschriebenes Gedicht Kuno Raebers." xml:lang="de">
+               <div class="property-object">Maschinengeschriebenes Gedicht Kuno Raebers.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Typewritten poem authored by Kuno Raeber." xml:lang="en"></span><div class="property-object">Typewritten poem authored by Kuno Raeber.
                   													
-                  													(de)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1728,9 +1772,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TypewrittenText" title="Browse http://e-editiones.ch/ontology/text#TypewrittenText">text:TypewrittenText</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Poem" title="Browse http://e-editiones.ch/ontology/raeber#Poem">raeber:Poem</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TypewrittenText" title="Browse http://e-editiones.ch/ontology/text#TypewrittenText">text:TypewrittenText</a></div>
             </td>
          </tr>
       </table>
@@ -1754,22 +1798,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="maschinengeschriebener Nachwort Kuno Raebers" xml:lang="de">
-               <div class="property-object">maschinengeschriebener Nachwort Kuno Raebers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kuno Raeber typewritten postface" xml:lang="en"></span><div class="property-object">Kuno Raeber typewritten postface
-                  													
+            <td property="rdfs:label" content="Kuno Raeber typewritten postface" xml:lang="en">
+               <div class="property-object">Kuno Raeber typewritten postface
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="maschinengeschriebener Nachwort Kuno Raebers" xml:lang="de"></span><div class="property-object">maschinengeschriebener Nachwort Kuno Raebers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Postface" title="Browse http://e-editiones.ch/ontology/raeber#Postface">raeber:Postface</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TypewrittenText" title="Browse http://e-editiones.ch/ontology/text#TypewrittenText">text:TypewrittenText</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Postface" title="Browse http://e-editiones.ch/ontology/raeber#Postface">raeber:Postface</a></div>
             </td>
          </tr>
       </table>
@@ -1806,9 +1850,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TypewrittenText" title="Browse http://e-editiones.ch/ontology/text#TypewrittenText">text:TypewrittenText</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/raeber#Preface" title="Browse http://e-editiones.ch/ontology/raeber#Preface">raeber:Preface</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TypewrittenText" title="Browse http://e-editiones.ch/ontology/text#TypewrittenText">text:TypewrittenText</a></div>
             </td>
          </tr>
       </table>
@@ -1977,13 +2021,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="enthält spätere Stufen von Manuskriptenkonvolut" xml:lang="de">
-               <div class="property-object">enthält spätere Stufen von Manuskriptenkonvolut
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="contains later stages of manuscript convolute" xml:lang="en"></span><div class="property-object">contains later stages of manuscript convolute
-                  													
+            <td property="rdfs:label" content="contains later stages of manuscript convolute" xml:lang="en">
+               <div class="property-object">contains later stages of manuscript convolute
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="enthält spätere Stufen von Manuskriptenkonvolut" xml:lang="de"></span><div class="property-object">enthält spätere Stufen von Manuskriptenkonvolut
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2027,13 +2071,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="contains later stages of notebook" xml:lang="en">
-               <div class="property-object">contains later stages of notebook
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="enthält spätere Stufen von Notizbuch" xml:lang="de"></span><div class="property-object">enthält spätere Stufen von Notizbuch
-                  													
+            <td property="rdfs:label" content="enthält spätere Stufen von Notizbuch" xml:lang="de">
+               <div class="property-object">enthält spätere Stufen von Notizbuch
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="contains later stages of notebook" xml:lang="en"></span><div class="property-object">contains later stages of notebook
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2127,13 +2171,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has column indicator" xml:lang="en">
-               <div class="property-object">has column indicator
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Spalte-Indikator" xml:lang="de"></span><div class="property-object">hat Spalte-Indikator
-                  													
+            <td property="rdfs:label" content="hat Spalte-Indikator" xml:lang="de">
+               <div class="property-object">hat Spalte-Indikator
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has column indicator" xml:lang="en"></span><div class="property-object">has column indicator
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2344,13 +2388,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="hat Bezugstitel" xml:lang="de">
-               <div class="property-object">hat Bezugstitel
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has reference title" xml:lang="en"></span><div class="property-object">has reference title
-                  													
+            <td property="rdfs:label" content="has reference title" xml:lang="en">
+               <div class="property-object">has reference title
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Bezugstitel" xml:lang="de"></span><div class="property-object">hat Bezugstitel
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2614,13 +2658,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ist in Notizbuch" xml:lang="de">
-               <div class="property-object">ist in Notizbuch
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is in notebook" xml:lang="en"></span><div class="property-object">is in notebook
-                  													
+            <td property="rdfs:label" content="is in notebook" xml:lang="en">
+               <div class="property-object">is in notebook
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist in Notizbuch" xml:lang="de"></span><div class="property-object">ist in Notizbuch
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2663,13 +2707,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="is in poly-author publication convolute" xml:lang="en">
-               <div class="property-object">is in poly-author publication convolute
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ist in Mehrautorenpublikationen-Konvolut" xml:lang="de"></span><div class="property-object">ist in Mehrautorenpublikationen-Konvolut
-                  													
+            <td property="rdfs:label" content="ist in Mehrautorenpublikationen-Konvolut" xml:lang="de">
+               <div class="property-object">ist in Mehrautorenpublikationen-Konvolut
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is in poly-author publication convolute" xml:lang="en"></span><div class="property-object">is in poly-author publication convolute
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2706,13 +2750,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="is in Swiss German" xml:lang="en">
-               <div class="property-object">is in Swiss German
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ist auf Schweizerdeutsch" xml:lang="de"></span><div class="property-object">ist auf Schweizerdeutsch
-                  													
+            <td property="rdfs:label" content="ist auf Schweizerdeutsch" xml:lang="de">
+               <div class="property-object">ist auf Schweizerdeutsch
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is in Swiss German" xml:lang="en"></span><div class="property-object">is in Swiss German
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -2749,13 +2793,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ist auf Seite" xml:lang="de">
-               <div class="property-object">ist auf Seite
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is on page" xml:lang="en"></span><div class="property-object">is on page
-                  													
+            <td property="rdfs:label" content="is on page" xml:lang="en">
+               <div class="property-object">is on page
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist auf Seite" xml:lang="de"></span><div class="property-object">ist auf Seite
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2798,13 +2842,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ist auf Postkarte" xml:lang="de">
-               <div class="property-object">ist auf Postkarte
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is on postcard" xml:lang="en"></span><div class="property-object">is on postcard
-                  													
+            <td property="rdfs:label" content="is on postcard" xml:lang="en">
+               <div class="property-object">is on postcard
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist auf Postkarte" xml:lang="de"></span><div class="property-object">ist auf Postkarte
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -2988,13 +3032,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ist Teil eines Manuskriptenkonvoluts" xml:lang="de">
-               <div class="property-object">ist Teil eines Manuskriptenkonvoluts
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is part of manuscript convolute" xml:lang="en"></span><div class="property-object">is part of manuscript convolute
-                  													
+            <td property="rdfs:label" content="is part of manuscript convolute" xml:lang="en">
+               <div class="property-object">is part of manuscript convolute
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Teil eines Manuskriptenkonvoluts" xml:lang="de"></span><div class="property-object">ist Teil eines Manuskriptenkonvoluts
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -3037,13 +3081,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ist Teil von Postkartekonvolut" xml:lang="de">
-               <div class="property-object">ist Teil von Postkartekonvolut
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is part of postcard convolute" xml:lang="en"></span><div class="property-object">is part of postcard convolute
-                  													
+            <td property="rdfs:label" content="is part of postcard convolute" xml:lang="en">
+               <div class="property-object">is part of postcard convolute
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Teil von Postkartekonvolut" xml:lang="de"></span><div class="property-object">ist Teil von Postkartekonvolut
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -3086,13 +3130,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="is part of typescript convolute" xml:lang="en">
-               <div class="property-object">is part of typescript convolute
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ist Teil eines Typoskriptenkonvoluts" xml:lang="de"></span><div class="property-object">ist Teil eines Typoskriptenkonvoluts
-                  													
+            <td property="rdfs:label" content="ist Teil eines Typoskriptenkonvoluts" xml:lang="de">
+               <div class="property-object">ist Teil eines Typoskriptenkonvoluts
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is part of typescript convolute" xml:lang="en"></span><div class="property-object">is part of typescript convolute
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>

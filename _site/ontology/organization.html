@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -76,7 +120,7 @@
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/organization" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/organization" title="Browse http://e-editiones.ch/ontology/organization">organization:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/organization" title="Browse http://e-editiones.ch/ontology/organization"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/creator">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
@@ -112,7 +156,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e45="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e3="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -268,6 +312,8 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/organization#Organization" title="Browse http://e-editiones.ch/ontology/organization#Organization">organization:Organization</a></div>
+               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf">
                   <table typeof="owl:Restriction">
                      <tr>
@@ -287,8 +333,6 @@
                      </tr>
                   </table>
                </div>
-               <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/organization#Organization" title="Browse http://e-editiones.ch/ontology/organization#Organization">organization:Organization</a></div>
             </td>
          </tr>
       </table>
@@ -316,21 +360,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="bibliothèque" xml:lang="fr">
-               <div class="property-object">bibliothèque
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="library" xml:lang="en"></span><div class="property-object">library
-                  													
+            <td property="rdfs:label" content="library" xml:lang="en">
+               <div class="property-object">library
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Bibliothek" xml:lang="de"></span><div class="property-object">Bibliothek
+               <div class="connector"></div><span property="rdfs:label" content="bibliothèque" xml:lang="fr"></span><div class="property-object">bibliothèque
                   													
-                  													(de)
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="biblioteca" xml:lang="it"></span><div class="property-object">biblioteca
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Bibliothek" xml:lang="de"></span><div class="property-object">Bibliothek
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -491,13 +535,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="political organization" xml:lang="en">
-               <div class="property-object">political organization
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="politische Organisation" xml:lang="de"></span><div class="property-object">politische Organisation
-                  													
+            <td property="rdfs:label" content="politische Organisation" xml:lang="de">
+               <div class="property-object">politische Organisation
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="political organization" xml:lang="en"></span><div class="property-object">political organization
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -579,9 +623,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#AgentPreserver" title="Browse http://e-editiones.ch/ontology/human#AgentPreserver">human:AgentPreserver</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/organization#Role" title="Browse http://e-editiones.ch/ontology/organization#Role">organization:Role</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#AgentPreserver" title="Browse http://e-editiones.ch/ontology/human#AgentPreserver">human:AgentPreserver</a></div>
             </td>
          </tr>
       </table>
@@ -646,13 +690,13 @@
                <div class="property-object">religiöse Person
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="personne réligieuse" xml:lang="fr"></span><div class="property-object">personne réligieuse
-                  													
-                  													(fr)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="religious person" xml:lang="en"></span><div class="property-object">religious person
                   													
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="personne réligieuse" xml:lang="fr"></span><div class="property-object">personne réligieuse
+                  													
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -723,13 +767,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="person organization acts in" xml:lang="en">
-               <div class="property-object">person organization acts in
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Personensorganisation agiert in" xml:lang="de"></span><div class="property-object">Personensorganisation agiert in
-                  													
+            <td property="rdfs:label" content="Personensorganisation agiert in" xml:lang="de">
+               <div class="property-object">Personensorganisation agiert in
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="person organization acts in" xml:lang="en"></span><div class="property-object">person organization acts in
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -821,13 +865,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="person organization has role" xml:lang="en">
-               <div class="property-object">person organization has role
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Personensorganisation hat Rolle" xml:lang="de"></span><div class="property-object">Personensorganisation hat Rolle
-                  													
+            <td property="rdfs:label" content="Personensorganisation hat Rolle" xml:lang="de">
+               <div class="property-object">Personensorganisation hat Rolle
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="person organization has role" xml:lang="en"></span><div class="property-object">person organization has role
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -888,8 +932,6 @@
                      <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
                         <td>
-                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/organization#Organization" title="Browse http://e-editiones.ch/ontology/organization#Organization">organization:Organization</a></div>
-                           <div class="connector"></div>
                            <div class="property-object" rel="rdfs:subClassOf">
                               <table typeof="owl:Restriction">
                                  <tr>
@@ -909,10 +951,61 @@
                                  </tr>
                               </table>
                            </div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/organization#Organization" title="Browse http://e-editiones.ch/ontology/organization#Organization">organization:Organization</a></div>
                         </td>
                      </tr>
                   </table>
                </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/organization#isMemberOf" title="Browse http://e-editiones.ch/ontology/organization#isMemberOf">organization:isMemberOf</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isMemberOfCompany" class="description">
+      <table about="http://e-editiones.ch/ontology/organization#isMemberOfCompany" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/organization#isMemberOfCompany" title="Browse http://e-editiones.ch/ontology/organization#isMemberOfCompany">organization:isMemberOfCompany</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a person to a company the person is a member of." xml:lang="en">
+               <div class="property-object">Relating a person to a company the person is a member of.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/organization#" title="Browse http://e-editiones.ch/ontology/organization#">organization:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="is member of company" xml:lang="en">
+               <div class="property-object">is member of company
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Mitglied einer Firme" xml:lang="de"></span><div class="property-object">ist Mitglied einer Firme
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/organization#Company" title="Browse http://e-editiones.ch/ontology/organization#Company">organization:Company</a></div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
@@ -971,55 +1064,6 @@
          </tr>
       </table>
    </div>
-   <div id="isMemberOfCompany" class="description">
-      <table about="http://e-editiones.ch/ontology/organization#isMemberOfCompany" typeof="owl:ObjectProperty">
-         <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/organization#isMemberOfCompany" title="Browse http://e-editiones.ch/ontology/organization#isMemberOfCompany">organization:isMemberOfCompany</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
-         </tr>
-         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
-            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
-            <td property="rdfs:comment" content="Relating a person to a company the person is a member of." xml:lang="en">
-               <div class="property-object">Relating a person to a company the person is a member of.</div>
-            </td>
-         </tr>
-         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
-            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
-            <td>
-               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
-            </td>
-         </tr>
-         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
-            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
-            <td>
-               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/organization#" title="Browse http://e-editiones.ch/ontology/organization#">organization:</a></div>
-            </td>
-         </tr>
-         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
-            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ist Mitglied einer Firme" xml:lang="de">
-               <div class="property-object">ist Mitglied einer Firme
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is member of company" xml:lang="en"></span><div class="property-object">is member of company
-                  													
-                  													(en)
-                  												</div>
-            </td>
-         </tr>
-         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
-            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
-            <td>
-               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/organization#Company" title="Browse http://e-editiones.ch/ontology/organization#Company">organization:Company</a></div>
-            </td>
-         </tr>
-         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
-            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
-            <td>
-               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/organization#isMemberOf" title="Browse http://e-editiones.ch/ontology/organization#isMemberOf">organization:isMemberOf</a></div>
-            </td>
-         </tr>
-      </table>
-   </div>
    <div id="isMemberOfReligiousOrganization" class="description">
       <table about="http://e-editiones.ch/ontology/organization#isMemberOfReligiousOrganization" typeof="owl:ObjectProperty">
          <tr>
@@ -1045,13 +1089,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="ist Mitglied einer religiösen Organization" xml:lang="de">
-               <div class="property-object">ist Mitglied einer religiösen Organization
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="is member of religious organization" xml:lang="en"></span><div class="property-object">is member of religious organization
-                  													
+            <td property="rdfs:label" content="is member of religious organization" xml:lang="en">
+               <div class="property-object">is member of religious organization
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Mitglied einer religiösen Organization" xml:lang="de"></span><div class="property-object">ist Mitglied einer religiösen Organization
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>

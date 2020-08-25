@@ -1,191 +1,325 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Typewriter">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Schreibmaschine</rdfs:label>
-    <rdfs:label xml:lang="en">typewriter</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
-    <rdfs:comment xml:lang="en">Writing device with moving parts for letter printing.</rdfs:comment>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInPrint">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isOnCarrier">
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
-        <rdfs:label xml:lang="en">is information on carrier</rdfs:label>
-        <rdfs:comment xml:lang="en">Relating information to a carrier it is on.</rdfs:comment>
-        <rdfs:label xml:lang="de">ist Information auf Träger</rdfs:label>
-        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="en">is in print</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a printed text to a print that carries it.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist in Druck</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isRemnantOf">
-    <rdfs:comment xml:lang="en">Relating a remnant of an information carrier to its whole.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Überrest von</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Remnant"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">is remnant of</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isManuscriptOfCollection">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptCollection"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:label xml:lang="en">is manuscript of collection</rdfs:label>
     <rdfs:label xml:lang="de">ist Manuskript einer Kollektion</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isCarrierOfCollection">
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-        <rdfs:comment xml:lang="en">Relating an information carrier to a collection it is part of.</rdfs:comment>
-        <rdfs:label xml:lang="de">ist Träger einer Sammlung</rdfs:label>
-        <rdfs:label xml:lang="en">is carrier of collection</rdfs:label>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
         <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
         <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Collection"/>
+        <rdfs:label xml:lang="en">is carrier of collection</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating an information carrier to a collection it is part of.</rdfs:comment>
+        <rdfs:label xml:lang="de">ist Träger einer Sammlung</rdfs:label>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
     <rdfs:comment xml:lang="en">Relating a manuscript to a collection it is part of.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptCollection"/>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Notebook">
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasInstitutionNameLiteral">
+    <rdfs:label xml:lang="en">print identifier has institution name literal</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
-    <rdfs:label xml:lang="de">Notizbuch</rdfs:label>
-    <rdfs:comment xml:lang="en">Book wherein notes are written.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#NoteCarrier"/>
-    <rdfs:label xml:lang="en">notebook</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the name of the institution preserving the print.</rdfs:comment>
+    <rdfs:label xml:lang="de">Druckidentifikator hat Institutionsnameliterale</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInDiary">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isOnCarrier">
+        <rdfs:label xml:lang="en">is information on carrier</rdfs:label>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+        <rdfs:label xml:lang="de">ist Information auf Träger</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating information to a carrier it is on.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#Diary"/>
+    <rdfs:comment xml:lang="en">Relating a diary expression to the physical diary it is in.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Diary"/>
+    <rdfs:label xml:lang="de">ist in Tagebuch</rdfs:label>
+    <rdfs:label xml:lang="en">is in diary</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasCollectionNameLiteral">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
+    <rdfs:label xml:lang="de">Druckidentifikator hat Kollektionsnameliterale</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the name of the collection of which the print is a part.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">print identifier has collection name literal</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasTitleLiteral">
+    <rdfs:comment xml:lang="en">Relating a convolute to its titel literal.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasTitleLiteral"/>
+    <rdfs:label xml:lang="de">Konvolut hat Titelliterale</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">convolute has title literal</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PersonSender">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Person-Sender</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person sending information on a carrier.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#PersonSender"/>
+    <rdfs:label xml:lang="en">person sender</rdfs:label>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasReceiver">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isOnElectronicCarrier">
+    <rdfs:label xml:lang="de">ist auf elektronischen Träger</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"/>
+    <rdfs:label xml:lang="en">is on electronic carrier</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating information to an electronic carrier it is on.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasDiaryEnteringDate">
+    <rdfs:comment xml:lang="en">Relating a diary entry to its date of entering in its diary.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#DiaryEntry"/>
+    <rdfs:label xml:lang="en">has diary entering date</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/creating#creationHasDate"/>
+    <rdfs:label xml:lang="de">hat Tagebucheintragsdatum</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#containsLaterStagesOf">
+    <rdfs:comment xml:lang="en">Relating a convolute to another one whose information carriers bear earlier stages of the texts on the carriers of the former.</rdfs:comment>
+    <rdfs:label xml:lang="de">enthält spätere Stufen von</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+    <rdfs:label xml:lang="en">contains later stages of</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#CompiledPrint">
+    <rdfs:label xml:lang="de">zusammengestellter Druck</rdfs:label>
+    <rdfs:comment xml:lang="en">Print as a compilation.</rdfs:comment>
+    <rdfs:label xml:lang="en">compiled print</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Compilation"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfConvolute">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+    <rdfs:label xml:lang="en">is part of convolute</rdfs:label>
+    <rdfs:label xml:lang="de">ist Teil eines Konvoluts</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:comment xml:lang="en">Relating an element of a convolute to the convolute.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ConvoluteElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasAlternative">
+    <rdfs:comment xml:lang="en">Relating a manuscript identifier to an alternative.</rdfs:comment>
+    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Alternative</rdfs:label>
+    <rdfs:label xml:lang="en">manuscript identifier has alternative</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInCompilation">
+    <rdfs:label xml:lang="en">is in compilation</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a compiled text to the compilation that carries it.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#CompiledText"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:label xml:lang="de">ist in Zusammenstellung</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Compilation"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasReceiver">
     <rdfs:comment xml:lang="en">Relating an information carrier to a human agent - a person or a group - that received it.</rdfs:comment>
-    <rdfs:label xml:lang="en">has receiver</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#hasReceiver"/>
+    <rdfs:label xml:lang="en">has receiver</rdfs:label>
     <rdfs:label xml:lang="de">hat Empfänger</rdfs:label>
     <rdfs:range>
       <rdf:Description rdf:nodeID="ub46bL533C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Agent"/>
         <rdfs:subClassOf>
           <owl:Restriction rdf:nodeID="ub46bL533C43">
-            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/information-carrier#Receiver"/>
             <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#agentHasRole"/>
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/information-carrier#Receiver"/>
           </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Agent"/>
       </rdf:Description>
     </rdfs:range>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfConvolute">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">ist Teil eines Konvoluts</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an element of a convolute to the convolute.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:label xml:lang="en">is part of convolute</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ConvoluteElement"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasRepositoryNameLiteral">
-    <rdfs:label xml:lang="en">manuscript identifier has repository name literal</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:label xml:lang="de">Manuskriptidentifikator hat Repositoriumname literale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
     <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the name of the repository where the manuscript is preserved.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isWebpageOfSite">
-    <rdfs:label xml:lang="en">is page of website</rdfs:label>
-    <rdfs:label xml:lang="de">ist seite einer Website</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Webpage"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+    <rdfs:label xml:lang="en">manuscript identifier has repository name literal</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Relating a page to its website.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#WebSite"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPageOfBook">
+    <rdfs:label xml:lang="de">ist Seite eines Buchs</rdfs:label>
+    <rdfs:label xml:lang="en">is page of book</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a page to a book its leaf is part of.</rdfs:comment>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/information-carrier#isPageOfLeaf"/>
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/information-carrier#isLeafOfBook"/>
+    </owl:propertyChainAxiom>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PersonReceiver">
-    <rdfs:comment xml:lang="en">Role of a person receiving information on carrier.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#PersonReceiver"/>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#carrierHasDescriptionLiteral">
+    <rdfs:label xml:lang="de">Träger hat Beschreibungliterale</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Person-Empfänger</rdfs:label>
-    <rdfs:label xml:lang="en">person receiver</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PersonPrinter">
-    <rdfs:label xml:lang="en">person printer</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#AgentPrinter"/>
-    <rdfs:comment xml:lang="en">Role of a person printing an expression.</rdfs:comment>
-    <rdfs:label xml:lang="de">Person-Drucker</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PersonCreator"/>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasPrintNameLiteral">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:label xml:lang="en">carrier has description literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an information carrier to a description literal thereof.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the print's name.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
-    <rdfs:label xml:lang="en">print identifier has print name literal</rdfs:label>
-    <rdfs:label xml:lang="de">Druckidentifikator hat Drucknameliterale</rdfs:label>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isEntryInDiary">
-    <rdfs:comment xml:lang="en">Relating a diary entry to its diary.</rdfs:comment>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#webpageHasURL">
+    <rdfs:label xml:lang="de">Webseite hat URL</rdfs:label>
+    <rdfs:label xml:lang="en">webpage has URL</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Webpage"/>
+    <rdfs:comment xml:lang="en">Relating a webpage to its URL.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Diary"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#DiaryEntry"/>
-    <rdfs:label xml:lang="de">ist Eintrag in Tagebuch</rdfs:label>
-    <rdfs:label xml:lang="en">is entry in diary</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInTypescript">
-    <rdfs:comment xml:lang="en">Relating a typewritten text to the typescript that carries it.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Typescript"/>
-    <rdfs:label xml:lang="en">is in typescript</rdfs:label>
-    <rdfs:label xml:lang="de">ist in Typoskript</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/information-carrier">
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:title xml:lang="en">An ontology about information carrier</dct:title>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:description xml:lang="en">Formal description of information carrier in broadest sense, general subclasses, related classes, and properties.</dct:description>
+  </owl:Ontology>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasManuscriptNameLiteral">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#TypewrittenText"/>
-  </owl:ObjectProperty>
+    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Manuskriptnameliterale</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">manuscript identifier has manuscript name literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the manuscript's name.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#volumeHasOrdinalNumeral">
+    <rdfs:label xml:lang="de">Band hat Ordinalnumerale</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:comment xml:lang="en">Relating a volume to its ordinal numeral.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Volume"/>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/information-carrier#volumeHasOrdinalNumber"/>
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/mathematics#hasNumeral"/>
+    </owl:propertyChainAxiom>
+    <rdfs:label xml:lang="en">volume has ordinal numeral</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasSendingDateProofLiteral">
+    <rdfs:comment xml:lang="en">Relating an information carrier to the literal of a proof of its sending date.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+    <rdfs:label xml:lang="de">hat Absendedatumbelegliterale</rdfs:label>
+    <rdfs:label xml:lang="en">has sending date proof literal</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </owl:DatatypeProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasSender">
+    <rdfs:label xml:lang="en">has sender</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#hasSender"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:comment xml:lang="en">Relating an information carrier to a human agent - a person or a group - that sent it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:range>
       <rdf:Description rdf:nodeID="ub46bL524C13">
         <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Agent"/>
         <rdfs:subClassOf>
           <owl:Restriction rdf:nodeID="ub46bL524C43">
-            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/information-carrier#Sender"/>
             <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#agentHasRole"/>
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/information-carrier#Sender"/>
           </owl:Restriction>
         </rdfs:subClassOf>
       </rdf:Description>
     </rdfs:range>
     <rdfs:label xml:lang="de">hat Absender</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:comment xml:lang="en">Relating an information carrier to a human agent - a person or a group - that sent it.</rdfs:comment>
-    <rdfs:label xml:lang="en">has sender</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#hasSender"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasLiteral">
+    <rdfs:label xml:lang="en">print identifier has literal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="de">Druckidentifikator hat Literale</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a print identifier to its literal.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isRemnantOf">
+    <rdfs:label xml:lang="en">is remnant of</rdfs:label>
+    <rdfs:label xml:lang="de">ist Überrest von</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Remnant"/>
+    <rdfs:comment xml:lang="en">Relating a remnant of an information carrier to its whole.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasDescriptionLiteral">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a convolute to a description literal thereof.</rdfs:comment>
+    <rdfs:label xml:lang="de">Konvolut hat Beschreibungliterale</rdfs:label>
+    <rdfs:label xml:lang="en">convolute has description literal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasContentRepresentationLiteral">
+    <rdfs:label xml:lang="en">convolute has content representation literal</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+    <rdfs:comment xml:lang="en">Relating a convolute to a description literal of its content representation.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+    <rdfs:label xml:lang="de">Konvolut hat Inhaltrepräsentationliterale</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfPrintRun">
+    <rdfs:label xml:lang="de">ist Teil einer Druckauflage</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a print to the run it is part of.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:label xml:lang="en">is part of print run</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfCompositeManuscript">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">is part of composite manuscript</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#CodicologicalPart"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#CompositeManuscript"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfArchive">
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:comment xml:lang="en">Relating a codicological part to the composite manuscript it is part of.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Teil eines zusammengesetzten Manuskripts</rdfs:label>
+    <rdfs:label xml:lang="de">ist Teil eines Archivs</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Archive"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ArchiveElement"/>
+    <rdfs:comment xml:lang="en">Relating an element of an archive to the archive.</rdfs:comment>
+    <rdfs:label xml:lang="en">is part of archive</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isEntryInDiary">
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">is entry in diary</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Diary"/>
+    <rdfs:label xml:lang="de">ist Eintrag in Tagebuch</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a diary entry to its diary.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#DiaryEntry"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasScribe">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManualTranscript"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a manual transcript to a person who created it.</rdfs:comment>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasTranscriber">
         <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Transcript"/>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/creating#hasCreator"/>
         <rdfs:range>
           <rdf:Description rdf:nodeID="ub46bL861C13">
             <rdfs:subClassOf>
@@ -197,1014 +331,880 @@
             <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
           </rdf:Description>
         </rdfs:range>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/creating#hasCreator"/>
-        <rdfs:comment xml:lang="en">Relating a transcript to a person who created it.</rdfs:comment>
-        <rdfs:label xml:lang="de">hat TranskribiererIn</rdfs:label>
         <rdfs:label xml:lang="en">has transcriber</rdfs:label>
+        <rdfs:label xml:lang="de">hat TranskribiererIn</rdfs:label>
         <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+        <rdfs:comment xml:lang="en">Relating a transcript to a person who created it.</rdfs:comment>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManualTranscript"/>
-    <rdfs:comment xml:lang="en">Relating a manual transcript to a person who created it.</rdfs:comment>
-    <rdfs:label xml:lang="en">has scribe</rdfs:label>
-    <rdfs:label xml:lang="de">hat TextKopistIn</rdfs:label>
     <rdfs:range>
       <rdf:Description rdf:nodeID="ub46bL870C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
         <rdfs:subClassOf>
           <owl:Restriction rdf:nodeID="ub46bL870C44">
             <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
             <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/text#Scribe"/>
           </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
       </rdf:Description>
     </rdfs:range>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">hat TextKopistIn</rdfs:label>
+    <rdfs:label xml:lang="en">has scribe</rdfs:label>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isTextOnPage">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
-    <rdfs:label xml:lang="de">ist Text auf Seite</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
-    <rdfs:label xml:lang="en">is text on page</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a text to a carrier page it is on.</rdfs:comment>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasCarrierDescriptionLiteral">
+    <rdfs:label xml:lang="de">hat Textträger-Beschreibungliterale</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+    <rdfs:label xml:lang="en">has information carrier description literal</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Incunabulum">
-    <rdfs:label xml:lang="en">incunabulum</rdfs:label>
-    <rdfs:label xml:lang="de">Inkunabel</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
-    <rdfs:comment xml:lang="en">Print created In Europe prior to 1501, during the earliest years of printing.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Collection"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="en">Relating an information carrier collection to a description literal of an information carrier it contains.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasSendingDateDescriptionLiteral">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfNachlass">
-    <rdfs:label xml:lang="de">ist Teil eines Nachlasses</rdfs:label>
-    <rdfs:label xml:lang="en">is part of nachlass</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#NachlassElement"/>
-    <rdfs:comment xml:lang="en">Relating an element of a nachlass to the nachlass.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Nachlass"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-  </owl:ObjectProperty>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:label xml:lang="de">hat Absendedatumbeschreibungliterale</rdfs:label>
+    <rdfs:label xml:lang="en">has sending date description literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an information carrier to a description literal of its sending date.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+  </owl:DatatypeProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasHyperlink">
     <rdfs:comment xml:lang="en">Relating a document structure to a hyperlink it has on an electronic carrier.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/document#HypertextStructure"/>
-    <rdfs:label xml:lang="en">has hyperlink</rdfs:label>
     <rdfs:label xml:lang="de">hat Hyperlink</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/document#HypertextStructure"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Hyperlink"/>
+    <rdfs:label xml:lang="en">has hyperlink</rdfs:label>
   </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasContentRepresentationLiteral">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:comment xml:lang="en">Relating a convolute to a description literal of its content representation.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Konvolut hat Inhaltrepräsentationliterale</rdfs:label>
-    <rdfs:label xml:lang="en">convolute has content representation literal</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-  </owl:DatatypeProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Pencil">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
     <rdfs:label xml:lang="en">pencil</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
     <rdfs:label xml:lang="de">Bleistift</rdfs:label>
     <rdfs:comment xml:lang="en">Elongated cylindrical(-like) utensil for writing or drawing, containing a thin rod of graphite.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasLocationNameLiteral">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Postcard">
+    <rdfs:comment xml:lang="en">Card with one side, usually with a printed structure, used for writing a message, an address and applying a postage stamp, to be sent through a postal system.</rdfs:comment>
+    <rdfs:label xml:lang="en">postcard</rdfs:label>
+    <rdfs:label xml:lang="it">cartolina</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">manuscript identifier has location name literal</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Ortsnameliterale</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the name of the place where the manuscript is preserved.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#volumeHasOrdinalNumeral">
-    <rdfs:label xml:lang="en">volume has ordinal numeral</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:comment xml:lang="en">Relating a volume to its ordinal numeral.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Volume"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
-    <rdfs:label xml:lang="de">Band hat Ordinalnumerale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/information-carrier#volumeHasOrdinalNumber"/>
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/mathematics#hasNumeral"/>
-    </owl:propertyChainAxiom>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#CompiledPrint">
-    <rdfs:label xml:lang="de">zusammengestellter Druck</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">compiled print</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Compilation"/>
-    <rdfs:comment xml:lang="en">Print as a compilation.</rdfs:comment>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasSizeDescriptionLiteral">
-    <rdfs:label xml:lang="en">convolute has size description literal</rdfs:label>
-    <rdfs:label xml:lang="de">Konvolutgrösse hat Beschreibungliterale</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:comment xml:lang="en">Relating a convolute to a description literal of its size.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hyperlinkHasNameLiteral">
-    <rdfs:comment xml:lang="en">Relating a hyperlink to a name literal it has.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="de">Hyperlink hat Nameliterale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">hyperlink has name literal</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Hyperlink"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isVolumeOfWork">
-    <rdfs:comment xml:lang="en">Relating a volume to a work it is part of.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Band eines Werkes</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#PartitionedWork"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:label xml:lang="en">is volume of work</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Volume"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ColouredPencil">
-    <rdfs:label xml:lang="de">matita colorata</rdfs:label>
-    <rdfs:label xml:lang="en">coloured pencil</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">crayon de couleur</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
-    <rdfs:comment xml:lang="en">Elongated cylindrical(-like) utensil for writing or drawing, containing a pigmented wax- or oil-based core.</rdfs:comment>
-    <rdfs:label xml:lang="de">Farbstift</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptHasIdentifier">
-    <rdfs:comment xml:lang="en">Relating a manuscript to its identifier.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">manuscript has identifier</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
-    <rdfs:label xml:lang="de">Manuskript hat Identifikator</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInDiary">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Diary"/>
-    <rdfs:label xml:lang="de">ist in Tagebuch</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a diary expression to the physical diary it is in.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#Diary"/>
-    <rdfs:label xml:lang="en">is in diary</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#FountainPen">
-    <rdfs:comment xml:lang="en">Pen with refillable reservoir for fluid ink for feeding a metal nib.</rdfs:comment>
-    <rdfs:label xml:lang="de">Füller</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Pen"/>
-    <rdfs:label xml:lang="en">fountain pen</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isCarrierOfSet">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
-    <rdfs:label xml:lang="de">ist Träger einer Reihe</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="en">is carrier of set</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an information carrier to a set it is part of.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasLiteral">
-    <rdfs:comment xml:lang="en">Relating a manuscript identifier to its literal.</rdfs:comment>
-    <rdfs:label xml:lang="de">Manuskriptidentifikator hat literale</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">manuscript identifier has literal</rdfs:label>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Draft">
-    <rdfs:label xml:lang="de">Informationsentwurfträger</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Carrier with a draft of information.</rdfs:comment>
-    <rdfs:label xml:lang="en">information draft carrier</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#UnfinishedCreation"/>
+    <rdfs:label xml:lang="de">Postkarte</rdfs:label>
+    <rdfs:label xml:lang="fr">carte postale</rdfs:label>
   </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasTitleLiteral">
-    <rdfs:label xml:lang="de">Konvolut hat Titelliterale</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">convolute has title literal</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasTitleLiteral"/>
-    <rdfs:comment xml:lang="en">Relating a convolute to its titel literal.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasCollectionNameLiteral">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Kollektionsnameliterale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the name of the collection of which the manuscript is a part.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="en">manuscript identifier has collection name literal</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasLocationNameLiteral">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:label xml:lang="de">Druckidentifikator hat Ortsnameliterale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the name of the place where the print is preserved.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="en">print identifier has location name literal</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hyperlinkHasURL">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Hyperlink"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Relating a hyperlink to a URL it has.</rdfs:comment>
-    <rdfs:label xml:lang="de">Hyperlink hat URL</rdfs:label>
-    <rdfs:label xml:lang="en">hyperlink has URL</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasDiaryEnteringDate">
-    <rdfs:label xml:lang="de">hat Tagebucheintragsdatum</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#DiaryEntry"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/creating#creationHasDate"/>
-    <rdfs:label xml:lang="en">has diary entering date</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <rdfs:comment xml:lang="en">Relating a diary entry to its date of entering in its diary.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasSendingDateDescriptionLiteral">
-    <rdfs:label xml:lang="en">has sending date description literal</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an information carrier to a description literal of its sending date.</rdfs:comment>
-    <rdfs:label xml:lang="de">hat Absendedatumbeschreibungliterale</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasSendingDateAccuracyDescriptionLiteral">
-    <rdfs:label xml:lang="de">hat Absendedatumgenauigkeitbeschreibungliterale</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:comment xml:lang="en">Relating an information carrier to a description literal of its sending date accuracy.</rdfs:comment>
-    <rdfs:label xml:lang="en">has sending date accuracy description literal</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isBindingOfBook">
-    <rdfs:label xml:lang="de">ist Einband eines Buchs</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Binding"/>
-    <rdfs:comment xml:lang="en">Relating a binding to a book it is part of.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
-    <rdfs:label xml:lang="en">is binding of book</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasManuscriptNameLiteral">
-    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Manuskriptnameliterale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the manuscript's name.</rdfs:comment>
-    <rdfs:label xml:lang="en">manuscript identifier has manuscript name literal</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasCollectionNameLiteral">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:label xml:lang="de">Druckidentifikator hat Kollektionsnameliterale</rdfs:label>
-    <rdfs:label xml:lang="en">print identifier has collection name literal</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the name of the collection of which the print is a part.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isCopyOf">
-    <rdfs:comment xml:lang="en">Relating a copy to its original information carrier.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="de">ist Kopie von</rdfs:label>
-    <rdfs:label xml:lang="en">is copy of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Copy"/>
-  </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasRepositoryNameLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
     <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the name of the repository where the print is preserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
+    <rdfs:label xml:lang="en">print identifier has repository name literal</rdfs:label>
     <rdfs:label xml:lang="de">Druckidentifikator hat Repositoriumnameliterale</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:label xml:lang="en">print identifier has repository name literal</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ElectronicBook">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"/>
-    <rdfs:label xml:lang="en">electronic book</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isWebpageOfSite">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#WebSite"/>
+    <rdfs:label xml:lang="de">ist seite einer Website</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">elektronisches Buch</rdfs:label>
-    <rdfs:comment xml:lang="en">Electronic information carrier with a text structure as in a book.</rdfs:comment>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInTranscript">
-    <rdfs:comment xml:lang="en">Relating a transcribed text to the transcript that carries it.</rdfs:comment>
-    <rdfs:label xml:lang="en">is in transcript</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Transcript"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInTextCopy">
-        <rdfs:label xml:lang="en">is in text copy</rdfs:label>
-        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#TextCopy"/>
-        <rdfs:label xml:lang="de">ist in Textkopie</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-        <rdfs:comment xml:lang="en">Relating a copied text to its carrier.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#CopiedText"/>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="de">ist in Abschrift</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasInstitutionNameLiteral">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
-    <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the name of the institution preserving the manuscript.</rdfs:comment>
-    <rdfs:label xml:lang="en">manuscript identifier has institution name literal</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Institutionsnameliterale</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#webpageHasNameLiteral">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Webpage"/>
-    <rdfs:label xml:lang="en">webpage has name literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a page to its website.</rdfs:comment>
+    <rdfs:label xml:lang="en">is page of website</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isBindingOfBook">
+    <rdfs:label xml:lang="de">ist Einband eines Buchs</rdfs:label>
+    <rdfs:label xml:lang="en">is binding of book</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a binding to a book it is part of.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Binding"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Typewriter">
+    <rdfs:label xml:lang="en">typewriter</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
+    <rdfs:label xml:lang="de">Schreibmaschine</rdfs:label>
+    <rdfs:comment xml:lang="en">Writing device with moving parts for letter printing.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PalmLeafManuscript">
+    <skos:note xml:lang="en">Dried and smoke treated palm leaves were used as writing carrier in the Indian subcontinent and Southeast since at least the 5th century BC, possibly much earlier.</skos:note>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
+    <rdfs:comment xml:lang="en">Palm leaf manuscript.</rdfs:comment>
+    <rdfs:label xml:lang="en">palm-leaf manuscript</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Leaf"/>
+    <rdfs:label xml:lang="de">Palmblattmanuskript</rdfs:label>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#webpageHasNameLiteral">
     <rdfs:comment xml:lang="en">Relating a webpage to its name literal.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">webpage has name literal</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Webpage"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
     <rdfs:label xml:lang="de">Webseite hat Nameliterale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:DatatypeProperty>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/information-carrier">
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:description xml:lang="en">Formal description of information carrier in broadest sense, general subclasses, related classes, and properties.</dct:description>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:title xml:lang="en">An ontology about information carrier</dct:title>
-  </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#CompiledManuscript">
-    <rdfs:comment xml:lang="en">Manuscript as a compilation.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Compilation"/>
-    <rdfs:label xml:lang="en">compiled manuscript</rdfs:label>
-    <rdfs:label xml:lang="de">zusammengestelltes Manuskript</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#containsLaterStagesOf">
-    <rdfs:label xml:lang="de">enthält spätere Stufen von</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-    <rdfs:label xml:lang="en">contains later stages of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Relating a convolute to another one whose information carriers bear earlier stages of the texts on the carriers of the former.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasOriginDescriptionLiteral">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:comment xml:lang="en">Relating a text convolute to a description literal of its origin.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:label xml:lang="de">Konvolut hat Herkunftbeschreibungliterale</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ElectronicBook">
+    <rdfs:label xml:lang="en">electronic book</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"/>
+    <rdfs:comment xml:lang="en">Electronic information carrier with a text structure as in a book.</rdfs:comment>
+    <rdfs:label xml:lang="de">elektronisches Buch</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInPrint">
+    <rdfs:label xml:lang="en">is in print</rdfs:label>
+    <rdfs:label xml:lang="de">ist in Druck</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
+    <rdfs:comment xml:lang="en">Relating a printed text to a print that carries it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#PrintedText"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#containsEarlierStagesOfPublication">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#containsEarlierStagesOf">
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+        <rdfs:label xml:lang="en">contains earlier stages of</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating a convolute to another one whose information carriers bear later stages of the texts on the carriers of the former.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+        <rdfs:label xml:lang="de">enthält frühere Stufen von</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+    <rdfs:label xml:lang="de">enthält frühere Stufen von Publikation</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a convolute to another one whose information carriers bear later publication stages of the texts on the carriers of the former.</rdfs:comment>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-    <rdfs:label xml:lang="en">convolute has origin description literal</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">contains earlier stages of publication</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasArchiveSignatureLiteral">
+    <rdfs:label xml:lang="de">hat Archivsignaturliterale</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating an element of an archive to its signature literal.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ArchiveElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">has archive signature literal</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasIdentifierLiteral"/>
   </owl:DatatypeProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasAlternative">
     <rdfs:comment xml:lang="en">Relating a print identifier to an alternative.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
+    <rdfs:label xml:lang="en">print identifier has alternative</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
     <rdfs:label xml:lang="de">Druckidentifikator hat Alternative</rdfs:label>
-    <rdfs:label xml:lang="en">print identifier has alternative</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPageOfBook">
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/information-carrier#isPageOfLeaf"/>
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/information-carrier#isLeafOfBook"/>
-    </owl:propertyChainAxiom>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ColouredPencil">
+    <rdfs:label xml:lang="en">crayon de couleur</rdfs:label>
+    <rdfs:label xml:lang="de">Farbstift</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">is page of book</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
-    <rdfs:comment xml:lang="en">Relating a page to a book its leaf is part of.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:label xml:lang="de">ist Seite eines Buchs</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#pageHasNumber">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">page has number</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:label xml:lang="de">Seite hat Nummer</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a page to a number it has.</rdfs:comment>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PersonSender">
-    <rdfs:label xml:lang="de">Person-Sender</rdfs:label>
-    <rdfs:label xml:lang="en">person sender</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#PersonSender"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Role of a person sending information on a carrier.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
+    <rdfs:label xml:lang="en">coloured pencil</rdfs:label>
+    <rdfs:label xml:lang="de">matita colorata</rdfs:label>
+    <rdfs:comment xml:lang="en">Elongated cylindrical(-like) utensil for writing or drawing, containing a pigmented wax- or oil-based core.</rdfs:comment>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isOnElectronicCarrier">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-    <rdfs:comment xml:lang="en">Relating information to an electronic carrier it is on.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasCollectionNameLiteral">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Kollektionsnameliterale</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+    <rdfs:label xml:lang="en">manuscript identifier has collection name literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the name of the collection of which the manuscript is a part.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">ist auf elektronischen Träger</rdfs:label>
-    <rdfs:label xml:lang="en">is on electronic carrier</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasLiteral">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:comment xml:lang="en">Relating a print identifier to its literal.</rdfs:comment>
-    <rdfs:label xml:lang="en">print identifier has literal</rdfs:label>
-    <rdfs:label xml:lang="de">Druckidentifikator hat Literale</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasLocationNameLiteral">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
+    <rdfs:label xml:lang="en">print identifier has location name literal</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+    <rdfs:label xml:lang="de">Druckidentifikator hat Ortsnameliterale</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the name of the place where the print is preserved.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isFragmentOf">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Fragment"/>
+    <rdfs:comment xml:lang="en">Relating a fragment of an information carrier to its whole.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">ist Fragment von</rdfs:label>
+    <rdfs:label xml:lang="en">is fragment of</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isWrittenWith">
+    <rdfs:label xml:lang="en">is written with</rdfs:label>
+    <rdfs:label xml:lang="de">ist geschrieben mit</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a text to a utensil it is written with.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#WrittenText"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Draft">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#UnfinishedCreation"/>
+    <rdfs:label xml:lang="en">information draft carrier</rdfs:label>
+    <rdfs:label xml:lang="de">Informationsentwurfträger</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Carrier with a draft of information.</rdfs:comment>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInManuscript">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
+    <rdfs:label xml:lang="en">is in manuscript</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">ist in Manuskript</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a handwritten text to the manuscript that carries it.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hyperlinkHasURL">
+    <rdfs:comment xml:lang="en">Relating a hyperlink to a URL it has.</rdfs:comment>
+    <rdfs:label xml:lang="en">hyperlink has URL</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Hyperlink"/>
+    <rdfs:label xml:lang="de">Hyperlink hat URL</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#DokuWiki">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Wiki"/>
+    <rdfs:comment xml:lang="en">Wiki ran by DokuWiki software.</rdfs:comment>
+    <rdfs:label xml:lang="en">DokuWiki</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/DokuWiki"/>
+    <rdfs:label xml:lang="de">DokuWiki</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#pageHasNumber">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
+    <rdfs:label xml:lang="de">Seite hat Nummer</rdfs:label>
+    <rdfs:label xml:lang="en">page has number</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a page to a number it has.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#FirstPrint">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
+    <rdfs:label xml:lang="en">first print</rdfs:label>
+    <rdfs:label xml:lang="de">Erstdruck</rdfs:label>
+    <rdfs:comment xml:lang="en">Earliest print of an expression.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#CompiledManuscript">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">zusammengestelltes Manuskript</rdfs:label>
+    <rdfs:comment xml:lang="en">Manuscript as a compilation.</rdfs:comment>
+    <rdfs:label xml:lang="en">compiled manuscript</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Compilation"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfCompositeManuscript">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#CompositeManuscript"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#CodicologicalPart"/>
+    <rdfs:label xml:lang="de">ist Teil eines zusammengesetzten Manuskripts</rdfs:label>
+    <rdfs:label xml:lang="en">is part of composite manuscript</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:comment xml:lang="en">Relating a codicological part to the composite manuscript it is part of.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfNachlass">
+    <rdfs:label xml:lang="de">ist Teil eines Nachlasses</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an element of a nachlass to the nachlass.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#NachlassElement"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Nachlass"/>
+    <rdfs:label xml:lang="en">is part of nachlass</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isTextOnPage">
+    <rdfs:label xml:lang="en">is text on page</rdfs:label>
+    <rdfs:label xml:lang="de">ist Text auf Seite</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a text to a carrier page it is on.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInTypescript">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Typescript"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#TypewrittenText"/>
+    <rdfs:comment xml:lang="en">Relating a typewritten text to the typescript that carries it.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:label xml:lang="en">is in typescript</rdfs:label>
+    <rdfs:label xml:lang="de">ist in Typoskript</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInTranscript">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#TranscribedText"/>
+    <rdfs:label xml:lang="en">is in transcript</rdfs:label>
+    <rdfs:label xml:lang="de">ist in Abschrift</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInTextCopy">
+        <rdfs:label xml:lang="de">ist in Textkopie</rdfs:label>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#TextCopy"/>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#CopiedText"/>
+        <rdfs:label xml:lang="en">is in text copy</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating a copied text to its carrier.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Transcript"/>
+    <rdfs:comment xml:lang="en">Relating a transcribed text to the transcript that carries it.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasSizeDescriptionLiteral">
+    <rdfs:label xml:lang="de">Konvolutgrösse hat Beschreibungliterale</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+    <rdfs:label xml:lang="en">convolute has size description literal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a convolute to a description literal of its size.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PrintRun">
+    <rdfs:label xml:lang="it">Tiratura</rdfs:label>
+    <rdfs:label xml:lang="fr">Tirage</rdfs:label>
+    <rdfs:comment xml:lang="en">Set of prints of the same expression, created at one time.</rdfs:comment>
+    <skos:note xml:lang="en">When applicable, all the prints have the same ISBN, but a different bar code.</skos:note>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
+    <rdfs:label xml:lang="de">Druckauflage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">print run</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PersonPrinter">
+    <rdfs:label xml:lang="de">Person-Drucker</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person printing an expression.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#AgentPrinter"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PersonCreator"/>
+    <rdfs:label xml:lang="en">person printer</rdfs:label>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hyperlinkHasNameLiteral">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Hyperlink"/>
+    <rdfs:comment xml:lang="en">Relating a hyperlink to a name literal it has.</rdfs:comment>
+    <rdfs:label xml:lang="en">hyperlink has name literal</rdfs:label>
+    <rdfs:label xml:lang="de">Hyperlink hat Nameliterale</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasPrinter">
-    <rdfs:comment xml:lang="en">Relating a print to its printer.</rdfs:comment>
-    <rdfs:label xml:lang="en">has printer</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/creating#hasCreator"/>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasLocationNameLiteral">
+    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Ortsnameliterale</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+    <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the name of the place where the manuscript is preserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">hat Drucker</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+    <rdfs:label xml:lang="en">manuscript identifier has location name literal</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasLiteral">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">manuscript identifier has literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a manuscript identifier to its literal.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Manuskriptidentifikator hat literale</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasInstitutionNameLiteral">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a manuscript identifier to the literal of the name of the institution preserving the manuscript.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Institutionsnameliterale</rdfs:label>
+    <rdfs:label xml:lang="en">manuscript identifier has institution name literal</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasOriginDescriptionLiteral">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="de">Konvolut hat Herkunftbeschreibungliterale</rdfs:label>
+    <rdfs:label xml:lang="en">convolute has origin description literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a text convolute to a description literal of its origin.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Printing">
+    <rdfs:comment xml:lang="en">Action of putting an expression on a carrier, e.g. with ink on paper.</rdfs:comment>
+    <rdfs:label xml:lang="en">printing</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Procedure"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Drucken</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptHasIdentifier">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
+    <rdfs:comment xml:lang="en">Relating a manuscript to its identifier.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
+    <rdfs:label xml:lang="en">manuscript has identifier</rdfs:label>
+    <rdfs:label xml:lang="de">Manuskript hat Identifikator</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPageOnCarrier">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/document#Page"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
+    <rdfs:label xml:lang="de">ist Seite auf Träger</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:comment xml:lang="en">Relating a document page to a carrier page it is on.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">is page on carrier</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#FountainPen">
+    <rdfs:comment xml:lang="en">Pen with refillable reservoir for fluid ink for feeding a metal nib.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Pen"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Füller</rdfs:label>
+    <rdfs:label xml:lang="en">fountain pen</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasPrinter">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
+    <rdfs:comment xml:lang="en">Relating a print to its printer.</rdfs:comment>
     <rdfs:range>
       <rdf:Description rdf:nodeID="ub46bL897C13">
         <rdfs:subClassOf>
           <owl:Restriction rdf:nodeID="ub46bL897C43">
-            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/information-carrier#AgentPrinter"/>
             <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#agentHasRole"/>
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/information-carrier#AgentPrinter"/>
           </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Agent"/>
       </rdf:Description>
     </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/creating#hasCreator"/>
+    <rdfs:label xml:lang="de">hat Drucker</rdfs:label>
+    <rdfs:label xml:lang="en">has printer</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Incunabulum">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">incunabulum</rdfs:label>
+    <rdfs:label xml:lang="de">Inkunabel</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
+    <rdfs:comment xml:lang="en">Print created In Europe prior to 1501, during the earliest years of printing.</rdfs:comment>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasSendingDateAccuracyDescriptionLiteral">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
+    <rdfs:label xml:lang="en">has sending date accuracy description literal</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating an information carrier to a description literal of its sending date accuracy.</rdfs:comment>
+    <rdfs:label xml:lang="de">hat Absendedatumgenauigkeitbeschreibungliterale</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PersonReceiver">
+    <rdfs:comment xml:lang="en">Role of a person receiving information on carrier.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">person receiver</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#PersonReceiver"/>
+    <rdfs:label xml:lang="de">Person-Empfänger</rdfs:label>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasPrintNameLiteral">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
+    <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the print's name.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">print identifier has print name literal</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Druckidentifikator hat Drucknameliterale</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isCarrierOfSet">
+    <rdfs:label xml:lang="en">is carrier of set</rdfs:label>
+    <rdfs:label xml:lang="de">ist Träger einer Reihe</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:comment xml:lang="en">Relating an information carrier to a set it is part of.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isCopyOf">
+    <rdfs:comment xml:lang="en">Relating a copy to its original information carrier.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:label xml:lang="de">ist Kopie von</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">is copy of</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Copy"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isTextInPhotocopy">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#PhotocopiedText"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#PhotocopiedText"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Photocopy"/>
     <rdfs:label xml:lang="en">is text in photocopy</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a photocopied text to a photocopy that carries it.</rdfs:comment>
     <rdfs:label xml:lang="de">ist Text in Fotokopie</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfArchive">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Archive"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ArchiveElement"/>
-    <rdfs:label xml:lang="de">ist Teil eines Archivs</rdfs:label>
-    <rdfs:label xml:lang="en">is part of archive</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an element of an archive to the archive.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInCompilation">
-    <rdfs:label xml:lang="de">ist in Zusammenstellung</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#CompiledText"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Compilation"/>
-    <rdfs:label xml:lang="en">is in compilation</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Relating a compiled text to the compilation that carries it.</rdfs:comment>
   </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#carrierHasDescriptionLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">carrier has description literal</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an information carrier to a description literal thereof.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="de">Träger hat Beschreibungliterale</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPartOfPrintRun">
-    <rdfs:label xml:lang="en">is part of print run</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a print to the run it is part of.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Teil einer Druckauflage</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PalmLeafManuscript">
-    <rdfs:comment xml:lang="en">Palm leaf manuscript.</rdfs:comment>
-    <rdfs:label xml:lang="en">palm-leaf manuscript</rdfs:label>
-    <skos:note xml:lang="en">Dried and smoke treated palm leaves were used as writing carrier in the Indian subcontinent and Southeast since at least the 5th century BC, possibly much earlier.</skos:note>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Palmblattmanuskript</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Leaf"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Printing">
-    <rdfs:label xml:lang="en">printing</rdfs:label>
-    <rdfs:label xml:lang="de">Drucken</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Procedure"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Action of putting an expression on a carrier, e.g. with ink on paper.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPageOnCarrier">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/document#Page"/>
-    <rdfs:label xml:lang="de">ist Seite auf Träger</rdfs:label>
-    <rdfs:label xml:lang="en">is page on carrier</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
-    <rdfs:comment xml:lang="en">Relating a document page to a carrier page it is on.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printIdentifierHasInstitutionNameLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:label xml:lang="de">Druckidentifikator hat Institutionsnameliterale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a print identifier to the literal of the name of the institution preserving the print.</rdfs:comment>
-    <rdfs:label xml:lang="en">print identifier has institution name literal</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isFragmentOf">
-    <rdfs:comment xml:lang="en">Relating a fragment of an information carrier to its whole.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">is fragment of</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Fragment"/>
-    <rdfs:label xml:lang="de">ist Fragment von</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasArchiveSignatureLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">hat Archivsignaturliterale</rdfs:label>
-    <rdfs:label xml:lang="en">has archive signature literal</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ArchiveElement"/>
-    <rdfs:comment xml:lang="en">Relating an element of an archive to its signature literal.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasIdentifierLiteral"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#convoluteHasDescriptionLiteral">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="en">convolute has description literal</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Relating a convolute to a description literal thereof.</rdfs:comment>
-    <rdfs:label xml:lang="de">Konvolut hat Beschreibungliterale</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#containsEarlierStagesOfPublication">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-    <rdfs:comment xml:lang="en">Relating a convolute to another one whose information carriers bear later publication stages of the texts on the carriers of the former.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">contains earlier stages of publication</rdfs:label>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#containsEarlierStagesOf">
-        <rdfs:label xml:lang="en">contains earlier stages of</rdfs:label>
-        <rdfs:comment xml:lang="en">Relating a convolute to another one whose information carriers bear later stages of the texts on the carriers of the former.</rdfs:comment>
-        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Convolute"/>
-        <rdfs:label xml:lang="de">enthält frühere Stufen von</rdfs:label>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="de">enthält frühere Stufen von Publikation</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#FirstPrint">
-    <rdfs:comment xml:lang="en">Earliest print of an expression.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">first print</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
-    <rdfs:label xml:lang="de">Erstdruck</rdfs:label>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#webpageHasURL">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Webpage"/>
-    <rdfs:label xml:lang="de">Webseite hat URL</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a webpage to its URL.</rdfs:comment>
-    <rdfs:label xml:lang="en">webpage has URL</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#manuscriptIdentifierHasAlternative">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
-    <rdfs:label xml:lang="de">Manuskriptidentifikator hat Alternative</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier"/>
-    <rdfs:label xml:lang="en">manuscript identifier has alternative</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a manuscript identifier to an alternative.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasCarrierDescriptionLiteral">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:comment xml:lang="en">Relating an information carrier collection to a description literal of an information carrier it contains.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Collection"/>
-    <rdfs:label xml:lang="en">has information carrier description literal</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">hat Textträger-Beschreibungliterale</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Postcard">
-    <rdfs:label xml:lang="en">postcard</rdfs:label>
-    <rdfs:label xml:lang="de">Postkarte</rdfs:label>
-    <rdfs:comment xml:lang="en">Card with one side, usually with a printed structure, used for writing a message, an address and applying a postage stamp, to be sent through a postal system.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="it">cartolina</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="fr">carte postale</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PrintRun">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
-    <skos:note xml:lang="en">When applicable, all the prints have the same ISBN, but a different bar code.</skos:note>
-    <rdfs:label xml:lang="de">Druckauflage</rdfs:label>
-    <rdfs:comment xml:lang="en">Set of prints of the same expression, created at one time.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="it">Tiratura</rdfs:label>
-    <rdfs:label xml:lang="en">print run</rdfs:label>
-    <rdfs:label xml:lang="fr">Tirage</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isWrittenWith">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#WrittenText"/>
-    <rdfs:label xml:lang="en">is written with</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a text to a utensil it is written with.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist geschrieben mit</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isInManuscript">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-    <rdfs:label xml:lang="en">is in manuscript</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">ist in Manuskript</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#HandwrittenText"/>
-    <rdfs:comment xml:lang="en">Relating a handwritten text to the manuscript that carries it.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#hasSendingDateProofLiteral">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="en">has sending date proof literal</rdfs:label>
-    <rdfs:label xml:lang="de">hat Absendedatumbelegliterale</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:comment xml:lang="en">Relating an information carrier to the literal of a proof of its sending date.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#DokuWiki">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">DokuWiki</rdfs:label>
-    <rdfs:label xml:lang="de">DokuWiki</rdfs:label>
-    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/DokuWiki"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Wiki"/>
-    <rdfs:comment xml:lang="en">Wiki ran by DokuWiki software.</rdfs:comment>
-  </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#printHasIdentifier">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier"/>
+    <rdfs:label xml:lang="de">Druck hat Identifikator</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:comment xml:lang="en">Relating a print to its identifier.</rdfs:comment>
     <rdfs:label xml:lang="en">print has identifier</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Print"/>
-    <rdfs:label xml:lang="de">Druck hat Identifikator</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Carrier">
-    <rdfs:label xml:lang="en">information carrier</rdfs:label>
-    <rdfs:label xml:lang="de">Informationsträger</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Notebook">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#NoteCarrier"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PhysicalCreation"/>
-    <skos:note xml:lang="en">Includes both F4_Manifestation_Singleton and F5_Item as declared in FRBRoo.</skos:note>
-    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier"/>
-    <rdfs:label xml:lang="fr">support d'information</rdfs:label>
-    <rdfs:comment xml:lang="en">Carrier of information created by a person.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Book wherein notes are written.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
+    <rdfs:label xml:lang="en">notebook</rdfs:label>
+    <rdfs:label xml:lang="de">Notizbuch</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Remnant">
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isVolumeOfWork">
+    <rdfs:label xml:lang="en">is volume of work</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Informationsträgerüberrest</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PhysicalCreation"/>
-    <rdfs:comment xml:lang="en">Remnant of information on a carrier.</rdfs:comment>
-    <rdfs:label xml:lang="en">information carrier remnant</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ConvoluteElement">
-    <rdfs:comment xml:lang="en">Element of an information carrier convolute.</rdfs:comment>
-    <rdfs:label xml:lang="de">Konvolut-Element</rdfs:label>
+    <rdfs:label xml:lang="de">ist Band eines Werkes</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Volume"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#PartitionedWork"/>
+    <rdfs:comment xml:lang="en">Relating a volume to a work it is part of.</rdfs:comment>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#WritingUtensil">
+    <rdfs:comment xml:lang="en">Device to write with.</rdfs:comment>
+    <rdfs:label xml:lang="de">Schreibzeug</rdfs:label>
+    <rdfs:label xml:lang="en">writing utensil</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/device#Device"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="en">convolute element</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Typescript">
-    <rdfs:comment xml:lang="en">Carrier with a typewritten text.</rdfs:comment>
-    <rdfs:label xml:lang="en">typescript</rdfs:label>
-    <rdfs:label xml:lang="de">Typoskript</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Wiki">
     <rdfs:label xml:lang="de">Wiki</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Website"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Wiki"/>
     <rdfs:comment xml:lang="en">Knowledge base website on which users collaboratively modify and structure content directly from a web browser; it is ran by wiki software.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Website"/>
+    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Wiki"/>
     <rdfs:label xml:lang="en">wiki</rdfs:label>
   </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#volumeHasOrdinalNumber">
-    <rdfs:comment xml:lang="en">Relating a volume to its ordinal number.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#VolumeOrdinalNumber"/>
-    <rdfs:label xml:lang="en">volume has ordinal number</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Volume"/>
-    <rdfs:label xml:lang="de">Band hat Ordinalzahl</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Website">
-    <rdfs:comment xml:lang="en">Set of interconnected webpages, under a single domain name, usually including a homepage, generally located on the same server, and prepared and maintained as information by a person, group, or organization.</rdfs:comment>
-    <rdfs:label xml:lang="de">Website</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"/>
-    <rdfs:label xml:lang="en">website</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ArchiveElement">
-    <rdfs:comment xml:lang="en">Element of an archive, which can be a single information carrier or a group.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="de">Archiv-Element</rdfs:label>
-    <rdfs:label xml:lang="en">archive element</rdfs:label>
-  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#NoteCarrier">
-    <rdfs:label xml:lang="de">Notizträger</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
     <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton"/>
+    <rdfs:label xml:lang="de">Notizträger</rdfs:label>
     <rdfs:label xml:lang="en">note carrier</rdfs:label>
     <rdfs:comment xml:lang="en">Carrier whereon notes are written, e.g. a first registration of thoughts.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Fragment">
-    <rdfs:label xml:lang="en">information carrier fragment</rdfs:label>
     <skos:note xml:lang="en">Fragments can possibly be reassembled.</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PhysicalCreation"/>
     <rdfs:label xml:lang="de">Informationsträgerfragment</rdfs:label>
+    <rdfs:label xml:lang="en">information carrier fragment</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:comment xml:lang="en">Fragment of information on a carrier.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Photocopy">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Copy"/>
-    <rdfs:comment xml:lang="en">Photographic information copy carrier.</rdfs:comment>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#NachlassElement">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Fotokopie</rdfs:label>
-    <rdfs:label xml:lang="en">photocopy</rdfs:label>
+    <rdfs:comment xml:lang="en">Element of a nachlass.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:label xml:lang="en">nachlass element</rdfs:label>
+    <rdfs:label xml:lang="de">Nachlass-Element</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#CompositeManuscript">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Codex"/>
+    <rdfs:comment xml:lang="en">Codex reassembled from codicological parts.</rdfs:comment>
+    <rdfs:label xml:lang="en">composite manuscript</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">zusammengesetztes Manuskript</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Pen">
+    <rdfs:label xml:lang="de">Tintenstift</rdfs:label>
+    <rdfs:label xml:lang="en">pen</rdfs:label>
+    <rdfs:comment xml:lang="en">Elongated cylindrical(-like) hollow object containing ink for writing or drawing.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Carrier">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier"/>
+    <rdfs:label xml:lang="en">information carrier</rdfs:label>
+    <rdfs:label xml:lang="de">Informationsträger</rdfs:label>
+    <skos:note xml:lang="en">Includes both F4_Manifestation_Singleton and F5_Item as declared in FRBRoo.</skos:note>
+    <rdfs:comment xml:lang="en">Carrier of information created by a person.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PhysicalCreation"/>
+    <rdfs:label xml:lang="fr">support d'information</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Book">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Buch</rdfs:label>
+    <rdfs:comment xml:lang="en">Set of leafs, e.g. sheets of paper or parchment, binded together along one side, with a front and back cover.</rdfs:comment>
+    <rdfs:label xml:lang="en">book</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PartitionedWork">
+    <rdfs:label xml:lang="de">partitioniertes Werk</rdfs:label>
+    <rdfs:label xml:lang="en">partitioned work</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Set of volumes carrying a common expression, e.g. a dictionary.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Codex">
+    <rdfs:comment xml:lang="en">Book as manuscript.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
+    <rdfs:label xml:lang="en">codex</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Kodex</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Compilation">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:label xml:lang="en">compilation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Carrier with an assemblage of previously separate information.</rdfs:comment>
+    <rdfs:label xml:lang="de">Zusammenstellung</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Leaf">
+    <rdfs:label xml:lang="en">leaf</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Blatt</rdfs:label>
+    <rdfs:comment xml:lang="en">Sheet of a writable substance, e.g. paper, parchment, treated plant leaf.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier">
+    <rdfs:label xml:lang="de">Manuskript-Identifikator</rdfs:label>
+    <rdfs:comment xml:lang="en">Identifier of a manuscript, comprising its location name, preserving institution name, repository name, collection name, number, name, and alternative identifier.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msIdentifier.html"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">manuscript identifier</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Convolute">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
+    <rdfs:label xml:lang="en">information carrier convolute</rdfs:label>
+    <rdfs:comment xml:lang="en">Set of information carriers, e.g. handwritten drafts, manuscripts, typoscripts or prints, with a commonality, e.g. being of the same author.</rdfs:comment>
+    <rdfs:label xml:lang="de">Informationsträger-Konvolut</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Volume">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">One of a set of books, carrying a part of the common expression of the set.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
+    <rdfs:label xml:lang="en">volume</rdfs:label>
+    <rdfs:label xml:lang="de">Band</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Set">
+    <rdfs:label xml:lang="fr">ensemble des supports d'information</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#Matter"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Informationsträger-Reihe</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#CreationSet"/>
+    <rdfs:comment xml:lang="en">Information carriers belonging together, e.g. a partitioned work, a nachlass.</rdfs:comment>
+    <rdfs:label xml:lang="en">information carrier set</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Binding">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">binding</rdfs:label>
+    <rdfs:label xml:lang="de">Einband</rdfs:label>
+    <rdfs:comment xml:lang="en">Material holding the leafs and covers of a book together.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isLeafOfBook">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:label xml:lang="de">ist Blatt eines Buchs</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a leaf to a book it is part of.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Leaf"/>
+    <rdfs:label xml:lang="en">is leaf of book</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ManuscriptCollection">
+    <rdfs:label xml:lang="en">manuscript collection</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="de">Manuskriptkollektion</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Collection"/>
+    <rdfs:label xml:lang="fr">collection des manuscrits</rdfs:label>
+    <rdfs:comment xml:lang="en">Collection of manuscripts.</rdfs:comment>
   </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isPageOfLeaf">
     <rdfs:label xml:lang="en">is page of leaf</rdfs:label>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Page"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:comment xml:lang="en">Relating a page to its leaf, single or in a book.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Leaf"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:label xml:lang="de">ist Seite eines Blattes</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Leaf"/>
+    <rdfs:comment xml:lang="en">Relating a page to its leaf, single or in a book.</rdfs:comment>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Collection">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Collection"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Copy">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:label xml:lang="en">information copy carrier</rdfs:label>
+    <rdfs:comment xml:lang="en">Carrier with a copy of information.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Copy"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Collection of information carriers, e.g. an archive.</rdfs:comment>
-    <rdfs:label xml:lang="fr">collection des supports d'information</rdfs:label>
-    <rdfs:label xml:lang="en">information carrier collection</rdfs:label>
-    <rdfs:label xml:lang="de">Informationsträger-Kollektion</rdfs:label>
+    <rdfs:label xml:lang="de">Informationskopieträger</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Remnant">
+    <rdfs:label xml:lang="en">information carrier remnant</rdfs:label>
+    <rdfs:label xml:lang="de">Informationsträgerüberrest</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PhysicalCreation"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#AgentPrinter">
-    <rdfs:label xml:lang="en">agent printer</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#AgentRole"/>
-    <rdfs:comment xml:lang="en">Role of a human agent, person or organization, printing an expression.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Agent-Drucker</rdfs:label>
+    <rdfs:comment xml:lang="en">Remnant of information on a carrier.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Set">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier">
+    <rdfs:comment xml:lang="en">Electronic machine carrying electronic information.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/device#ElectronicMachine"/>
+    <rdfs:label xml:lang="en">electronic information carrier</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:label xml:lang="de">elektronischer Informationsträger</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Informationsträger-Reihe</rdfs:label>
-    <rdfs:label xml:lang="en">information carrier set</rdfs:label>
-    <rdfs:label xml:lang="fr">ensemble des supports d'information</rdfs:label>
-    <rdfs:comment xml:lang="en">Information carriers belonging together, e.g. a partitioned work, a nachlass.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#CreationSet"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#Matter"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Hyperlink">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Archive">
+    <rdfs:comment xml:lang="en">Set of information carriers ordered along a method.</rdfs:comment>
+    <rdfs:label xml:lang="de">Archiv</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Hyperlink</rdfs:label>
-    <rdfs:comment xml:lang="en">Link from a hypertext document structure to another location, activated by clicking on a highlighted word or image.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:label xml:lang="en">hyperlink</rdfs:label>
+    <rdfs:label xml:lang="en">archive</rdfs:label>
+    <rdfs:label xml:lang="it">archivio</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Collection"/>
+    <rdfs:label xml:lang="fr">archive</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E78_Collection"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#CodicologicalPart">
+    <rdfs:label xml:lang="en">codicological part</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Part taken from a codex, together with other ones forming a composite manuscript.</rdfs:comment>
+    <rdfs:label xml:lang="de">codicologisches Teil</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Website">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
+    <rdfs:label xml:lang="en">website</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Set of interconnected webpages, under a single domain name, usually including a homepage, generally located on the same server, and prepared and maintained as information by a person, group, or organization.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"/>
+    <rdfs:label xml:lang="de">Website</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ConvoluteElement">
+    <rdfs:label xml:lang="en">convolute element</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:comment xml:lang="en">Element of an information carrier convolute.</rdfs:comment>
+    <rdfs:label xml:lang="de">Konvolut-Element</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Nachlass">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
+    <rdfs:label xml:lang="de">Nachlass</rdfs:label>
+    <rdfs:comment xml:lang="en">Set of information carriers as materialized expressions of a person as existing after the person's death, and unpublished during life.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E78_Collection"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:label xml:lang="en">nachlass</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Manuscript">
-    <rdfs:label xml:lang="en">manuscript</rdfs:label>
     <rdfs:label xml:lang="de">Manuskript</rdfs:label>
-    <rdfs:comment xml:lang="en">Carrier with a handwritten text.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:label xml:lang="en">manuscript</rdfs:label>
+    <rdfs:comment xml:lang="en">Carrier with a handwritten text.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Photocopy">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Copy"/>
+    <rdfs:label xml:lang="de">Fotokopie</rdfs:label>
+    <rdfs:label xml:lang="en">photocopy</rdfs:label>
+    <rdfs:comment xml:lang="en">Photographic information copy carrier.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Page">
+    <rdfs:label xml:lang="de">Seite</rdfs:label>
+    <rdfs:comment xml:lang="en">One of the 2 surfaces of a leaf, e.g. a manuscript, or of a leaf as part of a bundled set of leafs, e.g. a book.</rdfs:comment>
+    <rdfs:label xml:lang="en">page</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#isLeafOfBook">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Leaf"/>
-    <rdfs:label xml:lang="de">ist Blatt eines Buchs</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:label xml:lang="en">is leaf of book</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a leaf to a book it is part of.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Codex">
-    <rdfs:label xml:lang="de">Kodex</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
-    <rdfs:label xml:lang="en">codex</rdfs:label>
-    <rdfs:comment xml:lang="en">Book as manuscript.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#WritingUtensil">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/device#Device"/>
-    <rdfs:label xml:lang="en">writing utensil</rdfs:label>
-    <rdfs:comment xml:lang="en">Device to write with.</rdfs:comment>
-    <rdfs:label xml:lang="de">Schreibzeug</rdfs:label>
-  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ManualTranscript">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Transcript"/>
-    <rdfs:comment xml:lang="en">Handwritten transcript.</rdfs:comment>
     <rdfs:label xml:lang="de">manuelles Transkript</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Transcript"/>
     <rdfs:label xml:lang="en">manual transcript</rdfs:label>
+    <rdfs:comment xml:lang="en">Handwritten transcript.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Diary">
     <rdfs:comment xml:lang="en">Information carrier with periodically, usually daily, described personal experiences and observations.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
     <rdfs:label xml:lang="en">diary</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:label xml:lang="de">Tagebuch</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Archive">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#AgentPrinter">
+    <rdfs:label xml:lang="de">Agent-Drucker</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a human agent, person or organization, printing an expression.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Archiv</rdfs:label>
-    <rdfs:label xml:lang="en">archive</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Collection"/>
-    <rdfs:label xml:lang="it">archivio</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E78_Collection"/>
-    <rdfs:label xml:lang="fr">archive</rdfs:label>
-    <rdfs:comment xml:lang="en">Set of information carriers ordered along a method.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#NachlassElement">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Nachlass-Element</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="en">nachlass element</rdfs:label>
-    <rdfs:comment xml:lang="en">Element of a nachlass.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#CodicologicalPart">
-    <rdfs:label xml:lang="de">codicologisches Teil</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Manuscript"/>
-    <rdfs:label xml:lang="en">codicological part</rdfs:label>
-    <rdfs:comment xml:lang="en">Part taken from a codex, together with other ones forming a composite manuscript.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Page">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="en">page</rdfs:label>
-    <rdfs:comment xml:lang="en">One of the 2 surfaces of a leaf, e.g. a manuscript, or of a leaf as part of a bundled set of leafs, e.g. a book.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Seite</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Nachlass">
-    <rdfs:comment xml:lang="en">Set of information carriers as materialized expressions of a person as existing after the person's death, and unpublished during life.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E78_Collection"/>
-    <rdfs:label xml:lang="de">Nachlass</rdfs:label>
-    <rdfs:label xml:lang="en">nachlass</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#TextCopy">
-    <rdfs:comment xml:lang="en">Carrier with a copy of a text.</rdfs:comment>
-    <rdfs:label xml:lang="de">Textkopie</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Copy"/>
-    <rdfs:label xml:lang="en">text copy</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Electronic machine carrying electronic information.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/device#ElectronicMachine"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="en">electronic information carrier</rdfs:label>
-    <rdfs:label xml:lang="de">elektronischer Informationsträger</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#CompositeManuscript">
-    <rdfs:label xml:lang="de">zusammengesetztes Manuskript</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Codex"/>
-    <rdfs:comment xml:lang="en">Codex reassembled from codicological parts.</rdfs:comment>
-    <rdfs:label xml:lang="en">composite manuscript</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Compilation">
-    <rdfs:label xml:lang="de">Zusammenstellung</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">compilation</rdfs:label>
-    <rdfs:comment xml:lang="en">Carrier with an assemblage of previously separate information.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Convolute">
-    <rdfs:comment xml:lang="en">Set of information carriers, e.g. handwritten drafts, manuscripts, typoscripts or prints, with a commonality, e.g. being of the same author.</rdfs:comment>
-    <rdfs:label xml:lang="de">Informationsträger-Konvolut</rdfs:label>
-    <rdfs:label xml:lang="en">information carrier convolute</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Pen">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Tintenstift</rdfs:label>
-    <rdfs:label xml:lang="en">pen</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#WritingUtensil"/>
-    <rdfs:comment xml:lang="en">Elongated cylindrical(-like) hollow object containing ink for writing or drawing.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#AgentRole"/>
+    <rdfs:label xml:lang="en">agent printer</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#VolumeOrdinalNumber">
-    <rdfs:label xml:lang="en">volume ordinal number</rdfs:label>
-    <rdfs:comment xml:lang="en">Ordinal number of a volume.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
     <rdfs:label xml:lang="de">Bandordinalzahl</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
+    <rdfs:comment xml:lang="en">Ordinal number of a volume.</rdfs:comment>
+    <rdfs:label xml:lang="en">volume ordinal number</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Volume">
-    <rdfs:comment xml:lang="en">One of a set of books, carrying a part of the common expression of the set.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Book"/>
-    <rdfs:label xml:lang="en">volume</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Collection">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Band</rdfs:label>
+    <rdfs:label xml:lang="fr">collection des supports d'information</rdfs:label>
+    <rdfs:comment xml:lang="en">Collection of information carriers, e.g. an archive.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PhysicalCreation"/>
+    <rdfs:label xml:lang="en">information carrier collection</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Collection"/>
+    <rdfs:label xml:lang="de">Informationsträger-Kollektion</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ManuscriptIdentifier">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
-    <rdfs:label xml:lang="en">manuscript identifier</rdfs:label>
-    <rdfs:comment xml:lang="en">Identifier of a manuscript, comprising its location name, preserving institution name, repository name, collection name, number, name, and alternative identifier.</rdfs:comment>
-    <rdfs:label xml:lang="de">Manuskript-Identifikator</rdfs:label>
-    <rdfs:seeAlso rdf:resource="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msIdentifier.html"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Hyperlink">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier">
-    <rdfs:comment xml:lang="en">Identifier of a print, comprising its location, preserving organization, repository, collection, number, name, and alternative.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="de">Druck-Identifikator</rdfs:label>
-    <rdfs:label xml:lang="en">print identifier</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Leaf">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="de">Blatt</rdfs:label>
-    <rdfs:comment xml:lang="en">Sheet of a writable substance, e.g. paper, parchment, treated plant leaf.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">leaf</rdfs:label>
+    <rdfs:comment xml:lang="en">Link from a hypertext document structure to another location, activated by clicking on a highlighted word or image.</rdfs:comment>
+    <rdfs:label xml:lang="de">Hyperlink</rdfs:label>
+    <rdfs:label xml:lang="en">hyperlink</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Transcript">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton"/>
-    <rdfs:comment xml:lang="en">Text copy created by character, by any writing method, e.g. handwriting, typewriting, digitizing.</rdfs:comment>
     <rdfs:label xml:lang="de">Transkript</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#TextCopy"/>
     <rdfs:label xml:lang="en">transcript</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Print">
-    <rdfs:label xml:lang="de">Druck</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:label xml:lang="en">print</rdfs:label>
-    <rdfs:comment xml:lang="en">Something printed on a carrier.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
+    <rdfs:comment xml:lang="en">Text copy created by character, by any writing method, e.g. handwriting, typewriting, digitizing.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#TextCopy"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#TextCopy">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Copy"/>
+    <rdfs:label xml:lang="de">Textkopie</rdfs:label>
+    <rdfs:comment xml:lang="en">Carrier with a copy of a text.</rdfs:comment>
+    <rdfs:label xml:lang="en">text copy</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Webpage">
-    <rdfs:label xml:lang="en">webpage</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:label xml:lang="de">Webseite</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#ElectronicCarrier"/>
     <rdfs:comment xml:lang="en">Electronic carrier page on the World Wide Web.</rdfs:comment>
+    <rdfs:label xml:lang="en">webpage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Book">
-    <rdfs:label xml:lang="de">Buch</rdfs:label>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/information-carrier#volumeHasOrdinalNumber">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
+    <rdfs:comment xml:lang="en">Relating a volume to its ordinal number.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/information-carrier#VolumeOrdinalNumber"/>
+    <rdfs:label xml:lang="de">Band hat Ordinalzahl</rdfs:label>
+    <rdfs:label xml:lang="en">volume has ordinal number</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/information-carrier#Volume"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Print">
+    <rdfs:comment xml:lang="en">Something printed on a carrier.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:comment xml:lang="en">Set of leafs, e.g. sheets of paper or parchment, binded together along one side, with a front and back cover.</rdfs:comment>
-    <rdfs:label xml:lang="en">book</rdfs:label>
+    <rdfs:label xml:lang="en">print</rdfs:label>
+    <rdfs:label xml:lang="de">Druck</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Binding">
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ArchiveElement">
+    <rdfs:label xml:lang="en">archive element</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-    <rdfs:label xml:lang="en">binding</rdfs:label>
-    <rdfs:label xml:lang="de">Einband</rdfs:label>
-    <rdfs:comment xml:lang="en">Material holding the leafs and covers of a book together.</rdfs:comment>
+    <rdfs:label xml:lang="de">Archiv-Element</rdfs:label>
+    <rdfs:comment xml:lang="en">Element of an archive, which can be a single information carrier or a group.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#ManuscriptCollection">
-    <rdfs:label xml:lang="en">manuscript collection</rdfs:label>
-    <rdfs:label xml:lang="de">Manuskriptkollektion</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Collection of manuscripts.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Collection"/>
-    <rdfs:label xml:lang="fr">collection des manuscrits</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Copy">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Copy"/>
-    <rdfs:label xml:lang="en">information copy carrier</rdfs:label>
-    <rdfs:comment xml:lang="en">Carrier with a copy of information.</rdfs:comment>
-    <rdfs:label xml:lang="de">Informationskopieträger</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#Typescript">
+    <rdfs:label xml:lang="en">typescript</rdfs:label>
+    <rdfs:comment xml:lang="en">Carrier with a typewritten text.</rdfs:comment>
+    <rdfs:label xml:lang="de">Typoskript</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PartitionedWork">
-    <rdfs:label xml:lang="en">partitioned work</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
-    <rdfs:comment xml:lang="en">Set of volumes carrying a common expression, e.g. a dictionary.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
-    <rdfs:label xml:lang="de">partitioniertes Werk</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/information-carrier#PrintIdentifier">
+    <rdfs:label xml:lang="de">Druck-Identifikator</rdfs:label>
+    <rdfs:comment xml:lang="en">Identifier of a print, comprising its location, preserving organization, repository, collection, number, name, and alternative.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
+    <rdfs:label xml:lang="en">print identifier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/information-carrier#"/>
   </rdfs:Class>
 </rdf:RDF>

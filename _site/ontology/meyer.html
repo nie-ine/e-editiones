@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -76,7 +120,7 @@
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/meyer" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/meyer" title="Browse http://e-editiones.ch/ontology/meyer">meyer:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/meyer" title="Browse http://e-editiones.ch/ontology/meyer"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/contributor">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
@@ -118,7 +162,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e47="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e121="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -145,13 +189,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Conrad Ferdinand Meyer copied letter expression" xml:lang="en">
-               <div class="property-object">Conrad Ferdinand Meyer copied letter expression
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="kopierte Briefexpression Conrad Ferdinand Meyers" xml:lang="de"></span><div class="property-object">kopierte Briefexpression Conrad Ferdinand Meyers
-                  													
+            <td property="rdfs:label" content="kopierte Briefexpression Conrad Ferdinand Meyers" xml:lang="de">
+               <div class="property-object">kopierte Briefexpression Conrad Ferdinand Meyers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer copied letter expression" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer copied letter expression
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -195,9 +239,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#TextCopy" title="Browse http://e-editiones.ch/ontology/information-carrier#TextCopy">information-carrier:TextCopy</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
             </td>
          </tr>
       </table>
@@ -222,22 +266,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Conrad Ferdinand Meyers kritische Edition" xml:lang="de">
-               <div class="property-object">Conrad Ferdinand Meyers kritische Edition
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer critical edition" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer critical edition
-                  													
+            <td property="rdfs:label" content="Conrad Ferdinand Meyer critical edition" xml:lang="en">
+               <div class="property-object">Conrad Ferdinand Meyer critical edition
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyers kritische Edition" xml:lang="de"></span><div class="property-object">Conrad Ferdinand Meyers kritische Edition
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition" title="Browse http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition">scholarly-editing:CriticalEdition</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
             </td>
          </tr>
       </table>
@@ -261,22 +305,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Conrad Ferdinand Meyer-briefentwurf" xml:lang="de">
-               <div class="property-object">Conrad Ferdinand Meyer-briefentwurf
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer draft letter" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer draft letter
-                  													
+            <td property="rdfs:label" content="Conrad Ferdinand Meyer draft letter" xml:lang="en">
+               <div class="property-object">Conrad Ferdinand Meyer draft letter
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer-briefentwurf" xml:lang="de"></span><div class="property-object">Conrad Ferdinand Meyer-briefentwurf
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Draft" title="Browse http://e-editiones.ch/ontology/information-carrier#Draft">information-carrier:Draft</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Draft" title="Browse http://e-editiones.ch/ontology/information-carrier#Draft">information-carrier:Draft</a></div>
             </td>
          </tr>
       </table>
@@ -376,9 +420,9 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="lettre de Conrad Ferdinand Meyer" xml:lang="fr">
-               <div class="property-object">lettre de Conrad Ferdinand Meyer
-                  													(fr)
+            <td property="rdfs:label" content="Conrad Ferdinand Meyer-Brief" xml:lang="de">
+               <div class="property-object">Conrad Ferdinand Meyer-Brief
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer letter" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer letter
                   													
@@ -388,9 +432,9 @@
                   													
                   													(it)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer-Brief" xml:lang="de"></span><div class="property-object">Conrad Ferdinand Meyer-Brief
+               <div class="connector"></div><span property="rdfs:label" content="lettre de Conrad Ferdinand Meyer" xml:lang="fr"></span><div class="property-object">lettre de Conrad Ferdinand Meyer
                   													
-                  													(de)
+                  													(fr)
                   												</div>
             </td>
          </tr>
@@ -475,9 +519,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/letter-corresponding#Expression" title="Browse http://e-editiones.ch/ontology/letter-corresponding#Expression">letter-corresponding:Expression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
             </td>
          </tr>
       </table>
@@ -552,9 +596,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#PhotocopiedText" title="Browse http://e-editiones.ch/ontology/text#PhotocopiedText">text:PhotocopiedText</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/meyer#CopiedLetterExpression" title="Browse http://e-editiones.ch/ontology/meyer#CopiedLetterExpression">meyer:CopiedLetterExpression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#PhotocopiedText" title="Browse http://e-editiones.ch/ontology/text#PhotocopiedText">text:PhotocopiedText</a></div>
             </td>
          </tr>
       </table>
@@ -578,13 +622,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Conrad Ferdinand Meyer-Brieffotokopie" xml:lang="de">
-               <div class="property-object">Conrad Ferdinand Meyer-Brieffotokopie
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer letter photocopy" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer letter photocopy
-                  													
+            <td property="rdfs:label" content="Conrad Ferdinand Meyer letter photocopy" xml:lang="en">
+               <div class="property-object">Conrad Ferdinand Meyer letter photocopy
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer-Brieffotokopie" xml:lang="de"></span><div class="property-object">Conrad Ferdinand Meyer-Brieffotokopie
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -617,21 +661,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="lettre carte postale de Conrad Ferdinand Meyer" xml:lang="fr">
-               <div class="property-object">lettre carte postale de Conrad Ferdinand Meyer
-                  													(fr)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer-Postkartebrief" xml:lang="de"></span><div class="property-object">Conrad Ferdinand Meyer-Postkartebrief
-                  													
+            <td property="rdfs:label" content="Conrad Ferdinand Meyer-Postkartebrief" xml:lang="de">
+               <div class="property-object">Conrad Ferdinand Meyer-Postkartebrief
                   													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer postcard letter" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer postcard letter
-                  													
-                  													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="lettera cartolina di Conrad Ferdinand Meyer" xml:lang="it"></span><div class="property-object">lettera cartolina di Conrad Ferdinand Meyer
                   													
                   													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="lettre carte postale de Conrad Ferdinand Meyer" xml:lang="fr"></span><div class="property-object">lettre carte postale de Conrad Ferdinand Meyer
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer postcard letter" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer postcard letter
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -704,13 +748,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="gedruckte Briefexpression Conrad Ferdinand Meyers" xml:lang="de">
-               <div class="property-object">gedruckte Briefexpression Conrad Ferdinand Meyers
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer printed letter expression" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer printed letter expression
-                  													
+            <td property="rdfs:label" content="Conrad Ferdinand Meyer printed letter expression" xml:lang="en">
+               <div class="property-object">Conrad Ferdinand Meyer printed letter expression
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="gedruckte Briefexpression Conrad Ferdinand Meyers" xml:lang="de"></span><div class="property-object">gedruckte Briefexpression Conrad Ferdinand Meyers
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -744,13 +788,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Conrad Ferdinand Meyer transcribed letter expression" xml:lang="en">
-               <div class="property-object">Conrad Ferdinand Meyer transcribed letter expression
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="transkribierte Briefexpression Conrad Ferdinand Meyers" xml:lang="de"></span><div class="property-object">transkribierte Briefexpression Conrad Ferdinand Meyers
-                  													
+            <td property="rdfs:label" content="transkribierte Briefexpression Conrad Ferdinand Meyers" xml:lang="de">
+               <div class="property-object">transkribierte Briefexpression Conrad Ferdinand Meyers
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer transcribed letter expression" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer transcribed letter expression
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -783,22 +827,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Conrad Ferdinand Meyer letter transcript" xml:lang="en">
-               <div class="property-object">Conrad Ferdinand Meyer letter transcript
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer-Brieftranskript" xml:lang="de"></span><div class="property-object">Conrad Ferdinand Meyer-Brieftranskript
-                  													
+            <td property="rdfs:label" content="Conrad Ferdinand Meyer-Brieftranskript" xml:lang="de">
+               <div class="property-object">Conrad Ferdinand Meyer-Brieftranskript
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Conrad Ferdinand Meyer letter transcript" xml:lang="en"></span><div class="property-object">Conrad Ferdinand Meyer letter transcript
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ManualTranscript" title="Browse http://e-editiones.ch/ontology/information-carrier#ManualTranscript">information-carrier:ManualTranscript</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/meyer#Copy" title="Browse http://e-editiones.ch/ontology/meyer#Copy">meyer:Copy</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ManualTranscript" title="Browse http://e-editiones.ch/ontology/information-carrier#ManualTranscript">information-carrier:ManualTranscript</a></div>
             </td>
          </tr>
       </table>

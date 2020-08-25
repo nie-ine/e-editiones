@@ -1,322 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#hasCodeValue">
-    <rdfs:comment xml:lang="en">Relating a resource to its code value.</rdfs:comment>
-    <rdfs:label xml:lang="en">has code value</rdfs:label>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#informationHasSubjectDescriptionLiteral">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
+    <rdfs:label xml:lang="de">Information hat Themabeschreibungliterale</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating information to a description literal of its subject.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:label xml:lang="en">information has subject description literal</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#isExpressedIn">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/document#IndividualExpression"/>
+    <rdfs:label xml:lang="de">ist ausgedruckt in</rdfs:label>
+    <rdfs:label xml:lang="en">is expressed in</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an individual work to an individual expression thereof.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:subPropertyOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/R9_is_realised_in"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#IndividualWork"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#codeHasSystem">
+    <rdfs:label xml:lang="en">code has system</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#CodingSystem"/>
+    <rdfs:label xml:lang="de">Kode hat System</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a code to the coding system it belongs to.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/concept">
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:title xml:lang="en">An ontology about concept</dct:title>
+    <dct:description xml:lang="en">Formal description of concept, its general subclasses, related classes and properties.</dct:description>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+  </owl:Ontology>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#hasCodeValue">
     <rdfs:label xml:lang="de">hat Kodewert</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subPropertyOf>
       <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#hasIdentifierLiteral">
-        <rdfs:label xml:lang="en">has identifier literal</rdfs:label>
         <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
+        <rdfs:comment xml:lang="en">Relating a resource to its identifier literal.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+        <rdfs:label xml:lang="en">has identifier literal</rdfs:label>
         <owl:propertyChainAxiom rdf:parseType="Collection">
           <rdf:Description rdf:about="http://e-editiones.ch/ontology/concept#hasIdentifier"/>
           <rdf:Description rdf:about="http://e-editiones.ch/ontology/concept#identifierHasLiteral"/>
         </owl:propertyChainAxiom>
-        <rdfs:comment xml:lang="en">Relating a resource to its identifier literal.</rdfs:comment>
-        <rdfs:label xml:lang="de">hat Identifikatorliterale</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-      </owl:DatatypeProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Nonfiction">
-    <rdfs:comment xml:lang="en">Conceptual entity based on fact.</rdfs:comment>
-    <rdfs:label xml:lang="en">nonfiction</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-    <rdfs:label xml:lang="de">sachliches Konzept</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#codeHasSystem">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#CodingSystem"/>
-    <rdfs:comment xml:lang="en">Relating a code to the coding system it belongs to.</rdfs:comment>
-    <rdfs:label xml:lang="de">Kode hat System</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
-    <rdfs:label xml:lang="en">code has system</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#codeHasValue">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
-    <rdfs:subPropertyOf>
-      <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#identifierHasLiteral">
         <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-        <rdfs:label xml:lang="de">Identifikator hat Literale</rdfs:label>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
-        <rdfs:label xml:lang="en">identifier has literal</rdfs:label>
-        <rdfs:comment xml:lang="en">Relating an identifier to its literal.</rdfs:comment>
+        <rdfs:label xml:lang="de">hat Identifikatorliterale</rdfs:label>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
       </owl:DatatypeProperty>
     </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="de">Kode hat Wert</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a code to its literal value.</rdfs:comment>
+    <rdfs:label xml:lang="en">has code value</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a resource to its code value.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="en">code has value</rdfs:label>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#isExpressedIn">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="en">is expressed in</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an individual work to an individual expression thereof.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist ausgedruckt in</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#IndividualWork"/>
-    <rdfs:subPropertyOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/R9_is_realised_in"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/document#IndividualExpression"/>
-  </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Fiction">
+    <rdfs:label xml:lang="en">fiction</rdfs:label>
     <rdfs:label xml:lang="de">Fiktion</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="en">fiction</rdfs:label>
     <rdfs:comment xml:lang="en">Conceptual entity derived from imagination.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Motto">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-    <rdfs:label xml:lang="it">motto</rdfs:label>
-    <rdfs:comment xml:lang="en">Conceptual entity chosen as encapsulating an ideal, principle, belief or goal of an individual or group.</rdfs:comment>
-    <rdfs:label xml:lang="fr">devise</rdfs:label>
-    <rdfs:label xml:lang="en">motto</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="de">Motto</rdfs:label>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#codingSystemHasDatatype">
-    <rdfs:label xml:lang="de">Kodierungssystem hat Datentyp</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a coding system to its datatype.</rdfs:comment>
-    <rdfs:label xml:lang="en">coding system has datatype</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#CodingSystem"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-  </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#ThoughtBody">
-    <rdfs:label xml:lang="de">Gedankengut</rdfs:label>
-    <skos:note xml:lang="en">Related to belief system, related to school of thought, related to theory.</skos:note>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#PropositionalEntity"/>
     <rdfs:comment xml:lang="en">Propositional entity comprising conceptually related propositions, without the necessity of being logically coherent.</rdfs:comment>
+    <skos:note xml:lang="en">Related to belief system, related to school of thought, related to theory.</skos:note>
     <rdfs:label xml:lang="en">body of thought</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Commonplace">
-    <rdfs:label xml:lang="de">Gemeinplatz</rdfs:label>
-    <rdfs:label xml:lang="en">commonplace</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-    <rdfs:label xml:lang="fr">lieu commun</rdfs:label>
-    <rdfs:comment xml:lang="en">Conceptual entity generally known, not needing any further explanation, e.g. "Romeo and Julia".</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#informationHasSubject">
-    <rdfs:label xml:lang="de">Information hat Thema</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="en">information has subject</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating information to a subject it is about.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/concept#isPartOf">
-    <rdfs:comment xml:lang="en">Relating a conceptual entity to another one it is part of.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="de">ist Teil einer symbolischen Entität</rdfs:label>
-    <rdfs:label xml:lang="en">is part of conceptual entity</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-  </owl:TransitiveProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#informationHasSubjectDescriptionLiteral">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="de">Information hat Themabeschreibungliterale</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating information to a description literal of its subject.</rdfs:comment>
-    <rdfs:label xml:lang="en">information has subject description literal</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasDescriptionLiteral"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Set">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="en">conceptual entity set</rdfs:label>
-    <rdfs:label xml:lang="de">Reihe konzeptueller Entitäten</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#CreationSet"/>
-    <rdfs:comment xml:lang="en">Set of conceptual entities.</rdfs:comment>
-  </rdfs:Class>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/concept">
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:description xml:lang="en">Formal description of concept, its general subclasses, related classes and properties.</dct:description>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
-    <dct:title xml:lang="en">An ontology about concept</dct:title>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-  </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#ThoughtMethod">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
-    <rdfs:comment xml:lang="en">Way of analysing facts to form a judgment.</rdfs:comment>
-    <rdfs:label xml:lang="de">Methode des Denkens</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="en">thought method</rdfs:label>
+    <rdfs:label xml:lang="de">Gedankengut</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Procedure">
-    <rdfs:comment xml:lang="en">Plan to perform an action in one or more steps, in a certain manner to obtain a certain output under certain circumstances.</rdfs:comment>
-    <rdfs:label xml:lang="en">procedure</rdfs:label>
     <rdfs:label xml:lang="de">Vorgehen</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:label xml:lang="en">procedure</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:comment xml:lang="en">Plan to perform an action in one or more steps, in a certain manner to obtain a certain output under certain circumstances.</rdfs:comment>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#hasEncoder">
+  <owl:TransitiveProperty rdf:about="http://e-editiones.ch/ontology/concept#isPartOf">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
+    <rdfs:comment xml:lang="en">Relating a conceptual entity to another one it is part of.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"/>
+    <rdfs:label xml:lang="de">ist Teil einer symbolischen Entität</rdfs:label>
+    <rdfs:label xml:lang="en">is part of conceptual entity</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="de">Information hat Encoder</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating information to a person who encoded it.</rdfs:comment>
-    <rdfs:label xml:lang="en">information has encoder</rdfs:label>
+  </owl:TransitiveProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#hasDedicatedTo">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+    <rdfs:label xml:lang="de">hat gewidmet</rdfs:label>
+    <rdfs:label xml:lang="en">has dedicated to</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a person to another person to whom the former has dedicated something.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#hasEncoder">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
     <rdfs:range>
       <rdf:Description rdf:nodeID="ub34bL305C13">
-        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
         <rdfs:subClassOf>
           <owl:Restriction rdf:nodeID="ub34bL305C44">
             <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
             <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/information-carrier#Encoder"/>
           </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
       </rdf:Description>
     </rdfs:range>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#hasDedicatedTo">
+    <rdfs:label xml:lang="de">Information hat Encoder</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:comment xml:lang="en">Relating a person to another person to whom the former has dedicated something.</rdfs:comment>
-    <rdfs:label xml:lang="en">has dedicated to</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
-    <rdfs:label xml:lang="de">hat gewidmet</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating information to a person who encoded it.</rdfs:comment>
+    <rdfs:label xml:lang="en">information has encoder</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#ThoughtMethod">
+    <rdfs:label xml:lang="en">thought method</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
+    <rdfs:label xml:lang="de">Methode des Denkens</rdfs:label>
+    <rdfs:comment xml:lang="en">Way of analysing facts to form a judgment.</rdfs:comment>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#informationHasSubject">
+    <rdfs:comment xml:lang="en">Relating information to a subject it is about.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:label xml:lang="de">Information hat Thema</rdfs:label>
+    <rdfs:label xml:lang="en">information has subject</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#hasCode">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
-    <rdfs:label xml:lang="en">has code</rdfs:label>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#hasIdentifier">
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasSymbolicEntity"/>
-        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-        <rdfs:label xml:lang="en">has identifier</rdfs:label>
-        <rdfs:label xml:lang="de">hat Identifikator</rdfs:label>
         <rdfs:comment xml:lang="en">Relating a resource to its identifier.</rdfs:comment>
-        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
+        <rdfs:label xml:lang="de">hat Identifikator</rdfs:label>
+        <rdfs:label xml:lang="en">has identifier</rdfs:label>
         <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasSymbolicEntity"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
     <rdfs:label xml:lang="de">hat Kode</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#exactMatch"/>
     <rdfs:comment xml:lang="en">Relating a resource to its code.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">has code</rdfs:label>
   </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#codeHasValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">code has value</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a code to its literal value.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
+    <rdfs:label xml:lang="de">Kode hat Wert</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#identifierHasLiteral">
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
+        <rdfs:comment xml:lang="en">Relating an identifier to its literal.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">identifier has literal</rdfs:label>
+        <rdfs:label xml:lang="de">Identifikator hat Literale</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+      </owl:DatatypeProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Set">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#CreationSet"/>
+    <rdfs:label xml:lang="de">Reihe konzeptueller Entitäten</rdfs:label>
+    <rdfs:label xml:lang="en">conceptual entity set</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:comment xml:lang="en">Set of conceptual entities.</rdfs:comment>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#codingSystemHasDatatype">
+    <rdfs:label xml:lang="en">coding system has datatype</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label xml:lang="de">Kodierungssystem hat Datentyp</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a coding system to its datatype.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#CodingSystem"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Motto">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
+    <rdfs:comment xml:lang="en">Conceptual entity chosen as encapsulating an ideal, principle, belief or goal of an individual or group.</rdfs:comment>
+    <rdfs:label xml:lang="de">Motto</rdfs:label>
+    <rdfs:label xml:lang="en">motto</rdfs:label>
+    <rdfs:label xml:lang="fr">devise</rdfs:label>
+    <rdfs:label xml:lang="it">motto</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Commonplace">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:label xml:lang="fr">lieu commun</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
+    <rdfs:label xml:lang="en">commonplace</rdfs:label>
+    <rdfs:label xml:lang="de">Gemeinplatz</rdfs:label>
+    <rdfs:comment xml:lang="en">Conceptual entity generally known, not needing any further explanation, e.g. "Romeo and Julia".</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Nonfiction">
+    <rdfs:comment xml:lang="en">Conceptual entity based on fact.</rdfs:comment>
+    <rdfs:label xml:lang="de">sachliches Konzept</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:label xml:lang="en">nonfiction</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Work">
+    <rdfs:label xml:lang="en">conceptual work</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#PropositionalEntity"/>
+    <rdfs:comment xml:lang="en">propositional entity as recognizable intellectual product, based on FRBRoo.</rdfs:comment>
+    <rdfs:label xml:lang="de">konzeptuelles Werk</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+  </rdfs:Class>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#hasLiteral">
-    <rdfs:comment xml:lang="en">Relating something to the literal of a symbolic entity that the literal expresses.</rdfs:comment>
+    <skos:note xml:lang="en">A reification of a literal, i.e. a symbolic entity, can always be interposed, see property chain axiom.</skos:note>
+    <rdfs:label xml:lang="de">hat Literale</rdfs:label>
     <owl:propertyChainAxiom rdf:parseType="Collection">
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/concept#hasSymbolicEntity"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral"/>
     </owl:propertyChainAxiom>
     <rdfs:label xml:lang="en">has literal</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <skos:note xml:lang="en">A reification of a literal, i.e. a symbolic entity, can always be interposed, see property chain axiom.</skos:note>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label xml:lang="de">hat Literale</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="en">Relating something to the literal of a symbolic entity that the literal expresses.</rdfs:comment>
   </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#ConceptualEntity">
-    <rdfs:label xml:lang="de">konzeptuelle Entität</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Creation"/>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#SymbolicEntity">
+    <rdfs:comment xml:lang="en">Conceptual entity represented by one or more symbols.</rdfs:comment>
+    <rdfs:label xml:lang="en">symbolic entity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:label xml:lang="de">symbolische Entität</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F6_Concept"/>
-    <rdfs:comment xml:lang="en">Abstract idea created by a person, as product of cognition.</rdfs:comment>
-    <rdfs:label xml:lang="en">conceptual entity</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Work">
-    <rdfs:label xml:lang="de">konzeptuelles Werk</rdfs:label>
-    <rdfs:label xml:lang="en">conceptual work</rdfs:label>
-    <rdfs:comment xml:lang="en">propositional entity as recognizable intellectual product, based on FRBRoo.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#PropositionalEntity"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#hasSymbolicEntity">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work"/>
-  </rdfs:Class>
+    <rdfs:label xml:lang="de">hat symbolische Entität</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating something to a symbolic entity.</rdfs:comment>
+    <rdfs:label xml:lang="en">has symbolic entity</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
+  </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#IndividualWork">
-    <rdfs:label xml:lang="en">individual work</rdfs:label>
     <rdfs:comment xml:lang="en">Work as a complete whole realised in one self-contained expression.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Work"/>
-    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F14_Individual_Work"/>
     <rdfs:label xml:lang="de">individuelles Werk</rdfs:label>
+    <rdfs:label xml:lang="en">individual work</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F14_Individual_Work"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Information">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#PropositionalEntity"/>
+    <rdfs:label xml:lang="de">Information</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
+    <rdfs:comment xml:lang="en">Symbolic propositional entity resolving uncertainty.</rdfs:comment>
+    <rdfs:label xml:lang="en">information</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#CodingSystem">
+    <rdfs:label xml:lang="en">code system</rdfs:label>
+    <rdfs:label xml:lang="de">Kodierungssystem</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:comment xml:lang="en">System providing a code for something along certain criteria, e.g. the ISO 639 for natural languages.</rdfs:comment>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#PropositionalEntity">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-    <skos:note xml:lang="en">Different from a linguistic proposition.</skos:note>
-    <rdfs:comment xml:lang="en">Conceptual entity represented by one or more propositions as bearers of a truth value.</rdfs:comment>
-    <rdfs:label xml:lang="de">propositionale Entität</rdfs:label>
     <rdfs:label xml:lang="en">propositional entity</rdfs:label>
+    <rdfs:label xml:lang="de">propositionale Entität</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:comment xml:lang="en">Conceptual entity represented by one or more propositions as bearers of a truth value.</rdfs:comment>
+    <skos:note xml:lang="en">Different from a linguistic proposition.</skos:note>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#ConceptualEntity">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F6_Concept"/>
+    <rdfs:label xml:lang="en">conceptual entity</rdfs:label>
+    <rdfs:label xml:lang="de">konzeptuelle Entität</rdfs:label>
+    <rdfs:comment xml:lang="en">Abstract idea created by a person, as product of cognition.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#Creation"/>
   </rdfs:Class>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral">
-    <rdfs:label xml:lang="en">symbolic entity has literal</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:comment xml:lang="en">Relating a symbolic entity to a literal that expresses it.</rdfs:comment>
     <rdfs:label xml:lang="de">symbolische Entität hat Literale</rdfs:label>
+    <rdfs:label xml:lang="en">symbolic entity has literal</rdfs:label>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
   </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#CodingSystem">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <rdfs:comment xml:lang="en">System providing a code for something along certain criteria, e.g. the ISO 639 for natural languages.</rdfs:comment>
-    <rdfs:label xml:lang="de">Kodierungssystem</rdfs:label>
-    <rdfs:label xml:lang="en">code system</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Information">
-    <rdfs:label xml:lang="de">Information</rdfs:label>
-    <rdfs:label xml:lang="en">information</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
-    <rdfs:comment xml:lang="en">Symbolic propositional entity resolving uncertainty.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#PropositionalEntity"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#SymbolicEntity">
-    <rdfs:label xml:lang="en">symbolic entity</rdfs:label>
-    <rdfs:label xml:lang="de">symbolische Entität</rdfs:label>
-    <rdfs:comment xml:lang="en">Conceptual entity represented by one or more symbols.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#ConceptualEntity"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/concept#hasSymbolicEntity">
-    <rdfs:label xml:lang="de">hat symbolische Entität</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:comment xml:lang="en">Relating something to a symbolic entity.</rdfs:comment>
-    <rdfs:label xml:lang="en">has symbolic entity</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Identifier">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
-    <rdfs:label xml:lang="en">identifier</rdfs:label>
-    <rdfs:comment xml:lang="en">Unique and permanent reference to a resource within a given context, and conforming to a formal identification system.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
-    <rdfs:label xml:lang="de">Identifikator</rdfs:label>
-  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Code">
-    <owl:disjointWith rdf:resource="http://e-editiones.ch/ontology/document#Code"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:label xml:lang="en">code</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
-    <rdfs:label xml:lang="de">Kode</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
     <rdfs:comment xml:lang="en">Identifier belonging to a specific coding system, formed by any kind of symbols, e.g. alphanumeric.</rdfs:comment>
+    <rdfs:label xml:lang="de">Kode</rdfs:label>
+    <rdfs:label xml:lang="en">code</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Identifier"/>
+    <owl:disjointWith rdf:resource="http://e-editiones.ch/ontology/document#Code"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/concept#Identifier">
+    <rdfs:label xml:lang="de">Identifikator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/concept#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#SymbolicEntity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"/>
+    <rdfs:comment xml:lang="en">Unique and permanent reference to a resource within a given context, and conforming to a formal identification system.</rdfs:comment>
+    <rdfs:label xml:lang="en">identifier</rdfs:label>
   </rdfs:Class>
 </rdf:RDF>

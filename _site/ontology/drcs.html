@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -72,11 +116,11 @@
 </div>
 
             
-              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:concept="http://e-editiones.ch/ontology/concept#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:concept="http://e-editiones.ch/ontology/concept#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/drcs" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/drcs" title="Browse http://e-editiones.ch/ontology/drcs">drcs:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/drcs" title="Browse http://e-editiones.ch/ontology/drcs"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/contributor">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
@@ -135,7 +179,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e88="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e161="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -204,17 +248,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="commentarius" xml:lang="la">
-               <div class="property-object">commentarius
-                  													(la)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="commentary" xml:lang="en"></span><div class="property-object">commentary
-                  													
+            <td property="rdfs:label" content="commentary" xml:lang="en">
+               <div class="property-object">commentary
                   													(en)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="Kommentar" xml:lang="de"></span><div class="property-object">Kommentar
                   													
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="commentarius" xml:lang="la"></span><div class="property-object">commentarius
+                  													
+                  													(la)
                   												</div>
             </td>
          </tr>
@@ -245,24 +289,24 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="compiled handwritten commentary" xml:lang="en">
-               <div class="property-object">compiled handwritten commentary
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="zusammengestellter handgeschriebener Kommentar" xml:lang="de"></span><div class="property-object">zusammengestellter handgeschriebener Kommentar
-                  													
+            <td property="rdfs:label" content="zusammengestellter handgeschriebener Kommentar" xml:lang="de">
+               <div class="property-object">zusammengestellter handgeschriebener Kommentar
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="compiled handwritten commentary" xml:lang="en"></span><div class="property-object">compiled handwritten commentary
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#CompiledText" title="Browse http://e-editiones.ch/ontology/text#CompiledText">text:CompiledText</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
                <div class="connector"></div>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#CompiledText" title="Browse http://e-editiones.ch/ontology/text#CompiledText">text:CompiledText</a></div>
             </td>
          </tr>
       </table>
@@ -299,9 +343,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#PrintedText" title="Browse http://e-editiones.ch/ontology/text#PrintedText">text:PrintedText</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#CompiledText" title="Browse http://e-editiones.ch/ontology/text#CompiledText">text:CompiledText</a></div>
             </td>
@@ -327,13 +371,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Conclusio-Kommentar" xml:lang="de">
-               <div class="property-object">Conclusio-Kommentar
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="conclusio commentary" xml:lang="en"></span><div class="property-object">conclusio commentary
-                  													
+            <td property="rdfs:label" content="conclusio commentary" xml:lang="en">
+               <div class="property-object">conclusio commentary
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Conclusio-Kommentar" xml:lang="de"></span><div class="property-object">Conclusio-Kommentar
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -366,13 +410,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="edierter Kommentar" xml:lang="de">
-               <div class="property-object">edierter Kommentar
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="edited commentary" xml:lang="en"></span><div class="property-object">edited commentary
-                  													
+            <td property="rdfs:label" content="edited commentary" xml:lang="en">
+               <div class="property-object">edited commentary
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="edierter Kommentar" xml:lang="de"></span><div class="property-object">edierter Kommentar
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -405,22 +449,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Glosse-Kommentar" xml:lang="de">
-               <div class="property-object">Glosse-Kommentar
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="gloss commentary" xml:lang="en"></span><div class="property-object">gloss commentary
-                  													
+            <td property="rdfs:label" content="gloss commentary" xml:lang="en">
+               <div class="property-object">gloss commentary
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Glosse-Kommentar" xml:lang="de"></span><div class="property-object">Glosse-Kommentar
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#GlossCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#GlossCommentary">scholasticism:GlossCommentary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#GlossCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#GlossCommentary">scholasticism:GlossCommentary</a></div>
             </td>
          </tr>
       </table>
@@ -444,13 +488,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="handgeschriebener Kommentar" xml:lang="de">
-               <div class="property-object">handgeschriebener Kommentar
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="handwritten commentary" xml:lang="en"></span><div class="property-object">handwritten commentary
-                  													
+            <td property="rdfs:label" content="handwritten commentary" xml:lang="en">
+               <div class="property-object">handwritten commentary
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="handgeschriebener Kommentar" xml:lang="de"></span><div class="property-object">handgeschriebener Kommentar
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -523,13 +567,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="lectura revisa commentary" xml:lang="en">
-               <div class="property-object">lectura revisa commentary
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Lectura Revisa-Kommentar" xml:lang="de"></span><div class="property-object">Lectura Revisa-Kommentar
-                  													
+            <td property="rdfs:label" content="Lectura Revisa-Kommentar" xml:lang="de">
+               <div class="property-object">Lectura Revisa-Kommentar
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="lectura revisa commentary" xml:lang="en"></span><div class="property-object">lectura revisa commentary
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -575,9 +619,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#LiteralExpositionCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#LiteralExpositionCommentary">scholasticism:LiteralExpositionCommentary</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
             </td>
          </tr>
       </table>
@@ -614,9 +658,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary">scholasticism:OrdinatioCommentary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#OrdinatioCommentary">scholasticism:OrdinatioCommentary</a></div>
             </td>
          </tr>
       </table>
@@ -653,9 +697,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#ParaphraseCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#ParaphraseCommentary">scholasticism:ParaphraseCommentary</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
             </td>
          </tr>
       </table>
@@ -683,13 +727,13 @@
                <div class="property-object">DRCS Person
                   													(de)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="persona di DRCS" xml:lang="it"></span><div class="property-object">persona di DRCS
-                  													
-                  													(it)
-                  												</div>
                <div class="connector"></div><span property="rdfs:label" content="personne de DRCS" xml:lang="fr"></span><div class="property-object">personne de DRCS
                   													
                   													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="persona di DRCS" xml:lang="it"></span><div class="property-object">persona di DRCS
+                  													
+                  													(it)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="DRCS person" xml:lang="en"></span><div class="property-object">DRCS person
                   													
@@ -737,9 +781,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#PrintedText" title="Browse http://e-editiones.ch/ontology/text#PrintedText">text:PrintedText</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
             </td>
          </tr>
       </table>
@@ -803,22 +847,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="reportatio approbata commentary" xml:lang="en">
-               <div class="property-object">reportatio approbata commentary
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Reportatio Approbata-Kommentar" xml:lang="de"></span><div class="property-object">Reportatio Approbata-Kommentar
-                  													
+            <td property="rdfs:label" content="Reportatio Approbata-Kommentar" xml:lang="de">
+               <div class="property-object">Reportatio Approbata-Kommentar
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="reportatio approbata commentary" xml:lang="en"></span><div class="property-object">reportatio approbata commentary
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#ReportatioCommentary" title="Browse http://e-editiones.ch/ontology/drcs#ReportatioCommentary">drcs:ReportatioCommentary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#ReportatioApprobataCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#ReportatioApprobataCommentary">scholasticism:ReportatioApprobataCommentary</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#ReportatioCommentary" title="Browse http://e-editiones.ch/ontology/drcs#ReportatioCommentary">drcs:ReportatioCommentary</a></div>
             </td>
          </tr>
       </table>
@@ -843,13 +887,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Reportatio-Kommentar" xml:lang="de">
-               <div class="property-object">Reportatio-Kommentar
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="reportatio commentary" xml:lang="en"></span><div class="property-object">reportatio commentary
-                  													
+            <td property="rdfs:label" content="reportatio commentary" xml:lang="en">
+               <div class="property-object">reportatio commentary
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Reportatio-Kommentar" xml:lang="de"></span><div class="property-object">Reportatio-Kommentar
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -895,9 +939,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#Scholastic" title="Browse http://e-editiones.ch/ontology/scholasticism#Scholastic">scholasticism:Scholastic</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Person" title="Browse http://e-editiones.ch/ontology/drcs#Person">drcs:Person</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#Scholastic" title="Browse http://e-editiones.ch/ontology/scholasticism#Scholastic">scholasticism:Scholastic</a></div>
             </td>
          </tr>
       </table>
@@ -921,13 +965,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Stegmueller-Kode" xml:lang="de">
-               <div class="property-object">Stegmueller-Kode
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Stegmueller code" xml:lang="en"></span><div class="property-object">Stegmueller code
-                  													
+            <td property="rdfs:label" content="Stegmueller code" xml:lang="en">
+               <div class="property-object">Stegmueller code
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Stegmueller-Kode" xml:lang="de"></span><div class="property-object">Stegmueller-Kode
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -958,17 +1002,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="syllogismus commentary" xml:lang="en">
-               <div class="property-object">syllogismus commentary
-                  													(en)
+            <td property="rdfs:label" content="Syllogismus-Kommentar" xml:lang="de">
+               <div class="property-object">Syllogismus-Kommentar
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="syllogismus" xml:lang="la"></span><div class="property-object">syllogismus
                   													
                   													(la)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Syllogismus-Kommentar" xml:lang="de"></span><div class="property-object">Syllogismus-Kommentar
+               <div class="connector"></div><span property="rdfs:label" content="syllogismus commentary" xml:lang="en"></span><div class="property-object">syllogismus commentary
                   													
-                  													(de)
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1014,9 +1058,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#TableCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#TableCommentary">scholasticism:TableCommentary</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholasticism#TableCommentary" title="Browse http://e-editiones.ch/ontology/scholasticism#TableCommentary">scholasticism:TableCommentary</a></div>
             </td>
          </tr>
       </table>
@@ -1040,24 +1084,24 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="transkribierter Kommentar" xml:lang="de">
-               <div class="property-object">transkribierter Kommentar
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="transcribed commentary" xml:lang="en"></span><div class="property-object">transcribed commentary
-                  													
+            <td property="rdfs:label" content="transcribed commentary" xml:lang="en">
+               <div class="property-object">transcribed commentary
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="transkribierter Kommentar" xml:lang="de"></span><div class="property-object">transkribierter Kommentar
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TranscribedText" title="Browse http://e-editiones.ch/ontology/text#TranscribedText">text:TranscribedText</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TranscribedText" title="Browse http://e-editiones.ch/ontology/text#TranscribedText">text:TranscribedText</a></div>
             </td>
          </tr>
       </table>
@@ -1094,9 +1138,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#PersonTranslation" title="Browse http://e-editiones.ch/ontology/language#PersonTranslation">language:PersonTranslation</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/drcs#Commentary" title="Browse http://e-editiones.ch/ontology/drcs#Commentary">drcs:Commentary</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#PersonTranslation" title="Browse http://e-editiones.ch/ontology/language#PersonTranslation">language:PersonTranslation</a></div>
             </td>
          </tr>
       </table>

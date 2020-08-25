@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:dct="http://purl.org/dc/terms/"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:dct="http://purl.org/dc/terms/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Organization">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:label xml:lang="en">organization</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Group"/>
-    <rdfs:comment xml:lang="en">Organized group of agents.</rdfs:comment>
-    <skos:note xml:lang="en">Not 'rdfs:subClassOf foaf:Organization' because the latter involves persons.</skos:note>
-  </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/agent#hasCreator">
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
+    <rdfs:label xml:lang="de">hat ErschafferIn</rdfs:label>
     <rdfs:label xml:lang="en">has creator</rdfs:label>
     <rdfs:comment xml:lang="en">Relating something to an agent that created it.</rdfs:comment>
     <rdfs:range>
@@ -27,115 +23,119 @@
         </rdfs:subClassOf>
       </rdf:Description>
     </rdfs:range>
-    <rdfs:label xml:lang="de">hat ErschafferIn</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/agent#hasUser">
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:comment xml:lang="en">Relating something to an agent using it.</rdfs:comment>
-    <rdfs:range>
-      <rdf:Description rdf:nodeID="ub9bL135C13">
-        <rdfs:subClassOf>
-          <owl:Restriction rdf:nodeID="ub9bL135C43">
-            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/agent#hasRole"/>
-            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/agent#User"/>
-          </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
-      </rdf:Description>
-    </rdfs:range>
-    <rdfs:label xml:lang="de">hat Benutzer</rdfs:label>
-    <rdfs:label xml:lang="en">has user</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/agent#actsIn">
-    <rdfs:label xml:lang="en">acts in</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
     <rdfs:label xml:lang="de">agiert in</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:comment xml:lang="en">Relating an agent to an action the agent is acting in.</rdfs:comment>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/event#Action"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
+    <rdfs:comment xml:lang="en">Relating an agent to an action the agent is acting in.</rdfs:comment>
+    <rdfs:label xml:lang="en">acts in</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#OrganizationRole">
-    <rdfs:comment xml:lang="en">Role of an Organization of agents.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#GroupRole"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/agent#hasUser">
+    <rdfs:label xml:lang="de">hat Benutzer</rdfs:label>
+    <rdfs:label xml:lang="en">has user</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:label xml:lang="en">organization role</rdfs:label>
-  </rdfs:Class>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub9bL135C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub9bL135C43">
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/agent#User"/>
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/agent#hasRole"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:comment xml:lang="en">Relating something to an agent using it.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/agent">
+    <dct:description xml:lang="en">Formal description of an agent, general subclasses, related classes and properties.</dct:description>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
+    <dct:title xml:lang="en">An ontology about agent</dct:title>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+  </owl:Ontology>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/agent#isMemberOf">
     <rdfs:label xml:lang="en">is member of</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/agent#Group"/>
     <rdfs:label xml:lang="de">ist Mitglied</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
     <rdfs:comment xml:lang="en">Relating an agent to a group the agent is a member of.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/agent#Group"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#UserCredential">
-    <rdfs:label xml:lang="de">Benutzeranmeldeinformationen</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/event#Input"/>
-    <rdfs:comment xml:lang="en">Convincible information as input to get user access, e.g. to a digital multiuser computer system.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:label xml:lang="en">user credential</rdfs:label>
-  </rdfs:Class>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/agent">
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:description xml:lang="en">Formal description of an agent, general subclasses, related classes and properties.</dct:description>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:title xml:lang="en">An ontology about agent</dct:title>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, Basel University, Switzerland</dct:creator>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-  </owl:Ontology>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Group">
-    <rdfs:label xml:lang="en">group of agents</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:comment xml:lang="en">Group of agents.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/agent#hasRole">
-    <rdfs:label xml:lang="en">has role</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating an agent to a role it,s/he has.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/agent#Role"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
-    <rdfs:label xml:lang="de">hat Rolle</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Creator">
-    <skos:note xml:lang="en">Does not need to be a person.</skos:note>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Organization">
+    <skos:note xml:lang="en">Not 'rdfs:subClassOf foaf:Organization' because the latter involves persons.</skos:note>
+    <rdfs:comment xml:lang="en">Organized group of agents.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Role"/>
-    <rdfs:comment xml:lang="en">Role of an agent creating something.</rdfs:comment>
-    <rdfs:label xml:lang="de">Erschaffer</rdfs:label>
-    <rdfs:label xml:lang="en">creator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Group"/>
+    <rdfs:label xml:lang="en">organization</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#GroupRole">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Role"/>
-    <rdfs:label xml:lang="en">group role</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#OrganizationRole">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#GroupRole"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:comment xml:lang="en">Role of a group of agents.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Role of an Organization of agents.</rdfs:comment>
+    <rdfs:label xml:lang="en">organization role</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#UserCredential">
+    <rdfs:comment xml:lang="en">Convincible information as input to get user access, e.g. to a digital multiuser computer system.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/event#Input"/>
+    <rdfs:label xml:lang="en">user credential</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
+    <rdfs:label xml:lang="de">Benutzeranmeldeinformationen</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#User">
+    <skos:note xml:lang="en">Does not need to be a person.</skos:note>
     <rdfs:label xml:lang="en">user</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Role"/>
     <rdfs:label xml:lang="de">BenutzerIn</rdfs:label>
     <rdfs:comment xml:lang="en">Role of an agent taking something into service or applying for a purpose.</rdfs:comment>
-    <skos:note xml:lang="en">Does not need to be a person.</skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Role">
-    <rdfs:label xml:lang="en">agent's role</rdfs:label>
-    <owl:disjointWith rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:comment xml:lang="en">Specific function of an agent.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Agent">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
-    <rdfs:label xml:lang="de">Agent</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#Entity"/>
-    <rdfs:label xml:lang="en">agent</rdfs:label>
     <rdfs:comment xml:lang="en">Something performing in an action.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
+    <rdfs:label xml:lang="de">Agent</rdfs:label>
+    <rdfs:label xml:lang="en">agent</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Group">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <rdfs:label xml:lang="en">group of agents</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
+    <rdfs:comment xml:lang="en">Group of agents.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Creator">
+    <rdfs:label xml:lang="de">Erschaffer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Role"/>
+    <rdfs:label xml:lang="en">creator</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of an agent creating something.</rdfs:comment>
+    <skos:note xml:lang="en">Does not need to be a person.</skos:note>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#Role">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Specific function of an agent.</rdfs:comment>
+    <owl:disjointWith rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
+    <rdfs:label xml:lang="en">agent's role</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/agent#hasRole">
+    <rdfs:label xml:lang="en">has role</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/agent#Role"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
+    <rdfs:label xml:lang="de">hat Rolle</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an agent to a role it,s/he has.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/agent#Agent"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/agent#GroupRole">
+    <rdfs:label xml:lang="en">group role</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a group of agents.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/agent#Role"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/agent#"/>
   </rdfs:Class>
 </rdf:RDF>

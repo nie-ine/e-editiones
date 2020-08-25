@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -76,7 +120,7 @@
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/concept" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/concept" title="Browse http://e-editiones.ch/ontology/concept">concept:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/concept" title="Browse http://e-editiones.ch/ontology/concept"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/contributor">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
@@ -118,7 +162,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e188="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e42="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -151,22 +195,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="code" xml:lang="en">
-               <div class="property-object">code
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Kode" xml:lang="de"></span><div class="property-object">Kode
-                  													
+            <td property="rdfs:label" content="Kode" xml:lang="de">
+               <div class="property-object">Kode
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="code" xml:lang="en"></span><div class="property-object">code
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2004/02/skos/core#Concept" title="Browse http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#Identifier" title="Browse http://e-editiones.ch/ontology/concept#Identifier">concept:Identifier</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2004/02/skos/core#Concept" title="Browse http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></div>
             </td>
          </tr>
       </table>
@@ -191,13 +235,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kodierungssystem" xml:lang="de">
-               <div class="property-object">Kodierungssystem
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="code system" xml:lang="en"></span><div class="property-object">code system
-                  													
+            <td property="rdfs:label" content="code system" xml:lang="en">
+               <div class="property-object">code system
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kodierungssystem" xml:lang="de"></span><div class="property-object">Kodierungssystem
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -229,17 +273,17 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Gemeinplatz" xml:lang="de">
-               <div class="property-object">Gemeinplatz
-                  													(de)
+            <td property="rdfs:label" content="lieu commun" xml:lang="fr">
+               <div class="property-object">lieu commun
+                  													(fr)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="commonplace" xml:lang="en"></span><div class="property-object">commonplace
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="lieu commun" xml:lang="fr"></span><div class="property-object">lieu commun
+               <div class="connector"></div><span property="rdfs:label" content="Gemeinplatz" xml:lang="de"></span><div class="property-object">Gemeinplatz
                   													
-                  													(fr)
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -270,22 +314,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="konzeptuelle Entität" xml:lang="de">
-               <div class="property-object">konzeptuelle Entität
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="conceptual entity" xml:lang="en"></span><div class="property-object">conceptual entity
-                  													
+            <td property="rdfs:label" content="conceptual entity" xml:lang="en">
+               <div class="property-object">conceptual entity
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="konzeptuelle Entität" xml:lang="de"></span><div class="property-object">konzeptuelle Entität
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://iflastandards.info/ns/fr/frbr/frbroo/F6_Concept" title="Browse http://iflastandards.info/ns/fr/frbr/frbroo/F6_Concept">frbroo:F6 Concept</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
             </td>
          </tr>
       </table>
@@ -309,13 +353,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Fiktion" xml:lang="de">
-               <div class="property-object">Fiktion
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="fiction" xml:lang="en"></span><div class="property-object">fiction
-                  													
+            <td property="rdfs:label" content="fiction" xml:lang="en">
+               <div class="property-object">fiction
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Fiktion" xml:lang="de"></span><div class="property-object">Fiktion
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -347,13 +391,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="identifier" xml:lang="en">
-               <div class="property-object">identifier
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Identifikator" xml:lang="de"></span><div class="property-object">Identifikator
-                  													
+            <td property="rdfs:label" content="Identifikator" xml:lang="de">
+               <div class="property-object">Identifikator
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="identifier" xml:lang="en"></span><div class="property-object">identifier
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -386,13 +430,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="individual work" xml:lang="en">
-               <div class="property-object">individual work
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="individuelles Werk" xml:lang="de"></span><div class="property-object">individuelles Werk
-                  													
+            <td property="rdfs:label" content="individuelles Werk" xml:lang="de">
+               <div class="property-object">individuelles Werk
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="individual work" xml:lang="en"></span><div class="property-object">individual work
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -438,11 +482,11 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#SymbolicEntity" title="Browse http://e-editiones.ch/ontology/concept#SymbolicEntity">concept:SymbolicEntity</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object" title="Browse http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">cidoc:E73 Information Object</a></div>
                <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#PropositionalEntity" title="Browse http://e-editiones.ch/ontology/concept#PropositionalEntity">concept:PropositionalEntity</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#SymbolicEntity" title="Browse http://e-editiones.ch/ontology/concept#SymbolicEntity">concept:SymbolicEntity</a></div>
             </td>
          </tr>
       </table>
@@ -467,21 +511,21 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="motto" xml:lang="it">
-               <div class="property-object">motto
-                  													(it)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="devise" xml:lang="fr"></span><div class="property-object">devise
-                  													
-                  													(fr)
+            <td property="rdfs:label" content="Motto" xml:lang="de">
+               <div class="property-object">Motto
+                  													(de)
                   												</div>
                <div class="connector"></div><span property="rdfs:label" content="motto" xml:lang="en"></span><div class="property-object">motto
                   													
                   													(en)
                   												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Motto" xml:lang="de"></span><div class="property-object">Motto
+               <div class="connector"></div><span property="rdfs:label" content="devise" xml:lang="fr"></span><div class="property-object">devise
                   													
-                  													(de)
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="motto" xml:lang="it"></span><div class="property-object">motto
+                  													
+                  													(it)
                   												</div>
             </td>
          </tr>
@@ -512,13 +556,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="nonfiction" xml:lang="en">
-               <div class="property-object">nonfiction
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="sachliches Konzept" xml:lang="de"></span><div class="property-object">sachliches Konzept
-                  													
+            <td property="rdfs:label" content="sachliches Konzept" xml:lang="de">
+               <div class="property-object">sachliches Konzept
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="nonfiction" xml:lang="en"></span><div class="property-object">nonfiction
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -550,13 +594,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="procedure" xml:lang="en">
-               <div class="property-object">procedure
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Vorgehen" xml:lang="de"></span><div class="property-object">Vorgehen
-                  													
+            <td property="rdfs:label" content="Vorgehen" xml:lang="de">
+               <div class="property-object">Vorgehen
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="procedure" xml:lang="en"></span><div class="property-object">procedure
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -589,13 +633,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="propositionale Entität" xml:lang="de">
-               <div class="property-object">propositionale Entität
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="propositional entity" xml:lang="en"></span><div class="property-object">propositional entity
-                  													
+            <td property="rdfs:label" content="propositional entity" xml:lang="en">
+               <div class="property-object">propositional entity
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="propositionale Entität" xml:lang="de"></span><div class="property-object">propositionale Entität
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -608,9 +652,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#ConceptualEntity" title="Browse http://e-editiones.ch/ontology/concept#ConceptualEntity">concept:ConceptualEntity</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object" title="Browse http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object">cidoc:E89 Propositional Object</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#ConceptualEntity" title="Browse http://e-editiones.ch/ontology/concept#ConceptualEntity">concept:ConceptualEntity</a></div>
             </td>
          </tr>
       </table>
@@ -634,22 +678,22 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="conceptual entity set" xml:lang="en">
-               <div class="property-object">conceptual entity set
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="Reihe konzeptueller Entitäten" xml:lang="de"></span><div class="property-object">Reihe konzeptueller Entitäten
-                  													
+            <td property="rdfs:label" content="Reihe konzeptueller Entitäten" xml:lang="de">
+               <div class="property-object">Reihe konzeptueller Entitäten
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="conceptual entity set" xml:lang="en"></span><div class="property-object">conceptual entity set
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#ConceptualEntity" title="Browse http://e-editiones.ch/ontology/concept#ConceptualEntity">concept:ConceptualEntity</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationSet" title="Browse http://e-editiones.ch/ontology/creating#CreationSet">creating:CreationSet</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#ConceptualEntity" title="Browse http://e-editiones.ch/ontology/concept#ConceptualEntity">concept:ConceptualEntity</a></div>
             </td>
          </tr>
       </table>
@@ -713,13 +757,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Gedankengut" xml:lang="de">
-               <div class="property-object">Gedankengut
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="body of thought" xml:lang="en"></span><div class="property-object">body of thought
-                  													
+            <td property="rdfs:label" content="body of thought" xml:lang="en">
+               <div class="property-object">body of thought
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Gedankengut" xml:lang="de"></span><div class="property-object">Gedankengut
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -756,13 +800,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Methode des Denkens" xml:lang="de">
-               <div class="property-object">Methode des Denkens
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="thought method" xml:lang="en"></span><div class="property-object">thought method
-                  													
+            <td property="rdfs:label" content="thought method" xml:lang="en">
+               <div class="property-object">thought method
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Methode des Denkens" xml:lang="de"></span><div class="property-object">Methode des Denkens
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -793,13 +837,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="konzeptuelles Werk" xml:lang="de">
-               <div class="property-object">konzeptuelles Werk
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="conceptual work" xml:lang="en"></span><div class="property-object">conceptual work
-                  													
+            <td property="rdfs:label" content="conceptual work" xml:lang="en">
+               <div class="property-object">conceptual work
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="konzeptuelles Werk" xml:lang="de"></span><div class="property-object">konzeptuelles Werk
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -839,13 +883,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kode hat System" xml:lang="de">
-               <div class="property-object">Kode hat System
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="code has system" xml:lang="en"></span><div class="property-object">code has system
-                  													
+            <td property="rdfs:label" content="code has system" xml:lang="en">
+               <div class="property-object">code has system
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kode hat System" xml:lang="de"></span><div class="property-object">Kode hat System
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -882,13 +926,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kode hat Wert" xml:lang="de">
-               <div class="property-object">Kode hat Wert
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="code has value" xml:lang="en"></span><div class="property-object">code has value
-                  													
+            <td property="rdfs:label" content="code has value" xml:lang="en">
+               <div class="property-object">code has value
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kode hat Wert" xml:lang="de"></span><div class="property-object">Kode hat Wert
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -926,13 +970,13 @@
                      </tr>
                      <tr class="http://www.w3.org/2000/01/rdf-schema#label">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-                        <td property="rdfs:label" content="Identifikator hat Literale" xml:lang="de">
-                           <div class="property-object">Identifikator hat Literale
-                              													(de)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="identifier has literal" xml:lang="en"></span><div class="property-object">identifier has literal
-                              													
+                        <td property="rdfs:label" content="identifier has literal" xml:lang="en">
+                           <div class="property-object">identifier has literal
                               													(en)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="Identifikator hat Literale" xml:lang="de"></span><div class="property-object">Identifikator hat Literale
+                              													
+                              													(de)
                               												</div>
                         </td>
                      </tr>
@@ -979,13 +1023,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Kodierungssystem hat Datentyp" xml:lang="de">
-               <div class="property-object">Kodierungssystem hat Datentyp
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="coding system has datatype" xml:lang="en"></span><div class="property-object">coding system has datatype
-                  													
+            <td property="rdfs:label" content="coding system has datatype" xml:lang="en">
+               <div class="property-object">coding system has datatype
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kodierungssystem hat Datentyp" xml:lang="de"></span><div class="property-object">Kodierungssystem hat Datentyp
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -1022,13 +1066,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has code" xml:lang="en">
-               <div class="property-object">has code
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Kode" xml:lang="de"></span><div class="property-object">hat Kode
-                  													
+            <td property="rdfs:label" content="hat Kode" xml:lang="de">
+               <div class="property-object">hat Kode
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has code" xml:lang="en"></span><div class="property-object">has code
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1066,13 +1110,13 @@
                      </tr>
                      <tr class="http://www.w3.org/2000/01/rdf-schema#label">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-                        <td property="rdfs:label" content="has identifier" xml:lang="en">
-                           <div class="property-object">has identifier
-                              													(en)
-                              												</div>
-                           <div class="connector"></div><span property="rdfs:label" content="hat Identifikator" xml:lang="de"></span><div class="property-object">hat Identifikator
-                              													
+                        <td property="rdfs:label" content="hat Identifikator" xml:lang="de">
+                           <div class="property-object">hat Identifikator
                               													(de)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="has identifier" xml:lang="en"></span><div class="property-object">has identifier
+                              													
+                              													(en)
                               												</div>
                         </td>
                      </tr>
@@ -1121,13 +1165,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has code value" xml:lang="en">
-               <div class="property-object">has code value
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Kodewert" xml:lang="de"></span><div class="property-object">hat Kodewert
-                  													
+            <td property="rdfs:label" content="hat Kodewert" xml:lang="de">
+               <div class="property-object">hat Kodewert
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has code value" xml:lang="en"></span><div class="property-object">has code value
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1235,13 +1279,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has dedicated to" xml:lang="en">
-               <div class="property-object">has dedicated to
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat gewidmet" xml:lang="de"></span><div class="property-object">hat gewidmet
-                  													
+            <td property="rdfs:label" content="hat gewidmet" xml:lang="de">
+               <div class="property-object">hat gewidmet
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has dedicated to" xml:lang="en"></span><div class="property-object">has dedicated to
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1296,8 +1340,6 @@
                      <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
                         <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
                         <td>
-                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
-                           <div class="connector"></div>
                            <div class="property-object" rel="rdfs:subClassOf">
                               <table typeof="owl:Restriction">
                                  <tr>
@@ -1317,6 +1359,8 @@
                                  </tr>
                               </table>
                            </div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
                         </td>
                      </tr>
                   </table>
@@ -1350,13 +1394,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has literal" xml:lang="en">
-               <div class="property-object">has literal
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Literale" xml:lang="de"></span><div class="property-object">hat Literale
-                  													
+            <td property="rdfs:label" content="hat Literale" xml:lang="de">
+               <div class="property-object">hat Literale
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has literal" xml:lang="en"></span><div class="property-object">has literal
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1552,13 +1596,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="is expressed in" xml:lang="en">
-               <div class="property-object">is expressed in
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="ist ausgedruckt in" xml:lang="de"></span><div class="property-object">ist ausgedruckt in
-                  													
+            <td property="rdfs:label" content="ist ausgedruckt in" xml:lang="de">
+               <div class="property-object">ist ausgedruckt in
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is expressed in" xml:lang="en"></span><div class="property-object">is expressed in
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
@@ -1650,13 +1694,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="symbolic entity has literal" xml:lang="en">
-               <div class="property-object">symbolic entity has literal
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="symbolische Entität hat Literale" xml:lang="de"></span><div class="property-object">symbolische Entität hat Literale
-                  													
+            <td property="rdfs:label" content="symbolische Entität hat Literale" xml:lang="de">
+               <div class="property-object">symbolische Entität hat Literale
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="symbolic entity has literal" xml:lang="en"></span><div class="property-object">symbolic entity has literal
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>

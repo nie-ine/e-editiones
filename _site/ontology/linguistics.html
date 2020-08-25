@@ -3,47 +3,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/main.css"></head>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">e-editiones</a><div class="topnav" id="myTopnav">
-        <a href="/about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Semantic Web Technology</button>
-          <div class="dropdown-content">
-            <a href="/semantic-web-technology-introduction">Introduction</a>
-            <a href="/semantic-web-technology-advantages">Advantages</a>
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Ontology</button>
-          <div class="dropdown-content">
-            <a href="/ontology">Library</a>
-            <a href="/ontology-modeling">Modeling</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">N3-Rule-Based Machine Reasoning</button>
-          <div class="dropdown-content">
-            <a href="/n3-rule-based-machine-reasoning">Introduction</a>
-            <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
-          </div>
-        </div>
-        <a href="/two-step-formalization">Two-Step Formalization</a>
-        <a href="/literature">Literature</a>
-        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="openBurger()">&#9776;</a>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script>
-        function openBurger() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script></div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
 </header><main class="page-content" aria-label="Content">
       <div class="ontology-wrapper">
 
@@ -76,7 +120,7 @@
    <div id="" class="description">
       <table about="http://e-editiones.ch/ontology/linguistics" typeof="owl:Ontology">
          <tr>
-            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/linguistics" title="Browse http://e-editiones.ch/ontology/linguistics">linguistics:</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/linguistics" title="Browse http://e-editiones.ch/ontology/linguistics"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
          </tr>
          <tr class="http://purl.org/dc/terms/contributor">
             <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
@@ -121,7 +165,7 @@
          </tr>
          <tr class="http://www.w3.org/2002/07/owl#versionInfo">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
-            <td xmlns:d1e54="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+            <td xmlns:d1e120="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
                <div class="property-object">2020-06-11</div>
             </td>
          </tr>
@@ -221,13 +265,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="linguistisches Konzept" xml:lang="de">
-               <div class="property-object">linguistisches Konzept
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="linguistic concept" xml:lang="en"></span><div class="property-object">linguistic concept
-                  													
+            <td property="rdfs:label" content="linguistic concept" xml:lang="en">
+               <div class="property-object">linguistic concept
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="linguistisches Konzept" xml:lang="de"></span><div class="property-object">linguistisches Konzept
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -258,13 +302,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Evaluation" xml:lang="de">
-               <div class="property-object">Evaluation
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="evaluation" xml:lang="en"></span><div class="property-object">evaluation
-                  													
+            <td property="rdfs:label" content="evaluation" xml:lang="en">
+               <div class="property-object">evaluation
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Evaluation" xml:lang="de"></span><div class="property-object">Evaluation
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -295,13 +339,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="Lemma" xml:lang="de">
-               <div class="property-object">Lemma
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="lemma" xml:lang="en"></span><div class="property-object">lemma
-                  													
+            <td property="rdfs:label" content="lemma" xml:lang="en">
+               <div class="property-object">lemma
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Lemma" xml:lang="de"></span><div class="property-object">Lemma
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -316,9 +360,9 @@
          <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
             <td>
-               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/linguistics#Concept" title="Browse http://e-editiones.ch/ontology/linguistics#Concept">linguistics:Concept</a></div>
-               <div class="connector"></div>
                <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#SymbolicEntity" title="Browse http://e-editiones.ch/ontology/concept#SymbolicEntity">concept:SymbolicEntity</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/linguistics#Concept" title="Browse http://e-editiones.ch/ontology/linguistics#Concept">linguistics:Concept</a></div>
             </td>
          </tr>
       </table>
@@ -581,13 +625,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="hat linguistischer Kommentarliterale" xml:lang="de">
-               <div class="property-object">hat linguistischer Kommentarliterale
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has linguistic comment literal" xml:lang="en"></span><div class="property-object">has linguistic comment literal
-                  													
+            <td property="rdfs:label" content="has linguistic comment literal" xml:lang="en">
+               <div class="property-object">has linguistic comment literal
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat linguistischer Kommentarliterale" xml:lang="de"></span><div class="property-object">hat linguistischer Kommentarliterale
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -630,13 +674,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="hat Sprache" xml:lang="de">
-               <div class="property-object">hat Sprache
-                  													(de)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="has language" xml:lang="en"></span><div class="property-object">has language
-                  													
+            <td property="rdfs:label" content="has language" xml:lang="en">
+               <div class="property-object">has language
                   													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Sprache" xml:lang="de"></span><div class="property-object">hat Sprache
+                  													
+                  													(de)
                   												</div>
             </td>
          </tr>
@@ -716,13 +760,13 @@
          </tr>
          <tr class="http://www.w3.org/2000/01/rdf-schema#label">
             <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
-            <td property="rdfs:label" content="has synonym literal" xml:lang="en">
-               <div class="property-object">has synonym literal
-                  													(en)
-                  												</div>
-               <div class="connector"></div><span property="rdfs:label" content="hat Synonymliterale" xml:lang="de"></span><div class="property-object">hat Synonymliterale
-                  													
+            <td property="rdfs:label" content="hat Synonymliterale" xml:lang="de">
+               <div class="property-object">hat Synonymliterale
                   													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has synonym literal" xml:lang="en"></span><div class="property-object">has synonym literal
+                  													
+                  													(en)
                   												</div>
             </td>
          </tr>
