@@ -88,9 +88,9 @@ To convert turtle files to the needed formats:
 
 The static website will be made available as a Docker container running an [NGINX][nginx] web server with the website on it. 
 
-To dockerize the website, run ``docker build -t nieine/e-editiones .``
+To dockerize the website, run ``sudo docker build -t nieine/e-editiones .``
 
-To run the container locally, run ``docker run -p 80:80 nieine/e-editiones`` and visit http://localhost.
+To run the container locally, run ``sudo docker run -p 80:80 nieine/e-editiones`` and visit http://localhost.
 
 #### NGINX Configuration
 
@@ -110,10 +110,17 @@ By default, the server returns HTML.
 
 ### Deploy
 
-1. Dockerize the website with a current date tag (YYYY-MM-DD) with ``docker build -t nieine/e-editiones:YYYY-MM-DD .``
-1. Push the new image to dockerhub with ``docker push nieine/e-editiones:YYYY-MM-DD``
-1. Change docker compose file accordingly, if necessary.
-1. Restart the server.
+1. Dockerize the website with a current date tag: ``sudo docker build -t nieine/e-editiones:<YYYY-MM-DD> .``
+1. Might be needed to set (once) access permission of the Unix socket to communicate with the Docker daemon: ``sudo chmod 666 /var/run/docker.sock``
+1. Login on the docker hub: ``docker login``
+1. Push the new image to dockerhub with ``docker push nieine/e-editiones:<YYYY-MM-DD>``
+1. Connecting to the server: ``ssh knora@iml-srv-07.iml.unibas.ch``
+1. Change user to root: ``sudo -i``
+1. Type password of root user
+1. Change to directory where docker-compose.yml is: ``cd /data1/suite-quickstart_production/stable-releases/20190207/``
+1. Change tag in docker-compose.yml
+1. Let everybody know that the test server is down and stop the test server: ``docker-compose down``
+1. start docker-compose: ``docker-compose up &``
 
 ### Add New Ontologies
 

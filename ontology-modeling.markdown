@@ -84,7 +84,7 @@ The ontology development evolves in a very **iterative** way, requiring the conn
 The basic expression unit structure in SWT is the **triple**, consisting of a subject, a property (or predicate), and an object.
 <p align=center style="background-color:rgba(243, 241, 239, 1); font-family: courrier; font-size:14pt; font-style:bold">SUBJECT PREDICATE OBJECT.<br/>
 S P O.<br/>
-person_X has_Name "Gauss".
+person_X has_Family_Name "Gauss".
 </p>
 The element in any position can be an IRI. The subject can also be a list (N3-rules), a plain or typed literal value, an anonymous resource (blank node), or a variable (SPARQL query, N3-rule). The property can also be a blank node or a variable. The object can also be a plain or typed literal value, a blank node or a variable.  
 A set of triples makes a **graph**, hence an OWL-ontology, RDF-data, the result of SPARQL querying, and an N3-rule are all graphs.  
