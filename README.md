@@ -112,13 +112,13 @@ By default, the server returns HTML.
 
 1. Dockerize the website with a current date tag: ``sudo docker build -t nieine/e-editiones:<YYYY-MM-DD> .``
 1. Might be needed to set (once) access permission of the Unix socket to communicate with the Docker daemon: ``sudo chmod 666 /var/run/docker.sock``
-1. Login on the docker hub: ``docker login``
+1. Log in to the Docker Hub: ``docker login``
 1. Push the new image to dockerhub with ``docker push nieine/e-editiones:<YYYY-MM-DD>``
 1. Connecting to the server: ``ssh knora@iml-srv-07.iml.unibas.ch``
 1. Change user to root: ``sudo -i``
 1. Type password of root user
 1. Change to directory where docker-compose.yml is: ``cd /data1/suite-quickstart_production/stable-releases/20190207/``
-1. Change tag in docker-compose.yml
+1. Change tag in the e-editiones part in docker-compose.yml
 1. Let everybody know that the test server is down and stop the test server: ``docker-compose down``
 1. start docker-compose: ``docker-compose up &``
 

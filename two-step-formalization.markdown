@@ -13,7 +13,7 @@ Formal here means adhering to the model theory of the languages. This model theo
 There are domain ontologies, own and external ones, based on those standards.
 Formal RDF-data can then be expressed using these ontologies, making the data machine interpretable.  
 
-But how do we 'RDF-ize' or convert source data, e.g. in an XML or SQL database, to RDF?  
+**But how do we 'RDF-ize' or convert source data, e.g. in an XML or SQL database, to RDF?**  
 
 The source data models, though capturing consented domain knowledge, are often localized through natural language and personal representations such as abbreviations and cryptic naming, not fully described. In other words they are not always stating meaning explicitly, and most importantly they are not expressed in a machine-interpretable language of logic.
 
