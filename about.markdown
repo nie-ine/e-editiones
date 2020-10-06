@@ -21,7 +21,7 @@ Of course this novel way of modeling and processing data is also applicable to s
 The development part of the NIE-INE project is in the [GitHub project](https://github.com/nie-ine).
 There are also the repositories unrelated to SWT.  
 
-After 2020 the website will be maintained and the ontologies on GitHub will be developed further.  
+After 2020 the website will be maintained and the ontologies and rules will be further developed on GitHub.  
 
 
 Hans Cools  
