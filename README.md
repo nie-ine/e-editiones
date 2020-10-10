@@ -130,7 +130,7 @@ To add a new ontology to the website, the following steps are necessary:
 1. Name the ontology file in accordance with the ending of the IRI.
    - I.e. if the base IRI is http://e-editiones.ch/ontology/agent, the ontology file should be agent.ttl.
 1. Save the ontology file in the "ontology" folder.
-1. Create a new markdown file in the "collections" folder (either within "\_generic" or "\_project").
+1. Create a new markdown file in the of the "collections" subfolders ("\_external", "\_generalDomain", "\_generalHumanities", "\_project", "\_specificHumanities").
    - The name of the file must be the same as the name of the ontolgoy file.
    - You can create a new collection by creating a new subfolder and updating the "\_config.yml" file accordingly.
 1. Add front-matter meta data to the newly created markdown file (title, description, file). E.g.:
