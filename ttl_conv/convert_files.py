@@ -1,3 +1,10 @@
+# Cyrill Martin, Tool Coordinator and Developer
+# NIE-INE - National Infrastructure for Editions
+# University of Basel, Switzerland
+
+# This work is licensed under a Creative Commons Attribution License: 
+# https://creativecommons.org/licenses/by/3.0/
+
 import os
 import sys
 import glob

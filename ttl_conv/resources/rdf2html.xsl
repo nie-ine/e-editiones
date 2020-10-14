@@ -7,10 +7,9 @@
     NIE-INE - National Infrastructure for Editions
     University of Basel, Switzerland
 
-	This work is licensed under the Creative Commons Attribution-ShareAlike License.
-	To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/
-	or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
--->
+	This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike License: 
+	https://creativecommons.org/licenses/by-nc-sa/3.0/
+--> 
 
 <xsl:stylesheet version="2.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
