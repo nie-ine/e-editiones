@@ -13,7 +13,7 @@ There are a series of resources that directly influence the modeling of ontologi
 
 ### Foundational W3C Ontologies
 Directive are the foundational ontologies of the [W3C Semantic Web standard languages](/semantic-web-technology-introduction#formalize-data-data-models-and-domain-knowledge-languages-of-logic).  
-Using these brings standardization of syntax and basic semantics, and built-in logic, making ontologies and data machine interpretable.  
+Using these brings standardization of syntax, basic semantics and built-in logic, making ontologies and data machine interpretable.  
 
 ### External Ontologies
 When modeling for a certain domain, one does not have to start from scratch. The longer the SW is among us, the more likely someone else already created an ontology to cover needed semantics, possibly partially, often declaring more generic concepts.
@@ -22,42 +22,42 @@ We use, i.e. base on following ontologies.
 <p align=left style="background-color:rgba(243, 241, 239, 1); font-size:12pt; font-style:bold">SKOS and DC Terms are mainly for ontology description purpose.<br/>Geo, FOAF, Schema.org, SWEET, and mainly the more Humanities oriented CIDOC-CRM and FRBRoo (depending on the former) are used to base on.<br/>Especially more generic domain ontologies will enable semantic interoperability.
 </p>  
 
-Both the W3C and the external ontologies require a study, to really know their semantics.
+Both the W3C and the external ontologies require a study in order to fully understand their semantics.
 
 <!---Local copies of such ontologies, when not available in Turtle or RDF-XML, are in the [external ontologies](/Other-ontologies) folder.--->
 
 ### Source Data Models
 The input dependency is represented by the original data model, in Humanities most likely in XML, less often in SQL.  
-E.g. We support eleven projects with different databases. 7 have XML, 3 SQL and 1 has both.  
+E.g. we support eleven projects with different databases. Seven databases are represented in XML, three in SQL and one in both.  
 For an ontology modeler, if not the researcher and/or the IT developer, to know another's source data model requires repeated discussions on the precise semantics.
 
 ### Domain Knowledge
-Last but not least, there is a dependency on the tacit knowledge of the domain specialists in the edition projects, needed for the implementation of domain knowledge to complement the restricted database models. To uncover this knowledge, a commitment on the part of domain specialists is needed, in order to reach consensus on semantics that often goes to a certain extent beyond their own specific research objectives.
+Last but not least there is a dependency on the tacit knowledge of the domain specialists in the edition projects, needed for the implementation of domain knowledge to complement the restricted database models. To uncover this knowledge a commitment of domain specialists is needed in order to reach consensus on semantics that often goes to a certain extent beyond their own specific research objectives.
 
-All these dependencies represent a certain challenge and, initially, a substantial overhead.  
-But the ROI is big, and will be even bigger the more source data models are formalized along SWT, because this formalization will also contribute to the more general, cross-project semantics, preventing modeling the same concepts for new projects multiple times. Reaching a wide consensus on domain terminology (at the best on an international scale) further contributes to the semantic interoperability.
+All these dependencies represent a certain challenge and initially a substantial effort.  
+But the ROI is large and will be even greater the more source data models are formalized along SWT because this formalization will also contribute to the more general, cross-project semantics, preventing modeling the same concepts for new projects multiple times. Reaching a wide consensus on domain terminology (at the best on an international scale) further contributes to the semantic interoperability.
 
 ## Basic Modeling Patterns
-Modeling already starts before declaring an ontology, by conceiving or adopting basic modeling patterns that will be abundantly used in ontologies and data. Such patterns comprise a group of basic concepts and the relations (properties) between them. Examples of such patterns are ‘event’, ‘agent-role’, and 'referencing'.  
-‘Event’ and its consecutively derived concepts ‘process’, ’action’, and ‘procedure’ (Figure 2) are four-dimensional entities described in time with start and end date, and space with location having geographic coordinates, name and code. Through the derived concepts the pattern becomes more complex, having input, output, and stage in a process, and having intent, agents (a person, organization, or even software) and roles in an action. The concepts are described in the figure.  
+Modeling already starts before declaring an ontology by conceiving or adopting basic modeling patterns that will be abundantly used in ontologies and data. Such patterns comprise a group of basic concepts and the relations (properties) between them. Examples of such patterns are ‘event’, ‘agent-role’ and 'referencing'.  
+‘Event’ and its consecutively derived concepts ‘process’, ’action’ and ‘procedure’ (Figure 2) are four-dimensional entities described in time with start and end date and space with location (geographic coordinates, name and code). Through the derived concepts the pattern becomes more complex, having input, output and stage in a process and having intent, agents (a person, organization, or even software) and roles in an action.  
 
 {% include image.html type="intermediate-figure" url="/assets/images/BMP_event.png" description="Figure 2: Basic modeling pattern for 'event' and main derived concepts" %}
 
 <!---!scientific editing, measurement--->
 
-For science, and especially in Humanities for historical research, it is essential that data are positioned in time and space. This includes calendar notation. Even crude time indicators, often at hand when dealing with information of the ancient times, can be used.
+For science and especially in Humanities for historical research, it is essential that data are positioned in time and space. This includes calendar notation. Even crude time indicators, often at hand when dealing with information of the ancient times, can be used.
 
-The concept 'procedure' enables to clearly distinguish between e.g. an edition as a procedure (editing) and an edition as a resulting product, therefore well suited for describing scientific editing as a variety of procedures, involving agents with different roles,  and having a variety of in- and outputs.
+The concept 'procedure' enables to clearly distinguish between e.g. an edition as a procedure (editing) and an edition as a resulting product. It is therefore well suited for describing scientific editing as a variety of procedures, involving agents with different roles and having a variety of in- and outputs.
 Figure 3 shows the agent-role pattern and the relations to the 'action' pattern.
 
 {% include image.html type="intermediate-figure" url="/assets/images/BMP_agent-role-action.png" description="Figure 3: Basic modeling pattern for 'agent' and 'role' combined with 'action'" %}
 
-The basic modeling pattern for ‘referencing’ with ‘footnote’ as an example is shown in Figure 4. Other examples of application of the pattern are 'endnote' and citation source reference.
+The basic modeling pattern for ‘referencing’ with ‘footnote’ as an example is shown in Figure 4. Other examples of application of the pattern are 'endnote' and 'citation source' reference.
 
 {% include image.html type="intermediate-figure" url="/assets/images/BMP_referencing.png" description="Figure 4: Basic modeling pattern for referencing with 'footnote' as example" %}
 
 ## Modeling Methodology
-These formal semantic models are expressed in RDF/RDFS 1.1 and OWL 2 Full using their respective ontologies, and are developed in Turtle syntax.  
+These formal semantic models are expressed in RDF/RDFS 1.1 and OWL 2 Full using their respective ontologies and are developed in Turtle syntax.  
 Their development is in the [GitHub project](https://github.com/nie-ine/Ontologies).  
 The authoritative files are open source and published on this website in the [ontology library](/ontology).  
 The ontologies are directly accessible (dereferenceable) with their namespace IRI.
