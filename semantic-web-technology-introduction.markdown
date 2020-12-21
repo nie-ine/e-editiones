@@ -79,7 +79,7 @@ RDF is more than 'yet another data format'. Implementing the SW standards or *RD
 Modeling ontologies providing the required domain semantics is not a common IT development activity. It can be pretty time-consuming, needing both width and depth. One can learn it by adopting certain best practices and efficiency, but different aspects need to be covered: semiotics, linguistics, formal logic, math, analysis, an eye for detail but also keeping an overview, and participation in conceptual discussions with domain specialists. Modeling is very iterative, likely taking a while until satisfying.  
 There are people in the RDF community who want SWT to be more digestible for 'the average IT developer'. This should not be translated into ad hoc and standalone development or too narrow interpretation of the W3C standards, deviating from the original goals of the Semantic Web. Semantic interoperability and machine reasoning should at all times be preserved.
 
-## Domain ontologies used in Humanities and Publishing
+## Domain ontologies used in the humanities and Publishing
 Note: not meant to be exhaustive.
 - Generic ontologies:
 	- [Simple Knowledge Organization System (SKOS)](https://www.w3.org/2009/08/skos-reference/skos.html)
@@ -90,7 +90,7 @@ Note: not meant to be exhaustive.
 	- [Friend of a Friend (FOAF)](http://xmlns.com/foaf/0.1/)
 	- [Schema.org](http://schema.org/)
 	- [Countries](http://eulersharp.sourceforge.net/2003/03swap/countries#)
-- Natural science ontologies: also used in Humanities
+- Natural science ontologies: also used in the humanities
 	- [The Semantic Web for Earth and Environmental Terminology (SWEET) Ontologies](https://github.com/ESIPFed/sweet)
 - Humanities domain ontologies:
 	- [CIDOC Conceptual Reference Model (CRM)](http://www.cidoc-crm.org/get-last-official-release)

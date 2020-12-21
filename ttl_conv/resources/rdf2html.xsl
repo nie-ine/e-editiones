@@ -208,7 +208,7 @@
 	<xsl:template name="types">
 		<!-- textual decoration if there are types-->
 		<xsl:if test="@rdf:ID|@rdf:about and local-name()='Ontology'">
-			<div class="connector"></div> # customization: empty connector = remove 'a' (syntactic sugar for rdf:type)
+			<div class="connector"></div> <!-- # customization: empty connector = remove 'a' (syntactic sugar for rdf:type) -->
 		</xsl:if>
 		<xsl:if test="@rdf:ID|@rdf:about and not(local-name()='Ontology') and (not(local-name()='Description') or count(*[namespace-uri()='http://www.w3.org/1999/02/22-rdf-syntax-ns#' and local-name()='type'])>0)">
 			<div class="connector"> a </div>

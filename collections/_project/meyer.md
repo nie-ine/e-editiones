@@ -1,5 +1,5 @@
 ---
-title: Conrad Ferdinand Meyer Correspondence
+title: Conrad Ferdinand Meyer's Correspondence
 description: Formal description of specific concepts in the critical edition of the correspondence of Conrad Ferdinand Meyer, 11 October 1825 – 28 November 1898.
 file: meyer
 ---

@@ -8,7 +8,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix schema: <http://schema.org/>.
 @prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/>.
-@prefix physical: <http://e-editiones.ch/ontology/physical-entity#>.
+@prefix physical-entity: <http://e-editiones.ch/ontology/physical-entity#>.
 @prefix agent: <http://e-editiones.ch/ontology/agent#>.
 @prefix text: <http://e-editiones.ch/ontology/text#>.
 
@@ -22,6 +22,7 @@
 	dct:description """Formal description of event, general subclasses such as action, related classes and properties."""@en;
 	skos:note """Basic model is a space-time thing, which can be described in different levels of abstraction, mostly with input and output, with a beginning and end, wherein a thing can change and/or act, in a certain way."""@en;
 	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:contributor "Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland"@en;
 	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
 	owl:versionInfo "2020-06-11"^^xsd:date.
 
@@ -34,7 +35,7 @@ event:Event
 	a rdfs:Class;
 	rdfs:label "event"@en, "Ereignis"@de;
 	rdfs:comment """Space-time occurrence."""@en;
-	rdfs:subClassOf physical:Space, physical:Time.
+	rdfs:subClassOf physical-entity:Space, physical-entity:Time.
 
 event:Existence
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
@@ -46,7 +47,7 @@ event:Existence
 event:Process
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a rdfs:Class;
-	rdfs:label "process"@en, "Verfahren"@de;
+	rdfs:label "process"@en, "Prozess"@de;
 	rdfs:comment """Event implying change, with an input and an output, in one or more steps."""@en;
 	rdfs:subClassOf event:Event.
 
@@ -95,7 +96,7 @@ event:Stage
 event:Staging
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a rdfs:Class;
-	rdfs:label "staging"@en, "Staging"@de;
+	rdfs:label "staging"@en, "Etappierung"@de;
 	rdfs:comment """Determining the extent of a process."""@en;
 	rdfs:subClassOf event:Action.
 
@@ -109,7 +110,7 @@ event:Intent
 event:Creating
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a rdfs:Class;
-	rdfs:label "creating"@en, "Kreierung"@de;
+	rdfs:label "creating"@en, "Erstellen"@de;
 	rdfs:comment """Changing matter and/or energy, bringing a new appearance thereof into existence."""@en;
 	rdfs:subClassOf event:Action.
 
@@ -129,11 +130,11 @@ event:hasNameLiteral
 event:isSubEventOf
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a owl:ObjectProperty;
-	rdfs:label "is sub-event of"@en, "ist Subereignis von"@de;
+	rdfs:label "is sub-event of"@en, "ist Unterereignis von"@de;
 	rdfs:comment "Relating an event to another one it is part of."@en;
 	rdfs:domain event:Event;
 	rdfs:range event:Event;	
-	rdfs:subPropertyOf physical:isPartOf, schema:subEvent.
+	rdfs:subPropertyOf physical-entity:isPartOf, schema:subEvent.
 
 event:hasEvent
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
@@ -163,18 +164,20 @@ event:hasState
 event:isInputOf
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a owl:ObjectProperty;
-	rdfs:label "is input of"@en, "ist Input von"@de;
-	rdfs:comment """Relating an input to a process."""@en;
+	rdfs:label "is input of process"@en, "ist Input eines Prozesses"@de;
+	rdfs:comment """Relating an input to its process."""@en;
 	rdfs:domain event:Input;
 	rdfs:range event:Process.
 
-event:isOutputOf #°
+event:isOutputOf
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a owl:ObjectProperty;
 	rdfs:label "is output of process"@en, "ist Output eines Prozesses"@de;
 	rdfs:comment """Relating an output to its process."""@en;
 	rdfs:domain event:Output;
 	rdfs:range event:Process.
+
+
 
 event:isOutputOfAction
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
@@ -184,10 +187,10 @@ event:isOutputOfAction
 	rdfs:domain event:Output;
 	rdfs:range event:Action.
 
-event:involvesRole
+event:actionInvolvesRole
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a owl:ObjectProperty;
-	rdfs:label "involves role"@en, "involviert Rolle"@de;
+	rdfs:label "action involves role"@en, "Aktion involviert Rolle"@de;
 	rdfs:comment """Relating an action to a role it involves."""@en;
 	rdfs:domain event:Action;
 	rdfs:range agent:Role.
@@ -197,9 +200,10 @@ event:outputInvolvesRole
 	a owl:ObjectProperty;
 	rdfs:label "output involves role"@en, "Output involviert Rolle"@de;
 	rdfs:comment """Relating an output of an action to a role it involves."""@en;
+	skos:example """The output 'edition' of the procedure 'editing' involves the 'editor' role of one or more agents."""@en;
 	rdfs:domain event:Output;
 	rdfs:range agent:Role;
-	owl:propertyChainAxiom (event:isOutputOfAction event:involvesRole).
+	owl:propertyChainAxiom (event:isOutputOfAction event:actionInvolvesRole).
 
 event:hasStage
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
@@ -212,7 +216,7 @@ event:hasStage
 event:isSubProcedureOf
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a owl:ObjectProperty;
-	rdfs:label "is sub-procedure of"@en, "ist Subverfahren von"@de;
+	rdfs:label "is sub-procedure of"@en, "ist Unterverfahren von"@de;
 	rdfs:comment """Relating a procedure to another one it is part of."""@en;
 	rdfs:domain event:Procedure;
 	rdfs:range event:Procedure;
@@ -221,7 +225,7 @@ event:isSubProcedureOf
 event:hasGenesisDescriptionLiteral
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/event#>;
 	a owl:DatatypeProperty;
-	rdfs:label "has genesis description literal"@en, "hat Genesis-Beschreibungliterale"@de;
+	rdfs:label "has genesis description literal"@en, "hat Genesis-Beschreibungliteral"@de;
 	rdfs:comment """Relating something to a description literal of the genesis thereof."""@en;
 	rdfs:domain rdfs:Resource;
 	rdfs:range rdfs:Literal;

@@ -8,7 +8,7 @@
 @prefix concept: <http://e-editiones.ch/ontology/concept#>.
 @prefix document: <http://e-editiones.ch/ontology/document#>.
 @prefix text: <http://e-editiones.ch/ontology/text#>.
-@prefix infocar: <http://e-editiones.ch/ontology/information-carrier#>.
+@prefix information-carrier: <http://e-editiones.ch/ontology/information-carrier#>.
 
 @base <http://e-editiones.ch/ontology/image>.
 @prefix image: <http://e-editiones.ch/ontology/image#>.
@@ -19,6 +19,7 @@
 	dct:title "An ontology about image"@en;
 	dct:description """Formal description of image as a visual resource in the broadest sense, its general subclasses, related classes, and properties."""@en;
 	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:contributor "Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland"@en;
 	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
 	owl:versionInfo "2020-06-11"^^xsd:date.
 
@@ -31,7 +32,7 @@ image:Carrier
 	a rdfs:Class;
 	rdfs:label "image carrier"@en,"Bildträger"@de;
 	rdfs:comment """Visual representation of something on a carrier."""@en;
-	rdfs:subClassOf infocar:Carrier.
+	rdfs:subClassOf information-carrier:Carrier.
 
 image:Abstract
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/image#>;
@@ -47,7 +48,7 @@ image:Expression
 	rdfs:comment """Image as a document expression."""@en;
 	rdfs:subClassOf document:Expression, image:Abstract.
 
-image:Original
+image:OriginalExpression
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/image#>;
 	a rdfs:Class;
 	rdfs:label "original image expression"@en,"originale Bildexpression"@de;
@@ -99,16 +100,16 @@ image:PhotographExpression
 image:expressionHasTitleLiteral
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/image#>;
 	a owl:DatatypeProperty;
-	rdfs:label "image expression has title literal", "Bildexpression hat Titelliterale"@de;
+	rdfs:label "image expression has title literal", "Bildexpression hat Titelliteral"@de;
 	rdfs:comment """Relating an image expression to its title literal."""@en;
 	rdfs:domain image:Expression;
 	rdfs:range rdfs:Literal;
 	rdfs:subPropertyOf document:expressionHasTitleLiteral.
 
-image:isImageOf
+image:isImageAbstractOf
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/image#>;
 	a owl:ObjectProperty;
-	rdfs:label "is image of", "ist Bild von"@de;
+	rdfs:label "is image abstract of", "ist Bildabstrakt von"@de;
 	rdfs:comment """Relating an image abstract to what it depicts."""@en;
 	rdfs:domain image:Abstract;
 	rdfs:range rdfs:Resource;
@@ -121,22 +122,22 @@ image:isOnCarrier
 	rdfs:comment """Relating an image to a carrier it is on."""@en;
 	rdfs:domain image:Abstract;
 	rdfs:range image:Carrier;
-	rdfs:subPropertyOf infocar:isOnCarrier.
+	rdfs:subPropertyOf information-carrier:isOnCarrier.
 
-image:isPhotographOf
+image:isPhotographAbstractOf
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/image#>;
 	a owl:ObjectProperty;
-	rdfs:label "is photograph of", "ist Foto von"@de;
+	rdfs:label "is photograph abstract of", "ist Fotoabstrakt von"@de;
 	rdfs:comment """Relating a photograph abstract to what it depicts."""@en;
 	rdfs:domain image:PhotographAbstract;
 	rdfs:range rdfs:Resource;
 	rdfs:subPropertyOf image:isImageOf.
 
-image:isPartOf
+image:abstractIsPartOfDocument
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/image#>;
 	a owl:ObjectProperty;
-	rdfs:label "image is part of", "Bild ist teil von"@de;
-	rdfs:comment """Relating an image to a document it is part of."""@en;
+	rdfs:label "image abstract is part of document", "Bildabstrakt ist Teil eines Dokumentes"@de;
+	rdfs:comment """Relating an image abstract to a document it is part of."""@en;
 	rdfs:domain image:Abstract;
 	rdfs:range document:Document.
 #	rdfs:subPropertyOf .
@@ -156,7 +157,7 @@ image:hasPhotographIn
 image:hasPhotographSourceDescriptionLiteral
 	rdfs:isDefinedBy <http://e-editiones.ch/ontology/image#>;
 	a owl:DatatypeProperty;
-	rdfs:label "has photograph source description literal"@en, "hat Fotoquelle-Beschreibungliterale"@de;
+	rdfs:label "has photograph source description literal"@en, "hat Fotoquellen-Beschreibungliteral"@de;
 	rdfs:comment """Relating something to a description literal of a source of a photograph of that something."""@en;
 	rdfs:domain rdfs:Resource;
 	rdfs:range rdfs:Literal;

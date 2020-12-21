@@ -1,441 +1,443 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:dct="http://purl.org/dc/terms/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isVerseOfStrophe">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-    <rdfs:label xml:lang="fr">est un verset de strophe</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="en">is verse of strophe</rdfs:label>
-    <rdfs:label xml:lang="de">ist Vers einer Strophe</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
-    <rdfs:label xml:lang="it">è un versetto di strofa</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a verse to a strophe it is part of.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isWordOfVerse">
-    <rdfs:label xml:lang="fr">est un mot de verset</rdfs:label>
-    <rdfs:label xml:lang="en">is word of verse</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-structure#SyntacticWord"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-    <rdfs:label xml:lang="de">ist Wort eines Verses</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a syntactic word to a verse it is part of.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="it">è parola di versetto</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#NonRhymingRhythmicProse">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:comment xml:lang="en">Rhythmic prose without a rhyme.</rdfs:comment>
-    <rdfs:label xml:lang="de">nichtgereimte rhythmische Prosa</rdfs:label>
-    <rdfs:label xml:lang="fr">prose rythmée sans rime</rdfs:label>
-    <rdfs:label xml:lang="it">prosa ritmica non in rima</rdfs:label>
-    <rdfs:label xml:lang="en">non-rhyming rhythmic prose</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isVerseOfHalfStrophe">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="en">is verse of half-strophe</rdfs:label>
-    <rdfs:label xml:lang="it">è un versetto di mezza-strofa</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe"/>
-    <rdfs:comment xml:lang="en">Relating a verse to a half-strophe it is part of.</rdfs:comment>
-    <rdfs:label xml:lang="fr">est un verset de demi-strophe</rdfs:label>
-    <rdfs:label xml:lang="de">ist Vers einer Halbstrophe</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isStropheOfPoem">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
-    <rdfs:label xml:lang="en">is strophe of poem</rdfs:label>
-    <rdfs:label xml:lang="de">ist Strophe eines Gedichtes</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="fr">est une strophe d'un poème</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VersePoem"/>
-    <rdfs:label xml:lang="it">è una strofa di una poesia</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a strophe to a poem it is part of.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#FreeVerse">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
-    <rdfs:label xml:lang="it">versetto libero</rdfs:label>
-    <rdfs:label xml:lang="de">freie Vers</rdfs:label>
-    <rdfs:comment xml:lang="en">Verse without a recurring metrical entity.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="fr">verset libre</rdfs:label>
-    <rdfs:label xml:lang="en">free verse</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfPoem">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VersePoem"/>
-    <rdfs:label xml:lang="it">è una sezione in versi di una poesia</rdfs:label>
-    <rdfs:label xml:lang="de">ist Versabschnitt eines Gedichtes</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
-    <rdfs:label xml:lang="fr">est une section de verset d'un poème</rdfs:label>
-    <rdfs:label xml:lang="en">is verse section of poem</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a verse section to a poem it is part of.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#StrictVerse">
-    <rdfs:label xml:lang="de">strikte Vers</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:comment xml:lang="en">Verse with a recurring metrical entity.</rdfs:comment>
-    <rdfs:label xml:lang="en">strict verse</rdfs:label>
-    <rdfs:label xml:lang="fr">verset strict</rdfs:label>
-    <rdfs:label xml:lang="it">versetto rigoroso</rdfs:label>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumeral">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
-    <rdfs:label xml:lang="en">strophe has ordinal numeral</rdfs:label>
-    <rdfs:label xml:lang="de">Strophe hat Ordinalnumerale</rdfs:label>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseHasOrdinalNumeral">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:label xml:lang="de">Vers hat Ordinalnumeral</rdfs:label>
+    <rdfs:label xml:lang="fr">verset a un numéral ordinal</rdfs:label>
     <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumber"/>
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseHasOrdinalNumber"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/mathematics#numberHasNumeral"/>
     </owl:propertyChainAxiom>
-    <rdfs:label xml:lang="fr">strophe a un numéral ordinal</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
-    <rdfs:comment xml:lang="en">Relating a strophe to its ordinal numeral.</rdfs:comment>
-    <rdfs:label xml:lang="it">strofa ha un numerale ordinale</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
+    <rdfs:label xml:lang="en">verse has ordinal numeral</rdfs:label>
+    <rdfs:label xml:lang="it">versetto ha un numerale ordinale</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a verse to its ordinal numeral.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
   </owl:DatatypeProperty>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/prosodic-structure">
-    <skos:note xml:lang="en">Extension of the text structure ontology</skos:note>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, NIE-INE, University of Zürich, Switzerland</dct:contributor>
-    <dct:title xml:lang="en">An ontology about prosodic structure</dct:title>
-    <dct:description xml:lang="en">Formal description of prosodic structure, subclasses, related classes, and properties.</dct:description>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, NIE-INE, University of Basel, Switzerland</dct:creator>
-    <dct:contributor xml:lang="en">Roberta Padlina, tool coordinator and software developer, NIE-INE, University of Basel, Switzerland</dct:contributor>
-  </owl:Ontology>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfVerseNovel">
-    <rdfs:label xml:lang="en">is verse section of verse novel</rdfs:label>
-    <rdfs:label xml:lang="fr">est une section de verset d'un roman en vers</rdfs:label>
-    <rdfs:label xml:lang="it">è una sezione in versi di un romanzo in versi</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VerseNovel"/>
-    <rdfs:label xml:lang="de">ist Versabschnitt eines Versromans</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
-    <rdfs:comment xml:lang="en">Relating a verse section to a verse novel it is part of.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isStropheOfNovel">
-    <rdfs:label xml:lang="de">ist Strophe eines Versromans</rdfs:label>
-    <rdfs:label xml:lang="it">è la strofa di un romanzo in versi</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VerseNovel"/>
-    <rdfs:comment xml:lang="en">Relating a strophe to a verse novel it is part of.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="fr">est une strophe d'un roman en vers</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isVerseOfHalfStrophe">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="en">is strophe of verse novel</rdfs:label>
+    <rdfs:label xml:lang="it">è un versetto di mezza-strofa</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:comment xml:lang="en">Relating a verse to a half-strophe it is part of.</rdfs:comment>
+    <rdfs:label xml:lang="de">ist Vers einer Halbstrophe</rdfs:label>
+    <rdfs:label xml:lang="en">is verse of half-strophe</rdfs:label>
+    <rdfs:label xml:lang="fr">est un verset de demi-strophe</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasOrdinalNumeral">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
     <owl:propertyChainAxiom rdf:parseType="Collection">
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasOrdinalNumber"/>
       <rdf:Description rdf:about="http://e-editiones.ch/ontology/mathematics#numberHasNumeral"/>
     </owl:propertyChainAxiom>
     <rdfs:comment xml:lang="en">Relating a verse section to its ordinal numeral.</rdfs:comment>
     <rdfs:label xml:lang="fr">section de verset a un numéral ordinal</rdfs:label>
-    <rdfs:label xml:lang="it">sezione del versetto ha un numerale ordinale</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
     <rdfs:label xml:lang="en">verse section has ordinal numeral</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
-    <rdfs:label xml:lang="de">Versabschnitt hat Ordinalnumerale</rdfs:label>
+    <rdfs:label xml:lang="it">sezione del versetto ha un numerale ordinale</rdfs:label>
+    <rdfs:label xml:lang="de">Versabschnitt hat Ordinalnumeral</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isHalfOfVerse">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfVerseNovel">
+    <rdfs:comment xml:lang="en">Relating a verse section to a verse novel it is part of.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VerseNovel"/>
+    <rdfs:label xml:lang="de">ist Versabschnitt eines Versromans</rdfs:label>
+    <rdfs:label xml:lang="en">is verse section of verse novel</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#HalfVerse"/>
-    <rdfs:comment xml:lang="en">Relating a half-verse to its verse.</rdfs:comment>
-    <rdfs:label xml:lang="de">ist Hälfte eines Verses</rdfs:label>
-    <rdfs:label xml:lang="en">is half of verse</rdfs:label>
-    <rdfs:label xml:lang="fr">est la moitié d'un verst</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="it">è la metà di un versetto</rdfs:label>
+    <rdfs:label xml:lang="fr">est une section de verset d'un roman en vers</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
+    <rdfs:label xml:lang="it">è una sezione in versi di un romanzo in versi</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#RhymingRhythmicProse">
-    <rdfs:label xml:lang="en">rhyming rhythmic prose</rdfs:label>
-    <rdfs:label xml:lang="it">prosa ritmica in rima</rdfs:label>
-    <rdfs:label xml:lang="fr">prose rythmée rimante</rdfs:label>
-    <rdfs:comment xml:lang="en">Rhythmic prose with a rhyme.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Rhyme"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse"/>
-    <rdfs:label xml:lang="de">gereimte rhythmische Prosa</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#RhymingVerse">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Rhyme"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-    <rdfs:label xml:lang="it">versetto in rima</rdfs:label>
-    <rdfs:label xml:lang="en">rhyming verse</rdfs:label>
-    <rdfs:label xml:lang="fr">verset de rimes</rdfs:label>
-    <rdfs:comment xml:lang="en">Verse with a rhyme.</rdfs:comment>
-    <rdfs:label xml:lang="de">gereimter Vers</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#NonRhymingVerse">
-    <rdfs:label xml:lang="fr">verset sans rime</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:comment xml:lang="en">Verse without a rhyme.</rdfs:comment>
-    <rdfs:label xml:lang="en">non-rhyming verse</rdfs:label>
-    <rdfs:label xml:lang="de">nichtgereimter Vers</rdfs:label>
-    <rdfs:label xml:lang="it">versetto non in rima</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-  </rdfs:Class>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isStropheOfSection">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
+    <rdfs:label xml:lang="it">è la strofa di una sezione</rdfs:label>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
+    <rdfs:label xml:lang="de">ist Strophe eines Versabschnittes</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="fr">est une strophe d'une section</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a strophe to a section it is part of.</rdfs:comment>
     <rdfs:label xml:lang="en">is strophe of section</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="it">è la strofa di una sezione</rdfs:label>
-    <rdfs:label xml:lang="fr">est une strophe d'une section</rdfs:label>
-    <rdfs:label xml:lang="de">ist Strophe eines Versabschnittes</rdfs:label>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isHalfOfStrophe">
-    <rdfs:label xml:lang="de">ist Hälfte einer Strophe</rdfs:label>
-    <rdfs:label xml:lang="fr">est la moitié d'une strophe</rdfs:label>
-    <rdfs:label xml:lang="it">è la metà di una strofa</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a half-strophe to its strophe.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isStropheOfNovel">
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:label xml:lang="en">is half of strophe</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#Meter">
-    <rdfs:label xml:lang="de"></rdfs:label>
-    <rdfs:comment xml:lang="en">Rhythmic structure of a verse, based on patterns of particular syllables, and often alternating in a particular order</rdfs:comment>
-    <rdfs:label xml:lang="it">metro</rdfs:label>
-    <rdfs:label xml:lang="fr">mètre</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="en">meter</rdfs:label>
-  </rdfs:Class>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseHasOrdinalNumeral">
-    <rdfs:label xml:lang="de">Vers hat Ordinalnumerale</rdfs:label>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseHasOrdinalNumber"/>
-      <rdf:Description rdf:about="http://e-editiones.ch/ontology/mathematics#numberHasNumeral"/>
-    </owl:propertyChainAxiom>
-    <rdfs:label xml:lang="en">verse has ordinal numeral</rdfs:label>
+    <rdfs:label xml:lang="en">is strophe of verse novel</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a strophe to a verse novel it is part of.</rdfs:comment>
+    <rdfs:label xml:lang="it">è la strofa di un romanzo in versi</rdfs:label>
+    <rdfs:label xml:lang="de">ist Strophe eines Versromans</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
+    <rdfs:label xml:lang="fr">est une strophe d'un roman en vers</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VerseNovel"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumeral">
+    <rdfs:comment xml:lang="en">Relating a strophe to its ordinal numeral.</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"/>
-    <rdfs:comment xml:lang="en">Relating a verse to its ordinal numeral.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-    <rdfs:label xml:lang="fr">verset a un numéral ordinal</rdfs:label>
-    <rdfs:label xml:lang="it">versetto ha un numerale ordinale</rdfs:label>
+    <rdfs:label xml:lang="fr">strophe a un numéral ordinal</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:label xml:lang="en">strophe has ordinal numeral</rdfs:label>
+    <rdfs:label xml:lang="de">Strophe hat Ordinalnumeral</rdfs:label>
+    <rdfs:label xml:lang="it">strofa ha un numerale ordinale</rdfs:label>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumber"/>
+      <rdf:Description rdf:about="http://e-editiones.ch/ontology/mathematics#numberHasNumeral"/>
+    </owl:propertyChainAxiom>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
   </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasTitleLiteral">
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isStropheOfPoem">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VersePoem"/>
+    <rdfs:label xml:lang="de">ist Strophe eines Gedichtes</rdfs:label>
+    <rdfs:label xml:lang="it">è una strofa di una poesia</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="fr">est une strophe d'un poème</rdfs:label>
+    <rdfs:label xml:lang="en">is strophe of poem</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a strophe to a poem it is part of.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/prosodic-structure">
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:contributor xml:lang="en">Roberta Padlina, tool coordinator and software developer, NIE-INE, University of Basel, Switzerland</dct:contributor>
+    <skos:note xml:lang="en">Extension of the text structure ontology</skos:note>
+    <dct:description xml:lang="en">Formal description of prosodic structure, subclasses, related classes, and properties.</dct:description>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, NIE-INE, University of Basel, Switzerland</dct:creator>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:contributor xml:lang="en">Reto Baumgartner, tool coordinator and software developer, NIE-INE, University of Zürich, Switzerland</dct:contributor>
+    <dct:title xml:lang="en">An ontology about prosodic structure</dct:title>
+  </owl:Ontology>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#RhymingRhythmicProse">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="it">prosa ritmica in rima</rdfs:label>
+    <rdfs:label xml:lang="fr">prose rythmée rimante</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Rhyme"/>
+    <rdfs:label xml:lang="de">gereimte rhythmische Prosa</rdfs:label>
+    <rdfs:label xml:lang="en">rhyming rhythmic prose</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse"/>
+    <rdfs:comment xml:lang="en">Rhythmic prose with a rhyme.</rdfs:comment>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfPoem">
+    <rdfs:label xml:lang="it">è una sezione in versi di una poesia</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
-    <rdfs:label xml:lang="en">verse section has title literal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a verse section to a poem it is part of.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est une section de verset d'un poème</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/literature#VersePoem"/>
+    <rdfs:label xml:lang="de">ist Versabschnitt eines Gedichtes</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="en">is verse section of poem</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#NonRhymingRhythmicProse">
+    <rdfs:label xml:lang="it">prosa ritmica non in rima</rdfs:label>
+    <rdfs:comment xml:lang="en">Rhythmic prose without a rhyme.</rdfs:comment>
+    <rdfs:label xml:lang="de">nichtgereimte rhythmische Prosa</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse"/>
+    <rdfs:label xml:lang="fr">prose rythmée sans rime</rdfs:label>
+    <rdfs:label xml:lang="en">non-rhyming rhythmic prose</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasTitleLiteral">
     <rdfs:comment xml:lang="en">Relating a verse section to its title literal.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="de">Versabschnitt hat Titelliterale</rdfs:label>
-    <rdfs:label xml:lang="fr">section de verset a littéral du titre</rdfs:label>
-    <rdfs:label xml:lang="it">sezione del versetto ha letterale del titolo</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasTitleLiteral"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier">
-    <rdfs:label xml:lang="de">Versabschnittidentifikator</rdfs:label>
-    <rdfs:label xml:lang="it">identificatore della sezione del versetto</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Identifier"/>
-    <rdfs:comment xml:lang="en">Identifier of a verse section.</rdfs:comment>
-    <rdfs:label xml:lang="fr">identifiant de section de verset</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="en">verse section identifier</rdfs:label>
+    <rdfs:label xml:lang="it">sezione del versetto ha letterale del titolo</rdfs:label>
+    <rdfs:label xml:lang="fr">section de verset a littéral du titre</rdfs:label>
+    <rdfs:label xml:lang="en">verse section has title literal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="de">Versabschnitt hat Titelliteral</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isHalfOfVerse">
+    <rdfs:comment xml:lang="en">Relating a half-verse to its verse.</rdfs:comment>
+    <rdfs:label xml:lang="en">is half of verse</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#HalfVerse"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:label xml:lang="it">è la metà di un versetto</rdfs:label>
+    <rdfs:label xml:lang="fr">est la moitié d'un verst</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="de">ist Hälfte eines Verses</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#Meter">
+    <rdfs:label xml:lang="fr">mètre</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="en">meter</rdfs:label>
+    <rdfs:label xml:lang="it">metro</rdfs:label>
+    <rdfs:comment xml:lang="en">Rhythmic structure of a verse, based on patterns of particular syllables, and often alternating in a particular order</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
+    <rdfs:label xml:lang="de">Metrik</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#StrictVerse">
+    <rdfs:label xml:lang="en">strict verse</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:comment xml:lang="en">Verse with a recurring metrical entity.</rdfs:comment>
+    <rdfs:label xml:lang="de">strikter Vers</rdfs:label>
+    <rdfs:label xml:lang="it">versetto rigoroso</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:label xml:lang="fr">verset strict</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isWordOfVerse">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-structure#SyntacticWord"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:label xml:lang="it">è parola di versetto</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a syntactic word to a verse it is part of.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est un mot de verset</rdfs:label>
+    <rdfs:label xml:lang="en">is word of verse</rdfs:label>
+    <rdfs:label xml:lang="de">ist Wort eines Verses</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isVerseOfStrophe">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:label xml:lang="it">è un versetto di strofa</rdfs:label>
+    <rdfs:label xml:lang="en">is verse of strophe</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
+    <rdfs:comment xml:lang="en">Relating a verse to a strophe it is part of.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est un verset de strophe</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="de">ist Vers einer Strophe</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#NonRhymingVerse">
+    <rdfs:label xml:lang="it">versetto non in rima</rdfs:label>
+    <rdfs:comment xml:lang="en">Verse without a rhyme.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="fr">verset sans rime</rdfs:label>
+    <rdfs:label xml:lang="de">nichtgereimter Vers</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:label xml:lang="en">non-rhyming verse</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#FreeVerse">
+    <rdfs:label xml:lang="it">versetto libero</rdfs:label>
+    <rdfs:label xml:lang="de">freier Vers</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="en">free verse</rdfs:label>
+    <rdfs:label xml:lang="fr">verset libre</rdfs:label>
+    <rdfs:comment xml:lang="en">Verse without a recurring metrical entity.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#isHalfOfStrophe">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
+    <rdfs:label xml:lang="it">è la metà di una strofa</rdfs:label>
+    <rdfs:label xml:lang="en">is half of strophe</rdfs:label>
+    <rdfs:label xml:lang="de">ist Hälfte einer Strophe</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe"/>
+    <rdfs:comment xml:lang="en">Relating a half-strophe to its strophe.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est la moitié d'une strophe</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#RhymingVerse">
+    <rdfs:label xml:lang="fr">verset de rimes</rdfs:label>
+    <rdfs:label xml:lang="de">gereimter Vers</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:comment xml:lang="en">Verse with a rhyme.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:label xml:lang="it">versetto in rima</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Rhyme"/>
+    <rdfs:label xml:lang="en">rhyming verse</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionOrdinalNumber">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
+    <rdfs:label xml:lang="en">verse section ordinal number</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="fr">nombre ordinal de section de verset</rdfs:label>
+    <rdfs:label xml:lang="de">Versabschnittordinalzahl</rdfs:label>
+    <rdfs:comment xml:lang="en">Ordinal number of a verse section.</rdfs:comment>
+    <rdfs:label xml:lang="it">numero ordinale della sezione del versetto</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#StropheOrdinalNumber">
+    <rdfs:comment xml:lang="en">Ordinal number of a strophe.</rdfs:comment>
+    <rdfs:label xml:lang="it">numero ordinale di strofa</rdfs:label>
+    <rdfs:label xml:lang="de">Stropheordinalzahl</rdfs:label>
+    <rdfs:label xml:lang="en">strophe ordinal number</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="fr">nombre ordinal de strophe</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#Structure">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
-    <rdfs:label xml:lang="it">struttura del testo prosodica</rdfs:label>
-    <rdfs:comment xml:lang="en">Text structure depending on prosody, i.e. syllable and/or metre as basic rhythmic structure and/or rhyme.</rdfs:comment>
-    <rdfs:label xml:lang="fr">structure de texte prosodique</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
     <rdfs:label xml:lang="de">prosodische Textstruktur</rdfs:label>
     <rdfs:label xml:lang="en">prosodic text structure</rdfs:label>
+    <rdfs:label xml:lang="fr">structure de texte prosodique</rdfs:label>
+    <rdfs:label xml:lang="it">struttura del testo prosodica</rdfs:label>
+    <rdfs:comment xml:lang="en">Text structure depending on prosody, i.e. syllable and/or metre as basic rhythmic structure and/or rhyme.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure"/>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseOrdinalNumber">
-    <rdfs:label xml:lang="fr">nombre ordinal de verset</rdfs:label>
-    <rdfs:comment xml:lang="en">Ordinal number of a verse.</rdfs:comment>
-    <rdfs:label xml:lang="it">numero ordinale del versetto</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier"/>
-    <rdfs:label xml:lang="en">verse ordinal number</rdfs:label>
-    <rdfs:label xml:lang="de">Versordinalzahl</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumber">
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier">
-    <rdfs:label xml:lang="it">identificatore del versetto</rdfs:label>
-    <rdfs:label xml:lang="fr">identifiant de verset</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Identifier"/>
-    <rdfs:label xml:lang="en">verse identifier</rdfs:label>
-    <rdfs:comment xml:lang="en">Identifier of a verse.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="de">Versidentifikator</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#HalfVerse">
-    <rdfs:label xml:lang="it">mezzo-versetto</rdfs:label>
-    <rdfs:label xml:lang="en">half-verse</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
-    <rdfs:label xml:lang="fr">demi-verset</rdfs:label>
-    <rdfs:label xml:lang="de">Halbvers</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:comment xml:lang="en">Half a verse.</rdfs:comment>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseHasOrdinalNumber">
-    <rdfs:label xml:lang="it">versetto ha un numero ordinale</rdfs:label>
-    <rdfs:label xml:lang="de">Vers hat Ordinalzahl</rdfs:label>
-    <rdfs:label xml:lang="en">verse has ordinal number</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
     <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseHasIdentifier">
-        <rdfs:label xml:lang="it">versetto ha identificatore</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#hasIdentifier"/>
-        <rdfs:label xml:lang="de">Vers hat Identifikator</rdfs:label>
-        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier"/>
-        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
-        <rdfs:label xml:lang="en">verse has identifier</rdfs:label>
-        <rdfs:label xml:lang="fr">verset a identifiant</rdfs:label>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#stropheHasIdentifier">
+        <rdfs:label xml:lang="en">strophe has identifier</rdfs:label>
+        <rdfs:label xml:lang="fr">strophe a un identifiant</rdfs:label>
+        <rdfs:label xml:lang="it">strofa ha un identificatore</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating a strophe to its identifier.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier"/>
         <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-        <rdfs:comment xml:lang="en">Relating a verse to its identifier.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#hasIdentifier"/>
+        <rdfs:label xml:lang="de">Strophe hat Identifikator</rdfs:label>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
-    <rdfs:comment xml:lang="en">Relating a verse to its ordinal number.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseOrdinalNumber"/>
-    <rdfs:label xml:lang="fr">verset a un nombre ordinal</rdfs:label>
+    <rdfs:label xml:lang="fr">strophe a un nombre ordinal</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a strophe to its ordinal number.</rdfs:comment>
+    <rdfs:label xml:lang="en">strophe has ordinal number</rdfs:label>
+    <rdfs:label xml:lang="it">strofa ha un numero ordinale</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#StropheOrdinalNumber"/>
+    <rdfs:label xml:lang="de">Strophe hat Ordinalzahl</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseSection">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
-    <rdfs:label xml:lang="it">sezione del versetto</rdfs:label>
-    <rdfs:comment xml:lang="en">Group of strophes.</rdfs:comment>
-    <rdfs:label xml:lang="fr">section de verset</rdfs:label>
-    <rdfs:label xml:lang="en">verse section</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseHasOrdinalNumber">
+    <rdfs:label xml:lang="en">verse has ordinal number</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseHasIdentifier">
+        <rdfs:label xml:lang="en">verse has identifier</rdfs:label>
+        <rdfs:comment xml:lang="en">Relating a verse to its identifier.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Verse"/>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier"/>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#hasIdentifier"/>
+        <rdfs:label xml:lang="de">Vers hat Identifikator</rdfs:label>
+        <rdfs:label xml:lang="it">versetto ha identificatore</rdfs:label>
+        <rdfs:label xml:lang="fr">verset a identifiant</rdfs:label>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseOrdinalNumber"/>
+    <rdfs:label xml:lang="it">versetto ha un numero ordinale</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a verse to its ordinal number.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="de">Versabschnitt</rdfs:label>
-  </rdfs:Class>
+    <rdfs:label xml:lang="fr">verset a un nombre ordinal</rdfs:label>
+    <rdfs:label xml:lang="de">Vers hat Ordinalzahl</rdfs:label>
+  </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#Verse">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
+    <rdfs:label xml:lang="it">versetto</rdfs:label>
     <rdfs:label xml:lang="de">Vers</rdfs:label>
     <rdfs:label xml:lang="fr">verset</rdfs:label>
-    <rdfs:comment xml:lang="en">Text with prosody as unit.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:comment xml:lang="en">Text with prosody as unit.</rdfs:comment>
     <rdfs:label xml:lang="en">verse</rdfs:label>
-    <rdfs:label xml:lang="it">versetto</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#HalfVerse">
+    <rdfs:label xml:lang="de">Halbvers</rdfs:label>
+    <rdfs:comment xml:lang="en">Half a verse.</rdfs:comment>
+    <rdfs:label xml:lang="en">half-verse</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="fr">demi-verset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
+    <rdfs:label xml:lang="it">mezzo-versetto</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#Strophe">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
+    <rdfs:label xml:lang="en">strophe</rdfs:label>
+    <rdfs:label xml:lang="fr">strophe</rdfs:label>
+    <rdfs:label xml:lang="de">Strophe</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:comment xml:lang="en">Group of verses.</rdfs:comment>
+    <skos:note xml:lang="en">The lyriks of a song can be structured as a poem with strophes.</skos:note>
+    <rdfs:label xml:lang="it">strofa</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier">
+    <rdfs:label xml:lang="de">Versidentifikator</rdfs:label>
+    <rdfs:label xml:lang="it">identificatore del versetto</rdfs:label>
+    <rdfs:comment xml:lang="en">Identifier of a verse.</rdfs:comment>
+    <rdfs:label xml:lang="en">verse identifier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Identifier"/>
+    <rdfs:label xml:lang="fr">identifiant de verset</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="de">Stropheidentifikator</rdfs:label>
-    <rdfs:label xml:lang="it">identificatore di strofa</rdfs:label>
     <rdfs:label xml:lang="fr">identifiant de strophe</rdfs:label>
     <rdfs:label xml:lang="en">strophe identifier</rdfs:label>
+    <rdfs:label xml:lang="de">Stropheidentifikator</rdfs:label>
+    <rdfs:label xml:lang="it">identificatore di strofa</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Identifier"/>
     <rdfs:comment xml:lang="en">Identifier of a strophe.</rdfs:comment>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse">
-    <rdfs:label xml:lang="fr">prose rythmée</rdfs:label>
-    <rdfs:label xml:lang="de">rhythmische Prosa</rdfs:label>
-    <rdfs:label xml:lang="en">rhythmic prose</rdfs:label>
-    <rdfs:label xml:lang="it">prosa ritmica</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseSection">
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Prose"/>
+    <rdfs:comment xml:lang="en">Group of strophes.</rdfs:comment>
+    <rdfs:label xml:lang="en">verse section</rdfs:label>
+    <rdfs:label xml:lang="de">Versabschnitt</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:comment xml:lang="en">Prose structure with a meter.</rdfs:comment>
+    <rdfs:label xml:lang="it">sezione del versetto</rdfs:label>
+    <rdfs:label xml:lang="fr">section de verset</rdfs:label>
   </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasIdentifier">
-    <rdfs:label xml:lang="fr">section de verset a un identifiant</rdfs:label>
-    <rdfs:label xml:lang="it">sezione del versetto ha un identificatore</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#hasIdentifier"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
-    <rdfs:comment xml:lang="en">Relating a verse section to its identifier.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier"/>
-    <rdfs:label xml:lang="de">Versabschnitt hat Identifikator</rdfs:label>
-    <rdfs:label xml:lang="en">verse section has identifier</rdfs:label>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#StropheOrdinalNumber">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
-    <rdfs:label xml:lang="fr">nombre ordinal de strophe</rdfs:label>
-    <rdfs:label xml:lang="it">numero ordinale di strofa</rdfs:label>
-    <rdfs:comment xml:lang="en">Ordinal number of a strophe.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier"/>
-    <rdfs:label xml:lang="de">Stropheordinalzahl</rdfs:label>
-    <rdfs:label xml:lang="en">strophe ordinal number</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#stropheHasIdentifier">
-    <rdfs:comment xml:lang="en">Relating a strophe to its identifier.</rdfs:comment>
-    <rdfs:label xml:lang="de">Strophe hat Identifikator</rdfs:label>
-    <rdfs:label xml:lang="it">strofa ha un identificatore</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="en">strophe has identifier</rdfs:label>
-    <rdfs:label xml:lang="fr">strophe a un identifiant</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#hasIdentifier"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumber">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#stropheHasIdentifier"/>
-    <rdfs:label xml:lang="it">strofa ha un numero ordinale</rdfs:label>
-    <rdfs:label xml:lang="de">Strophe hat Ordinalzahl</rdfs:label>
-    <rdfs:label xml:lang="en">strophe has ordinal number</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Strophe"/>
-    <rdfs:comment xml:lang="en">Relating a strophe to its ordinal number.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#StropheOrdinalNumber"/>
-    <rdfs:label xml:lang="fr">strophe a un nombre ordinal</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasOrdinalNumber">
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasIdentifier"/>
-    <rdfs:label xml:lang="de">Versabschnitt hat Ordinalzahl</rdfs:label>
-    <rdfs:label xml:lang="fr">section de verset a un nombre ordinal</rdfs:label>
-    <rdfs:label xml:lang="en">verse section has ordinal number</rdfs:label>
     <rdfs:label xml:lang="it">sezione del versetto ha un numero ordinale</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
+    <rdfs:label xml:lang="de">Versabschnitt hat Ordinalzahl</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionOrdinalNumber"/>
     <rdfs:comment xml:lang="en">Relating a verse section to its ordinal number.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="fr">section de verset a un nombre ordinal</rdfs:label>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasIdentifier">
+        <rdfs:comment xml:lang="en">Relating a verse section to its identifier.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSection"/>
+        <rdfs:label xml:lang="it">sezione del versetto ha un identificatore</rdfs:label>
+        <rdfs:label xml:lang="fr">section de verset a un identifiant</rdfs:label>
+        <rdfs:range rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier"/>
+        <rdfs:label xml:lang="en">verse section has identifier</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text-structure#hasIdentifier"/>
+        <rdfs:label xml:lang="de">Versabschnitt hat Identifikator</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">verse section has ordinal number</rdfs:label>
   </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#Strophe">
-    <rdfs:label xml:lang="en">strophe</rdfs:label>
-    <skos:note xml:lang="en">The lyriks of a song can be structured as a poem with strophes.</skos:note>
-    <rdfs:comment xml:lang="en">Group of verses.</rdfs:comment>
-    <rdfs:label xml:lang="de">Strophe</rdfs:label>
-    <rdfs:label xml:lang="fr">strophe</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="it">strofa</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionOrdinalNumber">
-    <rdfs:label xml:lang="it">numero ordinale della sezione del versetto</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
-    <rdfs:label xml:lang="en">verse section ordinal number</rdfs:label>
-    <rdfs:comment xml:lang="en">Ordinal number of a verse section.</rdfs:comment>
-    <rdfs:label xml:lang="de">Versabschnittordinalzahl</rdfs:label>
-    <rdfs:label xml:lang="fr">nombre ordinal de section de verset</rdfs:label>
-  </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="en">half-strophe</rdfs:label>
     <rdfs:label xml:lang="fr">demi-strophe</rdfs:label>
-    <rdfs:comment xml:lang="en">Half a strophe.</rdfs:comment>
-    <rdfs:label xml:lang="it">mezza-strofa</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
     <rdfs:label xml:lang="de">Halbstrophe</rdfs:label>
-    <rdfs:label xml:lang="en">half-strophe</rdfs:label>
+    <rdfs:comment xml:lang="en">Half a strophe.</rdfs:comment>
+    <rdfs:label xml:lang="it">mezza-strofa</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseOrdinalNumber">
+    <rdfs:label xml:lang="it">numero ordinale del versetto</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="en">verse ordinal number</rdfs:label>
+    <rdfs:label xml:lang="fr">nombre ordinal de verset</rdfs:label>
+    <rdfs:comment xml:lang="en">Ordinal number of a verse.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/mathematics#OrdinalNumber"/>
+    <rdfs:label xml:lang="de">Versordinalzahl</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:comment xml:lang="en">Prose structure with a meter.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#Structure"/>
+    <rdfs:label xml:lang="en">rhythmic prose</rdfs:label>
+    <rdfs:label xml:lang="de">rhythmische Prosa</rdfs:label>
+    <rdfs:label xml:lang="it">prosa ritmica</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Prose"/>
+    <rdfs:label xml:lang="fr">prose rythmée</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier">
+    <rdfs:label xml:lang="fr">identifiant de section de verset</rdfs:label>
+    <rdfs:label xml:lang="de">Versabschnittidentifikator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-structure#Identifier"/>
+    <rdfs:comment xml:lang="en">Identifier of a verse section.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/prosodic-structure#"/>
+    <rdfs:label xml:lang="en">verse section identifier</rdfs:label>
+    <rdfs:label xml:lang="it">identificatore della sezione del versetto</rdfs:label>
   </rdfs:Class>
 </rdf:RDF>

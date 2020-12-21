@@ -1,18 +1,50 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/document#hasCitationBibliographicReference",
+    "@id": "http://e-editiones.ch/ontology/document#EndnoteReference",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Reference of a document content structure to an endnote via the endnote identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Endnotenreferenz"
+      },
+      {
+        "@language": "en",
+        "@value": "endnote reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#TextStructureReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#footnoteReferenceHasFootnoteNumber",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a text expression to a bibliographic reference of a citation thereof."
+        "@value": "Relating a footnote reference of a document content structure to the number of the footnote."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+        "@id": "http://e-editiones.ch/ontology/document#FootnoteReference"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -22,34 +54,39 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "hat bibliographische Referenz eines Zitats"
+        "@language": "en",
+        "@value": "footnote reference has footnote number"
       },
       {
-        "@language": "en",
-        "@value": "has citation bibliographic reference"
+        "@language": "de",
+        "@value": "Fussnotenreferenz hat Fussnotennummer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#CitationBibliographicReference"
+        "@id": "http://e-editiones.ch/ontology/note-structure#FootnoteNumber"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#hasSymbolicEntity"
+        "@id": "http://e-editiones.ch/ontology/document#footnoteReferenceHasFootnoteIdentifier"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#Page",
+    "@id": "http://e-editiones.ch/ontology/document#textStructureReferenceHasTextStructureIdentifier",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Content structure with information, e.g. text lines and graphs, as a page as part of a document expression, on an information carrier page."
+        "@value": "Relating a text structure reference of a document content structure to the identifier of the text structure. E.g. a document content structure has a footnote reference linked to the identifier of the footnote."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#TextStructureReference"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -60,28 +97,33 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Dokumentseite"
+        "@value": "Textstrukturreferenz hat Textstrukturidentifikator"
       },
       {
         "@language": "en",
-        "@value": "document page"
+        "@value": "text structure reference has text structure identifier"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#contentStructureReferenceHasContentStructureIdentifier"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#HorizontalSpace",
+    "@id": "http://e-editiones.ch/ontology/document#ContentStructureReference",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Document space with horizontal orientation, e.g. between lines."
+        "@value": "Reference as a document structure, referring from one document content structure to another via the identifier, e.g. a footnote reference from a text or image to the footnote identifier. The reference is linked to and has the same literal representation as the identifier of the content structure it refers to."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -92,69 +134,31 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "horizontal document space"
+        "@value": "document content structure reference"
       },
       {
         "@language": "de",
-        "@value": "horizontaler Leerraum eines Dokumentes"
+        "@value": "Dokumentinhaltstrukturreferenz"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#Space"
+        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Structure"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#PageOrdinalNumber",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Ordinal number of a document page."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document page ordinal number"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentseiteordinalzahl"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#PageIdentifier"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The document page ordinal number is a reification."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#expressionHasTitleLiteral",
+    "@id": "http://e-editiones.ch/ontology/document#expressionHasSubtitleLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating an expression to its title literal."
+        "@value": "Relating an expression to a subtitle literal it has."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -169,12 +173,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Expression hat Titelliterale"
+        "@language": "en",
+        "@value": "expression has subtitle literal"
       },
       {
-        "@language": "en",
-        "@value": "expression has title literal"
+        "@language": "de",
+        "@value": "Expression hat Untertitelliteral"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -184,316 +188,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#isElementOfDocument",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document element to a document it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Element"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Element eines Dokumentes"
-      },
-      {
-        "@language": "en",
-        "@value": "is element of document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#State",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "State of a document."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document state"
-      },
-      {
-        "@language": "de",
-        "@value": "Zustand eines Dokumentes"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/event#State"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasExpressionReference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document content structure to an expression reference it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document content structure has expression reference"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstruktur hat Expression-Referenz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ExpressionReference"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#isPartOfIndividualExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression part to an individual expression it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ExpressionPart"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is part of individual expression"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Teil einer individuellen Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#IndividualExpression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#pageHasOrdinalNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document page to its ordinal number."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Page"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokumentseite hat Ordinalzahl"
-      },
-      {
-        "@language": "en",
-        "@value": "document page has ordinal number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#PageOrdinalNumber"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#pageHasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Encoder",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person converting a document into code, e.g. from text to XML."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "codeur"
-      },
-      {
-        "@language": "en",
-        "@value": "encoder"
-      },
-      {
-        "@language": "it",
-        "@value": "codificatore"
-      },
-      {
-        "@language": "de",
-        "@value": "KodiererIn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#PersonCreator"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#ContentStructure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Content structure of a document."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document content structure"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstruktur"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasFootnoteReference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document content structure to a footnote reference it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document content structure has footnote reference"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstruktur hat Fussnotereferenz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#FootnoteReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#contentStructureHasTextReference"
+        "@id": "http://e-editiones.ch/ontology/text#hasSubtitleLiteral"
       }
     ]
   },
@@ -524,16 +219,16 @@
         "@value": "bibliographic reference has literal"
       },
       {
-        "@language": "it",
-        "@value": "riferimento bibliografico ha un letterale"
-      },
-      {
         "@language": "de",
-        "@value": "bibliographische Referenz hat Literale"
+        "@value": "bibliographische Referenz hat Literal"
       },
       {
         "@language": "fr",
         "@value": "référence bibliographique a un littéral"
+      },
+      {
+        "@language": "it",
+        "@value": "riferimento bibliografico ha un letterale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -548,125 +243,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#HypertextPage",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Page of a hypertext document."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Hypertext-Dokumentseite"
-      },
-      {
-        "@language": "en",
-        "@value": "hypertext document page"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Page"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#HypertextStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Catalogue",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "List of descriptions of things, mostly ordered, e.g. alphabetically; e.g. library's book catalogue, exhibition's works of art catalogue, mail-order company's items for sale catalogue."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "catalogue"
-      },
-      {
-        "@language": "de",
-        "@value": "Katalog"
-      },
-      {
-        "@language": "fr",
-        "@value": "catalogue"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#IndividualExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#ExpressionReference",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Document structure referring from a document content structure to a document expression identifier, e.g. a siglum."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document expression reference"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokument-Expression-Referenz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#isExpressionOfCycle",
+    "@id": "http://e-editiones.ch/ontology/document#hasCitationBibliographicReference",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating an individual expression to a cycle it is part of."
+        "@value": "Relating a text expression to a bibliographic reference of a citation thereof."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#IndividualExpression"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -677,395 +266,21 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is expression of cycle"
+        "@value": "has citation bibliographic reference"
       },
       {
         "@language": "de",
-        "@value": "ist Expression eines Zyklus"
+        "@value": "hat bibliographische Referenz eines Zitats"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#Cycle"
+        "@id": "http://e-editiones.ch/ontology/document#CitationBibliographicReference"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#BibliographicReference",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "All information, structured along certain composition rules, to identify a resource in any format (print, audiovisual, digital, etc.), published or unpublished. Used for example to refer from a part in a text expression to a part in another text expression. "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "bibliographische Referenz"
-      },
-      {
-        "@language": "en",
-        "@value": "bibliographic reference"
-      },
-      {
-        "@language": "it",
-        "@value": "riferimenti bibliografici"
-      },
-      {
-        "@language": "fr",
-        "@value": "référence bibliographique"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://products.abc-clio.com/ODLIS/odlis_b.aspx"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "There is not 1 canonical way to write a bibliographic reference"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#pageHasIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document page to its identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Page"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokumentseite hat Identifikator"
-      },
-      {
-        "@language": "en",
-        "@value": "document page has identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#PageIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#contentStructureHasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#hasContentLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document to its content literal."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document has content literal"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokument hat Inhaltliterale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Includes a code literal of a programming language, e.g. HTML."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Table",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Two-dimensional structure composed of one or more fields or cell containing information and being part of a vertical column and a horizontal row, both with own identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "table"
-      },
-      {
-        "@language": "de",
-        "@value": "Tabelle"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Draft",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Developmental document expression, subject to future modification, not having all envisioned features."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document draft"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumententwurf"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#UnfinishedCreation"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Expression"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#hasState",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document to its state."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokument hat Zustand"
-      },
-      {
-        "@language": "en",
-        "@value": "document has state"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#State"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#css",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2000/01/rdf-schema#Datatype"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Datatype to type a literal expressed in the Cascading Style Sheets-language (CSS)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "CSS-datatype"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Example: \"color: #000000;\"^^document:css"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Structure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Structural element of a document."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document structure"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentstruktur"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Element"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#HypertextStructure",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Structural element of a hypertext document."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Hypertext-Dokumentstruktur"
-      },
-      {
-        "@language": "en",
-        "@value": "hypertext document structure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Structure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#HypertextElement"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasReference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document content structure to a reference it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstruktur hat Referenz"
-      },
-      {
-        "@language": "en",
-        "@value": "document content structure has reference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructureReference"
+        "@id": "http://e-editiones.ch/ontology/concept#hasSymbolicEntity"
       }
     ]
   },
@@ -1092,665 +307,12 @@
       },
       {
         "@language": "de",
-        "@value": "vertikaler Leerraum eines Dokumentes"
+        "@value": "vertikaler Leerraum in einem Dokument"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/document#Space"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Cycle",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Set of individual document expressions belonging together, usually created around a certain theme, and intended to be experienced in a certain sequence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Expression-Zyklus"
-      },
-      {
-        "@language": "en",
-        "@value": "expression cycle"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Set"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasEndnote",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document content structure to an endnote it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document content structure has endnote"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstruktur hat Endnote"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Endnote"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/document#contentStructureHasEndnoteReference"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/document#endnoteReferenceHasIdentifier"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/note-structure#isIdentifierOfEndnote"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Expression",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Document realisation of a work, based on FRBRoo, e.g. a text, story, poem, play, musical, song, joke, choreographic notation, movement pattern, sound pattern, image, multimedia object, or any combination of them, having an objectively recognisable structure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokument-Expression"
-      },
-      {
-        "@language": "en",
-        "@value": "document expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Document"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identifier of a document content structure."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstrukturidentifikator"
-      },
-      {
-        "@language": "en",
-        "@value": "document content structure identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Structure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#footnoteReferenceHasFootnoteIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a footnote reference of a document content structure to the identifier of the footnote."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#FootnoteReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "footnote reference has footnote identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "Fussnotereferenz hat Fussnoteidentifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#textStructureReferenceHasTextStructureIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#TitlePage",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Document page contianing a title."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "title page"
-      },
-      {
-        "@language": "de",
-        "@value": "Titelblatt"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Page"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#textStructureReferenceHasTextStructureIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text structure reference of a document content structure to the identifier of the text structure. E.g. a document content structure has a footnote reference linked to the identifier of the footnote."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#TextStructureReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "text structure reference has text structure identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "Textstrukturreferenz hat Textstrukturidentifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#contentStructureReferenceHasContentStructureIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Space",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Empty space between document content structures, e.g. lines, columns, paragraphs, sections, strophes, images."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Leerraum eines Dokumentes"
-      },
-      {
-        "@language": "en",
-        "@value": "document space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#PageIdentifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identifier of a document page."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document page identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentseiteidentifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The document page identifier is a reification."
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#CompleteWorks",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Set of individual document expressions of one author."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Gesamtwerk"
-      },
-      {
-        "@language": "en",
-        "@value": "complete works"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Set"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#contentStructureReferenceHasContentStructureIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating the reference of a document content structure to another document content structure, to the identifier of the latter."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructureReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstrukturreferenz hat Dokumentinhaltstrukturidentifikator"
-      },
-      {
-        "@language": "en",
-        "@value": "document content structure reference has document content structure identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Marginal",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Information besides a text in the margin of a carrier, e.g. a text, doodle, or illumination."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "marginal"
-      },
-      {
-        "@language": "de",
-        "@value": "Marginale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Code",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Information as code, e.g. in any programming language."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "code document"
-      },
-      {
-        "@language": "de",
-        "@value": "Kode-Dokument"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#Information"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#HypertextDocument",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Document written in Hypertext Markup Language (HTML)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hypertext document"
-      },
-      {
-        "@language": "de",
-        "@value": "Hypertext-Dokument"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Code"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Set",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Set of documents."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokumentenreihe"
-      },
-      {
-        "@language": "en",
-        "@value": "document set"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#Set"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#isTableOfColumn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a table to a column it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Table"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Tabelle einer Spalte"
-      },
-      {
-        "@language": "en",
-        "@value": "is table of column"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Column"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#endnoteReferenceHasEndnoteNumber",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an endnote reference of a document content structure to the number of the endnote."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#EndnoteReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Endnotereferenz hat Endnotenummer"
-      },
-      {
-        "@language": "en",
-        "@value": "endnote reference has endnote number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/note-structure#EndnoteNumber"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#endnoteReferenceHasEndnoteIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#FootnoteReference",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Reference of a document content structure to a footnote via the footnote identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Fussnotereferenz"
-      },
-      {
-        "@language": "en",
-        "@value": "footnote reference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#TextStructureReference"
       }
     ]
   },
@@ -1797,14 +359,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#TextStructureReference",
+    "@id": "http://e-editiones.ch/ontology/document#CitationBibliographicReference",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Document content structure reference to a text structure, e.g. a footnote reference."
+        "@value": "All information, structured along certain composition rules, to identify a text expression part as citation of a part of another text expression, the latter being published or not. "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1815,16 +377,567 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Textstrukturreferenz"
+        "@value": "bibliographische Referenz eines Zitats"
       },
       {
         "@language": "en",
-        "@value": "text structure reference"
+        "@value": "citation bibliographic reference"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructureReference"
+        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "There is not 1 canonical way to write a citation bibliographic reference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#endnoteReferenceHasEndnoteNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an endnote reference of a document content structure to the number of the endnote."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#EndnoteReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "endnote reference has endnote number"
+      },
+      {
+        "@language": "de",
+        "@value": "Endnotenreferenz hat Endnotennummer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/note-structure#EndnoteNumber"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#endnoteReferenceHasEndnoteIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#isStructureOfDocument",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document structure to a document it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Structure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is structure of document"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Struktur eines Dokuments"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#isElementOfDocument"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#PolyAuthorExpression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Document expression by different authors."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "poly-author document expression"
+      },
+      {
+        "@language": "de",
+        "@value": "Mehrautorendokumentexpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#hasContentLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document to its content literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document has content literal"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokument hat Inhaltliteral"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Includes a code literal of a programming language, e.g. HTML."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#isTableOfColumn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a table to a column it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Table"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Tabelle einer Spalte"
+      },
+      {
+        "@language": "en",
+        "@value": "is table of column"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Column"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#endnoteReferenceHasEndnoteIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an endnote reference of a document content structure to the identifier of the endnote."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#EndnoteReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "endnote reference has endnote identifier"
+      },
+      {
+        "@language": "de",
+        "@value": "Endnotenreferenz hat Endnotenidentifikator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#textStructureReferenceHasTextStructureIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Document",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Identifiable, immaterial, i.e. abstracted from its information carrier, contained information, e.g. a text, a graphic, an image, an audiogram, a videogram."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokument"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#Information"
+      },
+      {
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/E31_Document"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Layout",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Way in which the content of a page is set out."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Layout"
+      },
+      {
+        "@language": "en",
+        "@value": "layout"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Element"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#ExpressionPart",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Part of an individual document expression, considered as incomplete."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document expression part"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokumentexpressionsteil"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      },
+      {
+        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#isColumnOfPage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a column to a document page it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Column"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is column of document page"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Spalte einer Dokumentseite"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Page"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#footnoteReferenceHasFootnoteIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a footnote reference of a document content structure to the identifier of the footnote."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#FootnoteReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "footnote reference has footnote identifier"
+      },
+      {
+        "@language": "de",
+        "@value": "Fussnotenreferenz hat Fussnotenidentifikator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#textStructureReferenceHasTextStructureIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasFootnoteReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document content structure to a footnote reference it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document content structure has footnote reference"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstruktur hat Fussnotenreferenz"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#FootnoteReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#contentStructureHasTextReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Page",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Content structure with information, e.g. text lines and graphs, as a page as part of a document expression, on an information carrier page."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document page"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokumentseite"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#isExpressionOfCycle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an individual expression to a cycle it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#IndividualExpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Expression eines Zyklus"
+      },
+      {
+        "@language": "en",
+        "@value": "is expression of cycle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Cycle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
       }
     ]
   },
@@ -1871,14 +984,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#IndividualExpression",
+    "@id": "http://e-editiones.ch/ontology/document#PageOrdinalNumber",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Document realisation of an individual work."
+        "@value": "Ordinal number of a document page."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1888,32 +1001,171 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "individuelle Dokument-Expression"
+        "@language": "en",
+        "@value": "document page ordinal number"
       },
       {
-        "@language": "en",
-        "@value": "individual document expression"
+        "@language": "de",
+        "@value": "Dokumentseiteordinalzahl"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression"
+        "@id": "http://e-editiones.ch/ontology/document#PageIdentifier"
       },
       {
-        "@id": "http://e-editiones.ch/ontology/document#Expression"
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The document page ordinal number is a reification."
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#EndnoteReference",
+    "@id": "http://e-editiones.ch/ontology/document#HorizontalSpace",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Reference of a document content structure to an endnote via the endnote identifier."
+        "@value": "Document space with horizontal orientation, e.g. between lines."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "horizontaler Leerraum in einem Dokument"
+      },
+      {
+        "@language": "en",
+        "@value": "horizontal document space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Space"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#TextStructureReference",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Document content structure reference to a text structure, e.g. a footnote reference."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textstrukturreferenz"
+      },
+      {
+        "@language": "en",
+        "@value": "text structure reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructureReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#CompleteWorks",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Set of individual document expressions of one author."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Gesamtwerk"
+      },
+      {
+        "@language": "en",
+        "@value": "complete works"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Set"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasExpressionReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document content structure to an expression reference it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstruktur hat Expressionsreferenz"
+      },
+      {
+        "@language": "en",
+        "@value": "document content structure has expression reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ExpressionReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#TitlePage",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Document page containing a title."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1924,16 +1176,231 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "endnote reference"
+        "@value": "title page"
       },
       {
         "@language": "de",
-        "@value": "Endnotereferenz"
+        "@value": "Titelblatt"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#TextStructureReference"
+        "@id": "http://e-editiones.ch/ontology/document#Page"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasEndnoteReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document content structure to an endnote reference it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstruktur hat Endnotenreferenz"
+      },
+      {
+        "@language": "en",
+        "@value": "document content structure has endnote reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#EndnoteReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#contentStructureHasTextReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#ExpressionReference",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Document structure referring from a document content structure to a document expression identifier, e.g. a siglum."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document expression reference"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokumentexpressionsreferenz"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Structure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document content structure to its identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstruktur hat Identifikator"
+      },
+      {
+        "@language": "en",
+        "@value": "document content structure has identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#hasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Structure",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Structural element of a document."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentstruktur"
+      },
+      {
+        "@language": "en",
+        "@value": "document structure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Element"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#State",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "State of a document."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document state"
+      },
+      {
+        "@language": "de",
+        "@value": "Zustand eines Dokumentes"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/event#State"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#ContentStructure",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Content structure of a document."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document content structure"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstruktur"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Structure"
       }
     ]
   },
@@ -1943,6 +1410,10 @@
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
     "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland"
+      },
       {
         "@language": "en",
         "@value": "Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland"
@@ -1985,168 +1456,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#hasCitationBibliographicReferenceLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text expression to the literal of a bibliographic reference of a citation thereof."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has citation bibliographic reference literal"
-      },
-      {
-        "@language": "de",
-        "@value": "hat bibliographische Referenzliterale eines Zitats"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#hasBibliographicReference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document expression to a bibliographic reference it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has bibliographic reference"
-      },
-      {
-        "@language": "fr",
-        "@value": "a une référence bibliographique"
-      },
-      {
-        "@language": "it",
-        "@value": "ha riferimenti bibliografici"
-      },
-      {
-        "@language": "de",
-        "@value": "hat bibliographische Referenz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#BibliographicReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#hasSymbolicEntity"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#hasBibliographicReferenceLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document expression to the literal of a bibliographic reference it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a un littéral de référence bibliographique"
-      },
-      {
-        "@language": "it",
-        "@value": "ha riferimenti bibliografici letterali"
-      },
-      {
-        "@language": "en",
-        "@value": "has bibliographic reference literal"
-      },
-      {
-        "@language": "de",
-        "@value": "hat bibliographische Referenzliterale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/document#hasBibliographicReference"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/document#bibliographicReferenceHasLiteral"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#ExpressionPart",
+    "@id": "http://e-editiones.ch/ontology/document#Table",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Part of an individual document expression, considered as incomplete."
+        "@value": "Two-dimensional structure composed of one or more fields or cell containing information and being part of a vertical column and a horizontal row, both with own identifier."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -2157,351 +1474,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Dokument-Expressionsteil"
+        "@value": "Tabelle"
       },
       {
         "@language": "en",
-        "@value": "document expression part"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Expression"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#isSpaceOfDocument",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a space to the document it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Space"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is space of document"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Leerraum eines Dokumentes"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#isStructureOfDocument"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#expressionHasSubtitleLiteral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an expression to a subtitle literal it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "expression has subtitle literal"
-      },
-      {
-        "@language": "de",
-        "@value": "Expression hat Untertitelliterale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#hasSubtitleLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#CitationBibliographicReference",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "All information, structured along certain composition rules, to identify a text expression part as citation of a part of another text expression, the latter being published or not. "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "bibliographische Referenz eines Zitats"
-      },
-      {
-        "@language": "en",
-        "@value": "citation bibliographic reference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "There is not 1 canonical way to write a citation bibliographic reference"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#HypertextStartPage",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Start page of a hypertext document."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hypertext document start page"
-      },
-      {
-        "@language": "de",
-        "@value": "Hypertext-Dokumentstartseite"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#HypertextPage"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#ContentStructureReference",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Reference as a document structure, referring from one document content structure to another via the identifier, e.g. a footnote reference from a text or image to the footnote identifier. The reference is linked to and has the same literal representation as the identifier of the content structure it refers to."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document content structure reference"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstrukturreferenz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#isColumnOfPage",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a column to a document page it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Column"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Spalte einer Dokumentseite"
-      },
-      {
-        "@language": "en",
-        "@value": "is column of document page"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Page"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#isStructureOfDocument",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document structure to a document it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Structure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Struktur eines Dokumentes"
-      },
-      {
-        "@language": "en",
-        "@value": "is structure of document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#isElementOfDocument"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Element",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Information as part of a document."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document element"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentelement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#Information"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Column",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Content structure displaying information, e.g. text lines and graphs, as a column as part of a page."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Spalte"
-      },
-      {
-        "@language": "en",
-        "@value": "column"
+        "@value": "table"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -2533,12 +1510,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "expression reference has identifier"
+        "@language": "de",
+        "@value": "Expressionsreferenz hat Identifikator"
       },
       {
-        "@language": "de",
-        "@value": "Expression-Referenz hat Identifikator"
+        "@language": "en",
+        "@value": "expression reference has identifier"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2549,6 +1526,420 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://e-editiones.ch/ontology/concept#hasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasEndnote",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document content structure to an endnote it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstruktur hat Endnote"
+      },
+      {
+        "@language": "en",
+        "@value": "document content structure has endnote"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Endnote"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/document#contentStructureHasEndnoteReference"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/document#endnoteReferenceHasIdentifier"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/note-structure#isIdentifierOfEndnote"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#BibliographicReference",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "All information, structured along certain composition rules, to identify a resource in any format (print, audiovisual, digital, etc.), published or unpublished. Used for example to refer from a part in a text expression to a part in another text expression. "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "riferimenti bibliografici"
+      },
+      {
+        "@language": "en",
+        "@value": "bibliographic reference"
+      },
+      {
+        "@language": "fr",
+        "@value": "référence bibliographique"
+      },
+      {
+        "@language": "de",
+        "@value": "bibliographische Referenz"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://products.abc-clio.com/ODLIS/odlis_b.aspx#bibliographicreference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "There is not 1 canonical way to write a bibliographic reference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#contentStructureReferenceHasContentStructureIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating the reference of a document content structure to another document content structure, to the identifier of the latter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructureReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstrukturreferenz hat Dokumentinhaltstrukturidentifikator"
+      },
+      {
+        "@language": "en",
+        "@value": "document content structure reference has document content structure identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#pageHasIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document page to its identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Page"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentseite hat Identifikator"
+      },
+      {
+        "@language": "en",
+        "@value": "document page has identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#PageIdentifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#contentStructureHasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#hasBibliographicReferenceLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document expression to the literal of a bibliographic reference it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha riferimenti bibliografici letterali"
+      },
+      {
+        "@language": "de",
+        "@value": "hat bibliographisches Referenzliteral"
+      },
+      {
+        "@language": "fr",
+        "@value": "a un littéral de référence bibliographique"
+      },
+      {
+        "@language": "en",
+        "@value": "has bibliographic reference literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/document#hasBibliographicReference"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/document#bibliographicReferenceHasLiteral"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#pageHasOrdinalNumeral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a page to its ordinal numeral."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Page"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Seite hat Ordinalnumeral"
+      },
+      {
+        "@language": "en",
+        "@value": "page has ordinal numeral"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/document#pageHasOrdinalNumber"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#hasNumeral"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#isPartOfIndividualExpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an expression part to an individual expression it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ExpressionPart"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Teil einer individuellen Expression"
+      },
+      {
+        "@language": "en",
+        "@value": "is part of individual expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#IndividualExpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasTextReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document content structure to a text reference it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstruktur hat Textreferenz"
+      },
+      {
+        "@language": "en",
+        "@value": "document content structure has text reference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#TextStructureReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#contentStructureHasReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Element",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Information as part of a document."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentelement"
+      },
+      {
+        "@language": "en",
+        "@value": "document element"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#Information"
       }
     ]
   },
@@ -2575,15 +1966,376 @@
       },
       {
         "@language": "de",
-        "@value": "Dokument-Expressionsidentifikator"
+        "@value": "Dokumentexpressionsidentifikator"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
+        "@id": "http://e-editiones.ch/ontology/document#Structure"
       },
       {
+        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Cycle",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Set of individual document expressions belonging together, usually created around a certain theme, and intended to be experienced in a certain sequence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Expressionszyklus"
+      },
+      {
+        "@language": "en",
+        "@value": "expression cycle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Set"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#PageIdentifier",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Identifier of a document page."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentseiteidentifikator"
+      },
+      {
+        "@language": "en",
+        "@value": "document page identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The document page identifier is a reification."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#pageHasOrdinalNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document page to its ordinal number."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Page"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentseite hat Ordinalzahl"
+      },
+      {
+        "@language": "en",
+        "@value": "document page has ordinal number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#PageOrdinalNumber"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#pageHasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Catalogue",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "List of descriptions of things, mostly ordered, e.g. alphabetically; e.g. library's book catalogue, exhibition's works of art catalogue, mail-order company's items for sale catalogue."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Katalog"
+      },
+      {
+        "@language": "en",
+        "@value": "catalogue"
+      },
+      {
+        "@language": "fr",
+        "@value": "catalogue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#IndividualExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document content structure to a reference it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document content structure has reference"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstruktur hat Referenz"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructureReference"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#isElementOfDocument",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document element to a document it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Element"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is element of document"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Element eines Dokuments"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#IndividualExpression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Document realisation of an individual work."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "individual document expression"
+      },
+      {
+        "@language": "de",
+        "@value": "individuelle Dokumentexpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Set",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Set of documents."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document set"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokumentreihe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#Set"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Identifier of a document content structure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document content structure identifier"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokumentinhaltstrukturidentifikator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
         "@id": "http://e-editiones.ch/ontology/document#Structure"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#Identifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#FootnoteReference",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Reference of a document content structure to a footnote via the footnote identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "footnote reference"
+      },
+      {
+        "@language": "de",
+        "@value": "Fussnotenreferenz"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#TextStructureReference"
       }
     ]
   },
@@ -2630,202 +2382,215 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#Document",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identifiable, immaterial, contained information, e.g. a text, a graphic, an image, an audiogram, a videogram, abstracted from its information carrier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Dokument"
-      },
-      {
-        "@language": "en",
-        "@value": "document"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#Information"
-      },
-      {
-        "@id": "http://www.cidoc-crm.org/cidoc-crm/E31_Document"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#endnoteReferenceHasEndnoteIdentifier",
+    "@id": "http://e-editiones.ch/ontology/document#hasBibliographicReference",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating an endnote reference of a document content structure to the identifier of the endnote."
+        "@value": "Relating a document expression to a bibliographic reference it has."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#EndnoteReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "endnote reference has endnote identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "Endnotereferenz hat Endnoteidentifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#textStructureReferenceHasTextStructureIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#Layout",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Way in which the content of a page is set out."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "layout"
-      },
-      {
-        "@language": "de",
-        "@value": "Aufmachung"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#Element"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document content structure to its identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document content structure has identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstruktur hat Identifikator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructureIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#hasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#PolyAuthorExpression",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Document expression by different authors."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "poly-author document expression"
-      },
-      {
-        "@language": "de",
-        "@value": "Mehrautorentextdokument-Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/document#Expression"
       }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has bibliographic reference"
+      },
+      {
+        "@language": "de",
+        "@value": "hat bibliographische Referenz"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une référence bibliographique"
+      },
+      {
+        "@language": "it",
+        "@value": "ha riferimenti bibliografici"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#hasSymbolicEntity"
+      }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#pageHasOrdinalNumeral",
+    "@id": "http://e-editiones.ch/ontology/document#hasState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a document to its state."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document has state"
+      },
+      {
+        "@language": "de",
+        "@value": "Dokument hat Zustand"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#State"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Marginal",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Information besides a text in the margin of a carrier, e.g. a text, doodle, or illumination."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Marginalie"
+      },
+      {
+        "@language": "en",
+        "@value": "marginal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#isSpaceOfDocument",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a space to the document it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Space"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Leerraum in einem Dokument"
+      },
+      {
+        "@language": "en",
+        "@value": "is space of document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#isStructureOfDocument"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Expression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Document realisation of a work, based on FRBRoo, e.g. a text, story, poem, play, musical, song, joke, choreographic notation, movement pattern, sound pattern, image, multimedia object, or any combination of them, having an objectively recognisable structure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Dokumentexpression"
+      },
+      {
+        "@language": "en",
+        "@value": "document expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/document#Document"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#expressionHasTitleLiteral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a page to its ordinal numeral."
+        "@value": "Relating an expression to its title literal."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#Page"
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -2835,88 +2600,34 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "page has ordinal numeral"
+        "@language": "de",
+        "@value": "Expression hat Titelliteral"
       },
       {
-        "@language": "de",
-        "@value": "Seite hat Ordinalnumerale"
+        "@language": "en",
+        "@value": "expression has title literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/document#pageHasOrdinalNumber"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/mathematics#hasNumeral"
-          }
-        ]
+        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasEndnoteReference",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a document content structure to an endnote reference it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "document content structure has endnote reference"
-      },
-      {
-        "@language": "de",
-        "@value": "Dokumentinhaltstruktur hat Endnotereferenz"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#EndnoteReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#contentStructureHasTextReference"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/document#HypertextElement",
+    "@id": "http://e-editiones.ch/ontology/document#Draft",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Information as part of a hypertext document."
+        "@value": "Developmental document expression, subject to future modification, not having all envisioned features."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -2926,34 +2637,37 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Hypertext-Dokumentelement"
+        "@language": "en",
+        "@value": "document draft"
       },
       {
-        "@language": "en",
-        "@value": "hypertext document element"
+        "@language": "de",
+        "@value": "Dokumententwurf"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#Element"
+        "@id": "http://e-editiones.ch/ontology/document#Expression"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#UnfinishedCreation"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#footnoteReferenceHasFootnoteNumber",
+    "@id": "http://e-editiones.ch/ontology/document#hasCitationBibliographicReferenceLiteral",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a footnote reference of a document content structure to the number of the footnote."
+        "@value": "Relating a text expression to the literal of a bibliographic reference of a citation thereof."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#FootnoteReference"
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -2964,39 +2678,66 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "footnote reference has footnote number"
+        "@value": "has citation bibliographic reference literal"
       },
       {
         "@language": "de",
-        "@value": "Fussnotereferenz hat Fussnotenummer"
+        "@value": "hat bibliographisches Referenzliteral eines Zitats"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/note-structure#FootnoteNumber"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#footnoteReferenceHasFootnoteIdentifier"
+        "@id": "http://e-editiones.ch/ontology/concept#hasLiteral"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/document#contentStructureHasTextReference",
+    "@id": "http://e-editiones.ch/ontology/document#Column",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a document content structure to a text reference it has."
+        "@value": "Content structure displaying information, e.g. text lines and graphs, as a column as part of a page."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/document#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "column"
+      },
+      {
+        "@language": "de",
+        "@value": "Spalte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/document#ContentStructure"
       }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/document#Space",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Empty space between document content structures, e.g. lines, columns, paragraphs, sections, strophes, images."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -3005,22 +2746,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "document content structure has text reference"
+        "@language": "de",
+        "@value": "Leerraum in einem Dokument"
       },
       {
-        "@language": "de",
-        "@value": "Dokumentinhaltstruktur hat Textreferenz"
+        "@language": "en",
+        "@value": "document space"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/document#TextStructureReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/document#contentStructureHasReference"
+        "@id": "http://e-editiones.ch/ontology/document#Structure"
       }
     ]
   }

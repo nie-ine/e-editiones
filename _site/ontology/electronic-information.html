@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/main.css"></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Electronic Information</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a href="/ontology/electronic-information.ttl" download="">Turtle</a> | 
+  <a href="/ontology/electronic-information.rdf" download="">RDF/XML</a> |
+  <a href="/ontology/electronic-information.nt" download="">N-Triples</a> |
+  <a href="/ontology/electronic-information.jsonld" download="">JSON-LD</a> |
+  <a href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/electronic-information.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:dct="http://purl.org/dc/terms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information" title="Browse http://e-editiones.ch/ontology/electronic-information"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/contributor">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
+            <td property="dct:contributor" content="Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Roberta Padlina, project coordinator and software developer, University of Basel,
+                  Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of electronic information, general subclasses, related classes and properties." xml:lang="en">
+               <div class="property-object">Formal description of electronic information, general subclasses, related classes
+                  and properties.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/license">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/license" title="Browse http://purl.org/dc/terms/license">dct:license</a></td>
+            <td>
+               <div class="property-object" rel="dct:license"><a class="browse" href="http://creativecommons.org/licenses/by/3.0/" title="Browse http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/ licenses/ by/ 3.0/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="Universities of Basel, Bern, and Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Universities of Basel, Bern, and Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="An ontology about electronic information" xml:lang="en">
+               <div class="property-object">An ontology about electronic information</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e35="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-10-19" datatype="xsd:date">
+               <div class="property-object">2020-10-19</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="Carrier" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#Carrier" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Carrier" title="Browse http://e-editiones.ch/ontology/electronic-information#Carrier">electronic-information:Carrier</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Electronic machine carrying electronic information." xml:lang="en">
+               <div class="property-object">Electronic machine carrying electronic information.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="elektronischer Informationsträger" xml:lang="de">
+               <div class="property-object">elektronischer Informationsträger
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="electronic information carrier" xml:lang="en"></span><div class="property-object">electronic information carrier
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Carrier" title="Browse http://e-editiones.ch/ontology/information-carrier#Carrier">information-carrier:Carrier</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/device#ElectronicMachine" title="Browse http://e-editiones.ch/ontology/device#ElectronicMachine">device:ElectronicMachine</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="DokuWiki" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#DokuWiki" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#DokuWiki" title="Browse http://e-editiones.ch/ontology/electronic-information#DokuWiki">electronic-information:DokuWiki</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Wiki ran by DokuWiki software." xml:lang="en">
+               <div class="property-object">Wiki ran by DokuWiki software.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="DokuWiki" xml:lang="en">
+               <div class="property-object">DokuWiki
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="DokuWiki" xml:lang="de"></span><div class="property-object">DokuWiki
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="https://en.wikipedia.org/wiki/DokuWiki" title="Browse https://en.wikipedia.org/wiki/DokuWiki">https://en.wikipedia.org/ wiki/ DokuWiki</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Wiki" title="Browse http://e-editiones.ch/ontology/electronic-information#Wiki">electronic-information:Wiki</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="DokuWikiPage" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#DokuWikiPage" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#DokuWikiPage" title="Browse http://e-editiones.ch/ontology/electronic-information#DokuWikiPage">electronic-information:DokuWikiPage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Wiki page of a DokuWiki." xml:lang="en">
+               <div class="property-object">Wiki page of a DokuWiki.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="DokuWiki page" xml:lang="en">
+               <div class="property-object">DokuWiki page
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="DokuWiki-Seite" xml:lang="de"></span><div class="property-object">DokuWiki-Seite
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#WikiPage" title="Browse http://e-editiones.ch/ontology/electronic-information#WikiPage">electronic-information:WikiPage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="ElectronicBook" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#ElectronicBook" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#ElectronicBook" title="Browse http://e-editiones.ch/ontology/electronic-information#ElectronicBook">electronic-information:ElectronicBook</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Electronic information carrier with a text structure as in a book." xml:lang="en">
+               <div class="property-object">Electronic information carrier with a text structure as in a book.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="elektronisches Buch" xml:lang="de">
+               <div class="property-object">elektronisches Buch
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="electronic book" xml:lang="en"></span><div class="property-object">electronic book
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Carrier" title="Browse http://e-editiones.ch/ontology/electronic-information#Carrier">electronic-information:Carrier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Hyperlink" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#Hyperlink" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Hyperlink" title="Browse http://e-editiones.ch/ontology/electronic-information#Hyperlink">electronic-information:Hyperlink</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Link from a hypertext document structure to another location, activated by clicking on a highlighted word or image." xml:lang="en">
+               <div class="property-object">Link from a hypertext document structure to another location, activated by clicking
+                  on a highlighted word or image.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hyperlink" xml:lang="en">
+               <div class="property-object">hyperlink
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Hyperlink" xml:lang="de"></span><div class="property-object">Hyperlink
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="HypertextDocument" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#HypertextDocument" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextDocument" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextDocument">electronic-information:HypertextDocument</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Document written in the Hypertext Markup Language (HTML)." xml:lang="en">
+               <div class="property-object">Document written in the Hypertext Markup Language (HTML).</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hypertext document" xml:lang="en">
+               <div class="property-object">hypertext document
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Hypertext-Dokument" xml:lang="de"></span><div class="property-object">Hypertext-Dokument
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/document#Document" title="Browse http://e-editiones.ch/ontology/document#Document">document:Document</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#Code" title="Browse http://e-editiones.ch/ontology/concept#Code">concept:Code</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="HypertextElement" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#HypertextElement" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextElement" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextElement">electronic-information:HypertextElement</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Information as part of a hypertext document." xml:lang="en">
+               <div class="property-object">Information as part of a hypertext document.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hypertext document element" xml:lang="en">
+               <div class="property-object">hypertext document element
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Hypertext-Dokumentelement" xml:lang="de"></span><div class="property-object">Hypertext-Dokumentelement
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#Code" title="Browse http://e-editiones.ch/ontology/concept#Code">concept:Code</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="HypertextPage" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#HypertextPage" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextPage" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextPage">electronic-information:HypertextPage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Page of a hypertext document." xml:lang="en">
+               <div class="property-object">Page of a hypertext document.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hypertext document page" xml:lang="en">
+               <div class="property-object">hypertext document page
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Hypertext-Dokumentseite" xml:lang="de"></span><div class="property-object">Hypertext-Dokumentseite
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextStructure" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextStructure">electronic-information:HypertextStructure</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="HypertextStartPage" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#HypertextStartPage" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextStartPage" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextStartPage">electronic-information:HypertextStartPage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Start page of a hypertext document." xml:lang="en">
+               <div class="property-object">Start page of a hypertext document.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Hypertext-Dokumentstartseite" xml:lang="de">
+               <div class="property-object">Hypertext-Dokumentstartseite
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hypertext document start page" xml:lang="en"></span><div class="property-object">hypertext document start page
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextPage" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextPage">electronic-information:HypertextPage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="HypertextStructure" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#HypertextStructure" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextStructure" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextStructure">electronic-information:HypertextStructure</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Structural element of a hypertext document." xml:lang="en">
+               <div class="property-object">Structural element of a hypertext document.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hypertext document structure" xml:lang="en">
+               <div class="property-object">hypertext document structure
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Hypertext-Dokumentstruktur" xml:lang="de"></span><div class="property-object">Hypertext-Dokumentstruktur
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextElement" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextElement">electronic-information:HypertextElement</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Webpage" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#Webpage" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Webpage" title="Browse http://e-editiones.ch/ontology/electronic-information#Webpage">electronic-information:Webpage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Electronic carrier page on the World Wide Web." xml:lang="en">
+               <div class="property-object">Electronic carrier page on the World Wide Web.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="webpage" xml:lang="en">
+               <div class="property-object">webpage
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Webseite" xml:lang="de"></span><div class="property-object">Webseite
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Carrier" title="Browse http://e-editiones.ch/ontology/electronic-information#Carrier">electronic-information:Carrier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Website" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#Website" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Website" title="Browse http://e-editiones.ch/ontology/electronic-information#Website">electronic-information:Website</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Set of interconnected webpages, under a single domain name, usually including a homepage, generally located on the same server, and prepared and maintained as information by a person, group, or organization." xml:lang="en">
+               <div class="property-object">Set of interconnected webpages, under a single domain name, usually including a homepage,
+                  generally located on the same server, and prepared and maintained as information by
+                  a person, group, or organization.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="website" xml:lang="en">
+               <div class="property-object">website
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Website" xml:lang="de"></span><div class="property-object">Website
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Set" title="Browse http://e-editiones.ch/ontology/information-carrier#Set">information-carrier:Set</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Carrier" title="Browse http://e-editiones.ch/ontology/electronic-information#Carrier">electronic-information:Carrier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Wiki" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#Wiki" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Wiki" title="Browse http://e-editiones.ch/ontology/electronic-information#Wiki">electronic-information:Wiki</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Knowledge base website on which users collaboratively modify and structure content directly from a web browser; it is ran by wiki software." xml:lang="en">
+               <div class="property-object">Knowledge base website on which users collaboratively modify and structure content
+                  directly from a web browser; it is ran by wiki software.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Wiki" xml:lang="de">
+               <div class="property-object">Wiki
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="wiki" xml:lang="en"></span><div class="property-object">wiki
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="https://en.wikipedia.org/wiki/Wiki" title="Browse https://en.wikipedia.org/wiki/Wiki">https://en.wikipedia.org/ wiki/ Wiki</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Website" title="Browse http://e-editiones.ch/ontology/electronic-information#Website">electronic-information:Website</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="WikiPage" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#WikiPage" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#WikiPage" title="Browse http://e-editiones.ch/ontology/electronic-information#WikiPage">electronic-information:WikiPage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Webpage of a Wiki." xml:lang="en">
+               <div class="property-object">Webpage of a Wiki.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Wiki page" xml:lang="en">
+               <div class="property-object">Wiki page
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Wiki-Seite" xml:lang="de"></span><div class="property-object">Wiki-Seite
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Webpage" title="Browse http://e-editiones.ch/ontology/electronic-information#Webpage">electronic-information:Webpage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Instances</h2>
+   <div id="css" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#css" typeof="rdfs:Datatype">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#css" title="Browse http://e-editiones.ch/ontology/electronic-information#css">electronic-information:css</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Datatype" title="Browse http://www.w3.org/2000/01/rdf-schema#Datatype">rdfs:Datatype</a>, 
+               <div rel="rdf:type" class="connector"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></div>
+            </th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Datatype to type a literal expressed in the Cascading Style Sheets-language (CSS)." xml:lang="en">
+               <div class="property-object">Datatype to type a literal expressed in the Cascading Style Sheets-language (CSS).</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#example">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#example" title="Browse http://www.w3.org/2004/02/skos/core#example">skos:example</a></td>
+            <td property="skos:example" content="Example: &#34;color: #000000;&#34;^^electronic-information:css" xml:lang="en">
+               <div class="property-object">Example: "color: #000000;"^^electronic-information:css</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="CSS-datatype" xml:lang="en">
+               <div class="property-object">CSS-datatype
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Properties</h2>
+   <div id="hasCSSLiteral" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#hasCSSLiteral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#hasCSSLiteral" title="Browse http://e-editiones.ch/ontology/electronic-information#hasCSSLiteral">electronic-information:hasCSSLiteral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a resource to a literal expressed in the Cascading Style Sheets-language (CSS)." xml:lang="en">
+               <div class="property-object">Relating a resource to a literal expressed in the Cascading Style Sheets-language
+                  (CSS).</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has CSS literal" xml:lang="en">
+               <div class="property-object">has CSS literal
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat CSS-Literal" xml:lang="de"></span><div class="property-object">hat CSS-Literal
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#css" title="Browse http://e-editiones.ch/ontology/electronic-information#css">electronic-information:css</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#hasLiteral" title="Browse http://e-editiones.ch/ontology/concept#hasLiteral">concept:hasLiteral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasHyperlink" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#hasHyperlink" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#hasHyperlink" title="Browse http://e-editiones.ch/ontology/electronic-information#hasHyperlink">electronic-information:hasHyperlink</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a hypertext document structure to a hyperlink it has on an electronic carrier." xml:lang="en">
+               <div class="property-object">Relating a hypertext document structure to a hyperlink it has on an electronic carrier.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextStructure" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextStructure">electronic-information:HypertextStructure</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Hyperlink" xml:lang="de">
+               <div class="property-object">hat Hyperlink
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has hyperlink" xml:lang="en"></span><div class="property-object">has hyperlink
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Hyperlink" title="Browse http://e-editiones.ch/ontology/electronic-information#Hyperlink">electronic-information:Hyperlink</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hyperlinkHasNameLiteral" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#hyperlinkHasNameLiteral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#hyperlinkHasNameLiteral" title="Browse http://e-editiones.ch/ontology/electronic-information#hyperlinkHasNameLiteral">electronic-information:hyperlinkHasNameLiteral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a hyperlink to a name literal it has." xml:lang="en">
+               <div class="property-object">Relating a hyperlink to a name literal it has.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Hyperlink" title="Browse http://e-editiones.ch/ontology/electronic-information#Hyperlink">electronic-information:Hyperlink</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Hyperlink hat Namenliteral" xml:lang="de">
+               <div class="property-object">Hyperlink hat Namenliteral
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hyperlink has name literal" xml:lang="en"></span><div class="property-object">hyperlink has name literal
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Literal" title="Browse http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/text#hasNameLiteral" title="Browse http://e-editiones.ch/ontology/text#hasNameLiteral">text:hasNameLiteral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hyperlinkHasURL" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#hyperlinkHasURL" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#hyperlinkHasURL" title="Browse http://e-editiones.ch/ontology/electronic-information#hyperlinkHasURL">electronic-information:hyperlinkHasURL</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a hyperlink to a URL it has." xml:lang="en">
+               <div class="property-object">Relating a hyperlink to a URL it has.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Hyperlink" title="Browse http://e-editiones.ch/ontology/electronic-information#Hyperlink">electronic-information:Hyperlink</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hyperlink has URL" xml:lang="en">
+               <div class="property-object">hyperlink has URL
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Hyperlink hat URL" xml:lang="de"></span><div class="property-object">Hyperlink hat URL
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#anyURI" title="Browse http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="informationIsOnElectronicCarrier" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#informationIsOnElectronicCarrier" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#informationIsOnElectronicCarrier" title="Browse http://e-editiones.ch/ontology/electronic-information#informationIsOnElectronicCarrier">electronic-information:informationIsOnElectronicCarrier</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating information to an electronic carrier it is on." xml:lang="en">
+               <div class="property-object">Relating information to an electronic carrier it is on.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/concept#Information" title="Browse http://e-editiones.ch/ontology/concept#Information">concept:Information</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="information is on electronic carrier" xml:lang="en">
+               <div class="property-object">information is on electronic carrier
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Information ist auf elektronischem Träger" xml:lang="de"></span><div class="property-object">Information ist auf elektronischem Träger
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Carrier" title="Browse http://e-editiones.ch/ontology/electronic-information#Carrier">electronic-information:Carrier</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#isOnCarrier" title="Browse http://e-editiones.ch/ontology/information-carrier#isOnCarrier">information-carrier:isOnCarrier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isElementOfHypertextDocument" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#isElementOfHypertextDocument" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#isElementOfHypertextDocument" title="Browse http://e-editiones.ch/ontology/electronic-information#isElementOfHypertextDocument">electronic-information:isElementOfHypertextDocument</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a hypertext document element to a hypertext document it is part of." xml:lang="en">
+               <div class="property-object">Relating a hypertext document element to a hypertext document it is part of.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextElement" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextElement">electronic-information:HypertextElement</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ist Element eines Hypertext-Dokumentes" xml:lang="de">
+               <div class="property-object">ist Element eines Hypertext-Dokumentes
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is element of hypertext document" xml:lang="en"></span><div class="property-object">is element of hypertext document
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextDocument" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextDocument">electronic-information:HypertextDocument</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#isPartOf" title="Browse http://e-editiones.ch/ontology/concept#isPartOf">concept:isPartOf</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isOnWebpage" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#isOnWebpage" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#isOnWebpage" title="Browse http://e-editiones.ch/ontology/electronic-information#isOnWebpage">electronic-information:isOnWebpage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a hypertext document to the webpage it is on." xml:lang="en">
+               <div class="property-object">Relating a hypertext document to the webpage it is on.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#HypertextDocument" title="Browse http://e-editiones.ch/ontology/electronic-information#HypertextDocument">electronic-information:HypertextDocument</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="is hypertext document on webpage" xml:lang="en">
+               <div class="property-object">is hypertext document on webpage
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Hypertext-Dokument auf Webseite" xml:lang="de"></span><div class="property-object">ist Hypertext-Dokument auf Webseite
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Webpage" title="Browse http://e-editiones.ch/ontology/electronic-information#Webpage">electronic-information:Webpage</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#isOnCarrier" title="Browse http://e-editiones.ch/ontology/information-carrier#isOnCarrier">information-carrier:isOnCarrier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isWebpageOfSite" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#isWebpageOfSite" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#isWebpageOfSite" title="Browse http://e-editiones.ch/ontology/electronic-information#isWebpageOfSite">electronic-information:isWebpageOfSite</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a page to its website." xml:lang="en">
+               <div class="property-object">Relating a page to its website.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Webpage" title="Browse http://e-editiones.ch/ontology/electronic-information#Webpage">electronic-information:Webpage</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="is page of website" xml:lang="en">
+               <div class="property-object">is page of website
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Seite einer Website" xml:lang="de"></span><div class="property-object">ist Seite einer Website
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#WebSite" title="Browse http://e-editiones.ch/ontology/electronic-information#WebSite">electronic-information:WebSite</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#isPartOf" title="Browse http://e-editiones.ch/ontology/physical-entity#isPartOf">physical-entity:isPartOf</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="webpageHasNameLiteral" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#webpageHasNameLiteral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#webpageHasNameLiteral" title="Browse http://e-editiones.ch/ontology/electronic-information#webpageHasNameLiteral">electronic-information:webpageHasNameLiteral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a webpage to its name literal." xml:lang="en">
+               <div class="property-object">Relating a webpage to its name literal.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Webpage" title="Browse http://e-editiones.ch/ontology/electronic-information#Webpage">electronic-information:Webpage</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="webpage has name literal" xml:lang="en">
+               <div class="property-object">webpage has name literal
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Webseite hat Namenliteral" xml:lang="de"></span><div class="property-object">Webseite hat Namenliteral
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Literal" title="Browse http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/text#hasNameLiteral" title="Browse http://e-editiones.ch/ontology/text#hasNameLiteral">text:hasNameLiteral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="webpageHasURL" class="description">
+      <table about="http://e-editiones.ch/ontology/electronic-information#webpageHasURL" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#webpageHasURL" title="Browse http://e-editiones.ch/ontology/electronic-information#webpageHasURL">electronic-information:webpageHasURL</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a webpage to its URL." xml:lang="en">
+               <div class="property-object">Relating a webpage to its URL.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#Webpage" title="Browse http://e-editiones.ch/ontology/electronic-information#Webpage">electronic-information:Webpage</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/electronic-information#" title="Browse http://e-editiones.ch/ontology/electronic-information#">electronic-information:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="webpage has URL" xml:lang="en">
+               <div class="property-object">webpage has URL
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Webseite hat URL" xml:lang="de"></span><div class="property-object">Webseite hat URL
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#anyURI" title="Browse http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a href="/ontology/electronic-information.ttl" download="">Turtle</a> | 
+  <a href="/ontology/electronic-information.rdf" download="">RDF/XML</a> |
+  <a href="/ontology/electronic-information.nt" download="">N-Triples</a> |
+  <a href="/ontology/electronic-information.jsonld" download="">JSON-LD</a> |
+  <a href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/electronic-information.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:nie-ine@unibas.ch">nie-ine@unibas.ch</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          <a href="https://www.nie-ine.ch/">© 2020&nbsp;NIE-INE</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

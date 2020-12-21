@@ -136,7 +136,7 @@ To add a new ontology to the website, the following steps are necessary:
 1. Add front-matter meta data to the newly created markdown file (title, description, file). E.g.:
    ```
    ---
-   title: Petrus Lombardus Sentences
+   title: Petrus Lombard' Sentences
    description: An ontology for the Digital Repertory of Commentaries on Peter Lombard’s Sentences
    file: drcs
    ---

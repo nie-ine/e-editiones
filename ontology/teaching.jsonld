@@ -1,5 +1,189 @@
 [
   {
+    "@id": "http://e-editiones.ch/ontology/teaching#lectureBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a lecture to a person having the lecturer role."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/teaching#Lecture"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/teaching#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Vorlesung von"
+      },
+      {
+        "@language": "en",
+        "@value": "lecture by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub57bL93C13"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/teaching#teachingBy"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub57bL93C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub57bL93C44"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub57bL93C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/teaching#Lecturer"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/teaching#PedagogicExpression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text expression for teaching purposes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/teaching#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "espressione testuale pedagogico"
+      },
+      {
+        "@language": "de",
+        "@value": "pädagogische Textexpression"
+      },
+      {
+        "@language": "en",
+        "@value": "pedagogic text expression"
+      },
+      {
+        "@language": "fr",
+        "@value": "expression textuelle pédagogique"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/teaching#Teacher",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person who teaches."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/teaching#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Lehrperson"
+      },
+      {
+        "@language": "en",
+        "@value": "teacher"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/teaching#Manual",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Manual for teaching purposes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/teaching#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "manuale di testo"
+      },
+      {
+        "@language": "en",
+        "@value": "teaching manual"
+      },
+      {
+        "@language": "fr",
+        "@value": "manuel scolaire"
+      },
+      {
+        "@language": "de",
+        "@value": "Lehrbuch"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/teaching#PedagogicExpression"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Manual"
+      }
+    ]
+  },
+  {
     "@id": "http://e-editiones.ch/ontology/teaching#Lecture",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
@@ -28,46 +212,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/teaching#Teaching"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/teaching#PedagogicExpression",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text expression for teaching purposes."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/teaching#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "pedagogische Textexpression"
-      },
-      {
-        "@language": "en",
-        "@value": "pedagogic text expression"
-      },
-      {
-        "@language": "it",
-        "@value": "espressione testuale pedagogico"
-      },
-      {
-        "@language": "fr",
-        "@value": "expression textuelle pédagogique"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
       }
     ]
   },
@@ -104,7 +248,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub55bL88C13"
+        "@id": "_:ub57bL84C13"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -114,18 +258,18 @@
     ]
   },
   {
-    "@id": "_:ub55bL88C13",
+    "@id": "_:ub57bL84C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/human#Person"
+        "@id": "_:ub57bL84C44"
       },
       {
-        "@id": "_:ub55bL88C44"
+        "@id": "http://e-editiones.ch/ontology/human#Person"
       }
     ]
   },
   {
-    "@id": "_:ub55bL88C44",
+    "@id": "_:ub57bL84C44",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -137,150 +281,6 @@
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
         "@id": "http://e-editiones.ch/ontology/teaching#Teacher"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/teaching#Manual",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Manual for teaching purposes."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/teaching#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "manuale di testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "manuel scolaire"
-      },
-      {
-        "@language": "en",
-        "@value": "teaching manual"
-      },
-      {
-        "@language": "de",
-        "@value": "Lehrbuch"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/teaching#PedagogicExpression"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Manual"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/teaching#lectureBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a lecture to a person having the lecturer role."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/teaching#Lecture"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/teaching#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Vorlesung von"
-      },
-      {
-        "@language": "en",
-        "@value": "lecture by"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub55bL98C13"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/teaching#teachingBy"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub55bL98C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub55bL98C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub55bL98C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/teaching#Lecturer"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/teaching#Teacher",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person who teaches."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/teaching#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "LehrerIn"
-      },
-      {
-        "@language": "en",
-        "@value": "teacher"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
       }
     ]
   },
@@ -302,12 +302,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "lecturer"
+        "@language": "de",
+        "@value": "Dozent"
       },
       {
-        "@language": "de",
-        "@value": "VorleserIn"
+        "@language": "en",
+        "@value": "lecturer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -352,6 +352,12 @@
     "@id": "http://e-editiones.ch/ontology/teaching",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland"
+      }
     ],
     "http://purl.org/dc/terms/creator": [
       {

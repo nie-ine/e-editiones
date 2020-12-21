@@ -61,7 +61,7 @@ User-defined restrictions can be checked upon, e.g. a cardinality restriction fo
 		owl:maxCardinality "1"^^xs:nonNegativeInteger].
 ```
 
-A reasoning example on cardinality is given in the repository, using 2 external ontologies and an RDF data set on images of the [Knora server application](https://www.knora.org/), developed by the [DHLab (DHL)](https://dhlab.philhist.unibas.ch/en/home/) at the University of Basel and the [Data and Service Center for humanities (DaSCH)](https://dasch.swiss/).
+A reasoning example on cardinality is given in the repository, using 2 external ontologies and an RDF data set on images of the [Knora server application](https://www.knora.org/), developed by the [DHLab (DHL)](https://dhlab.philhist.unibas.ch/en/home/) at the University of Basel and the [Data and Service Center for the humanities (DaSCH)](https://dasch.swiss/).
 
 ### Temporal reasoning:
 This type of reasoning is crucial for formal data to be reusable and interchangeable, because its first step is a unification of time expressions in different calendars and/or with different accuracy.  
