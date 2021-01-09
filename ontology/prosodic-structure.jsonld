@@ -1,13 +1,13 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#RhymingVerse",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#NonRhymingRhythmicProse",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Verse with a rhyme."
+        "@value": "Rhythmic prose without a rhyme."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -17,40 +17,135 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "gereimter Vers"
-      },
-      {
-        "@language": "fr",
-        "@value": "verset de rimes"
-      },
-      {
         "@language": "it",
-        "@value": "versetto in rima"
+        "@value": "prosa ritmica non in rima"
       },
       {
         "@language": "en",
-        "@value": "rhyming verse"
+        "@value": "non-rhyming rhythmic prose"
+      },
+      {
+        "@language": "fr",
+        "@value": "prose rythmée sans rime"
+      },
+      {
+        "@language": "de",
+        "@value": "nichtgereimte rhythmische Prosa"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Rhyme"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isVerseOfHalfStrophe",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a verse to a half-strophe it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è un versetto di mezza-strofa"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un verset de demi-strophe"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Vers einer Halbstrophe"
+      },
+      {
+        "@language": "en",
+        "@value": "is verse of half-strophe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSectionOrdinalNumber",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Identifier of a verse section."
+        "@value": "Ordinal number of a verse section."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "numero ordinale della sezione del versetto"
+      },
+      {
+        "@language": "fr",
+        "@value": "nombre ordinal de section de verset"
+      },
+      {
+        "@language": "en",
+        "@value": "verse section ordinal number"
+      },
+      {
+        "@language": "de",
+        "@value": "Versabschnittordinalzahl"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasOrdinalNumeral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a verse section to its ordinal numeral."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSection"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -61,24 +156,41 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Versabschnittidentifikator"
+        "@value": "Versabschnitt hat Ordinalnumeral"
       },
       {
         "@language": "fr",
-        "@value": "identifiant de section de verset"
+        "@value": "section de verset a un numéral ordinal"
       },
       {
         "@language": "it",
-        "@value": "identificatore della sezione del versetto"
+        "@value": "sezione del versetto ha un numerale ordinale"
       },
       {
         "@language": "en",
-        "@value": "verse section identifier"
+        "@value": "verse section has ordinal numeral"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasOrdinalNumber"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
+          }
+        ]
       }
     ]
   },
@@ -100,20 +212,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "verse identifier"
-      },
-      {
-        "@language": "de",
-        "@value": "Versidentifikator"
+        "@language": "fr",
+        "@value": "identifiant de verset"
       },
       {
         "@language": "it",
         "@value": "identificatore del versetto"
       },
       {
-        "@language": "fr",
-        "@value": "identifiant de verset"
+        "@language": "de",
+        "@value": "Versidentifikator"
+      },
+      {
+        "@language": "en",
+        "@value": "verse identifier"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -123,64 +235,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isStropheOfPoem",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseHasIdentifier",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a strophe to a poem it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Strophe eines Gedichtes"
-      },
-      {
-        "@language": "fr",
-        "@value": "est une strophe d'un poème"
-      },
-      {
-        "@language": "it",
-        "@value": "è una strofa di una poesia"
-      },
-      {
-        "@language": "en",
-        "@value": "is strophe of poem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/literature#VersePoem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isVerseOfStrophe",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a verse to a strophe it is part of."
+        "@value": "Relating a verse to its identifier."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -195,30 +257,76 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "is verse of strophe"
-      },
-      {
-        "@language": "it",
-        "@value": "è un versetto di strofa"
-      },
-      {
         "@language": "de",
-        "@value": "ist Vers einer Strophe"
+        "@value": "Vers hat Identifikator"
       },
       {
         "@language": "fr",
-        "@value": "est un verset de strophe"
+        "@value": "verset a identifiant"
+      },
+      {
+        "@language": "en",
+        "@value": "verse has identifier"
+      },
+      {
+        "@language": "it",
+        "@value": "versetto ha identificatore"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+        "@id": "http://e-editiones.ch/ontology/text-structure#hasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Group of verses."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "strophe"
+      },
+      {
+        "@language": "it",
+        "@value": "strofa"
+      },
+      {
+        "@language": "de",
+        "@value": "Strophe"
+      },
+      {
+        "@language": "en",
+        "@value": "strophe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The lyriks of a song can be structured as a poem with strophes."
       }
     ]
   },
@@ -249,12 +357,12 @@
         "@value": "Versabschnitt hat Identifikator"
       },
       {
-        "@language": "fr",
-        "@value": "section de verset a un identifiant"
-      },
-      {
         "@language": "en",
         "@value": "verse section has identifier"
+      },
+      {
+        "@language": "fr",
+        "@value": "section de verset a un identifiant"
       },
       {
         "@language": "it",
@@ -269,263 +377,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://e-editiones.ch/ontology/text-structure#hasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseOrdinalNumber",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Ordinal number of a verse."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Versordinalzahl"
-      },
-      {
-        "@language": "en",
-        "@value": "verse ordinal number"
-      },
-      {
-        "@language": "it",
-        "@value": "numero ordinale del versetto"
-      },
-      {
-        "@language": "fr",
-        "@value": "nombre ordinal de verset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfPoem",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a verse section to a poem it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSection"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "è una sezione in versi di una poesia"
-      },
-      {
-        "@language": "en",
-        "@value": "is verse section of poem"
-      },
-      {
-        "@language": "fr",
-        "@value": "est une section de verset d'un poème"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Versabschnitt eines Gedichtes"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/literature#VersePoem"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasOrdinalNumeral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a verse section to its ordinal numeral."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSection"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "section de verset a un numéral ordinal"
-      },
-      {
-        "@language": "en",
-        "@value": "verse section has ordinal numeral"
-      },
-      {
-        "@language": "it",
-        "@value": "sezione del versetto ha un numerale ordinale"
-      },
-      {
-        "@language": "de",
-        "@value": "Versabschnitt hat Ordinalnumeral"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasOrdinalNumber"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Half a strophe."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "mezza-strofa"
-      },
-      {
-        "@language": "fr",
-        "@value": "demi-strophe"
-      },
-      {
-        "@language": "en",
-        "@value": "half-strophe"
-      },
-      {
-        "@language": "de",
-        "@value": "Halbstrophe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumeral",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a strophe to its ordinal numeral."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "strofa ha un numerale ordinale"
-      },
-      {
-        "@language": "de",
-        "@value": "Strophe hat Ordinalnumeral"
-      },
-      {
-        "@language": "en",
-        "@value": "strophe has ordinal numeral"
-      },
-      {
-        "@language": "fr",
-        "@value": "strophe a un numéral ordinal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumber"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
-          }
-        ]
       }
     ]
   },
@@ -552,8 +403,8 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "è parola di versetto"
+        "@language": "de",
+        "@value": "ist Wort eines Verses"
       },
       {
         "@language": "en",
@@ -564,8 +415,8 @@
         "@value": "est un mot de verset"
       },
       {
-        "@language": "de",
-        "@value": "ist Wort eines Verses"
+        "@language": "it",
+        "@value": "è parola di versetto"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -580,69 +431,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isHalfOfStrophe",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a half-strophe to its strophe."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Hälfte einer Strophe"
-      },
-      {
-        "@language": "fr",
-        "@value": "est la moitié d'une strophe"
-      },
-      {
-        "@language": "en",
-        "@value": "is half of strophe"
-      },
-      {
-        "@language": "it",
-        "@value": "è la metà di una strofa"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasTitleLiteral",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumeral",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a verse section to its title literal."
+        "@value": "Relating a strophe to its ordinal numeral."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSection"
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -652,113 +453,42 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "sezione del versetto ha letterale del titolo"
+        "@language": "fr",
+        "@value": "strophe a un numéral ordinal"
       },
       {
-        "@language": "fr",
-        "@value": "section de verset a littéral du titre"
+        "@language": "it",
+        "@value": "strofa ha un numerale ordinale"
       },
       {
         "@language": "de",
-        "@value": "Versabschnitt hat Titelliteral"
+        "@value": "Strophe hat Ordinalnumeral"
       },
       {
         "@language": "en",
-        "@value": "verse section has title literal"
+        "@value": "strophe has ordinal numeral"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#FreeVerse",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Verse without a recurring metrical entity."
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2002/07/owl#propertyChainAxiom": [
       {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "free verse"
-      },
-      {
-        "@language": "fr",
-        "@value": "verset libre"
-      },
-      {
-        "@language": "it",
-        "@value": "versetto libero"
-      },
-      {
-        "@language": "de",
-        "@value": "freier Vers"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Prose structure with a meter."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "prose rythmée"
-      },
-      {
-        "@language": "de",
-        "@value": "rhythmische Prosa"
-      },
-      {
-        "@language": "it",
-        "@value": "prosa ritmica"
-      },
-      {
-        "@language": "en",
-        "@value": "rhythmic prose"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Prose"
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumber"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/mathematics#numberHasNumeral"
+          }
+        ]
       }
     ]
   },
@@ -780,20 +510,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "fr",
-        "@value": "prose rythmée rimante"
-      },
-      {
         "@language": "it",
         "@value": "prosa ritmica in rima"
       },
       {
-        "@language": "en",
-        "@value": "rhyming rhythmic prose"
+        "@language": "fr",
+        "@value": "prose rythmée rimante"
       },
       {
         "@language": "de",
         "@value": "gereimte rhythmische Prosa"
+      },
+      {
+        "@language": "en",
+        "@value": "rhyming rhythmic prose"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -806,114 +536,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isStropheOfNovel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a strophe to a verse novel it is part of."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "ist Strophe eines Versromans"
-      },
-      {
-        "@language": "it",
-        "@value": "è la strofa di un romanzo in versi"
-      },
-      {
-        "@language": "fr",
-        "@value": "est une strophe d'un roman en vers"
-      },
-      {
-        "@language": "en",
-        "@value": "is strophe of verse novel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/literature#VerseNovel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseHasIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a verse to its identifier."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "verse has identifier"
-      },
-      {
-        "@language": "fr",
-        "@value": "verset a identifiant"
-      },
-      {
-        "@language": "de",
-        "@value": "Vers hat Identifikator"
-      },
-      {
-        "@language": "it",
-        "@value": "versetto ha identificatore"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-structure#hasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSectionOrdinalNumber",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfVerse",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Ordinal number of a verse section."
+        "@value": "Half a verse."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -923,74 +553,25 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "verse section ordinal number"
-      },
-      {
-        "@language": "fr",
-        "@value": "nombre ordinal de section de verset"
+        "@language": "de",
+        "@value": "Halbvers"
       },
       {
         "@language": "it",
-        "@value": "numero ordinale della sezione del versetto"
-      },
-      {
-        "@language": "de",
-        "@value": "Versabschnittordinalzahl"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Group of verses."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "strophe"
-      },
-      {
-        "@language": "it",
-        "@value": "strofa"
+        "@value": "mezzo-versetto"
       },
       {
         "@language": "fr",
-        "@value": "strophe"
+        "@value": "demi-verset"
       },
       {
-        "@language": "de",
-        "@value": "Strophe"
+        "@language": "en",
+        "@value": "half-verse"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The lyriks of a song can be structured as a poem with strophes."
       }
     ]
   },
@@ -1052,6 +633,89 @@
     ]
   },
   {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#StrictVerse",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Verse with a recurring metrical entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "versetto rigoroso"
+      },
+      {
+        "@language": "de",
+        "@value": "strikter Vers"
+      },
+      {
+        "@language": "en",
+        "@value": "strict verse"
+      },
+      {
+        "@language": "fr",
+        "@value": "verset strict"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Prose structure with a meter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "rhythmische Prosa"
+      },
+      {
+        "@language": "fr",
+        "@value": "prose rythmée"
+      },
+      {
+        "@language": "it",
+        "@value": "prosa ritmica"
+      },
+      {
+        "@language": "en",
+        "@value": "rhythmic prose"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Prose"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
+      }
+    ]
+  },
+  {
     "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasOrdinalNumber",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -1074,20 +738,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "fr",
-        "@value": "section de verset a un nombre ordinal"
+        "@language": "en",
+        "@value": "verse section has ordinal number"
       },
       {
         "@language": "it",
         "@value": "sezione del versetto ha un numero ordinale"
       },
       {
-        "@language": "de",
-        "@value": "Versabschnitt hat Ordinalzahl"
+        "@language": "fr",
+        "@value": "section de verset a un nombre ordinal"
       },
       {
-        "@language": "en",
-        "@value": "verse section has ordinal number"
+        "@language": "de",
+        "@value": "Versabschnitt hat Ordinalzahl"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1097,22 +761,27 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasIdentifier"
+        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber"
       },
       {
-        "@id": "http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber"
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasIdentifier"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSection",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isStropheOfNovel",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Group of strophes."
+        "@value": "Relating a strophe to a verse novel it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1123,24 +792,369 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "section de verset"
-      },
-      {
-        "@language": "it",
-        "@value": "sezione del versetto"
-      },
-      {
-        "@language": "en",
-        "@value": "verse section"
+        "@value": "est une strophe d'un roman en vers"
       },
       {
         "@language": "de",
-        "@value": "Versabschnitt"
+        "@value": "ist Strophe eines Versromans"
+      },
+      {
+        "@language": "en",
+        "@value": "is strophe of verse novel"
+      },
+      {
+        "@language": "it",
+        "@value": "è la strofa di un romanzo in versi"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/literature#VerseNovel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseSectionHasTitleLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a verse section to its title literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSection"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Versabschnitt hat Titelliteral"
+      },
+      {
+        "@language": "en",
+        "@value": "verse section has title literal"
+      },
+      {
+        "@language": "it",
+        "@value": "sezione del versetto ha letterale del titolo"
+      },
+      {
+        "@language": "fr",
+        "@value": "section de verset a littéral du titre"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#hasTitleLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isHalfOfVerse",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a half-verse to its verse."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfVerse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is half of verse"
+      },
+      {
+        "@language": "fr",
+        "@value": "est la moitié d'un verst"
+      },
+      {
+        "@language": "it",
+        "@value": "è la metà di un versetto"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Hälfte eines Verses"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isVerseOfStrophe",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a verse to a strophe it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is verse of strophe"
+      },
+      {
+        "@language": "it",
+        "@value": "è un versetto di strofa"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Vers einer Strophe"
+      },
+      {
+        "@language": "fr",
+        "@value": "est un verset de strophe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Half a strophe."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "half-strophe"
+      },
+      {
+        "@language": "it",
+        "@value": "mezza-strofa"
+      },
+      {
+        "@language": "de",
+        "@value": "Halbstrophe"
+      },
+      {
+        "@language": "fr",
+        "@value": "demi-strophe"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isHalfOfStrophe",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a half-strophe to its strophe."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "ist Hälfte einer Strophe"
+      },
+      {
+        "@language": "en",
+        "@value": "is half of strophe"
+      },
+      {
+        "@language": "fr",
+        "@value": "est la moitié d'une strophe"
+      },
+      {
+        "@language": "it",
+        "@value": "è la metà di una strofa"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseHasOrdinalNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a verse to its ordinal number."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Vers hat Ordinalzahl"
+      },
+      {
+        "@language": "fr",
+        "@value": "verset a un nombre ordinal"
+      },
+      {
+        "@language": "it",
+        "@value": "versetto ha un numero ordinale"
+      },
+      {
+        "@language": "en",
+        "@value": "verse has ordinal number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseOrdinalNumber"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseHasIdentifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfPoem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a verse section to a poem it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSection"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "è una sezione in versi di una poesia"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Versabschnitt eines Gedichtes"
+      },
+      {
+        "@language": "en",
+        "@value": "is verse section of poem"
+      },
+      {
+        "@language": "fr",
+        "@value": "est une section de verset d'un poème"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/literature#VersePoem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression"
       }
     ]
   },
@@ -1171,16 +1185,16 @@
         "@value": "ist Versabschnitt eines Versromans"
       },
       {
-        "@language": "en",
-        "@value": "is verse section of verse novel"
-      },
-      {
         "@language": "fr",
         "@value": "est une section de verset d'un roman en vers"
       },
       {
         "@language": "it",
         "@value": "è una sezione in versi di un romanzo in versi"
+      },
+      {
+        "@language": "en",
+        "@value": "is verse section of verse novel"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1195,14 +1209,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#NonRhymingRhythmicProse",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumber",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Rhythmic prose without a rhyme."
+        "@value": "Relating a strophe to its ordinal number."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1212,65 +1231,30 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "prosa ritmica non in rima"
+        "@language": "fr",
+        "@value": "strophe a un nombre ordinal"
       },
       {
         "@language": "de",
-        "@value": "nichtgereimte rhythmische Prosa"
+        "@value": "Strophe hat Ordinalzahl"
       },
       {
         "@language": "en",
-        "@value": "non-rhyming rhythmic prose"
-      },
-      {
-        "@language": "fr",
-        "@value": "prose rythmée sans rime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#RhythmicProse"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Identifier of a strophe."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Stropheidentifikator"
-      },
-      {
-        "@language": "fr",
-        "@value": "identifiant de strophe"
+        "@value": "strophe has ordinal number"
       },
       {
         "@language": "it",
-        "@value": "identificatore di strofa"
-      },
-      {
-        "@language": "en",
-        "@value": "strophe identifier"
+        "@value": "strofa ha un numero ordinale"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#StropheOrdinalNumber"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#stropheHasIdentifier"
       }
     ]
   },
@@ -1292,12 +1276,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "verse"
-      },
-      {
         "@language": "de",
         "@value": "Vers"
+      },
+      {
+        "@language": "en",
+        "@value": "verse"
       },
       {
         "@language": "it",
@@ -1306,86 +1290,6 @@
       {
         "@language": "fr",
         "@value": "verset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfVerse",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Half a verse."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Halbvers"
-      },
-      {
-        "@language": "it",
-        "@value": "mezzo-versetto"
-      },
-      {
-        "@language": "fr",
-        "@value": "demi-verset"
-      },
-      {
-        "@language": "en",
-        "@value": "half-verse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#Meter",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Rhythmic structure of a verse, based on patterns of particular syllables, and often alternating in a particular order"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Metrik"
-      },
-      {
-        "@language": "fr",
-        "@value": "mètre"
-      },
-      {
-        "@language": "it",
-        "@value": "metro"
-      },
-      {
-        "@language": "en",
-        "@value": "meter"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -1417,20 +1321,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "strofa ha un identificatore"
-      },
-      {
         "@language": "fr",
         "@value": "strophe a un identifiant"
+      },
+      {
+        "@language": "en",
+        "@value": "strophe has identifier"
       },
       {
         "@language": "de",
         "@value": "Strophe hat Identifikator"
       },
       {
-        "@language": "en",
-        "@value": "strophe has identifier"
+        "@language": "it",
+        "@value": "strofa ha un identificatore"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1445,14 +1349,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#NonRhymingVerse",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#StropheOrdinalNumber",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Verse without a rhyme."
+        "@value": "Ordinal number of a strophe."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1462,92 +1366,40 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "en",
+        "@value": "strophe ordinal number"
+      },
+      {
         "@language": "fr",
-        "@value": "verset sans rime"
+        "@value": "nombre ordinal de strophe"
       },
       {
         "@language": "de",
-        "@value": "nichtgereimter Vers"
+        "@value": "Stropheordinalzahl"
       },
       {
         "@language": "it",
-        "@value": "versetto non in rima"
-      },
-      {
-        "@language": "en",
-        "@value": "non-rhyming verse"
+        "@value": "numero ordinale di strofa"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseHasOrdinalNumber",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#Meter",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a verse to its ordinal number."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "verset a un nombre ordinal"
-      },
-      {
-        "@language": "it",
-        "@value": "versetto ha un numero ordinale"
-      },
-      {
-        "@language": "de",
-        "@value": "Vers hat Ordinalzahl"
-      },
-      {
-        "@language": "en",
-        "@value": "verse has ordinal number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseOrdinalNumber"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#verseHasIdentifier"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isHalfOfVerse",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a half-verse to its verse."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfVerse"
+        "@value": "Rhythmic structure of a verse, based on patterns of particular syllables, and often alternating in a particular order"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1558,29 +1410,24 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "it",
-        "@value": "è la metà di un versetto"
-      },
-      {
-        "@language": "de",
-        "@value": "ist Hälfte eines Verses"
-      },
-      {
-        "@language": "en",
-        "@value": "is half of verse"
+        "@value": "metro"
       },
       {
         "@language": "fr",
-        "@value": "est la moitié d'un verst"
+        "@value": "mètre"
+      },
+      {
+        "@language": "en",
+        "@value": "meter"
+      },
+      {
+        "@language": "de",
+        "@value": "Metrik"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
       }
     ]
   },
@@ -1610,12 +1457,12 @@
         "@value": "struttura del testo prosodica"
       },
       {
-        "@language": "en",
-        "@value": "prosodic text structure"
-      },
-      {
         "@language": "de",
         "@value": "prosodische Textstruktur"
+      },
+      {
+        "@language": "en",
+        "@value": "prosodic text structure"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -1625,19 +1472,54 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isVerseOfHalfStrophe",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#NonRhymingVerse",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a verse to a half-strophe it is part of."
+        "@value": "Verse without a rhyme."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "non-rhyming verse"
+      },
+      {
+        "@language": "fr",
+        "@value": "verset sans rime"
+      },
+      {
+        "@language": "it",
+        "@value": "versetto non in rima"
+      },
+      {
+        "@language": "de",
+        "@value": "nichtgereimter Vers"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSection",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Group of strophes."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1648,29 +1530,114 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "ist Vers einer Halbstrophe"
+        "@value": "Versabschnitt"
       },
       {
         "@language": "it",
-        "@value": "è un versetto di mezza-strofa"
-      },
-      {
-        "@language": "fr",
-        "@value": "est un verset de demi-strophe"
+        "@value": "sezione del versetto"
       },
       {
         "@language": "en",
-        "@value": "is verse of half-strophe"
+        "@value": "verse section"
+      },
+      {
+        "@language": "fr",
+        "@value": "section de verset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#isStropheOfPoem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a strophe to a poem it is part of."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "est une strophe d'un poème"
+      },
+      {
+        "@language": "de",
+        "@value": "ist Strophe eines Gedichtes"
+      },
+      {
+        "@language": "it",
+        "@value": "è una strofa di una poesia"
+      },
+      {
+        "@language": "en",
+        "@value": "is strophe of poem"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#HalfStrophe"
+        "@id": "http://e-editiones.ch/ontology/literature#VersePoem"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#FreeVerse",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Verse without a recurring metrical entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "free verse"
+      },
+      {
+        "@language": "fr",
+        "@value": "verset libre"
+      },
+      {
+        "@language": "it",
+        "@value": "versetto libero"
+      },
+      {
+        "@language": "de",
+        "@value": "freier Vers"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Structure"
       }
     ]
   },
@@ -1697,12 +1664,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "versetto ha un numerale ordinale"
-      },
-      {
         "@language": "en",
         "@value": "verse has ordinal numeral"
+      },
+      {
+        "@language": "it",
+        "@value": "versetto ha un numerale ordinale"
       },
       {
         "@language": "de",
@@ -1737,14 +1704,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#StropheOrdinalNumber",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseSectionIdentifier",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Ordinal number of a strophe."
+        "@value": "Identifier of a verse section."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1755,39 +1722,36 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "nombre ordinal de strophe"
-      },
-      {
-        "@language": "it",
-        "@value": "numero ordinale di strofa"
-      },
-      {
-        "@language": "de",
-        "@value": "Stropheordinalzahl"
+        "@value": "identifiant de section de verset"
       },
       {
         "@language": "en",
-        "@value": "strophe ordinal number"
+        "@value": "verse section identifier"
+      },
+      {
+        "@language": "de",
+        "@value": "Versabschnittidentifikator"
+      },
+      {
+        "@language": "it",
+        "@value": "identificatore della sezione del versetto"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier"
+        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#StrictVerse",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#RhymingVerse",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Verse with a recurring metrical entity."
+        "@value": "Verse with a rhyme."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1797,42 +1761,40 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "strikter Vers"
+        "@language": "en",
+        "@value": "rhyming verse"
       },
       {
         "@language": "fr",
-        "@value": "verset strict"
+        "@value": "verset de rimes"
       },
       {
-        "@language": "en",
-        "@value": "strict verse"
+        "@language": "de",
+        "@value": "gereimter Vers"
       },
       {
         "@language": "it",
-        "@value": "versetto rigoroso"
+        "@value": "versetto in rima"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-structure#Rhyme"
+      },
       {
         "@id": "http://e-editiones.ch/ontology/prosodic-structure#Verse"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/prosodic-structure#stropheHasOrdinalNumber",
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#StropheIdentifier",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a strophe to its ordinal number."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#Strophe"
+        "@value": "Identifier of a strophe."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1842,30 +1804,25 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "Strophe hat Ordinalzahl"
+        "@language": "fr",
+        "@value": "identifiant de strophe"
       },
       {
         "@language": "en",
-        "@value": "strophe has ordinal number"
+        "@value": "strophe identifier"
       },
       {
         "@language": "it",
-        "@value": "strofa ha un numero ordinale"
+        "@value": "identificatore di strofa"
       },
       {
-        "@language": "fr",
-        "@value": "strophe a un nombre ordinal"
+        "@language": "de",
+        "@value": "Stropheidentifikator"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#StropheOrdinalNumber"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/prosodic-structure#stropheHasIdentifier"
+        "@id": "http://e-editiones.ch/ontology/text-structure#Identifier"
       }
     ]
   },
@@ -1892,20 +1849,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "ist Strophe eines Versabschnittes"
+        "@language": "it",
+        "@value": "è la strofa di una sezione"
       },
       {
-        "@language": "fr",
-        "@value": "est une strophe d'une section"
+        "@language": "de",
+        "@value": "ist Strophe eines Versabschnittes"
       },
       {
         "@language": "en",
         "@value": "is strophe of section"
       },
       {
-        "@language": "it",
-        "@value": "è la strofa di una sezione"
+        "@language": "fr",
+        "@value": "est une strophe d'une section"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1916,6 +1873,49 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://e-editiones.ch/ontology/concept#isPartOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseOrdinalNumber",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Ordinal number of a verse."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "numero ordinale del versetto"
+      },
+      {
+        "@language": "fr",
+        "@value": "nombre ordinal de verset"
+      },
+      {
+        "@language": "de",
+        "@value": "Versordinalzahl"
+      },
+      {
+        "@language": "en",
+        "@value": "verse ordinal number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/mathematics#OrdinalNumber"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/prosodic-structure#VerseIdentifier"
       }
     ]
   }

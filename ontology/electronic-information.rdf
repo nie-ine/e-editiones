@@ -1,215 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:dct="http://purl.org/dc/terms/"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#isOnWebpage">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:label xml:lang="en">is hypertext document on webpage</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#Webpage"/>
-    <rdfs:comment xml:lang="en">Relating a hypertext document to the webpage it is on.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextDocument"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
-    <rdfs:label xml:lang="de">ist Hypertext-Dokument auf Webseite</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#webpageHasURL">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#Webpage"/>
-    <rdfs:comment xml:lang="en">Relating a webpage to its URL.</rdfs:comment>
-    <rdfs:label xml:lang="en">webpage has URL</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:label xml:lang="de">Webseite hat URL</rdfs:label>
-  </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#ElectronicBook">
-    <rdfs:comment xml:lang="en">Electronic information carrier with a text structure as in a book.</rdfs:comment>
-    <rdfs:label xml:lang="de">elektronisches Buch</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Carrier"/>
-    <rdfs:label xml:lang="en">electronic book</rdfs:label>
-  </rdfs:Class>
-  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/electronic-information">
-    <dct:description xml:lang="en">Formal description of electronic information, general subclasses, related classes and properties.</dct:description>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-19</owl:versionInfo>
-    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
-    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
-    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland</dct:creator>
-    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
-    <dct:title xml:lang="en">An ontology about electronic information</dct:title>
-  </owl:Ontology>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#webpageHasNameLiteral">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
     <rdfs:label xml:lang="en">webpage has name literal</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a webpage to its name literal.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#Webpage"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="en">Relating a webpage to its name literal.</rdfs:comment>
     <rdfs:label xml:lang="de">Webseite hat Namenliteral</rdfs:label>
   </owl:DatatypeProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#DokuWikiPage">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#WikiPage"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:comment xml:lang="en">Wiki page of a DokuWiki.</rdfs:comment>
-    <rdfs:label xml:lang="en">DokuWiki page</rdfs:label>
-    <rdfs:label xml:lang="de">DokuWiki-Seite</rdfs:label>
-  </rdfs:Class>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#isElementOfHypertextDocument">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:label xml:lang="de">ist Element eines Hypertext-Dokumentes</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a hypertext document element to a hypertext document it is part of.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextElement"/>
-    <rdfs:label xml:lang="en">is element of hypertext document</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextDocument"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#hasCSSLiteral">
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#css"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:label xml:lang="en">has CSS literal</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
-    <rdfs:label xml:lang="de">hat CSS-Literal</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a resource to a literal expressed in the Cascading Style Sheets-language (CSS).</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#hyperlinkHasNameLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:label xml:lang="de">Hyperlink hat Namenliteral</rdfs:label>
-    <rdfs:label xml:lang="en">hyperlink has name literal</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating a hyperlink to a name literal it has.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#Hyperlink"/>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#hasHyperlink">
-    <rdfs:label xml:lang="de">hat Hyperlink</rdfs:label>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#Hyperlink"/>
-    <rdfs:comment xml:lang="en">Relating a hypertext document structure to a hyperlink it has on an electronic carrier.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:label xml:lang="en">has hyperlink</rdfs:label>
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextStructure"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#isWebpageOfSite">
-    <rdfs:label xml:lang="en">is page of website</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
-    <rdfs:label xml:lang="de">ist Seite einer Website</rdfs:label>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#webpageHasURL">
+    <rdfs:label xml:lang="en">webpage has URL</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:label xml:lang="de">Webseite hat URL</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a webpage to its URL.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#Webpage"/>
-    <rdfs:comment xml:lang="en">Relating a page to its website.</rdfs:comment>
-    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#WebSite"/>
-  </owl:ObjectProperty>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextStartPage">
-    <rdfs:label xml:lang="de">Hypertext-Dokumentstartseite</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextPage"/>
-    <rdfs:comment xml:lang="en">Start page of a hypertext document.</rdfs:comment>
-    <rdfs:label xml:lang="en">hypertext document start page</rdfs:label>
-  </rdfs:Class>
+  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#hyperlinkHasURL">
-    <rdfs:label xml:lang="en">hyperlink has URL</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:label xml:lang="de">Hyperlink hat URL</rdfs:label>
     <rdfs:comment xml:lang="en">Relating a hyperlink to a URL it has.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#Hyperlink"/>
+    <rdfs:label xml:lang="en">hyperlink has URL</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
   </owl:DatatypeProperty>
   <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#informationIsOnElectronicCarrier">
-    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
     <rdfs:label xml:lang="en">information is on electronic carrier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
     <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#Carrier"/>
     <rdfs:label xml:lang="de">Information ist auf elektronischem Träger</rdfs:label>
-    <rdfs:comment xml:lang="en">Relating information to an electronic carrier it is on.</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:comment xml:lang="en">Relating information to an electronic carrier it is on.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/concept#Information"/>
   </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#ElectronicBook">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Carrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:comment xml:lang="en">Electronic information carrier with a text structure as in a book.</rdfs:comment>
+    <rdfs:label xml:lang="en">electronic book</rdfs:label>
+    <rdfs:label xml:lang="de">elektronisches Buch</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextStartPage">
+    <rdfs:label xml:lang="de">Hypertext-Dokumentstartseite</rdfs:label>
+    <rdfs:comment xml:lang="en">Start page of a hypertext document.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextPage"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:label xml:lang="en">hypertext document start page</rdfs:label>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#hasCSSLiteral">
+    <rdfs:label xml:lang="en">has CSS literal</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#hasLiteral"/>
+    <rdfs:label xml:lang="de">hat CSS-Literal</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment xml:lang="en">Relating a resource to a literal expressed in the Cascading Style Sheets-language (CSS).</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#css"/>
+  </owl:DatatypeProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#DokuWikiPage">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:label xml:lang="de">DokuWiki-Seite</rdfs:label>
+    <rdfs:comment xml:lang="en">Wiki page of a DokuWiki.</rdfs:comment>
+    <rdfs:label xml:lang="en">DokuWiki page</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#WikiPage"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#isWebpageOfSite">
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#WebSite"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#Webpage"/>
+    <rdfs:label xml:lang="en">is page of website</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a page to its website.</rdfs:comment>
+    <rdfs:label xml:lang="de">ist Seite einer Website</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/physical-entity#isPartOf"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/electronic-information">
+    <dct:title xml:lang="en">An ontology about electronic information</dct:title>
+    <dct:description xml:lang="en">Formal description of electronic information, general subclasses, related classes and properties.</dct:description>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland</dct:creator>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-19</owl:versionInfo>
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland</dct:contributor>
+  </owl:Ontology>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#DokuWiki">
     <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/DokuWiki"/>
+    <rdfs:comment xml:lang="en">Wiki ran by DokuWiki software.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Wiki"/>
     <rdfs:label xml:lang="en">DokuWiki</rdfs:label>
-    <rdfs:comment xml:lang="en">Wiki ran by DokuWiki software.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
     <rdfs:label xml:lang="de">DokuWiki</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextStructure">
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#isElementOfHypertextDocument">
+    <rdfs:label xml:lang="de">ist Element eines Hypertext-Dokumentes</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a hypertext document element to a hypertext document it is part of.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextElement"/>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextElement"/>
-    <rdfs:comment xml:lang="en">Structural element of a hypertext document.</rdfs:comment>
-    <rdfs:label xml:lang="en">hypertext document structure</rdfs:label>
-    <rdfs:label xml:lang="de">Hypertext-Dokumentstruktur</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextDocument">
-    <rdfs:label xml:lang="en">hypertext document</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextDocument"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/concept#isPartOf"/>
+    <rdfs:label xml:lang="en">is element of hypertext document</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#hasHyperlink">
+    <rdfs:label xml:lang="en">has hyperlink</rdfs:label>
+    <rdfs:label xml:lang="de">hat Hyperlink</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#Hyperlink"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextStructure"/>
+    <rdfs:comment xml:lang="en">Relating a hypertext document structure to a hyperlink it has on an electronic carrier.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/document#Document"/>
-    <rdfs:comment xml:lang="en">Document written in the Hypertext Markup Language (HTML).</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
-    <rdfs:label xml:lang="de">Hypertext-Dokument</rdfs:label>
-  </rdfs:Class>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#hyperlinkHasNameLiteral">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:label xml:lang="de">Hyperlink hat Namenliteral</rdfs:label>
+    <rdfs:label xml:lang="en">hyperlink has name literal</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#Hyperlink"/>
+    <rdfs:comment xml:lang="en">Relating a hyperlink to a name literal it has.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/text#hasNameLiteral"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/electronic-information#isOnWebpage">
+    <rdfs:label xml:lang="de">ist Hypertext-Dokument auf Webseite</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a hypertext document to the webpage it is on.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextDocument"/>
+    <rdfs:subPropertyOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#isOnCarrier"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/electronic-information#Webpage"/>
+    <rdfs:label xml:lang="en">is hypertext document on webpage</rdfs:label>
+  </owl:ObjectProperty>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#Webpage">
     <rdfs:label xml:lang="en">webpage</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:comment xml:lang="en">Electronic carrier page on the World Wide Web.</rdfs:comment>
     <rdfs:label xml:lang="de">Webseite</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Carrier"/>
+    <rdfs:comment xml:lang="en">Electronic carrier page on the World Wide Web.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#WikiPage">
+    <rdfs:label xml:lang="en">Wiki page</rdfs:label>
+    <rdfs:comment xml:lang="en">Webpage of a Wiki.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:label xml:lang="de">Wiki-Seite</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Webpage"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#Carrier">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/device#ElectronicMachine"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:label xml:lang="en">electronic information carrier</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Carrier"/>
     <rdfs:comment xml:lang="en">Electronic machine carrying electronic information.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
     <rdfs:label xml:lang="de">elektronischer Informationsträger</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/device#ElectronicMachine"/>
-    <rdfs:label xml:lang="en">electronic information carrier</rdfs:label>
   </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextStructure">
+    <rdfs:label xml:lang="de">Hypertext-Dokumentstruktur</rdfs:label>
+    <rdfs:comment xml:lang="en">Structural element of a hypertext document.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:label xml:lang="en">hypertext document structure</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextElement"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextDocument">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/document#Document"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
+    <rdfs:label xml:lang="de">Hypertext-Dokument</rdfs:label>
+    <rdfs:label xml:lang="en">hypertext document</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:comment xml:lang="en">Document written in the Hypertext Markup Language (HTML).</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextPage">
+    <rdfs:comment xml:lang="en">Page of a hypertext document.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:label xml:lang="en">hypertext document page</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextStructure"/>
+    <rdfs:label xml:lang="de">Hypertext-Dokumentseite</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#Website">
+    <rdfs:comment xml:lang="en">Set of interconnected webpages, under a single domain name, usually including a homepage, generally located on the same server, and prepared and maintained as information by a person, group, or organization.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
+    <rdfs:label xml:lang="de">Website</rdfs:label>
+    <rdfs:label xml:lang="en">website</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Carrier"/>
+  </rdfs:Class>
+  <rdfs:Datatype rdf:about="http://e-editiones.ch/ontology/electronic-information#css">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:example xml:lang="en">Example: "color: #000000;"^^electronic-information:css</skos:example>
+    <rdfs:comment xml:lang="en">Datatype to type a literal expressed in the Cascading Style Sheets-language (CSS).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:label xml:lang="en">CSS-datatype</rdfs:label>
+  </rdfs:Datatype>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextElement">
-    <rdfs:label xml:lang="en">hypertext document element</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
     <rdfs:comment xml:lang="en">Information as part of a hypertext document.</rdfs:comment>
     <rdfs:label xml:lang="de">Hypertext-Dokumentelement</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/concept#Code"/>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-  </rdfs:Class>
-  <rdfs:Datatype rdf:about="http://e-editiones.ch/ontology/electronic-information#css">
-    <rdfs:label xml:lang="en">CSS-datatype</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:comment xml:lang="en">Datatype to type a literal expressed in the Cascading Style Sheets-language (CSS).</rdfs:comment>
-    <skos:example xml:lang="en">Example: "color: #000000;"^^electronic-information:css</skos:example>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-  </rdfs:Datatype>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#WikiPage">
-    <rdfs:label xml:lang="en">Wiki page</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:comment xml:lang="en">Webpage of a Wiki.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Webpage"/>
-    <rdfs:label xml:lang="de">Wiki-Seite</rdfs:label>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#Wiki">
-    <rdfs:label xml:lang="de">Wiki</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Website"/>
-    <rdfs:comment xml:lang="en">Knowledge base website on which users collaboratively modify and structure content directly from a web browser; it is ran by wiki software.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Wiki"/>
-    <rdfs:label xml:lang="en">wiki</rdfs:label>
+    <rdfs:label xml:lang="en">hypertext document element</rdfs:label>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#Hyperlink">
+    <rdfs:label xml:lang="de">Hyperlink</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:label xml:lang="en">hyperlink</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
     <rdfs:comment xml:lang="en">Link from a hypertext document structure to another location, activated by clicking on a highlighted word or image.</rdfs:comment>
-    <rdfs:label xml:lang="de">Hyperlink</rdfs:label>
   </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#HypertextPage">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#HypertextStructure"/>
-    <rdfs:label xml:lang="en">hypertext document page</rdfs:label>
-    <rdfs:label xml:lang="de">Hypertext-Dokumentseite</rdfs:label>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#Wiki">
+    <rdfs:label xml:lang="de">Wiki</rdfs:label>
+    <rdfs:comment xml:lang="en">Knowledge base website on which users collaboratively modify and structure content directly from a web browser; it is ran by wiki software.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Wiki"/>
+    <rdfs:label xml:lang="en">wiki</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
-    <rdfs:comment xml:lang="en">Page of a hypertext document.</rdfs:comment>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/electronic-information#Website">
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/information-carrier#Set"/>
-    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Carrier"/>
-    <rdfs:label xml:lang="en">website</rdfs:label>
-    <rdfs:comment xml:lang="en">Set of interconnected webpages, under a single domain name, usually including a homepage, generally located on the same server, and prepared and maintained as information by a person, group, or organization.</rdfs:comment>
-    <rdfs:label xml:lang="de">Website</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/electronic-information#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/electronic-information#Website"/>
   </rdfs:Class>
 </rdf:RDF>

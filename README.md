@@ -1,6 +1,6 @@
 # e-editiones
 
-These are the files necessary to develop, build and maintain [e-editiones.ch](https://e-editiones.ch) - the website of the ontologies published in the [NIE-INE project](https://www.nie-ine.ch/). 
+These are the files necessary to develop, build and maintain [e-editiones.ch](https://e-editiones.ch) - the website of the ontologies developed on GitHub in the repository [Ontologies](https://github.com/nie-ine/Ontologies). 
 
 ## Basic Workflow
 1. Ontologies are developed as turtle files.

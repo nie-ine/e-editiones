@@ -1,41 +1,14 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/belief-value#unlikely",
+    "@id": "http://e-editiones.ch/ontology/belief-value#veryLikely",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://e-editiones.ch/ontology/belief-value#BeliefValue"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Belief value representing a moderate probability of being false."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/belief-value#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "unwarscheinlich"
-      },
-      {
-        "@language": "en",
-        "@value": "unlikely"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/belief-value#BeliefValue",
-    "@type": [
+      "http://e-editiones.ch/ontology/belief-value#BeliefValue",
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Value of a belief in a proposition by a certain agent in a certain time."
+        "@value": "Belief value representing a high probability of being true."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -46,49 +19,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Glaubenswert"
+        "@value": "sehr warscheinlich"
       },
       {
         "@language": "en",
-        "@value": "belief value"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.ics.forth.gr/isl/CRMinf/I2_Belief"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#oneOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#certain"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#veryLikely"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#likely"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#lessLikely"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#neutral"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#lessUnlikely"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#unlikely"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#veryUnlikely"
-          },
-          {
-            "@id": "http://e-editiones.ch/ontology/belief-value#impossible"
-          }
-        ]
+        "@value": "very likely"
       }
     ]
   },
@@ -120,15 +55,19 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/belief-value#certain",
+    "@id": "http://e-editiones.ch/ontology/belief-value#hasBeliefValue",
     "@type": [
-      "http://e-editiones.ch/ontology/belief-value#BeliefValue",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Belief value representing being 'true'."
+        "@value": "Relating a proposition to its belief value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:ub137bL103C14"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -138,12 +77,49 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "de",
-        "@value": "sicher"
+        "@language": "en",
+        "@value": "has belief value"
       },
       {
+        "@language": "de",
+        "@value": "hat Glaubenswert"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/belief-value#BeliefValue"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
         "@language": "en",
-        "@value": "certain"
+        "@value": "The proposition can be reified or—exclusive—expressed as a formula."
+      }
+    ]
+  },
+  {
+    "@id": "_:ub137bL103C14",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub137bL103C60"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/concept#PropositionalEntity"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub137bL103C60",
+    "http://www.w3.org/2002/07/owl#disjointUnionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+          },
+          {
+            "@id": "http://www.w3.org/2000/10/swap/log#Formula"
+          }
+        ]
       }
     ]
   },
@@ -176,7 +152,7 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/belief-value#lessUnlikely",
+    "@id": "http://e-editiones.ch/ontology/belief-value#unlikely",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "http://e-editiones.ch/ontology/belief-value#BeliefValue"
@@ -184,7 +160,7 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Belief value representing a low probability of being false."
+        "@value": "Belief value representing a moderate probability of being false."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -195,11 +171,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "less unlikely"
+        "@value": "unlikely"
       },
       {
         "@language": "de",
-        "@value": "wenig unwarscheinlich"
+        "@value": "unwarscheinlich"
       }
     ]
   },
@@ -251,131 +227,6 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/belief-value#hasBeliefValue",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a proposition to its belief value."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:ub137bL104C14"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/belief-value#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has belief value"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Glaubenswert"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/belief-value#BeliefValue"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The proposition can be reified or—exclusive—expressed as a formula."
-      }
-    ]
-  },
-  {
-    "@id": "_:ub137bL104C14",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/concept#PropositionalEntity"
-      },
-      {
-        "@id": "_:ub137bL104C60"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub137bL104C60",
-    "http://www.w3.org/2002/07/owl#disjointUnionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
-          },
-          {
-            "@id": "http://www.w3.org/2000/10/swap/log#Formula"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/belief-value#veryLikely",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://e-editiones.ch/ontology/belief-value#BeliefValue"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Belief value representing a high probability of being true."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/belief-value#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "sehr warscheinlich"
-      },
-      {
-        "@language": "en",
-        "@value": "very likely"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/belief-value#veryUnlikely",
-    "@type": [
-      "http://e-editiones.ch/ontology/belief-value#BeliefValue",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Belief value representing a high probability of being false."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/belief-value#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "sehr unwarscheinlich"
-      },
-      {
-        "@language": "en",
-        "@value": "very unlikely"
-      }
-    ]
-  },
-  {
     "@id": "http://e-editiones.ch/ontology/belief-value#lessLikely",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -394,12 +245,40 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "less likely"
-      },
-      {
         "@language": "de",
         "@value": "wenig warscheinlich"
+      },
+      {
+        "@language": "en",
+        "@value": "less likely"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/belief-value#lessUnlikely",
+    "@type": [
+      "http://e-editiones.ch/ontology/belief-value#BeliefValue",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Belief value representing a low probability of being false."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/belief-value#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "wenig unwarscheinlich"
+      },
+      {
+        "@language": "en",
+        "@value": "less unlikely"
       }
     ]
   },
@@ -422,12 +301,133 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
+        "@language": "de",
+        "@value": "warscheinlich"
+      },
+      {
         "@language": "en",
         "@value": "likely"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/belief-value#BeliefValue",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Value of a belief in a proposition by a certain agent in a certain time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/belief-value#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "belief value"
       },
       {
         "@language": "de",
-        "@value": "warscheinlich"
+        "@value": "Glaubenswert"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.ics.forth.gr/isl/CRMinf/I2_Belief"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#oneOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#certain"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#veryLikely"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#likely"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#lessLikely"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#neutral"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#lessUnlikely"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#unlikely"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#veryUnlikely"
+          },
+          {
+            "@id": "http://e-editiones.ch/ontology/belief-value#impossible"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/belief-value#certain",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://e-editiones.ch/ontology/belief-value#BeliefValue"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Belief value representing being 'true'."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/belief-value#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "certain"
+      },
+      {
+        "@language": "de",
+        "@value": "sicher"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/belief-value#veryUnlikely",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://e-editiones.ch/ontology/belief-value#BeliefValue"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Belief value representing a high probability of being false."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/belief-value#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "very unlikely"
+      },
+      {
+        "@language": "de",
+        "@value": "sehr unwarscheinlich"
       }
     ]
   }

@@ -3,9 +3,8 @@ layout: page
 title: About
 permalink: /about
 ---
-These web pages present the outcome of the NIE-INE-project (Nationale Infrastruktur für Editionen - Infrastructure Nationale pour les Éditions), in terms of know how, best practices, products and services.  
-<!---(http://www.nie-ine.ch)--->
-NIE-INE is part of the [swissuniversities'](https://www.swissuniversities.ch/en/?r=1) national program "Scientific information: Access, processing and safeguarding" and runs at the Universities of Basel, Bern and Zürich, since October 2016 and until the end of 2020.  
+These web pages present the outcome of the project Nationale Infrastruktur für Editionen - Infrastructure Nationale pour les Éditions, in terms of know how, best practices, products and services.  
+The project is part of the [swissuniversities'](https://www.swissuniversities.ch/en/?r=1) national program "Scientific information: Access, processing and safeguarding" and runs at the Universities of Basel, Bern and Zürich, since October 2016 and until the end of 2020.  
 
 The project focuses on the development of two major domains:  
 1) Semantic Web technologies (SWT), with the aim to allow researchers in the humanities to express their data in an enriched format adhering to the FAIR principles.

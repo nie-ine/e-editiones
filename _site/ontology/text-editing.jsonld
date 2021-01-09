@@ -1,13 +1,13 @@
 [
   {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Abbreviation",
+    "@id": "http://e-editiones.ch/ontology/text-editing#Abbreviator",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text edition as a result of shortening the text."
+        "@value": "Editor shortening a text."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -18,64 +18,28 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "abréviation"
+        "@value": "abréviateur"
+      },
+      {
+        "@language": "la",
+        "@value": "abbreviator"
       },
       {
         "@language": "en",
-        "@value": "abbreviation"
-      },
-      {
-        "@language": "de",
-        "@value": "Kurzfassung"
+        "@value": "abbreviator"
       },
       {
         "@language": "it",
-        "@value": "abbreviazione"
+        "@value": "abbreviator"
+      },
+      {
+        "@language": "de",
+        "@value": "Kurzfasser"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Paraphrase",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text edition restating a text clarifying its meaning."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "paraphrase"
-      },
-      {
-        "@language": "it",
-        "@value": "parafrasi"
-      },
-      {
-        "@language": "en",
-        "@value": "paraphrase"
-      },
-      {
-        "@language": "de",
-        "@value": "Paraphrase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+        "@id": "http://e-editiones.ch/ontology/text-editing#PersonEditor"
       }
     ]
   },
@@ -97,12 +61,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "text editor"
-      },
-      {
         "@language": "it",
         "@value": "editor di testo"
+      },
+      {
+        "@language": "en",
+        "@value": "text editor"
       },
       {
         "@language": "fr",
@@ -120,19 +84,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-editing#hasRecensor",
+    "@id": "http://e-editiones.ch/ontology/text-editing#Revisor",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Relating a recension to a person who created it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Recension"
+        "@value": "Role of a person revising a text."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -142,41 +101,86 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "has recensor"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Rezensor"
+        "@language": "fr",
+        "@value": "réviseur de texte"
       },
       {
         "@language": "it",
-        "@value": "ha recensore"
+        "@value": "revisore del testo"
       },
       {
+        "@language": "en",
+        "@value": "text revisor"
+      },
+      {
+        "@language": "de",
+        "@value": "Textüberprüfer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#PersonEditor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#hasEditorialDirector",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an edition to its editorial director."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
         "@language": "fr",
-        "@value": "a recenseur"
+        "@value": "l'édition a directeur éditorial"
+      },
+      {
+        "@language": "de",
+        "@value": "Edition hat Redaktionsleiter"
+      },
+      {
+        "@language": "en",
+        "@value": "edition has editorial director"
+      },
+      {
+        "@language": "it",
+        "@value": "edizione ha direttore editoriale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub73bL202C13"
+        "@id": "_:ub73bL162C13"
       }
     ]
   },
   {
-    "@id": "_:ub73bL202C13",
+    "@id": "_:ub73bL162C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:ub73bL202C44"
+        "@id": "http://e-editiones.ch/ontology/human#Person"
       },
       {
-        "@id": "http://e-editiones.ch/ontology/human#Person"
+        "@id": "_:ub73bL162C44"
       }
     ]
   },
   {
-    "@id": "_:ub73bL202C44",
+    "@id": "_:ub73bL162C44",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -187,65 +191,19 @@
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Recensor"
+        "@id": "http://e-editiones.ch/ontology/text-editing#EditorialDirector"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-editing#DerivedTextExpression",
+    "@id": "http://e-editiones.ch/ontology/text-editing#Glossator",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text expression derived from another text expression with content changed beyond a version."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "espressione di testo derivata"
-      },
-      {
-        "@language": "de",
-        "@value": "abgeleitete Textexpression"
-      },
-      {
-        "@language": "fr",
-        "@value": "expression de texte dérivée"
-      },
-      {
-        "@language": "en",
-        "@value": "derived text expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#CreationDerivative"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#OrganizationEditor",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of an organization changing a text."
+        "@value": "Role of a person adding glosses to a text."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -256,63 +214,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "de",
-        "@value": "Texteditorrolle einer Organisation"
-      },
-      {
-        "@language": "en",
-        "@value": "text editor role of organization"
+        "@value": "Glossator"
       },
       {
         "@language": "it",
-        "@value": "organizzazione-editor di testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "organisation-éditeur de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/organization#Creator"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Annotator",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person adding notes *annotations* to a text, creating an annotated edition."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "annotateur"
-      },
-      {
-        "@language": "en",
-        "@value": "annotator"
-      },
-      {
-        "@language": "it",
-        "@value": "annotatore"
+        "@value": "glossatore"
       },
       {
         "@language": "la",
-        "@value": "annotator"
+        "@value": "glossator"
       },
       {
-        "@language": "de",
-        "@value": "Annotator"
+        "@language": "en",
+        "@value": "glossator"
+      },
+      {
+        "@language": "fr",
+        "@value": "glossateur"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -344,20 +262,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "fr",
-        "@value": "a la même édition que"
+        "@language": "de",
+        "@value": "hat dieselbe Edition als"
       },
       {
         "@language": "it",
         "@value": "ha la stessa edizione di"
       },
       {
-        "@language": "de",
-        "@value": "hat dieselbe Edition als"
-      },
-      {
         "@language": "en",
         "@value": "has same edition as"
+      },
+      {
+        "@language": "fr",
+        "@value": "a la même édition que"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -367,86 +285,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-editing#hasEditor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an edition to the human agent—person or organization—that created it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Edition hat Editor"
-      },
-      {
-        "@language": "en",
-        "@value": "edition has editor"
-      },
-      {
-        "@language": "it",
-        "@value": "edizione ha editor"
-      },
-      {
-        "@language": "fr",
-        "@value": "l'édition a un éditeur"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub73bL162C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub73bL162C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub73bL162C43"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Agent"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub73bL162C43",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#AgentEditor"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Edition",
+    "@id": "http://e-editiones.ch/ontology/text-editing#EditorialDirector",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Changed text as a result of editing."
+        "@value": "Role of a person supervising editors, overseeing one or more editions to be published (e.g. book, magazine, website), ensuring they bear an overarching organization's vision, share certain qualities and assure them."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -456,37 +302,42 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "it",
-        "@value": "edizione testuale"
+        "@language": "fr",
+        "@value": "directeur éditorial"
       },
       {
-        "@language": "de",
-        "@value": "Textedition"
+        "@language": "it",
+        "@value": "direttore editoriale"
       },
       {
         "@language": "en",
-        "@value": "text edition"
+        "@value": "editorial director"
       },
       {
-        "@language": "fr",
-        "@value": "édition de texte"
+        "@language": "de",
+        "@value": "Redaktionsleiter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://work.chron.com/editorial-director-21903.html#:~:text=In%20the%20case%20of%20a,and%20authors%20editors%20have%20chosen"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://e-editiones.ch/ontology/text#Text"
+        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
       }
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Transliteration",
+    "@id": "http://e-editiones.ch/ontology/text-editing#LiteralExposition",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text edition as written text transferred in another alphabet using the closest corresponding symbols, e.g. letters."
+        "@value": "Text edition providing background information on word level to a text in clarifying its meaning."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -497,33 +348,24 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "fr",
-        "@value": "translittération"
-      },
-      {
-        "@language": "de",
-        "@value": "Transliteration"
-      },
-      {
-        "@language": "it",
-        "@value": "traslitterazione"
+        "@value": "exposition littérale"
       },
       {
         "@language": "en",
-        "@value": "transliteration"
+        "@value": "literal exposition"
+      },
+      {
+        "@language": "de",
+        "@value": "wörtliche Auslegung"
+      },
+      {
+        "@language": "it",
+        "@value": "esposizione letterale"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/text#WrittenText"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Primarily representing the symbols, not the sounds."
       }
     ]
   },
@@ -580,14 +422,14 @@
     ]
   },
   {
-    "@id": "http://e-editiones.ch/ontology/text-editing#LiteralExposition",
+    "@id": "http://e-editiones.ch/ontology/text-editing#Recension",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Text edition providing background information on word level to a text in clarifying its meaning."
+        "@value": "Critical revision of a text, e.g. a literary classic, i.e. based on a critical examination of earlier texts and authoritative sources, usually undertaken only after a consensus has developed among leading scholars concerning the weight of evidence."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -598,24 +440,759 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "literal exposition"
-      },
-      {
-        "@language": "fr",
-        "@value": "exposition littérale"
-      },
-      {
-        "@language": "it",
-        "@value": "esposizione letterale"
+        "@value": "recension"
       },
       {
         "@language": "de",
-        "@value": "wörtliche Auslegung"
+        "@value": "Revision"
+      },
+      {
+        "@language": "fr",
+        "@value": "révision"
+      },
+      {
+        "@language": "it",
+        "@value": "recensione"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://products.abc-clio.com/ODLIS/odlis_r.aspx#recension"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Revision"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#Abbreviation",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text edition as a result of shortening the text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Kurzfassung"
+      },
+      {
+        "@language": "en",
+        "@value": "abbreviation"
+      },
+      {
+        "@language": "fr",
+        "@value": "abréviation"
+      },
+      {
+        "@language": "it",
+        "@value": "abbreviazione"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#Edition",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Changed text as a result of editing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textedition"
+      },
+      {
+        "@language": "en",
+        "@value": "text edition"
+      },
+      {
+        "@language": "it",
+        "@value": "edizione testuale"
+      },
+      {
+        "@language": "fr",
+        "@value": "édition de texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#Text"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#Transliteration",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text edition as written text transferred in another alphabet using the closest corresponding symbols, e.g. letters."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Transliteration"
+      },
+      {
+        "@language": "fr",
+        "@value": "translittération"
+      },
+      {
+        "@language": "en",
+        "@value": "transliteration"
+      },
+      {
+        "@language": "it",
+        "@value": "traslitterazione"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#WrittenText"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Primarily representing the symbols, not the sounds."
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#hasDerivedTextExpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text expression to another one derived from it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "ha derivato espressione di testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une expression de texte dérivée"
+      },
+      {
+        "@language": "en",
+        "@value": "has derived text expression"
+      },
+      {
+        "@language": "de",
+        "@value": "hat abgeleitete Textexpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#DerivedTextExpression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#PersonEditor",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person changing a text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "personne - éditeur de texte"
+      },
+      {
+        "@language": "en",
+        "@value": "text editor role of person"
+      },
+      {
+        "@language": "de",
+        "@value": "Texteditorrolle einer Person"
+      },
+      {
+        "@language": "it",
+        "@value": "persona - editor di testo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#PersonCreator"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#hasEdition",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to an edition it has."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "il testo ha edizione"
+      },
+      {
+        "@language": "de",
+        "@value": "Text hat Edition"
+      },
+      {
+        "@language": "fr",
+        "@value": "le texte a une édition"
+      },
+      {
+        "@language": "en",
+        "@value": "text has edition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#DerivedTextExpression",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text expression derived from another text expression with content changed beyond a version."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "espressione di testo derivata"
+      },
+      {
+        "@language": "fr",
+        "@value": "expression de texte dérivée"
+      },
+      {
+        "@language": "de",
+        "@value": "abgeleitete Textexpression"
+      },
+      {
+        "@language": "en",
+        "@value": "derived text expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/creating#CreationDerivative"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+      },
+      {
+        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#hasRevisor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text revision to a person who created it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Revision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textprüfung hat Überprüfer"
+      },
+      {
+        "@language": "fr",
+        "@value": "la révision du texte a un réviseur"
+      },
+      {
+        "@language": "it",
+        "@value": "la revisione del testo ha un revisore"
+      },
+      {
+        "@language": "en",
+        "@value": "text revision has revisor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub73bL186C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub73bL186C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      },
+      {
+        "@id": "_:ub73bL186C44"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub73bL186C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Revisor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#OrganizationEditor",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of an organization changing a text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "organizzazione-editor di testo"
+      },
+      {
+        "@language": "en",
+        "@value": "text editor role of organization"
+      },
+      {
+        "@language": "fr",
+        "@value": "organisation-éditeur de texte"
+      },
+      {
+        "@language": "de",
+        "@value": "Texteditorrolle einer Organisation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/organization#Creator"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#Paraphrase",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text edition restating a text clarifying its meaning."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "paraphrase"
+      },
+      {
+        "@language": "it",
+        "@value": "parafrasi"
+      },
+      {
+        "@language": "fr",
+        "@value": "paraphrase"
+      },
+      {
+        "@language": "de",
+        "@value": "Paraphrase"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#hasEditor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating an edition to the human agent—person or organization—that created it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "it",
+        "@value": "edizione ha editor"
+      },
+      {
+        "@language": "de",
+        "@value": "Edition hat Editor"
+      },
+      {
+        "@language": "en",
+        "@value": "edition has editor"
+      },
+      {
+        "@language": "fr",
+        "@value": "l'édition a un éditeur"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub73bL154C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub73bL154C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Agent"
+      },
+      {
+        "@id": "_:ub73bL154C43"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub73bL154C43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#agentHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#AgentEditor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#hasRecensor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a recension to a person who created it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Recension"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "fr",
+        "@value": "a recenseur"
+      },
+      {
+        "@language": "it",
+        "@value": "ha recensore"
+      },
+      {
+        "@language": "en",
+        "@value": "has recensor"
+      },
+      {
+        "@language": "de",
+        "@value": "hat Rezensor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:ub73bL194C13"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub73bL194C13",
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#Person"
+      },
+      {
+        "@id": "_:ub73bL194C44"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub73bL194C44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Recensor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#Revision",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Text edition as a result of revising."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "Textprüfung"
+      },
+      {
+        "@language": "en",
+        "@value": "text revision"
+      },
+      {
+        "@language": "it",
+        "@value": "revisione del testo"
+      },
+      {
+        "@language": "fr",
+        "@value": "révision de texte"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#Annotator",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role of a person adding notes *annotations* to a text, creating an annotated edition."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "annotator"
+      },
+      {
+        "@language": "it",
+        "@value": "annotatore"
+      },
+      {
+        "@language": "fr",
+        "@value": "annotateur"
+      },
+      {
+        "@language": "la",
+        "@value": "annotator"
+      },
+      {
+        "@language": "de",
+        "@value": "Annotator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#PersonEditor"
+      }
+    ]
+  },
+  {
+    "@id": "http://e-editiones.ch/ontology/text-editing#hasTransliteration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relating a text to a transliteration thereof."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text#Text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "de",
+        "@value": "hat Transliteration"
+      },
+      {
+        "@language": "en",
+        "@value": "has transliteration"
+      },
+      {
+        "@language": "it",
+        "@value": "ha traslitterazione"
+      },
+      {
+        "@language": "fr",
+        "@value": "a une translittération"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://e-editiones.ch/ontology/text-editing#Transliteration"
       }
     ]
   },
@@ -660,15 +1237,15 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:ub73bL226C13"
+        "@id": "_:ub73bL218C13"
       }
     ]
   },
   {
-    "@id": "_:ub73bL226C13",
+    "@id": "_:ub73bL218C13",
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:ub73bL226C44"
+        "@id": "_:ub73bL218C44"
       },
       {
         "@id": "http://e-editiones.ch/ontology/human#Person"
@@ -676,7 +1253,7 @@
     ]
   },
   {
-    "@id": "_:ub73bL226C44",
+    "@id": "_:ub73bL218C44",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -688,583 +1265,6 @@
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
         "@id": "http://e-editiones.ch/ontology/text-editing#Abbreviator"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Glossator",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person adding glosses to a text."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "la",
-        "@value": "glossator"
-      },
-      {
-        "@language": "it",
-        "@value": "glossatore"
-      },
-      {
-        "@language": "de",
-        "@value": "Glossator"
-      },
-      {
-        "@language": "en",
-        "@value": "glossator"
-      },
-      {
-        "@language": "fr",
-        "@value": "glossateur"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#PersonEditor"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Abbreviator",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Editor shortening a text."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "abbreviator"
-      },
-      {
-        "@language": "it",
-        "@value": "abbreviator"
-      },
-      {
-        "@language": "la",
-        "@value": "abbreviator"
-      },
-      {
-        "@language": "fr",
-        "@value": "abréviateur"
-      },
-      {
-        "@language": "de",
-        "@value": "Kurzfasser"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#PersonEditor"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#hasRevisor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text revision to a person who created it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Revision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "de",
-        "@value": "Textprüfung hat Überprüfer"
-      },
-      {
-        "@language": "it",
-        "@value": "la revisione del testo ha un revisore"
-      },
-      {
-        "@language": "fr",
-        "@value": "la révision du texte a un réviseur"
-      },
-      {
-        "@language": "en",
-        "@value": "text revision has revisor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub73bL194C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub73bL194C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Person"
-      },
-      {
-        "@id": "_:ub73bL194C44"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub73bL194C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Revisor"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#hasEditorialDirector",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating an edition to its editorial director."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "edition has editorial director"
-      },
-      {
-        "@language": "fr",
-        "@value": "l'édition a directeur éditorial"
-      },
-      {
-        "@language": "de",
-        "@value": "Edition hat Redaktionsleiter"
-      },
-      {
-        "@language": "it",
-        "@value": "edizione ha direttore editoriale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "_:ub73bL170C13"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub73bL170C13",
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub73bL170C44"
-      },
-      {
-        "@id": "http://e-editiones.ch/ontology/human#Person"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub73bL170C44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#personHasRole"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#EditorialDirector"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#EditorialDirector",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person supervising editors, overseeing one or more editions to be published (e.g. book, magazine, website), ensuring they bear an overarching organization's vision, share certain qualities and assure them."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "direttore editoriale"
-      },
-      {
-        "@language": "de",
-        "@value": "Redaktionsleiter"
-      },
-      {
-        "@language": "fr",
-        "@value": "directeur éditorial"
-      },
-      {
-        "@language": "en",
-        "@value": "editorial director"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://work.chron.com/editorial-director-21903.html#:~:text=In%20the%20case%20of%20a,and%20authors%20editors%20have%20chosen"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/human#PersonRole"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Revisor",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person revising a text."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "text revisor"
-      },
-      {
-        "@language": "de",
-        "@value": "Textüberprüfer"
-      },
-      {
-        "@language": "it",
-        "@value": "revisore del testo"
-      },
-      {
-        "@language": "fr",
-        "@value": "réviseur de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#PersonEditor"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#hasDerivedTextExpression",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text expression to another one derived from it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-expression#Expression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une expression de texte dérivée"
-      },
-      {
-        "@language": "en",
-        "@value": "has derived text expression"
-      },
-      {
-        "@language": "it",
-        "@value": "ha derivato espressione di testo"
-      },
-      {
-        "@language": "de",
-        "@value": "hat abgeleitete Textexpression"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#DerivedTextExpression"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#PersonEditor",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Role of a person changing a text."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "persona - editor di testo"
-      },
-      {
-        "@language": "en",
-        "@value": "text editor role of person"
-      },
-      {
-        "@language": "de",
-        "@value": "Texteditorrolle einer Person"
-      },
-      {
-        "@language": "fr",
-        "@value": "personne - éditeur de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/creating#PersonCreator"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#hasEdition",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to an edition it has."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "le texte a une édition"
-      },
-      {
-        "@language": "en",
-        "@value": "text has edition"
-      },
-      {
-        "@language": "de",
-        "@value": "Text hat Edition"
-      },
-      {
-        "@language": "it",
-        "@value": "il testo ha edizione"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Revision",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Text edition as a result of revising."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "it",
-        "@value": "revisione del testo"
-      },
-      {
-        "@language": "de",
-        "@value": "Textprüfung"
-      },
-      {
-        "@language": "en",
-        "@value": "text revision"
-      },
-      {
-        "@language": "fr",
-        "@value": "révision de texte"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Edition"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#hasTransliteration",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Relating a text to a transliteration thereof."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text#Text"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "a une translittération"
-      },
-      {
-        "@language": "it",
-        "@value": "ha traslitterazione"
-      },
-      {
-        "@language": "de",
-        "@value": "hat Transliteration"
-      },
-      {
-        "@language": "en",
-        "@value": "has transliteration"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Transliteration"
-      }
-    ]
-  },
-  {
-    "@id": "http://e-editiones.ch/ontology/text-editing#Recension",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Critical revision of a text, e.g. a literary classic, i.e. based on a critical examination of earlier texts and authoritative sources, usually undertaken only after a consensus has developed among leading scholars concerning the weight of evidence."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "fr",
-        "@value": "révision"
-      },
-      {
-        "@language": "it",
-        "@value": "recensione"
-      },
-      {
-        "@language": "de",
-        "@value": "Revision"
-      },
-      {
-        "@language": "en",
-        "@value": "recension"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://products.abc-clio.com/ODLIS/odlis_r.aspx#recension"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://e-editiones.ch/ontology/text-editing#Revision"
       }
     ]
   }
