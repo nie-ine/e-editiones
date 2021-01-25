@@ -356,7 +356,13 @@ h5::before {
   text-align: right; 
   font-size: 1.5em;
   margin-bottom: 10px;
+
+  .format-link {
+    display: inline;
+    margin-left: 0.5em;
+  }
 }
+
 
 /**
  * Navbar
@@ -447,7 +453,18 @@ nav {
   height: $nav-height;
   width: $nav-height;
 }
-@media only screen and (max-width: 1490px) {
+
+@media only screen and (max-width: $breakpoint/2) {
+
+  .ontology-formats {
+    .format-link {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
   // Hamburger nav visible on mobile only
   .nav-mobile {
     display: block;
@@ -476,6 +493,10 @@ nav {
 @media screen and (min-width: $breakpoint) {
   .nav-list {
     display: block !important;
+  }
+  .format-link {
+    display: block;
+    margin-left: 0;
   }
 }
 #nav-toggle {
