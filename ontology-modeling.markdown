@@ -6,16 +6,16 @@ permalink: /ontology-modeling
 * 
 {:toc}
 
-## Modeling Dependencies
+## Modeling dependencies
 There are a series of resources that directly influence the modeling of ontologies (Figure 1).  
 
 {% include image.html type="intermediate-figure" url="/assets/images/modeling-dependencies.png" description="Figure 1: Resources influencing ontology modeling" %}
 
-### Foundational W3C Ontologies
+### Foundational W3C ontologies
 Directive are the foundational ontologies of the [W3C Semantic Web standard languages](/semantic-web-technology-introduction#formalize-data-data-models-and-domain-knowledge-languages-of-logic).  
 Using these brings standardization of syntax and basic semantics, and built-in logic, making ontologies and data machine interpretable.  
 
-### External Ontologies
+### External ontologies
 When modeling for a certain domain, one does not have to start from scratch. The longer the SW is among us, the more likely someone else already created an ontology to cover needed semantics, possibly partially, often declaring more generic concepts.
 There is a variety of [existing ontologies](/semantic-web-technology-introduction#domain-ontologies-used-in-humanities-and-publishing). Some are very generic, others are quite specific. Some have become a de facto standard, e.g. SKOS and DC Elements, or practically are, e.g. Geo.  
 We use, i.e. base on following ontologies.
@@ -26,18 +26,18 @@ Both the W3C and the external ontologies require a study, to really know their s
 
 <!---Local copies of such ontologies, when not available in Turtle or RDF-XML, are in the [external ontologies](/Other-ontologies) folder.--->
 
-### Source Data Models
+### Source data models
 The input dependency is represented by the original data model, in the humanities most likely in XML, less often in SQL.  
 E.g. We support eleven projects with different databases. 7 have XML, 3 SQL and 1 has both.  
 For an ontology modeler, if not the researcher and/or the IT developer, to know another's source data model requires repeated discussions on the precise semantics.
 
-### Domain Knowledge
+### Domain kowledge
 Last but not least, there is a dependency on the tacit knowledge of the domain specialists in the edition projects, needed for the implementation of domain knowledge to complement the restricted database models. To uncover this knowledge, a commitment on the part of domain specialists is needed, in order to reach consensus on semantics that often goes to a certain extent beyond their own specific research objectives.
 
 All these dependencies represent a certain challenge and, initially, a substantial overhead.  
 But the ROI is big, and will be even bigger the more source data models are formalized along SWT, because this formalization will also contribute to the more general, cross-project semantics, preventing modeling the same concepts for new projects multiple times. Reaching a wide consensus on domain terminology (at the best on an international scale) further contributes to the semantic interoperability.
 
-## Basic Modeling Patterns
+## Basic modeling patterns
 Modeling already starts before declaring an ontology, by conceiving or adopting basic modeling patterns that will be abundantly used in ontologies and data. Such patterns comprise a group of basic concepts and the relations (properties) between them. Examples of such patterns are ‘event’, ‘agent-role’, and 'referencing'.  
 ‘Event’ and its consecutively derived concepts ‘process’, ’action’, and ‘procedure’ (Figure 2) are four-dimensional entities described in time with start and end date, and space with location having geographic coordinates, name and code. Through the derived concepts the pattern becomes more complex, having input, output, and stage in a process, and having intent, agents (a person, organization, or even software) and roles in an action. The concepts are described in the figure.  
 
@@ -56,18 +56,18 @@ The basic modeling pattern for ‘referencing’ with ‘footnote’ as an examp
 
 {% include image.html type="intermediate-figure" url="/assets/images/BMP_referencing.png" description="Figure 4: Basic modeling pattern for referencing with 'footnote' as example" %}
 
-## Modeling Methodology
+## Modeling methodology
 These formal semantic models are expressed in RDF/RDFS 1.1 and OWL 2 Full using their respective ontologies, and are developed in Turtle syntax.  
 Their development is in the [GitHub project](https://github.com/nie-ine/Ontologies).  
 The authoritative files are open source and published on this website in the [ontology library](/ontology).  
 The ontologies are directly accessible (dereferenceable) with their namespace IRI.
 
-### Development Tools
+### Development tools
 Ontologies, and also SPARQL queries and N3-rules, are created with the text editor [Sublime Text and plug-ins](https://www.sublimetext.com/), and tested on syntax and logic consistency with the open source **EYE machine reasoner** ([De Roo 2020](https://github.com/josd/eye); see also [N3-rule-based machine reasoning](/n3-rule-based-machine-reasoning)) and the **editor Protégé** [(Stanford University 2020)](https://protege.stanford.edu/). The latter is particularly useful for offering a quick overview of merged ontologies to detect logical flaws, e.g. in subsumption or sub-property relations, or semantic shortcuts (gaps).  
 
 <!---iterative epistemological hermeneutic process (Pierazzo 2015)--->
 
-### A Multitude of Networked Namespaces
+### A Multitude of networked namespaces
 In creating a semantic space for broad applicability, also ontology size and consequently the number of ontologies developed matter. Having “all contained in one” or even a few very big ontologies is rather difficult if the envisioned research space to talk about is broad, implying multiple domains. A basic approach is a multitude of networked namespaces, a web of highly interdependent ontologies (Figure 5). They differ in size, granularity and specificity.
 
 {% include image.html type="intermediate-figure" url="/assets/images/ontologies-network.png" description="Figure 5: A simplified representation of the e-editiones web of ontologies" %}  
@@ -80,7 +80,7 @@ One of the bigger challenges, emerging from previous topic is how to partition k
 ### Consensus
 The ontology development evolves in a very **iterative** way, requiring the connection of different roles and kinds of expertise. It is very important to have regular discussions between modelers (4 in NIE-INE) and contact persons for edition projects (5), as well as with project domain specialists (12), since it is impossible to capture the needed project semantics all at once. ° Achieving consensus on domain semantics on different semantic levels, but also different group levels requires time, but is essential for enabling semantic interoperability. NIE-INE* operates in this process as a mediator within projects, but especially across projects, making modeling a very collaborative and multidisciplinary activity.  
 
-### Structure and Identification
+### Structure and identification
 The basic expression unit structure in SWT is the **triple**, consisting of a subject, a property (or predicate), and an object.
 <p align=center style="background-color:rgba(243, 241, 239, 1); font-family: courrier; font-size:14pt; font-style:bold">SUBJECT PREDICATE OBJECT.<br/>
 S P O.<br/>
@@ -126,7 +126,7 @@ As a general domain ontology, the concept-ontology (Figure 7 [TO DO]) describes 
 
 {% include image.html type="small-figure" url="/assets/images/Protege-hierarchy_expression.png" description="Figure 9: Subsumption tree representing classes from different ontologies concerning 'document expression' and ‘text expression’" %}
 
-### General humanities Ontologies
+### General humanities ontologies
 The “general humanities ontologies” comprise the core concepts for scholarly editions, as well as the bulk of common entities modeled so far in agreement with the edition projects. The following is a description of five core vocabularies for scientific editing in the humanities (Figure 8 and 9).
 
 #### Text
@@ -142,7 +142,7 @@ This ontology describes all kinds of textual structures (Figure 10), e.g. syntac
 
 {% include image.html type="small-figure" url="/assets/images/Protege-hierarchy_scientific-structure.png" description="Figure 11: Subsumption tree representing classes and properties from different ontologies concerning 'scientific structure'" %}
 
-#### Text editing and Scholarly editing
+#### Text editing and scholarly editing
 Both ontologies describe the necessary semantics for editing, the latter extending the former with specific scholarly entities, e.g. diplomatic transcription, critical edition, different types of apparatus, lemma, variant, editorial comment, witness, siglum and more alike. Also related roles are declared, e.g. editor, glossator, and critical text editor. An extensive set of properties relates these entities to each other, as well as to text, text structure and expression elements (Figure 8, 9, and 11).  
 
 #### Publishing
@@ -151,7 +151,7 @@ This ontology describes classes and properties related to publishing, e.g. publi
 #### Literature
 This ontology describes literary genres such as narrative and different kinds of poetry, and further different types of literary expressions (e.g. poem, hymn, novel) and their subclasses. It also contains related roles, e.g. poet and novelist. Different types of literary structures are declared, e.g. foreword, preface, prologue, and epilogue, and related properties (Figure 8, 9, and 10).  
 
-### Specific Humanities ontologies
+### Specific humanities ontologies
 This series comprises more specific entities as used in different specialized domains in the humanities, e.g. about scholasticism. Some ontologies are an onset (e.g. ‘indology’, ‘catholic organization’ and ‘philosophy’), providing the more general concepts as needed for the current projects, but they can and will be extended. ‘catholic orders’ and ‘philosophies’ describe subclasses of classes in aforementioned ontologies, also to be extended.
 Although the scope of these ontologies is narrower, i.e. more project-oriented, the entities can be reused in another context, if applicable, meaning that they do not need to be restricted to a specific project.
 

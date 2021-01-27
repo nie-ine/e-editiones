@@ -1,6 +1,6 @@
 ---
 layout: page
-title: N3-rule-based Machine Reasoning
+title: N3-Rule-Based Machine Reasoning
 permalink: /n3-rule-based-machine-reasoning
 ---
 * 
@@ -88,7 +88,7 @@ The repository contains a reasoning example on sequence numbers or ordinals, der
 
 and a set of rules that can be made as general as possible, but very likely only within a certain project, considering the numerous possible combinations in creating alphanumeric identifiers.
 
-## Machine Reasoner EYE (Euler Yet another proof Engine):
+## Machine reasoner EYE (Euler Yet another proof Engine):
 See also [Verborgh and De Roo 2015](https://josd.github.io/Papers/EYE.pdf).  
 **Development** [(De Roo 2020)](https://github.com/josd/eye)  
 [**Download**](https://sourceforge.net/projects/eulersharp/files/eulersharp/)  
