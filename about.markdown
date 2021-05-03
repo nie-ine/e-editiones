@@ -27,4 +27,4 @@ After 2020 the website will be maintained and the ontologies and rules will be f
 
 Hans Cools  
 e-editiones.ch  
-<a href="mailto:hanscoolssw@gmail.com">hanscoolssw@gmail.com</a>
+<!-- <a href="mailto:hanscoolssw@gmail.com">hanscoolssw@gmail.com</a> -->
