@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="/e-editiones/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/e-editiones/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/e-editiones/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Johann Caspar Lavater&#39;s Correspondence</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/lavater.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/lavater.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/lavater.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/lavater.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Project-ontologies/lavater.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/lavater" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/lavater" title="Browse http://e-editiones.ch/ontology/lavater"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/contributor">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
+            <td property="dct:contributor" content="Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of specific concepts in the critical edition of correspondence of Johann Caspar Lavater, 15 November 1741 - 2 January 1801." xml:lang="en">
+               <div class="property-object">Formal description of specific concepts in the critical edition of correspondence
+                  of Johann Caspar Lavater, 15 November 1741 - 2 January 1801.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/license">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/license" title="Browse http://purl.org/dc/terms/license">dct:license</a></td>
+            <td>
+               <div class="property-object" rel="dct:license"><a class="browse" href="http://creativecommons.org/licenses/by/3.0/" title="Browse http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/ licenses/ by/ 3.0/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="Universities of Basel, Bern, and Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Universities of Basel, Bern, and Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="An ontology about Johann Caspar Lavater's correspondence" xml:lang="en">
+               <div class="property-object">An ontology about Johann Caspar Lavater's correspondence</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e10="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+               <div class="property-object">2020-06-11</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="EditedLetter" class="description">
+      <table about="http://e-editiones.ch/ontology/lavater#EditedLetter" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/lavater#EditedLetter" title="Browse http://e-editiones.ch/ontology/lavater#EditedLetter">lavater:EditedLetter</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Letter expression either authored or received by Johann Caspar Lavater, and critically edited." xml:lang="en">
+               <div class="property-object">Letter expression either authored or received by Johann Caspar Lavater, and critically
+                  edited.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/lavater#" title="Browse http://e-editiones.ch/ontology/lavater#">lavater:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="edited Johann Caspar Lavater letter expression" xml:lang="en">
+               <div class="property-object">edited Johann Caspar Lavater letter expression
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="edierter Brief-Expression Johann Caspar Lavaters" xml:lang="de"></span><div class="property-object">edierter Brief-Expression Johann Caspar Lavaters
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition" title="Browse http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition">scholarly-editing:CriticalEdition</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Letter" class="description">
+      <table about="http://e-editiones.ch/ontology/lavater#Letter" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/lavater#Letter" title="Browse http://e-editiones.ch/ontology/lavater#Letter">lavater:Letter</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Letter send by or to Johann Caspar Lavater." xml:lang="en">
+               <div class="property-object">Letter send by or to Johann Caspar Lavater.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/lavater#" title="Browse http://e-editiones.ch/ontology/lavater#">lavater:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Johann Caspar Lavater letter" xml:lang="en">
+               <div class="property-object">Johann Caspar Lavater letter
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="lettera di Johann Caspar Lavater" xml:lang="it"></span><div class="property-object">lettera di Johann Caspar Lavater
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Johann Caspar Lavater-Brief" xml:lang="de"></span><div class="property-object">Johann Caspar Lavater-Brief
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="lettre de Johann Caspar Lavater" xml:lang="fr"></span><div class="property-object">lettre de Johann Caspar Lavater
+                  													
+                  													(fr)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ConvoluteElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ConvoluteElement">information-carrier:ConvoluteElement</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/letter-corresponding#Letter" title="Browse http://e-editiones.ch/ontology/letter-corresponding#Letter">letter-corresponding:Letter</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="LetterConvolute" class="description">
+      <table about="http://e-editiones.ch/ontology/lavater#LetterConvolute" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/lavater#LetterConvolute" title="Browse http://e-editiones.ch/ontology/lavater#LetterConvolute">lavater:LetterConvolute</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Convolute of letters send by and to Johann Caspar Lavater." xml:lang="en">
+               <div class="property-object">Convolute of letters send by and to Johann Caspar Lavater.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/lavater#" title="Browse http://e-editiones.ch/ontology/lavater#">lavater:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Johann Caspar Lavater letter convolute" xml:lang="en">
+               <div class="property-object">Johann Caspar Lavater letter convolute
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Briefekonvolut Johann Caspar Lavaters" xml:lang="de"></span><div class="property-object">Briefekonvolut Johann Caspar Lavaters
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ArchiveElement" title="Browse http://e-editiones.ch/ontology/information-carrier#ArchiveElement">information-carrier:ArchiveElement</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Convolute" title="Browse http://e-editiones.ch/ontology/information-carrier#Convolute">information-carrier:Convolute</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="LetterExpression" class="description">
+      <table about="http://e-editiones.ch/ontology/lavater#LetterExpression" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/lavater#LetterExpression" title="Browse http://e-editiones.ch/ontology/lavater#LetterExpression">lavater:LetterExpression</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Letter expression either authored by or written to by Johann Caspar Lavater." xml:lang="en">
+               <div class="property-object">Letter expression either authored by or written to by Johann Caspar Lavater.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/lavater#" title="Browse http://e-editiones.ch/ontology/lavater#">lavater:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Johann Caspar Lavater letter expression" xml:lang="en">
+               <div class="property-object">Johann Caspar Lavater letter expression
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Brief-Expression Johann Caspar Lavaters" xml:lang="de"></span><div class="property-object">Brief-Expression Johann Caspar Lavaters
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/letter-corresponding#Expression" title="Browse http://e-editiones.ch/ontology/letter-corresponding#Expression">letter-corresponding:Expression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Page" class="description">
+      <table about="http://e-editiones.ch/ontology/lavater#Page" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/lavater#Page" title="Browse http://e-editiones.ch/ontology/lavater#Page">lavater:Page</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Page of a letter of Johann Caspar Lavater." xml:lang="en">
+               <div class="property-object">Page of a letter of Johann Caspar Lavater.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/lavater#" title="Browse http://e-editiones.ch/ontology/lavater#">lavater:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Seite eines Briefes Johann Caspar Lavaters" xml:lang="de">
+               <div class="property-object">Seite eines Briefes Johann Caspar Lavaters
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Johann Caspar Lavater letter page" xml:lang="en"></span><div class="property-object">Johann Caspar Lavater letter page
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Page" title="Browse http://e-editiones.ch/ontology/information-carrier#Page">information-carrier:Page</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/lavater.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/lavater.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/lavater.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/lavater.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Project-ontologies/lavater.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

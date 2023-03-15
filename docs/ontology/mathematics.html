@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="/e-editiones/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/e-editiones/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/e-editiones/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Mathematics</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/mathematics.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/mathematics.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/mathematics.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/mathematics.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/mathematics.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics" title="Browse http://e-editiones.ch/ontology/mathematics"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of general concepts in mathematics." xml:lang="en">
+               <div class="property-object">Formal description of general concepts in mathematics.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/license">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/license" title="Browse http://purl.org/dc/terms/license">dct:license</a></td>
+            <td>
+               <div class="property-object" rel="dct:license"><a class="browse" href="http://creativecommons.org/licenses/by/3.0/" title="Browse http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/ licenses/ by/ 3.0/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">University of Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#" title="Browse http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#">http://eulersharp.sourceforge.net/ 2003/ 03swap/ xsd-rules#</a></div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="An ontology about mathematics" xml:lang="en">
+               <div class="property-object">An ontology about mathematics</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e32="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+               <div class="property-object">2020-06-11</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="MathematicalObject" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#MathematicalObject" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#MathematicalObject" title="Browse http://e-editiones.ch/ontology/mathematics#MathematicalObject">mathematics:MathematicalObject</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Conceptual entity in mathematics." xml:lang="en">
+               <div class="property-object">Conceptual entity in mathematics.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="mathematisches Objekt" xml:lang="de">
+               <div class="property-object">mathematisches Objekt
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="mathematical object" xml:lang="en"></span><div class="property-object">mathematical object
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#ConceptualEntity" title="Browse http://e-editiones.ch/ontology/concept#ConceptualEntity">concept:ConceptualEntity</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="NaturalNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#NaturalNumber" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#NaturalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#NaturalNumber">mathematics:NaturalNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Non-negative whole number used for counting and ordering." xml:lang="en">
+               <div class="property-object">Non-negative whole number used for counting and ordering.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="natural number" xml:lang="en">
+               <div class="property-object">natural number
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="natürliche Zahl" xml:lang="de"></span><div class="property-object">natürliche Zahl
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="Conform ISO 80000-2:2009." xml:lang="en">
+               <div class="property-object">Conform ISO 80000-2:2009.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#Number" title="Browse http://e-editiones.ch/ontology/mathematics#Number">mathematics:Number</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf">
+                  <table typeof="owl:Restriction">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2002/07/owl#allValuesFrom">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#allValuesFrom" title="Browse http://www.w3.org/2002/07/owl#allValuesFrom">owl:allValuesFrom</a></td>
+                        <td>
+                           <div class="property-object" rel="owl:allValuesFrom"><a class="browse" href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" title="Browse http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                        <td>
+                           <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#numberHasNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#numberHasNumeral">mathematics:numberHasNumeral</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Number" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#Number" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#Number" title="Browse http://e-editiones.ch/ontology/mathematics#Number">mathematics:Number</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Mathematical object used for counting, measuring, ordering, labeling, and coding." xml:lang="en">
+               <div class="property-object">Mathematical object used for counting, measuring, ordering, labeling, and coding.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="number" xml:lang="en">
+               <div class="property-object">number
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Zahl" xml:lang="de"></span><div class="property-object">Zahl
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#MathematicalObject" title="Browse http://e-editiones.ch/ontology/mathematics#MathematicalObject">mathematics:MathematicalObject</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#SymbolicEntity" title="Browse http://e-editiones.ch/ontology/concept#SymbolicEntity">concept:SymbolicEntity</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="OrdinalNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#OrdinalNumber" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#OrdinalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#OrdinalNumber">mathematics:OrdinalNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Natural number used to order, i.e. denoting the position of something in a sequence." xml:lang="en">
+               <div class="property-object">Natural number used to order, i.e. denoting the position of something in a sequence.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ordinal number" xml:lang="en">
+               <div class="property-object">ordinal number
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Ordinalzahl" xml:lang="de"></span><div class="property-object">Ordinalzahl
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#NaturalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#NaturalNumber">mathematics:NaturalNumber</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#OrdinalSymbol" title="Browse http://e-editiones.ch/ontology/mathematics#OrdinalSymbol">mathematics:OrdinalSymbol</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="OrdinalSymbol" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#OrdinalSymbol" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#OrdinalSymbol" title="Browse http://e-editiones.ch/ontology/mathematics#OrdinalSymbol">mathematics:OrdinalSymbol</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Symbol used to order, i.e. denoting the position of something in a sequence, e.g. the letters of an alphabet with literals a to z or A to Z." xml:lang="en">
+               <div class="property-object">Symbol used to order, i.e. denoting the position of something in a sequence, e.g.
+                  the letters of an alphabet with literals a to z or A to Z.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Ordinalsymbol" xml:lang="de">
+               <div class="property-object">Ordinalsymbol
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ordinal symbol" xml:lang="en"></span><div class="property-object">ordinal symbol
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#Identifier" title="Browse http://e-editiones.ch/ontology/concept#Identifier">concept:Identifier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Set" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#Set" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#Set" title="Browse http://e-editiones.ch/ontology/mathematics#Set">mathematics:Set</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Set of mathematical objects." xml:lang="en">
+               <div class="property-object">Set of mathematical objects.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="mathematical set" xml:lang="en">
+               <div class="property-object">mathematical set
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="mathematische Reihe" xml:lang="de"></span><div class="property-object">mathematische Reihe
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#Set" title="Browse http://e-editiones.ch/ontology/concept#Set">concept:Set</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#MathematicalObject" title="Browse http://e-editiones.ch/ontology/mathematics#MathematicalObject">mathematics:MathematicalObject</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Properties</h2>
+   <div id="hasNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#hasNumber" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasNumber" title="Browse http://e-editiones.ch/ontology/mathematics#hasNumber">mathematics:hasNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something to a number." xml:lang="en">
+               <div class="property-object">Relating something to a number.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Zahl" xml:lang="de">
+               <div class="property-object">hat Zahl
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has number" xml:lang="en"></span><div class="property-object">has number
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#Number" title="Browse http://e-editiones.ch/ontology/mathematics#Number">mathematics:Number</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#hasSymbolicEntity" title="Browse http://e-editiones.ch/ontology/concept#hasSymbolicEntity">concept:hasSymbolicEntity</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasNumeral" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#hasNumeral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#hasNumeral">mathematics:hasNumeral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something to a numeral." xml:lang="en">
+               <div class="property-object">Relating something to a numeral.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Numeral" xml:lang="de">
+               <div class="property-object">hat Numeral
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has numeral" xml:lang="en"></span><div class="property-object">has numeral
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="A reification of a numeral, i.e. a number, can always be interposed, see property chain axiom." xml:lang="en">
+               <div class="property-object">A reification of a numeral, i.e. a number, can always be interposed, see property
+                  chain axiom.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#propertyChainAxiom">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#propertyChainAxiom" title="Browse http://www.w3.org/2002/07/owl#propertyChainAxiom">owl:propertyChainAxiom</a></td>
+            <td>
+               <div class="property-object" rel="owl:propertyChainAxiom">
+                  <div xmlns="" class="property-object" typeof="rdf:List">
+                     <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/mathematics#hasNumber" title="Browse http://e-editiones.ch/ontology/mathematics#hasNumber">mathematics:hasNumber</a></div>
+                     <div class="property-object" rel="rdf:rest">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                        <div class="property-object" typeof="rdf:List">
+                           <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/mathematics#numberHasNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#numberHasNumeral">mathematics:numberHasNumeral</a></div>
+                           <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#decimal" title="Browse http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#hasLiteral" title="Browse http://e-editiones.ch/ontology/concept#hasLiteral">concept:hasLiteral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasOrdinalNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber">mathematics:hasOrdinalNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something to the number denoting its position in a sequence." xml:lang="en">
+               <div class="property-object">Relating something to the number denoting its position in a sequence.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Ordinalzahl" xml:lang="de">
+               <div class="property-object">hat Ordinalzahl
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has ordinal number" xml:lang="en"></span><div class="property-object">has ordinal number
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#OrdinalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#OrdinalNumber">mathematics:OrdinalNumber</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol">mathematics:hasOrdinalSymbol</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasOrdinalNumeral" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral">mathematics:hasOrdinalNumeral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something to the numeral denoting its position in a sequence." xml:lang="en">
+               <div class="property-object">Relating something to the numeral denoting its position in a sequence.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has ordinal numeral" xml:lang="en">
+               <div class="property-object">has ordinal numeral
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Ordinalnumeral" xml:lang="de"></span><div class="property-object">hat Ordinalnumeral
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#propertyChainAxiom">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#propertyChainAxiom" title="Browse http://www.w3.org/2002/07/owl#propertyChainAxiom">owl:propertyChainAxiom</a></td>
+            <td>
+               <div class="property-object" rel="owl:propertyChainAxiom">
+                  <div xmlns="" class="property-object" typeof="rdf:List">
+                     <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalNumber">mathematics:hasOrdinalNumber</a></div>
+                     <div class="property-object" rel="rdf:rest">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                        <div class="property-object" typeof="rdf:List">
+                           <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/mathematics#numberHasNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#numberHasNumeral">mathematics:numberHasNumeral</a></div>
+                           <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" title="Browse http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf">
+                  <table about="http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral" typeof="owl:DatatypeProperty">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral">mathematics:hasOrdinalLiteral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Relating something to the literal denoting its position in a sequence." xml:lang="en">
+                           <div class="property-object">Relating something to the literal denoting its position in a sequence.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="hat Ordinalliteral" xml:lang="de">
+                           <div class="property-object">hat Ordinalliteral
+                              													(de)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="has ordinal literal" xml:lang="en"></span><div class="property-object">has ordinal literal
+                              													
+                              													(en)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2002/07/owl#propertyChainAxiom">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#propertyChainAxiom" title="Browse http://www.w3.org/2002/07/owl#propertyChainAxiom">owl:propertyChainAxiom</a></td>
+                        <td>
+                           <div class="property-object" rel="owl:propertyChainAxiom">
+                              <div xmlns="" class="property-object" typeof="rdf:List">
+                                 <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol">mathematics:hasOrdinalSymbol</a></div>
+                                 <div class="property-object" rel="rdf:rest">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                                    <div class="property-object" typeof="rdf:List">
+                                       <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral" title="Browse http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral">concept:symbolicEntityHasLiteral</a></div>
+                                       <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Literal" title="Browse http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#hasLiteral" title="Browse http://e-editiones.ch/ontology/concept#hasLiteral">concept:hasLiteral</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasOrdinalSymbol" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalSymbol">mathematics:hasOrdinalSymbol</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something to the symbolic entity denoting its position in a sequence." xml:lang="en">
+               <div class="property-object">Relating something to the symbolic entity denoting its position in a sequence.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has ordinal symbol" xml:lang="en">
+               <div class="property-object">has ordinal symbol
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Ordinalsymbol" xml:lang="de"></span><div class="property-object">hat Ordinalsymbol
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#OrdinalSymbol" title="Browse http://e-editiones.ch/ontology/mathematics#OrdinalSymbol">mathematics:OrdinalSymbol</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#hasIdentifier" title="Browse http://e-editiones.ch/ontology/concept#hasIdentifier">concept:hasIdentifier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="numberHasNumeral" class="description">
+      <table about="http://e-editiones.ch/ontology/mathematics#numberHasNumeral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#numberHasNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#numberHasNumeral">mathematics:numberHasNumeral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a number to its representing numeral." xml:lang="en">
+               <div class="property-object">Relating a number to its representing numeral.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#Number" title="Browse http://e-editiones.ch/ontology/mathematics#Number">mathematics:Number</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#" title="Browse http://e-editiones.ch/ontology/mathematics#">mathematics:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Nummer hat Numeral" xml:lang="de">
+               <div class="property-object">Nummer hat Numeral
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="number has numeral" xml:lang="en"></span><div class="property-object">number has numeral
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#decimal" title="Browse http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral" title="Browse http://e-editiones.ch/ontology/concept#symbolicEntityHasLiteral">concept:symbolicEntityHasLiteral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/mathematics.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/mathematics.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/mathematics.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/mathematics.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/mathematics.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

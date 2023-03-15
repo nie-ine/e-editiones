@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="/e-editiones/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/e-editiones/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/e-editiones/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Text Editing</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/text-editing.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/text-editing.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/text-editing.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/text-editing.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/text-editing.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing" title="Browse http://e-editiones.ch/ontology/text-editing"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/contributor">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
+            <td property="dct:contributor" content="Roberta Padlina, project coordinator, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Roberta Padlina, project coordinator, University of Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of text editing, general subclasses, related classes, and properties." xml:lang="en">
+               <div class="property-object">Formal description of text editing, general subclasses, related classes, and properties.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/license">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/license" title="Browse http://purl.org/dc/terms/license">dct:license</a></td>
+            <td>
+               <div class="property-object" rel="dct:license"><a class="browse" href="http://creativecommons.org/licenses/by/3.0/" title="Browse http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/ licenses/ by/ 3.0/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="Universities of Basel, Bern, and Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Universities of Basel, Bern, and Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="https://digitallatin.github.io/guidelines/LDLT-Guidelines.html" title="Browse https://digitallatin.github.io/guidelines/LDLT-Guidelines.html">https://digitallatin.github.io/ guidelines/ LDLT-Guidelines.html</a></div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="An ontology about text editing" xml:lang="en">
+               <div class="property-object">An ontology about text editing</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e79="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+               <div class="property-object">2020-06-11</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="Abbreviation" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Abbreviation" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Abbreviation" title="Browse http://e-editiones.ch/ontology/text-editing#Abbreviation">text-editing:Abbreviation</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Text edition as a result of shortening the text." xml:lang="en">
+               <div class="property-object">Text edition as a result of shortening the text.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="abbreviation" xml:lang="en">
+               <div class="property-object">abbreviation
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kurzfassung" xml:lang="de"></span><div class="property-object">Kurzfassung
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="abréviation" xml:lang="fr"></span><div class="property-object">abréviation
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="abbreviazione" xml:lang="it"></span><div class="property-object">abbreviazione
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Abbreviator" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Abbreviator" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Abbreviator" title="Browse http://e-editiones.ch/ontology/text-editing#Abbreviator">text-editing:Abbreviator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Editor shortening a text." xml:lang="en">
+               <div class="property-object">Editor shortening a text.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="abbreviator" xml:lang="it">
+               <div class="property-object">abbreviator
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="abréviateur" xml:lang="fr"></span><div class="property-object">abréviateur
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="abbreviator" xml:lang="en"></span><div class="property-object">abbreviator
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="abbreviator" xml:lang="la"></span><div class="property-object">abbreviator
+                  													
+                  													(la)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kurzfasser" xml:lang="de"></span><div class="property-object">Kurzfasser
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#PersonEditor" title="Browse http://e-editiones.ch/ontology/text-editing#PersonEditor">text-editing:PersonEditor</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="AgentEditor" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#AgentEditor" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#AgentEditor" title="Browse http://e-editiones.ch/ontology/text-editing#AgentEditor">text-editing:AgentEditor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a human agent—person or organization—changing a text." xml:lang="en">
+               <div class="property-object">Role of a human agent—person or organization—changing a text.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="editor di testo" xml:lang="it">
+               <div class="property-object">editor di testo
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Texteditor" xml:lang="de"></span><div class="property-object">Texteditor
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="éditeur de texte" xml:lang="fr"></span><div class="property-object">éditeur de texte
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="text editor" xml:lang="en"></span><div class="property-object">text editor
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#AgentCreator" title="Browse http://e-editiones.ch/ontology/creating#AgentCreator">creating:AgentCreator</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Annotator" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Annotator" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Annotator" title="Browse http://e-editiones.ch/ontology/text-editing#Annotator">text-editing:Annotator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a person adding notes *annotations* to a text, creating an annotated edition." xml:lang="en">
+               <div class="property-object">Role of a person adding notes *annotations* to a text, creating an annotated edition.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="annotatore" xml:lang="it">
+               <div class="property-object">annotatore
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="annotator" xml:lang="la"></span><div class="property-object">annotator
+                  													
+                  													(la)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="annotateur" xml:lang="fr"></span><div class="property-object">annotateur
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="annotator" xml:lang="en"></span><div class="property-object">annotator
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Annotator" xml:lang="de"></span><div class="property-object">Annotator
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#PersonEditor" title="Browse http://e-editiones.ch/ontology/text-editing#PersonEditor">text-editing:PersonEditor</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="DerivedTextExpression" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#DerivedTextExpression" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#DerivedTextExpression" title="Browse http://e-editiones.ch/ontology/text-editing#DerivedTextExpression">text-editing:DerivedTextExpression</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Text expression derived from another text expression with content changed beyond a version." xml:lang="en">
+               <div class="property-object">Text expression derived from another text expression with content changed beyond a
+                  version.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="abgeleitete Textexpression" xml:lang="de">
+               <div class="property-object">abgeleitete Textexpression
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="espressione di testo derivata" xml:lang="it"></span><div class="property-object">espressione di testo derivata
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="expression de texte dérivée" xml:lang="fr"></span><div class="property-object">expression de texte dérivée
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="derived text expression" xml:lang="en"></span><div class="property-object">derived text expression
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Expression" title="Browse http://e-editiones.ch/ontology/text-expression#Expression">text-expression:Expression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationDerivative" title="Browse http://e-editiones.ch/ontology/creating#CreationDerivative">creating:CreationDerivative</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Edition" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Edition" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Changed text as a result of editing." xml:lang="en">
+               <div class="property-object">Changed text as a result of editing.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="text edition" xml:lang="en">
+               <div class="property-object">text edition
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Textedition" xml:lang="de"></span><div class="property-object">Textedition
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="édition de texte" xml:lang="fr"></span><div class="property-object">édition de texte
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="edizione testuale" xml:lang="it"></span><div class="property-object">edizione testuale
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#Text" title="Browse http://e-editiones.ch/ontology/text#Text">text:Text</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="EditorialDirector" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#EditorialDirector" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#EditorialDirector" title="Browse http://e-editiones.ch/ontology/text-editing#EditorialDirector">text-editing:EditorialDirector</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a person supervising editors, overseeing one or more editions to be published (e.g. book, magazine, website), ensuring they bear an overarching organization's vision, share certain qualities and assure them." xml:lang="en">
+               <div class="property-object">Role of a person supervising editors, overseeing one or more editions to be published
+                  (e.g. book, magazine, website), ensuring they bear an overarching organization's vision,
+                  share certain qualities and assure them.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="direttore editoriale" xml:lang="it">
+               <div class="property-object">direttore editoriale
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="directeur éditorial" xml:lang="fr"></span><div class="property-object">directeur éditorial
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Redaktionsleiter" xml:lang="de"></span><div class="property-object">Redaktionsleiter
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="editorial director" xml:lang="en"></span><div class="property-object">editorial director
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="https://work.chron.com/editorial-director-21903.html#:~:text=In%20the%20case%20of%20a,and%20authors%20editors%20have%20chosen" title="Browse https://work.chron.com/editorial-director-21903.html#:~:text=In%20the%20case%20of%20a,and%20authors%20editors%20have%20chosen">https://work.chron.com/ editorial-director-21903.html#:~:text=In%20the%20case%20of%20a,and%20authors%20editors%20have%20chosen</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#PersonRole" title="Browse http://e-editiones.ch/ontology/human#PersonRole">human:PersonRole</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Glossator" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Glossator" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Glossator" title="Browse http://e-editiones.ch/ontology/text-editing#Glossator">text-editing:Glossator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a person adding glosses to a text." xml:lang="en">
+               <div class="property-object">Role of a person adding glosses to a text.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="glossateur" xml:lang="fr">
+               <div class="property-object">glossateur
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="glossator" xml:lang="en"></span><div class="property-object">glossator
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="glossatore" xml:lang="it"></span><div class="property-object">glossatore
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Glossator" xml:lang="de"></span><div class="property-object">Glossator
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="glossator" xml:lang="la"></span><div class="property-object">glossator
+                  													
+                  													(la)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#PersonEditor" title="Browse http://e-editiones.ch/ontology/text-editing#PersonEditor">text-editing:PersonEditor</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="LiteralExposition" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#LiteralExposition" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#LiteralExposition" title="Browse http://e-editiones.ch/ontology/text-editing#LiteralExposition">text-editing:LiteralExposition</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Text edition providing background information on word level to a text in clarifying its meaning." xml:lang="en">
+               <div class="property-object">Text edition providing background information on word level to a text in clarifying
+                  its meaning.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="wörtliche Auslegung" xml:lang="de">
+               <div class="property-object">wörtliche Auslegung
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="literal exposition" xml:lang="en"></span><div class="property-object">literal exposition
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="exposition littérale" xml:lang="fr"></span><div class="property-object">exposition littérale
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="esposizione letterale" xml:lang="it"></span><div class="property-object">esposizione letterale
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="OrganizationEditor" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#OrganizationEditor" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#OrganizationEditor" title="Browse http://e-editiones.ch/ontology/text-editing#OrganizationEditor">text-editing:OrganizationEditor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of an organization changing a text." xml:lang="en">
+               <div class="property-object">Role of an organization changing a text.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="text editor role of organization" xml:lang="en">
+               <div class="property-object">text editor role of organization
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="organisation-éditeur de texte" xml:lang="fr"></span><div class="property-object">organisation-éditeur de texte
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="organizzazione-editor di testo" xml:lang="it"></span><div class="property-object">organizzazione-editor di testo
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Texteditorrolle einer Organisation" xml:lang="de"></span><div class="property-object">Texteditorrolle einer Organisation
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/organization#Creator" title="Browse http://e-editiones.ch/ontology/organization#Creator">organization:Creator</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Paraphrase" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Paraphrase" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Paraphrase" title="Browse http://e-editiones.ch/ontology/text-editing#Paraphrase">text-editing:Paraphrase</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Text edition restating a text clarifying its meaning." xml:lang="en">
+               <div class="property-object">Text edition restating a text clarifying its meaning.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="paraphrase" xml:lang="fr">
+               <div class="property-object">paraphrase
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="parafrasi" xml:lang="it"></span><div class="property-object">parafrasi
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="paraphrase" xml:lang="en"></span><div class="property-object">paraphrase
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Paraphrase" xml:lang="de"></span><div class="property-object">Paraphrase
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="PersonEditor" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#PersonEditor" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#PersonEditor" title="Browse http://e-editiones.ch/ontology/text-editing#PersonEditor">text-editing:PersonEditor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a person changing a text." xml:lang="en">
+               <div class="property-object">Role of a person changing a text.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="personne - éditeur de texte" xml:lang="fr">
+               <div class="property-object">personne - éditeur de texte
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Texteditorrolle einer Person" xml:lang="de"></span><div class="property-object">Texteditorrolle einer Person
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="persona - editor di testo" xml:lang="it"></span><div class="property-object">persona - editor di testo
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="text editor role of person" xml:lang="en"></span><div class="property-object">text editor role of person
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#PersonCreator" title="Browse http://e-editiones.ch/ontology/creating#PersonCreator">creating:PersonCreator</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Recension" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Recension" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Recension" title="Browse http://e-editiones.ch/ontology/text-editing#Recension">text-editing:Recension</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Critical revision of a text, e.g. a literary classic, i.e. based on a critical examination of earlier texts and authoritative sources, usually undertaken only after a consensus has developed among leading scholars concerning the weight of evidence." xml:lang="en">
+               <div class="property-object">Critical revision of a text, e.g. a literary classic, i.e. based on a critical examination
+                  of earlier texts and authoritative sources, usually undertaken only after a consensus
+                  has developed among leading scholars concerning the weight of evidence.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="recensione" xml:lang="it">
+               <div class="property-object">recensione
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="révision" xml:lang="fr"></span><div class="property-object">révision
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="recension" xml:lang="en"></span><div class="property-object">recension
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Revision" xml:lang="de"></span><div class="property-object">Revision
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="https://products.abc-clio.com/ODLIS/odlis_r.aspx#recension" title="Browse https://products.abc-clio.com/ODLIS/odlis_r.aspx#recension">https://products.abc-clio.com/ ODLIS/ odlis r.aspx#recension</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Revision" title="Browse http://e-editiones.ch/ontology/text-editing#Revision">text-editing:Revision</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Revision" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Revision" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Revision" title="Browse http://e-editiones.ch/ontology/text-editing#Revision">text-editing:Revision</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Text edition as a result of revising." xml:lang="en">
+               <div class="property-object">Text edition as a result of revising.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Textprüfung" xml:lang="de">
+               <div class="property-object">Textprüfung
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="révision de texte" xml:lang="fr"></span><div class="property-object">révision de texte
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="text revision" xml:lang="en"></span><div class="property-object">text revision
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="revisione del testo" xml:lang="it"></span><div class="property-object">revisione del testo
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Revisor" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Revisor" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Revisor" title="Browse http://e-editiones.ch/ontology/text-editing#Revisor">text-editing:Revisor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a person revising a text." xml:lang="en">
+               <div class="property-object">Role of a person revising a text.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="revisore del testo" xml:lang="it">
+               <div class="property-object">revisore del testo
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="text revisor" xml:lang="en"></span><div class="property-object">text revisor
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Textüberprüfer" xml:lang="de"></span><div class="property-object">Textüberprüfer
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="réviseur de texte" xml:lang="fr"></span><div class="property-object">réviseur de texte
+                  													
+                  													(fr)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#PersonEditor" title="Browse http://e-editiones.ch/ontology/text-editing#PersonEditor">text-editing:PersonEditor</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Transliteration" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#Transliteration" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Transliteration" title="Browse http://e-editiones.ch/ontology/text-editing#Transliteration">text-editing:Transliteration</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Text edition as written text transferred in another alphabet using the closest corresponding symbols, e.g. letters." xml:lang="en">
+               <div class="property-object">Text edition as written text transferred in another alphabet using the closest corresponding
+                  symbols, e.g. letters.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="transliteration" xml:lang="en">
+               <div class="property-object">transliteration
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="translittération" xml:lang="fr"></span><div class="property-object">translittération
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Transliteration" xml:lang="de"></span><div class="property-object">Transliteration
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="traslitterazione" xml:lang="it"></span><div class="property-object">traslitterazione
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="Primarily representing the symbols, not the sounds." xml:lang="en">
+               <div class="property-object">Primarily representing the symbols, not the sounds.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#WrittenText" title="Browse http://e-editiones.ch/ontology/text#WrittenText">text:WrittenText</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Properties</h2>
+   <div id="hasAbbreviator" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasAbbreviator" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasAbbreviator" title="Browse http://e-editiones.ch/ontology/text-editing#hasAbbreviator">text-editing:hasAbbreviator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating an abbreviation to a person who created it." xml:lang="en">
+               <div class="property-object">Relating an abbreviation to a person who created it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Abbreviation" title="Browse http://e-editiones.ch/ontology/text-editing#Abbreviation">text-editing:Abbreviation</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Kurzfasser" xml:lang="de">
+               <div class="property-object">hat Kurzfasser
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ha abbreviatore" xml:lang="it"></span><div class="property-object">ha abbreviatore
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a un abréviateur" xml:lang="fr"></span><div class="property-object">a un abréviateur
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has abbreviator" xml:lang="en"></span><div class="property-object">has abbreviator
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#personHasRole" title="Browse http://e-editiones.ch/ontology/human#personHasRole">human:personHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Abbreviator" title="Browse http://e-editiones.ch/ontology/text-editing#Abbreviator">text-editing:Abbreviator</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasDerivedTextExpression" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasDerivedTextExpression" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasDerivedTextExpression" title="Browse http://e-editiones.ch/ontology/text-editing#hasDerivedTextExpression">text-editing:hasDerivedTextExpression</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a text expression to another one derived from it." xml:lang="en">
+               <div class="property-object">Relating a text expression to another one derived from it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Expression" title="Browse http://e-editiones.ch/ontology/text-expression#Expression">text-expression:Expression</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ha derivato espressione di testo" xml:lang="it">
+               <div class="property-object">ha derivato espressione di testo
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has derived text expression" xml:lang="en"></span><div class="property-object">has derived text expression
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat abgeleitete Textexpression" xml:lang="de"></span><div class="property-object">hat abgeleitete Textexpression
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a une expression de texte dérivée" xml:lang="fr"></span><div class="property-object">a une expression de texte dérivée
+                  													
+                  													(fr)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#DerivedTextExpression" title="Browse http://e-editiones.ch/ontology/text-editing#DerivedTextExpression">text-editing:DerivedTextExpression</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasEdition" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasEdition" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasEdition" title="Browse http://e-editiones.ch/ontology/text-editing#hasEdition">text-editing:hasEdition</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a text to an edition it has." xml:lang="en">
+               <div class="property-object">Relating a text to an edition it has.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text#Text" title="Browse http://e-editiones.ch/ontology/text#Text">text:Text</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="il testo ha edizione" xml:lang="it">
+               <div class="property-object">il testo ha edizione
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Text hat Edition" xml:lang="de"></span><div class="property-object">Text hat Edition
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="le texte a une édition" xml:lang="fr"></span><div class="property-object">le texte a une édition
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="text has edition" xml:lang="en"></span><div class="property-object">text has edition
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasEditor" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasEditor" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasEditor" title="Browse http://e-editiones.ch/ontology/text-editing#hasEditor">text-editing:hasEditor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating an edition to the human agent—person or organization—that created it." xml:lang="en">
+               <div class="property-object">Relating an edition to the human agent—person or organization—that created it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="l'édition a un éditeur" xml:lang="fr">
+               <div class="property-object">l'édition a un éditeur
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="edizione ha editor" xml:lang="it"></span><div class="property-object">edizione ha editor
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="edition has editor" xml:lang="en"></span><div class="property-object">edition has editor
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Edition hat Editor" xml:lang="de"></span><div class="property-object">Edition hat Editor
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Agent" title="Browse http://e-editiones.ch/ontology/human#Agent">human:Agent</a></div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#agentHasRole" title="Browse http://e-editiones.ch/ontology/human#agentHasRole">human:agentHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#AgentEditor" title="Browse http://e-editiones.ch/ontology/text-editing#AgentEditor">text-editing:AgentEditor</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasEditorialDirector" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasEditorialDirector" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasEditorialDirector" title="Browse http://e-editiones.ch/ontology/text-editing#hasEditorialDirector">text-editing:hasEditorialDirector</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating an edition to its editorial director." xml:lang="en">
+               <div class="property-object">Relating an edition to its editorial director.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Edition" title="Browse http://e-editiones.ch/ontology/text-editing#Edition">text-editing:Edition</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="edizione ha direttore editoriale" xml:lang="it">
+               <div class="property-object">edizione ha direttore editoriale
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="edition has editorial director" xml:lang="en"></span><div class="property-object">edition has editorial director
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Edition hat Redaktionsleiter" xml:lang="de"></span><div class="property-object">Edition hat Redaktionsleiter
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="l'édition a directeur éditorial" xml:lang="fr"></span><div class="property-object">l'édition a directeur éditorial
+                  													
+                  													(fr)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#personHasRole" title="Browse http://e-editiones.ch/ontology/human#personHasRole">human:personHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#EditorialDirector" title="Browse http://e-editiones.ch/ontology/text-editing#EditorialDirector">text-editing:EditorialDirector</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasRecensor" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasRecensor" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasRecensor" title="Browse http://e-editiones.ch/ontology/text-editing#hasRecensor">text-editing:hasRecensor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a recension to a person who created it." xml:lang="en">
+               <div class="property-object">Relating a recension to a person who created it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Recension" title="Browse http://e-editiones.ch/ontology/text-editing#Recension">text-editing:Recension</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ha recensore" xml:lang="it">
+               <div class="property-object">ha recensore
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Rezensor" xml:lang="de"></span><div class="property-object">hat Rezensor
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a recenseur" xml:lang="fr"></span><div class="property-object">a recenseur
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has recensor" xml:lang="en"></span><div class="property-object">has recensor
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#personHasRole" title="Browse http://e-editiones.ch/ontology/human#personHasRole">human:personHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Recensor" title="Browse http://e-editiones.ch/ontology/text-editing#Recensor">text-editing:Recensor</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasRevisor" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasRevisor" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasRevisor" title="Browse http://e-editiones.ch/ontology/text-editing#hasRevisor">text-editing:hasRevisor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a text revision to a person who created it." xml:lang="en">
+               <div class="property-object">Relating a text revision to a person who created it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Revision" title="Browse http://e-editiones.ch/ontology/text-editing#Revision">text-editing:Revision</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="la révision du texte a un réviseur" xml:lang="fr">
+               <div class="property-object">la révision du texte a un réviseur
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Textprüfung hat Überprüfer" xml:lang="de"></span><div class="property-object">Textprüfung hat Überprüfer
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="text revision has revisor" xml:lang="en"></span><div class="property-object">text revision has revisor
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="la revisione del testo ha un revisore" xml:lang="it"></span><div class="property-object">la revisione del testo ha un revisore
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#personHasRole" title="Browse http://e-editiones.ch/ontology/human#personHasRole">human:personHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Revisor" title="Browse http://e-editiones.ch/ontology/text-editing#Revisor">text-editing:Revisor</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasSameEditionAs" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasSameEditionAs" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasSameEditionAs" title="Browse http://e-editiones.ch/ontology/text-editing#hasSameEditionAs">text-editing:hasSameEditionAs</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating two texts with a same edition." xml:lang="en">
+               <div class="property-object">Relating two texts with a same edition.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text#Text" title="Browse http://e-editiones.ch/ontology/text#Text">text:Text</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="a la même édition que" xml:lang="fr">
+               <div class="property-object">a la même édition que
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ha la stessa edizione di" xml:lang="it"></span><div class="property-object">ha la stessa edizione di
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has same edition as" xml:lang="en"></span><div class="property-object">has same edition as
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat dieselbe Edition als" xml:lang="de"></span><div class="property-object">hat dieselbe Edition als
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/text#Text" title="Browse http://e-editiones.ch/ontology/text#Text">text:Text</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasTransliteration" class="description">
+      <table about="http://e-editiones.ch/ontology/text-editing#hasTransliteration" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#hasTransliteration" title="Browse http://e-editiones.ch/ontology/text-editing#hasTransliteration">text-editing:hasTransliteration</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a text to a transliteration thereof." xml:lang="en">
+               <div class="property-object">Relating a text to a transliteration thereof.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/text#Text" title="Browse http://e-editiones.ch/ontology/text#Text">text:Text</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#" title="Browse http://e-editiones.ch/ontology/text-editing#">text-editing:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has transliteration" xml:lang="en">
+               <div class="property-object">has transliteration
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Transliteration" xml:lang="de"></span><div class="property-object">hat Transliteration
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ha traslitterazione" xml:lang="it"></span><div class="property-object">ha traslitterazione
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="a une translittération" xml:lang="fr"></span><div class="property-object">a une translittération
+                  													
+                  													(fr)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/text-editing#Transliteration" title="Browse http://e-editiones.ch/ontology/text-editing#Transliteration">text-editing:Transliteration</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/text-editing.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/text-editing.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/text-editing.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/text-editing.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/text-editing.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

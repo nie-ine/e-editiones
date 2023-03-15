@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="/e-editiones/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/e-editiones/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/e-editiones/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Creating</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/creating.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/creating.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/creating.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/creating.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/creating.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/creating" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating" title="Browse http://e-editiones.ch/ontology/creating"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/contributor">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
+            <td property="dct:contributor" content="Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Roberta Padlina, project coordinator and software developer, University of Basel,
+                  Switzerland</div>
+               <div class="connector"></div><span property="dct:contributor" content="Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland" xml:lang="en"></span><div class="property-object">Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of creating by humans, general subclasses, related classes and properties." xml:lang="en">
+               <div class="property-object">Formal description of creating by humans, general subclasses, related classes and
+                  properties.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/license">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/license" title="Browse http://purl.org/dc/terms/license">dct:license</a></td>
+            <td>
+               <div class="property-object" rel="dct:license"><a class="browse" href="http://creativecommons.org/licenses/by/3.0/" title="Browse http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/ licenses/ by/ 3.0/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="Universities of Basel, Bern, and Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Universities of Basel, Bern, and Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="An ontology about human creating" xml:lang="en">
+               <div class="property-object">An ontology about human creating</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e42="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+               <div class="property-object">2020-06-11</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="AgentCreator" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#AgentCreator" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#AgentCreator" title="Browse http://e-editiones.ch/ontology/creating#AgentCreator">creating:AgentCreator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a human agent, i.e. person or group, creating something." xml:lang="en">
+               <div class="property-object">Role of a human agent, i.e. person or group, creating something.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Erstellerrolle eines Akteurs" xml:lang="de">
+               <div class="property-object">Erstellerrolle eines Akteurs
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="creator role of agent" xml:lang="en"></span><div class="property-object">creator role of agent
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#AgentRole" title="Browse http://e-editiones.ch/ontology/human#AgentRole">human:AgentRole</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/agent#Creator" title="Browse http://e-editiones.ch/ontology/agent#Creator">agent:Creator</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="AnonymousCreation" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#AnonymousCreation" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#AnonymousCreation" title="Browse http://e-editiones.ch/ontology/creating#AnonymousCreation">creating:AnonymousCreation</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Something created by one or more unidentified persons." xml:lang="en">
+               <div class="property-object">Something created by one or more unidentified persons.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="anonyme Erstellung" xml:lang="de">
+               <div class="property-object">anonyme Erstellung
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="anonymous creation" xml:lang="en"></span><div class="property-object">anonymous creation
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Building" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#Building" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#Building" title="Browse http://e-editiones.ch/ontology/creating#Building">creating:Building</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="A physical construction, e.g. house or factory, created by one ore more persons." xml:lang="en">
+               <div class="property-object">A physical construction, e.g. house or factory, created by one ore more persons.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Gebäude" xml:lang="de">
+               <div class="property-object">Gebäude
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="building" xml:lang="en"></span><div class="property-object">building
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#PhysicalCreation" title="Browse http://e-editiones.ch/ontology/creating#PhysicalCreation">creating:PhysicalCreation</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Collection" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#Collection" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#Collection" title="Browse http://e-editiones.ch/ontology/creating#Collection">creating:Collection</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Things brought together as a person creation." xml:lang="en">
+               <div class="property-object">Things brought together as a person creation.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Sammlung" xml:lang="de">
+               <div class="property-object">Sammlung
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="collection" xml:lang="en"></span><div class="property-object">collection
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Copy" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#Copy" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#Copy" title="Browse http://e-editiones.ch/ontology/creating#Copy">creating:Copy</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Reproduction of a person creation." xml:lang="en">
+               <div class="property-object">Reproduction of a person creation.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Kopie" xml:lang="de">
+               <div class="property-object">Kopie
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="copy" xml:lang="en"></span><div class="property-object">copy
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#PhysicalCreation" title="Browse http://e-editiones.ch/ontology/creating#PhysicalCreation">creating:PhysicalCreation</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Creating" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#Creating" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creating" title="Browse http://e-editiones.ch/ontology/creating#Creating">creating:Creating</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Creating as a person-action." xml:lang="en">
+               <div class="property-object">Creating as a person-action.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Erstellen" xml:lang="de">
+               <div class="property-object">Erstellen
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="creating" xml:lang="en"></span><div class="property-object">creating
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Action" title="Browse http://e-editiones.ch/ontology/human#Action">human:Action</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/event#Creating" title="Browse http://e-editiones.ch/ontology/event#Creating">event:Creating</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Creation" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#Creation" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Something created by one or more persons." xml:lang="en">
+               <div class="property-object">Something created by one or more persons.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="creation" xml:lang="en">
+               <div class="property-object">creation
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Erstellung" xml:lang="de"></span><div class="property-object">Erstellung
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing" title="Browse http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing">cidoc:E71 Man-Made Thing</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf">
+                  <table typeof="owl:Restriction">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                        <td>
+                           <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/event#isOutputOf" title="Browse http://e-editiones.ch/ontology/event#isOutputOf">event:isOutputOf</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                        <td>
+                           <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creating" title="Browse http://e-editiones.ch/ontology/creating#Creating">creating:Creating</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/event#Output" title="Browse http://e-editiones.ch/ontology/event#Output">event:Output</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="CreationDerivative" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#CreationDerivative" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationDerivative" title="Browse http://e-editiones.ch/ontology/creating#CreationDerivative">creating:CreationDerivative</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Derivative of a person creation, e.g. a translation." xml:lang="en">
+               <div class="property-object">Derivative of a person creation, e.g. a translation.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Derivat einer Erstellung" xml:lang="de">
+               <div class="property-object">Derivat einer Erstellung
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="creation derivative" xml:lang="en"></span><div class="property-object">creation derivative
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="CreationGroup" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#CreationGroup" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationGroup" title="Browse http://e-editiones.ch/ontology/creating#CreationGroup">creating:CreationGroup</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Group of person creations." xml:lang="en">
+               <div class="property-object">Group of person creations.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Gruppe von Erstellungen" xml:lang="de">
+               <div class="property-object">Gruppe von Erstellungen
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="creation group" xml:lang="en"></span><div class="property-object">creation group
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="CreationSet" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#CreationSet" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationSet" title="Browse http://e-editiones.ch/ontology/creating#CreationSet">creating:CreationSet</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Group of person creations belonging together." xml:lang="en">
+               <div class="property-object">Group of person creations belonging together.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="creation set" xml:lang="en">
+               <div class="property-object">creation set
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Reihe von Erstellungen" xml:lang="de"></span><div class="property-object">Reihe von Erstellungen
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationGroup" title="Browse http://e-editiones.ch/ontology/creating#CreationGroup">creating:CreationGroup</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="CreationVersion" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#CreationVersion" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationVersion" title="Browse http://e-editiones.ch/ontology/creating#CreationVersion">creating:CreationVersion</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Person creation differing in certain respects - e.g. time, extent - from onther e.g. earlier or standard one." xml:lang="en">
+               <div class="property-object">Person creation differing in certain respects - e.g. time, extent - from onther e.g.
+                  earlier or standard one.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="creation version" xml:lang="en">
+               <div class="property-object">creation version
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Version einer Erstellung" xml:lang="de"></span><div class="property-object">Version einer Erstellung
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="A version is created by the same person or group of persons who created another version." xml:lang="en">
+               <div class="property-object">A version is created by the same person or group of persons who created another version.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="FinalVersion" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#FinalVersion" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#FinalVersion" title="Browse http://e-editiones.ch/ontology/creating#FinalVersion">creating:FinalVersion</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Person creation as last version." xml:lang="en">
+               <div class="property-object">Person creation as last version.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="final version" xml:lang="en">
+               <div class="property-object">final version
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Endversion" xml:lang="de"></span><div class="property-object">Endversion
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationVersion" title="Browse http://e-editiones.ch/ontology/creating#CreationVersion">creating:CreationVersion</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="FirstVersion" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#FirstVersion" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#FirstVersion" title="Browse http://e-editiones.ch/ontology/creating#FirstVersion">creating:FirstVersion</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Person creation as first version." xml:lang="en">
+               <div class="property-object">Person creation as first version.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="first version" xml:lang="en">
+               <div class="property-object">first version
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Erstversion" xml:lang="de"></span><div class="property-object">Erstversion
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationVersion" title="Browse http://e-editiones.ch/ontology/creating#CreationVersion">creating:CreationVersion</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="IntendedFinalVersion" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#IntendedFinalVersion" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#IntendedFinalVersion" title="Browse http://e-editiones.ch/ontology/creating#IntendedFinalVersion">creating:IntendedFinalVersion</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Person creation as intended last version, e.g. of a development." xml:lang="en">
+               <div class="property-object">Person creation as intended last version, e.g. of a development.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="intended final version" xml:lang="en">
+               <div class="property-object">intended final version
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="beabsichtigte Endversion" xml:lang="de"></span><div class="property-object">beabsichtigte Endversion
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#FinalVersion" title="Browse http://e-editiones.ch/ontology/creating#FinalVersion">creating:FinalVersion</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="PersonAuthor" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#PersonAuthor" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#PersonAuthor" title="Browse http://e-editiones.ch/ontology/creating#PersonAuthor">creating:PersonAuthor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a person being responsible for a creation." xml:lang="en">
+               <div class="property-object">Role of a person being responsible for a creation.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Autorenrolle einer Person" xml:lang="de">
+               <div class="property-object">Autorenrolle einer Person
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="author role of person" xml:lang="en"></span><div class="property-object">author role of person
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#PersonRole" title="Browse http://e-editiones.ch/ontology/human#PersonRole">human:PersonRole</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="PersonCreator" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#PersonCreator" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#PersonCreator" title="Browse http://e-editiones.ch/ontology/creating#PersonCreator">creating:PersonCreator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Role of a person creating something." xml:lang="en">
+               <div class="property-object">Role of a person creating something.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Erstellerrolle einer Person" xml:lang="de">
+               <div class="property-object">Erstellerrolle einer Person
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="creator role of person" xml:lang="en"></span><div class="property-object">creator role of person
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#PersonRole" title="Browse http://e-editiones.ch/ontology/human#PersonRole">human:PersonRole</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#AgentCreator" title="Browse http://e-editiones.ch/ontology/creating#AgentCreator">creating:AgentCreator</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="PhysicalCreation" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#PhysicalCreation" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#PhysicalCreation" title="Browse http://e-editiones.ch/ontology/creating#PhysicalCreation">creating:PhysicalCreation</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Person creation as a physical resource." xml:lang="en">
+               <div class="property-object">Person creation as a physical resource.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="physische Erstellung" xml:lang="de">
+               <div class="property-object">physische Erstellung
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="physical creation" xml:lang="en"></span><div class="property-object">physical creation
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing" title="Browse http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing">cidoc:E24 Physical Man-Made Thing</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Relic" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#Relic" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#Relic" title="Browse http://e-editiones.ch/ontology/creating#Relic">creating:Relic</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Preserved remaining of interest of a person or of a person's belongings." xml:lang="en">
+               <div class="property-object">Preserved remaining of interest of a person or of a person's belongings.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Relikt" xml:lang="de">
+               <div class="property-object">Relikt
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="relic" xml:lang="en"></span><div class="property-object">relic
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#PhysicalCreation" title="Browse http://e-editiones.ch/ontology/creating#PhysicalCreation">creating:PhysicalCreation</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="UnfinishedCreation" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#UnfinishedCreation" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#UnfinishedCreation" title="Browse http://e-editiones.ch/ontology/creating#UnfinishedCreation">creating:UnfinishedCreation</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Person creation in a state of not having all envisioned features." xml:lang="en">
+               <div class="property-object">Person creation in a state of not having all envisioned features.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="unfinished creation" xml:lang="en">
+               <div class="property-object">unfinished creation
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="unfertige Erstellung" xml:lang="de"></span><div class="property-object">unfertige Erstellung
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationVersion" title="Browse http://e-editiones.ch/ontology/creating#CreationVersion">creating:CreationVersion</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Properties</h2>
+   <div id="creationHasDate" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#creationHasDate" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#creationHasDate" title="Browse http://e-editiones.ch/ontology/creating#creationHasDate">creating:creationHasDate</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a person creation to a date it was created on." xml:lang="en">
+               <div class="property-object">Relating a person creation to a date it was created on.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Erstellung hat Datum" xml:lang="de">
+               <div class="property-object">Erstellung hat Datum
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="creation has date" xml:lang="en"></span><div class="property-object">creation has date
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#propertyChainAxiom">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#propertyChainAxiom" title="Browse http://www.w3.org/2002/07/owl#propertyChainAxiom">owl:propertyChainAxiom</a></td>
+            <td>
+               <div class="property-object" rel="owl:propertyChainAxiom">
+                  <div xmlns="" class="property-object" typeof="rdf:List">
+                     <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/event#isOutputOf" title="Browse http://e-editiones.ch/ontology/event#isOutputOf">event:isOutputOf</a></div>
+                     <div class="property-object" rel="rdf:rest">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                        <div class="property-object" typeof="rdf:List">
+                           <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/time#hasEndDate" title="Browse http://e-editiones.ch/ontology/time#hasEndDate">time:hasEndDate</a></div>
+                           <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#date" title="Browse http://www.w3.org/2001/XMLSchema#date">xsd:date</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="creationHasDateTime" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#creationHasDateTime" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#creationHasDateTime" title="Browse http://e-editiones.ch/ontology/creating#creationHasDateTime">creating:creationHasDateTime</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a person creation to the date time it was created on." xml:lang="en">
+               <div class="property-object">Relating a person creation to the date time it was created on.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="creation has date time" xml:lang="en">
+               <div class="property-object">creation has date time
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Erstellung hat Datum und Zeit" xml:lang="de"></span><div class="property-object">Erstellung hat Datum und Zeit
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#propertyChainAxiom">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#propertyChainAxiom" title="Browse http://www.w3.org/2002/07/owl#propertyChainAxiom">owl:propertyChainAxiom</a></td>
+            <td>
+               <div class="property-object" rel="owl:propertyChainAxiom">
+                  <div xmlns="" class="property-object" typeof="rdf:List">
+                     <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/event#isOutputOf" title="Browse http://e-editiones.ch/ontology/event#isOutputOf">event:isOutputOf</a></div>
+                     <div class="property-object" rel="rdf:rest">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                        <div class="property-object" typeof="rdf:List">
+                           <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/time#hasEndDateTime" title="Browse http://e-editiones.ch/ontology/time#hasEndDateTime">time:hasEndDateTime</a></div>
+                           <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#dateTime" title="Browse http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasAuthor" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#hasAuthor" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#hasAuthor" title="Browse http://e-editiones.ch/ontology/creating#hasAuthor">creating:hasAuthor</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a creation to a person who authored it." xml:lang="en">
+               <div class="property-object">Relating a creation to a person who authored it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Autor" xml:lang="de">
+               <div class="property-object">hat Autor
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has author" xml:lang="en"></span><div class="property-object">has author
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="A creation can have more than one author." xml:lang="en">
+               <div class="property-object">A creation can have more than one author.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Person" title="Browse http://e-editiones.ch/ontology/human#Person">human:Person</a></div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#personHasRole" title="Browse http://e-editiones.ch/ontology/human#personHasRole">human:personHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/creating#Author" title="Browse http://e-editiones.ch/ontology/creating#Author">creating:Author</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasCreating" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#hasCreating" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#hasCreating" title="Browse http://e-editiones.ch/ontology/creating#hasCreating">creating:hasCreating</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a person creation to the creating thereof." xml:lang="en">
+               <div class="property-object">Relating a person creation to the creating thereof.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has creating" xml:lang="en">
+               <div class="property-object">has creating
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Erstellung" xml:lang="de"></span><div class="property-object">hat Erstellung
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creating" title="Browse http://e-editiones.ch/ontology/creating#Creating">creating:Creating</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/event#isOutputOf" title="Browse http://e-editiones.ch/ontology/event#isOutputOf">event:isOutputOf</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasCreator" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#hasCreator" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#hasCreator" title="Browse http://e-editiones.ch/ontology/creating#hasCreator">creating:hasCreator</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a creation to a human agent - a person or a group - that created it." xml:lang="en">
+               <div class="property-object">Relating a creation to a human agent - a person or a group - that created it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Ersteller" xml:lang="de">
+               <div class="property-object">hat Ersteller
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has creator" xml:lang="en"></span><div class="property-object">has creator
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Agent" title="Browse http://e-editiones.ch/ontology/human#Agent">human:Agent</a></div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#agentHasRole" title="Browse http://e-editiones.ch/ontology/human#agentHasRole">human:agentHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/creating#AgentCreator" title="Browse http://e-editiones.ch/ontology/creating#AgentCreator">creating:AgentCreator</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/agent#hasCreator" title="Browse http://e-editiones.ch/ontology/agent#hasCreator">agent:hasCreator</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasModificationDate" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#hasModificationDate" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#hasModificationDate" title="Browse http://e-editiones.ch/ontology/creating#hasModificationDate">creating:hasModificationDate</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a person creation to its modification date." xml:lang="en">
+               <div class="property-object">Relating a person creation to its modification date.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has modification date" xml:lang="en">
+               <div class="property-object">has modification date
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Änderungsdatum" xml:lang="de"></span><div class="property-object">hat Änderungsdatum
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#date" title="Browse http://www.w3.org/2001/XMLSchema#date">xsd:date</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isCreationOfSet" class="description">
+      <table about="http://e-editiones.ch/ontology/creating#isCreationOfSet" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/creating#isCreationOfSet" title="Browse http://e-editiones.ch/ontology/creating#isCreationOfSet">creating:isCreationOfSet</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a person creation to a set it is part of." xml:lang="en">
+               <div class="property-object">Relating a person creation to a set it is part of.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/creating#Creation" title="Browse http://e-editiones.ch/ontology/creating#Creation">creating:Creation</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/creating#" title="Browse http://e-editiones.ch/ontology/creating#">creating:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="is creation of set" xml:lang="en">
+               <div class="property-object">is creation of set
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Erstellung einer Reihe" xml:lang="de"></span><div class="property-object">ist Erstellung einer Reihe
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/creating#CreationSet" title="Browse http://e-editiones.ch/ontology/creating#CreationSet">creating:CreationSet</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/creating.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/creating.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/creating.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/creating.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/creating.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

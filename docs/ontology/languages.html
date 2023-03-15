@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="/e-editiones/about">About</a>
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/e-editiones/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/e-editiones/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/e-editiones/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Languages</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/languages.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/languages.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/languages.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/languages.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/languages.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:concept="http://e-editiones.ch/ontology/concept#" xmlns:language="http://e-editiones.ch/ontology/language#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/languages" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages" title="Browse http://e-editiones.ch/ontology/languages"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of human natural languages, referring to the ISO 639 standards." xml:lang="en">
+               <div class="property-object">Formal description of human natural languages, referring to the ISO 639 standards.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="Universities of Basel, Bern, and Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Universities of Basel, Bern, and Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="An ontology about languages" xml:lang="en">
+               <div class="property-object">An ontology about languages</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e5="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-10-21" datatype="xsd:date">
+               <div class="property-object">2020-10-21</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="BaselGerman" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#BaselGerman" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#BaselGerman" title="Browse http://e-editiones.ch/ontology/languages#BaselGerman">languages:BaselGerman</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Dialect of the city of Basel and its surroundings, Switzerland." xml:lang="en">
+               <div class="property-object">Dialect of the city of Basel and its surroundings, Switzerland.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Baseldeutsch" xml:lang="de">
+               <div class="property-object">Baseldeutsch
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Basel German" xml:lang="en"></span><div class="property-object">Basel German
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#SwissGerman" title="Browse http://e-editiones.ch/ontology/language#SwissGerman">language:SwissGerman</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Dutch" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Dutch" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Dutch" title="Browse http://e-editiones.ch/ontology/languages#Dutch">languages:Dutch</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in The Netherlands as the official language, and in the Flemish part of Belgium as one of the 3 official languages, and spoken in other parts of the world: in Suriname, Aruba, Curaçao, and Sint Maarten as official language; France, Germany, Indonesia, United States, Canada and Australia. It is also an official language of the European Union." xml:lang="en">
+               <div class="property-object">The language developed and spoken in The Netherlands as the official language, and
+                  in the Flemish part of Belgium as one of the 3 official languages, and spoken in other
+                  parts of the world: in Suriname, Aruba, Curaçao, and Sint Maarten as official language;
+                  France, Germany, Indonesia, United States, Canada and Australia. It is also an official
+                  language of the European Union.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e276="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="dut" datatype="d1e276:iso639-2">
+                           <div class="property-object">dut</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e282="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="nl" datatype="d1e282:iso639-1">
+                           <div class="property-object">nl</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Néerlandais" xml:lang="fr">
+               <div class="property-object">Néerlandais
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Nederlands" xml:lang="nl"></span><div class="property-object">Nederlands
+                  													
+                  													(nl)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Niederländisch" xml:lang="de"></span><div class="property-object">Niederländisch
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Dutch" xml:lang="en"></span><div class="property-object">Dutch
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="olandese" xml:lang="it"></span><div class="property-object">olandese
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="English" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#English" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#English" title="Browse http://e-editiones.ch/ontology/languages#English">languages:English</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in the United Kingdom, also an official language in 66 other countries, and spoken in other parts of the world. It is also an official language of the European Union." xml:lang="en">
+               <div class="property-object">The language developed and spoken in the United Kingdom, also an official language
+                  in 66 other countries, and spoken in other parts of the world. It is also an official
+                  language of the European Union.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e227="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="en" datatype="d1e227:iso639-1">
+                           <div class="property-object">en</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e245="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="eng" datatype="d1e245:iso639-2">
+                           <div class="property-object">eng</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="inglese" xml:lang="it">
+               <div class="property-object">inglese
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Anglais" xml:lang="fr"></span><div class="property-object">Anglais
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Englisch" xml:lang="de"></span><div class="property-object">Englisch
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="English" xml:lang="en"></span><div class="property-object">English
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="French" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#French" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#French" title="Browse http://e-editiones.ch/ontology/languages#French">languages:French</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in France, also an official language in 29 other countries, and spoken in other parts of the world. It is also an official language of the European Union." xml:lang="en">
+               <div class="property-object">The language developed and spoken in France, also an official language in 29 other
+                  countries, and spoken in other parts of the world. It is also an official language
+                  of the European Union.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e29="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="fr" datatype="d1e29:iso639-1">
+                           <div class="property-object">fr</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e33="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="fre" datatype="d1e33:iso639-2">
+                           <div class="property-object">fre</div>
+                           <div class="connector"></div><span xmlns:d1e35="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="fra" datatype="d1e35:iso639-2"></span><div class="property-object">fra
+                              													
+                              													()
+                              												</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Französisch" xml:lang="de">
+               <div class="property-object">Französisch
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="francese" xml:lang="it"></span><div class="property-object">francese
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Français" xml:lang="fr"></span><div class="property-object">Français
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="French" xml:lang="en"></span><div class="property-object">French
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="German" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#German" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#German" title="Browse http://e-editiones.ch/ontology/languages#German">languages:German</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in Germany and Austria, also an official language in 5 other countries, and spoken in other parts of the world. It is also an official language of the European Union." xml:lang="en">
+               <div class="property-object">The language developed and spoken in Germany and Austria, also an official language
+                  in 5 other countries, and spoken in other parts of the world. It is also an official
+                  language of the European Union.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e339="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="deu" datatype="d1e339:iso639-2">
+                           <div class="property-object">deu</div>
+                           <div class="connector"></div><span xmlns:d1e341="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="ger" datatype="d1e341:iso639-2"></span><div class="property-object">ger
+                              													
+                              													()
+                              												</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e350="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="de" datatype="d1e350:iso639-1">
+                           <div class="property-object">de</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Allemand" xml:lang="fr">
+               <div class="property-object">Allemand
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Deutsch" xml:lang="de"></span><div class="property-object">Deutsch
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="tedesco" xml:lang="it"></span><div class="property-object">tedesco
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="German" xml:lang="en"></span><div class="property-object">German
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Hungarian" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Hungarian" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Hungarian" title="Browse http://e-editiones.ch/ontology/languages#Hungarian">languages:Hungarian</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in Hungary, and parts of several neighbouring countries, and an official language of the European Union." xml:lang="en">
+               <div class="property-object">The language developed and spoken in Hungary, and parts of several neighbouring countries,
+                  and an official language of the European Union.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e97="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="hu" datatype="d1e97:iso639-1">
+                           <div class="property-object">hu</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e103="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="hun" datatype="d1e103:iso639-2">
+                           <div class="property-object">hun</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Hungarian" xml:lang="en">
+               <div class="property-object">Hungarian
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ungherese" xml:lang="it"></span><div class="property-object">ungherese
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Hongrois" xml:lang="fr"></span><div class="property-object">Hongrois
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Ungarisch" xml:lang="de"></span><div class="property-object">Ungarisch
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Italian" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Italian" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Italian" title="Browse http://e-editiones.ch/ontology/languages#Italian">languages:Italian</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in Italy, also an official language in 2 other countries and a state, and spoken in other parts of the world. It is also an official language of the European Union." xml:lang="en">
+               <div class="property-object">The language developed and spoken in Italy, also an official language in 2 other countries
+                  and a state, and spoken in other parts of the world. It is also an official language
+                  of the European Union.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e116="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="it" datatype="d1e116:iso639-1">
+                           <div class="property-object">it</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e127="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="ita" datatype="d1e127:iso639-2">
+                           <div class="property-object">ita</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Italienisch" xml:lang="de">
+               <div class="property-object">Italienisch
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="italiana" xml:lang="it"></span><div class="property-object">italiana
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Italien" xml:lang="fr"></span><div class="property-object">Italien
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Italian" xml:lang="en"></span><div class="property-object">Italian
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Latin" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Latin" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Latin" title="Browse http://e-editiones.ch/ontology/languages#Latin">languages:Latin</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken originally in Latium (the area around Rome), subsequently in Italy as the dominant language, and in the western Roman Empire. Classical language belonging to the Italic branch of the Indo-European languages. The largest organisation retaining Latin in official and quasi-official contexts is the Catholic Church." xml:lang="en">
+               <div class="property-object">The language developed and spoken originally in Latium (the area around Rome), subsequently
+                  in Italy as the dominant language, and in the western Roman Empire. Classical language
+                  belonging to the Italic branch of the Indo-European languages. The largest organisation
+                  retaining Latin in official and quasi-official contexts is the Catholic Church.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e42="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="la" datatype="d1e42:iso639-1">
+                           <div class="property-object">la</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e59="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="lat" datatype="d1e59:iso639-2">
+                           <div class="property-object">lat</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Latin" xml:lang="fr">
+               <div class="property-object">Latin
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Latin" xml:lang="en"></span><div class="property-object">Latin
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Latein" xml:lang="de"></span><div class="property-object">Latein
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="latino" xml:lang="it"></span><div class="property-object">latino
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Polish" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Polish" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Polish" title="Browse http://e-editiones.ch/ontology/languages#Polish">languages:Polish</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in Poland. It is also an official language of the European Union." xml:lang="en">
+               <div class="property-object">The language developed and spoken in Poland. It is also an official language of the
+                  European Union.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e159="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="pol" datatype="d1e159:iso639-2">
+                           <div class="property-object">pol</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e167="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="pl" datatype="d1e167:iso639-1">
+                           <div class="property-object">pl</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="polonais" xml:lang="fr">
+               <div class="property-object">polonais
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Polnisch" xml:lang="de"></span><div class="property-object">Polnisch
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Polacco" xml:lang="it"></span><div class="property-object">Polacco
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Polski" xml:lang="pl"></span><div class="property-object">Polski
+                  													
+                  													(pl)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Polish" xml:lang="en"></span><div class="property-object">Polish
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Portuguese" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Portuguese" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Portuguese" title="Browse http://e-editiones.ch/ontology/languages#Portuguese">languages:Portuguese</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in Portugal. It is also an official language of the European Union." xml:lang="en">
+               <div class="property-object">The language developed and spoken in Portugal. It is also an official language of
+                  the European Union.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e192="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="por" datatype="d1e192:iso639-2">
+                           <div class="property-object">por</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e199="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="pt" datatype="d1e199:iso639-1">
+                           <div class="property-object">pt</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Portuguese" xml:lang="en">
+               <div class="property-object">Portuguese
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Portugais" xml:lang="fr"></span><div class="property-object">Portugais
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Portugiesisch" xml:lang="de"></span><div class="property-object">Portugiesisch
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="portoghese" xml:lang="it"></span><div class="property-object">portoghese
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Russian" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Russian" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Russian" title="Browse http://e-editiones.ch/ontology/languages#Russian">languages:Russian</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in Russia." xml:lang="en">
+               <div class="property-object">The language developed and spoken in Russia.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e141="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="ru" datatype="d1e141:iso639-1">
+                           <div class="property-object">ru</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e148="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="rus" datatype="d1e148:iso639-2">
+                           <div class="property-object">rus</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Russisch" xml:lang="de">
+               <div class="property-object">Russisch
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Russe" xml:lang="fr"></span><div class="property-object">Russe
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Russian" xml:lang="en"></span><div class="property-object">Russian
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="russo" xml:lang="it"></span><div class="property-object">russo
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Sanskrit" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Sanskrit" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Sanskrit" title="Browse http://e-editiones.ch/ontology/languages#Sanskrit">languages:Sanskrit</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in Ancient India." xml:lang="en">
+               <div class="property-object">The language developed and spoken in Ancient India.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e66="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="san" datatype="d1e66:iso639-2">
+                           <div class="property-object">san</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e82="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="sa" datatype="d1e82:iso639-1">
+                           <div class="property-object">sa</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="sanscrito" xml:lang="it">
+               <div class="property-object">sanscrito
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Sanskrit" xml:lang="en"></span><div class="property-object">Sanskrit
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Sanskrit" xml:lang="de"></span><div class="property-object">Sanskrit
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="sanskrit" xml:lang="fr"></span><div class="property-object">sanskrit
+                  													
+                  													(fr)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Spanish" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#Spanish" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#Spanish" title="Browse http://e-editiones.ch/ontology/languages#Spanish">languages:Spanish</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="The language developed and spoken in Spain." xml:lang="en">
+               <div class="property-object">The language developed and spoken in Spain.</div>
+            </td>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/language#hasIdentifierCode">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/language#hasIdentifierCode" title="Browse http://e-editiones.ch/ontology/language#hasIdentifierCode">language:hasIdentifierCode</a></td>
+            <td>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e215="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="san" datatype="d1e215:iso639-2">
+                           <div class="property-object">san</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="language:hasIdentifierCode">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasSystem" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasSystem">concept:identifierCodeHasSystem</a></td>
+                        <td>
+                           <div class="property-object" rel="concept:identifierCodeHasSystem"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://e-editiones.ch/ontology/concept#identifierCodeHasValue">
+                        <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#identifierCodeHasValue" title="Browse http://e-editiones.ch/ontology/concept#identifierCodeHasValue">concept:identifierCodeHasValue</a></td>
+                        <td xmlns:d1e219="http://e-editiones.ch/ontology/languages#" property="concept:identifierCodeHasValue" content="sa" datatype="d1e219:iso639-1">
+                           <div class="property-object">sa</div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Espagnol" xml:lang="fr">
+               <div class="property-object">Espagnol
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Spanisch" xml:lang="de"></span><div class="property-object">Spanisch
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Spanish" xml:lang="en"></span><div class="property-object">Spanish
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="spagnola" xml:lang="it"></span><div class="property-object">spagnola
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage" title="Browse http://e-editiones.ch/ontology/language#GeneralHumanNaturalLanguage">language:GeneralHumanNaturalLanguage</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="SwissGerman" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#SwissGerman" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#SwissGerman" title="Browse http://e-editiones.ch/ontology/languages#SwissGerman">languages:SwissGerman</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Any of the Alemannic dialects spoken in the German-speaking part of Switzerland, in parts of the Principality of Liechtenstein and in some Alpine communities in Northern Italy bordering Switzerland." xml:lang="en">
+               <div class="property-object">Any of the Alemannic dialects spoken in the German-speaking part of Switzerland, in
+                  parts of the Principality of Liechtenstein and in some Alpine communities in Northern
+                  Italy bordering Switzerland.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Schweizerdeutsch" xml:lang="de">
+               <div class="property-object">Schweizerdeutsch
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Swiss German" xml:lang="en"></span><div class="property-object">Swiss German
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf">
+                  <table typeof="owl:Restriction">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                        <td>
+                           <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/language#isDialectOf" title="Browse http://e-editiones.ch/ontology/language#isDialectOf">language:isDialectOf</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                        <td>
+                           <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/languages#German" title="Browse http://e-editiones.ch/ontology/languages#German">languages:German</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/language#Dialect" title="Browse http://e-editiones.ch/ontology/language#Dialect">language:Dialect</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Instances</h2>
+   <div id="iso639-1" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#iso639-1" typeof="rdfs:Datatype">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1" title="Browse http://e-editiones.ch/ontology/languages#iso639-1">languages:iso639-1</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Datatype" title="Browse http://www.w3.org/2000/01/rdf-schema#Datatype">rdfs:Datatype</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Datatype to type an ISO 639-1 alpha-2 code." xml:lang="en">
+               <div class="property-object">Datatype to type an ISO 639-1 alpha-2 code.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ISO 639-1 datatype" xml:lang="en">
+               <div class="property-object">ISO 639-1 datatype
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ISO 639-1 Datentyp" xml:lang="de"></span><div class="property-object">ISO 639-1 Datentyp
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2001/XMLSchema#string" title="Browse http://www.w3.org/2001/XMLSchema#string">xsd:string</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="iso639-1System" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#iso639-1System" typeof="concept:CodingSystem">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1System" title="Browse http://e-editiones.ch/ontology/languages#iso639-1System">languages:iso639-1System</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://e-editiones.ch/ontology/concept#CodingSystem" title="Browse http://e-editiones.ch/ontology/concept#CodingSystem">concept:CodingSystem</a></th>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/concept#codingSystemHasDatatype">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#codingSystemHasDatatype" title="Browse http://e-editiones.ch/ontology/concept#codingSystemHasDatatype">concept:codingSystemHasDatatype</a></td>
+            <td>
+               <div class="property-object" rel="concept:codingSystemHasDatatype"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-1" title="Browse http://e-editiones.ch/ontology/languages#iso639-1">languages:iso639-1</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="ISO 639 part 1: alpha-2 (two-letter) codes." xml:lang="en">
+               <div class="property-object">ISO 639 part 1: alpha-2 (two-letter) codes.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/hasVersion">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/hasVersion" title="Browse http://purl.org/dc/terms/hasVersion">dct:hasVersion</a></td>
+            <td property="dct:hasVersion" content="ISO 639-1:2002">
+               <div class="property-object">ISO 639-1:2002</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ISO 639-1" xml:lang="en">
+               <div class="property-object">ISO 639-1
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ISO 639-1" xml:lang="de"></span><div class="property-object">ISO 639-1
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="http://www.infoterm.info/standardization/iso_639_1_2002.php" title="Browse http://www.infoterm.info/standardization/iso_639_1_2002.php">http://www.infoterm.info/ standardization/ iso 639 1 2002.php</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639System" title="Browse http://e-editiones.ch/ontology/languages#iso639System">languages:iso639System</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="iso639-2System" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#iso639-2System" typeof="concept:CodingSystem">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2System" title="Browse http://e-editiones.ch/ontology/languages#iso639-2System">languages:iso639-2System</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://e-editiones.ch/ontology/concept#CodingSystem" title="Browse http://e-editiones.ch/ontology/concept#CodingSystem">concept:CodingSystem</a></th>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/concept#codingSystemHasDatatype">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#codingSystemHasDatatype" title="Browse http://e-editiones.ch/ontology/concept#codingSystemHasDatatype">concept:codingSystemHasDatatype</a></td>
+            <td>
+               <div class="property-object" rel="concept:codingSystemHasDatatype">
+                  <table about="http://e-editiones.ch/ontology/languages#iso639-2" typeof="rdfs:Datatype">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-2" title="Browse http://e-editiones.ch/ontology/languages#iso639-2">languages:iso639-2</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Datatype" title="Browse http://www.w3.org/2000/01/rdf-schema#Datatype">rdfs:Datatype</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Datatype to type an ISO 639-2 alpha-3 code." xml:lang="en">
+                           <div class="property-object">Datatype to type an ISO 639-2 alpha-3 code.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="ISO 639-2 Datentyp" xml:lang="de">
+                           <div class="property-object">ISO 639-2 Datentyp
+                              													(de)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="ISO 639-2 datatype" xml:lang="en"></span><div class="property-object">ISO 639-2 datatype
+                              													
+                              													(en)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2001/XMLSchema#string" title="Browse http://www.w3.org/2001/XMLSchema#string">xsd:string</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="ISO 639 part 2: alpha-3 (three-letter) codes." xml:lang="en">
+               <div class="property-object">ISO 639 part 2: alpha-3 (three-letter) codes.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/hasVersion">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/hasVersion" title="Browse http://purl.org/dc/terms/hasVersion">dct:hasVersion</a></td>
+            <td property="dct:hasVersion" content="ISO 639-2:1998">
+               <div class="property-object">ISO 639-2:1998</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ISO 639-2" xml:lang="en">
+               <div class="property-object">ISO 639-2
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ISO 639-2" xml:lang="de"></span><div class="property-object">ISO 639-2
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="http://www.loc.gov/standards/iso639-2/" title="Browse http://www.loc.gov/standards/iso639-2/">http://www.loc.gov/ standards/ iso639-2/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639System" title="Browse http://e-editiones.ch/ontology/languages#iso639System">languages:iso639System</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="iso639-3System" class="description">
+      <table about="http://e-editiones.ch/ontology/languages#iso639-3System" typeof="concept:CodingSystem">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-3System" title="Browse http://e-editiones.ch/ontology/languages#iso639-3System">languages:iso639-3System</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://e-editiones.ch/ontology/concept#CodingSystem" title="Browse http://e-editiones.ch/ontology/concept#CodingSystem">concept:CodingSystem</a></th>
+         </tr>
+         <tr class="http://e-editiones.ch/ontology/concept#codingSystemHasDatatype">
+            <td style="width: 25%;"><a class="browse" href="http://e-editiones.ch/ontology/concept#codingSystemHasDatatype" title="Browse http://e-editiones.ch/ontology/concept#codingSystemHasDatatype">concept:codingSystemHasDatatype</a></td>
+            <td>
+               <div class="property-object" rel="concept:codingSystemHasDatatype">
+                  <table about="http://e-editiones.ch/ontology/languages#iso639-3" typeof="rdfs:Datatype">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639-3" title="Browse http://e-editiones.ch/ontology/languages#iso639-3">languages:iso639-3</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Datatype" title="Browse http://www.w3.org/2000/01/rdf-schema#Datatype">rdfs:Datatype</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Datatype to type an ISO 639-3 alpha-3 code." xml:lang="en">
+                           <div class="property-object">Datatype to type an ISO 639-3 alpha-3 code.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="ISO 639-3 Datentyp" xml:lang="de">
+                           <div class="property-object">ISO 639-3 Datentyp
+                              													(de)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="ISO 639-3 datatype" xml:lang="en"></span><div class="property-object">ISO 639-3 datatype
+                              													
+                              													(en)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2001/XMLSchema#string" title="Browse http://www.w3.org/2001/XMLSchema#string">xsd:string</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="ISO 639 part 3: alpha-3 (three-letter) codes for comprehensive coverage of languages." xml:lang="en">
+               <div class="property-object">ISO 639 part 3: alpha-3 (three-letter) codes for comprehensive coverage of languages.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/hasVersion">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/hasVersion" title="Browse http://purl.org/dc/terms/hasVersion">dct:hasVersion</a></td>
+            <td property="dct:hasVersion" content="ISO 639-3:2007">
+               <div class="property-object">ISO 639-3:2007</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ISO 639-3" xml:lang="en">
+               <div class="property-object">ISO 639-3
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ISO 639-3" xml:lang="de"></span><div class="property-object">ISO 639-3
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="http://www-01.sil.org/iso639-3/" title="Browse http://www-01.sil.org/iso639-3/">http://www-01.sil.org/ iso639-3/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf">
+                  <table about="http://e-editiones.ch/ontology/languages#iso639System" typeof="concept:CodingSystem">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/languages#iso639System" title="Browse http://e-editiones.ch/ontology/languages#iso639System">languages:iso639System</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://e-editiones.ch/ontology/concept#CodingSystem" title="Browse http://e-editiones.ch/ontology/concept#CodingSystem">concept:CodingSystem</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="International standard for codes for the representation of names of languages." xml:lang="en">
+                           <div class="property-object">International standard for codes for the representation of names of languages.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/languages#" title="Browse http://e-editiones.ch/ontology/languages#">languages:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="ISO 639" xml:lang="en">
+                           <div class="property-object">ISO 639
+                              													(en)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:seeAlso"><a class="browse" href="https://www.iso.org/iso-639-language-codes.html" title="Browse https://www.iso.org/iso-639-language-codes.html">https://www.iso.org/ iso-639-language-codes.html</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/ontology/languages.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/ontology/languages.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/ontology/languages.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/ontology/languages.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/languages.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
