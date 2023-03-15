@@ -5,7 +5,7 @@ These are the files necessary to develop, build and maintain [e-editiones.ch](ht
 ## Basic Workflow
 1. Ontologies are developed as turtle files.
 1. A script validates the turtle files and converts them to RDF/XML, N-Triples, and JSON-LD as well as to a human-readable HTML version.
-1. The ontologies are made available through a [dockerized][docker] static website built with [Jekyll][jekyll] and hosted on the same server as [inseri][inseri].
+1. The ontologies are made available through [e-editiones.ch](https://e-editiones.ch), which simply points to a GitHub Pages page provided by this repository.
 
 ## Develop, Build and Maintain Locally
 
@@ -17,7 +17,6 @@ These are the files necessary to develop, build and maintain [e-editiones.ch](ht
   - [Jekyll][jekyll]
 - [Python 3][python3]
   - with the ability to create a virtual environment (e.g. [venv][venv])
-- [Docker][docker]
 
 ### Get Started
 
@@ -26,8 +25,8 @@ These are the files necessary to develop, build and maintain [e-editiones.ch](ht
 1. cd into repository with ``cd e-editiones``.
 1. Run ``bundle install`` to fetch the needed Ruby gems.
 1. cd into "ttl_conv" with ``cd ttl_conv``.
-1. Set up a Python virtual environment. E.g. ``virtualenv ttl_conv``
-1. Activate your virtual environment. E.g. ``source ttl_conv/bin/activate`` (type ``deactivate`` to deactivate).
+1. Set up a Python virtual environment. E.g. ``virtualenv env``
+1. Activate your virtual environment. E.g. ``source env/bin/activate`` (type ``deactivate`` to deactivate).
 1. Run ``pip3 install -r requirements.txt`` to fetch the needed Python packages.
 1. cd back to "e-editiones" with ``cd ..``.
 
@@ -62,7 +61,7 @@ Folder/File        | Description
  
 #### Serve Locally
 
-To serve the website locally, run ``bundle exec jekyll serve`` and visit http://localhost:4000.
+To serve the website locally, run ``bundle exec jekyll serve`` and visit [http://localhost:4000](http://localhost:4000).
 
 #### Build Locally
 
@@ -84,43 +83,10 @@ To convert turtle files to the needed formats:
 1. RDF/XML, N-Triples and JSON-LD files are saved in the "ontology" folder.
 1. HTML files are saved in  "\_includes/ontologies".
 
-### Dockerize
+### Deploy to GitHub Pages
 
-The static website will be made available as a Docker container running an [NGINX][nginx] web server with the website on it. 
+1. 
 
-To dockerize the website, run ``sudo docker build -t nieine/e-editiones .``
-
-To run the container locally, run ``sudo docker run -p 80:80 nieine/e-editiones`` and visit http://localhost.
-
-#### NGINX Configuration
-
-During the build of the Docker container, the following default NGINX configuration files are replaced with custom versions available in the "nginx_conf" folder:  
-- /etc/nginx/nginx.conf
-- /etc/nginx/mime.types
-- /etc/nginx/conf.d/default.conf
-
-The customized files take care of file permissions as well as content negotiation for ontology files. The web server checks the accept header of GET requests and serves an ontology file accordingly: 
-
-- text/turtle
-- application/rdf+xml
-- application/n-triples
-- application/ld+json
-
-By default, the server returns HTML. 
-
-### Deploy
-
-1. Dockerize the website with a current date tag: ``sudo docker build -t nieine/e-editiones:<YYYY-MM-DD> .``
-1. Might be needed to set (once) access permission of the Unix socket to communicate with the Docker daemon: ``sudo chmod 666 /var/run/docker.sock``
-1. Log in to the Docker Hub: ``docker login``
-1. Push the new image to dockerhub with ``docker push nieine/e-editiones:<YYYY-MM-DD>``
-1. Connecting to the server: ``ssh knora@iml-srv-07.iml.unibas.ch``
-1. Change user to root: ``sudo -i``
-1. Type password of root user
-1. Change to directory where docker-compose.yml is: ``cd /data1/suite-quickstart_production/stable-releases/20190207/``
-1. Change tag in the e-editiones part in docker-compose.yml
-1. Let everybody know that the test server is down and stop the test server: ``docker-compose down``
-1. start docker-compose: ``docker-compose up &``
 
 ### Add New Ontologies
 
@@ -152,5 +118,3 @@ To add a new ontology to the website, the following steps are necessary:
 [bundler]: https://bundler.io/
 [python3]: https://www.python.org/downloads/
 [venv]: https://docs.python.org/3/library/venv.html
-[docker]: https://www.docker.com/get-started
-[nginx]: https://www.nginx.com/
