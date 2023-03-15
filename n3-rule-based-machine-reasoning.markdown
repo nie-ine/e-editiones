@@ -1,7 +1,7 @@
 ---
 layout: page
 title: N3-Rule-Based Machine Reasoning
-permalink: /n3-rule-based-machine-reasoning
+# permalink: /n3-rule-based-machine-reasoning
 ---
 * 
 {:toc}

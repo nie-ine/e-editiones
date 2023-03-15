@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Two-Step Formalization
-permalink: /two-step-formalization
-
+# permalink: /two-step-formalization
 ---
 * 
 {:toc}

@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Introduction to Semantic Web Technology
-permalink: /semantic-web-technology-introduction
-
+# permalink: /semantic-web-technology-introduction
 ---
 * 
 {:toc}

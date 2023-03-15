@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about
+# permalink: /about
 ---
 These web pages present the outcome of the project Nationale Infrastruktur für Editionen - Infrastructure Nationale pour les Éditions, in terms of know how, best practices, products and services.  
 The project is part of the [swissuniversities'](https://www.swissuniversities.ch/en/?r=1) national program "Scientific information: Access, processing and safeguarding" and runs at the Universities of Basel, Bern and Zürich, since October 2016 and until the end of 2020.  
