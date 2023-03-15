@@ -1,0 +1,74 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix text-structure: <http://e-editiones.ch/ontology/text-structure#>.
+@prefix linguistics: <http://e-editiones.ch/ontology/linguistics#>.
+
+@base <http://e-editiones.ch/ontology/logic>.
+@prefix logic: <http://e-editiones.ch/ontology/logic#>.
+
+<http://e-editiones.ch/ontology/logic>
+	a owl:Ontology;
+	dct:license <http://creativecommons.org/licenses/by/3.0/>;
+	dct:title "An ontology about logic"@en;
+	dct:description """Formal description of logic, general subclasses, related classes and properties."""@en;
+	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:contributor "Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland"@en;
+	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
+	owl:versionInfo "2020-06-11"^^xsd:date.
+
+#
+# CLASSES
+#
+
+logic:Premise
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/logic#>;
+	a rdfs:Class;
+	rdfs:label "premise"@en, "Prämisse"@de;
+	rdfs:comment """Statement of a presupposition, which leads to a conclusion."""@en;
+	rdfs:subClassOf linguistics:Statement.
+
+logic:Conclusion
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/logic#>;
+	a rdfs:Class;
+	rdfs:label "conclusion"@en, "Schlussfolgerung"@de;
+	rdfs:comment """Statement of a result, which is drawn from premises and arguments."""@en;
+	rdfs:subClassOf linguistics:Statement.
+
+logic:Argument
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/logic#>;
+	a rdfs:Class;
+	rdfs:label "argument"@en, "Argument"@de;
+	rdfs:comment """Premise(s) presenting a reason for accepting a conclusion."""@en;
+	rdfs:subClassOf text-structure:Paragraph.
+
+logic:Syllogism
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/logic#>;
+	a rdfs:Class;
+	rdfs:label "syllogism"@en, "Syllogismus"@de;
+	rdfs:comment """Conclusion from the general to the particular."""@en;
+	rdfs:subClassOf logic:Argument.
+
+#
+# PROPERTIES
+#
+
+logic:isPremiseOfArgument
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/logic#>;
+	a owl:ObjectProperty;
+	rdfs:label "is premise of argument"@en, "ist Prämisse eines Arguments"@de;
+	rdfs:comment """Relating a premise to an argument it is part of."""@en;
+	rdfs:domain logic:Premise;
+	rdfs:range logic:Argument;
+	rdfs:subPropertyOf text-structure:isSentenceOfParagraph.
+
+logic:isConclusionOfArgument
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/logic#>;
+	a owl:ObjectProperty;
+	rdfs:label "is conclusion of argument"@en, "ist Schlussfolgerung eines Arguments"@de;
+	rdfs:comment """Relating a conclusion to an argument it is part of."""@en;
+	rdfs:domain logic:Conclusion;
+	rdfs:range logic:Argument;
+	rdfs:subPropertyOf text-structure:isSentenceOfParagraph.

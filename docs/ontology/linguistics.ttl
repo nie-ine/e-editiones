@@ -1,0 +1,158 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix concept: <http://e-editiones.ch/ontology/concept#>.
+@prefix language: <http://e-editiones.ch/ontology/language#>.
+@prefix text: <http://e-editiones.ch/ontology/text#>.
+@prefix text-structure: <http://e-editiones.ch/ontology/text-structure#>.
+@prefix text-expression: <http://e-editiones.ch/ontology/text-expression#>.
+
+@base <http://e-editiones.ch/ontology/linguistics>.
+@prefix linguistics: <http://e-editiones.ch/ontology/linguistics#>.
+
+<http://e-editiones.ch/ontology/linguistics>
+	a owl:Ontology;
+	dct:license <http://creativecommons.org/licenses/by/3.0/>;
+	dct:title "An ontology about language"@en;
+	dct:description """Formal description of linguistics, general subclasses, related classes and properties."""@en;
+	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:contributor
+		"Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland"@en,
+		"Magdalena Plamada, PhD, Zürich University, Switzerland"@en;
+	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
+	owl:versionInfo "2020-06-11"^^xsd:date.
+
+#
+# CLASSES
+#
+
+linguistics:Concept
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "linguistic concept"@en, "linguistisches Konzept"@de;
+	rdfs:comment """Concept in the knowledge domain of linguistics."""@en;
+	rdfs:subClassOf concept:ConceptualEntity.
+
+linguistics:Lexeme 
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "lexeme"@en, "Lexem"@de;
+	rdfs:comment """Linguistic concept as individual semantic entity in human natural language."""@en;
+	rdfs:subClassOf linguistics:Concept, language:HumanNaturalLanguageExpression.
+
+linguistics:Lemma
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "lemma"@en, "Lemma"@de;
+	rdfs:comment """Dictionary entry of a lexeme."""@en;
+	rdfs:seeAlso <http://www.dcuci.univr.it/documenti/OccorrenzaIns/matdid/matdid121824.pdf>;
+	rdfs:subClassOf linguistics:Concept, concept:SymbolicEntity.
+
+linguistics:Symbol
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "language symbol"@en, "Sprachsymbol"@de;
+	rdfs:comment """."""@en;
+	rdfs:subClassOf text:WrittenText.
+
+linguistics:Literal
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "literal"@en, "Literal"@de;
+	rdfs:comment """One or more language symbols of any kind."""@en;
+	skos:note """Not only letters; as also used in Information Technology, e.g. Resource Description Framework."""@en;
+	rdfs:subClassOf text:WrittenText.
+
+# speech acts
+
+linguistics:Statement
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "statement"@en, "Aussage"@de;
+	rdfs:comment """Sentence which is true or false."""@en;
+	rdfs:subClassOf text-structure:Sentence.
+
+linguistics:Command
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "command"@en, "Befehl"@de;
+	rdfs:comment """Sentence giving an order that must be followed."""@en;
+	rdfs:subClassOf text-structure:Sentence.
+
+linguistics:Question
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "question"@en, "Frage"@de;
+	rdfs:comment """Sentence eliciting information."""@en;
+	rdfs:subClassOf text-structure:Sentence.
+
+# request
+
+linguistics:Answer
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "answer"@en, "Antwort"@de;
+	rdfs:comment """Sentence providing information on elicitation."""@en;
+	rdfs:subClassOf text-structure:Sentence.
+
+linguistics:Promise
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "promise"@en, "Versprechen"@de;
+	rdfs:comment """Sentence stating bindingly that something is being done or will happen."""@en;
+	rdfs:subClassOf text-structure:Sentence.
+
+linguistics:Evaluation
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a rdfs:Class;
+	rdfs:label "evaluation"@en, "Auswertung"@de;
+	rdfs:comment """Examination with judgement of any kind, as output of evaluating."""@en;
+	rdfs:subClassOf text-structure:Sentence.
+
+#
+# PROPERTIES
+#
+
+linguistics:hasSynonymLiteral
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a owl:DatatypeProperty;
+	rdfs:label "has synonym literal"@en, "hat Synonymliteral"@de;
+	rdfs:comment """Relating a resource to the literal of a synonym of the name of the resource."""@en;
+	rdfs:domain rdfs:Resource; #°
+	rdfs:range rdfs:Literal;
+	rdfs:subPropertyOf text:hasNameLiteral.
+
+linguistics:hasCommentLiteral
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a owl:DatatypeProperty;
+	rdfs:label "has linguistic comment literal"@en, "hat linguistisches Kommentarliteral"@de;
+	rdfs:comment """Relating a human natural language expression to the literal of a linguistic comment as a textual statement about the expression."""@en;
+	rdfs:domain language:HumanNaturalLanguageExpression;
+	rdfs:range rdfs:Literal;
+	rdfs:subPropertyOf text:hasCommentLiteral.
+
+linguistics:hasLanguage
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a owl:ObjectProperty;
+	rdfs:label "has language"@en, "hat Sprache"@de;
+	rdfs:comment "Relating a linguistic concept to its human natural language."@en;
+	rdfs:domain linguistics:Concept;
+	rdfs:range language:HumanNaturalLanguage.
+
+linguistics:hasLemma
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a owl:ObjectProperty;
+	rdfs:label "has lemma"@en, "hat Lemma"@de;
+	rdfs:comment """Relating a lexeme to a lemma."""@en;
+	rdfs:domain linguistics:Lexeme;
+	rdfs:range linguistics:Lemma.
+
+linguistics:isLemmaOfDictionary
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/linguistics#>;
+	a owl:ObjectProperty;
+	rdfs:label "is lemma of dictionary"@en, "ist Lemma eines Wörterbuches"@de;
+	rdfs:comment """Relating a lemma to its dictionary."""@en;
+	rdfs:domain linguistics:Lemma;
+	rdfs:range text-expression:Dictionary.

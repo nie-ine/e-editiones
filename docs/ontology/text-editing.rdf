@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasRecensor">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="it">ha recensore</rdfs:label>
+    <rdfs:label xml:lang="de">hat Rezensor</rdfs:label>
+    <rdfs:label xml:lang="fr">a recenseur</rdfs:label>
+    <rdfs:label xml:lang="en">has recensor</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a recension to a person who created it.</rdfs:comment>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub11bL194C13">
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub11bL194C44">
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/text-editing#Recensor"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-editing#Recension"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasAbbreviator">
+    <rdfs:label xml:lang="de">hat Kurzfasser</rdfs:label>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub11bL218C13">
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub11bL218C44">
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/text-editing#Abbreviator"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="it">ha abbreviatore</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an abbreviation to a person who created it.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-editing#Abbreviation"/>
+    <rdfs:label xml:lang="fr">a un abréviateur</rdfs:label>
+    <rdfs:label xml:lang="en">has abbreviator</rdfs:label>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#OrganizationEditor">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="en">text editor role of organization</rdfs:label>
+    <rdfs:label xml:lang="fr">organisation-éditeur de texte</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of an organization changing a text.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/organization#Creator"/>
+    <rdfs:label xml:lang="it">organizzazione-editor di testo</rdfs:label>
+    <rdfs:label xml:lang="de">Texteditorrolle einer Organisation</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasEditorialDirector">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:label xml:lang="it">edizione ha direttore editoriale</rdfs:label>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub11bL162C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub11bL162C44">
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/text-editing#EditorialDirector"/>
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="en">edition has editorial director</rdfs:label>
+    <rdfs:label xml:lang="de">Edition hat Redaktionsleiter</rdfs:label>
+    <rdfs:label xml:lang="fr">l'édition a directeur éditorial</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating an edition to its editorial director.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://e-editiones.ch/ontology/text-editing">
+    <dct:contributor xml:lang="en">Roberta Padlina, project coordinator, University of Basel, Switzerland</dct:contributor>
+    <rdfs:seeAlso rdf:resource="https://digitallatin.github.io/guidelines/LDLT-Guidelines.html"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-06-11</owl:versionInfo>
+    <dct:creator xml:lang="en">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland</dct:creator>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+    <dct:title xml:lang="en">An ontology about text editing</dct:title>
+    <dct:description xml:lang="en">Formal description of text editing, general subclasses, related classes, and properties.</dct:description>
+    <dct:publisher xml:lang="en">Universities of Basel, Bern, and Zürich, Switzerland</dct:publisher>
+  </owl:Ontology>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Paraphrase">
+    <rdfs:label xml:lang="fr">paraphrase</rdfs:label>
+    <rdfs:label xml:lang="it">parafrasi</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:label xml:lang="en">paraphrase</rdfs:label>
+    <rdfs:label xml:lang="de">Paraphrase</rdfs:label>
+    <rdfs:comment xml:lang="en">Text edition restating a text clarifying its meaning.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasEdition">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="it">il testo ha edizione</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
+    <rdfs:label xml:lang="de">Text hat Edition</rdfs:label>
+    <rdfs:label xml:lang="fr">le texte a une édition</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:label xml:lang="en">text has edition</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a text to an edition it has.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasTransliteration">
+    <rdfs:comment xml:lang="en">Relating a text to a transliteration thereof.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/text-editing#Transliteration"/>
+    <rdfs:label xml:lang="en">has transliteration</rdfs:label>
+    <rdfs:label xml:lang="de">hat Transliteration</rdfs:label>
+    <rdfs:label xml:lang="it">ha traslitterazione</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
+    <rdfs:label xml:lang="fr">a une translittération</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasDerivedTextExpression">
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:label xml:lang="it">ha derivato espressione di testo</rdfs:label>
+    <rdfs:comment xml:lang="en">Relating a text expression to another one derived from it.</rdfs:comment>
+    <rdfs:label xml:lang="en">has derived text expression</rdfs:label>
+    <rdfs:label xml:lang="de">hat abgeleitete Textexpression</rdfs:label>
+    <rdfs:label xml:lang="fr">a une expression de texte dérivée</rdfs:label>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/text-editing#DerivedTextExpression"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Annotator">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#PersonEditor"/>
+    <rdfs:label xml:lang="it">annotatore</rdfs:label>
+    <rdfs:label xml:lang="la">annotator</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person adding notes *annotations* to a text, creating an annotated edition.</rdfs:comment>
+    <rdfs:label xml:lang="fr">annotateur</rdfs:label>
+    <rdfs:label xml:lang="en">annotator</rdfs:label>
+    <rdfs:label xml:lang="de">Annotator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#LiteralExposition">
+    <rdfs:label xml:lang="de">wörtliche Auslegung</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="en">literal exposition</rdfs:label>
+    <rdfs:comment xml:lang="en">Text edition providing background information on word level to a text in clarifying its meaning.</rdfs:comment>
+    <rdfs:label xml:lang="fr">exposition littérale</rdfs:label>
+    <rdfs:label xml:lang="it">esposizione letterale</rdfs:label>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasEditor">
+    <rdfs:comment xml:lang="en">Relating an edition to the human agent—person or organization—that created it.</rdfs:comment>
+    <rdfs:label xml:lang="fr">l'édition a un éditeur</rdfs:label>
+    <rdfs:label xml:lang="it">edizione ha editor</rdfs:label>
+    <rdfs:label xml:lang="en">edition has editor</rdfs:label>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub11bL154C13">
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Agent"/>
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub11bL154C43">
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/text-editing#AgentEditor"/>
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#agentHasRole"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="de">Edition hat Editor</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasSameEditionAs">
+    <rdfs:comment xml:lang="en">Relating two texts with a same edition.</rdfs:comment>
+    <rdfs:range rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
+    <rdfs:label xml:lang="fr">a la même édition que</rdfs:label>
+    <rdfs:label xml:lang="it">ha la stessa edizione di</rdfs:label>
+    <rdfs:label xml:lang="en">has same edition as</rdfs:label>
+    <rdfs:label xml:lang="de">hat dieselbe Edition als</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://e-editiones.ch/ontology/text-editing#hasRevisor">
+    <rdfs:label xml:lang="fr">la révision du texte a un réviseur</rdfs:label>
+    <rdfs:label xml:lang="de">Textprüfung hat Überprüfer</rdfs:label>
+    <rdfs:label xml:lang="en">text revision has revisor</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="ub11bL186C13">
+        <rdfs:subClassOf>
+          <owl:Restriction rdf:nodeID="ub11bL186C44">
+            <owl:someValuesFrom rdf:resource="http://e-editiones.ch/ontology/text-editing#Revisor"/>
+            <owl:onProperty rdf:resource="http://e-editiones.ch/ontology/human#personHasRole"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#Person"/>
+      </rdf:Description>
+    </rdfs:range>
+    <rdfs:comment xml:lang="en">Relating a text revision to a person who created it.</rdfs:comment>
+    <rdfs:label xml:lang="it">la revisione del testo ha un revisore</rdfs:label>
+    <rdfs:domain rdf:resource="http://e-editiones.ch/ontology/text-editing#Revision"/>
+  </owl:ObjectProperty>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Glossator">
+    <rdfs:label xml:lang="fr">glossateur</rdfs:label>
+    <rdfs:label xml:lang="en">glossator</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person adding glosses to a text.</rdfs:comment>
+    <rdfs:label xml:lang="it">glossatore</rdfs:label>
+    <rdfs:label xml:lang="de">Glossator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#PersonEditor"/>
+    <rdfs:label xml:lang="la">glossator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Abbreviation">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:comment xml:lang="en">Text edition as a result of shortening the text.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="en">abbreviation</rdfs:label>
+    <rdfs:label xml:lang="de">Kurzfassung</rdfs:label>
+    <rdfs:label xml:lang="fr">abréviation</rdfs:label>
+    <rdfs:label xml:lang="it">abbreviazione</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#PersonEditor">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#PersonCreator"/>
+    <rdfs:label xml:lang="fr">personne - éditeur de texte</rdfs:label>
+    <rdfs:label xml:lang="de">Texteditorrolle einer Person</rdfs:label>
+    <rdfs:label xml:lang="it">persona - editor di testo</rdfs:label>
+    <rdfs:label xml:lang="en">text editor role of person</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person changing a text.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Edition">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#Text"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="en">text edition</rdfs:label>
+    <rdfs:comment xml:lang="en">Changed text as a result of editing.</rdfs:comment>
+    <rdfs:label xml:lang="de">Textedition</rdfs:label>
+    <rdfs:label xml:lang="fr">édition de texte</rdfs:label>
+    <rdfs:label xml:lang="it">edizione testuale</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Revision">
+    <rdfs:label xml:lang="de">Textprüfung</rdfs:label>
+    <rdfs:comment xml:lang="en">Text edition as a result of revising.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="fr">révision de texte</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:label xml:lang="en">text revision</rdfs:label>
+    <rdfs:label xml:lang="it">revisione del testo</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Transliteration">
+    <rdfs:comment xml:lang="en">Text edition as written text transferred in another alphabet using the closest corresponding symbols, e.g. letters.</rdfs:comment>
+    <rdfs:label xml:lang="en">transliteration</rdfs:label>
+    <rdfs:label xml:lang="fr">translittération</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <skos:note xml:lang="en">Primarily representing the symbols, not the sounds.</skos:note>
+    <rdfs:label xml:lang="de">Transliteration</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text#WrittenText"/>
+    <rdfs:label xml:lang="it">traslitterazione</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#DerivedTextExpression">
+    <rdfs:label xml:lang="de">abgeleitete Textexpression</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-expression#Expression"/>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="it">espressione di testo derivata</rdfs:label>
+    <rdfs:comment xml:lang="en">Text expression derived from another text expression with content changed beyond a version.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Edition"/>
+    <rdfs:label xml:lang="fr">expression de texte dérivée</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#CreationDerivative"/>
+    <rdfs:label xml:lang="en">derived text expression</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Revisor">
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:label xml:lang="it">revisore del testo</rdfs:label>
+    <rdfs:comment xml:lang="en">Role of a person revising a text.</rdfs:comment>
+    <rdfs:label xml:lang="en">text revisor</rdfs:label>
+    <rdfs:label xml:lang="de">Textüberprüfer</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#PersonEditor"/>
+    <rdfs:label xml:lang="fr">réviseur de texte</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Abbreviator">
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#PersonEditor"/>
+    <rdfs:label xml:lang="it">abbreviator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:comment xml:lang="en">Editor shortening a text.</rdfs:comment>
+    <rdfs:label xml:lang="fr">abréviateur</rdfs:label>
+    <rdfs:label xml:lang="en">abbreviator</rdfs:label>
+    <rdfs:label xml:lang="la">abbreviator</rdfs:label>
+    <rdfs:label xml:lang="de">Kurzfasser</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#AgentEditor">
+    <rdfs:label xml:lang="it">editor di testo</rdfs:label>
+    <rdfs:label xml:lang="de">Texteditor</rdfs:label>
+    <rdfs:label xml:lang="fr">éditeur de texte</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/creating#AgentCreator"/>
+    <rdfs:comment xml:lang="en">Role of a human agent—person or organization—changing a text.</rdfs:comment>
+    <rdfs:label xml:lang="en">text editor</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#EditorialDirector">
+    <rdfs:label xml:lang="it">direttore editoriale</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:comment xml:lang="en">Role of a person supervising editors, overseeing one or more editions to be published (e.g. book, magazine, website), ensuring they bear an overarching organization's vision, share certain qualities and assure them.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/human#PersonRole"/>
+    <rdfs:label xml:lang="fr">directeur éditorial</rdfs:label>
+    <rdfs:seeAlso rdf:resource="https://work.chron.com/editorial-director-21903.html#:~:text=In%20the%20case%20of%20a,and%20authors%20editors%20have%20chosen"/>
+    <rdfs:label xml:lang="de">Redaktionsleiter</rdfs:label>
+    <rdfs:label xml:lang="en">editorial director</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://e-editiones.ch/ontology/text-editing#Recension">
+    <rdfs:label xml:lang="it">recensione</rdfs:label>
+    <rdfs:label xml:lang="fr">révision</rdfs:label>
+    <rdfs:comment xml:lang="en">Critical revision of a text, e.g. a literary classic, i.e. based on a critical examination of earlier texts and authoritative sources, usually undertaken only after a consensus has developed among leading scholars concerning the weight of evidence.</rdfs:comment>
+    <rdfs:label xml:lang="en">recension</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://e-editiones.ch/ontology/text-editing#"/>
+    <rdfs:subClassOf rdf:resource="http://e-editiones.ch/ontology/text-editing#Revision"/>
+    <rdfs:seeAlso rdf:resource="https://products.abc-clio.com/ODLIS/odlis_r.aspx#recension"/>
+    <rdfs:label xml:lang="de">Revision</rdfs:label>
+  </rdfs:Class>
+</rdf:RDF>

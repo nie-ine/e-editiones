@@ -1,0 +1,89 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix agent: <http://e-editiones.ch/ontology/agent#>.
+@prefix human: <http://e-editiones.ch/ontology/human#>.
+@prefix text-expression: <http://e-editiones.ch/ontology/text-expression#>.
+
+@base <http://e-editiones.ch/ontology/teaching>.
+@prefix teaching: <http://e-editiones.ch/ontology/teaching#>.
+
+<http://e-editiones.ch/ontology/teaching>
+	a owl:Ontology;
+	dct:license <http://creativecommons.org/licenses/by/3.0/>;
+	dct:title "An ontology about teaching:"@en;
+	dct:description """Formal description of teaching:, general subclasses such as action, related classes and properties."""@en;
+	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:contributor "Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland"@en;
+	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
+	owl:versionInfo "2020-06-11"^^xsd:date.
+
+#
+# CLASSES
+#
+
+teaching:Teaching
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/teaching#>;
+	a rdfs:Class;
+	rdfs:label "teaching"@en, "Unterricht"@de;
+	rdfs:comment """Person's action of communicating information in order to help another person to acquire knowledge, competence or value."""@en;
+	rdfs:subClassOf human:Procedure.
+
+teaching:Teacher
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/teaching#>;
+	a rdfs:Class;
+	rdfs:label "teacher"@en, "Lehrperson"@de;
+	rdfs:comment """Role of a person who teaches."""@en;
+	rdfs:subClassOf human:PersonRole.
+
+teaching:Lecture
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/teaching#>;
+	a rdfs:Class;
+	rdfs:label "lecture"@en, "Vorlesung"@de;
+	rdfs:comment """Teaching by oral presentation about a particular subject."""@en;
+	rdfs:subClassOf teaching:Teaching.
+
+teaching:Lecturer
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/teaching#>;
+	a rdfs:Class;
+	rdfs:label "lecturer"@en, "Dozent"@de;
+	rdfs:comment """Role of a person who lectures."""@en;
+	rdfs:subClassOf teaching:Teacher.
+
+teaching:PedagogicExpression
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/teaching#>;
+	a rdfs:Class;
+	rdfs:label "pedagogic text expression"@en, "pädagogische Textexpression"@de, "expression textuelle pédagogique"@fr, "espressione testuale pedagogico"@it;
+	rdfs:comment """Text expression for teaching purposes."""@en;
+	rdfs:subClassOf text-expression:Expression.
+
+teaching:Manual
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/teaching#>;
+	a rdfs:Class;
+	rdfs:label "teaching manual"@en, "Lehrbuch"@de, "manuel scolaire"@fr, "manuale di testo"@it;
+	rdfs:comment """Manual for teaching purposes."""@en;
+	rdfs:subClassOf text-expression:Manual, teaching:PedagogicExpression.
+
+#
+# PROPERTIES
+#
+
+teaching:teachingBy
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/teaching#>;
+	a owl:ObjectProperty;
+	rdfs:label "teaching by"@en, "Unterricht von"@de;
+	rdfs:comment """Relating a teaching to a person having the teacher role."""@en;
+	rdfs:domain teaching:Teaching;
+	rdfs:range [rdfs:subClassOf human:Person, [a owl:Restriction; owl:onProperty human:personHasRole; owl:someValuesFrom teaching:Teacher]];
+	rdfs:subPropertyOf agent:hasAgent.
+
+teaching:lectureBy
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/teaching#>;
+	a owl:ObjectProperty;
+	rdfs:label "lecture by"@en, "Vorlesung von"@de;
+	rdfs:comment """Relating a lecture to a person having the lecturer role."""@en;
+	rdfs:domain teaching:Lecture;
+	rdfs:range [rdfs:subClassOf human:Person, [a owl:Restriction; owl:onProperty human:personHasRole; owl:someValuesFrom teaching:Lecturer]];
+	rdfs:subPropertyOf teaching:teachingBy.

@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="//e-editiones/e-editiones/about.html">About</a>
+              
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Note Structure</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/generalHumanities/note-structure.html.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/generalHumanities/note-structure.html.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/generalHumanities/note-structure.html.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/generalHumanities/note-structure.html.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/note-structure.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure" title="Browse http://e-editiones.ch/ontology/note-structure"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/contributor">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
+            <td property="dct:contributor" content="Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Roberta Padlina, project coordinator and software developer, University of Basel,
+                  Switzerland</div>
+               <div class="connector"></div><span property="dct:contributor" content="Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland" xml:lang="en"></span><div class="property-object">Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of note structure, subclasses, related classes, and properties." xml:lang="en">
+               <div class="property-object">Formal description of note structure, subclasses, related classes, and properties.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="Extension of the text structure ontology." xml:lang="en">
+               <div class="property-object">Extension of the text structure ontology.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="Universities of Basel, Bern, and Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Universities of Basel, Bern, and Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="An ontology about note structure" xml:lang="en">
+               <div class="property-object">An ontology about note structure</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e83="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+               <div class="property-object">2020-06-11</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="Endnote" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#Endnote" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Endnote" title="Browse http://e-editiones.ch/ontology/note-structure#Endnote">note-structure:Endnote</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Note on information on a page at the end of the document, seperate from the main content." xml:lang="en">
+               <div class="property-object">Note on information on a page at the end of the document, seperate from the main content.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="structure de note de fin" xml:lang="fr">
+               <div class="property-object">structure de note de fin
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Endnotenstruktur" xml:lang="de"></span><div class="property-object">Endnotenstruktur
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="struttura di nota finale" xml:lang="it"></span><div class="property-object">struttura di nota finale
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="endnote structure" xml:lang="en"></span><div class="property-object">endnote structure
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Note" title="Browse http://e-editiones.ch/ontology/note-structure#Note">note-structure:Note</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="EndnoteIdentifier" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier">note-structure:EndnoteIdentifier</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Identifier of an endnote." xml:lang="en">
+               <div class="property-object">Identifier of an endnote.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="identificatore di nota finale" xml:lang="it">
+               <div class="property-object">identificatore di nota finale
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="identifiant de note de fin" xml:lang="fr"></span><div class="property-object">identifiant de note de fin
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Endnotenidentifikator" xml:lang="de"></span><div class="property-object">Endnotenidentifikator
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="endnote identifier" xml:lang="en"></span><div class="property-object">endnote identifier
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#Identifier" title="Browse http://e-editiones.ch/ontology/text-structure#Identifier">text-structure:Identifier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="EndnoteOrdinalNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber" title="Browse http://e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber">note-structure:EndnoteOrdinalNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Ordinal number of an endnote." xml:lang="en">
+               <div class="property-object">Ordinal number of an endnote.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="endnote ordinal number" xml:lang="en">
+               <div class="property-object">endnote ordinal number
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="numéro ordinal de note de fin" xml:lang="fr"></span><div class="property-object">numéro ordinal de note de fin
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="numero ordinale di nota finale" xml:lang="it"></span><div class="property-object">numero ordinale di nota finale
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Endnotenordinalzahl" xml:lang="de"></span><div class="property-object">Endnotenordinalzahl
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#OrdinalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#OrdinalNumber">mathematics:OrdinalNumber</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier">note-structure:EndnoteIdentifier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Footnote" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#Footnote" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Footnote" title="Browse http://e-editiones.ch/ontology/note-structure#Footnote">note-structure:Footnote</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Ordinal number of a footnote." xml:lang="en">
+               <div class="property-object">Ordinal number of a footnote.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Note on information on a page at the end of that page, seperate from the main content." xml:lang="en"></span><div class="property-object">Note on information on a page at the end of that page, seperate from the main content.
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="footnote structure" xml:lang="en">
+               <div class="property-object">footnote structure
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Fussnotenstruktur" xml:lang="de"></span><div class="property-object">Fussnotenstruktur
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="structure de note de bas de page" xml:lang="fr"></span><div class="property-object">structure de note de bas de page
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="struttura di nota a piè di pagina" xml:lang="it"></span><div class="property-object">struttura di nota a piè di pagina
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Note" title="Browse http://e-editiones.ch/ontology/note-structure#Note">note-structure:Note</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="FootnoteIdentifier" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier">note-structure:FootnoteIdentifier</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Identifier of a footnote." xml:lang="en">
+               <div class="property-object">Identifier of a footnote.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="identifiant de note de bas de page" xml:lang="fr">
+               <div class="property-object">identifiant de note de bas de page
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="footnote identifier" xml:lang="en"></span><div class="property-object">footnote identifier
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Fussnotenidentifikator" xml:lang="de"></span><div class="property-object">Fussnotenidentifikator
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="identificatore di nota a piè di pagina" xml:lang="it"></span><div class="property-object">identificatore di nota a piè di pagina
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#Identifier" title="Browse http://e-editiones.ch/ontology/text-structure#Identifier">text-structure:Identifier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="FootnoteOrdinalNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber" title="Browse http://e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber">note-structure:FootnoteOrdinalNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Ordinal number of a footnote." xml:lang="en">
+               <div class="property-object">Ordinal number of a footnote.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Fussnotenordinalzahl" xml:lang="de">
+               <div class="property-object">Fussnotenordinalzahl
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="numéro ordinal de note de bas de page" xml:lang="fr"></span><div class="property-object">numéro ordinal de note de bas de page
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="numero ordinale di nota a piè di pagina" xml:lang="it"></span><div class="property-object">numero ordinale di nota a piè di pagina
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="footnote ordinal number" xml:lang="en"></span><div class="property-object">footnote ordinal number
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier">note-structure:FootnoteIdentifier</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#OrdinalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#OrdinalNumber">mathematics:OrdinalNumber</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Gloss" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#Gloss" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Gloss" title="Browse http://e-editiones.ch/ontology/note-structure#Gloss">note-structure:Gloss</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Explanatory note, e.g. interlinear or marginal." xml:lang="en">
+               <div class="property-object">Explanatory note, e.g. interlinear or marginal.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="gloss" xml:lang="en">
+               <div class="property-object">gloss
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="glose" xml:lang="fr"></span><div class="property-object">glose
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Glosse" xml:lang="de"></span><div class="property-object">Glosse
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="glossare" xml:lang="it"></span><div class="property-object">glossare
+                  													
+                  													(it)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Note" title="Browse http://e-editiones.ch/ontology/note-structure#Note">note-structure:Note</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="InterlinearGloss" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#InterlinearGloss" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#InterlinearGloss" title="Browse http://e-editiones.ch/ontology/note-structure#InterlinearGloss">note-structure:InterlinearGloss</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Gloss as an interlinear note." xml:lang="en">
+               <div class="property-object">Gloss as an interlinear note.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="glossare interlineare" xml:lang="it">
+               <div class="property-object">glossare interlineare
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="interlineare Glosse" xml:lang="de"></span><div class="property-object">interlineare Glosse
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="glose interlinéaire" xml:lang="fr"></span><div class="property-object">glose interlinéaire
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="interlinear gloss" xml:lang="en"></span><div class="property-object">interlinear gloss
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Gloss" title="Browse http://e-editiones.ch/ontology/note-structure#Gloss">note-structure:Gloss</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#InterlinearNote" title="Browse http://e-editiones.ch/ontology/note-structure#InterlinearNote">note-structure:InterlinearNote</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="InterlinearNote" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#InterlinearNote" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#InterlinearNote" title="Browse http://e-editiones.ch/ontology/note-structure#InterlinearNote">note-structure:InterlinearNote</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Note written between text lines." xml:lang="en">
+               <div class="property-object">Note written between text lines.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="interlinear note" xml:lang="en">
+               <div class="property-object">interlinear note
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="nota interlineare" xml:lang="it"></span><div class="property-object">nota interlineare
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="interlineare Notiz" xml:lang="de"></span><div class="property-object">interlineare Notiz
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="note interlinéaire" xml:lang="fr"></span><div class="property-object">note interlinéaire
+                  													
+                  													(fr)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Note" title="Browse http://e-editiones.ch/ontology/note-structure#Note">note-structure:Note</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#WrittenText" title="Browse http://e-editiones.ch/ontology/text#WrittenText">text:WrittenText</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="MarginalGloss" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#MarginalGloss" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#MarginalGloss" title="Browse http://e-editiones.ch/ontology/note-structure#MarginalGloss">note-structure:MarginalGloss</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Gloss as a marginal note." xml:lang="en">
+               <div class="property-object">Gloss as a marginal note.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="glose marginale" xml:lang="fr">
+               <div class="property-object">glose marginale
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Marginalienglosse" xml:lang="de"></span><div class="property-object">Marginalienglosse
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="glossare marginale" xml:lang="it"></span><div class="property-object">glossare marginale
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="marginal gloss" xml:lang="en"></span><div class="property-object">marginal gloss
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#MarginalNote" title="Browse http://e-editiones.ch/ontology/note-structure#MarginalNote">note-structure:MarginalNote</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Gloss" title="Browse http://e-editiones.ch/ontology/note-structure#Gloss">note-structure:Gloss</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="MarginalNote" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#MarginalNote" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#MarginalNote" title="Browse http://e-editiones.ch/ontology/note-structure#MarginalNote">note-structure:MarginalNote</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Note written besides a text in the margin of a carrier." xml:lang="en">
+               <div class="property-object">Note written besides a text in the margin of a carrier.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="note marginale" xml:lang="fr">
+               <div class="property-object">note marginale
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="nota marginale" xml:lang="it"></span><div class="property-object">nota marginale
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="marginal note" xml:lang="en"></span><div class="property-object">marginal note
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Marginaliennotiz" xml:lang="de"></span><div class="property-object">Marginaliennotiz
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/document#Marginal" title="Browse http://e-editiones.ch/ontology/document#Marginal">document:Marginal</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#WrittenText" title="Browse http://e-editiones.ch/ontology/text#WrittenText">text:WrittenText</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Note" title="Browse http://e-editiones.ch/ontology/note-structure#Note">note-structure:Note</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Note" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#Note" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Note" title="Browse http://e-editiones.ch/ontology/note-structure#Note">note-structure:Note</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Text with note structure, not necessarily having sentences or being syntactically correct; e.g. a first registration of thought, or a remark added to another text." xml:lang="en">
+               <div class="property-object">Text with note structure, not necessarily having sentences or being syntactically
+                  correct; e.g. a first registration of thought, or a remark added to another text.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="struttura de nota" xml:lang="it">
+               <div class="property-object">struttura de nota
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="note structure" xml:lang="en"></span><div class="property-object">note structure
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="structure de note" xml:lang="fr"></span><div class="property-object">structure de note
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Notizstruktur" xml:lang="de"></span><div class="property-object">Notizstruktur
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure" title="Browse http://e-editiones.ch/ontology/text-structure#CompositionalContentStructure">text-structure:CompositionalContentStructure</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Properties</h2>
+   <div id="endnoteHasOrdinalLiteral" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalLiteral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalLiteral" title="Browse http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalLiteral">note-structure:endnoteHasOrdinalLiteral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating an endnote to its ordinal literal." xml:lang="en">
+               <div class="property-object">Relating an endnote to its ordinal literal.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Endnote" title="Browse http://e-editiones.ch/ontology/note-structure#Endnote">note-structure:Endnote</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="endnote has ordinal literal" xml:lang="en">
+               <div class="property-object">endnote has ordinal literal
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="endnote ha letterale ordinale" xml:lang="it"></span><div class="property-object">endnote ha letterale ordinale
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Endnote hat Ordinalliteral" xml:lang="de"></span><div class="property-object">Endnote hat Ordinalliteral
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="la note de fin a un littéral ordinal" xml:lang="fr"></span><div class="property-object">la note de fin a un littéral ordinal
+                  													
+                  													(fr)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#propertyChainAxiom">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#propertyChainAxiom" title="Browse http://www.w3.org/2002/07/owl#propertyChainAxiom">owl:propertyChainAxiom</a></td>
+            <td>
+               <div class="property-object" rel="owl:propertyChainAxiom">
+                  <div xmlns="" class="property-object" typeof="rdf:List">
+                     <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/note-structure#endnoteHasIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#endnoteHasIdentifier">note-structure:endnoteHasIdentifier</a></div>
+                     <div class="property-object" rel="rdf:rest">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                        <div class="property-object" typeof="rdf:List">
+                           <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/concept#hasLiteral" title="Browse http://e-editiones.ch/ontology/concept#hasLiteral">concept:hasLiteral</a></div>
+                           <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Literal" title="Browse http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalLiteral">mathematics:hasOrdinalLiteral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="endnoteHasOrdinalNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber" title="Browse http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber">note-structure:endnoteHasOrdinalNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating an endnote to its ordinal number." xml:lang="en">
+               <div class="property-object">Relating an endnote to its ordinal number.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Endnote" title="Browse http://e-editiones.ch/ontology/note-structure#Endnote">note-structure:Endnote</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="endnote ha un numero ordinale" xml:lang="it">
+               <div class="property-object">endnote ha un numero ordinale
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="note de fin a un numéro ordinal" xml:lang="fr"></span><div class="property-object">note de fin a un numéro ordinal
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="endnote has ordinal number" xml:lang="en"></span><div class="property-object">endnote has ordinal number
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Endnote hat Ordinalzahl" xml:lang="de"></span><div class="property-object">Endnote hat Ordinalzahl
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber" title="Browse http://e-editiones.ch/ontology/note-structure#EndnoteOrdinalNumber">note-structure:EndnoteOrdinalNumber</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#endnoteHasIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#endnoteHasIdentifier">note-structure:endnoteHasIdentifier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="endnoteHasOrdinalNumeral" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumeral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumeral" title="Browse http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumeral">note-structure:endnoteHasOrdinalNumeral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating an endnote to its ordinal numeral." xml:lang="en">
+               <div class="property-object">Relating an endnote to its ordinal numeral.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Endnote" title="Browse http://e-editiones.ch/ontology/note-structure#Endnote">note-structure:Endnote</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="endnote has ordinal numeral" xml:lang="en">
+               <div class="property-object">endnote has ordinal numeral
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="endnote ha un numerale ordinale" xml:lang="it"></span><div class="property-object">endnote ha un numerale ordinale
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="note de fin a un numéral ordinal" xml:lang="fr"></span><div class="property-object">note de fin a un numéral ordinal
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Endnote hat Ordinalnumeral" xml:lang="de"></span><div class="property-object">Endnote hat Ordinalnumeral
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#propertyChainAxiom">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#propertyChainAxiom" title="Browse http://www.w3.org/2002/07/owl#propertyChainAxiom">owl:propertyChainAxiom</a></td>
+            <td>
+               <div class="property-object" rel="owl:propertyChainAxiom">
+                  <div xmlns="" class="property-object" typeof="rdf:List">
+                     <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber" title="Browse http://e-editiones.ch/ontology/note-structure#endnoteHasOrdinalNumber">note-structure:endnoteHasOrdinalNumber</a></div>
+                     <div class="property-object" rel="rdf:rest">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                        <div class="property-object" typeof="rdf:List">
+                           <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/mathematics#numberHasNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#numberHasNumeral">mathematics:numberHasNumeral</a></div>
+                           <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" title="Browse http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral">mathematics:hasOrdinalNumeral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="footnoteHasOrdinalNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumber" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumber" title="Browse http://e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumber">note-structure:footnoteHasOrdinalNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a footnote to its ordinal number." xml:lang="en">
+               <div class="property-object">Relating a footnote to its ordinal number.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Footnote" title="Browse http://e-editiones.ch/ontology/note-structure#Footnote">note-structure:Footnote</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="note de bas de page a un numéro ordinal" xml:lang="fr">
+               <div class="property-object">note de bas de page a un numéro ordinal
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Fussnote hat Ordinalzahl" xml:lang="de"></span><div class="property-object">Fussnote hat Ordinalzahl
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="nota a piè di pagina ha numero ordinale " xml:lang="it"></span><div class="property-object">nota a piè di pagina ha numero ordinale 
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="footnote has ordinal number" xml:lang="en"></span><div class="property-object">footnote has ordinal number
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber" title="Browse http://e-editiones.ch/ontology/note-structure#FootnoteOrdinalNumber">note-structure:FootnoteOrdinalNumber</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf">
+                  <table about="http://e-editiones.ch/ontology/note-structure#footnoteHasIdentifier" typeof="owl:ObjectProperty">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#footnoteHasIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#footnoteHasIdentifier">note-structure:footnoteHasIdentifier</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Relating a footnote to an identifier (as resource) it has." xml:lang="en">
+                           <div class="property-object">Relating a footnote to an identifier (as resource) it has.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Footnote" title="Browse http://e-editiones.ch/ontology/note-structure#Footnote">note-structure:Footnote</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="footnote has identifier" xml:lang="en">
+                           <div class="property-object">footnote has identifier
+                              													(en)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="nota a piè di pagina ha identificatore" xml:lang="it"></span><div class="property-object">nota a piè di pagina ha identificatore
+                              													
+                              													(it)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="Fussnote hat Identifikator" xml:lang="de"></span><div class="property-object">Fussnote hat Identifikator
+                              													
+                              													(de)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="note de bas de page a un identifiant" xml:lang="fr"></span><div class="property-object">note de bas de page a un identifiant
+                              													
+                              													(fr)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#FootnoteIdentifier">note-structure:FootnoteIdentifier</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#hasIdentifier" title="Browse http://e-editiones.ch/ontology/text-structure#hasIdentifier">text-structure:hasIdentifier</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="footnoteHasOrdinalNumeral" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumeral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumeral" title="Browse http://e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumeral">note-structure:footnoteHasOrdinalNumeral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a footnote to its ordinal numeral." xml:lang="en">
+               <div class="property-object">Relating a footnote to its ordinal numeral.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Footnote" title="Browse http://e-editiones.ch/ontology/note-structure#Footnote">note-structure:Footnote</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="note de bas de page a un numéro ordinal" xml:lang="fr">
+               <div class="property-object">note de bas de page a un numéro ordinal
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Fussnote hat Ordinalnumeral" xml:lang="de"></span><div class="property-object">Fussnote hat Ordinalnumeral
+                  													
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="nota a piè di pagina ha numero ordinale" xml:lang="it"></span><div class="property-object">nota a piè di pagina ha numero ordinale
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="footnote has ordinal numeral" xml:lang="en"></span><div class="property-object">footnote has ordinal numeral
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#propertyChainAxiom">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#propertyChainAxiom" title="Browse http://www.w3.org/2002/07/owl#propertyChainAxiom">owl:propertyChainAxiom</a></td>
+            <td>
+               <div class="property-object" rel="owl:propertyChainAxiom">
+                  <div xmlns="" class="property-object" typeof="rdf:List">
+                     <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumber" title="Browse http://e-editiones.ch/ontology/note-structure#footnoteHasOrdinalNumber">note-structure:footnoteHasOrdinalNumber</a></div>
+                     <div class="property-object" rel="rdf:rest">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                        <div class="property-object" typeof="rdf:List">
+                           <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/mathematics#numberHasNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#numberHasNumeral">mathematics:numberHasNumeral</a></div>
+                           <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" title="Browse http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral" title="Browse http://e-editiones.ch/ontology/mathematics#hasOrdinalNumeral">mathematics:hasOrdinalNumeral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isGlossOfExpression" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#isGlossOfExpression" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#isGlossOfExpression" title="Browse http://e-editiones.ch/ontology/note-structure#isGlossOfExpression">note-structure:isGlossOfExpression</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a gloss to a text expression it is part of." xml:lang="en">
+               <div class="property-object">Relating a gloss to a text expression it is part of.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Gloss" title="Browse http://e-editiones.ch/ontology/note-structure#Gloss">note-structure:Gloss</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="est glose d'une expression" xml:lang="fr">
+               <div class="property-object">est glose d'une expression
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="è un glossare di un'espressione" xml:lang="it"></span><div class="property-object">è un glossare di un'espressione
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is gloss of expression" xml:lang="en"></span><div class="property-object">is gloss of expression
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Glosse einer Expression" xml:lang="de"></span><div class="property-object">ist Glosse einer Expression
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Expression" title="Browse http://e-editiones.ch/ontology/text-expression#Expression">text-expression:Expression</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf">
+                  <table about="http://e-editiones.ch/ontology/note-structure#isNoteOfExpression" typeof="owl:ObjectProperty">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#isNoteOfExpression" title="Browse http://e-editiones.ch/ontology/note-structure#isNoteOfExpression">note-structure:isNoteOfExpression</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Relating a note structure to a text expression it is part of." xml:lang="en">
+                           <div class="property-object">Relating a note structure to a text expression it is part of.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Note" title="Browse http://e-editiones.ch/ontology/note-structure#Note">note-structure:Note</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="est une structure de note d'une expression" xml:lang="fr">
+                           <div class="property-object">est une structure de note d'une expression
+                              													(fr)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="è una struttura di note di un'espressione" xml:lang="it"></span><div class="property-object">è una struttura di note di un'espressione
+                              													
+                              													(it)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="ist Notizstruktur einer Expression" xml:lang="de"></span><div class="property-object">ist Notizstruktur einer Expression
+                              													
+                              													(de)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="is note structure of expression" xml:lang="en"></span><div class="property-object">is note structure of expression
+                              													
+                              													(en)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#Expression" title="Browse http://e-editiones.ch/ontology/text-expression#Expression">text-expression:Expression</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression" title="Browse http://e-editiones.ch/ontology/text-structure#isPartOfTextExpression">text-structure:isPartOfTextExpression</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isIdentifierOfEndnote" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#isIdentifierOfEndnote" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#isIdentifierOfEndnote" title="Browse http://e-editiones.ch/ontology/note-structure#isIdentifierOfEndnote">note-structure:isIdentifierOfEndnote</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating an identifier to its endnote." xml:lang="en">
+               <div class="property-object">Relating an identifier to its endnote.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier">note-structure:EndnoteIdentifier</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#inverseOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#inverseOf" title="Browse http://www.w3.org/2002/07/owl#inverseOf">owl:inverseOf</a></td>
+            <td>
+               <div class="property-object" rel="owl:inverseOf">
+                  <table about="http://e-editiones.ch/ontology/note-structure#endnoteHasIdentifier" typeof="owl:ObjectProperty">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#endnoteHasIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#endnoteHasIdentifier">note-structure:endnoteHasIdentifier</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Relating an endnote to an identifier (as resource) it has." xml:lang="en">
+                           <div class="property-object">Relating an endnote to an identifier (as resource) it has.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Endnote" title="Browse http://e-editiones.ch/ontology/note-structure#Endnote">note-structure:Endnote</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="endnote has identifier" xml:lang="en">
+                           <div class="property-object">endnote has identifier
+                              													(en)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="nota finale ha identificatore" xml:lang="it"></span><div class="property-object">nota finale ha identificatore
+                              													
+                              													(it)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="note de fin a un identifiant " xml:lang="fr"></span><div class="property-object">note de fin a un identifiant 
+                              													
+                              													(fr)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="Endnote hat Identifikator" xml:lang="de"></span><div class="property-object">Endnote hat Identifikator
+                              													
+                              													(de)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier" title="Browse http://e-editiones.ch/ontology/note-structure#EndnoteIdentifier">note-structure:EndnoteIdentifier</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#hasIdentifier" title="Browse http://e-editiones.ch/ontology/text-structure#hasIdentifier">text-structure:hasIdentifier</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="è un identificatore dell'endnote" xml:lang="it">
+               <div class="property-object">è un identificatore dell'endnote
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="est un identifiant de note de fin" xml:lang="fr"></span><div class="property-object">est un identifiant de note de fin
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is identifier of endnote" xml:lang="en"></span><div class="property-object">is identifier of endnote
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Identifikator einer Endnote" xml:lang="de"></span><div class="property-object">ist Identifikator einer Endnote
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Endnote" title="Browse http://e-editiones.ch/ontology/note-structure#Endnote">note-structure:Endnote</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isNumberOfEndnote" class="description">
+      <table about="http://e-editiones.ch/ontology/note-structure#isNumberOfEndnote" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#isNumberOfEndnote" title="Browse http://e-editiones.ch/ontology/note-structure#isNumberOfEndnote">note-structure:isNumberOfEndnote</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a number to its endnote." xml:lang="en">
+               <div class="property-object">Relating a number to its endnote.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#EndnoteNumber" title="Browse http://e-editiones.ch/ontology/note-structure#EndnoteNumber">note-structure:EndnoteNumber</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#inverseOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#inverseOf" title="Browse http://www.w3.org/2002/07/owl#inverseOf">owl:inverseOf</a></td>
+            <td>
+               <div class="property-object" rel="owl:inverseOf"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#endnoteHasNumber" title="Browse http://e-editiones.ch/ontology/note-structure#endnoteHasNumber">note-structure:endnoteHasNumber</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#" title="Browse http://e-editiones.ch/ontology/note-structure#">note-structure:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="est un nombre de note de fin" xml:lang="fr">
+               <div class="property-object">est un nombre de note de fin
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is number of endnote" xml:lang="en"></span><div class="property-object">is number of endnote
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="è un numero di endnote" xml:lang="it"></span><div class="property-object">è un numero di endnote
+                  													
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Nummer einer Endnote" xml:lang="de"></span><div class="property-object">ist Nummer einer Endnote
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/note-structure#Endnote" title="Browse http://e-editiones.ch/ontology/note-structure#Endnote">note-structure:Endnote</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/generalHumanities/note-structure.html.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/generalHumanities/note-structure.html.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/generalHumanities/note-structure.html.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/generalHumanities/note-structure.html.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/note-structure.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

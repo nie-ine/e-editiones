@@ -1,0 +1,109 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix concept: <http://e-editiones.ch/ontology/concept#>.
+
+@base <http://e-editiones.ch/ontology/terminology-code-systems>.
+@prefix terminology-code-systems: <http://e-editiones.ch/ontology/terminology-code-systems#>.
+
+<http://e-editiones.ch/ontology/terminology-code-systems>
+	a owl:Ontology;
+	dct:license <http://creativecommons.org/licenses/by/3.0/>;
+	dct:title "An ontology about terminology and code systems"@en;
+	dct:description """Formal description of terminology and code systems and their datatypes, as link between system data and OWL-ontologies and RDF-data."""@en;
+	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
+	owl:versionInfo "2020-06-11"^^xsd:date;
+	skos:note """Other datatypes are declared in a respective domain ontology, e.g. calendar:julianDate, languages:iso639-2, and text:characterSize."""@en.
+
+#
+# CLASSES
+#
+
+terminology-code-systems:ColorCodingSystem
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a rdfs:Class;
+	rdfs:label "color coding system"@en, "Farbcodesystem"@de;
+	rdfs:comment """System to code colors."""@en;
+	rdfs:subClassOf concept:CodingSystem.
+
+#
+# INSTANCES
+#
+
+terminology-code-systems:hexadecimalColorCodingSystem
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a rdfs:Class, terminology-code-systems:ColorCodingSystem;
+	rdfs:label "hexadecimal color coding system"@en, "hexadezimales Farbcodesystem"@de;
+	rdfs:comment """Color coding system to represent a color with a hex triplet or six-digit, three-byte hexadecimal number. The bytes represent the red, green and blue components of the color. Used in HTML, CSS, SVG, and other computing applications."""@en;
+	concept:codingSystemHasDatatype terminology-code-systems:hexadecimalColor;
+	rdfs:seeAlso <https://en.wikipedia.org/wiki/Web_colors>.
+
+terminology-code-systems:gndSystem
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a rdfs:Class, concept:CodingSystem;
+	rdfs:label "GND-system"@en, "GND-System"@de;
+	rdfs:comment """The Integrated Authority File (in German Gemeinsame Normdatei, GND) is an authority file for persons, corporate bodies, conferences and events, geographic information, topics and works."""@en;
+	concept:codingSystemHasDatatype terminology-code-systems:gnd;
+	rdfs:seeAlso <https://www.dnb.de/EN/Standardisierung/GND/gnd_node.html>.
+
+terminology-code-systems:oaiSystem
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a rdfs:Class, concept:CodingSystem;
+	rdfs:label "OAI-system"@en, "OAI-System"@de;
+	rdfs:comment """The Open Archives Initiative."""@en;
+	concept:codingSystemHasDatatype terminology-code-systems:oai;
+	rdfs:seeAlso <https://www.openarchives.org/>.
+
+terminology-code-systems:hexadecimalColor #° OR color:hexadecimal
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a rdfs:Class, rdfs:Datatype;
+	rdfs:label "hexadecimal color datatype"@en, "hexadezimaler Farbdatentyp"@de;
+	rdfs:comment """Datatype to type a literal representing a hexadecimal color code."""@en.
+
+terminology-code-systems:gnd
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a rdfs:Class, rdfs:Datatype;
+	rdfs:label "GND-datatype"@en, "GND-Datentyp"@de;
+	rdfs:comment """Datatype to type a GND-number numeral."""@en.
+
+terminology-code-systems:oai
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a rdfs:Class, rdfs:Datatype;
+	rdfs:label "OAI-datatype"@en, "OAI-Datentyp"@de;
+	rdfs:comment """Datatype to type an OAI-identifier literal."""@en.
+
+#
+# PROPERTIES
+#
+
+terminology-code-systems:hasHexadecimalColorCodeValue
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a owl:DatatypeProperty;
+	rdfs:label "has hexadecimal color code value"@en, "hat hexadezimalen Farbcodewert"@de;
+	rdfs:comment "Relating something to a hexadecimal color code value."@en;
+	skos:note """example:page1 terminology-code-systems:hasHexadecimalColorCodeValue "000000"^^terminology-code-systems:hexadecimalColor."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range terminology-code-systems:hexadecimalColor;
+	rdfs:subPropertyOf concept:hasIdentifierCodeValue.
+
+terminology-code-systems:hasGNDNumber #°
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a owl:ObjectProperty;
+	rdfs:label "has GND-number"@en, "hat GND-Identifikator"@de;
+	rdfs:comment "Relating something to its GND-identifier."@en;
+	skos:note """example:personX terminology-code-systems:hasGNDNumber [concept:identifierCodeHasSystem terminology-code-systems:gndSystem; concept:identifierCodeHasValue "118679325"^^terminology-code-systems:gnd]."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range concept:IdentifierCode;
+	rdfs:subPropertyOf concept:hasIdentifierCode.
+
+terminology-code-systems:hasOAIIdentifier #°
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/terminology-code-systems#>;
+	a owl:ObjectProperty;
+	rdfs:label "has OAI-identifier"@en, "hat OAI-Identifikator"@de;
+	rdfs:comment "Relating something to its OAI-identifier."@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range concept:IdentifierCode;
+	rdfs:subPropertyOf concept:hasIdentifierCode.

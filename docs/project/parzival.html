@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="//e-editiones/e-editiones/about.html">About</a>
+              
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Wolfram von Eschenbach&#39;s Parzival</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/project/parzival.html.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/project/parzival.html.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/project/parzival.html.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/project/parzival.html.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Project-ontologies/parzival.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival" title="Browse http://e-editiones.ch/ontology/parzival"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/contributor">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
+            <td property="dct:contributor" content="Reinhard Priber, tool coordinator and software developer, University of Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Reinhard Priber, tool coordinator and software developer, University of Zürich, Switzerland</div>
+               <div class="connector"></div><span property="dct:contributor" content="Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland" xml:lang="en"></span><div class="property-object">Roberta Padlina, project coordinator and software developer, University of Basel,
+                  Switzerland
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of specific concepts in the critical and digital edition of Wolfram von Eschenbach's 'Parzival." xml:lang="en">
+               <div class="property-object">Formal description of specific concepts in the critical and digital edition of Wolfram
+                  von Eschenbach's 'Parzival.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/license">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/license" title="Browse http://purl.org/dc/terms/license">dct:license</a></td>
+            <td>
+               <div class="property-object" rel="dct:license"><a class="browse" href="http://creativecommons.org/licenses/by/3.0/" title="Browse http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/ licenses/ by/ 3.0/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="Labels are triple quoted due to single quoted literal." xml:lang="en">
+               <div class="property-object">Labels are triple quoted due to single quoted literal.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="Universities of Basel, Bern, and Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Universities of Basel, Bern, and Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="An ontology about Wolfram von Eschenbach's 'Parzival' " xml:lang="en">
+               <div class="property-object">An ontology about Wolfram von Eschenbach's 'Parzival' </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e36="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+               <div class="property-object">2020-06-11</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="AddedVerse" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#AddedVerse" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#AddedVerse" title="Browse http://e-editiones.ch/ontology/parzival#AddedVerse">parzival:AddedVerse</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Verse added to a dreissiger, of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Verse added to a dreissiger, of a scientific edition of a copy of Wolfram Von Eschenbach's
+                  verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="added edition verse of 'Parzival'" xml:lang="en">
+               <div class="property-object">added edition verse of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hinzugefügter Editionvers 'Parzivals'" xml:lang="de"></span><div class="property-object">hinzugefügter Editionvers 'Parzivals'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/prosodic-structure#Verse" title="Browse http://e-editiones.ch/ontology/prosodic-structure#Verse">prosodic-structure:Verse</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="CopiedVerseNovel" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel" title="Browse http://e-editiones.ch/ontology/parzival#CopiedVerseNovel">parzival:CopiedVerseNovel</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Copied version of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Copied version of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="kopierte Version 'Parzivals'" xml:lang="de">
+               <div class="property-object">kopierte Version 'Parzivals'
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="copied version of 'Parzival'" xml:lang="en"></span><div class="property-object">copied version of 'Parzival'
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#VerseNovel" title="Browse http://e-editiones.ch/ontology/literature#VerseNovel">literature:VerseNovel</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#CopiedText" title="Browse http://e-editiones.ch/ontology/text#CopiedText">text:CopiedText</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholarly-editing#Witness" title="Browse http://e-editiones.ch/ontology/scholarly-editing#Witness">scholarly-editing:Witness</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="CriticalEdition" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#CriticalEdition" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#CriticalEdition" title="Browse http://e-editiones.ch/ontology/parzival#CriticalEdition">parzival:CriticalEdition</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Critical text edition of a dreissiger depending on one or more transcripts of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Critical text edition of a dreissiger depending on one or more transcripts of Wolfram
+                  Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="critical text edition of a dreissiger" xml:lang="en">
+               <div class="property-object">critical text edition of a dreissiger
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="kritische Textedition eines Dreissigers" xml:lang="de"></span><div class="property-object">kritische Textedition eines Dreissigers
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition" title="Browse http://e-editiones.ch/ontology/scholarly-editing#CriticalEdition">scholarly-editing:CriticalEdition</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="DocumentPage" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#DocumentPage" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#DocumentPage" title="Browse http://e-editiones.ch/ontology/parzival#DocumentPage">parzival:DocumentPage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Document page of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Document page of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Dokumentseite von 'Parzival'" xml:lang="de">
+               <div class="property-object">Dokumentseite von 'Parzival'
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="document page of 'Parzival'" xml:lang="en"></span><div class="property-object">document page of 'Parzival'
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/document#ExpressionPart" title="Browse http://e-editiones.ch/ontology/document#ExpressionPart">document:ExpressionPart</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/document#Page" title="Browse http://e-editiones.ch/ontology/document#Page">document:Page</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Dreissiger" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#Dreissiger" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Dreissiger" title="Browse http://e-editiones.ch/ontology/parzival#Dreissiger">parzival:Dreissiger</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Set of about 30 verses in a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Set of about 30 verses in a scientific edition of a copy of Wolfram Von Eschenbach's
+                  verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="dreissiger" xml:lang="it">
+               <div class="property-object">dreissiger
+                  													(it)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="dreissiger" xml:lang="fr"></span><div class="property-object">dreissiger
+                  													
+                  													(fr)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="dreissiger" xml:lang="en"></span><div class="property-object">dreissiger
+                  													
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Dreissiger" xml:lang="de"></span><div class="property-object">Dreissiger
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#seeAlso" title="Browse http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></td>
+            <td property="rdfs:seeAlso" content="Bumke Joachim, &#34;Wolfram von Eschenbach&#34;, Springer-Verlag, Stuttgart, 2004." xml:lang="en">
+               <div class="property-object">Bumke Joachim, "Wolfram von Eschenbach", Springer-Verlag, Stuttgart, 2004.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/prosodic-structure#VerseSection" title="Browse http://e-editiones.ch/ontology/prosodic-structure#VerseSection">prosodic-structure:VerseSection</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="DreissigerNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#DreissigerNumber" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#DreissigerNumber" title="Browse http://e-editiones.ch/ontology/parzival#DreissigerNumber">parzival:DreissigerNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Number of a dreissiger." xml:lang="en">
+               <div class="property-object">Number of a dreissiger.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Dreissigernummer" xml:lang="de">
+               <div class="property-object">Dreissigernummer
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="dreissiger number" xml:lang="en"></span><div class="property-object">dreissiger number
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#Identifier" title="Browse http://e-editiones.ch/ontology/text-structure#Identifier">text-structure:Identifier</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/mathematics#NaturalNumber" title="Browse http://e-editiones.ch/ontology/mathematics#NaturalNumber">mathematics:NaturalNumber</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="EditionPage" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#EditionPage" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#EditionPage" title="Browse http://e-editiones.ch/ontology/parzival#EditionPage">parzival:EditionPage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Page of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Page of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Editionseite 'Parzivals'" xml:lang="de">
+               <div class="property-object">Editionseite 'Parzivals'
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="edition page of 'Parzival'" xml:lang="en"></span><div class="property-object">edition page of 'Parzival'
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholarly-editing#Page" title="Browse http://e-editiones.ch/ontology/scholarly-editing#Page">scholarly-editing:Page</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="HandwrittenTranscribedVerseNovel" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovel" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovel" title="Browse http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovel">parzival:HandwrittenTranscribedVerseNovel</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Handwritten transcribed version of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Handwritten transcribed version of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="handtranskribierte Version 'Parzivals'" xml:lang="de">
+               <div class="property-object">handtranskribierte Version 'Parzivals'
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="handwritten transcribed version of 'Parzival'" xml:lang="en"></span><div class="property-object">handwritten transcribed version of 'Parzival'
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel" title="Browse http://e-editiones.ch/ontology/parzival#CopiedVerseNovel">parzival:CopiedVerseNovel</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TranscribedText" title="Browse http://e-editiones.ch/ontology/text#TranscribedText">text:TranscribedText</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="HandwrittenTranscribedVerseNovelPart" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovelPart" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovelPart" title="Browse http://e-editiones.ch/ontology/parzival#HandwrittenTranscribedVerseNovelPart">parzival:HandwrittenTranscribedVerseNovelPart</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Part of a handwritten transcribed version of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Part of a handwritten transcribed version of Wolfram Von Eschenbach's verse novel
+                  'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="handtranskribiertes Teil 'Parzivals'" xml:lang="de">
+               <div class="property-object">handtranskribiertes Teil 'Parzivals'
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="handwritten transcribed part of 'Parzival'" xml:lang="en"></span><div class="property-object">handwritten transcribed part of 'Parzival'
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#TranscribedText" title="Browse http://e-editiones.ch/ontology/text#TranscribedText">text:TranscribedText</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#HandwrittenText" title="Browse http://e-editiones.ch/ontology/text#HandwrittenText">text:HandwrittenText</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="ManualVerseNovelTranscript" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscript" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscript" title="Browse http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscript">parzival:ManualVerseNovelTranscript</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Manual transcript of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Manual transcript of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="manual transcript of 'Parzival'" xml:lang="en">
+               <div class="property-object">manual transcript of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="manuelles Transkript 'Parzivals'" xml:lang="de"></span><div class="property-object">manuelles Transkript 'Parzivals'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseNovelCopy" title="Browse http://e-editiones.ch/ontology/parzival#VerseNovelCopy">parzival:VerseNovelCopy</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ManualTranscript" title="Browse http://e-editiones.ch/ontology/information-carrier#ManualTranscript">information-carrier:ManualTranscript</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Codex" title="Browse http://e-editiones.ch/ontology/information-carrier#Codex">information-carrier:Codex</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="ManualVerseNovelTranscriptFragment" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptFragment" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptFragment" title="Browse http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptFragment">parzival:ManualVerseNovelTranscriptFragment</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Manual transcript fragment of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Manual transcript fragment of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="manuelles Transkriptfragment 'Parzivals'" xml:lang="de">
+               <div class="property-object">manuelles Transkriptfragment 'Parzivals'
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="manual transcript fragment of 'Parzival'" xml:lang="en"></span><div class="property-object">manual transcript fragment of 'Parzival'
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Fragment" title="Browse http://e-editiones.ch/ontology/information-carrier#Fragment">information-carrier:Fragment</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ManualTranscript" title="Browse http://e-editiones.ch/ontology/information-carrier#ManualTranscript">information-carrier:ManualTranscript</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="ManualVerseNovelTranscriptRemnant" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptRemnant" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptRemnant" title="Browse http://e-editiones.ch/ontology/parzival#ManualVerseNovelTranscriptRemnant">parzival:ManualVerseNovelTranscriptRemnant</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Manual transcript remnant of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Manual transcript remnant of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="manuelles Transkriptüberrest 'Parzivals'" xml:lang="de">
+               <div class="property-object">manuelles Transkriptüberrest 'Parzivals'
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="manual transcript remnant of 'Parzival'" xml:lang="en"></span><div class="property-object">manual transcript remnant of 'Parzival'
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#ManualTranscript" title="Browse http://e-editiones.ch/ontology/information-carrier#ManualTranscript">information-carrier:ManualTranscript</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Remnant" title="Browse http://e-editiones.ch/ontology/information-carrier#Remnant">information-carrier:Remnant</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Page" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#Page" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Page" title="Browse http://e-editiones.ch/ontology/parzival#Page">parzival:Page</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Seite eines Manuellen Transkripts 'Parzivals'." xml:lang="de">
+               <div class="property-object">Seite eines Manuellen Transkripts 'Parzivals'.</div>
+               <div class="connector"></div><span property="rdfs:comment" content="Page of a manual transcript of 'Parzival'." xml:lang="en"></span><div class="property-object">Page of a manual transcript of 'Parzival'.
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="page of 'Parzival'" xml:lang="en">
+               <div class="property-object">page of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Seite 'Parzivals'" xml:lang="de"></span><div class="property-object">Seite 'Parzivals'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Page" title="Browse http://e-editiones.ch/ontology/information-carrier#Page">information-carrier:Page</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="PrintedVerseNovel" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#PrintedVerseNovel" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#PrintedVerseNovel" title="Browse http://e-editiones.ch/ontology/parzival#PrintedVerseNovel">parzival:PrintedVerseNovel</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Printed version of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Printed version of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="printed version of 'Parzival'" xml:lang="en">
+               <div class="property-object">printed version of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="gedruckte Version 'Parzivals'" xml:lang="de"></span><div class="property-object">gedruckte Version 'Parzivals'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/parzival#CopiedVerseNovel" title="Browse http://e-editiones.ch/ontology/parzival#CopiedVerseNovel">parzival:CopiedVerseNovel</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text#PrintedText" title="Browse http://e-editiones.ch/ontology/text#PrintedText">text:PrintedText</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="ScholarlyEdition" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#ScholarlyEdition" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#ScholarlyEdition" title="Browse http://e-editiones.ch/ontology/parzival#ScholarlyEdition">parzival:ScholarlyEdition</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Scholarly text edition of a transcript of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Scholarly text edition of a transcript of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="wissenschaftliche Textedition von 'Parzival'" xml:lang="de">
+               <div class="property-object">wissenschaftliche Textedition von 'Parzival'
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="scholarly text edition of 'Parzival'" xml:lang="en"></span><div class="property-object">scholarly text edition of 'Parzival'
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/publishing#Expression" title="Browse http://e-editiones.ch/ontology/publishing#Expression">publishing:Expression</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/scholarly-editing#Edition" title="Browse http://e-editiones.ch/ontology/scholarly-editing#Edition">scholarly-editing:Edition</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="TextPage" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#TextPage" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#TextPage" title="Browse http://e-editiones.ch/ontology/parzival#TextPage">parzival:TextPage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Text page of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Text page of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="text page of 'Parzival'" xml:lang="en">
+               <div class="property-object">text page of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Textseite von 'Parzival'" xml:lang="de"></span><div class="property-object">Textseite von 'Parzival'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#Page" title="Browse http://e-editiones.ch/ontology/text-structure#Page">text-structure:Page</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/text-expression#ExpressionPart" title="Browse http://e-editiones.ch/ontology/text-expression#ExpressionPart">text-expression:ExpressionPart</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Verse" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#Verse" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Verse" title="Browse http://e-editiones.ch/ontology/parzival#Verse">parzival:Verse</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Verse of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Verse of a scientific edition of a copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="edition verse of 'Parzival'" xml:lang="en">
+               <div class="property-object">edition verse of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Editionvers 'Parzivals'" xml:lang="de"></span><div class="property-object">Editionvers 'Parzivals'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/prosodic-structure#Verse" title="Browse http://e-editiones.ch/ontology/prosodic-structure#Verse">prosodic-structure:Verse</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="VerseNovel" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#VerseNovel" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseNovel" title="Browse http://e-editiones.ch/ontology/parzival#VerseNovel">parzival:VerseNovel</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Any version of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Any version of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="version of 'Parzival'" xml:lang="en">
+               <div class="property-object">version of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Version 'Parzivals'" xml:lang="de"></span><div class="property-object">Version 'Parzivals'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/literature#VerseNovel" title="Browse http://e-editiones.ch/ontology/literature#VerseNovel">literature:VerseNovel</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="VerseNovelCopy" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#VerseNovelCopy" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseNovelCopy" title="Browse http://e-editiones.ch/ontology/parzival#VerseNovelCopy">parzival:VerseNovelCopy</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Copy of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Copy of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="copy of 'Parzival'" xml:lang="en">
+               <div class="property-object">copy of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Kopie 'Parzivals'" xml:lang="de"></span><div class="property-object">Kopie 'Parzivals'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#TextCopy" title="Browse http://e-editiones.ch/ontology/information-carrier#TextCopy">information-carrier:TextCopy</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Book" title="Browse http://e-editiones.ch/ontology/information-carrier#Book">information-carrier:Book</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="VerseNovelPrint" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#VerseNovelPrint" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseNovelPrint" title="Browse http://e-editiones.ch/ontology/parzival#VerseNovelPrint">parzival:VerseNovelPrint</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Print of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Print of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="print of 'Parzival'" xml:lang="en">
+               <div class="property-object">print of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Druck von 'Parzival'" xml:lang="de"></span><div class="property-object">Druck von 'Parzival'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseNovelCopy" title="Browse http://e-editiones.ch/ontology/parzival#VerseNovelCopy">parzival:VerseNovelCopy</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Print" title="Browse http://e-editiones.ch/ontology/information-carrier#Print">information-carrier:Print</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/information-carrier#Book" title="Browse http://e-editiones.ch/ontology/information-carrier#Book">information-carrier:Book</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="VerseSection" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#VerseSection" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseSection" title="Browse http://e-editiones.ch/ontology/parzival#VerseSection">parzival:VerseSection</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Verse section of about 50 dreissiger in Wolfram Von Eschenbach's verse novel 'Parzival', or a version or derivative thereof." xml:lang="en">
+               <div class="property-object">Verse section of about 50 dreissiger in Wolfram Von Eschenbach's verse novel 'Parzival',
+                  or a version or derivative thereof.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="verse section of 'Parzival'" xml:lang="en">
+               <div class="property-object">verse section of 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Versabschnitt von 'Parzival'" xml:lang="de"></span><div class="property-object">Versabschnitt von 'Parzival'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/prosodic-structure#VerseSection" title="Browse http://e-editiones.ch/ontology/prosodic-structure#VerseSection">prosodic-structure:VerseSection</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Properties</h2>
+   <div id="dreissigerHasNumber" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#dreissigerHasNumber" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#dreissigerHasNumber" title="Browse http://e-editiones.ch/ontology/parzival#dreissigerHasNumber">parzival:dreissigerHasNumber</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a dreissiger to its number." xml:lang="en">
+               <div class="property-object">Relating a dreissiger to its number.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Dreissiger" title="Browse http://e-editiones.ch/ontology/parzival#Dreissiger">parzival:Dreissiger</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="dreissiger has number" xml:lang="en">
+               <div class="property-object">dreissiger has number
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Dreissiger hat Nummer" xml:lang="de"></span><div class="property-object">Dreissiger hat Nummer
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/parzival#DreissigerNumber" title="Browse http://e-editiones.ch/ontology/parzival#DreissigerNumber">parzival:DreissigerNumber</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/text-structure#hasIdentifier" title="Browse http://e-editiones.ch/ontology/text-structure#hasIdentifier">text-structure:hasIdentifier</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isAddedToDreissiger" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#isAddedToDreissiger" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#isAddedToDreissiger" title="Browse http://e-editiones.ch/ontology/parzival#isAddedToDreissiger">parzival:isAddedToDreissiger</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating an edition verse to the dreissiger it is added to." xml:lang="en">
+               <div class="property-object">Relating an edition verse to the dreissiger it is added to.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/parzival#AddedVerse" title="Browse http://e-editiones.ch/ontology/parzival#AddedVerse">parzival:AddedVerse</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="is added to dreissiger" xml:lang="en">
+               <div class="property-object">is added to dreissiger
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="zum Dreissiger hinzugefügt" xml:lang="de"></span><div class="property-object">zum Dreissiger hinzugefügt
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Dreissiger" title="Browse http://e-editiones.ch/ontology/parzival#Dreissiger">parzival:Dreissiger</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#isPartOf" title="Browse http://e-editiones.ch/ontology/concept#isPartOf">concept:isPartOf</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isDreissigerOfPage" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#isDreissigerOfPage" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#isDreissigerOfPage" title="Browse http://e-editiones.ch/ontology/parzival#isDreissigerOfPage">parzival:isDreissigerOfPage</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a dreissiger to a scientific edition page it is part of." xml:lang="en">
+               <div class="property-object">Relating a dreissiger to a scientific edition page it is part of.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Dreissiger" title="Browse http://e-editiones.ch/ontology/parzival#Dreissiger">parzival:Dreissiger</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="is dreissiger of edition page" xml:lang="en">
+               <div class="property-object">is dreissiger of edition page
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Dreissiger einer Editionseite" xml:lang="de"></span><div class="property-object">ist Dreissiger einer Editionseite
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/parzival#EditionPage" title="Browse http://e-editiones.ch/ontology/parzival#EditionPage">parzival:EditionPage</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#isPartOf" title="Browse http://e-editiones.ch/ontology/concept#isPartOf">concept:isPartOf</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isDreissigerOfSection" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#isDreissigerOfSection" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#isDreissigerOfSection" title="Browse http://e-editiones.ch/ontology/parzival#isDreissigerOfSection">parzival:isDreissigerOfSection</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a dreissiger to the verse section it is part of." xml:lang="en">
+               <div class="property-object">Relating a dreissiger to the verse section it is part of.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Dreissiger" title="Browse http://e-editiones.ch/ontology/parzival#Dreissiger">parzival:Dreissiger</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ist Dreissiger eines Abschnitts" xml:lang="de">
+               <div class="property-object">ist Dreissiger eines Abschnitts
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is dreissiger of section" xml:lang="en"></span><div class="property-object">is dreissiger of section
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseSection" title="Browse http://e-editiones.ch/ontology/parzival#VerseSection">parzival:VerseSection</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#isPartOf" title="Browse http://e-editiones.ch/ontology/concept#isPartOf">concept:isPartOf</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isSectionOfNovel" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#isSectionOfNovel" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#isSectionOfNovel" title="Browse http://e-editiones.ch/ontology/parzival#isSectionOfNovel">parzival:isSectionOfNovel</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a verse section to a version of Wolfram Von Eschenbach's verse novel 'Parzival'." xml:lang="en">
+               <div class="property-object">Relating a verse section to a version of Wolfram Von Eschenbach's verse novel 'Parzival'.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseSection" title="Browse http://e-editiones.ch/ontology/parzival#VerseSection">parzival:VerseSection</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="is verse section of verse novel 'Parzival'" xml:lang="en">
+               <div class="property-object">is verse section of verse novel 'Parzival'
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Versabschnitt des Versromans 'Parzival'" xml:lang="de"></span><div class="property-object">ist Versabschnitt des Versromans 'Parzival'
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/parzival#VerseNovel" title="Browse http://e-editiones.ch/ontology/parzival#VerseNovel">parzival:VerseNovel</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfVerseNovel" title="Browse http://e-editiones.ch/ontology/prosodic-structure#isVerseSectionOfVerseNovel">prosodic-structure:isVerseSectionOfVerseNovel</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isVerseOfDreissiger" class="description">
+      <table about="http://e-editiones.ch/ontology/parzival#isVerseOfDreissiger" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/parzival#isVerseOfDreissiger" title="Browse http://e-editiones.ch/ontology/parzival#isVerseOfDreissiger">parzival:isVerseOfDreissiger</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a verse to its dreissiger." xml:lang="en">
+               <div class="property-object">Relating a verse to its dreissiger.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Verse" title="Browse http://e-editiones.ch/ontology/parzival#Verse">parzival:Verse</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/parzival#" title="Browse http://e-editiones.ch/ontology/parzival#">parzival:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="is verse of dreissiger" xml:lang="en">
+               <div class="property-object">is verse of dreissiger
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="ist Vers eines Dreissigers" xml:lang="de"></span><div class="property-object">ist Vers eines Dreissigers
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/parzival#Dreissiger" title="Browse http://e-editiones.ch/ontology/parzival#Dreissiger">parzival:Dreissiger</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/concept#isPartOf" title="Browse http://e-editiones.ch/ontology/concept#isPartOf">concept:isPartOf</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/project/parzival.html.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/project/parzival.html.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/project/parzival.html.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/project/parzival.html.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Project-ontologies/parzival.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!-- Website content license
+===============================
+Copyright e-editiones.ch © 2021
+
+Original template license:
+==================================================
+The MIT License (MIT)
+
+Copyright (c) 2016-present Parker Moore and the minima contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE. -->
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="//e-editiones/e-editiones/about.html">About</a>
+              
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!-- <div id="inprogress">The content of this website is in progress</div> -->
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Ontology Library</h1>
+  </header>
+
+  <div class="post-content">
+
+    <p>There are two series of ontologies: more generic and project ontologies.</p>
+
+<p>The <a href="#generic-ontologies">generic ontologies</a> comprise the core concepts for scholarly editions, as well as the bulk of entities modeled in agreement with the edition projects. They grouped into:</p>
+<ul>
+  <li><a href="#general-domain">General Domain Ontologies</a></li>
+  <li><a href="#general-humanities">General Humanities Ontologies</a></li>
+  <li><a href="#specific-humanities">Specific Humanities Ontologies</a></li>
+  <li><a href="#external-ontologies">External Terminology &amp; Code Systems Ontology</a></li>
+</ul>
+
+<p>The <a href="#project-ontologies">project ontologies</a> contain entities linked to the specific subjects of edition projects, but they are still usable outside the respective projects.</p>
+
+
+  	<h2 id="generic-ontologies">Generic Ontologies</h2>
+    <h4 id="general-domain">General Domain Ontologies</h4>
+    <div class="ontology-row">
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/agent.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Agent</h4>
+            <p>Formal description of an agent, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/belief-value.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Belief Value</h4>
+            <p>Formal description of belief value, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/calendar.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Calendar</h4>
+            <p>Formal description of calendar, subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/concept.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Concept</h4>
+            <p>Formal description of concept, its general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/creating.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Creating</h4>
+            <p>Formal description of creating by humans, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/device.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Device</h4>
+            <p>Formal description of a device, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/document.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Document</h4>
+            <p>Formal description of document, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/electronic-information.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Electronic Information</h4>
+            <p>Formal description of electronic information, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/event.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Event</h4>
+            <p>Formal description of event, general subclasses such as action, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/human-geography.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Human Geography</h4>
+            <p>Formal description of human geography, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/human.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Human</h4>
+            <p>Formal description of a human, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/image.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Image</h4>
+            <p>Formal description of image as a visual resource in the broadest sense, its general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/information-carrier.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Information Carrier</h4>
+            <p>Formal description of information carrier in broadest sense, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/language.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Language</h4>
+            <p>Formal description of language, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/languages.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Languages</h4>
+            <p>Formal description of human natural languages, referring to the ISO 639 standards.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/organization.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Organization</h4>
+            <p>Formal description of organization involving persons, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/physical-entity.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Physical Entity</h4>
+            <p>Formal description of physical entity in broadest sense, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/physical-geography.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Physical Geography</h4>
+            <p>Formal description of physical geography, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalDomain/time.html">
+          <div class="ontology-content generalDomain">
+            <h4 class="ontology-title">Time</h4>
+            <p>Formal description of time relations.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+    </div>
+
+    <h4 id="general-humanities">General Humanities Ontologies</h4>
+    <div class="ontology-row">
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/letter-corresponding.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Letter Corresponding</h4>
+            <p>Formal description of letter corresponding, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/linguistic-morphology.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Linguistic Morphology</h4>
+            <p>Formal description of linguistic-morphology, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/linguistics.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Linguistics</h4>
+            <p>Formal description of linguistics, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/literature.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Literature</h4>
+            <p>Formal description of literature, its general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/logic.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Logic</h4>
+            <p>Formal description of logic, general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/mathematics.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Mathematics</h4>
+            <p>Formal description of general concepts in mathematics.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/note-structure.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Note Structure</h4>
+            <p>Formal description of note structure, subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/prosodic-structure.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Prosodic Structure</h4>
+            <p>Formal description of prosodic structure, subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/publishing.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Publishing</h4>
+            <p>Formal description of publishing, its general subclasses, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/scholarly-editing.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Scholarly Editing</h4>
+            <p>Formal description of scientific editing, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/standoff-annotation.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Standoff Annotation</h4>
+            <p>Formal description of standoff-annotation in broadest sense, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/teaching.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Teaching</h4>
+            <p>Formal description of teaching, general subclasses such as action, related classes and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/text-editing.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Text Editing</h4>
+            <p>Formal description of text editing, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/text-expression.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Text Expression</h4>
+            <p>Formal description of text expression, based on FRBROO, in broadest sense, with general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/text-structure.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Text Structure</h4>
+            <p>Formal description of text structure, subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/generalHumanities/text.html">
+          <div class="ontology-content generalHumanities">
+            <h4 class="ontology-title">Text</h4>
+            <p>Formal description of text in broadest sense, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+    </div>
+
+    <h4 id="specific-humanities">Specific Humanities Ontologies</h4>
+    <div class="ontology-row">
+      
+
+      <div class="ontology-column">
+        <a href="/specificHumanities/catholic-order.html">
+          <div class="ontology-content specificHumanities">
+            <h4 class="ontology-title">Catholic Order</h4>
+            <p>Formal description of catholic order, general subclasses, related classes, properties, and instances.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/specificHumanities/catholic-organization.html">
+          <div class="ontology-content specificHumanities">
+            <h4 class="ontology-title">Catholic Organization</h4>
+            <p>Formal description of catholic organization, general subclasses, related classes, properties, and instances.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/specificHumanities/indology.html">
+          <div class="ontology-content specificHumanities">
+            <h4 class="ontology-title">Indology</h4>
+            <p>Formal description of Indology, general subclasses, related classes, and properties.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/specificHumanities/philosophies.html">
+          <div class="ontology-content specificHumanities">
+            <h4 class="ontology-title">Philosophies</h4>
+            <p>Formal description of philosophies, general subclasses, related classes, properties, and instances.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/specificHumanities/philosophy.html">
+          <div class="ontology-content specificHumanities">
+            <h4 class="ontology-title">Philosophy</h4>
+            <p>Formal description of philosophy, general subclasses, related classes, properties, and instances.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+
+      <div class="ontology-column">
+        <a href="/specificHumanities/scholasticism.html">
+          <div class="ontology-content specificHumanities">
+            <h4 class="ontology-title">Scholasticism</h4>
+            <p>Formal description of elements in Scholasticism.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+    </div>
+
+    <h4 id="external-ontologies">External Terminology & Code Systems Ontology</h4>
+    <div class="ontology-row">
+      
+
+      <div class="ontology-column">
+        <a href="/external/terminology-code-systems.html">
+          <div class="ontology-content external">
+            <h4 class="ontology-title">Terminology Code Systems</h4>
+            <p>Formal description of terminology and code systems and their datatypes, as link between system data and OWL-ontologies and RDF-data.</p>
+          </div>
+        </a>
+      </div>
+      
+      
+    </div>
+
+    <h2 id="project-ontologies">Project Ontologies</h2>
+    <div class="ontology-row">
+      
+      <div class="ontology-column">
+        <a href="/project/atharvaveda.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Atharvaveda</h4>
+            <p>Formal description of specific concepts in the scientific study of Atharvaveda.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ontology-column">
+        <a href="/project/delille-research.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Jacques Delille's poetry citation research</h4>
+            <p>Formal description of specific concepts in the research of the scientific edition about citations of the poem 'L'Homme des champs' of Jacques Delille, 22 June 1738 – 1 May 1813.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ontology-column">
+        <a href="/project/delille.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Jacques Delille's poetry citation</h4>
+            <p>Formal description of specific concepts in the scholarly edition about citations of the poem 'L'Homme des champs' of Jacques Delille, 22 June 1738 – 1 May 1813.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ontology-column">
+        <a href="/project/dietrich.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Joseph Dietrich's Monastery Diary</h4>
+            <p>Formal description of specific concepts in the scientific study "Das Kloster-Tagebuch des Einsiedler Paters Joseph Dietrich, 1670-1704".</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ontology-column">
+        <a href="/project/drcs.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Petrus Lombardus' Sentences</h4>
+            <p>Formal description of specific concepts in the scientific study of Commentaries on Peter Lombard's Sentences, as in the Digital Repertory of Commentaries on Peter Lombard’s Sentences (DRCS).</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ontology-column">
+        <a href="/project/lavater.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Johann Caspar Lavater's Correspondence</h4>
+            <p>Formal description of specific concepts in the critical edition of correspondence of Johann Caspar Lavater, 15 November 1741 - 2 January 1801.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ontology-column">
+        <a href="/project/meyer.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Conrad Ferdinand Meyer's Correspondence</h4>
+            <p>Formal description of specific concepts in the critical edition of the correspondence of Conrad Ferdinand Meyer, 11 October 1825 – 28 November 1898.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ontology-column">
+        <a href="/project/parzival.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Wolfram von Eschenbach's Parzival</h4>
+            <p>Formal description of specific concepts in the critical and digital edition of Wolfram von Eschenbach's 'Parzival'.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ontology-column">
+        <a href="/project/raeber.html">
+          <div class="ontology-content project">
+            <h4 class="ontology-title">Kuno Raeber's Lyric</h4>
+            <p>Formal description of elements in the online publication of the lyric work of the Swiss poet Kuno Raeber.</p>
+          </div>
+        </a>
+      </div>
+      
+    </div>
+    
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

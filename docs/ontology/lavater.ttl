@@ -1,0 +1,62 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix text: <http://e-editiones.ch/ontology/text#>.
+@prefix scholarly-editing: <http://e-editiones.ch/ontology/scholarly-editing#>.
+@prefix information-carrier: <http://e-editiones.ch/ontology/information-carrier#>.
+@prefix letter-corresponding: <http://e-editiones.ch/ontology/letter-corresponding#>.
+
+@base <http://e-editiones.ch/ontology/lavater>.
+@prefix lavater: <http://e-editiones.ch/ontology/lavater#>.
+
+<http://e-editiones.ch/ontology/lavater>
+	a owl:Ontology;
+	dct:license <http://creativecommons.org/licenses/by/3.0/>;
+	dct:title "An ontology about Johann Caspar Lavater's correspondence"@en;
+	dct:description """Formal description of specific concepts in the critical edition of correspondence of Johann Caspar Lavater, 15 November 1741 - 2 January 1801."""@en;
+	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:contributor "Reto Baumgartner, tool coordinator and software developer, University of Zürich, Switzerland"@en;
+	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
+	owl:versionInfo "2020-06-11"^^xsd:date.
+
+#
+# CLASSES
+#
+
+lavater:LetterExpression
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/lavater#>;
+	a rdfs:Class;
+	rdfs:label "Johann Caspar Lavater letter expression"@en, "Brief-Expression Johann Caspar Lavaters"@de;
+	rdfs:comment """Letter expression either authored by or written to by Johann Caspar Lavater."""@en;
+	rdfs:subClassOf letter-corresponding:Expression, text:HandwrittenText.
+
+lavater:Letter
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/lavater#>;
+	a rdfs:Class;
+	rdfs:label "Johann Caspar Lavater letter"@en, "Johann Caspar Lavater-Brief"@de, "lettre de Johann Caspar Lavater"@fr, "lettera di Johann Caspar Lavater"@it;
+	rdfs:comment """Letter send by or to Johann Caspar Lavater."""@en;
+	rdfs:subClassOf letter-corresponding:Letter, information-carrier:ConvoluteElement, information-carrier:ArchiveElement.
+
+lavater:Page
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/lavater#>;
+	a rdfs:Class;
+	rdfs:label "Johann Caspar Lavater letter page"@en, "Seite eines Briefes Johann Caspar Lavaters"@de;
+	rdfs:comment """Page of a letter of Johann Caspar Lavater."""@en;
+	rdfs:subClassOf information-carrier:Page.
+#	hasRepresentation
+
+lavater:LetterConvolute
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/lavater#>;
+	a rdfs:Class;
+	rdfs:label "Johann Caspar Lavater letter convolute"@en,"Briefekonvolut Johann Caspar Lavaters"@de;
+	rdfs:comment """Convolute of letters send by and to Johann Caspar Lavater."""@en;
+	rdfs:subClassOf information-carrier:Convolute, information-carrier:ArchiveElement.
+
+lavater:EditedLetter
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/lavater#>;
+	a rdfs:Class;
+	rdfs:label "edited Johann Caspar Lavater letter expression"@en, "edierter Brief-Expression Johann Caspar Lavaters"@de;
+	rdfs:comment """Letter expression either authored or received by Johann Caspar Lavater, and critically edited."""@en;
+	rdfs:subClassOf scholarly-editing:CriticalEdition.

@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="//e-editiones/e-editiones/about.html">About</a>
+              
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="ontology-wrapper">
+
+        <article class="post">
+          
+          
+          <header class="post-header">
+            <h1 class="post-title">Physical Entity</h1>
+          </header>
+
+          <div class="post-content">
+
+            
+
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/generalDomain/physical-entity.html.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/generalDomain/physical-entity.html.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/generalDomain/physical-entity.html.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/generalDomain/physical-entity.html.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/physical-entity.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+            
+              <div xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:physical-entity="http://e-editiones.ch/ontology/physical-entity#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="rdf2html">
+   <div id="" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity" typeof="owl:Ontology">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity" title="Browse http://e-editiones.ch/ontology/physical-entity"></a><div xmlns="" class="connector"></div><a class="browse" href="http://www.w3.org/2002/07/owl#Ontology" title="Browse http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a></th>
+         </tr>
+         <tr class="http://purl.org/dc/terms/contributor">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/contributor" title="Browse http://purl.org/dc/terms/contributor">dct:contributor</a></td>
+            <td property="dct:contributor" content="Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Rebekka Plüss, research assistant and software developer, University of Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/creator">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/creator" title="Browse http://purl.org/dc/terms/creator">dct:creator</a></td>
+            <td property="dct:creator" content="Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland" xml:lang="en">
+               <div class="property-object">Hans Cools, MD, knowledge engineer, ontologist, software developer, University of
+                  Basel, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/description">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/description" title="Browse http://purl.org/dc/terms/description">dct:description</a></td>
+            <td property="dct:description" content="Formal description of physical entity in broadest sense, general subclasses, related classes, and properties." xml:lang="en">
+               <div class="property-object">Formal description of physical entity in broadest sense, general subclasses, related
+                  classes, and properties.</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/license">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/license" title="Browse http://purl.org/dc/terms/license">dct:license</a></td>
+            <td>
+               <div class="property-object" rel="dct:license"><a class="browse" href="http://creativecommons.org/licenses/by/3.0/" title="Browse http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/ licenses/ by/ 3.0/ </a></div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/publisher">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/publisher" title="Browse http://purl.org/dc/terms/publisher">dct:publisher</a></td>
+            <td property="dct:publisher" content="Universities of Basel, Bern, and Zürich, Switzerland" xml:lang="en">
+               <div class="property-object">Universities of Basel, Bern, and Zürich, Switzerland</div>
+            </td>
+         </tr>
+         <tr class="http://purl.org/dc/terms/title">
+            <td style="width: 25%;"><a class="browse" href="http://purl.org/dc/terms/title" title="Browse http://purl.org/dc/terms/title">dct:title</a></td>
+            <td property="dct:title" content="Physical Entity" xml:lang="en">
+               <div class="property-object">Physical Entity</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#versionInfo">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#versionInfo" title="Browse http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</a></td>
+            <td xmlns:d1e167="http://www.w3.org/2001/XMLSchema#" property="owl:versionInfo" content="2020-06-11" datatype="xsd:date">
+               <div class="property-object">2020-06-11</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Classes</h2>
+   <div id="Compound" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Compound" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Compound" title="Browse http://e-editiones.ch/ontology/physical-entity#Compound">physical-entity:Compound</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Physical entity composed of more than 1 type of substance." xml:lang="en">
+               <div class="property-object">Physical entity composed of more than 1 type of substance.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Mischung" xml:lang="de">
+               <div class="property-object">Mischung
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="compound" xml:lang="en"></span><div class="property-object">compound
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="This can be anything, e.g. chemical compound containing more than 1 elementary substance." xml:lang="en">
+               <div class="property-object">This can be anything, e.g. chemical compound containing more than 1 elementary substance.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Distance" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Distance" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Distance" title="Browse http://e-editiones.ch/ontology/physical-entity#Distance">physical-entity:Distance</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Length of the space between two points." xml:lang="en">
+               <div class="property-object">Length of the space between two points.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="distance" xml:lang="en">
+               <div class="property-object">distance
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Abstand" xml:lang="de"></span><div class="property-object">Abstand
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Length" title="Browse http://e-editiones.ch/ontology/physical-entity#Length">physical-entity:Length</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://sweetontology.net/propSpaceDistance/Distance" title="Browse http://sweetontology.net/propSpaceDistance/Distance">http://sweetontology.net/ propSpaceDistance/ Distance</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Entity" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Entity" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Entity" title="Browse http://e-editiones.ch/ontology/physical-entity#Entity">physical-entity:Entity</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Something that is or was physical existing." xml:lang="en">
+               <div class="property-object">Something that is or was physical existing.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="physical entity" xml:lang="en">
+               <div class="property-object">physical entity
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="physische Entität" xml:lang="de"></span><div class="property-object">physische Entität
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/event#Output" title="Browse http://e-editiones.ch/ontology/event#Output">event:Output</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="ExistingState" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#ExistingState" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#ExistingState" title="Browse http://e-editiones.ch/ontology/physical-entity#ExistingState">physical-entity:ExistingState</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="State of a physical entity existing, partially existing, or having existed." xml:lang="en">
+               <div class="property-object">State of a physical entity existing, partially existing, or having existed.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Existenzzustand" xml:lang="de">
+               <div class="property-object">Existenzzustand
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="existing state" xml:lang="en"></span><div class="property-object">existing state
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="To be stated together with a time indicator; can be inferred with an N3-rule if the existence and a time reference are known." xml:lang="en">
+               <div class="property-object">To be stated together with a time indicator; can be inferred with an N3-rule if the
+                  existence and a time reference are known.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2002/07/owl#oneOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#oneOf" title="Browse http://www.w3.org/2002/07/owl#oneOf">owl:oneOf</a></td>
+            <td>
+               <div class="property-object" rel="owl:oneOf">
+                  <div xmlns="" class="property-object" typeof="rdf:List">
+                     <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/physical-entity#existing" title="Browse http://e-editiones.ch/ontology/physical-entity#existing">physical-entity:existing</a></div>
+                     <div class="property-object" rel="rdf:rest">
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="connector"></div>
+                        <div class="property-object" typeof="rdf:List">
+                           <div class="property-object" rel="rdf:first"><a xmlns="http://www.w3.org/1999/xhtml" class="browse" href="http://e-editiones.ch/ontology/physical-entity#gone" title="Browse http://e-editiones.ch/ontology/physical-entity#gone">physical-entity:gone</a></div>
+                           <div class="property-object" rel="rdf:rest" resource="[rdf:nil]"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/event#State" title="Browse http://e-editiones.ch/ontology/event#State">event:State</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Length" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Length" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Length" title="Browse http://e-editiones.ch/ontology/physical-entity#Length">physical-entity:Length</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Spatial quantity representing 1 dimension." xml:lang="en">
+               <div class="property-object">Spatial quantity representing 1 dimension.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="length" xml:lang="en">
+               <div class="property-object">length
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Länge" xml:lang="de"></span><div class="property-object">Länge
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://sweetontology.net/propSpaceDistance/Length" title="Browse http://sweetontology.net/propSpaceDistance/Length">http://sweetontology.net/ propSpaceDistance/ Length</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Matter" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Matter" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Physical entity having mass and volume." xml:lang="en">
+               <div class="property-object">Physical entity having mass and volume.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="matter" xml:lang="en">
+               <div class="property-object">matter
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Materie" xml:lang="de"></span><div class="property-object">Materie
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2004/02/skos/core#note">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2004/02/skos/core#note" title="Browse http://www.w3.org/2004/02/skos/core#note">skos:note</a></td>
+            <td property="skos:note" content="As in classical physics observed in everyday life." xml:lang="en">
+               <div class="property-object">As in classical physics observed in everyday life.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Space" title="Browse http://e-editiones.ch/ontology/physical-entity#Space">physical-entity:Space</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://purl.org/dc/terms/PhysicalResource" title="Browse http://purl.org/dc/terms/PhysicalResource">dct:PhysicalResource</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Place" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Place" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Place" title="Browse http://e-editiones.ch/ontology/physical-entity#Place">physical-entity:Place</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Specific space with a position reference, e.g. in a positioning reference system, e.g. the geodetic system of the Earth." xml:lang="en">
+               <div class="property-object">Specific space with a position reference, e.g. in a positioning reference system,
+                  e.g. the geodetic system of the Earth.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Ort" xml:lang="de">
+               <div class="property-object">Ort
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="place" xml:lang="en"></span><div class="property-object">place
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Space" title="Browse http://e-editiones.ch/ontology/physical-entity#Space">physical-entity:Space</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.cidoc-crm.org/cidoc-crm/E53_Place" title="Browse http://www.cidoc-crm.org/cidoc-crm/E53_Place">cidoc:E53 Place</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Point" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Point" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Point" title="Browse http://e-editiones.ch/ontology/physical-entity#Point">physical-entity:Point</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Entity without dimension." xml:lang="en">
+               <div class="property-object">Entity without dimension.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Punkt" xml:lang="de">
+               <div class="property-object">Punkt
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="point" xml:lang="en"></span><div class="property-object">point
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Entity" title="Browse http://e-editiones.ch/ontology/physical-entity#Entity">physical-entity:Entity</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2003/01/geo/wgs84_pos#Point" title="Browse http://www.w3.org/2003/01/geo/wgs84_pos#Point">http://www.w3.org/ 2003/ 01/ geo/ wgs84 pos#Point</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Product" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Product" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Product" title="Browse http://e-editiones.ch/ontology/physical-entity#Product">physical-entity:Product</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Matter as result of producing in broadest sense, e.g. honey produced by bees." xml:lang="en">
+               <div class="property-object">Matter as result of producing in broadest sense, e.g. honey produced by bees.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="product" xml:lang="en">
+               <div class="property-object">product
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Produkt" xml:lang="de"></span><div class="property-object">Produkt
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Size" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Size" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Size" title="Browse http://e-editiones.ch/ontology/physical-entity#Size">physical-entity:Size</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Spatial extent having 1 to 3 dimensions." xml:lang="en">
+               <div class="property-object">Spatial extent having 1 to 3 dimensions.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="size" xml:lang="en">
+               <div class="property-object">size
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Grösse" xml:lang="de"></span><div class="property-object">Grösse
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://sweetontology.net/propSpaceDistance/Size" title="Browse http://sweetontology.net/propSpaceDistance/Size">http://sweetontology.net/ propSpaceDistance/ Size</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Space" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Space" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Space" title="Browse http://e-editiones.ch/ontology/physical-entity#Space">physical-entity:Space</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Physical quantity space." xml:lang="en">
+               <div class="property-object">Physical quantity space.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Raum" xml:lang="de">
+               <div class="property-object">Raum
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="space" xml:lang="en"></span><div class="property-object">space
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing" title="Browse http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">http://www.w3.org/ 2003/ 01/ geo/ wgs84 pos#SpatialThing</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Entity" title="Browse http://e-editiones.ch/ontology/physical-entity#Entity">physical-entity:Entity</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://sweetontology.net/reprSpaceSpace" title="Browse http://sweetontology.net/reprSpaceSpace">http://sweetontology.net/ reprSpaceSpace</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="Time" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#Time" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Time" title="Browse http://e-editiones.ch/ontology/physical-entity#Time">physical-entity:Time</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Physical quantity time." xml:lang="en">
+               <div class="property-object">Physical quantity time.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="time" xml:lang="en">
+               <div class="property-object">time
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="Zeit" xml:lang="de"></span><div class="property-object">Zeit
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Entity" title="Browse http://e-editiones.ch/ontology/physical-entity#Entity">physical-entity:Entity</a></div>
+               <div class="connector"></div>
+               <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://sweetontology.net/propTime/Time" title="Browse http://sweetontology.net/propTime/Time">http://sweetontology.net/ propTime/ Time</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="existing" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#existing" typeof="rdfs:Class">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#existing" title="Browse http://e-editiones.ch/ontology/physical-entity#existing">physical-entity:existing</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, 
+               <div rel="rdf:type" class="connector"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#ExistingState" title="Browse http://e-editiones.ch/ontology/physical-entity#ExistingState">physical-entity:ExistingState</a></div>
+            </th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="State of a physical entity existing." xml:lang="en">
+               <div class="property-object">State of a physical entity existing.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="existing" xml:lang="en">
+               <div class="property-object">existing
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="existierend" xml:lang="de"></span><div class="property-object">existierend
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Instances</h2>
+   <div id="gone" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#gone" typeof="physical-entity:ExistingState">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#gone" title="Browse http://e-editiones.ch/ontology/physical-entity#gone">physical-entity:gone</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#ExistingState" title="Browse http://e-editiones.ch/ontology/physical-entity#ExistingState">physical-entity:ExistingState</a>, 
+               <div rel="rdf:type" class="connector"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Class" title="Browse http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></div>
+            </th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="State of a physical entity not existing anymore." xml:lang="en">
+               <div class="property-object">State of a physical entity not existing anymore.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="gone" xml:lang="en">
+               <div class="property-object">gone
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="weg" xml:lang="de"></span><div class="property-object">weg
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <h2>Properties</h2>
+   <div id="hasExistingState" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasExistingState" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasExistingState" title="Browse http://e-editiones.ch/ontology/physical-entity#hasExistingState">physical-entity:hasExistingState</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something to its existing state." xml:lang="en">
+               <div class="property-object">Relating something to its existing state.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has existing state" xml:lang="en">
+               <div class="property-object">has existing state
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Existenzzustand" xml:lang="de"></span><div class="property-object">hat Existenzzustand
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#ExistingState" title="Browse http://e-editiones.ch/ontology/physical-entity#ExistingState">physical-entity:ExistingState</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasLength" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasLength" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasLength" title="Browse http://e-editiones.ch/ontology/physical-entity#hasLength">physical-entity:hasLength</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a space to its length." xml:lang="en">
+               <div class="property-object">Relating a space to its length.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Space" title="Browse http://e-editiones.ch/ontology/physical-entity#Space">physical-entity:Space</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has length" xml:lang="en">
+               <div class="property-object">has length
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Länge" xml:lang="de"></span><div class="property-object">hat Länge
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Length" title="Browse http://e-editiones.ch/ontology/physical-entity#Length">physical-entity:Length</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasReceiver" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasReceiver" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasReceiver" title="Browse http://e-editiones.ch/ontology/physical-entity#hasReceiver">physical-entity:hasReceiver</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something material to a human agent - a person or a group - that received it." xml:lang="en">
+               <div class="property-object">Relating something material to a human agent - a person or a group - that received
+                  it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Empfänger" xml:lang="de">
+               <div class="property-object">hat Empfänger
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has receiver" xml:lang="en"></span><div class="property-object">has receiver
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Agent" title="Browse http://e-editiones.ch/ontology/human#Agent">human:Agent</a></div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#agentHasRole" title="Browse http://e-editiones.ch/ontology/human#agentHasRole">human:agentHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/human#AgentReceiver" title="Browse http://e-editiones.ch/ontology/human#AgentReceiver">human:AgentReceiver</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasReceivingDate" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasReceivingDate" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasReceivingDate" title="Browse http://e-editiones.ch/ontology/physical-entity#hasReceivingDate">physical-entity:hasReceivingDate</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something material to a date it was received on." xml:lang="en">
+               <div class="property-object">Relating something material to a date it was received on.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has receiving date" xml:lang="en">
+               <div class="property-object">has receiving date
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Empfangsdatum" xml:lang="de"></span><div class="property-object">hat Empfangsdatum
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#date" title="Browse http://www.w3.org/2001/XMLSchema#date">xsd:date</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasReceivingLocation" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasReceivingLocation" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasReceivingLocation" title="Browse http://e-editiones.ch/ontology/physical-entity#hasReceivingLocation">physical-entity:hasReceivingLocation</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something material to a location it was sent to." xml:lang="en">
+               <div class="property-object">Relating something material to a location it was sent to.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="has receiving location" xml:lang="en">
+               <div class="property-object">has receiving location
+                  													(en)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="hat Empfangsort" xml:lang="de"></span><div class="property-object">hat Empfangsort
+                  													
+                  													(de)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Place" title="Browse http://e-editiones.ch/ontology/physical-entity#Place">physical-entity:Place</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf">
+                  <table about="http://e-editiones.ch/ontology/physical-entity#hasLocation" typeof="owl:ObjectProperty">
+                     <tr>
+                        <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasLocation" title="Browse http://e-editiones.ch/ontology/physical-entity#hasLocation">physical-entity:hasLocation</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+                        <td property="rdfs:comment" content="Relating something to its location." xml:lang="en">
+                           <div class="property-object">Relating something to its location.</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Resource" title="Browse http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+                        <td property="rdfs:label" content="has location" xml:lang="en">
+                           <div class="property-object">has location
+                              													(en)
+                              												</div>
+                           <div class="connector"></div><span property="rdfs:label" content="hat Standort" xml:lang="de"></span><div class="property-object">hat Standort
+                              													
+                              													(de)
+                              												</div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Place" title="Browse http://e-editiones.ch/ontology/physical-entity#Place">physical-entity:Place</a></div>
+                        </td>
+                     </tr>
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://www.w3.org/2003/01/geo/wgs84_pos#location" title="Browse http://www.w3.org/2003/01/geo/wgs84_pos#location">http://www.w3.org/ 2003/ 01/ geo/ wgs84 pos#location</a></div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasSender" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasSender" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasSender" title="Browse http://e-editiones.ch/ontology/physical-entity#hasSender">physical-entity:hasSender</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something material to a human agent - a person or a group - that sent it." xml:lang="en">
+               <div class="property-object">Relating something material to a human agent - a person or a group - that sent it.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Absender" xml:lang="de">
+               <div class="property-object">hat Absender
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has sender" xml:lang="en"></span><div class="property-object">has sender
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range">
+                  <table typeof="rdfs:Resource">
+                     <tr class="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+                        <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+                        <td>
+                           <div class="property-object" rel="rdfs:subClassOf"><a class="browse" href="http://e-editiones.ch/ontology/human#Agent" title="Browse http://e-editiones.ch/ontology/human#Agent">human:Agent</a></div>
+                           <div class="connector"></div>
+                           <div class="property-object" rel="rdfs:subClassOf">
+                              <table typeof="owl:Restriction">
+                                 <tr>
+                                    <th colspan="2"><a class="browse" href="http://www.w3.org/2002/07/owl#Restriction" title="Browse http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></th>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#onProperty">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#onProperty" title="Browse http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:onProperty"><a class="browse" href="http://e-editiones.ch/ontology/human#agentHasRole" title="Browse http://e-editiones.ch/ontology/human#agentHasRole">human:agentHasRole</a></div>
+                                    </td>
+                                 </tr>
+                                 <tr class="http://www.w3.org/2002/07/owl#someValuesFrom">
+                                    <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2002/07/owl#someValuesFrom" title="Browse http://www.w3.org/2002/07/owl#someValuesFrom">owl:someValuesFrom</a></td>
+                                    <td>
+                                       <div class="property-object" rel="owl:someValuesFrom"><a class="browse" href="http://e-editiones.ch/ontology/human#AgentSender" title="Browse http://e-editiones.ch/ontology/human#AgentSender">human:AgentSender</a></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasSendingDate" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasSendingDate" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasSendingDate" title="Browse http://e-editiones.ch/ontology/physical-entity#hasSendingDate">physical-entity:hasSendingDate</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something material to a date it was sent on." xml:lang="en">
+               <div class="property-object">Relating something material to a date it was sent on.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Absendedatum" xml:lang="de">
+               <div class="property-object">hat Absendedatum
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has sending date" xml:lang="en"></span><div class="property-object">has sending date
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2001/XMLSchema#date" title="Browse http://www.w3.org/2001/XMLSchema#date">xsd:date</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasSendingLocation" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasSendingLocation" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasSendingLocation" title="Browse http://e-editiones.ch/ontology/physical-entity#hasSendingLocation">physical-entity:hasSendingLocation</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating something material to a location it was sent from." xml:lang="en">
+               <div class="property-object">Relating something material to a location it was sent from.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Matter" title="Browse http://e-editiones.ch/ontology/physical-entity#Matter">physical-entity:Matter</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Absendeort" xml:lang="de">
+               <div class="property-object">hat Absendeort
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has sending location" xml:lang="en"></span><div class="property-object">has sending location
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Place" title="Browse http://e-editiones.ch/ontology/physical-entity#Place">physical-entity:Place</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasLocation" title="Browse http://e-editiones.ch/ontology/physical-entity#hasLocation">physical-entity:hasLocation</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasSize" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasSize" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasSize" title="Browse http://e-editiones.ch/ontology/physical-entity#hasSize">physical-entity:hasSize</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a space to its size." xml:lang="en">
+               <div class="property-object">Relating a space to its size.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Space" title="Browse http://e-editiones.ch/ontology/physical-entity#Space">physical-entity:Space</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Grösse" xml:lang="de">
+               <div class="property-object">hat Grösse
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has size" xml:lang="en"></span><div class="property-object">has size
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Size" title="Browse http://e-editiones.ch/ontology/physical-entity#Size">physical-entity:Size</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="hasSizeDescription" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#hasSizeDescription" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#hasSizeDescription" title="Browse http://e-editiones.ch/ontology/physical-entity#hasSizeDescription">physical-entity:hasSizeDescription</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a space to a size description it has." xml:lang="en">
+               <div class="property-object">Relating a space to a size description it has.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Space" title="Browse http://e-editiones.ch/ontology/physical-entity#Space">physical-entity:Space</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="hat Grössenbeschreibung" xml:lang="de">
+               <div class="property-object">hat Grössenbeschreibung
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="has size description" xml:lang="en"></span><div class="property-object">has size description
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Literal" title="Browse http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="isPartOf" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#isPartOf" typeof="owl:ObjectProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#isPartOf" title="Browse http://e-editiones.ch/ontology/physical-entity#isPartOf">physical-entity:isPartOf</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#ObjectProperty" title="Browse http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a space to another one it is part of." xml:lang="en">
+               <div class="property-object">Relating a space to another one it is part of.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Space" title="Browse http://e-editiones.ch/ontology/physical-entity#Space">physical-entity:Space</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="ist Teil von" xml:lang="de">
+               <div class="property-object">ist Teil von
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="is part of" xml:lang="en"></span><div class="property-object">is part of
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Space" title="Browse http://e-editiones.ch/ontology/physical-entity#Space">physical-entity:Space</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div id="placeHasNameLiteral" class="description">
+      <table about="http://e-editiones.ch/ontology/physical-entity#placeHasNameLiteral" typeof="owl:DatatypeProperty">
+         <tr>
+            <th colspan="2"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#placeHasNameLiteral" title="Browse http://e-editiones.ch/ontology/physical-entity#placeHasNameLiteral">physical-entity:placeHasNameLiteral</a><div xmlns="" class="connector"> a </div><a class="browse" href="http://www.w3.org/2002/07/owl#DatatypeProperty" title="Browse http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></th>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#comment">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#comment" title="Browse http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></td>
+            <td property="rdfs:comment" content="Relating a place to its name literal." xml:lang="en">
+               <div class="property-object">Relating a place to its name literal.</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#domain">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#domain" title="Browse http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:domain"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#Place" title="Browse http://e-editiones.ch/ontology/physical-entity#Place">physical-entity:Place</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="Browse http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:isDefinedBy"><a class="browse" href="http://e-editiones.ch/ontology/physical-entity#" title="Browse http://e-editiones.ch/ontology/physical-entity#">physical-entity:</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#label">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#label" title="Browse http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+            <td property="rdfs:label" content="Ort hat Namenliteral" xml:lang="de">
+               <div class="property-object">Ort hat Namenliteral
+                  													(de)
+                  												</div>
+               <div class="connector"></div><span property="rdfs:label" content="place has name literal" xml:lang="en"></span><div class="property-object">place has name literal
+                  													
+                  													(en)
+                  												</div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#range">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#range" title="Browse http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:range"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#Literal" title="Browse http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></div>
+            </td>
+         </tr>
+         <tr class="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+            <td style="width: 25%;"><a class="browse" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="Browse http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></td>
+            <td>
+               <div class="property-object" rel="rdfs:subPropertyOf"><a class="browse" href="http://e-editiones.ch/ontology/text#hasNameLiteral" title="Browse http://e-editiones.ch/ontology/text#hasNameLiteral">text:hasNameLiteral</a></div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+            
+
+            <div class="ontology-formats">
+  <a class="format-link" href="/generalDomain/physical-entity.html.ttl" download="">Turtle</a> 
+  <a class="format-link" href="/generalDomain/physical-entity.html.rdf" download="">RDF/XML</a> 
+  <a class="format-link" href="/generalDomain/physical-entity.html.nt" download="">N-Triples</a> 
+  <a class="format-link" href="/generalDomain/physical-entity.html.jsonld" download="">JSON-LD</a> 
+  <a class="format-link" href="https://github.com/nie-ine/Ontologies/blob/master/Nie-ontologies/Generic-ontologies/physical-entity.ttl">
+    <svg class="svg-icon">
+      <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+    </svg><span>GitHub</span>
+  </a>
+</div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

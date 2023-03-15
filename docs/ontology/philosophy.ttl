@@ -1,0 +1,39 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix concept: <http://e-editiones.ch/ontology/concept#>.
+
+@base <http://e-editiones.ch/ontology/philosophy>.
+@prefix philosophy: <http://e-editiones.ch/ontology/philosophy#>.
+
+<http://e-editiones.ch/ontology/philosophy>
+	a owl:Ontology;
+	dct:license <http://creativecommons.org/licenses/by/3.0/>;
+	dct:title "An ontology about philosophy"@en;
+	dct:description """Formal description of philosophy, general subclasses, related classes, properties, and instances."""@en;
+	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:contributor
+		"Prof. Dr. Ueli Zahnd, Faculty of Theology, University of Basel, Switzerland"@en,
+		"Gabriel Müller, Faculty of Theology, University of Basel, Switzerland"@en;
+	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
+	owl:versionInfo "2020-06-11"^^xsd:date.
+
+#
+# CLASSES
+#
+
+philosophy:Philosophy
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/philosophy#>;
+	a rdfs:Class;
+	rdfs:label "philosophy"@en, "Philosophie"@de;
+	rdfs:comment """."""@en; #°
+	rdfs:subClassOf concept:ThoughtBody.
+
+philosophy:Metaphysics
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/philosophy#>;
+	a rdfs:Class;
+	rdfs:label "metaphysics"@en, "Metaphysik"@de;
+	rdfs:comment """Philosophy of the nature of reality, including the relationship between mind and matter, between substance and attribute, and between potentiality and actuality."""@en;
+	rdfs:subClassOf philosophy:Philosophy.

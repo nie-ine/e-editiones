@@ -1,0 +1,59 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix organization: <http://e-editiones.ch/ontology/organization#>.
+
+@base <http://e-editiones.ch/ontology/catholic-organization>.
+@prefix catholic-organization: <http://e-editiones.ch/ontology/catholic-organization#>.
+
+<http://e-editiones.ch/ontology/catholic-organization>
+	a owl:Ontology;
+	dct:license <http://creativecommons.org/licenses/by/3.0/>;
+	dct:title "An ontology about catholic organization"@en;
+	dct:description """Formal description of catholic organization, general subclasses, related classes, properties, and instances."""@en;
+	dct:creator "Hans Cools, MD, knowledge engineer, ontologist, software developer, University of Basel, Switzerland"@en;
+	dct:contributor
+		"Prof. Dr. Ueli Zahnd, Faculty of Theology, University of Basel, Switzerland"@en,
+		"Roberta Padlina, project coordinator and software developer, University of Basel, Switzerland"@en;
+	dct:publisher "Universities of Basel, Bern, and Zürich, Switzerland"@en;
+	owl:versionInfo "2020-06-11"^^xsd:date.
+
+#
+# CLASSES
+#
+
+catholic-organization:Organization
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/catholic-organization#>;
+	a rdfs:Class;
+	rdfs:label "catholic organization"@en, "katholische Organisation"@de;
+	rdfs:comment """Organization representing a catholic belief."""@en;
+	rdfs:subClassOf organization:ReligiousOrganization.
+
+catholic-organization:Person
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/catholic-organization#>;
+	a rdfs:Class;
+	rdfs:label "catholic person"@en, "katholische Person"@de, "personne catholique"@fr, "persona cattolica"@it;
+	rdfs:comment """Person having a catholic belief."""@en;
+	rdfs:subClassOf organization:ReligiousPerson.
+
+catholic-organization:SecularClergy
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/catholic-organization#>;
+	a rdfs:Class;
+	rdfs:label "secular clergy"@en, "Weltklerus"@de;
+	rdfs:comment """Catholic organization whose member does not take religious vows and does not live in an institution."""@en;
+	rdfs:subClassOf catholic-organization:Organization.
+
+#
+# PROPERTIES
+#
+
+catholic-organization:isMemberOf
+	rdfs:isDefinedBy <http://e-editiones.ch/ontology/catholic-organization#>;
+	a owl:ObjectProperty;
+	rdfs:label "is member of catholic organization"@en, "ist Mitglied einer katholischen Organisation"@de;
+	rdfs:comment """Relating a person to a catholic organization the person is a member of."""@en;
+	rdfs:domain catholic-organization:Person;
+	rdfs:range catholic-organization:Organization;
+	rdfs:subPropertyOf organization:isMemberOfReligiousOrganization.

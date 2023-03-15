@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- Website content license
+===============================
+Copyright e-editiones.ch © 2021
+
+Original template license:
+==================================================
+The MIT License (MIT)
+
+Copyright (c) 2016-present Parker Moore and the minima contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE. -->
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/e-editiones/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/e-editiones/assets/main.css">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><section class="navigation">
+      <a class="site-title" rel="author" href="/e-editiones/">e-editiones</a>
+      <div class="nav-container">
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="//e-editiones/e-editiones/about.html">About</a>
+              
+            </li>
+            <li>
+              <a href="#!">Semantic Web Technology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/semantic-web-technology-introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="/semantic-web-technology-advantages">Advantages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Ontology</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/ontology">Library</a>
+                </li>
+                <li>
+                  <a href="/ontology-modeling">Modeling</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">N3-Rule-Based Machine Reasoning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning">Introduction</a>
+                </li>
+                <li>
+                  <a href="/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/two-step-formalization">Two-Step Formalization</a>
+            </li>
+            <li>
+              <a href="/literature">Literature</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <script>
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery
+    </script></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!-- <div id="inprogress">The content of this website is in progress</div> -->
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Advantages of Semantic Web Technology</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#independence-from-natural-language" id="markdown-toc-independence-from-natural-language">Independence from natural language</a></li>
+  <li><a href="#conceptual-enrichment-by-conceptually-merging-natural-languages" id="markdown-toc-conceptual-enrichment-by-conceptually-merging-natural-languages">Conceptual enrichment by conceptually merging natural languages</a></li>
+  <li><a href="#explicit-self-describing-formal-data-model" id="markdown-toc-explicit-self-describing-formal-data-model">Explicit, self-describing formal data model</a>    <ul>
+      <li><a href="#quality-control" id="markdown-toc-quality-control">Quality control</a></li>
+      <li><a href="#easier-data-management" id="markdown-toc-easier-data-management">Easier data management</a></li>
+    </ul>
+  </li>
+  <li><a href="#reusable-consented-and-structured-domain-knowledge" id="markdown-toc-reusable-consented-and-structured-domain-knowledge">Reusable consented and structured domain knowledge</a></li>
+  <li><a href="#machine-interpretable-semantics" id="markdown-toc-machine-interpretable-semantics">Machine-interpretable semantics</a>    <ul>
+      <li><a href="#automated-semantic-interoperability" id="markdown-toc-automated-semantic-interoperability">Automated semantic interoperability</a></li>
+      <li><a href="#machine-reasoning" id="markdown-toc-machine-reasoning">Machine reasoning</a>        <ul>
+          <li><a href="#semantic-conversion-and-enrichment-with-inferred-knowledge" id="markdown-toc-semantic-conversion-and-enrichment-with-inferred-knowledge">Semantic conversion and enrichment with inferred knowledge</a></li>
+          <li><a href="#data-analysis-research-data-mining-and-decision-support" id="markdown-toc-data-analysis-research-data-mining-and-decision-support">Data analysis, research, data mining and decision support</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The advantages of implementing SWT with formal semantics are multifold.</p>
+<h2 id="independence-from-natural-language">Independence from natural language</h2>
+<p>Translating data models and data into a formal lingua franca, i.e. the unifying standard language of logic mentioned in the introduction, the <strong>meaning of concepts becomes natural language independent</strong>. Of course this also implies that in the modeling process of the concepts there needs to be a minimal international concensus between domain specialists speaking different languages, or there are resources sufficiently describing the concepts to safely abstract the semantics.<br />
+<strong>Unifying</strong> formal semantics directly leads to <strong>semantic interoperability</strong>, which strongly enhances <strong>data availability</strong>, since very disparate data sources will be usable together and comparable, generating unprecedented research possibilites.</p>
+<h2 id="conceptual-enrichment-by-conceptually-merging-natural-languages">Conceptual enrichment by conceptually merging natural languages</h2>
+<p>Since there are natural language specific concepts only existing in 1 language or languages of the same group, a formal vocabulary means a conceptual enrichment compaired to a domain specialist’s natural language. At the end different domain specialists will mutually benefit from each other using formal vocabularies based on different natural languages.<br />
+Similarly there will be semantic interoperability and a conceptual enrichment <strong>between different domains of discours</strong> in the same natural language, e.g. between different scientific domains, or a scientific and industrial domain, and even between different groups within the same domain.</p>
+<h2 id="explicit-self-describing-formal-data-model">Explicit, self-describing formal data model</h2>
+<p>For a machine to deal with formal semantics all intended <strong>meaning has to be stated explicitly</strong> (no hidden assumtions). In first instance this can be confronting for a researcher, realizing that own data are not transparent and bearing some gaps, only well understood by the creator(s) of the data model.</p>
+<h3 id="quality-control">Quality control</h3>
+<p>This need for explicitness creates a <strong>quality control feedback loop for the source data model and data</strong>.</p>
+<h3 id="easier-data-management">Easier data management</h3>
+<p>More transparant data models also lead to <strong>easier data management</strong>, less depending on specific persons. In this context it is worthwhile to mention that OWL-ontologies are self-describing formal vocabularies, for a human by means of the labels and comments (definitions) of ontological elements (classes and properties), and by means of the documentation in queries and rules, and for both a human and machine by all the rest of the formal statements about these ontological elements.</p>
+<h2 id="reusable-consented-and-structured-domain-knowledge">Reusable consented and structured domain knowledge</h2>
+<p>From a pure content point of view domain knowledge becomes highly exchangeable and reusable through expression in formal domain ontologies and N3-rules.</p>
+<h2 id="machine-interpretable-semantics">Machine-interpretable semantics</h2>
+<p>The built-in logic of the W3C SW standards makes the semantics also machine-interpretable enabling automated semantic interoperability and machine reasoning.</p>
+<h3 id="automated-semantic-interoperability">Automated semantic interoperability</h3>
+<p>Interoperability on the semantic level in an automated way is the highest form, crossing the borders of natural languages, knowledge domains and disparate databases.
+It has to be pointed out that for adding new knowledge in ontologies and rules human intervention is mostly still needed.</p>
+<h3 id="machine-reasoning">Machine reasoning</h3>
+<p>The biggest advantage, building further on the previous one, is <a href="/n3-rule-based-machine-reasoning">machine reasoning</a>, to make inferences of all kinds by deriving new from existing data.</p>
+<h4 id="semantic-conversion-and-enrichment-with-inferred-knowledge">Semantic conversion and enrichment with inferred knowledge</h4>
+<p>For example data expressed with a simpler model can be in a deductive way <strong>converted to data expressed with more complex domain ontologies</strong> (<a href="/two-step-formalization">two-step formalization</a>), unfolding the implicit assumptions into a multidimensional seamantic space. Lifting a tip of the veil, a plain literal value indicating implicitly a year (e.g. “1789”) can be converted to a year period of which the start and end are explicitly expressed with a datatyped literal date in the Gregorian calendar (e.g. “1789-01-01^^xsd:date” and “1789-12-31^^xsd:date”), with which can be calculated as time indicators. Also measurements of a certain quantity can be formally expressed in a certain unit (e.g. length in foot), and converted to an SI unit (e.g. meter). This other unit together with the foot-related scale factor (0.3048) is then the formal built-in domain knowledge in this case, stored in an ontology and used in an N3-rule, which can <strong>automatedly enrich the processed data</strong>. Such formal knowledge can also come from linked (external) RDF-data sources.</p>
+<h4 id="data-analysis-research-data-mining-and-decision-support">Data analysis, research, data mining and decision support</h4>
+<p>Rules can also be applied to analyse data, e.g. text. All kinds of research questions can be answered, providing new domain knowledge.
+Further advanced applications are data mining and decision support, requiring implementation of probability theory (e.g. Bayesian inference).</p>
+
+<!--The advantages of SWT are summerized in Table 1.  
+- Formal Semantics:
+	- Natural language independent ← unifying standard language of logic
+	- Unified → semantic interoperability → data comparison
+	- Conceptual enrichment ← merging natural languages
+	- Explicit → data and model quality control feedback loop → data management
+	- Domain knowledge expressed in reusable consented ontologies and N3-rules
+	- Machine-interpretable ← unifying standard language of logic
+		→ semi-automated semantic interoperability  
+		→ machine reasoning  
+		→ semantic conversion of data models and enrichment of data ([2-step formalization](/two-step-formalization))  
+		→ enrich data; analysis, mining, and, together with probability theory, decision support  
+
+<figure class="image">
+  <img class="small-figure" src="/assets/images/advantages-of-swt.png" alt="Table 1: Advantages of SWT">
+  <figcaption>Table 1: Advantages of SWT</figcaption>
+</figure>
+
+° added value of RDF: e.g. no relation HDC and first publication in source data : adding relations between concepts ° Pre-processing year literals at conversion:-->
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">e-editiones</li><li><a class="u-email" href="mailto:roberta.padlina@gmail.com">roberta.padlina@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+      <a href="https://github.com/nie-ine/e-editiones">
+        <svg class="svg-icon">
+          <use xlink:href="/e-editiones/assets/minima-social-icons.svg#github"></use>
+        </svg> 
+      </a>
+    </li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        
+        <p>
+          © 2023&nbsp;e-editiones.ch
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
