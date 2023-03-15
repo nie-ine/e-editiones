@@ -42,22 +42,20 @@ Folder/File        | Description
  \_layouts         | Jekyll folder containing HTML templates.
  \_posts           | Jekyll folder for blogging content. Currently not in use for this website.
  \_sass            | Jekyll folder containing scss stylesheets. These files are compiled to a single css file for the final static website.
- \_site            | Jekyll folder containing the static files version of the website. The folder and its content are created when running ``jekyll build``. This is the content that gets dockerized and published. 
+ \_site            | Jekyll folder containing the static files version of the website when serving locally.
+ \docs             | Custom Jekyll folder to save the built website files. 
  assets            | Jekyll folder containing asset files for the static website. 
  collections       | Jekyll folder to group content into collections. This folder is needed to group the created ontologies into "generic" and "project".
- nginx_conf        | Custom folder containing files for the [NGINX][nginx] configuration used during dockerizing the website. 
  ontology          | Custom Jekyll folder containing all the ontology files. 
  ttl_conv          | Custom folder containing a Python script and additional resources to convert turtle files into needed formats and files. 
  .gitignore        | Gitingore file.
  404.html          | 404 error page for the static website.
  \_config.yml      | Jekyll file for site-wide configurations.
- about.markdown    | Jekyll file with the content of the About page.
- Dockerfile        | Dockerfile used to dockerize the website.
- Gemfile           | Jekyll file used to list the needed Ruby Gems to run Jekyll.
- Gemfile.lock      | Jekyll file listing all the necessary Ruby Gem dependencies.
- index.markdown    | Jekyll file with the content of the Home page.
+ Gemfile           | Ruby file used to list the needed Ruby Gems to run Jekyll.
+ Gemfile.lock      | Ruby file listing all the necessary Ruby Gem dependencies.
+ index.md          | Jekyll file with the content of the Home page.
+ ... .md           | Jekyll files for specific pages.
  README.md         | The very file you're reading right now.
- semantic-web-technolgoy.markdown | Jekyll file with the content of the Semantic Web Technology page.
  
 #### Serve Locally
 
@@ -65,7 +63,7 @@ To serve the website locally, run ``bundle exec jekyll serve`` and visit [http:/
 
 #### Build Locally
 
-To build the static website, run ``bundle exec jekyll build`` and all necessary files will be available in the "\_site" folder.
+To build the static website, run ``bundle exec jekyll build`` and all necessary files will be available in the "\docs" folder.
 
 ### Turtle File Conversion
 
@@ -85,7 +83,7 @@ To convert turtle files to the needed formats:
 
 ### Deploy to GitHub Pages
 
-1. Build the site by running ``jekyll build``, which will generate static page files in the /docs directory.
+1. Build the site by running ``bundle exec jekyll build``, which will generate static page files in the /docs directory.
 1. Add changes to Git, commit them and push everything to GitHub:
    1. ``git add .``
    1. ``git commit -m "Deploy site to GitHub Pages"`` (or whatever message suits your needs)
