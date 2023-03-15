@@ -85,8 +85,13 @@ To convert turtle files to the needed formats:
 
 ### Deploy to GitHub Pages
 
-1. 
+1. Build the site by running ```jekyll build``. This will generate static page files in the /docs directory
+1. Add changes to Git, commit them and push the master branch to GitHub
+   1. ``git add .``
+   1. ``git commit -m "Deploy site to GitHub Pages"`` (or whatever message suits your needs)
+   1. ``git push``
 
+You might need to wait a few minutes to see any changes on the actual website.
 
 ### Add New Ontologies
 
