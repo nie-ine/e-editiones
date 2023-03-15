@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Advantages of Semantic Web Technology
-# permalink: /semantic-web-technology-advantages
+permalink: /semantic-web-technology-advantages
 ---
 * 
 {:toc}

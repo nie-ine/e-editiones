@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Literature
-# permalink: /literature
+permalink: /literature
 ---
 
 * Apache. 2020. Apache Jena Fuseki. The Apache Software Foundation. <https://jena.apache.org/documentation/fuseki2/>.

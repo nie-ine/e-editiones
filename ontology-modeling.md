@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ontology Modeling
-# permalink: /ontology-modeling
+permalink: /ontology-modeling
 ---
 * 
 {:toc}

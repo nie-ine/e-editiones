@@ -98,16 +98,16 @@ title: Machine Interpretable and Interoperable Semantics for Humanities
   <div style="margin-top: 5rem; box-sizing: border-box; position: relative; width: 100%;">
     <div class="image-row" style="display: flex; display: -ms-flexbox; flex-wrap: wrap; -ms-flex-wrap: wrap; padding: 0 4px; box-sizing: border-box;">
       <div class="image-column" style="flex: 50%; -ms-flex: 50%; padding: 0 4px; box-sizing: border-box;">
-        <img src="/assets/images/obituary/2019_0509_11485300.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
-        <img src="/assets/images/obituary/20180517_131000_2.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
-        <img src="/assets/images/obituary/P1000872.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
-        <img src="/assets/images/obituary/P1000882.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
+        <img src="{{ site.baseurl }}/assets/images/obituary/2019_0509_11485300.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
+        <img src="{{ site.baseurl }}/assets/images/obituary/20180517_131000_2.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
+        <img src="{{ site.baseurl }}/assets/images/obituary/P1000872.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
+        <img src="{{ site.baseurl }}/assets/images/obituary/P1000882.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
       </div>
       <div class="image-column" style="flex: 50%; -ms-flex: 50%; padding: 0 4px; box-sizing: border-box;">
-        <img src="/assets/images/obituary/20170911_154349.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
-        <img src="/assets/images/obituary/20190624_Verabschiedung-Saemi.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
-        <img src="/assets/images/obituary/2019_0509_14460800.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
-        <img src="/assets/images/obituary/2019_0509_11445400.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
+        <img src="{{ site.baseurl }}/assets/images/obituary/20170911_154349.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
+        <img src="{{ site.baseurl }}/assets/images/obituary/20190624_Verabschiedung-Saemi.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
+        <img src="{{ site.baseurl }}/assets/images/obituary/2019_0509_14460800.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
+        <img src="{{ site.baseurl }}/assets/images/obituary/2019_0509_11445400.jpg" style="margin-top: 8px; width: 100%; vertical-align: middle;">
       </div>
     </div>
   </div>
