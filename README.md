@@ -40,7 +40,6 @@ Folder/File        | Description
  ----------------- | -------------------------------------------
  \_includes        | Jekyll folder containing HTML building blocks. The subfolder "ontologies" contains the human-readable HTML version of each ontology.
  \_layouts         | Jekyll folder containing HTML templates.
- \_posts           | Jekyll folder for blogging content. Currently not in use for this website.
  \_sass            | Jekyll folder containing scss stylesheets. These files are compiled to a single css file for the final static website.
  \_site            | Jekyll folder containing the static files version of the website when serving locally.
  \docs             | Custom Jekyll folder to save the built website files. 
