@@ -58,7 +58,7 @@ Folder/File        | Description
  
 #### Serve Locally
 
-To serve the website locally, run ``bundle exec jekyll serve`` and visit [http://localhost:4000](http://localhost:4000).
+To serve the website locally, run ``bundle exec jekyll serve`` and visit [http://localhost:4000/e-editiones/](http://localhost:4000/e-editiones/).
 
 #### Build Locally
 
