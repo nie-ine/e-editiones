@@ -72,7 +72,7 @@ To convert turtle files to the needed formats:
 1. Any turtle file needs to be in the "ontology" folder.
    - Be aware of the correct file naming (see [Add New Ontologies](#add-new-ontologies) below)
 1. cd into "ttl_conv" with ``cd ttl_conv``.
-1. Activate your virtual environment, if not activated, with ``source ttl_conv/bin/activate``.
+1. Activate your virtual environment, if not activated, with ``source env/bin/activate``.
 1. Run ``python3 -W ignore convert_files.py``.
    - ``-W ignore`` is optional but it ignores some default RDFlib messages.
    - The script validates available turtle files and stops with error messages if there are invalid files.
