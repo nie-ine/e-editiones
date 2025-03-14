@@ -1,13 +1,13 @@
 <header class="site-header" role="banner">
-
   <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    
-    {%- if page_paths -%}
+    {%- assign default_paths = site.pages | map: "path" -%} {%- assign
+    page_paths = site.header_pages | default: default_paths -%} {%- if
+    page_paths -%}
 
     <section class="navigation">
-      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      <a class="site-title" rel="author" href="{{ site.baseurl }}/"
+        >{{ site.title | escape }}</a
+      >
       <div class="nav-container">
         <nav>
           <div class="nav-mobile">
@@ -21,10 +21,16 @@
               <a href="#!">Semantic Web Technology</a>
               <ul class="nav-dropdown">
                 <li>
-                  <a href="{{ site.baseurl }}/semantic-web-technology-introduction">Introduction</a>
+                  <a
+                    href="{{ site.baseurl }}/semantic-web-technology-introduction"
+                    >Introduction</a
+                  >
                 </li>
                 <li>
-                  <a href="{{ site.baseurl }}/semantic-web-technology-advantages">Advantages</a>
+                  <a
+                    href="{{ site.baseurl }}/semantic-web-technology-advantages"
+                    >Advantages</a
+                  >
                 </li>
               </ul>
             </li>
@@ -43,15 +49,22 @@
               <a href="#!">N3-Rule-Based Machine Reasoning</a>
               <ul class="nav-dropdown">
                 <li>
-                  <a href="{{ site.baseurl }}/n3-rule-based-machine-reasoning">Introduction</a>
+                  <a href="{{ site.baseurl }}/n3-rule-based-machine-reasoning"
+                    >Introduction</a
+                  >
                 </li>
                 <li>
-                  <a href="{{ site.baseurl }}/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes">N3-Rules</a>
+                  <a
+                    href="{{ site.baseurl }}/n3-rule-based-machine-reasoning#n3-rules-serve-different-purposes"
+                    >N3-Rules</a
+                  >
                 </li>
               </ul>
             </li>
             <li>
-              <a href="{{ site.baseurl }}/two-step-formalization">Two-Step Formalization</a>
+              <a href="{{ site.baseurl }}/two-step-formalization"
+                >Two-Step Formalization</a
+              >
             </li>
             <li>
               <a href="{{ site.baseurl }}/literature">Literature</a>
@@ -62,26 +75,28 @@
     </section>
 
     <script>
-      (function($) { // Begin jQuery
-        $(function() { // DOM ready
+      (function ($) {
+        // Begin jQuery
+        $(function () {
+          // DOM ready
           // If a link has a dropdown, add sub menu toggle.
-          $('nav ul li a:not(:only-child)').click(function(e) {
-            $(this).siblings('.nav-dropdown').toggle();
+          $("nav ul li a:not(:only-child)").click(function (e) {
+            $(this).siblings(".nav-dropdown").toggle();
             // Close one dropdown when selecting another
-            $('.nav-dropdown').not($(this).siblings()).hide();
+            $(".nav-dropdown").not($(this).siblings()).hide();
             e.stopPropagation();
           });
           // Clicking away from dropdown will remove the dropdown class
-          $('html').click(function() {
-            $('.nav-dropdown').hide();
+          $("html").click(function () {
+            $(".nav-dropdown").hide();
           });
           // Toggle open and close nav styles on click
-          $('#nav-toggle').click(function() {
-            $('nav ul').slideToggle();
+          $("#nav-toggle").click(function () {
+            $("nav ul").slideToggle();
           });
           // Hamburger to X toggle
-          $('#nav-toggle').on('click', function() {
-            this.classList.toggle('active');
+          $("#nav-toggle").on("click", function () {
+            this.classList.toggle("active");
           });
         }); // end DOM ready
       })(jQuery); // end jQuery
